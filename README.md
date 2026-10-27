@@ -49,7 +49,23 @@ Not used yet: the remaining building variants (`*_2`, `*_3`, `floor_*` etc.), mo
 
 ## Placeholders and open items
 
-- `SITE_URL` is a placeholder (`https://fourworldsexplorer.example`).
+- `SITE_URL` is set to the temporary Hostinger domain (`https://yellowgreen-crab-278867.hostingersite.com`). Change it to the real domain when one is chosen.
 - Icons (`favicon.svg`, PNG icons) are a simple four-diamond mark made for this site; replace them with a real logo when one exists.
 - Social share images (`public/assets/og/*.jpg`) are composed from the supplied artwork.
 - The Roman "Library" and "Building materials" have no historical notes yet. They're marked as the artist's interpretation.
+
+## Deploying to Hostinger with Git
+
+The `deploy` branch holds only the contents of `public/`, so it can go straight into `public_html`.
+
+In hPanel: **Websites → Manage → Advanced → Git**, then:
+
+- Repository: `https://github.com/officevflooring-maker/four-worlds-city-explorer.git`
+- Branch: `deploy`
+- Directory: leave empty (installs into `public_html`; it must be empty first)
+
+After each change, rebuild, commit to `main`, then update the deploy branch and click **Deploy** in hPanel:
+
+```bash
+git push origin `git subtree split --prefix public main`:refs/heads/deploy --force
+```
