@@ -14,14 +14,77 @@
     toggle.addEventListener('change', function () { city.classList.toggle('show-labels', toggle.checked); });
   }
 
-  // City map: selecting a building opens a detail dialog built from its directory card.
+  // Print a single image: fill the hidden print sheet, then print only that.
+  var sheet = document.querySelector('.print-sheet');
+  function printImage(src, title) {
+    if (!sheet) return;
+    var img = sheet.querySelector('img');
+    sheet.querySelector('p').textContent = title || '';
+    document.body.classList.add('print-one');
+    var go = function () { window.print(); };
+    if (img.getAttribute('src') === src && img.complete) go();
+    else { img.onload = go; img.src = src; }
+  }
+  window.addEventListener('afterprint', function () { document.body.classList.remove('print-one'); });
+  document.querySelectorAll('.js-print-art').forEach(function (b) {
+    b.addEventListener('click', function () { printImage(b.dataset.full, b.dataset.title); });
+  });
+
+  // Lightbox: any .lb button opens its image full size, with Save, Print and Full screen.
+  var lb = document.querySelector('.lightbox');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.lb'));
+  if (lb && items.length && typeof lb.showModal === 'function') {
+    var lbImg = lb.querySelector('.lb-img');
+    var stage = lb.querySelector('.lb-stage');
+    var save = lb.querySelector('.lb-save');
+    var full = lb.querySelector('.lb-full');
+    var at = 0;
+    var opener = null;
+    if (!stage.requestFullscreen) full.hidden = true;
+    lb.querySelectorAll('.lb-step').forEach(function (b) { b.hidden = items.length < 2; });
+
+    var show = function (i) {
+      at = (i + items.length) % items.length;
+      var it = items[at];
+      lbImg.src = it.dataset.full;
+      lbImg.alt = it.dataset.title || '';
+      lb.querySelector('.lb-title').textContent = it.dataset.title || '';
+      lb.querySelector('.lb-credit').textContent = it.dataset.credit || '';
+      save.href = it.dataset.full;
+      save.setAttribute('download', it.dataset.download || '');
+    };
+    items.forEach(function (it, i) {
+      it.addEventListener('click', function () {
+        opener = it;
+        show(i);
+        lb.showModal();
+        lb.querySelector('.lb-close').focus();
+      });
+    });
+    lb.querySelector('.lb-close').addEventListener('click', function () { lb.close(); });
+    lb.querySelector('.lb-prev').addEventListener('click', function () { show(at - 1); });
+    lb.querySelector('.lb-next').addEventListener('click', function () { show(at + 1); });
+    lb.querySelector('.lb-print').addEventListener('click', function () { printImage(items[at].dataset.full, items[at].dataset.title); });
+    full.addEventListener('click', function () { stage.requestFullscreen().catch(function () {}); });
+    lb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') show(at + 1);
+      if (e.key === 'ArrowLeft') show(at - 1);
+    });
+    lb.addEventListener('close', function () {
+      if (document.fullscreenElement) document.exitFullscreen();
+      lbImg.src = 'data:,';
+      if (opener) opener.focus();
+    });
+  }
+
+  // Modern, elven and future maps: selecting a building opens a detail dialog built from its directory card.
   var dlg = document.querySelector('.place-dialog');
   if (!dlg || typeof dlg.showModal !== 'function') return;
 
-  var buttons = Array.prototype.slice.call(document.querySelectorAll('.tile-btn'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('button.tile-btn'));
   var ids = buttons.map(function (b) { return b.dataset.place; });
   var current = 0;
-  var opener = null;
+  var dlgOpener = null;
 
   function fill(index) {
     current = (index + ids.length) % ids.length;
@@ -29,36 +92,33 @@
     var img = card.querySelector('.place-art img').cloneNode();
     img.removeAttribute('loading');
     img.sizes = '(min-width: 760px) 440px, 90vw';
-    var art = dlg.querySelector('.dlg-art');
-    art.replaceChildren(img);
+    dlg.querySelector('.dlg-art').replaceChildren(img);
     dlg.querySelector('#dlg-title').textContent = card.querySelector('h3').textContent;
     dlg.querySelector('.what').textContent = card.querySelector('.what').textContent;
     dlg.querySelector('.dlg-body').replaceChildren(card.querySelector('.place-body').cloneNode(true));
-    dlg.querySelector('.dlg-text').scrollTop = 0;
     dlg.scrollTop = 0;
   }
 
   buttons.forEach(function (b, i) {
     b.addEventListener('click', function () {
-      opener = b;
+      dlgOpener = b;
       fill(i);
       dlg.showModal();
       dlg.querySelector('.dlg-close').focus();
     });
   });
-
   dlg.querySelector('.dlg-close').addEventListener('click', function () { dlg.close(); });
   dlg.querySelectorAll('[data-step]').forEach(function (b) {
     b.addEventListener('click', function () {
       fill(current + Number(b.dataset.step));
-      opener = buttons[current];
+      dlgOpener = buttons[current];
     });
   });
   // Close when clicking the dark backdrop.
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   dlg.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight') { fill(current + 1); opener = buttons[current]; }
-    if (e.key === 'ArrowLeft') { fill(current - 1); opener = buttons[current]; }
+    if (e.key === 'ArrowRight') { fill(current + 1); dlgOpener = buttons[current]; }
+    if (e.key === 'ArrowLeft') { fill(current - 1); dlgOpener = buttons[current]; }
   });
-  dlg.addEventListener('close', function () { if (opener) opener.focus(); });
+  dlg.addEventListener('close', function () { if (dlgOpener) dlgOpener.focus(); });
 })();

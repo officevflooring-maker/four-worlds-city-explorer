@@ -8,6 +8,9 @@ No accounts, forms, cookies, ads, analytics or third-party requests.
 
 - `public/` is the whole website (static HTML, CSS, JS, images). Upload its **contents** to Hostinger's `public_html`.
 - `build/` holds the content (`data.php`), settings (`config.php`) and the page generator (`build.php`). Edit content there, then run `php build/build.php` to regenerate the HTML in `public/`.
+- Roman building pages: content in `build/roman.php`, photo captions in `build/photo-captions.php`, photo credits in `build/photo-credits.json`.
+- `tools/fetch-photos.php` finds openly licensed photos on Wikimedia Commons (searches in `tools/photo-queries.txt`, rejected files in `tools/photo-reject.txt`). Every photo was checked by eye.
+- `tools/copy-artwork.sh` exports every supplied illustration for the Artwork page (`public/assets/artwork/`).
 - `tools/copy-assets.sh` copies the selected artwork from the read-only source folders into `public/assets/worlds/{roman,modern,elven,future}/` as web-sized WebP with transparency kept. The selection is listed in `tools/assets.txt`. Source images are never changed.
 
 ## Preview locally
@@ -30,10 +33,14 @@ Then open http://localhost:8097/
 | Path | Page |
 | --- | --- |
 | `/` | Home: four world cards |
-| `/worlds/roman/` etc. | City map + building directory with detail panels |
+| `/worlds/roman/` | Roman city map (6 x 6) linking to 35 building pages |
+| `/worlds/roman/{building}/` | One page per Roman building: history, photos of real sites, artwork notes, questions, sources |
+| `/worlds/modern/` etc. | City map + building directory with detail panels |
+| `/artwork/` | Every supplied illustration (186), by world: view full screen, save, print |
+| `/credits/` | Photo credits and licences (the only page with outbound links) |
 | `/compare/` | One city question across all four worlds (printable) |
 | `/about/` | About, privacy, accessibility, artwork reuse, sources |
-| `/guided/`, `/library/` | "Coming later" placeholders (not indexed) |
+| `/guided/` | "Coming later" placeholder (not indexed) |
 
 ## Artwork inventory
 

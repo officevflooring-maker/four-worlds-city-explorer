@@ -1,0 +1,37 @@
+# page|Wikimedia Commons search terms, separated by ;  (one photo per search)
+# Only public domain, CC0, CC BY and CC BY-SA images are accepted (see tools/fetch-photos.php).
+aqueduct|Pont du Gard;Aqueduct of Segovia;Parco degli Acquedotti Aqua Claudia
+public-fountain|Pompeii street fountain;Pompeii fountain basin;Pompeii fountain Via dell Abbondanza
+public-baths|Baths of Caracalla;Roman Baths Bath Great Bath;hypocaust pilae;Stabian Baths Pompeii
+amphitheater|Colosseum Rome exterior;Colosseum hypogeum;Arena di Verona;Amphitheatre of El Jem
+circus|Circus Maximus panorama;Circus of Maxentius;chariot race mosaic
+gladiator-school|Ludus Magnus;Ludus Magnus Rome Colosseum
+forum|Roman Forum from Capitoline Hill;Forum of Trajan;Forum Pompeii
+basilica|Basilica of Maxentius;Basilica Julia;Basilica Ulpia
+curia|Curia Julia Roman Forum exterior;Curia Julia interior
+treasury|Temple of Saturn Rome;Roman denarius coin;aureus Augustus
+temple|Maison Carree Nimes;Temple of Portunus;Temple of Bacchus Baalbek
+pantheon|Pantheon Rome exterior portico columns;Pantheon Rome oculus;Pantheon Rome interior
+temple-of-vesta|Temple of Vesta Forum Romanum;Temple of Vesta Tivoli;Atrium Vestae statues
+mausoleum|Castel Sant'Angelo;Tomb of Caecilia Metella;Mausoleum of Augustus
+triumphal-arch|Arch of Titus;Arch of Constantine;Arch of Septimius Severus
+victory-column|Trajan's Column;Column of Marcus Aurelius;Trajan's Column relief detail
+imperial-statue|Augustus of Prima Porta;Equestrian statue of Marcus Aurelius Capitoline;Colossus of Constantine head
+imperial-palace|Palatine Hill Domus Augustana;Stadium of Domitian Palatine;Palatine Domus Flavia
+apartment-block|Ostia Antica Casa di Diana;Insula dell Ara Coeli;Ostia Antica Via di Diana
+domus|House of the Faun Pompeii atrium;impluvium Pompeii;House of the Vettii
+villa|Hadrian Villa Canopus;Villa Romana del Casale mosaic;Villa Poppaea Oplontis
+farmhouse|Villa Regina Boscoreale;dolia Ostia;Roman wine press
+inn|Via Appia Antica;Caupona Pompeii;Roman milestone
+shop|Trajan's Market;Pompeii bakery millstones;taberna Ostia
+street-food|Thermopolium Pompeii;Thermopolium Regio V Pompeii;Thermopolium Ostia
+warehouse|Horrea Epagathiana Ostia;amphorae museum;Monte Testaccio
+school|Roman wax tablet stylus;Neumagen school relief;Roman inkwell
+library|Library of Celsus;Library of Hadrian Athens;Herculaneum papyrus
+records-office|Tabularium Rome;Lex de imperio Vespasiani
+garden|House of the Vettii peristyle garden;Garden of Livia fresco;Fishbourne Roman Palace garden
+olive-grove|olive grove Italy;Monte Testaccio shards;Roman oil lamp
+city-walls|Aurelian Walls Rome;Porta San Sebastiano;Hadrian Wall Housesteads
+lighthouse|Tower of Hercules A Coruna;Dover Castle Roman lighthouse
+crane|Tomb of the Haterii relief crane;Roman treadwheel crane reconstruction
+building-materials|opus reticulatum;Roman brick stamp;Carrara marble quarry
