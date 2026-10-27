@@ -145,7 +145,7 @@ foreach (WORLD_ORDER as $w) {
 $heroPick = [['roman', 'domed-temple'], ['modern', 'public-library'], ['elven', 'treetop-village'], ['future', 'greenhouse-dome']];
 $hero = '';
 foreach ($heroPick as $i => [$w, $n]) {
-  $hero .= '<div class="hero-piece hero-' . $w . '">' . img($w, $n, '', '(min-width: 900px) 260px, 40vw', $i ? 'loading="lazy"' : 'fetchpriority="high"') . '</div>';
+  $hero .= '<div class="hero-piece hero-' . $w . '">' . img($w, $n, '', '(min-width: 900px) 260px, 40vw', $i ? '' : 'fetchpriority="high"') . '</div>';
 }
 page('/', [
   'title' => SITE_NAME . ': how cities work, in four illustrated worlds',
