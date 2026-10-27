@@ -68,3 +68,7 @@ The repo-root `.htaccess` serves the site from `public/` at the normal addresses
 
 After each change: run `php build/build.php`, commit and push to `main`, Hostinger auto-deploys it (or click **Redeploy** in hPanel).
 
+
+## Licence
+
+The illustrations are shared under Creative Commons Attribution 4.0 (CC BY 4.0): free for anyone to use for any purpose, with credit to "Four Worlds City Explorer". Photos of real Roman places keep their own Wikimedia Commons licences (see `/credits/`).

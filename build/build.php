@@ -136,7 +136,7 @@ HTML;
   <div class="wrap footer-inner">
     <p><strong>Four Worlds City Explorer</strong> - a free educational project about how cities work.</p>
     <p>No accounts, no ads, no tracking. <a href="/about/#privacy">Privacy</a> · <a href="/artwork/">Artwork</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a></p>
-    <p class="small">Illustrations &copy; {$year} Four Worlds City Explorer. Photos of real places are by the photographers credited with each one.</p>
+    <p class="small">Illustrations &copy; {$year} Four Worlds City Explorer, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
   </div>
 </footer>
 {$lightbox}
@@ -490,7 +490,7 @@ foreach ($slugs as $k => $slug) {
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/worlds/roman/">Ancient Rome</a></li><li><a href="/worlds/roman/#{$r['cat']}">{$catH}</a></li><li aria-current="page">{$nameH}</li></ol></nav>
 </div>
 <section class="wrap b-hero">
-  <div class="b-art"><button type="button" class="lb" data-full="{$heroFull}" data-title="{$nameH} (illustration)" data-credit="Illustration: Four Worlds City Explorer" data-download="roman-{$slug}.webp" aria-label="View the illustration full size">{$hero}</button></div>
+  <div class="b-art"><button type="button" class="lb" data-full="{$heroFull}" data-title="{$nameH} (illustration)" data-credit="Illustration: Four Worlds City Explorer, free to use under CC BY 4.0" data-download="roman-{$slug}.webp" aria-label="View the illustration full size">{$hero}</button></div>
   <div class="b-intro">
     <p class="tag">Ancient Rome · {$catH}</p>
     <h1>{$nameH}</h1>
@@ -611,7 +611,8 @@ page('/about/', [
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
 
   <h2 id="artwork">Artwork and reuse</h2>
-  <p>The illustrations are not public domain. You're welcome to view, save and print them from the <a href="/artwork/">Artwork</a> page for personal and classroom use. Please ask before republishing them.</p>
+  <p>All illustrations of the four worlds are free for everyone to use, under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 (CC BY 4.0)</a> licence. You can copy, print, change, share and use them for any purpose, including in lessons, books, websites and commercial projects. The only condition is to credit them, for example: "Illustration: Four Worlds City Explorer".</p>
+  <p>Save or print any of them from the <a href="/artwork/">Artwork</a> page.</p>
   <p>Photos of real Roman places come from Wikimedia Commons and are public domain or shared under Creative Commons licences. Each photo is credited where it appears, and all licences are listed on the <a href="/credits/">photo credits</a> page.</p>
 
   <h2 id="sources">Sources</h2>
@@ -663,6 +664,7 @@ foreach ($ROMAN as $slug => $r) {
 $artSections = '';
 $artJump = '';
 $artTotal = 0;
+$artLd = [];
 foreach (WORLD_ORDER as $w) {
   $groups = array_fill_keys(array_keys($ART_GROUPS), '');
   $count = 0;
@@ -679,11 +681,15 @@ foreach (WORLD_ORDER as $w) {
     [$fw, $fh] = getimagesize(PUB . $full);
     $label = "{$WORLDS[$w]['name']}: $title";
     $more = $slug ? ' <a class="art-more" href="/worlds/roman/' . $slug . '/">Read about it</a>' : '';
-    $groups[$group] .= '<li class="art-card"><button type="button" class="lb art-thumb" data-full="' . $full . '" data-title="' . h($label) . '" data-credit="Illustration: Four Worlds City Explorer (' . $fw . ' x ' . $fh . ' pixels)" data-download="' . "four-worlds-$w-$name.webp" . '" aria-label="View full size: ' . h($label) . '">'
+    $groups[$group] .= '<li class="art-card"><button type="button" class="lb art-thumb" data-full="' . $full . '" data-title="' . h($label) . '" data-credit="Illustration: Four Worlds City Explorer, free to use under CC BY 4.0 (' . $fw . ' x ' . $fh . ' pixels)" data-download="' . "four-worlds-$w-$name.webp" . '" aria-label="View full size: ' . h($label) . '">'
       . '<img src="/assets/artwork/' . $w . '/' . $name . '-thumb.webp" width="' . $tw . '" height="' . $th . '" alt="' . h($label) . '" loading="lazy" decoding="async"></button>'
       . '<p class="art-title">' . h($title) . $more . '</p>'
       . '<p class="art-actions"><a href="' . $full . '" download="' . "four-worlds-$w-$name.webp" . '">Save</a> <button type="button" class="linkish js-print-art" data-full="' . $full . '" data-title="' . h($label) . '">Print</button></p></li>';
     $count++;
+    // Licence data per image, so search engines can show the artwork as free to reuse.
+    $artLd[] = ['@type' => 'ImageObject', 'contentUrl' => url($full), 'name' => $label, 'license' => 'https://creativecommons.org/licenses/by/4.0/',
+      'acquireLicensePage' => url('/about/#artwork'), 'creditText' => 'Illustration: Four Worlds City Explorer',
+      'creator' => ['@type' => 'Organization', 'name' => SITE_NAME], 'copyrightNotice' => SITE_NAME];
   }
   $artTotal += $count;
   $inner = '';
@@ -704,12 +710,13 @@ page('/artwork/', [
   <h1>Artwork</h1>
   <p class="lead">All {$artTotal} illustrations from the four worlds. Select any picture to see it full size, open it full screen, save it or print it.</p>
   <nav aria-label="Worlds"><ul class="world-links">{$artJump}</ul></nav>
-  <p class="small">Free to view, save and print for personal and classroom use. Please ask before republishing. Files are full-size WebP images, which open in all modern browsers and most photo apps.</p>
+  <p class="small">Free for everyone to use for any purpose under CC BY 4.0. Just credit "Illustration: Four Worlds City Explorer". <a href="/about/#artwork">More about reuse</a>. Files are full-size WebP images, which open in all modern browsers and most photo apps.</p>
 </section>
 <div class="wrap">{$artSections}</div>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Artwork', '/artwork/']]),
-    ['@context' => 'https://schema.org', '@type' => 'CollectionPage', 'name' => 'Four Worlds artwork', 'url' => url('/artwork/'), 'inLanguage' => 'en']],
+    ['@context' => 'https://schema.org', '@type' => 'CollectionPage', 'name' => 'Four Worlds artwork', 'url' => url('/artwork/'), 'inLanguage' => 'en',
+      'license' => 'https://creativecommons.org/licenses/by/4.0/', 'hasPart' => $artLd]],
 ]);
 
 // ---------- Photo credits (licences require a link to each source and licence) ----------
@@ -731,7 +738,7 @@ page('/credits/', [
 <section class="wrap section page-head narrow">
   <h1>Photo credits</h1>
   <p class="lead">Photos of real Roman places come from Wikimedia Commons. They are public domain or shared under Creative Commons licences, and we thank the photographers.</p>
-  <p>Photos have been resized and converted to WebP for this website. Under their licences you may reuse them by following the licence linked beside each one. The illustrations of the four worlds are not covered by these licences; see <a href="/about/#artwork">Artwork and reuse</a>.</p>
+  <p>Photos have been resized and converted to WebP for this website. Under their licences you may reuse them by following the licence linked beside each one. The illustrations of the four worlds are shared separately under CC BY 4.0; see <a href="/about/#artwork">Artwork and reuse</a>.</p>
   <ul class="credit-list">{$rows}</ul>
 </section>
 HTML,
