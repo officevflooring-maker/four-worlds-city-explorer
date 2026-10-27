@@ -59,7 +59,5 @@ Not used yet: the remaining building variants (`*_2`, `*_3`, `floor_*` etc.), mo
 Hostinger is connected to this repo (hPanel: **Websites → Manage → Advanced → Git**, branch `main`, directory empty).
 The repo-root `.htaccess` serves the site from `public/` at the normal addresses and hides the build files.
 
-After each change: run `php build/build.php`, commit and push to `main`, then click **Deploy** in hPanel.
+After each change: run `php build/build.php`, commit and push to `main`, Hostinger auto-deploys it (or click **Redeploy** in hPanel).
 
-(A `deploy` branch containing only `public/` also exists, for hosts that need the site files at the top level:
-`git push origin "$(git subtree split --prefix public main)":refs/heads/deploy --force`.)
