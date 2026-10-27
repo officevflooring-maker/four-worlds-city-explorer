@@ -1,18 +1,22 @@
 <?php
-// Finds openly licensed photos on Wikimedia Commons for each Roman page (tools/photo-queries.txt),
-// downloads a 1600px version, converts it to WebP, and records credits in build/photo-credits.json.
-// Usage: php -d extension=openssl tools/fetch-photos.php [page-slug]   (needs ffmpeg on PATH)
+// Finds openly licensed photos on Wikimedia Commons for each building page of a world
+// (searches in tools/photo-queries/{world}.txt), downloads a 1600px version, converts it to WebP
+// into public/assets/photos/{world}/, and records credits in build/photos/{world}.json.
+// Usage: php -d extension=openssl tools/fetch-photos.php {world} [page-slug]   (needs ffmpeg on PATH)
 // Re-running skips pages that already have photos unless a slug is given.
 
 const UA = 'FourWorldsCityExplorer/1.0 (educational website; office.a.builders@gmail.com)';
 $root = dirname(__DIR__);
-$out = "$root/public/assets/photos/roman";
-$creditsFile = "$root/build/photo-credits.json";
+$world = $argv[1] ?? exit("Usage: php tools/fetch-photos.php {world} [page-slug]
+");
+$out = "$root/public/assets/photos/$world";
+$creditsFile = "$root/build/photos/$world.json";
 $tmp = sys_get_temp_dir() . '/fw-photos';
 @mkdir($out, 0777, true);
 @mkdir($tmp, 0777, true);
+@mkdir(dirname($creditsFile), 0777, true);
 $credits = file_exists($creditsFile) ? json_decode(file_get_contents($creditsFile), true) : [];
-$only = $argv[1] ?? null;
+$only = $argv[2] ?? null;
 
 function http_get($url) {
   $ctx = stream_context_create(['http' => ['user_agent' => UA, 'timeout' => 60]]);
@@ -42,7 +46,7 @@ function search($q, $quality) {
 // Photos checked by eye and rejected (wrong subject or unsuitable) are never picked again.
 $reject = array_flip(array_filter(array_map('trim', file("$root/tools/photo-reject.txt"))));
 
-foreach (file("$root/tools/photo-queries.txt") as $line) {
+foreach (file("$root/tools/photo-queries/$world.txt") as $line) {
   $line = trim($line);
   if ($line === '' || $line[0] === '#') continue;
   [$slug, $qs] = explode('|', $line, 2);

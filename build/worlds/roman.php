@@ -1,5 +1,6 @@
 <?php
-// Ancient Rome: one page per building. Facts are kept to well-established points from the
+// Ancient Rome: one page per building (see the shared page format at the end of this file).
+// Facts are kept to well-established points from the
 // sources listed in $ROMAN_SOURCES (shown on each page as plain text, not links).
 // "art" describes what is the artist's interpretation. Photos come from build/photo-credits.json.
 
@@ -991,4 +992,31 @@ $ROMAN = [
   'sources' => ['brit-concrete', 'anc-vitruvius', 'anc-suetonius', 'sh-pantheon'],
   'related' => ['crane', 'pantheon', 'aqueduct'],
 ],
+];
+
+$WORLD_DATA['roman'] = [
+  'title'    => 'Ancient Roman City Explorer: 35 buildings and how they worked',
+  'desc'     => 'Explore an illustrated ancient Roman city. Open any of 35 buildings, from aqueducts and baths to the Pantheon and the Senate house, to learn how it worked, with photos of real Roman sites.',
+  'intro'    => 'Ancient Rome was a real city of perhaps a million people. Explore 35 of its buildings: what each one was for, how it worked and where you can still see real examples today.',
+  'note'     => 'The buildings are illustrations, not exact reconstructions. Each page separates what history tells us from what the artist imagined, and lists its sources.',
+  'aka'      => 'Latin',
+  'akaLang'  => 'la',
+  'pageTitle'=> '%s in Ancient Rome: what it was and how it worked',
+  'pageDesc' => ' Learn how it worked, see photos of real Roman examples, and explore questions for discussion.',
+  'sourcesIntro' => 'The history on this page is a short summary based on these sources:',
+  'about'    => 'Ancient Roman architecture and city life',
+  // Positions on the 6 x 6 map, from the back corner (0) to the front corner (35).
+  // Tall pieces stand at the back, low and wide ones at the front. 'tree' is a decorative tree.
+  'map' => [
+    'crane', 'lighthouse', 'victory-column', 'city-walls', 'imperial-statue', 'temple',
+    'mausoleum', 'pantheon', 'imperial-palace', 'curia', 'treasury', 'temple-of-vesta',
+    'amphitheater', 'circus', 'basilica', 'library', 'records-office', 'triumphal-arch',
+    'villa', 'forum', 'public-baths', 'apartment-block', 'domus', 'school',
+    'gladiator-school', 'warehouse', 'farmhouse', 'inn', 'shop', 'street-food',
+    'olive-grove', 'garden', 'tree', 'public-fountain', 'building-materials', 'aqueduct',
+  ],
+  'tree'     => 'olive-tree',
+  'sources'  => $ROMAN_SOURCES,
+  'cats'     => $ROMAN_CATEGORIES,
+  'pages'    => $ROMAN,
 ];

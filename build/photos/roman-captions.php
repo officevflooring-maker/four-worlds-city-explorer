@@ -1,6 +1,6 @@
 <?php
 // One caption per photo (keys match "img" in build/photo-credits.json). Credits are added automatically.
-$PHOTO_CAPTIONS = [
+$PHOTO_CAPTIONS["roman"] = [
   'aqueduct-1' => 'The Pont du Gard in southern France carried water across the river Gardon to the Roman city of Nîmes.',
   'aqueduct-2' => 'The aqueduct of Segovia, Spain, is built of granite blocks fitted together without mortar.',
   'aqueduct-3' => 'Arches of the Aqua Claudia in the Park of the Aqueducts, on the edge of Rome.',
