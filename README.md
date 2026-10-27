@@ -56,16 +56,10 @@ Not used yet: the remaining building variants (`*_2`, `*_3`, `floor_*` etc.), mo
 
 ## Deploying to Hostinger with Git
 
-The `deploy` branch holds only the contents of `public/`, so it can go straight into `public_html`.
+Hostinger is connected to this repo (hPanel: **Websites → Manage → Advanced → Git**, branch `main`, directory empty).
+The repo-root `.htaccess` serves the site from `public/` at the normal addresses and hides the build files.
 
-In hPanel: **Websites → Manage → Advanced → Git**, then:
+After each change: run `php build/build.php`, commit and push to `main`, then click **Deploy** in hPanel.
 
-- Repository: `https://github.com/officevflooring-maker/four-worlds-city-explorer.git`
-- Branch: `deploy`
-- Directory: leave empty (installs into `public_html`; it must be empty first)
-
-After each change, rebuild, commit to `main`, then update the deploy branch and click **Deploy** in hPanel:
-
-```bash
-git push origin `git subtree split --prefix public main`:refs/heads/deploy --force
-```
+(A `deploy` branch containing only `public/` also exists, for hosts that need the site files at the top level:
+`git push origin "$(git subtree split --prefix public main)":refs/heads/deploy --force`.)

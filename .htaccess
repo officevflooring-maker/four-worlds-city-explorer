@@ -1,0 +1,11 @@
+# Used when Hostinger deploys the whole repository (main branch) into public_html.
+# Serves the website from public/ at the normal addresses (/, /compare/, ...)
+# and keeps build files (README, build/, tools/) out of reach: they become 404s.
+Options -Indexes
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} !^/public/
+  RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
