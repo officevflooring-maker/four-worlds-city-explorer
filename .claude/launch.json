@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "four-worlds", "runtimeExecutable": "php", "runtimeArgs": ["-S", "localhost:8097", "-t", "public"], "port": 8097 }
+  ]
+}
