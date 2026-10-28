@@ -237,6 +237,12 @@ HTML,
 ]);
 
 // ---------- About ----------
+// Support goes through the store (the poster set, pay what you want) once its link is set; until then through Patreon.
+$storeSupport = shop_open('posters');
+$payPrivacy = $storeSupport
+  ? '<p>Support and things in <a href="/shop/">the shop</a> are paid for on our store\'s website, under that store\'s own privacy policy. This site never sees payment or personal details. See <a href="/support/">Support this project</a>.</p>'
+  : '<p>Donations are optional and handled entirely by Patreon, a separate website with its own privacy policy. This site never sees payment or personal details. See <a href="/support/">Support this project</a>.</p>'
+    . "\n  " . '<p>Things in <a href="/shop/">the shop</a> are bought on a store website, under that store\'s own privacy policy. This site never sees those payment details either.</p>';
 $srcList = '';
 foreach ($WORLD_DATA as $w => $D) {
   $srcList .= '<h3>' . h($WORLDS[$w]['name']) . '</h3><ul class="sources">';
@@ -265,8 +271,7 @@ page('/about/', [
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
   <p>Passport stamps, quiz scores and the city you build are saved only in your own browser and never sent anywhere. You can clear them on the <a href="/play/passport/">passport page</a>.</p>
-  <p>Donations are optional and handled entirely by Patreon, a separate website with its own privacy policy. This site never sees payment or personal details. See <a href="/support/">Support this project</a>.</p>
-  <p>Things in <a href="/shop/">the shop</a> are bought on a store website, under that store's own privacy policy. This site never sees those payment details either.</p>
+  {$payPrivacy}
 
   <h2 id="accessibility">Accessibility</h2>
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
@@ -284,13 +289,20 @@ HTML,
   'ld' => [crumbs([['Home', '/'], ['About', '/about/']])],
 ]);
 
-// ---------- Support (the only page that links to Patreon) ----------
-$give = PATREON_URL
-  ? '<p><a class="btn btn-big" href="' . h(PATREON_URL) . '" rel="noopener">Support on Patreon</a></p><p class="small">This button opens Patreon, a separate website.</p>'
-  : '<p class="setting-note"><strong>Donations are opening soon.</strong> Until then, the best way to help is to share the site with a teacher or family who would enjoy it.</p>';
+// ---------- Support (the only page that links to Patreon, until the store takes support) ----------
+if ($storeSupport) {
+  $give = '<p><a class="btn btn-big" href="' . h(SHOP['posters']['buy']) . '" rel="noopener">Support with ' . shop_price('posters') . ' or more</a></p>'
+    . '<p class="small">You choose the amount and get the <a href="/posters/">Poster Set</a> as a thank-you. The button opens our store, a separate website.</p>';
+  $giveBy = ['Support is optional. Everything on the site stays free either way.', 'Payments and personal details are handled by our store, under its own privacy policy. This site never sees them.'];
+} else {
+  $give = PATREON_URL
+    ? '<p><a class="btn btn-big" href="' . h(PATREON_URL) . '" rel="noopener">Support on Patreon</a></p><p class="small">This button opens Patreon, a separate website.</p>'
+    : '<p class="setting-note"><strong>Donations are opening soon.</strong> Until then, the best way to help is to share the site with a teacher or family who would enjoy it.</p>';
+  $giveBy = ['Donations are optional. Everything on the site stays free either way.', 'Payments and personal details are handled by Patreon, under Patreon\'s own privacy policy. This site never sees them.'];
+}
 page('/support/', [
   'title' => 'Support this free project',
-  'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. Optional donations through Patreon help add new worlds, printable packs and expert fact-checking.'),
+  'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. ' . ($storeSupport ? 'Paying what you want for the Poster Set helps' : 'Optional donations through Patreon help') . ' add new worlds, printable packs and expert fact-checking.'),
   'class' => 'support',
   'body' => <<<HTML
 <section class="wrap section page-head narrow">
@@ -307,8 +319,8 @@ page('/support/', [
   </ul>
   <h2>Before you give</h2>
   <ul class="plain-points">
-    <li>Donations are optional. Everything on the site stays free either way.</li>
-    <li>Payments and personal details are handled by Patreon, under Patreon's own privacy policy. This site never sees them.</li>
+    <li>{$giveBy[0]}</li>
+    <li>{$giveBy[1]}</li>
     <li>Under 18? Please ask a parent or guardian first.</li>
   </ul>
   <h2>Free ways to help</h2>
@@ -470,6 +482,7 @@ $urls['/shop/'] = '0.5';
 $urls['/life-rpg/'] = '0.5';
 $urls['/city-builders/'] = '0.5';
 $urls['/classroom-pack/'] = '0.5';
+$urls['/posters/'] = '0.5';
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . LASTMOD . "</lastmod><priority>$pr</priority></url>\n";
 $xml .= "</urlset>\n";

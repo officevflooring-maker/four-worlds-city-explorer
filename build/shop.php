@@ -1,25 +1,38 @@
 <?php
 // ---------- The shop: things for grown-ups to buy, made from the four worlds ----------
 // /shop/ lists them; each has its own page: /life-rpg/ (an app, unlocked with a key), /city-builders/ (a print-and-play
-// card game) and /classroom-pack/ (a print-ready teaching pack). The store delivers the file or the key by itself,
-// so this site still has no accounts, payments or cookies. Prices and checkout links are in config.php (SHOP); while a
-// link is empty the product says "Coming soon". The pictures come from the products themselves (see the README).
+// card game), /classroom-pack/ (a print-ready teaching pack) and /posters/ (posters to print, pay what you want, which
+// is also how the Support page takes support). The store delivers the file or the key by itself, so this site still
+// has no accounts, payments or cookies. Prices and checkout links are in config.php (SHOP); while a link is empty the
+// product says "Coming soon". The pictures come from the products themselves (see the README).
 
 $SHOP_INFO = [
   'life-rpg' => ['Life RPG', '/life-rpg/', 'An app for real-life goals', 'Turn real-life goals into quests, earn XP and grow your own city.', '/assets/life-rpg/city-roman-wide.webp', 520, 300],
   'city-builders' => ['City Builders', '/city-builders/', 'A card game to print at home', 'Collect buildings from four worlds and build a city that has everything its people need.', '/assets/shop/city-builders-fan.webp', 1100, 513],
   'classroom-pack' => ['Classroom Pack', '/classroom-pack/', 'A teaching pack to print', 'Fact cards, worksheets with answer keys and discussion cards, in one file.', '/assets/shop/classroom-pack-pages.webp', 1100, 697],
+  'posters' => ['Poster Set', '/posters/', 'Posters to print', 'The four worlds, their places and the ten things every city needs, for your wall.', '/assets/shop/posters-fan.webp', 1100, 697],
 ];
+
+// A checkout link has to come from the store's Share button. Anything else stops the build, including the
+// ".../checkout/?cart=..." address a browser shows once a checkout is open, which works only once.
+foreach (SHOP as $slug => $p) {
+  if ($p['buy'] !== '' && !preg_match('~^' . preg_quote(STORE_URL, '~') . '/(checkout/)?buy/[\w-]+(\?[^\s"<>]*)?$~', $p['buy'])) {
+    fwrite(STDERR, "config.php: the 'buy' link for $slug isn't a checkout link from " . STORE_URL . ". In the store, open the product, click Share and copy the link.\n");
+    exit(1);
+  }
+}
 
 function shop_price($slug) { return h(SHOP[$slug]['price']); }
 function shop_open($slug) { return SHOP[$slug]['buy'] !== ''; }
+function shop_from($slug) { return !empty(SHOP[$slug]['from']); }
+function shop_terms($slug) { return shop_from($slug) ? 'pay what you want, from ' . shop_price($slug) : shop_price($slug) . ', one time'; }
 
 // The buy button, or "Coming soon" until the store's link is set.
 function shop_buy($slug) {
   global $SHOP_INFO;
-  $price = shop_price($slug);
-  if (!shop_open($slug)) return "<p class=\"shop-soon\">Coming soon · $price, one time</p>";
+  if (!shop_open($slug)) return '<p class="shop-soon">Coming soon · ' . shop_terms($slug) . '</p>';
   $name = h($SHOP_INFO[$slug][0]);
+  $price = (shop_from($slug) ? 'from ' : '') . shop_price($slug);
   $more = $slug === 'life-rpg' && !empty(SHOP[$slug]['open']) ? ' Already bought it? <a href="' . h(SHOP[$slug]['open']) . '">Open Life RPG</a>' : '';
   return '<p><a class="btn btn-big shop-buy" href="' . h(SHOP[$slug]['buy']) . "\" rel=\"noopener\">Buy $name · $price</a></p>"
     . "<p class=\"small shop-note\">Opens our store, a separate website.$more</p>";
@@ -28,7 +41,7 @@ function shop_buy($slug) {
 function shop_card($slug) {
   global $SHOP_INFO;
   [$name, $url, $kind, $line, $img, $w, $hh] = $SHOP_INFO[$slug];
-  $state = shop_open($slug) ? shop_price($slug) . ', one time' : 'Coming soon';
+  $state = shop_open($slug) ? ucfirst(shop_terms($slug)) : 'Coming soon';
   return "<li class=\"shop-card\"><a href=\"$url\"><span class=\"shop-card-pic\"><img src=\"$img\" width=\"$w\" height=\"$hh\" alt=\"\" loading=\"lazy\" decoding=\"async\"></span>"
     . '<span class="shop-card-text"><span class="shop-kind">' . h($kind) . '</span><span class="shop-name">' . h($name) . '</span>'
     . '<span class="shop-line">' . h($line) . "</span><span class=\"shop-state\">$state</span></span></a></li>";
@@ -232,16 +245,55 @@ shop_page('classroom-pack', [
     ]) . '</section>',
 ]);
 
+/* ---------- Poster Set (pay what you want: also the Support page's button) ---------- */
+shop_page('posters', [
+  'title' => 'Poster Set: the four worlds for your wall',
+  'desc' => 'Six posters to print from The Atlas of Cities: the four worlds, twelve places from each, and the ten things every city needs. Pay what you want, from ' . SHOP['posters']['price'] . '.',
+  'tag' => 'Print at home · Supports this site',
+  'lead' => 'Six posters for a classroom or bedroom wall. You choose the price, and it helps keep The Atlas of Cities free.',
+  'facts' => ['6 posters', 'PDF in Letter and A4'],
+  'pic' => '<img src="/assets/shop/posters-fan.webp" width="1100" height="697" alt="Three posters: Ancient Rome, the four worlds and the Robotic Future.">',
+  'again' => shop_open('posters') ? 'Put the four worlds on your wall' : 'The Poster Set is coming soon',
+  'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
+    . shop_steps([
+      ['Choose your price.', 'Pay ' . shop_price('posters') . ' or more. Anything above that helps the site grow.'],
+      ['Download.', 'You get the PDF right after paying, in US Letter and A4 sizes.'],
+      ['Print and hang.', 'Any printer works. Matte photo paper or card stock looks best.'],
+    ]) . '</section>'
+    . '<section class="wrap section" aria-label="Posters in the set">'
+    . shop_gallery([
+      ['/assets/shop/posters-p2.webp', 520, 673, 'A poster of twelve places in Ancient Rome, from the aqueduct to a chariot, above a landscape of hills.', 'Twelve places from each world'],
+      ['/assets/shop/posters-p6.webp', 520, 673, 'A chart of the ten things every city needs, with an example from each world.', 'Ten things every city needs'],
+      ['/assets/shop/posters-p1.webp', 520, 673, 'A poster of the four worlds: an amphitheater, a skyscraper, a great tree hall and a spaceport.', 'The four worlds'],
+    ]) . '</section>'
+    . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
+    . shop_feats([
+      ['🗺️', 'The Four Worlds', 'One landmark from each world, from long ago to maybe one day.'],
+      ['🏛️', 'Ancient Rome', 'The aqueduct, the Pantheon, a chariot and nine more.'],
+      ['🏙️', 'Modern Town', 'A skyscraper, a stadium, a taxi and nine more.'],
+      ['🌳', 'Elven World', 'A great tree hall, a mushroom cottage and ten more.'],
+      ['🚀', 'Robotic Future', 'A spaceport, a launch pad, a hover car and nine more.'],
+      ['💧', 'Ten things every city needs', 'A chart with an example of each need from every world.'],
+    ]) . '</div></section>'
+    . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+    . shop_faq([
+      ['What do I get?', 'A PDF of 6 posters to download right away, in both US Letter and A4.'],
+      ['Where does the money go?', 'Into keeping The Atlas of Cities free, with no ads: hosting, new worlds and fact-checking.'],
+      ['Can I print them bigger?', 'Yes. Print the A4 file on A3 paper, or choose "Fit to page" to print on 11 x 17.'],
+      ['Can I print more copies?', 'Yes, for your own home or classroom. Please don\'t share the file online.'],
+    ]) . '</section>',
+]);
+
 /* ---------- the shop page ---------- */
 $shopCards = shop_cards();
 page('/shop/', [
-  'title' => 'Shop: games and classroom packs',
-  'desc' => h('Games and classroom packs made from the four worlds of The Atlas of Cities: Life RPG, the City Builders card game and the Classroom Pack. The rest of the site stays free.'),
+  'title' => 'Shop: games, posters and classroom packs',
+  'desc' => h('Games, posters and classroom packs made from the four worlds of The Atlas of Cities: Life RPG, the City Builders card game, the Classroom Pack and the Poster Set. The rest of the site stays free.'),
   'class' => 'shop shop-home-page',
   'body' => <<<HTML
 <section class="wrap section page-head">
   <p class="tag">Shop · For grown-ups</p>
-  <h1>Games and classroom packs</h1>
+  <h1>Games, posters and classroom packs</h1>
   <p class="lead">Made from the four worlds of this site. You get a download or a key right after paying, and the rest of The Atlas of Cities stays free.</p>
 </section>
 <section class="wrap section shop-list" aria-label="Products">

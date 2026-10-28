@@ -207,7 +207,7 @@ page('/', [
 
 <section class="band band-dark shop-home" aria-labelledby="shop-h">
   <div class="wrap">
-    <div class="sec-head"><p class="tag">For grown-ups</p><h2 id="shop-h">From the shop</h2><p>A game for real-life goals, a card game and a classroom pack, all made from these four worlds.</p></div>
+    <div class="sec-head"><p class="tag">For grown-ups</p><h2 id="shop-h">From the shop</h2><p>A game for real-life goals, a card game, a classroom pack and posters, all made from these four worlds.</p></div>
     {$shopCards}
     <p class="shop-home-more"><a class="btn" href="/shop/">Visit the shop</a></p>
   </div>

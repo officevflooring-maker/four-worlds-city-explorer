@@ -5,14 +5,20 @@ const SITE_URL  = 'https://atlasofcities.koaa01.workers.dev';   // Cloudflare Wo
 const SITE_NAME = 'The Atlas of Cities';
 const SITE_TAGLINE = 'Past, Present and Imagined';
 const SITE_DESC = 'Explore four illustrated isometric cities - ancient Rome, a modern town, a green elven world and a robotic future - and think about how cities work and what makes a good place to live.';
-// Patreon page for donations (shown only on /support/). Leave empty until the page exists.
+// Patreon page for donations, shown only on /support/ until the poster set below has its store link.
 const PATREON_URL = 'https://www.patreon.com/cw/SamPetrov/home';
+// Our store (Lemon Squeezy). Every 'buy' link below must be a checkout link from it: in the store, open the product,
+// click Share and copy the link. The build stops on any other link.
+const STORE_URL = 'https://theatlasofcities.lemonsqueezy.com';
 // The shop (build/shop.php): things for grown-ups to buy, each with its own page. While a product's 'buy' link is
 // empty its page says "Coming soon". At launch, paste in the store's checkout link. 'open' is where Life RPG lives.
+// 'from' means pay what you want, from that price. The poster set's link also becomes the Support page's button,
+// in place of Patreon.
 const SHOP = [
   'life-rpg'       => ['price' => '$5', 'buy' => '', 'open' => 'https://life-rpg.koaa01.workers.dev/'],
   'city-builders'  => ['price' => '$3', 'buy' => ''],
   'classroom-pack' => ['price' => '$5', 'buy' => ''],
+  'posters'        => ['price' => '$2', 'buy' => '', 'from' => true],
 ];
 // Google Search Console verification code (meta tag on the home page).
 const GOOGLE_VERIFY = 'hyYqg7CSEBBH3g2PZXng4J2Cx3ihW_7mYysjgOQfAfI';
