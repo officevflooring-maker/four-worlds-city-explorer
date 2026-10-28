@@ -14,13 +14,42 @@ $stats = [
 $statsH = '';
 foreach ($stats as [$n, $l]) $statsH .= '<li><strong>' . $n . '</strong> <span>' . h($l) . '</span></li>';
 
-// Hero: a landmark from each world, a person standing in front of it, and a road of vehicles through time.
-$heroPick = [['roman', 'pantheon', 'people-2'], ['modern', 'public-library', 'people-3'], ['elven', 'treetop-village', 'people-5'], ['future', 'greenhouse-dome', 'people-2']];
-$hero = '';
-foreach ($heroPick as $i => [$w, $n, $p]) {
-  $hero .= '<a class="hero-piece hero-' . $w . ' world-' . $w . '" href="/worlds/' . $w . '/"><span class="hero-building">' . img($w, $n, '', '(min-width: 900px) 280px, 42vw', $i ? '' : 'fetchpriority="high"') . '</span>'
-    . '<span class="hero-person">' . img($w, $p, '', '80px') . '</span><span class="hero-tag">' . h($WORLDS[$w]['name']) . '</span></a>';
+// Hero: one isometric city made of all four worlds, a 2 x 2 quarter each, built with the same map CSS
+// as the world pages. Modern sits at the back (its towers make a skyline); people and vehicles stand
+// on the two front edges, where no building hides them.
+$quarters = [
+  // world => [i offset, j offset, four buildings in order (0,0) (1,0) (0,1) (1,1)]
+  'modern' => [0, 0, ['skyscraper', 'residential-tower', 'public-library', 'park-pond']],
+  'roman'  => [2, 0, ['pantheon', 'amphitheater', 'triumphal-arch', 'public-fountain']],
+  'elven'  => [0, 2, ['great-tree-hall', 'treetop-village', 'mushroom-cottage', 'flower-meadow']],
+  'future' => [2, 2, ['spaceport', 'power-tower', 'greenhouse-dome', 'habitat-cluster']],
+];
+$heroGround = '';
+$heroTiles = '';
+foreach ($quarters as $w => [$io, $jo, $slugs]) {
+  $heroGround .= '<span class="hq world-' . $w . '" style="--tex:url(' . tex($w, $WORLDS[$w]['ground']) . ');left:' . ($io * 25) . '%;top:' . ($jo * 25) . '%"></span>';
+  foreach ($slugs as $k => $s) {
+    $i = $io + $k % 2; $j = $jo + intdiv($k, 2);
+    if (!isset($WORLD_DATA[$w]['pages'][$s])) { fwrite(STDERR, "home hero: unknown page $w/$s\n"); continue; }
+    $name = $WORLD_DATA[$w]['pages'][$s]['name'];
+    $heroTiles .= '<li class="tile" style="--i:' . $i . ';--j:' . $j . '"><a class="tile-btn" href="/worlds/' . $w . '/' . $s . '/">'
+      . img($w, $s, '', '(min-width: 900px) 170px, 22vw', ($w === 'roman' && $k === 0 ? 'fetchpriority="high" ' : '') . 'draggable="false"')
+      . '<span class="tile-label">' . h($name . ' · ' . $WORLDS[$w]['short']) . '</span></a></li>';
+  }
 }
+// Street life on the front edges: [world, image, page link, u, v]. Whole numbers are street lines.
+foreach ([
+  ['roman', 'chariot', 'chariot', 4.12, .75], ['roman', 'people-6', 'people/#people-6', 4.12, 1.55],
+  ['future', 'rear-hover-car', 'hover-car', 4.12, 2.75], ['future', 'people-2', 'people/#people-2', 4.12, 3.55],
+  ['elven', 'people-5', 'people/#people-5', .5, 4.12], ['elven', 'people-1', 'people/#people-1', 1.3, 4.12],
+  ['future', 'people-5', 'people/#people-5', 2.6, 4.12], ['future', 'people-6', 'people/#people-6', 3.4, 4.12],
+] as [$w, $f, $link, $u, $v]) {
+  $car = !str_starts_with($f, 'people');
+  $heroTiles .= '<li class="tile decor ' . ($car ? 'decor-car' : 'decor-person') . '" style="--u:' . $u . ';--v:' . $v . ';--z:20"><a class="tile-btn" href="/worlds/' . $w . '/' . $link . ($car ? '/' : '') . '" aria-label="' . h($WORLDS[$w]['name'] . ($car ? ' vehicle' : ' person')) . '">'
+    . img($w, $f, '', $car ? '120px' : '64px', 'draggable="false"') . '</a></li>';
+}
+$heroLegend = '';
+foreach (WORLD_ORDER as $w) $heroLegend .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';
 $parade = [['roman', 'chariot', 'About 2,000 years ago'], ['modern', 'taxi', 'Today'], ['elven', 'flower-cart', 'Imagined'], ['future', 'hover-car', 'Possible future']];
 
 // World cards: horizon, signature building, a person, and three places to start.
@@ -30,6 +59,12 @@ $starts = [
   'elven'  => ['great-tree-hall', 'flower-meadow', 'tree-library'],
   'future' => ['water-recycler', 'oxygen-factory', 'pressurized-rover'],
 ];
+$oneLine = [
+  'roman'  => 'The real city, about 2,000 years ago, with photos of what survives.',
+  'modern' => 'A town like yours: why each building is there and who it serves.',
+  'elven'  => 'A forest city, and the real nature technology behind each idea.',
+  'future' => 'How people could live, work and stay alive on the Moon and Mars.',
+];
 $cards = '';
 foreach (WORLD_ORDER as $w) {
   $W = $WORLDS[$w];
@@ -37,12 +72,12 @@ foreach (WORLD_ORDER as $w) {
   foreach ($starts[$w] as $s) $links .= '<li><a href="/worlds/' . $w . '/' . $s . '/">' . h($WORLD_DATA[$w]['pages'][$s]['name']) . '</a></li>';
   $count = count($WORLD_DATA[$w]['pages']);
   $cards .= '<li class="wcard world-' . $w . '">'
-    . '<a class="wcard-top" href="/worlds/' . $w . '/" aria-label="' . h('Explore ' . $W['name']) . '"><span class="wcard-sky">' . img($w, 'horizon', '', '(min-width: 900px) 300px, 90vw', 'loading="lazy"') . '</span>'
-    . '<span class="wcard-art">' . img($w, $W['card'], '', '(min-width: 900px) 220px, 60vw', 'loading="lazy"') . '</span>'
-    . '<span class="wcard-person">' . img($w, 'people-1', '', '70px', 'loading="lazy"') . '</span></a>'
+    . '<a class="wcard-top" href="/worlds/' . $w . '/" tabindex="-1" aria-hidden="true"><span class="wcard-sky">' . img($w, 'horizon', '', '(min-width: 900px) 300px, 90vw', 'loading="lazy"') . '</span>'
+    . '<span class="wcard-art">' . img($w, $W['card'], '', '(min-width: 900px) 240px, 70vw', 'loading="lazy"') . '</span>'
+    . '<span class="wcard-person">' . img($w, 'people-1', '', '80px', 'loading="lazy"') . '</span></a>'
     . '<div class="wcard-text"><p class="tag">' . h($W['type']) . '</p><h3><a href="/worlds/' . $w . '/">' . h($W['name']) . '</a></h3>'
-    . '<p class="what">' . h($W['lead']) . '</p><p class="wcard-start">Start with:</p><ul class="wcard-links">' . $links . '</ul>'
-    . '<p class="wcard-go"><a class="btn" href="/worlds/' . $w . '/">Explore ' . $count . ' pages</a></p></div></li>';
+    . '<p class="what">' . h($oneLine[$w]) . '</p><ul class="wcard-links">' . $links . '</ul>'
+    . '<p class="wcard-go"><a href="/worlds/' . $w . '/">Explore all ' . $count . ' pages <span aria-hidden="true">&rarr;</span></a></p></div></li>';
 }
 
 // Vehicles through time.
@@ -84,16 +119,22 @@ page('/', [
   'desc' => h(SITE_DESC),
   'class' => 'home',
   'body' => <<<HTML
-<section class="hero2">
-  <div class="wrap hero2-inner">
-    <div class="hero2-text">
+<section class="hero3">
+  <div class="wrap hero3-inner">
+    <div class="hero3-text">
       <p class="eyebrow">Ancient Rome · Today · Imagined · Possible future</p>
       <h1>How does a city <span>work?</span></h1>
-      <p class="lead">Walk through four illustrated cities, from ancient Rome to a settlement on Mars. Open any building to see what it does, meet the people who use it, and compare how each world solves the same problems.</p>
+      <p class="lead">Explore four illustrated cities, from ancient Rome to a settlement on Mars. Open any building, meet the people and compare how each world solves the same problems.</p>
       <p class="hero-actions"><a class="btn" href="#worlds">Choose a world</a> <a class="btn btn-quiet" href="/tours/">Take a guided tour</a></p>
-      <p class="hero-free">Free. No sign-up, ads or tracking.</p>
+      <p class="hero-free">Free for everyone. No sign-up, ads or tracking.</p>
     </div>
-    <div class="hero2-art">{$hero}</div>
+    <div class="hero3-map">
+      <div class="city hero-city" style="--n:4;--y0:9">
+        <div class="city-ground hero-ground" aria-hidden="true">{$heroGround}</div>
+        <ul class="city-tiles" aria-label="A city made of all four worlds">{$heroTiles}</ul>
+      </div>
+      <ul class="world-links hero-legend">{$heroLegend}</ul>
+    </div>
   </div>
 </section>
 
@@ -120,7 +161,7 @@ page('/', [
   <ul class="world-links"><li><a class="world-link world-roman" href="/worlds/roman/people/">Roman people</a></li><li><a class="world-link world-modern" href="/worlds/modern/people/">Modern people</a></li><li><a class="world-link world-elven" href="/worlds/elven/people/">Elven people</a></li><li><a class="world-link world-future" href="/worlds/future/people/">Future people</a></li></ul>
 </section>
 
-<section class="band" aria-labelledby="tours-h">
+<section class="band band-dark" aria-labelledby="tours-h">
   <div class="wrap">
     <div class="sec-head"><h2 id="tours-h">Take a guided tour</h2><p>Short walks led by someone who lives there, with a question at every stop.</p></div>
     <ul class="tour-grid">{$tourCards}</ul>

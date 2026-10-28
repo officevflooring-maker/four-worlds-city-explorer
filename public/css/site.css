@@ -69,13 +69,7 @@ main:focus { outline: none; }
 .footer-inner p { margin: .3rem 0; }
 
 /* Home */
-.hero { background: linear-gradient(180deg, #fbf8f2, var(--bg)); border-bottom: 1px solid var(--line); }
-.hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center; padding-block: clamp(2rem, 1rem + 4vw, 4.5rem); }
 .hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
-.hero-art { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
-.hero-piece:nth-child(2), .hero-piece:nth-child(4) { margin-top: 18%; }
-.hero-piece:nth-child(3), .hero-piece:nth-child(4) { margin-top: -22%; }
-.hero-piece:nth-child(4) { margin-top: -4%; }
 .aside-note { margin-top: 1rem; max-width: 75ch; }
 .aside-note h3 { font-size: 1.05rem; margin-bottom: .3rem; }
 .setting-note { background: var(--paper); border-left: 4px solid var(--accent); padding: .8rem 1rem; border-radius: 0 10px 10px 0; max-width: 75ch; }
@@ -379,52 +373,16 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 
 /* ---------- Home ---------- */
 .home .hero-actions .btn-quiet { background: var(--paper); }
-.hero2 { position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
-  background: radial-gradient(ellipse at 75% 60%, #f3e3c4 0, transparent 60%), radial-gradient(ellipse at 10% 0%, #e6efe2 0, transparent 50%), linear-gradient(180deg, #fbf7ef, var(--bg)); }
-.hero2-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 1.5rem 2.5rem; align-items: center; padding-block: clamp(2rem, 1rem + 4vw, 4.5rem); }
 .eyebrow { font: 700 .82rem/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: #8a6a3b; }
-.hero2 h1 { font-size: clamp(2.4rem, 1.5rem + 4vw, 4.2rem); line-height: 1.02; margin-bottom: .35em; }
-.hero2 h1 span { background: linear-gradient(90deg, var(--roman), var(--modern) 40%, var(--elven) 70%, var(--future)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero-free { color: var(--muted); font-size: .95rem; margin-top: .8rem; }
-.hero2-art { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 1rem; padding-bottom: 2rem; }
-.hero-piece { position: relative; display: flex; flex-direction: column; align-items: center; text-decoration: none; border-radius: 22px; padding: .6rem .6rem .4rem;
-  background: radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--accent) 20%, #fff), transparent 72%); transition: transform .25s; }
-.hero-piece:nth-child(2), .hero-piece:nth-child(4) { transform: translateY(14%); }
-.hero-piece:hover { transform: translateY(-3%); }
-.hero-piece:nth-child(2):hover, .hero-piece:nth-child(4):hover { transform: translateY(11%); }
-.hero-building img { filter: drop-shadow(0 12px 14px rgb(0 0 0 / .18)); }
-.hero-person { position: absolute; left: 2%; bottom: 1.6rem; width: 27%; }
-.hero-tag { position: relative; margin-top: -.6rem; background: var(--accent); color: #fff; font: 700 .78rem/1 var(--sans); padding: .4rem .65rem; border-radius: 999px; }
 
 .stats { background: #2a2622; color: #f3eee6; }
 .stats-list { list-style: none; margin: 0 auto; padding: 1.1rem 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .8rem; text-align: center; }
 .stats strong { display: block; font: 700 clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem)/1 var(--serif); color: #ffd9a8; }
 .stats span { font-size: .85rem; color: #d8cfc1; }
 
-.sec-head { display: flex; justify-content: space-between; align-items: end; gap: .3rem 2rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
-.sec-head h2 { margin: 0; }
-.sec-head p { margin: 0; color: var(--muted); max-width: 60ch; }
 .band { background: var(--paper); border-block: 1px solid var(--line); padding-block: clamp(2rem, 1.2rem + 3vw, 3.5rem); }
 
-.wcards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
-.wcard { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
-.wcard:hover { box-shadow: 0 14px 34px rgb(0 0 0 / .13); transform: translateY(-3px); }
-.wcard-top { position: relative; display: block; height: 210px; background: color-mix(in srgb, var(--accent) 18%, #fff); }
-.wcard-sky img { width: 100%; height: 120px; object-fit: cover; object-position: center bottom; opacity: .9; }
-.wcard-art { position: absolute; left: 50%; bottom: -6px; width: 68%; transform: translateX(-50%); }
-.wcard-art img { filter: drop-shadow(0 10px 12px rgb(0 0 0 / .2)); }
-.wcard-person { position: absolute; right: 6%; bottom: 0; width: 22%; }
-.wcard-text { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; flex: 1; border-top: 5px solid var(--accent); }
-.wcard-text h3 { font-size: 1.4rem; margin-bottom: .3rem; }
-.wcard-text h3 a { color: var(--ink); text-decoration: none; }
-.wcard-text .what { font-size: .93rem; }
-.wcard-start { font-weight: 700; font-size: .85rem; margin: .2rem 0; }
-.wcard-links { margin: 0 0 1rem; padding-left: 1.1rem; font-size: .95rem; flex: 1; }
-.wcard-go { margin: 0; }
-.wcard.world-roman .btn { background: var(--roman); border-color: var(--roman); }
-.wcard.world-modern .btn { background: var(--modern); border-color: var(--modern); }
-.wcard.world-elven .btn { background: var(--elven); border-color: var(--elven); }
-.wcard.world-future .btn { background: var(--future); border-color: var(--future); }
 
 .band-road { background: linear-gradient(180deg, var(--paper) 0 60%, #d9cdb6 60% 62%, #8f8a84 62% 78%, #d9cdb6 78% 80%, var(--paper) 80%); }
 .road { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
@@ -459,14 +417,6 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 
 /* ---------- Tours ---------- */
 .tour-grid { list-style: none; padding: 0; margin: 1rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
-.tour-card a { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: .8rem; align-items: center; height: 100%; background: var(--paper); border: 1px solid var(--line); border-left: 6px solid var(--accent); border-radius: var(--radius); padding: .8rem 1rem .8rem .6rem; color: var(--ink); text-decoration: none; transition: box-shadow .2s; }
-.tour-card a:hover { box-shadow: 0 8px 22px rgb(0 0 0 / .1); }
-.tour-guide { background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, #fff), transparent 70%); border-radius: 50%; }
-.tour-text { display: flex; flex-direction: column; gap: .15rem; }
-.tour-text .tag { margin: 0; }
-.tour-title { font: 700 1.15rem/1.2 var(--serif); color: var(--accent); }
-.tour-text .what { font-size: .92rem; }
-.tour-by { font-size: .85rem; font-weight: 600; }
 .tour-head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.5rem 2.5rem; align-items: center; padding-block: 1rem 2rem; }
 .guide-bubble { margin: 0; display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 1rem; align-items: end; }
 .guide-pic { background: radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--accent) 22%, #fff), transparent 70%); }
@@ -500,8 +450,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .crowd { grid-template-columns: repeat(4, minmax(0, 1fr)); background: none; }
 }
 @media (max-width: 860px) {
-  .hero2-inner, .split, .tour-head { grid-template-columns: minmax(0, 1fr); }
-  .hero2-art { max-width: 520px; margin-inline: auto; }
+  .hero3-inner, .split, .tour-head { grid-template-columns: minmax(0, 1fr); }
   .road { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .band-road { background: var(--paper); }
   .stops::before { display: none; }
@@ -522,7 +471,94 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .guide-bubble { grid-template-columns: 90px minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-piece:hover, .wcard:hover, .road a:hover img, .crowd a:hover img { transform: none; }
-  .hero-piece:nth-child(2):hover, .hero-piece:nth-child(4):hover { transform: translateY(14%); }
+  .wcard:hover, .road a:hover img, .crowd a:hover img { transform: none; }
 }
 @media print { .stops::before, .tour-grid, .map-tools, .map-info { display: none; } .stop { break-inside: avoid; } }
+
+/* ---------- Home: hero city made of all four worlds ---------- */
+.hero3 { position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse 60% 45% at 72% 62%, rgb(255 255 255 / .75), transparent 70%),
+    linear-gradient(100deg, #f6e6cf 0%, #e4ecf6 38%, #e3f0dd 68%, #d9eef1 100%); }
+.hero3::after { content: ""; position: absolute; inset: auto 0 0; height: 90px; background: linear-gradient(transparent, var(--bg)); pointer-events: none; }
+.hero3-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.35fr); gap: 1rem 2rem; align-items: center; padding-block: clamp(1.5rem, .5rem + 3vw, 3rem) 1rem; }
+.hero3 h1 { font-size: clamp(2.5rem, 1.4rem + 4.2vw, 4.4rem); line-height: 1; margin-bottom: .35em; }
+.hero3 h1 span { background: linear-gradient(90deg, var(--roman), var(--modern) 40%, var(--elven) 70%, var(--future)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero3 .lead { font-size: 1.2rem; }
+.hero3-map .city { margin: 0 -4% 0 0; width: 108%; max-width: none; aspect-ratio: 100 / 61; --s: .8; }
+.hero-ground { background: none !important; box-shadow: 0 0 0 1cqw #efe4cf, 0 0 0 1.4cqw #fff, 2cqw 2.5cqw 5cqw rgb(0 0 0 / .25) !important; }
+.hq { position: absolute; width: 50%; height: 50%; --cell: calc(70.71cqw / 4); --rw: calc(var(--cell) * .28);
+  background:
+    linear-gradient(90deg, var(--curb) 0 .3cqw, var(--road) 0 calc(var(--rw) - .3cqw), var(--curb) 0 var(--rw), transparent 0) calc(var(--rw) / -2) 0 / var(--cell) var(--cell),
+    linear-gradient(var(--curb) 0 .3cqw, var(--road) 0 calc(var(--rw) - .3cqw), var(--curb) 0 var(--rw), transparent 0) 0 calc(var(--rw) / -2) / var(--cell) var(--cell),
+    var(--tex) 0 0 / var(--cell) var(--cell); }
+.hq.world-roman { --road: #cdbb9b; --curb: #f4ead6; }
+.hq.world-modern { --road: #6b6e73; --curb: #d9d6cf; }
+.hq.world-elven { --road: #b8996a; --curb: #8fb36a; }
+.hq.world-future { --road: #3d4a57; --curb: #6fe0f0; }
+.hero-city .decor-person { width: 6.4cqw; }
+.hero-city .decor-car { width: 12cqw; }
+.hero-city .tile-label { font-size: clamp(.62rem, 1.7cqw, .85rem); }
+.hero-legend { justify-content: center; gap: .4rem; margin: .4rem 0 0; }
+.hero-legend .world-link { font-size: .85rem; padding: .4rem .8rem; }
+.hero-free { color: var(--muted); font-size: .95rem; margin-top: .8rem; }
+
+/* Section headings: title with a short line under it. */
+.sec-head { margin-bottom: 1.4rem; max-width: 70ch; }
+.sec-head h2 { margin: 0 0 .3rem; font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.4rem); }
+.sec-head p { margin: 0; color: var(--muted); font-size: 1.08rem; }
+
+/* World cards: a scene (sky, building, resident) over a short description. */
+.wcards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
+.wcard { position: relative; display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+.wcard:hover { box-shadow: 0 16px 36px rgb(0 0 0 / .14); transform: translateY(-4px); }
+.wcard-top { position: relative; display: block; height: 250px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, #fff), color-mix(in srgb, var(--accent) 22%, #fff)); }
+.wcard-sky img { width: 100%; height: 150px; object-fit: cover; object-position: center bottom; }
+.wcard-sky::after { content: ""; position: absolute; inset: 90px 0 0; background: linear-gradient(transparent, color-mix(in srgb, var(--accent) 22%, #fff) 55%); }
+.wcard-art { position: absolute; left: 50%; bottom: -4px; width: 74%; transform: translateX(-50%); z-index: 1; transition: transform .3s; }
+.wcard:hover .wcard-art { transform: translateX(-50%) scale(1.04); }
+.wcard-art img { filter: drop-shadow(0 12px 14px rgb(0 0 0 / .25)); }
+.wcard-person { position: absolute; right: 4%; bottom: 2px; width: 22%; z-index: 2; }
+.wcard-text { padding: 1rem 1.2rem 1.2rem; display: flex; flex-direction: column; flex: 1; border-top: 5px solid var(--accent); }
+.wcard-text .tag { margin-bottom: .2rem; }
+.wcard-text h3 { font-size: 1.5rem; margin-bottom: .3rem; }
+.wcard-text h3 a { color: var(--ink); text-decoration: none; }
+.wcard-text h3 a::after { content: ""; position: absolute; inset: 0; }
+.wcard-text .what { font-size: .95rem; margin-bottom: .7rem; }
+.wcard-links { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: .35rem; flex: 1; align-content: flex-start; }
+.wcard-links a { position: relative; z-index: 2; display: inline-block; font-size: .82rem; font-weight: 600; text-decoration: none; padding: .3rem .6rem; border-radius: 999px; background: color-mix(in srgb, var(--accent) 10%, #fff); }
+.wcard-links a:hover { background: color-mix(in srgb, var(--accent) 20%, #fff); }
+.wcard-go { margin: 0; font-weight: 700; }
+.wcard-go a { position: relative; z-index: 2; text-decoration: none; }
+
+/* Dark band (tours). */
+.band-dark { background: radial-gradient(ellipse at 20% 0%, #33404d, transparent 60%), #1f2630; color: #f3eee6; border: 0; }
+.band-dark .sec-head p { color: #c9d1d9; }
+.band-dark h2 { color: #fff; }
+
+/* Tour cards: guide on top, then the tour. */
+.tour-card a { position: relative; display: flex; flex-direction: column; height: 100%; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; color: var(--ink); text-decoration: none; transition: box-shadow .2s, transform .2s; }
+.tour-card a:hover { box-shadow: 0 12px 28px rgb(0 0 0 / .18); transform: translateY(-3px); }
+.tour-guide { display: grid; place-items: center; height: 150px; background: radial-gradient(circle at 50% 70%, color-mix(in srgb, var(--accent) 30%, #fff), color-mix(in srgb, var(--accent) 12%, #fff) 70%); border-bottom: 5px solid var(--accent); }
+.tour-guide img { width: 130px; }
+.tour-text { display: flex; flex-direction: column; gap: .2rem; padding: .9rem 1.1rem 1.1rem; flex: 1; }
+.tour-text .tag { margin: 0; }
+.tour-title { font: 700 1.25rem/1.2 var(--serif); color: var(--accent); }
+.tour-text .what { font-size: .93rem; flex: 1; }
+.tour-by { font-size: .85rem; font-weight: 600; margin-top: .3rem; }
+
+@media (max-width: 860px) {
+  .hero3-inner { grid-template-columns: minmax(0, 1fr); }
+  .hero3-map .city { width: 100%; margin: 0 auto; }
+}
+@media (max-width: 560px) { .stats-list li:last-child { grid-column: 1 / -1; } }
+@media (max-width: 560px) {
+  .hero3 h1 { font-size: 2.4rem; }
+  .wcard-top { height: 220px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tour-card a:hover, .wcard:hover .wcard-art { transform: none; }
+  .wcard:hover .wcard-art { transform: translateX(-50%); }
+}
+@media (max-width: 1060px) { .wcards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .wcards { grid-template-columns: minmax(0, 1fr); } }
