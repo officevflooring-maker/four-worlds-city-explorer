@@ -1,0 +1,844 @@
+{
+    "single-family-house": [
+        {
+            "img": "single-family-house-1",
+            "file": "File:Salarom Sabah Frame-of-a-new-house-01.jpg",
+            "search": "timber frame house under construction",
+            "author": "CEphoto, Uwe Aranas",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Salarom_Sabah_Frame-of-a-new-house-01.jpg",
+            "desc": "Kg. Salarom, Sapulut, Sabah: A carpenter is working at the frame of a newly built, traditional house in Kg Salarom"
+        },
+        {
+            "img": "single-family-house-2",
+            "file": "File:Craftsman bungalows on West Ferry Street, Buffalo, New York - 20200506.jpg",
+            "search": "Craftsman bungalow porch",
+            "author": "Andre Carrotflower",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Craftsman_bungalows_on_West_Ferry_Street,_Buffalo,_New_York_-_20200506.jpg",
+            "desc": "With their wide-eaved roofs supported by prominently visible beams, the rough-textured, rustic stone pillars supporting the front porch room, and their overall stout appearance, the twin houses at 877 (left) and 873 West Ferry Street, between Linwood and Delaware Avenues, exemplify the Craftsman Bun"
+        },
+        {
+            "img": "single-family-house-3",
+            "file": "File:Thai House Concrete Pour Day After.JPG",
+            "search": "house foundation concrete pour",
+            "author": "Khaosaming",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Thai_House_Concrete_Pour_Day_After.JPG",
+            "desc": "A concrete pour the day after. This is a footing for a private house in Trat Province, Thailand."
+        }
+    ],
+    "suburban-house": [
+        {
+            "img": "suburban-house-1",
+            "file": "File:Levittown NY Weber House 02.jpg",
+            "search": "Levittown houses",
+            "author": "Found5dollar",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Levittown_NY_Weber_House_02.jpg",
+            "desc": "Levittown NY Weber House"
+        },
+        {
+            "img": "suburban-house-2",
+            "file": "File:Suburban Cul-de-sacs.jpg",
+            "search": "suburban cul-de-sac aerial view",
+            "author": "Tony Webster",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Suburban_Cul-de-sacs.jpg",
+            "desc": "Atlanta, Georgia"
+        }
+    ],
+    "older-home": [
+        {
+            "img": "older-home-1",
+            "file": "File:Blower Door Test.jpg",
+            "search": "blower door test",
+            "author": "Still life with noodles",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Blower_Door_Test.jpg",
+            "desc": "An image of a home entry door taken from the inside of the home, with the door opening fitted with a blower door test for a home energy assessment. The doorway is sealed by a red panel, with a large round fan in the lower half of the doorway and a smaller device to measure pressure in the upper port"
+        },
+        {
+            "img": "older-home-2",
+            "file": "File:COLOR THERMOGRAPH SHOWING HEAT LOSS - NARA - 17419418.jpg",
+            "search": "thermal image house heat loss",
+            "author": "Unknown authorUnknown author or not provided",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:COLOR_THERMOGRAPH_SHOWING_HEAT_LOSS_-_NARA_-_17419418.jpg",
+            "desc": "Scope and content: The original finding aid described this as: Capture Date: 8/25/1977 Keywords: Larsen Scan"
+        },
+        {
+            "img": "older-home-3",
+            "file": "File:Ecodan outdoor unit in the snow.jpg",
+            "search": "air source heat pump outdoor unit",
+            "author": "PeterEastern",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Ecodan_outdoor_unit_in_the_snow.jpg",
+            "desc": "Showing the outdoor unit for an air source heat pump operating in the snow"
+        }
+    ],
+    "apartment-building": [
+        {
+            "img": "apartment-building-1",
+            "file": "File:Karl Marx Hof.jpg",
+            "search": "Karl-Marx-Hof Vienna",
+            "author": "Thomas Ledl",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Karl_Marx_Hof.jpg",
+            "desc": "Der Karl Marx Hof in Wien Döbling gilt als Vorzeigeprojekt des kommunalen Wohnbaus der Zwischenkriegszeit in Wien. Mit über einem Kilometer Länge ist er auch eine der größten Wohnanlagen"
+        },
+        {
+            "img": "apartment-building-2",
+            "file": "File:IMAG4085-library-gardens-k-street-flats-balcony-location.jpg",
+            "search": "mid-rise apartment building balconies",
+            "author": "Alfred Twu",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:IMAG4085-library-gardens-k-street-flats-balcony-location.jpg",
+            "desc": "Berkeley, California - 2020 Kittredge St apartments (Library Gardens / K Street Flats) Red box shows former location of balconies that collapsed in 2015"
+        }
+    ],
+    "residential-tower": [
+        {
+            "img": "residential-tower-1",
+            "file": "File:Taipei 101 Tuned Mass Damper 2010.jpg",
+            "search": "Taipei 101 tuned mass damper",
+            "author": "Armand du Plessis",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Taipei_101_Tuned_Mass_Damper_2010.jpg",
+            "desc": "Tuned mass damper on display in Taipei 101."
+        },
+        {
+            "img": "residential-tower-2",
+            "file": "File:Marina City, Chicago, Illinois, Estados Unidos, 2012-10-20, DD 01.jpg",
+            "search": "Marina City Chicago",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Marina_City,_Chicago,_Illinois,_Estados_Unidos,_2012-10-20,_DD_01.jpg",
+            "desc": "Marina City is a mixed-use residential/commercial building complex located in the center of Chicago, Illinois. It sits on the north bank of the Chicago River directly across from the Loop district. The complex, that was designed in 1959 by Bertrand Goldberg and completed in 1964, consists of two cor"
+        }
+    ],
+    "mixed-use-building": [
+        {
+            "img": "mixed-use-building-1",
+            "file": "File:14th St 9th Av Hudson St td (2019-01-03) 01 - 678 Hudson Street.jpg",
+            "search": "Greenwich Village Hudson Street shops",
+            "author": "Tdorante10",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:14th_St_9th_Av_Hudson_St_td_(2019-01-03)_01_-_678_Hudson_Street.jpg",
+            "desc": "Looking at the former Papyrus / NIQUEA.D greeting card store at the southeast corner of 14th Street and Hudson Street in the Meatpacking District, Manhattan. This has since been converted into a Starbucks."
+        },
+        {
+            "img": "mixed-use-building-2",
+            "file": "File:Rex26 Apartments and Aldi - Lyndale Avenue, Minneapolis (48979957807).jpg",
+            "search": "mixed-use building shops apartments above",
+            "author": "Tony Webster from Minneapolis, Minnesota, United States",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Rex26_Apartments_and_Aldi_-_Lyndale_Avenue,_Minneapolis_(48979957807).jpg",
+            "desc": "Rex 26, a mixed-use development project at Lyndale Avenue South and West 26th Street in Minneapolis, Minnesota. The first floor is Aldi, a grocery store, with several floors of apartments above it. The building has three levels of underground parking."
+        }
+    ],
+    "town-hall": [
+        {
+            "img": "town-hall-1",
+            "file": "File:Interior of the tower of Philadelphia City Hall.jpg",
+            "search": "Philadelphia City Hall tower",
+            "author": "Antigng",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Interior_of_the_tower_of_Philadelphia_City_Hall.jpg",
+            "desc": "Interior of the tower of Philadelphia City Hall"
+        },
+        {
+            "img": "town-hall-2",
+            "file": "File:Glasgow City Chambers The Council Chamber.jpg",
+            "search": "city council chamber",
+            "author": "Michael D Beckwith",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Glasgow_City_Chambers_The_Council_Chamber.jpg",
+            "desc": "Here is an hdr photograph taken from the council chamber inside Glasgow City Chambers. Located in Glasgow, Scotland, UK. (Taken with kind permission of the administration)."
+        }
+    ],
+    "capitol": [
+        {
+            "img": "capitol-1",
+            "file": "File:Pennsylvania State Capitol west front PA1.jpg",
+            "search": "United States Capitol west front",
+            "author": "Acroterion",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Pennsylvania_State_Capitol_west_front_PA1.jpg",
+            "desc": "The west side of the Pennsylvania State Capitol, Harrisburg, Pennsylvania, USA"
+        },
+        {
+            "img": "capitol-2",
+            "file": "File:Capitol dome construction LCCN2009631449.jpg",
+            "search": "Capitol dome construction 1861",
+            "author": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Capitol_dome_construction_LCCN2009631449.jpg",
+            "desc": "Title: Capitol dome construction Abstract/medium: 1 photographic print : salted paper ; 7.5 x 8 cm."
+        },
+        {
+            "img": "capitol-3",
+            "file": "File:Texas State Capitol - Austin, Texas - DSC08268.jpg",
+            "search": "Texas State Capitol",
+            "author": "Daderot",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Texas_State_Capitol_-_Austin,_Texas_-_DSC08268.jpg",
+            "desc": "Texas State Capitol - Austin, Texas, USA."
+        }
+    ],
+    "health-clinic": [
+        {
+            "img": "health-clinic-1",
+            "file": "File:Taipei Community Mental Health Center 20170123.jpg",
+            "search": "community health center building",
+            "author": "Solomon203",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Taipei_Community_Mental_Health_Center_20170123.jpg",
+            "desc": "​臺北市社區心理衛生中心。"
+        },
+        {
+            "img": "health-clinic-2",
+            "file": "File:Vial and syringe used for first COVID-19 vaccination.jpg",
+            "search": "vaccination vials",
+            "author": "The wub",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Vial_and_syringe_used_for_first_COVID-19_vaccination.jpg",
+            "desc": "Vial and syringe used for the first COVID-19 vaccination in the world (outside of trials). This first Pfizer–BioNTech vaccine was given to 90-year-old Margaret Keenan on 8 December 2020 at University Hospital Coventry. On display in the temporary exhibition \"Injecting Hope: The race for a COVID-19"
+        }
+    ],
+    "clock-tower": [
+        {
+            "img": "clock-tower-1",
+            "file": "File:Big Ben Elizabeth Tower London 2023 01.jpg",
+            "search": "Elizabeth Tower Big Ben",
+            "author": "Julian Herzog (Website)",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Big_Ben_Elizabeth_Tower_London_2023_01.jpg",
+            "desc": "Detail of Big Ben on the newly restored Elizabeth tower of the Palace of Westminster, London. This is a photo of listed building number 1226284."
+        },
+        {
+            "img": "clock-tower-2",
+            "file": "File:The Standard Time System in The United States Adopted on This Site--October 11, 1883, Continental Illinois Bank Building, Chicago, Illinois (9181564700).jpg",
+            "search": "time zone map 1883",
+            "author": "Ken Lund from Reno, Nevada, USA",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:The_Standard_Time_System_in_The_United_States_Adopted_on_This_Site--October_11,_1883,_Continental_Illinois_Bank_Building,_Chicago,_Illinois_(9181564700).jpg",
+            "desc": "In 1870 Charles F. Dowd had proposed four time zones based on the meridian through Washington, DC for North American railroads. In 1872, he recommended the Greenwich meridian. Sandford Fleming, a Canadian, proposed worldwide Standard Time at a meeting of the Royal Canadian Institute on February 8, 1"
+        }
+    ],
+    "streets-crosswalks": [
+        {
+            "img": "streets-crosswalks-1",
+            "file": "File:Zebra crossing on Jalan Sultan Omar Ali at Seria, Brunei.jpg",
+            "search": "zebra crossing",
+            "author": "Yu Chu Chin",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Zebra_crossing_on_Jalan_Sultan_Omar_Ali_at_Seria,_Brunei.jpg",
+            "desc": "Photograph taken in Seria, Brunei on 28 December 2025."
+        },
+        {
+            "img": "streets-crosswalks-2",
+            "file": "File:Sidewalk ramp to lowered curb and flat tactile paving in Colchester VT.jpg",
+            "search": "curb ramp tactile paving",
+            "author": "Ezekielf",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Sidewalk_ramp_to_lowered_curb_and_flat_tactile_paving_in_Colchester_VT.jpg",
+            "desc": "A sidewalk ramp that reaches road level before the lowered curb. Tactile paving occupies a flat space at road level before the curb.. Taken in Colchester, VT"
+        },
+        {
+            "img": "streets-crosswalks-3",
+            "file": "File:Gabriel riding a balance bike on a cycle path, Praça de Londres, Lisbon, Portugal julesvernex2.jpg",
+            "search": "protected bike lane",
+            "author": "Jules Verne Times Two",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Gabriel_riding_a_balance_bike_on_a_cycle_path,_Pra%C3%A7a_de_Londres,_Lisbon,_Portugal_julesvernex2.jpg",
+            "desc": "Gabriel riding a balance bike on a cycle path, Praça de Londres, Lisbon, Portugal"
+        }
+    ],
+    "water-system": [
+        {
+            "img": "water-system-1",
+            "file": "File:OVERALL VIEW OF FLOCCULATION-SEDIMENTATION BASINS (-1778), LOOKING NORTHWEST - Presidio Water Treatment Plant, Flocculation-Sedimentation Basins, East of Lobos Creek at Baker HAER CAL,38-SANFRA,197J-1.tif",
+            "search": "water treatment plant sedimentation basin",
+            "author": "Judd, Bruce D.",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:OVERALL_VIEW_OF_FLOCCULATION-SEDIMENTATION_BASINS_(-1778),_LOOKING_NORTHWEST_-_Presidio_Water_Treatment_Plant,_Flocculation-Sedimentation_Basins,_East_of_Lobos_Creek_at_Baker_HAER_CAL,38-SANFRA,197J-1.tif",
+            "desc": ""
+        },
+        {
+            "img": "water-system-2",
+            "file": "File:Campbell water tower, aerial view.jpg",
+            "search": "water tower",
+            "author": "Grendelkhan",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Campbell_water_tower,_aerial_view.jpg",
+            "desc": "The water tower in downtown Campbell, California, as seen from a drone 36 meters above the ground."
+        },
+        {
+            "img": "water-system-3",
+            "file": "File:Snow-cholera-map-1.jpg",
+            "search": "John Snow cholera map",
+            "author": "John Snow",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Snow-cholera-map-1.jpg",
+            "desc": "Original map made by John Snow in 1854. Cholera cases are highlighted in black, showing the clusters of cholera cases (indicated by stacked rectangles) in the London epidemic of 1854. The map was created in order to better understand the pattern of cholera spread in the 1854 Broad Street cholera out"
+        }
+    ],
+    "lighthouse": [
+        {
+            "img": "lighthouse-1",
+            "file": "File:First order Fresnel lens at Point Reyes lighthouse.jpg",
+            "search": "Fresnel lens lighthouse",
+            "author": "Frank Schulenburg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:First_order_Fresnel_lens_at_Point_Reyes_lighthouse.jpg",
+            "desc": "First order Fresnel lens at Point Reyes lighthouse after a 15-month restoration project completed in November 2019"
+        },
+        {
+            "img": "lighthouse-2",
+            "file": "File:Portland Head Light October 2021.jpg",
+            "search": "Portland Head Light",
+            "author": "King of Hearts",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Portland_Head_Light_October_2021.jpg",
+            "desc": "Portland Head Light, Portland, Maine."
+        }
+    ],
+    "fire-lookout": [
+        {
+            "img": "fire-lookout-1",
+            "file": "File:Gentry Fire Lookout Tower in Apache-Sitgreaves National Forests.jpg",
+            "search": "fire lookout tower Forest Service",
+            "author": "US Forest Service - Apache Sitgreaves National Forests",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Gentry_Fire_Lookout_Tower_in_Apache-Sitgreaves_National_Forests.jpg",
+            "desc": "Gentry Fire Lookout Tower in Apache-Sitgreaves National Forests"
+        },
+        {
+            "img": "fire-lookout-2",
+            "file": "File:Photograph of Sighting a Fire Using an Osborne Fire Finder - NARA - 2128009.tif",
+            "search": "Osborne Fire Finder",
+            "author": "Unknown authorUnknown author or not provided",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Photograph_of_Sighting_a_Fire_Using_an_Osborne_Fire_Finder_-_NARA_-_2128009.tif",
+            "desc": "Scope and content: Original caption: Sighting a fire using an Osborne Fire Finder, High Knob Tower."
+        }
+    ],
+    "public-library": [
+        {
+            "img": "public-library-1",
+            "file": "File:Bayliss Carnegie Library (April 2023)-3563.jpg",
+            "search": "Carnegie library building",
+            "author": "Frank Schulenburg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Bayliss_Carnegie_Library_(April_2023)-3563.jpg",
+            "desc": "Bayliss Carnegie Library in Glenn County, California, designed by William H. Weeks in the Classical Revival architectural style. The historic Carnegie Library, dedicated on July 14, 1917, was built to serve the small, rural population of the surrounding area. The building continues to operate as a b"
+        },
+        {
+            "img": "public-library-2",
+            "file": "File:NYC Public Library Research Room Jan 2006-1- 3.jpg",
+            "search": "Rose Main Reading Room New York Public Library",
+            "author": "Diliff",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "page": "https://commons.wikimedia.org/wiki/File:NYC_Public_Library_Research_Room_Jan_2006-1-_3.jpg",
+            "desc": "A panorama of a research room taken at the New York Public Library with a Canon 5D and 24-105mm f/4L IS."
+        }
+    ],
+    "school": [
+        {
+            "img": "school-1",
+            "file": "File:Crow Island School.jpg",
+            "search": "Crow Island School",
+            "author": "Zol87",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Crow_Island_School.jpg",
+            "desc": "Crow Island School, 1112 Willow Rd., Winnetka, Illinois."
+        },
+        {
+            "img": "school-2",
+            "file": "File:Business High School classroom Washington DC 1899.png",
+            "search": "school classroom desks",
+            "author": "Frances Benjamin Johnston (1864-1952), photographer",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Business_High_School_classroom_Washington_DC_1899.png",
+            "desc": "Classroom scene at Business High School in Washington, D.C. - a public school - perhaps from 19th century."
+        }
+    ],
+    "science-center": [
+        {
+            "img": "science-center-1",
+            "file": "File:Bacteriapolis at the Exploratorium.jpg",
+            "search": "Exploratorium San Francisco",
+            "author": "Rhododendrites",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Bacteriapolis_at_the_Exploratorium.jpg",
+            "desc": "Bacteriapolis at the Exploratorium. (Photosynthetic bacteria)"
+        },
+        {
+            "img": "science-center-2",
+            "file": "File:Assy-Turgen Observatory against the backdrop of the center of the Milky Way and the star-forming region around Antares.jpg",
+            "search": "observatory dome open telescope",
+            "author": "Astrobond",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Assy-Turgen_Observatory_against_the_backdrop_of_the_center_of_the_Milky_Way_and_the_star-forming_region_around_Antares.jpg",
+            "desc": "Scientific Description: Assy-Turgen Observatory under the Galactic Center This high-fidelity composite photograph depicts the Assy-Turgen Astrophysical Observatory situated on the Assy Plateau in Kazakhstan, set against the luminous backdrop of the Milky Way’s Galactic Center. Located at an altitu"
+        }
+    ],
+    "cultural-center": [
+        {
+            "img": "cultural-center-1",
+            "file": "File:National Museum of African American History and Culture in February 2020.jpg",
+            "search": "National Museum of African American History and Culture",
+            "author": "Frank Schulenburg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:National_Museum_of_African_American_History_and_Culture_in_February_2020.jpg",
+            "desc": "The exterior of the National Museum of African American History and Culture in Washington, D.C., on February 27, 2020, as seen from 15th Street NW"
+        },
+        {
+            "img": "cultural-center-2",
+            "file": "File:National Museum of the American Indian (21 September 2023) 30.jpg",
+            "search": "National Museum of the American Indian Washington",
+            "author": "DiscoA340",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:National_Museum_of_the_American_Indian_(21_September_2023)_30.jpg",
+            "desc": "National Museum of the American Indian in Washington, DC."
+        }
+    ],
+    "corner-store": [
+        {
+            "img": "corner-store-2",
+            "file": "File:Bodega Cat Greenpoint.jpg",
+            "search": "bodega shelves",
+            "author": "Seth Werkheiser",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Bodega_Cat_Greenpoint.jpg",
+            "desc": "Found this cute kitty in Greenpoint"
+        }
+    ],
+    "office-building": [
+        {
+            "img": "office-building-1",
+            "file": "File:Illuminated white and purple facade of the office building Rohm Semiconductor in Kyoto, Japan.jpg",
+            "search": "glass curtain wall office building",
+            "author": "Basile Morin",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Illuminated_white_and_purple_facade_of_the_office_building_Rohm_Semiconductor_in_Kyoto,_Japan.jpg",
+            "desc": "The illuminated white and purple facade of the office building of Rohm Semiconductor, a Japanese electronic parts manufacturer, in Shimogyo-ku, Kyoto, Japan."
+        },
+        {
+            "img": "office-building-2",
+            "file": "File:Seagram Building-NewYork-3.jpg",
+            "search": "Seagram Building New York",
+            "author": "dandeluca",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Seagram_Building-NewYork-3.jpg",
+            "desc": "Seagram Building - NewYork - architects: Mies van der Rohe and Philip Johnson"
+        }
+    ],
+    "skyscraper": [
+        {
+            "img": "skyscraper-2",
+            "file": "File:View of Chrysler Building from Empire State Building, New York City, 20231001 1510 1364.jpg",
+            "search": "Chrysler Building",
+            "author": "Jakub Hałun",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:View_of_Chrysler_Building_from_Empire_State_Building,_New_York_City,_20231001_1510_1364.jpg",
+            "desc": "View of Chrysler Building from Empire State Building, New York City"
+        },
+        {
+            "img": "skyscraper-3",
+            "file": "File:Dubai Skyline mit Burj Khalifa (18241030269).jpg",
+            "search": "Burj Khalifa Dubai skyline",
+            "author": "Tim Reckmann from Hamm, Deutschland",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Dubai_Skyline_mit_Burj_Khalifa_(18241030269).jpg",
+            "desc": "Dubai Skyline mit Burj Khalifa"
+        }
+    ],
+    "warehouse": [
+        {
+            "img": "warehouse-1",
+            "file": "File:Modern warehouse with pallet rack storage system.jpg",
+            "search": "warehouse pallet racking",
+            "author": "Axisadman",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Modern_warehouse_with_pallet_rack_storage_system.jpg",
+            "desc": "modern warehouse with pallet rack storage system"
+        },
+        {
+            "img": "warehouse-2",
+            "file": "File:New Port of Miami Post Panamax gantry cranes.jpg",
+            "search": "container ship port gantry cranes",
+            "author": "Ines Hegedus-Garcia",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:New_Port_of_Miami_Post_Panamax_gantry_cranes.jpg",
+            "desc": "New post Panamax gantry cranes at the en:Port of Miami."
+        }
+    ],
+    "community-center": [
+        {
+            "img": "community-center-1",
+            "file": "File:UIC Hull House.JPG",
+            "search": "Hull House Chicago",
+            "author": "User talk:Hied5",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:UIC_Hull_House.JPG",
+            "desc": "The University of Illinois at Chicago Jane Addams Hull-House"
+        }
+    ],
+    "plaza-fountain": [
+        {
+            "img": "plaza-fountain-1",
+            "file": "File:Sea nymph in the fountain of Neptune in Piazza Navona in Rome.jpg",
+            "search": "Piazza Navona fountain",
+            "author": "Livioandronico2013",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Sea_nymph_in_the_fountain_of_Neptune_in_Piazza_Navona_in_Rome.jpg",
+            "desc": "Sea nymph in the fountain of Neptune in Piazza Navona in Rome"
+        },
+        {
+            "img": "plaza-fountain-2",
+            "file": "File:Bryant Park rows of chairs - New York City.jpg",
+            "search": "Bryant Park New York chairs",
+            "author": "NWhits",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Bryant_Park_rows_of_chairs_-_New_York_City.jpg",
+            "desc": "Bryant Park rows of chairs - New York City"
+        }
+    ],
+    "place-of-worship": [
+        {
+            "img": "place-of-worship-1",
+            "file": "File:Detail of a church steeple in New England LCCN2011636208.tif",
+            "search": "New England church steeple",
+            "author": "Carol M. Highsmith",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Detail_of_a_church_steeple_in_New_England_LCCN2011636208.tif",
+            "desc": "Title: Detail of a church steeple in New England Physical description: 1 transparency : color ; 4 x 5 in. or smaller. Notes: Title, date, and keywords provided by the photographer.; Digital image produced by Carol M. Highsmith to represent her original film transparency; some details may differ be"
+        },
+        {
+            "img": "place-of-worship-2",
+            "file": "File:West minaret and Dome of Devonaboy Jome Mosque, Andijan, Uzbekistan.jpg",
+            "search": "mosque dome minaret",
+            "author": "Petar Milošević",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:West_minaret_and_Dome_of_Devonaboy_Jome_Mosque,_Andijan,_Uzbekistan.jpg",
+            "desc": "West minaret and Dome of Devonaboy Jome Mosque, Andijan, Uzbekistan"
+        },
+        {
+            "img": "place-of-worship-3",
+            "file": "File:Hrodna Great Synagogue 2023-06-25 5519.jpg",
+            "search": "synagogue exterior",
+            "author": "Mike1979 Russia",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Hrodna_Great_Synagogue_2023-06-25_5519.jpg",
+            "desc": "Great Synagogue, Hrodna."
+        }
+    ],
+    "gathering-circle": [
+        {
+            "img": "gathering-circle-1",
+            "file": "File:Nepaug State Forest Backpack Camping Area -- -- rock campfire ring and very rustic log bench.jpg",
+            "search": "campfire ring benches",
+            "author": "Morrowlong",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Nepaug_State_Forest_Backpack_Camping_Area_--_--_rock_campfire_ring_and_very_rustic_log_bench.jpg",
+            "desc": "Nepaug State Forest's backpacking camping area -- rock campfire ring and very rustic log bench."
+        },
+        {
+            "img": "gathering-circle-2",
+            "file": "File:Makeshift outdoor fire pit, Toronto 2026.jpg",
+            "search": "fire pit park",
+            "author": "Chicken4War",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Makeshift_outdoor_fire_pit,_Toronto_2026.jpg",
+            "desc": "Makeshift outdoor fire pit, Toronto 2026"
+        }
+    ],
+    "memorial": [
+        {
+            "img": "memorial-1",
+            "file": "File:Washington Monument Dusk Jan 2006.jpg",
+            "search": "Washington Monument",
+            "author": "Diliff",
+            "license": "CC BY-SA 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+            "page": "https://commons.wikimedia.org/wiki/File:Washington_Monument_Dusk_Jan_2006.jpg",
+            "desc": "El Monumento a Washington al atardecer"
+        },
+        {
+            "img": "memorial-2",
+            "file": "File:US Flags at the Vietnam Veterans Memorial Wall in Washington DC - Flickr - Au Kirk.jpg",
+            "search": "Vietnam Veterans Memorial Washington names wall",
+            "author": "Austin Kirk",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:US_Flags_at_the_Vietnam_Veterans_Memorial_Wall_in_Washington_DC_-_Flickr_-_Au_Kirk.jpg",
+            "desc": "US Flags at the Vietnam Veterans Memorial Wall in Washington DC"
+        }
+    ],
+    "public-art": [
+        {
+            "img": "public-art-1",
+            "file": "File:Chicago- Picasso sculpture, Richard J Daley Ctr (1068546281).jpg",
+            "search": "Chicago Picasso sculpture Daley Plaza",
+            "author": "jetzenpolis from USA",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Chicago-_Picasso_sculpture,_Richard_J_Daley_Ctr_(1068546281).jpg",
+            "desc": "photo: 10/11/2004 PICASSO SCULPTURE EYES CHICAGO Picasso: A Paris View of Chicago? Pablo Picasso's sculpture is such a familiar, well known image, I wanted to take a photo of it at a somewhat different angle than that from which it's usually seen. I also wanted to put the Richard J. Daley Ctr. in th"
+        },
+        {
+            "img": "public-art-3",
+            "file": "File:Manton Street Park and Community Garden 401-407 Manton St Philadelphia PA (DSC 3416).jpg",
+            "search": "mural Philadelphia Mural Arts",
+            "author": "Nick-philly",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Manton_Street_Park_and_Community_Garden_401-407_Manton_St_Philadelphia_PA_(DSC_3416).jpg",
+            "desc": "Manton Street Park and Community Garden 401-407 Manton St Philadelphia PA - Growth and Change mural by David Guinn through The Philadelphia Mural Arts Program (Assisted by Marah Carpenter and Josh Smith, Produced by Freewall, with additional funding by The Miami Foundation) Dedicated to the memory o"
+        }
+    ],
+    "park-pond": [
+        {
+            "img": "park-pond-1",
+            "file": "File:2024-11-19-Central Park-0669.jpg",
+            "search": "Central Park The Lake",
+            "author": "Superbass",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:2024-11-19-Central_Park-0669.jpg",
+            "desc": "View over The Lake (Central Park) to Building San Remo in autumn."
+        },
+        {
+            "img": "park-pond-2",
+            "file": "File:Church Square Park Hoboken November 2021 001.jpg",
+            "search": "Central Park aerial",
+            "author": "King of Hearts",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Church_Square_Park_Hoboken_November_2021_001.jpg",
+            "desc": "This aerial photograph presents a bird's-eye view of Church Square Park, Hoboken, New Jersey. The image captures the park's layout and diverse vegetation in the autumn season, showcasing a variety of colorful foliage. The park's amenities are visible, including basketball courts, playgrounds, and si"
+        },
+        {
+            "img": "park-pond-3",
+            "file": "File:7sigma RainGarden 66.JPG",
+            "search": "rain garden planting curb",
+            "author": "BrianAsh at English Wikipedia(Uploads)",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:7sigma_RainGarden_66.JPG",
+            "desc": "More sunken curb at 7sigma in Minneapolis, MN (USA 2006). This is a nice rain garden, but the plants still need to fill in. Mulch doesn't transpire. The soil surface will dry faster between storms when these plants fill in the spaces."
+        }
+    ],
+    "playground": [
+        {
+            "img": "playground-1",
+            "file": "File:Adventure Playground (11997).jpg",
+            "search": "adventure playground",
+            "author": "Rhododendrites",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Adventure_Playground_(11997).jpg",
+            "desc": "Adventure Playground in Berkeley, California"
+        },
+        {
+            "img": "playground-2",
+            "file": "File:Jungle gym Hammarbyterrassen 2012.jpg",
+            "search": "playground climbing frame",
+            "author": "Arild Vågen",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Jungle_gym_Hammarbyterrassen_2012.jpg",
+            "desc": "Jungle gym at Hammarbyterrassen, Södra Hammarbyhamnen, Stockholm. Using the built-in HDR (3 EV)."
+        }
+    ],
+    "sports-field": [
+        {
+            "img": "sports-field-1",
+            "file": "File:Floodlights-1320582, Wainuiomata, Wellington, New Zealand.jpg",
+            "search": "football pitch floodlights",
+            "author": "Wainuio",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Floodlights-1320582,_Wainuiomata,_Wellington,_New_Zealand.jpg",
+            "desc": "Floodlights at a soccer pitch outside Wainuiomata, with a native forest and blue sky as background."
+        },
+        {
+            "img": "sports-field-2",
+            "file": "File:Servette HC vs Black Bloys HC - LNA hommes - 20141012 - Attaque du Servette HC 1.jpg",
+            "search": "artificial turf field",
+            "author": "Clément Bucco-Lechat",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Servette_HC_vs_Black_Bloys_HC_-_LNA_hommes_-_20141012_-_Attaque_du_Servette_HC_1.jpg",
+            "desc": "Hockey sur gazon - Servette HC vs Black Bloys HC - LNA hommes - 20141012 - Attaque du Servette HC"
+        }
+    ],
+    "stadium": [
+        {
+            "img": "stadium-1",
+            "file": "File:Fiesta Bowl 2019 Stadium.jpg",
+            "search": "stadium seating bowl",
+            "author": "Blervis",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Fiesta_Bowl_2019_Stadium.jpg",
+            "desc": "State Farm Stadium before the 2019 Fiesta Bowl. Photograph taken from the Clemson (south) end of the stadium on December 28, 2019."
+        },
+        {
+            "img": "stadium-2",
+            "file": "File:All In 2024 at Wembley Stadium.jpg",
+            "search": "Wembley Stadium exterior",
+            "author": "McPhail",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:All_In_2024_at_Wembley_Stadium.jpg",
+            "desc": "The exterior of Wembley Stadium in London, England on 25 August 2024"
+        }
+    ],
+    "recreation-center": [
+        {
+            "img": "recreation-center-1",
+            "file": "File:Outdor gym, Astana (P1190767).jpg",
+            "search": "gym fitness equipment",
+            "author": "Matti Blume",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Outdor_gym,_Astana_(P1190767).jpg",
+            "desc": "Outdoor gym in Astana "
+        },
+        {
+            "img": "recreation-center-2",
+            "file": "File:YMCA Building, Victoria, British Columbia, Canada 12.jpg",
+            "search": "YMCA building",
+            "author": "Michal Klajban",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:YMCA_Building,_Victoria,_British_Columbia,_Canada_12.jpg",
+            "desc": "YMCA Building, Victoria, British Columbia, Canada"
+        }
+    ],
+    "community-garden": [
+        {
+            "img": "community-garden-1",
+            "file": "File:Raised bed garden and farm house. (49901876676).jpg",
+            "search": "community garden raised beds",
+            "author": "Robbie Sproule from Montreal, Canada",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Raised_bed_garden_and_farm_house._(49901876676).jpg",
+            "desc": "Raised bed garden and farm house."
+        },
+        {
+            "img": "community-garden-2",
+            "file": "File:Plant a victory garden. Our food is fighting.jpg",
+            "search": "victory garden poster",
+            "author": "Boston Public Library",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Plant_a_victory_garden._Our_food_is_fighting.jpg",
+            "desc": "File name: 07_01_000007 Title: Plant a victory garden. Our food is fighting Creator/Contributor: United States. Office of War Information (sponser) Created/Published: U.S. Government Printing Office Date issued: 1943 Physical description: 1 print (poster) : color Summary: Color drawing of man, woma"
+        }
+    ],
+    "tower-crane": [
+        {
+            "img": "tower-crane-1",
+            "file": "File:Red Tower Crane - Knoxville, Tennessee - October 18, 2014.jpg",
+            "search": "tower crane",
+            "author": "Lee Ann Ratledge",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Red_Tower_Crane_-_Knoxville,_Tennessee_-_October_18,_2014.jpg",
+            "desc": "A red tower crane contrasted against a blue sky, Knoxville, Tennessee, USA."
+        },
+        {
+            "img": "tower-crane-2",
+            "file": "File:Liebherr tower crane at reconstruction of the GES-2 in Moscow.jpg",
+            "search": "tower crane counterweight",
+            "author": "Dmitry Ivanov.",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Liebherr_tower_crane_at_reconstruction_of_the_GES-2_in_Moscow.jpg",
+            "desc": "A Liebherr tower crane: the upper part of the tower, the counter jib with counterweights, the operating cabin and the jib. The photograph was taken in Moscow; the crane worked at the reconstruction of the GES-2. The House on the Embankment is seen in the background, street lanterns of the Patriarshy"
+        }
+    ],
+    "building-materials": [
+        {
+            "img": "building-materials-1",
+            "file": "File:Rusty rebar nets.jpg",
+            "search": "reinforced concrete rebar",
+            "author": "W.carter",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Rusty_rebar_nets.jpg",
+            "desc": "Somewhat rusty rebar nets at construction site in Rixö old quarry, Rixö, Lysekil Municipality, Sweden. Photo taken on this site."
+        },
+        {
+            "img": "building-materials-2",
+            "file": "File:Trained rose and shrub rose against brick wall in Boreham, Essex, England.jpg",
+            "search": "brick wall bond",
+            "author": "Acabashi",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Trained_rose_and_shrub_rose_against_brick_wall_in_Boreham,_Essex,_England.jpg",
+            "desc": "Trained pink rose and shrub roses against a garden brick boundary wall in Boreham village, Essex, England.Camera: Canon EOS 6D with Canon EF 24-105mm F4L IS USM lens.Software: RAW file lens-corrected, optimized and converted with DxO OpticsPro 11 Elite, and possibly further optimized with Adobe Phot"
+        }
+    ]
+}
