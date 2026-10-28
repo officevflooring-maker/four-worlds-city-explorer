@@ -6,5 +6,5 @@ const SITE_NAME = 'The Atlas of Cities';
 const SITE_TAGLINE = 'Past, Present and Imagined';
 const SITE_DESC = 'Explore four illustrated isometric cities - ancient Rome, a modern town, a green elven world and a robotic future - and think about how cities work and what makes a good place to live.';
 // Patreon page for donations (shown only on /support/). Leave empty until the page exists.
-const PATREON_URL = '';
+const PATREON_URL = 'https://www.patreon.com/cw/SamPetrov/home';
 const LASTMOD   = '2026-10-27';
