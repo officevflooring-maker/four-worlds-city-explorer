@@ -731,7 +731,7 @@ $FUTURE = [
 'robot-helpers' => [
   'name' => 'Robot monument', 'latin' => 'robots and AI in space', 'cat' => 'science', 'src' => 'art/monument.png',
   'summary' => 'A monument to the robots that went first: rovers, arms and helicopters that explore and work where people cannot yet go.',
-  'facts' => ['Purpose' => 'Honouring robot explorers', 'First powered flight on another planet' => 'Ingenuity helicopter, Mars, 2021', 'Space station robots' => 'Canadarm2, Robonaut 2, Astrobee', 'Question' => 'How much should AI decide?'],
+  'facts' => ['Purpose' => 'Honoring robot explorers', 'First powered flight on another planet' => 'Ingenuity helicopter, Mars, 2021', 'Space station robots' => 'Canadarm2, Robonaut 2, Astrobee', 'Question' => 'How much should AI decide?'],
   'sections' => [
     ['Robots went first', FUT_REAL, [
       'Every place humans hope to live beyond Earth has been explored by robots first. Rovers have driven across Mars for decades, studying rocks and climate. In 2021, NASA\'s small Ingenuity helicopter made the first powered, controlled flight on another planet, and went on to fly many more times.',
@@ -778,9 +778,9 @@ $FUTURE = [
 ],
 
 'spaceport' => [
-  'name' => 'Spaceport', 'latin' => 'reusable rockets and refuelling', 'cat' => 'travel', 'src' => 'art/town_3.png',
-  'summary' => 'A busy hub where reusable rockets land, are refuelled and fly again, making travel to space cheaper and more regular.',
-  'facts' => ['Purpose' => 'Landing, refuelling, relaunching', 'Key step' => 'Reusable rockets', 'First orbital booster landing' => 'December 2015', 'Future idea' => 'Fuel depots in space'],
+  'name' => 'Spaceport', 'latin' => 'reusable rockets and refueling', 'cat' => 'travel', 'src' => 'art/town_3.png',
+  'summary' => 'A busy hub where reusable rockets land, are refueled and fly again, making travel to space cheaper and more regular.',
+  'facts' => ['Purpose' => 'Landing, refueling, relaunching', 'Key step' => 'Reusable rockets', 'First orbital booster landing' => 'December 2015', 'Future idea' => 'Fuel depots in space'],
   'sections' => [
     ['Why reuse rockets?', FUT_REAL, [
       'For most of the space age, rockets were thrown away after one flight, like flying an airplane once and scrapping it. In December 2015, SpaceX landed the first stage of an orbital rocket back on Earth, and boosters have since flown many times. The Space Shuttle was also partly reusable. Reuse can make spaceflight cheaper and more frequent.',
@@ -792,7 +792,7 @@ $FUTURE = [
       'Passenger and cargo terminals.',
       'Control towers tracking every arrival and departure.',
     ]]],
-    ['Refuelling in space', FUT_WOULD, [
+    ['Refueling in space', FUT_WOULD, [
       'Going far requires lots of fuel. One idea is to refuel spacecraft in orbit from tanker ships or fuel depots, like a gas station in space. Moving very cold liquid fuels between spacecraft in weightlessness is difficult and is being tested and developed.',
     ]],
   ],
