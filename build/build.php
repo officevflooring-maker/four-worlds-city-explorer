@@ -59,6 +59,9 @@ function page($path, $o) {
 " : '';
   $cssV = asset_v('/css/site.css');
   $jsV = asset_v('/js/site.js');
+  // Page-only scripts (city builder, quiz), from public/js/{name}.js.
+  $moreJs = '';
+  foreach ($o['js'] ?? [] as $name) $moreJs .= "<script src=\"/js/$name.js?v=" . asset_v("/js/$name.js") . "\" defer></script>\n";
   $ld = '';
   foreach ($o['ld'] ?? [] as $block) {
     $ld .= '<script type="application/ld+json">' . json_encode($block, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "</script>\n";
@@ -68,9 +71,9 @@ function page($path, $o) {
   foreach (WORLD_ORDER as $w) $links["/worlds/$w/"] = $WORLDS[$w]['short'];
   $links['/compare/'] = 'Compare';
   $links['/tours/'] = 'Tours';
+  $links['/play/'] = 'Play';
   $links['/teachers/'] = 'Teachers';
   $links['/artwork/'] = 'Artwork';
-  $links['/about/'] = 'About';
   foreach ($links as $href => $label) {
     $cur = $href === $path ? ' aria-current="page"' : ($href !== '/' && str_starts_with($path, $href) ? ' aria-current="true"' : '');
     $wc = str_starts_with($href, '/worlds/') ? ' class="nav-' . basename($href) . '"' : '';
@@ -100,7 +103,7 @@ function page($path, $o) {
 HTML;
   $html = <<<HTML
 <!doctype html>
-<html lang="en">
+<html lang="en" data-pp-totals="{$GLOBALS['ppTotals']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -125,13 +128,17 @@ HTML;
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/css/site.css?v={$cssV}">
 <script src="/js/site.js?v={$jsV}" defer></script>
-{$ld}</head>
+{$moreJs}{$ld}</head>
 <body class="{$bodyClass}">
 <a class="skip" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="/"><img src="/favicon.svg" width="28" height="28" alt=""> <span>The Atlas of Cities <span class="brand-sub">Past, Present and Imagined</span></span></a>
-    <nav aria-label="Main"><ul>{$nav}</ul></nav>
+    <nav aria-label="Main" id="main-nav"><ul>{$nav}</ul></nav>
+    <div class="hdr-tools">
+      <a class="hdr-search" href="/search/"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></a>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="main-nav" hidden><span class="menu-icon" aria-hidden="true"></span><span class="menu-text">Menu</span></button>
+    </div>
   </div>
 </header>
 <main id="main" tabindex="-1">
@@ -140,7 +147,7 @@ HTML;
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work.</p>
-    <p>No accounts, no ads, no tracking. <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/artwork/">Artwork</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a></p>
+    <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a></p>
     <p class="small">Illustrations &copy; {$year} The Atlas of Cities, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
   </div>
 </footer>
@@ -172,10 +179,13 @@ function learning($name, $desc, $path, $about) {
 }
 
 $GLOBALS['siteNameH'] = h(SITE_NAME);
+// Places per world, for passport progress on every page (public/js/site.js).
+$GLOBALS['ppTotals'] = implode(' ', array_map(fn($w) => "$w:" . count($WORLD_DATA[$w]['pages']), WORLD_ORDER));
 
 require __DIR__ . '/worldpages.php';
 require __DIR__ . '/teachpages.php';
 require __DIR__ . '/tours.php';
+require __DIR__ . '/play.php';
 require __DIR__ . '/home.php';
 
 // ---------- Compare ----------
@@ -252,6 +262,7 @@ page('/about/', [
 
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
+  <p>Passport stamps, quiz scores and the city you build are saved only in your own browser and never sent anywhere. You can clear them on the <a href="/play/passport/">passport page</a>.</p>
   <p>Donations are optional and handled entirely by Patreon, a separate website with its own privacy policy. This site never sees payment or personal details. See <a href="/support/">Support this project</a>.</p>
 
   <h2 id="accessibility">Accessibility</h2>
@@ -422,6 +433,7 @@ page('/404.html', [
   <h1>Page not found</h1>
   <p class="lead">That page doesn't exist. Try one of the worlds instead:</p>
   <ul class="world-links"><li><a class="world-link world-roman" href="/worlds/roman/">Ancient Rome</a></li><li><a class="world-link world-modern" href="/worlds/modern/">Modern Town</a></li><li><a class="world-link world-elven" href="/worlds/elven/">Elven Green World</a></li><li><a class="world-link world-future" href="/worlds/future/">Robotic Future</a></li></ul>
+  <p><a class="btn" href="/search/">Find a page</a> <button type="button" class="btn btn-quiet" data-surprise hidden>Surprise me</button></p>
   <p><a href="/">Go to the home page</a></p>
 </section>
 HTML,
@@ -436,6 +448,11 @@ $urls['/tours/'] = '0.8';
 foreach (array_keys($TOURS) as $slug) $urls["/tours/$slug/"] = '0.8';
 $urls['/teachers/'] = '0.9';
 foreach (array_keys($TEACH) as $slug) $urls["/teachers/$slug/"] = '0.8';
+$urls['/play/'] = '0.8';
+$urls['/play/city-builder/'] = '0.8';
+$urls['/play/quiz/'] = '0.8';
+$urls['/play/passport/'] = '0.5';
+$urls['/search/'] = '0.4';
 $urls['/artwork/'] = '0.7';
 $urls['/about/'] = '0.5';
 $urls['/support/'] = '0.4';

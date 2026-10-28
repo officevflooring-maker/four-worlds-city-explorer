@@ -963,7 +963,7 @@ $ELVEN = [
 ];
 
 $WORLD_DATA['elven'] = [
-  'title'    => 'Elven City Explorer: imagined buildings, real nature technology',
+  'title'    => 'Elven Green World: imagined buildings, real nature technology',
   'desc'     => 'Explore an imagined elven city that lives in harmony with nature. Each of 35 buildings pairs a fantasy idea with real nature-based technology, from living root bridges and seed vaults to glowing plants and algae buildings.',
   'intro'    => 'A fantasy city that grows with the forest. Every building is imagined, but each page shows the real science and nature-based technology that could make parts of it possible.',
   'note'     => 'This world is imagined and does not describe any real culture. Each page marks what is imagined, what is real today and what is still being researched.',

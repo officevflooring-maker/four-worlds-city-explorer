@@ -14,3 +14,7 @@
 
 /assets/*
   Cache-Control: public, max-age=2592000
+
+# Search index: always check for a newer copy.
+/data/*
+  Cache-Control: no-cache

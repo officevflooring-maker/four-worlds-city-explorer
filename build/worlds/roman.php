@@ -998,7 +998,7 @@ $ROMAN = [
 ];
 
 $WORLD_DATA['roman'] = [
-  'title'    => 'Ancient Roman City Explorer: 35 buildings and how they worked',
+  'title'    => 'Ancient Rome: 35 buildings and how they worked',
   'desc'     => 'Explore an illustrated ancient Roman city. Open any of 35 buildings, from aqueducts and baths to the Pantheon and the Senate house, to learn how it worked, with photos of real Roman sites.',
   'intro'    => 'Ancient Rome was a real city of perhaps a million people. Explore 35 of its buildings: what each one was for, how it worked and where you can still see real examples today.',
   'note'     => 'The buildings are illustrations, not exact reconstructions. Each page separates what history tells us from what the artist imagined, and lists its sources.',

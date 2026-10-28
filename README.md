@@ -1,10 +1,10 @@
 # The Atlas of Cities: Past, Present and Imagined
 
-(Formerly "The Atlas of Cities". The GitHub repository keeps its original name.)
+(Formerly "Four Worlds City Explorer". The GitHub repository keeps its original name.)
 
 A free educational website: explore four illustrated isometric cities (Ancient Rome, a Modern Town, an Elven Green World and a Robotic Future), learn what each building does, and compare how each world provides water, places to gather, safe travel and room for nature.
 
-No accounts, forms, cookies, ads, analytics or third-party requests.
+No accounts, forms, cookies, ads, analytics or third-party requests. Passport stamps, quiz scores and saved cities stay in the visitor's own browser (localStorage) and are never sent anywhere.
 
 ## How it's built
 
@@ -15,6 +15,8 @@ No accounts, forms, cookies, ads, analytics or third-party requests.
 - Checks: `bash tools/check-site.sh` (links, images, alt text, outbound links) and `php tools/deep-check.php` (ids, JSON-LD, stray characters, titles, sitemap).
 - `tools/copy-people-vehicles.sh` copies the people art (first pose of each walk strip in people-batch-03) and the vehicle art (vehicle-batch-01, front and back views). Source images are never changed.
 - `tools/copy-artwork.sh` exports every supplied illustration for the Artwork page (`public/assets/artwork/`).
+- `tools/make-thumbs.sh` makes the small preview images in `public/assets/thumbs/` (search results, city builder, quiz, passport) from the web-sized building images.
+- `build/play.php` builds search (`/data/search.json` and the A to Z page), the play hub, the city builder, the quiz and the passport. Their browser code is `public/js/site.js` (search, phone menu, passport), `public/js/builder.js` and `public/js/quiz.js`.
 - `tools/copy-assets.sh` copies the selected artwork from the read-only source folders into `public/assets/worlds/{roman,modern,elven,future}/` as web-sized WebP with transparency kept. The selection is listed in `tools/assets.txt`. Source images are never changed.
 
 ## Preview locally
@@ -48,6 +50,11 @@ Then open http://localhost:8097/
 | `/teachers/` | Teachers & Schools hub: 20 free lessons, projects and explainers (content in `build/teach.php`) |
 | `/teachers/{guide}/` | One guide each: quick answer, grades, time, steps, FAQ (FAQPage data), building pages to use, sources |
 | `/compare/` | One city question across all four worlds (printable) |
+| `/play/` | Play and create: the three activities below |
+| `/play/city-builder/` | City builder: place buildings, trees, water and squares from all four worlds on a 6 x 6 city, check off ten needs, save a picture, share a link, print |
+| `/play/quiz/` | City quiz: ten picture questions in three kinds (name it, which world, same job in another world) |
+| `/play/passport/` | Passport: a stamp for every place page opened, kept in the browser |
+| `/search/` | Every page from A to Z, filtered as you type (the header search box uses `/data/search.json`) |
 | `/about/` | About, privacy, accessibility, artwork reuse, sources |
 | `/guided/` | Old address, points to `/tours/` (not indexed) |
 

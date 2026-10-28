@@ -71,7 +71,7 @@ foreach (WORLD_ORDER as $w) {
   $links = '';
   foreach ($starts[$w] as $s) $links .= '<li><a href="/worlds/' . $w . '/' . $s . '/">' . h($WORLD_DATA[$w]['pages'][$s]['name']) . '</a></li>';
   $count = count($WORLD_DATA[$w]['pages']);
-  $cards .= '<li class="wcard world-' . $w . '">'
+  $cards .= '<li class="wcard world-' . $w . '" data-world="' . $w . '">'
     . '<a class="wcard-top" href="/worlds/' . $w . '/" tabindex="-1" aria-hidden="true"><span class="wcard-ground"><span class="wcard-floor" style="--tex:url(' . tex($w, $W['ground']) . ')"></span></span><span class="wcard-sky">' . img($w, 'horizon', '', '(min-width: 900px) 300px, 90vw', 'loading="lazy"') . '</span>'
     . '<span class="wcard-art">' . img($w, $W['card'], '', '(min-width: 900px) 240px, 70vw', 'loading="lazy"') . '</span>'
     . '<span class="wcard-person">' . img($w, 'people-1', '', '80px', 'loading="lazy"') . '</span></a>'
@@ -145,6 +145,13 @@ page('/', [
 <section class="wrap section" id="worlds" aria-labelledby="worlds-h">
   <div class="sec-head"><h2 id="worlds-h">Choose a world</h2><p>Rome is real history. The other three are imagined settings built around real ideas, and every page shows which is which.</p></div>
   <ul class="wcards">{$cards}</ul>
+</section>
+
+<section class="band band-play" aria-labelledby="play-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="play-h">Play and create</h2><p>Build your own city, take the quiz and collect a stamp for every place you visit.</p></div>
+    <ul class="play-cards">{$playCards}</ul>
+  </div>
 </section>
 
 <section class="band band-road" aria-labelledby="road-h">

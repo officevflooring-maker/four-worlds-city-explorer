@@ -28,7 +28,7 @@ function photo_figure($w, $p, $cls = '') {
 function building_card($w, $slug, $sizes = '(min-width: 1100px) 220px, (min-width: 600px) 30vw, 45vw') {
   global $WORLD_DATA;
   $r = $WORLD_DATA[$w]['pages'][$slug];
-  return '<li class="place place-link world-' . $w . '"><a href="/worlds/' . $w . '/' . $slug . '/">'
+  return '<li class="place place-link world-' . $w . '" data-pp="' . "$w/$slug" . '"><a href="/worlds/' . $w . '/' . $slug . '/">'
     . '<span class="place-art">' . img($w, $slug, '', $sizes, 'loading="lazy"') . '</span>'
     . '<span class="place-name">' . h($r['name']) . '</span><span class="what">' . h($r['summary']) . '</span></a></li>';
 }

@@ -60,6 +60,16 @@ HTML,
 ]);
 
 // ---------- One page per guide ----------
+// Online activities that go with a guide: [link, name, one line].
+const TEACH_PLAY = [
+  'design-a-city-project' => ['/play/city-builder/', 'Build your own city', 'Students can sketch their city online first and check that it meets every need.'],
+  'what-does-a-city-need' => ['/play/city-builder/', 'Build your own city', 'Students build a city and tick off all ten needs as they go.'],
+  'sustainable-city-project-ideas' => ['/play/city-builder/', 'Build your own city', 'Mix nature, homes and work, then check what the city still needs.'],
+  'design-a-mars-colony-project' => ['/play/city-builder/', 'Build your own city', 'Build a Moon or Mars settlement from the Robotic Future buildings.'],
+  'fantasy-city-worldbuilding' => ['/play/city-builder/', 'Build your own city', 'Lay out an elven city, or mix all four worlds into a new one.'],
+  'ancient-rome-vs-modern-cities' => ['/play/quiz/', 'City quiz', 'The "Same job, different world" quiz matches Roman buildings with modern ones.'],
+  'discussion-questions-what-makes-a-good-city' => ['/play/city-builder/', 'Build your own city', 'Build a city first, then use these questions to talk about it.'],
+];
 $slugsT = array_keys($TEACH);
 foreach ($slugsT as $k => $slug) {
   $t = $TEACH[$slug];
@@ -110,6 +120,7 @@ foreach ($slugsT as $k => $slug) {
   $grades = h($t['grades']);
   $time = h($t['time']);
   $subjects = h($t['subjects']);
+  $try = isset(TEACH_PLAY[$slug]) ? '<p class="try-it"><span class="badge badge-art">Try it online</span> <a href="' . TEACH_PLAY[$slug][0] . '">' . h(TEACH_PLAY[$slug][1]) . '</a>. ' . h(TEACH_PLAY[$slug][2]) . '</p>' : '';
   page("/teachers/$slug/", [
     'title' => $t['title'],
     'desc' => h($t['desc']),
@@ -123,6 +134,7 @@ foreach ($slugsT as $k => $slug) {
   <h1>{$h1}</h1>
   <dl class="facts guide-meta"><div><dt>Grades</dt><dd>{$grades}</dd></div><div><dt>Time</dt><dd>{$time}</dd></div><div><dt>Subjects</dt><dd>{$subjects}</dd></div></dl>
   <div class="quick-answer" id="answer"><h2>Quick answer</h2><p>{$quick}</p></div>
+  {$try}
 </section>
 <div class="wrap b-layout">
   <aside class="b-toc" aria-label="On this page"><p class="toc-h">On this page</p><ol>{$toc}</ol><p><button type="button" class="btn btn-quiet js-print">Print this page</button></p></aside>

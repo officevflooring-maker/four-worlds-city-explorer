@@ -904,7 +904,7 @@ $FUTURE = [
 ];
 
 $WORLD_DATA['future'] = [
-  'title'    => 'Future City Explorer: 34 buildings for living on the Moon and Mars',
+  'title'    => 'Robotic Future: 34 buildings for living on the Moon and Mars',
   'desc'     => 'Explore a speculative robotic city and how humanity might live on the Moon and Mars. Each of 34 buildings explains how it could work, the real space technology behind it, and how it would be powered, built and maintained.',
   'intro'    => 'One possible future: a settlement on the Moon or Mars. Each building explains how it could work, the real space technology that exists today, and how it would be powered, built and kept running.',
   'note'     => 'This is speculative design, not a prediction. Each page marks what is real today and what is still a possible future.',
