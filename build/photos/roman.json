@@ -1038,5 +1038,103 @@
             "page": "https://commons.wikimedia.org/wiki/File:Marble_Quarry_near_Carrera.jpg",
             "desc": "Marble Quarry near Carrara / Toscana"
         }
+    ],
+    "ox-cart": [
+        {
+            "img": "ox-cart-1",
+            "file": "File:End of the Via Appia Antica (Brindisi) at night.jpg",
+            "search": "Via Appia Antica",
+            "author": "Livioandronico2013",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:End_of_the_Via_Appia_Antica_(Brindisi)_at_night.jpg",
+            "desc": "End of the Via Appia Antica (Brindisi) at night"
+        },
+        {
+            "img": "ox-cart-2",
+            "file": "File:Paving at the Roman Bridge, Piercebridge - geograph.org.uk - 7341903.jpg",
+            "search": "Roman road paving",
+            "author": "Humphrey Bolton ",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Paving_at_the_Roman_Bridge,_Piercebridge_-_geograph.org.uk_-_7341903.jpg",
+            "desc": "Paving at the Roman Bridge, Piercebridge "
+        }
+    ],
+    "chariot": [
+        {
+            "img": "chariot-1",
+            "file": "File:Circus Maximus et Domus Augustana - Rome 111001.JPG",
+            "search": "Circus Maximus",
+            "author": "Jean-Pol GRANDMONT",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Circus_Maximus_et_Domus_Augustana_-_Rome_111001.JPG",
+            "desc": "Central part of Circus Maximus and ruins of the Domus Augustana on Palatine Hill viewed from the Piazalle Ugo La Malfa."
+        },
+        {
+            "img": "chariot-2",
+            "file": "File:Circus Mosaic from Lyon 02.jpg",
+            "search": "chariot race mosaic",
+            "author": "John Samuel",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Circus_Mosaic_from_Lyon_02.jpg",
+            "desc": "Circus Mosaic from Lyon"
+        },
+        {
+            "img": "chariot-3",
+            "file": "File:Brandenburg Gate Quadriga at Night.jpg",
+            "search": "quadriga",
+            "author": "א (Aleph) Creator: Johann Gottfried Schadow",
+            "license": "CC BY-SA 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+            "page": "https://commons.wikimedia.org/wiki/File:Brandenburg_Gate_Quadriga_at_Night.jpg",
+            "desc": "This picture is a close-up of the quadriga on top of the Brandenburg Gate in Berlin (Germany) at night. The sculpture was produced by Johann Gottfried Schadow in 1793. Be on the lookout for derivative works of 3D objects such as statues and sculptures. This one's OK - the author died about 160 years"
+        }
+    ],
+    "donkey-cart": [
+        {
+            "img": "donkey-cart-1",
+            "file": "File:Monte Testaccio Particolare.jpg",
+            "search": "Monte Testaccio",
+            "author": "Flazaza",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Monte_Testaccio_Particolare.jpg",
+            "desc": "Layers of shards of amphoras settled at Testaccio hill in Rome"
+        },
+        {
+            "img": "donkey-cart-2",
+            "file": "File:Anfiteatro de Pula, Croacia, 2017-04-16, DD 35.jpg",
+            "search": "amphorae",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Anfiteatro_de_Pula,_Croacia,_2017-04-16,_DD_35.jpg",
+            "desc": "Amphoras of the underground exhibition in the Pula Arena, an amphitheatre located in Pula, Croatia. This Roman edifice was constructed between 27 BC and 68 AD and is among the largest surviving Roman arenas in the world. At the same time, is the best preserved ancient monument in Croatia and the onl"
+        },
+        {
+            "img": "donkey-cart-3",
+            "file": "File:Villach Federaun Federauner Strasse Roemerstrasse 10052017 8330.jpg",
+            "search": "Roman milestone",
+            "author": "Johann Jaritz",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Villach_Federaun_Federauner_Strasse_Roemerstrasse_10052017_8330.jpg",
+            "desc": "Lane grooves of the ancient Roman road «Via Julia Augusta» in Oberfederaun, statutory city Villach, Carinthia, Austria, EU"
+        }
+    ],
+    "litter": [
+        {
+            "img": "litter-1",
+            "file": "File:Sedan chair in Amalfi 01.jpg",
+            "search": "Sedan chair in Amalfi",
+            "author": "Bernard Gagnon",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Sedan_chair_in_Amalfi_01.jpg",
+            "desc": "Sedan chair. Neapolitan manufacture carved and gilded lacquered wood the first half of 18th century, Diocesan Museum of Amalfi, Italy"
+        }
     ]
 }

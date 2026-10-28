@@ -840,5 +840,93 @@
             "page": "https://commons.wikimedia.org/wiki/File:Trained_rose_and_shrub_rose_against_brick_wall_in_Boreham,_Essex,_England.jpg",
             "desc": "Trained pink rose and shrub roses against a garden brick boundary wall in Boreham village, Essex, England.Camera: Canon EOS 6D with Canon EF 24-105mm F4L IS USM lens.Software: RAW file lens-corrected, optimized and converted with DxO OpticsPro 11 Elite, and possibly further optimized with Adobe Phot"
         }
+    ],
+    "family-car": [
+        {
+            "img": "family-car-2",
+            "file": "File:Car2Go Charging Station Stuttgart 2013 01.jpg",
+            "search": "electric vehicle charging",
+            "author": "Julian Herzog (Website)",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Car2Go_Charging_Station_Stuttgart_2013_01.jpg",
+            "desc": "EnBW electric car charging station in Stuttgart with a 3rd generation Smart electric car of carsharing company Car2Go"
+        }
+    ],
+    "taxi": [
+        {
+            "img": "taxi-1",
+            "file": "File:(USA-New York) NYC Medallion Cab Toyota RAV4 NY-Taxi-Y202490C 2024-06-15.jpg",
+            "search": "New York yellow taxi cab",
+            "author": "S5A-0043",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:(USA-New_York)_NYC_Medallion_Cab_Toyota_RAV4_NY-Taxi-Y202490C_2024-06-15.jpg",
+            "desc": "Y202490C, a Toyota RAV4 Medallion Cab in New York City. Photo taken on 2024/6/15."
+        },
+        {
+            "img": "taxi-2",
+            "file": "File:Wheelchair Accessible Taxi Lutwyche Centro taxi rank Lutwyche Rd Lutwyche P1200836.jpg",
+            "search": "wheelchair accessible taxi",
+            "author": "John Robert McPherson",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Wheelchair_Accessible_Taxi_Lutwyche_Centro_taxi_rank_Lutwyche_Rd_Lutwyche_P1200836.jpg",
+            "desc": "Wheelchair accessible taxis in Australia must comply with the Disability Standards for Accessible Public Transport."
+        }
+    ],
+    "pickup-truck": [
+        {
+            "img": "pickup-truck-1",
+            "file": "File:Ford F-150 Lightning IAA 2023 1X7A0596.jpg",
+            "search": "Ford F-150 Lightning",
+            "author": "Alexander-93",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Ford_F-150_Lightning_IAA_2023_1X7A0596.jpg",
+            "desc": "Ford F-150 Lightning at IAA 2023"
+        },
+        {
+            "img": "pickup-truck-2",
+            "file": "File:Chevy Pickup 1956.jpg",
+            "search": "pickup truck",
+            "author": "Palauenc05",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Chevy_Pickup_1956.jpg",
+            "desc": "1956 Chevrolet 3200 Pickup Truck, licence plate modified."
+        }
+    ],
+    "delivery-van": [
+        {
+            "img": "delivery-van-1",
+            "file": "File:Ford Transit Courier, Nufam 2023, Rheinstetten (P1130550).jpg",
+            "search": "Ford Transit van",
+            "author": "MB-one",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Ford_Transit_Courier,_Nufam_2023,_Rheinstetten_(P1130550).jpg",
+            "desc": "FordTransit Courier at Nufam 2023 at Messe Karlsruhe, Rheinstetten"
+        },
+        {
+            "img": "delivery-van-2",
+            "file": "File:20080804 freight bicycle Shanghai 2383.jpg",
+            "search": "cargo bike",
+            "author": "Jakub Hałun",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:20080804_freight_bicycle_Shanghai_2383.jpg",
+            "desc": "A man is riding a tricycle with heavy load on the streets of Shanghai"
+        },
+        {
+            "img": "delivery-van-3",
+            "file": "File:Kaspi Postomat, Astana (P1190696).jpg",
+            "search": "parcel locker",
+            "author": "Matti Blume",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Kaspi_Postomat,_Astana_(P1190696).jpg",
+            "desc": "Parcel locker by kaspi bank in Astana "
+        }
     ]
 }

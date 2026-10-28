@@ -2,9 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/</loc><lastmod>2026-10-27</lastmod><priority>1.0</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/</loc><lastmod>2026-10-27</lastmod><priority>0.9</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/people/</loc><lastmod>2026-10-27</lastmod><priority>0.7</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/</loc><lastmod>2026-10-27</lastmod><priority>0.9</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/people/</loc><lastmod>2026-10-27</lastmod><priority>0.7</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/</loc><lastmod>2026-10-27</lastmod><priority>0.9</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/people/</loc><lastmod>2026-10-27</lastmod><priority>0.7</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/</loc><lastmod>2026-10-27</lastmod><priority>0.9</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/people/</loc><lastmod>2026-10-27</lastmod><priority>0.7</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/aqueduct/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/public-fountain/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/public-baths/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
@@ -40,6 +44,10 @@
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/lighthouse/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/crane/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/building-materials/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/ox-cart/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/chariot/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/donkey-cart/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/roman/litter/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/single-family-house/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/suburban-house/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/older-home/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
@@ -76,6 +84,10 @@
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/community-garden/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/tower-crane/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/building-materials/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/family-car/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/taxi/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/pickup-truck/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/modern/delivery-van/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/great-tree-hall/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/grand-tree-hall/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/treetop-village/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
@@ -111,6 +123,10 @@
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/market-hall/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/woodworking-workshop/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/building-materials/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/deer-sleigh/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/flower-cart/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/mushroom-carriage/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/elven/beetle-rider/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/inflatable-habitat/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/lunar-base/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/habitat-cluster/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
@@ -145,7 +161,16 @@
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/rover-track/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/mission-control/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/operations-center/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/hover-car/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/pressurized-rover/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/cargo-pod/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/worlds/future/drone-taxi/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/compare/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/tours/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/tours/roman-engineering/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/tours/modern-neighborhoods/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/tours/ecological-design/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://yellowgreen-crab-278867.hostingersite.com/tours/robotic-cities/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/teachers/</loc><lastmod>2026-10-27</lastmod><priority>0.9</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/teachers/design-a-city-project/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://yellowgreen-crab-278867.hostingersite.com/teachers/build-a-roman-aqueduct/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>

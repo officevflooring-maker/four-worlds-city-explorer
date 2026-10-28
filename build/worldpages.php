@@ -37,7 +37,7 @@ function building_card($w, $slug, $sizes = '(min-width: 1100px) 220px, (min-widt
 function artwork_name($src) {
   [$batch, $file] = explode('/', $src);
   $stem = str_replace('_', '-', basename($file, '.png'));
-  return ['art' => '', 'build' => 'construction-', 'ground' => 'ground-'][$batch] . $stem;
+  return ['art' => '', 'build' => 'construction-', 'ground' => 'ground-', 'vehicle' => 'vehicle-'][$batch] . $stem;
 }
 
 // Badges that mark a section as real-world fact, imagined, or speculative.
@@ -72,18 +72,49 @@ function full_world($w) {
   $pages = $D['pages'];
   $label = $W['name'];
 
-  // Map
+  // Map: buildings on a 6 x 6 grid with streets between them, plus people and vehicles on the streets.
   $map = '';
+  $tileSizes = '(min-width: 1100px) 220px, 22vw';
+  $tileData = function ($slug) use ($w, $pages, $D) {
+    $r = $pages[$slug];
+    return ' data-cat="' . $r['cat'] . '" data-name="' . h($r['name']) . '" data-catname="' . h($D['cats'][$r['cat']][0]) . '" data-sum="' . h($r['summary']) . '"';
+  };
   foreach ($D['map'] as $s => $slug) {
     $i = $s % 6; $j = intdiv($s, 6);
     if ($slug === 'tree') {
-      $map .= '<li class="tile" style="--i:' . $i . ';--j:' . $j . '" aria-hidden="true">' . img($w, $D['tree'], '', '(min-width: 1100px) 200px, 18vw') . '</li>';
+      $map .= '<li class="tile tile-tree" style="--i:' . $i . ';--j:' . $j . '" aria-hidden="true">' . img($w, $D['tree'], '', $tileSizes) . '</li>';
       continue;
     }
-    $map .= '<li class="tile" style="--i:' . $i . ';--j:' . $j . '"><a class="tile-btn" href="/worlds/' . $w . '/' . $slug . '/">'
-      . img($w, $slug, '', '(min-width: 1100px) 200px, 18vw', 'draggable="false"')
+    $map .= '<li class="tile" style="--i:' . $i . ';--j:' . $j . '"' . $tileData($slug) . '><a class="tile-btn" href="/worlds/' . $w . '/' . $slug . '/">'
+      . img($w, $slug, '', $tileSizes, 'draggable="false"')
       . '<span class="tile-label">' . h($pages[$slug]['name']) . '</span></a></li>';
   }
+  // Street life: points are in grid units (u along i, v along j); whole numbers are street lines.
+  global $VEHICLES, $PEOPLE;
+  $decor = '';
+  // Inner streets are hidden behind buildings, so street life uses the two front edges of the city.
+  $carSpots = [[6.1, .95, ''], [6.1, 2.4, 'rear-'], [6.1, 3.85, ''], [6.1, 5.3, 'rear-']];
+  foreach (array_keys($VEHICLES[$w] ?? []) as $k => $vslug) {
+    [$u, $v, $side] = $carSpots[$k];
+    $decor .= '<li class="tile decor decor-car" style="--u:' . $u . ';--v:' . $v . ';--z:' . floor($u + $v) . '"' . $tileData($vslug) . '><a class="tile-btn" href="/worlds/' . $w . '/' . $vslug . '/">'
+      . img($w, $side . $vslug, '', '120px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pages[$vslug]['name']) . '</span></a></li>';
+  }
+  $personSpots = [[.45, 6.1], [1.15, 6.1], [2.05, 6.1], [2.75, 6.1], [3.6, 6.1], [4.3, 6.1], [5.05, 6.1], [5.65, 6.1]];
+  foreach (array_keys($PEOPLE[$w] ?? []) as $k => $file) {
+    [$u, $v] = $personSpots[$k];
+    [$pname, $prole] = $PEOPLE[$w][$file];
+    $decor .= '<li class="tile decor decor-person" style="--u:' . $u . ';--v:' . $v . ';--z:' . floor($u + $v) . '" data-cat="people" data-name="' . h($pname) . '" data-catname="People" data-sum="' . h($prole) . '"><a class="tile-btn" href="/worlds/' . $w . '/people/#' . $file . '">'
+      . img($w, $file, '', '64px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pname) . '</span></a></li>';
+  }
+  $map .= $decor;
+  // Filter buttons: one per building group shown on the map, plus people and vehicles.
+  $onMap = [];
+  foreach ($D['map'] as $slug) if ($slug !== 'tree') $onMap[$pages[$slug]['cat']] = true;
+  $filters = '<button type="button" class="chip" data-filter="" aria-pressed="true">Everything</button>';
+  foreach ($D['cats'] as $cat => [$clabel]) {
+    if (isset($onMap[$cat]) || $cat === 'vehicles') $filters .= '<button type="button" class="chip" data-filter="' . $cat . '" aria-pressed="false">' . h($clabel) . '</button>';
+  }
+  $filters .= '<button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>';
   // Directory by category
   $dir = '';
   $jump = '';
@@ -118,22 +149,39 @@ function full_world($w) {
   </div>
 </section>
 
-<section class="wrap section" aria-labelledby="map-h">
-  <div class="map-head">
-    <h2 id="map-h">Look around the city</h2>
-    <label class="toggle"><input type="checkbox" id="show-labels"> Show building names</label>
+<section class="map-section" aria-labelledby="map-h">
+  <div class="wrap map-head">
+    <div>
+      <h2 id="map-h">Look around the city</h2>
+      <p class="hint">Select any building, person or vehicle to open its page. Everything is also listed below.</p>
+    </div>
+    <p class="map-links"><a href="/worlds/{$w}/people/">Meet the people</a> · <a href="/tours/">Guided tours</a></p>
   </div>
-  <p class="hint">Select any building to open its page. Every building is also listed below.</p>
-  <div class="city city-6" style="--tex:url({$groundTex});--n:6;--y0:16;aspect-ratio:100/69">
-    <div class="city-ground" aria-hidden="true"></div>
-    <ul class="city-tiles" aria-label="Buildings in the {$label} city">{$map}</ul>
+  <div class="map-shell" data-map>
+    <div class="wrap map-tools">
+      <div class="chips" role="group" aria-label="Highlight on the map">{$filters}</div>
+      <div class="map-ctrl">
+        <label class="toggle"><input type="checkbox" id="show-labels"> Names</label>
+        <span class="zoom" role="group" aria-label="Zoom" hidden><button type="button" class="ctrl" data-zoom="-1" aria-label="Zoom out">&minus;</button><button type="button" class="ctrl" data-zoom="0" aria-label="Reset zoom">Fit</button><button type="button" class="ctrl" data-zoom="1" aria-label="Zoom in">+</button></span>
+        <button type="button" class="ctrl map-full" hidden>Full screen</button>
+      </div>
+    </div>
+    <div class="map-view">
+      <div class="city city-6" style="--tex:url({$groundTex});--n:6;--y0:10">
+        <div class="city-ground" aria-hidden="true"></div>
+        <ul class="city-tiles" aria-label="Buildings, people and vehicles in the {$label} city">{$map}</ul>
+      </div>
+    </div>
+    <div class="wrap map-info" aria-live="polite"><p class="map-info-empty">Point at anything on the map to learn what it is.</p></div>
   </div>
-  <p class="setting-note">{$noteH}</p>
-  {$aside}
+  <div class="wrap">
+    <p class="setting-note">{$noteH}</p>
+    {$aside}
+  </div>
 </section>
 
 <section class="wrap section" aria-labelledby="dir-h">
-  <h2 id="dir-h">All {$count} buildings</h2>
+  <h2 id="dir-h">All {$count} places and vehicles</h2>
   <nav aria-label="Building groups"><ul class="jump">{$jump}</ul></nav>
   {$dir}
 </section>
@@ -228,6 +276,13 @@ HTML,
     }
     $summaryH = h($r['summary']);
     $artH = h($r['art']);
+    // Vehicles have a second illustration: the back view.
+    $rear = '';
+    if (!empty($r['vehicle'])) {
+      $rearFull = "/assets/artwork/$w/" . artwork_name($r['src']) . '-back.webp';
+      $rear = '<figure class="rear-view"><button type="button" class="lb" data-full="' . $rearFull . '" data-title="' . h($r['name']) . ' (back view)" data-credit="Illustration: Four Worlds City Explorer, free to use under CC BY 4.0" data-download="' . "$w-$slug-back.webp" . '" aria-label="View the back view full size">'
+        . img($w, "rear-$slug", 'Back view of the ' . strtolower($r['name']) . " ($label)", '(min-width: 900px) 260px, 60vw', 'loading="lazy"') . '</button><figcaption>Back view</figcaption></figure>';
+    }
     $catH = h($catLabel);
     $prevName = h($pages[$prev]['name']);
     $nextName = h($pages[$next]['name']);
@@ -262,6 +317,7 @@ HTML,
     <section class="read art-box" id="artwork" aria-labelledby="art-h">
       <h2 id="art-h"><span class="badge badge-art">Art</span> In this artwork</h2>
       <p>{$artH}</p>
+      {$rear}
       <h3>Look closer</h3>
       <ul class="read-list">{$look}</ul>
     </section>
@@ -303,4 +359,52 @@ HTML,
   }
 }
 
-foreach (WORLD_ORDER as $w) full_world($w);
+// People of each world: /worlds/{world}/people/ (content in build/people.php).
+function people_page($w) {
+  global $WORLDS, $WORLD_DATA, $PEOPLE, $PEOPLE_INTRO;
+  [$title, $intro, $tag] = $PEOPLE_INTRO[$w];
+  $label = $WORLDS[$w]['name'];
+  [$bcls, $btxt] = SECTION_TAGS[$tag];
+  $cards = '';
+  foreach ($PEOPLE[$w] as $file => [$name, $role, $text, $places]) {
+    $links = [];
+    foreach ($places as $p) {
+      if (!isset($WORLD_DATA[$w]['pages'][$p])) { fwrite(STDERR, "unknown people link $w/$file: $p\n"); continue; }
+      $links[] = '<a href="/worlds/' . $w . '/' . $p . '/">' . h($WORLD_DATA[$w]['pages'][$p]['name']) . '</a>';
+    }
+    $full = "/assets/artwork/$w/$file.webp";
+    $cards .= '<li class="person world-' . $w . '" id="' . $file . '"><button type="button" class="lb person-art" data-full="' . $full . '" data-title="' . h("$label: $name") . '" data-credit="Illustration: Four Worlds City Explorer, free to use under CC BY 4.0" data-download="four-worlds-' . "$w-$file" . '.webp" aria-label="View full size: ' . h($name) . '">'
+      . img($w, $file, $name, '(min-width: 900px) 200px, 40vw', 'loading="lazy"') . '</button>'
+      . '<div class="person-text"><h2>' . h($name) . '</h2><p class="tag">' . h($role) . '</p><p>' . h($text) . '</p>'
+      . '<p class="person-where"><strong>Where to find them:</strong> ' . implode(', ', $links) . '</p></div></li>';
+  }
+  $others = '';
+  foreach (WORLD_ORDER as $o) if ($o !== $w) $others .= '<li><a class="world-link world-' . $o . '" href="/worlds/' . $o . '/people/">' . h($WORLDS[$o]['short']) . ' people</a></li>';
+  $titleH = h($title); $introH = h($intro);
+  page("/worlds/$w/people/", [
+    'title' => $title . ': who lives in the city',
+    'desc' => h($intro),
+    'og' => $w,
+    'class' => "world world-$w people-page",
+    'lightbox' => true,
+    'body' => <<<HTML
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/worlds/{$w}/">{$label}</a></li><li aria-current="page">People</li></ol></nav>
+</div>
+<section class="wrap section page-head">
+  <p class="tag">{$label} · People</p>
+  <h1>{$titleH}</h1>
+  <p class="lead"><span class="badge {$bcls}">{$btxt}</span> {$introH}</p>
+  <ul class="people">{$cards}</ul>
+</section>
+<section class="wrap section next" aria-labelledby="next-h">
+  <h2 id="next-h">Keep exploring</h2>
+  <p><a class="btn" href="/worlds/{$w}/">Back to the {$label} map</a> <a class="btn btn-quiet" href="/tours/">Take a guided tour</a></p>
+  <ul class="world-links">{$others}</ul>
+</section>
+HTML,
+    'ld' => [crumbs([['Home', '/'], [$label, "/worlds/$w/"], ['People', "/worlds/$w/people/"]])],
+  ]);
+}
+
+foreach (WORLD_ORDER as $w) { full_world($w); people_page($w); }

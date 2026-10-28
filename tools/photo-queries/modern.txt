@@ -35,3 +35,7 @@ recreation-center|gym fitness equipment;YMCA building
 community-garden|community garden raised beds;victory garden poster
 tower-crane|tower crane;tower crane counterweight
 building-materials|Mjostarnet timber building;reinforced concrete rebar;brick wall bond
+family-car|Ford Model T;Ford assembly line;electric vehicle charging
+taxi|New York yellow taxi cab;taximeter antique;wheelchair accessible taxi
+pickup-truck|Ford F-150 Lightning;pickup truck
+delivery-van|Ford Transit van;cargo bike;parcel locker

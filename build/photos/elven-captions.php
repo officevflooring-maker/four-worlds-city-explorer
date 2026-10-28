@@ -64,4 +64,13 @@ $PHOTO_CAPTIONS['elven'] = [
   'woodworking-workshop-2' => 'A 19th-century woodworker\'s bench with many hand tools.',
   'building-materials-1' => 'Water droplets beading on a lotus leaf: the "lotus effect" keeps the leaf clean.',
   'building-materials-2' => 'A Shinkansen 500 series train, whose long nose helped reduce noise from tunnels.',
+  // Vehicles
+  'deer-sleigh-1' => 'A man holding a reindeer harnessed to a sled on the Finnmark plateau in northern Norway (historical photograph).',
+  'flower-cart-1' => 'A draft horse pulling logs out of a forest in the Hautes Fagnes nature park, Belgium.',
+  'flower-cart-2' => 'A cargo tricycle carrying a huge load through Shanghai.',
+  'mushroom-carriage-1' => 'A car body frame made from flax fiber composite, built as a test of plant-based materials.',
+  'mushroom-carriage-2' => 'Jars made with hemp fibers, a plant-based alternative to plastic.',
+  'beetle-rider-1' => 'A dung beetle rolling its ball of dung.',
+  'beetle-rider-2' => 'A rhinoceros beetle. Beetles like this are strong for their size.',
+  'beetle-rider-3' => 'A person testing a large walking machine.',
 ];

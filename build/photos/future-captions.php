@@ -58,4 +58,15 @@ $PHOTO_CAPTIONS['future'] = [
   'mission-control-1' => 'Mission Control in Houston during Apollo 13, when the team worked to bring the crew home safely.',
   'mission-control-2' => 'Flight director Gene Kranz at his console in Mission Control.',
   'operations-center-2' => 'The space station flight control room in Houston.',
+  // Vehicles
+  'hover-car-1' => 'The Shanghai Maglev train, which floats on magnets on its way to the city\'s airport.',
+  'hover-car-3' => 'A hovercraft at the hoverport in Ryde, on the Isle of Wight, England, which has a passenger hovercraft service.',
+  'pressurized-rover-2' => 'The control console of the Apollo Lunar Roving Vehicle.',
+  'pressurized-rover-3' => 'Apollo 15 astronaut James Irwin beside the flag, the lunar module and the Lunar Roving Vehicle in 1971.',
+  'cargo-pod-1' => 'An autonomous haul truck at a mine, driven by a computer instead of a person.',
+  'cargo-pod-2' => 'A small delivery robot carrying a parcel along a city sidewalk in Tartu, Estonia.',
+  'cargo-pod-3' => 'A model of the Nova-C lunar lander, which landed on the Moon in 2024 as part of NASA\'s Commercial Lunar Payload Services.',
+  'drone-taxi-1' => 'NASA\'s Ingenuity helicopter on Mars, photographed by the Perseverance rover.',
+  'drone-taxi-2' => 'An artist\'s view of NASA\'s Dragonfly rotorcraft landing on Titan, Saturn\'s largest moon.',
+  'drone-taxi-3' => 'A Volocopter, an electric air taxi prototype with many small rotors, at a motor show in Frankfurt.',
 ];

@@ -35,3 +35,7 @@ city-walls|Aurelian Walls Rome;Porta San Sebastiano;Hadrian Wall Housesteads
 lighthouse|Tower of Hercules A Coruna;Dover Castle Roman lighthouse
 crane|Tomb of the Haterii relief crane;Roman treadwheel crane reconstruction
 building-materials|opus reticulatum;Roman brick stamp;Carrara marble quarry
+ox-cart|Via Appia Antica;Roman road paving;oxen cart
+chariot|Circus Maximus;chariot race mosaic;quadriga
+donkey-cart|Monte Testaccio;amphorae;Roman milestone
+litter|Sedan chair in Amalfi;lectica

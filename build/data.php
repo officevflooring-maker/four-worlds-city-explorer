@@ -47,6 +47,12 @@ $COMPARE = [
     'elven'  => ['ground-crossroads', 'Garden paths', 'There are no cars here. How would people carry heavy things?'],
     'future' => ['ground-crossroads', 'Lit roadway', 'Glowing crossings light the way. Who might these lights help, and who might they not?'],
   ]],
+  ['goods', 'Moving goods', 'How do food, parcels and supplies reach the people who need them?', [
+    'roman'  => ['donkey-cart', 'Donkey cart', 'Carts were banned from Rome\'s streets by day. When would you allow deliveries?'],
+    'modern' => ['delivery-van', 'Delivery van', 'Online shopping brings vans to every street. How could deliveries cause less traffic?'],
+    'elven'  => ['flower-cart', 'Flower cart', 'A pony pulls the cart to market. When is slow transport the better choice?'],
+    'future' => ['cargo-pod', 'Cargo pod', 'No driver at all. Which jobs should robots do, and which should people keep?'],
+  ]],
   ['nature', 'Room for nature', 'Where do plants, animals and open land fit in the city?', [
     'roman'  => ['olive-tree', 'Olive tree', 'Olive trees give shade and food. What else could a city tree provide?', 'olive-grove'],
     'modern' => ['community-garden', 'Community garden', 'Gardens take up space that could hold housing. How would you balance the two?'],

@@ -688,5 +688,93 @@
             "page": "https://commons.wikimedia.org/wiki/File:Shinkansen_500_series_W2_formation.jpg",
             "desc": "新幹線　500系W2編成　小田原駅にて"
         }
+    ],
+    "deer-sleigh": [
+        {
+            "img": "deer-sleigh-1",
+            "file": "File:A man holds a reindeer with a sled. Winter, Finnmarksvidda.jpg",
+            "search": "reindeer sled Sami",
+            "author": "Elisabeth Meyer / Preus Museum",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:A_man_holds_a_reindeer_with_a_sled._Winter,_Finnmarksvidda.jpg",
+            "desc": "Meyer, Elisabeth A man holds a reindeer with a sled. Winter, Finnmarksvidda. Gelatin silver print, baryta NMFF.002541-5"
+        }
+    ],
+    "flower-cart": [
+        {
+            "img": "flower-cart-1",
+            "file": "File:Draft horse pulling logs in Parc naturel Hautes Fagnes, Eupen, Belgium (VeloTour 54 to 55, DSCF3703).jpg",
+            "search": "Draft horse pulling logs",
+            "author": "Trougnouf",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Draft_horse_pulling_logs_in_Parc_naturel_Hautes_Fagnes,_Eupen,_Belgium_(VeloTour_54_to_55,_DSCF3703).jpg",
+            "desc": "Draft horse pulling logs in High Fens – Eifel Nature Park, Eupen, Belgium (VeloTour intersection 54 to 55))"
+        },
+        {
+            "img": "flower-cart-2",
+            "file": "File:20080804 freight bicycle Shanghai 2383.jpg",
+            "search": "cargo bike",
+            "author": "Jakub Hałun",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:20080804_freight_bicycle_Shanghai_2383.jpg",
+            "desc": "A man is riding a tricycle with heavy load on the streets of Shanghai"
+        }
+    ],
+    "mushroom-carriage": [
+        {
+            "img": "mushroom-carriage-1",
+            "file": "File:Flax framed Hummingbird in Prodrive workshop.jpg",
+            "search": "flax fiber composite",
+            "author": "Ben sayer",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Flax_framed_Hummingbird_in_Prodrive_workshop.jpg",
+            "desc": "The frame is made from flax composite"
+        },
+        {
+            "img": "mushroom-carriage-2",
+            "file": "File:Hemp fiber cosmetic packaging - BioLite12.jpg",
+            "search": "intitle:\"Hemp fiber\"",
+            "author": "JeremiahDutton",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Hemp_fiber_cosmetic_packaging_-_BioLite12.jpg",
+            "desc": "Hemp fiber composite - cosmetics jar packaging"
+        }
+    ],
+    "beetle-rider": [
+        {
+            "img": "beetle-rider-1",
+            "file": "File:Garreta unicolor 2016 01 01 11 000244-1.jpg",
+            "search": "dung beetle rolling ball",
+            "author": "Alandmanson",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Garreta_unicolor_2016_01_01_11_000244-1.jpg",
+            "desc": "Garreta unicolor, a dung beetle, on a ball of rhino dung. In the process of rolling a ball of dung away from the site of the dropping, these beetles will periodically pause on top of the ball to navigate. In Ithala Game Reserve, KwaZulu-Natal. DungBeetleMAP record no. 244 - http://vmus.adu.org.za/?v"
+        },
+        {
+            "img": "beetle-rider-2",
+            "file": "File:Xylotrupes socrates (Siamese rhinoceros beetle).jpg",
+            "search": "rhinoceros beetle",
+            "author": "Basile Morin",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Xylotrupes_socrates_(Siamese_rhinoceros_beetle).jpg",
+            "desc": "Xylotrupes socrates (Siamese rhinoceros beetle, or \"fighting beetle\"), male, on a banana leaf, Focus stacking from 23 images. This scarab beetle is particularly known for its role in insect fighting in Northern Laos and Thailand."
+        },
+        {
+            "img": "beetle-rider-3",
+            "file": "File:Acronym Walking Robot Operator.jpg",
+            "search": "legged robot walking",
+            "author": "Tessa Bury",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Acronym_Walking_Robot_Operator.jpg",
+            "desc": "An operator piloting Acronym’s walking robotic platform with a pair of hand controllers on the Open Sauce 2026 exhibition floor."
+        }
     ]
 }

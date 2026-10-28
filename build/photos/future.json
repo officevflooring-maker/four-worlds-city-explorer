@@ -626,5 +626,113 @@
             "page": "https://commons.wikimedia.org/wiki/File:STS-128_MCC_space_station_flight_control_room.jpg",
             "desc": "An overall view of the space station flight control room in the Mission Control Center at NASA's Johnson Space Center as flight controllers support the rendezvous and docking of Space Shuttle Discovery (STS-128) with the International Space Station."
         }
+    ],
+    "hover-car": [
+        {
+            "img": "hover-car-1",
+            "file": "File:Shanghai Maglev 2.jpg",
+            "search": "Shanghai Maglev",
+            "author": "kallerna",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Shanghai_Maglev_2.jpg",
+            "desc": "Maglev-station in Pudong airport, Shanghai."
+        },
+        {
+            "img": "hover-car-3",
+            "file": "File:Ryde MMB 06 Hoverport.jpg",
+            "search": "hovercraft",
+            "author": "mattbuck (category)",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Ryde_MMB_06_Hoverport.jpg",
+            "desc": "A Hovertravel hovercraft departs Ryde, heading back to Portsmouth."
+        }
+    ],
+    "pressurized-rover": [
+        {
+            "img": "pressurized-rover-2",
+            "file": "File:Lunar Roving Vehicle (LRV) Control Console.jpg",
+            "search": "Lunar Roving Vehicle Control Console",
+            "author": "National Aeronautics and Space Administration (NASA)",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Lunar_Roving_Vehicle_(LRV)_Control_Console.jpg",
+            "desc": "This photograph is a view of a display, control console, and hand controller for the Lunar Roving Vehicle (LRV) No. 2. The LRV was built to give Apollo astronauts a greater range of mobility during lunar exploration. It was an open-space and collapsible vehicle about 10 feet long with large mesh whe"
+        },
+        {
+            "img": "pressurized-rover-3",
+            "file": "File:AS15-88-11866 - Apollo 15 flag, rover, LM, Irwin - restoration1.jpg",
+            "search": "Lunar Roving Vehicle Apollo 15",
+            "author": "NASA Johnson Space Center Restored by Bammesk",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:AS15-88-11866_-_Apollo_15_flag,_rover,_LM,_Irwin_-_restoration1.jpg",
+            "desc": "Astronaut James Irwin gives salute beside U.S. flag during EVA. Astronaut James B. Irwin, lunar module pilot, gives a military salute while standing beside the deployed U.S. flag during the Apollo 15 lunar surface extravehicular activity (EVA) at the Hadley-Apennine landing site. The flag was deploy"
+        }
+    ],
+    "cargo-pod": [
+        {
+            "img": "cargo-pod-1",
+            "file": "File:Ferrexpo autonomous truck.jpg",
+            "search": "autonomous haul truck mine",
+            "author": "RobSimmons223311",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Ferrexpo_autonomous_truck.jpg",
+            "desc": "Ferrexpo's autonomous CAT 793D truck at its Yeristovo mine"
+        },
+        {
+            "img": "cargo-pod-2",
+            "file": "File:Idufirma Starship pakirobot Tartu kesklinnas 2017. aastal..jpg",
+            "search": "Starship robot delivery",
+            "author": "Sillerkiil",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Idufirma_Starship_pakirobot_Tartu_kesklinnas_2017._aastal..jpg",
+            "desc": "Idufirma Starship pakirobot Tartu kesklinnas 2017. aastal."
+        },
+        {
+            "img": "cargo-pod-3",
+            "file": "File:Intuitive Machines’ Nova-C lunar lander (IM 00309) (cropped).jpg",
+            "search": "Intuitive Machines Odysseus lander Moon",
+            "author": "NASA Marshall Space Flight Center / Intuitive Machines",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Intuitive_Machines%E2%80%99_Nova-C_lunar_lander_(IM_00309)_(cropped).jpg",
+            "desc": "IM-1, the first NASA Commercial Launch Program Services launch for Intuitive Machines’ Nova-C lunar lander, will carry multiple payloads to the Moon, including Lunar Node-1, demonstrating autonomous navigation via radio beacon to support precise geolocation and navigation among lunar orbiters, lan"
+        }
+    ],
+    "drone-taxi": [
+        {
+            "img": "drone-taxi-1",
+            "file": "File:NASA's Ingenuity helicopter on Mars by Perseverance Mastcam-Z, Sol 768 (53475637956).jpg",
+            "search": "intitle:Ingenuity intitle:Mastcam",
+            "author": "semeion.photo Credit: NASA/JPL-Caltech/ASU/Simeon Schmauß",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:NASA%27s_Ingenuity_helicopter_on_Mars_by_Perseverance_Mastcam-Z,_Sol_768_(53475637956).jpg",
+            "desc": "This image of NASA's Ingenuity Mars helicopter was taken by the Mastcam-Z instrument aboard Perseverance on April 18, 2023, the 768th Martian day, or sol, of the rover's mission. The helicopter's first flight on Mars was on April 19, 2021.This is the best look the Ingenuity team has had of the rotor"
+        },
+        {
+            "img": "drone-taxi-2",
+            "file": "File:Dragonfly-landing.png",
+            "search": "Dragonfly landing",
+            "author": "NASA/JHU-APL",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Dragonfly-landing.png",
+            "desc": "This illustration shows NASA’s Dragonfly rotorcraft-lander approaching a site on Saturn’s exotic moon, Titan. Taking advantage of Titan’s dense atmosphere and low gravity, Dragonfly will explore dozens of locations across the icy world, sampling and measuring the compositions of Titan's organi"
+        },
+        {
+            "img": "drone-taxi-3",
+            "file": "File:Volocopter,IAA 2017, Frankfurt (1Y7A1911).jpg",
+            "search": "Volocopter",
+            "author": "Matti Blume",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Volocopter,IAA_2017,_Frankfurt_(1Y7A1911).jpg",
+            "desc": "Volocopter 2X at IAA 2017"
+        }
     ]
 }

@@ -1014,8 +1014,8 @@ $WORLD_DATA['roman'] = [
   // Tall pieces stand at the back, low and wide ones at the front. 'tree' is a decorative tree.
   'map' => [
     'crane', 'lighthouse', 'victory-column', 'city-walls', 'imperial-statue', 'temple',
-    'mausoleum', 'pantheon', 'imperial-palace', 'curia', 'treasury', 'temple-of-vesta',
-    'amphitheater', 'circus', 'basilica', 'library', 'records-office', 'triumphal-arch',
+    'mausoleum', 'pantheon', 'imperial-palace', 'curia', 'treasury', 'circus',
+    'amphitheater', 'temple-of-vesta', 'basilica', 'library', 'records-office', 'triumphal-arch',
     'villa', 'forum', 'public-baths', 'apartment-block', 'domus', 'school',
     'gladiator-school', 'warehouse', 'farmhouse', 'inn', 'shop', 'street-food',
     'olive-grove', 'garden', 'tree', 'public-fountain', 'building-materials', 'aqueduct',

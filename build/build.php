@@ -21,6 +21,8 @@ foreach (WORLD_ORDER as $w) {
   if (is_file(__DIR__ . "/photos/$w.json")) $PHOTOS[$w] = json_decode(file_get_contents(__DIR__ . "/photos/$w.json"), true);
   if (is_file(__DIR__ . "/photos/$w-captions.php")) require __DIR__ . "/photos/$w-captions.php";
 }
+require __DIR__ . '/vehicles.php';
+require __DIR__ . '/people.php';
 
 function h($s) { return htmlspecialchars((string)$s, ENT_QUOTES | ENT_HTML5, 'UTF-8'); }
 function url($path) { return SITE_URL . $path; }
@@ -60,9 +62,10 @@ function page($path, $o) {
     $ld .= '<script type="application/ld+json">' . json_encode($block, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "</script>\n";
   }
   $nav = '';
-  $links = ['/' => 'Home'];
+  $links = [];
   foreach (WORLD_ORDER as $w) $links["/worlds/$w/"] = $WORLDS[$w]['short'];
   $links['/compare/'] = 'Compare';
+  $links['/tours/'] = 'Tours';
   $links['/teachers/'] = 'Teachers';
   $links['/artwork/'] = 'Artwork';
   $links['/about/'] = 'About';
@@ -168,78 +171,10 @@ function learning($name, $desc, $path, $about) {
 
 $GLOBALS['siteNameH'] = h(SITE_NAME);
 
-// ---------- Home ----------
-$cards = '';
-foreach (WORLD_ORDER as $w) {
-  $W = $WORLDS[$w];
-  $cards .= '<li class="world-card world-' . $w . '"><a href="/worlds/' . $w . '/">'
-    . '<span class="world-card-art" style="--tex:url(' . tex($w, $W['ground']) . ')">'
-    . img($w, $W['card'], '', '(min-width: 900px) 280px, 70vw', 'loading="lazy"') . '</span>'
-    . '<span class="world-card-text"><span class="tag">' . h($W['type']) . '</span>'
-    . '<span class="world-card-name">' . h($W['name']) . '</span>'
-    . '<span class="world-card-lead">' . h($W['lead']) . '</span>'
-    . '<span class="world-card-go">Explore ' . h($W['short']) . ' city <span aria-hidden="true">&rarr;</span></span></span></a></li>';
-}
-$heroPick = [['roman', 'pantheon'], ['modern', 'public-library'], ['elven', 'treetop-village'], ['future', 'greenhouse-dome']];
-$hero = '';
-foreach ($heroPick as $i => [$w, $n]) {
-  $hero .= '<div class="hero-piece hero-' . $w . '">' . img($w, $n, '', '(min-width: 900px) 260px, 40vw', $i ? '' : 'fetchpriority="high"') . '</div>';
-}
-page('/', [
-  'title' => SITE_NAME . ': how cities work, in four illustrated worlds',
-  'desc' => h(SITE_DESC),
-  'class' => 'home',
-  'body' => <<<HTML
-<section class="hero">
-  <div class="wrap hero-inner">
-    <div class="hero-text">
-      <h1>How does a city work?</h1>
-      <p class="lead">Explore four illustrated cities, from ancient Rome to a robotic future. Discover what each building does, compare how each world solves the same problems, and think about what makes a good place to live.</p>
-      <p class="hero-actions"><a class="btn" href="#worlds">Choose a world</a> <a class="btn btn-quiet" href="/compare/">Compare the worlds</a></p>
-    </div>
-    <div class="hero-art" aria-hidden="true">{$hero}</div>
-  </div>
-</section>
-
-<section class="wrap section" id="worlds" aria-labelledby="worlds-h">
-  <h2 id="worlds-h">Four worlds to explore</h2>
-  <p class="setting-note"><strong>Rome is a historical setting.</strong> The modern town, the green elven world and the robotic future are imagined design settings for thinking about ideas, not real places.</p>
-  <ul class="world-cards">{$cards}</ul>
-</section>
-
-<section class="wrap section how" aria-labelledby="how-h">
-  <h2 id="how-h">How to use this site</h2>
-  <ol class="steps">
-    <li><strong>Look around.</strong> Open a world and select any of its 140 buildings to read its own page.</li>
-    <li><strong>Look closer.</strong> Every page has photos of real places, things to notice and questions to talk about.</li>
-    <li><strong>Compare.</strong> See how all four worlds handle water, gathering, travel and nature.</li>
-  </ol>
-</section>
-
-<section class="wrap section two-col" aria-label="For families and educators, and what is coming next">
-  <div class="panel">
-    <h2>For families and educators</h2>
-    <p>Free to use, with no sign-up, ads or tracking. Questions are open-ended and work well for discussion at home or in class. Every building page lists the sources its facts are based on, and marks clearly what is real, what is imagined and what is a possible future.</p>
-    <p><a href="/teachers/">Free lessons and projects for teachers</a> · <a href="/artwork/">View, save and print the artwork</a> · <a href="/about/">About this project</a></p>
-  </div>
-  <div class="panel panel-later">
-    <h2>Coming later</h2>
-    <ul class="plain">
-      <li><a href="/guided/">Guided explorations</a>: short tours such as Roman engineering or living on Mars.</li>
-      <li>Printable worksheets for classes.</li>
-    </ul>
-  </div>
-</section>
-HTML,
-  'ld' => [[
-    '@context' => 'https://schema.org', '@type' => 'WebSite', 'name' => SITE_NAME, 'url' => url('/'),
-    'description' => SITE_DESC, 'inLanguage' => 'en',
-    'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'url' => url('/'), 'logo' => url('/apple-touch-icon.png')],
-  ]],
-]);
-
 require __DIR__ . '/worldpages.php';
 require __DIR__ . '/teachpages.php';
+require __DIR__ . '/tours.php';
+require __DIR__ . '/home.php';
 
 // ---------- Compare ----------
 $rows = '';
@@ -262,13 +197,13 @@ foreach ($COMPARE as [$key, $label, $question, $cells]) {
 $jump = '';
 foreach ($COMPARE as [$key, $label]) $jump .= '<li><a href="#' . $key . '">' . h($label) . '</a></li>';
 page('/compare/', [
-  'title' => 'Compare the Worlds: water, gathering, travel and nature',
-  'desc' => h('One city question, four settings. Compare how ancient Rome, a modern town, a green world and a robotic future could provide water, places to gather, safe travel and room for nature.'),
+  'title' => 'Compare the Worlds: water, gathering, travel, goods and nature',
+  'desc' => h('One city question, four settings. Compare how ancient Rome, a modern town, a green world and a robotic future could provide water, places to gather, safe travel, deliveries of goods and room for nature.'),
   'class' => 'compare',
   'body' => <<<HTML
 <section class="wrap section page-head">
   <h1>Compare the worlds</h1>
-  <p class="big-q">How could a city provide water, places to gather, safe travel, and room for nature?</p>
+  <p class="big-q">How could a city provide water, places to gather, safe travel, goods and room for nature?</p>
   <p class="lead">Look at the same need in all four worlds. Rome is historical; the others are imagined, so treat them as ideas to test, not facts.</p>
   <nav aria-label="Themes on this page"><ul class="jump">{$jump}</ul></nav>
 </section>
@@ -304,8 +239,8 @@ page('/about/', [
   <p class="lead">Four Worlds City Explorer is a free educational and creative website. It uses illustrated cities to help visitors notice how cities work and think about what makes a good place to live.</p>
 
   <h2>What is real and what is imagined</h2>
-  <p><strong>Ancient Rome</strong> is a historical setting. Each of its 35 building pages keeps history separate from the artist's interpretation and lists the sources it is based on. The illustrations are not exact reconstructions; photos of real Roman sites show what survives today.</p>
-  <p>The <strong>modern town</strong> is imagined, but its 36 pages explain real buildings and systems: why towns need them, how they are built and who they serve.</p>
+  <p><strong>Ancient Rome</strong> is a historical setting. Each of its building pages keeps history separate from the artist's interpretation and lists the sources it is based on. The illustrations are not exact reconstructions; photos of real Roman sites show what survives today.</p>
+  <p>The <strong>modern town</strong> is imagined, but its pages explain real buildings, vehicles and systems: why towns need them, how they are built and who they serve.</p>
   <p>The <strong>green elven world</strong> and <strong>robotic future</strong> are imagined and speculative. They don't describe real places, real cultures or predictions. Each page uses labels so you always know what you are reading:</p>
   <ul>
     <li><span class="badge badge-fact">History</span> and <span class="badge badge-fact">Real world</span> facts about the past and about real places, technology and research, with sources.</li>
@@ -333,25 +268,6 @@ HTML,
 ]);
 
 // ---------- Coming later ----------
-page('/guided/', [
-  'title' => 'Guided explorations (coming later)',
-  'desc' => h('Short guided tours of the four city worlds are coming later.'),
-  'noindex' => true,
-  'body' => <<<HTML
-<section class="wrap section page-head narrow">
-  <p class="tag">Coming later</p>
-  <h1>Guided explorations</h1>
-  <p class="lead">Short guided tours through the cities are planned. Ideas include:</p>
-  <ul class="later-list">
-    <li class="world-roman"><strong>Roman engineering</strong> - water, roads and building methods, with sources.</li>
-    <li class="world-modern"><strong>Modern neighborhoods</strong> - getting around, public spaces and access for everyone.</li>
-    <li class="world-elven"><strong>Ecological design</strong> - imaginative ideas about water, plants and shared land.</li>
-    <li class="world-future"><strong>Human choices in robotic cities</strong> - technology, energy and who decides.</li>
-  </ul>
-  <p>Until then, <a href="/compare/">compare the worlds</a> or start with <a href="/worlds/roman/">ancient Rome</a>.</p>
-</section>
-HTML,
-]);
 page('/library/', [
   'title' => 'Art collection',
   'desc' => h('The Four Worlds art collection is now on the Artwork page.'),
@@ -380,14 +296,17 @@ foreach (WORLD_ORDER as $w) {
   foreach ($files as $thumb) {
     $name = basename($thumb, '-thumb.webp');
     $slug = $pageBySrc[$w][$name] ?? null;
-    $title = $slug ? $WORLD_DATA[$w]['pages'][$slug]['name'] : ($ART_TITLES[$w][preg_replace('/^ground-/', '', $name)] ?? $ART_COMMON[$name] ?? ucfirst(str_replace('-', ' ', $name)));
-    $group = str_starts_with($name, 'construction-') ? 'construction'
+    if (!$slug && str_ends_with($name, '-back') && ($front = $pageBySrc[$w][substr($name, 0, -5)] ?? null)) { $slug = $front; $ART_TITLES[$w][$name] = $WORLD_DATA[$w]['pages'][$front]['name'] . ' (back view)'; }
+    if (isset($PEOPLE[$w][$name])) $ART_TITLES[$w][$name] = $PEOPLE[$w][$name][0];
+    $title = $slug && !isset($ART_TITLES[$w][$name]) ? $WORLD_DATA[$w]['pages'][$slug]['name'] : ($ART_TITLES[$w][preg_replace('/^ground-/', '', $name)] ?? $ART_COMMON[$name] ?? ucfirst(str_replace('-', ' ', $name)));
+    $group = str_starts_with($name, 'vehicle-') ? 'vehicles' : (preg_match('/^(people|worker)-/', $name) ? 'people' : null);
+    $group ??= str_starts_with($name, 'construction-') ? 'construction'
       : (preg_match('/^ground-tree-|^trees$/', $name) ? 'trees' : (str_starts_with($name, 'ground-') ? 'ground' : 'buildings'));
     $full = "/assets/artwork/$w/$name.webp";
     [$tw, $th] = getimagesize($thumb);
     [$fw, $fh] = getimagesize(PUB . $full);
     $label = "{$WORLDS[$w]['name']}: $title";
-    $more = $slug ? ' <a class="art-more" href="/worlds/' . $w . '/' . $slug . '/">Read about it</a>' : '';
+    $more = $slug ? ' <a class="art-more" href="/worlds/' . $w . '/' . $slug . '/">Read about it</a>' : ($group === 'people' ? ' <a class="art-more" href="/worlds/' . $w . '/people/#' . $name . '">Meet them</a>' : '');
     $groups[$group] .= '<li class="art-card"><button type="button" class="lb art-thumb" data-full="' . $full . '" data-title="' . h($label) . '" data-credit="Illustration: Four Worlds City Explorer, free to use under CC BY 4.0 (' . $fw . ' x ' . $fh . ' pixels)" data-download="' . "four-worlds-$w-$name.webp" . '" aria-label="View full size: ' . h($label) . '">'
       . '<img src="/assets/artwork/' . $w . '/' . $name . '-thumb.webp" width="' . $tw . '" height="' . $th . '" alt="' . h($label) . '" loading="lazy" decoding="async"></button>'
       . '<p class="art-title">' . h($title) . $more . '</p>'
@@ -470,9 +389,11 @@ HTML,
 
 // ---------- Sitemap, robots ----------
 $urls = ['/' => '1.0'];
-foreach (WORLD_ORDER as $w) $urls["/worlds/$w/"] = '0.9';
+foreach (WORLD_ORDER as $w) { $urls["/worlds/$w/"] = '0.9'; $urls["/worlds/$w/people/"] = '0.7'; }
 foreach ($WORLD_DATA as $w => $D) foreach (array_keys($D['pages']) as $slug) $urls["/worlds/$w/$slug/"] = '0.8';
 $urls['/compare/'] = '0.8';
+$urls['/tours/'] = '0.8';
+foreach (array_keys($TOURS) as $slug) $urls["/tours/$slug/"] = '0.8';
 $urls['/teachers/'] = '0.9';
 foreach (array_keys($TEACH) as $slug) $urls["/teachers/$slug/"] = '0.8';
 $urls['/artwork/'] = '0.7';

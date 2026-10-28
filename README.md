@@ -11,6 +11,7 @@ No accounts, forms, cookies, ads, analytics or third-party requests.
 - Roman building pages: content in `build/roman.php`, photo captions in `build/photo-captions.php`, photo credits in `build/photo-credits.json`.
 - `tools/fetch-photos.php` finds openly licensed photos on Wikimedia Commons (searches in `tools/photo-queries.txt`, rejected files in `tools/photo-reject.txt`). Every photo was checked by eye.
 - Checks: `bash tools/check-site.sh` (links, images, alt text, outbound links) and `php tools/deep-check.php` (ids, JSON-LD, stray characters, titles, sitemap).
+- `tools/copy-people-vehicles.sh` copies the people art (first pose of each walk strip in people-batch-03) and the vehicle art (vehicle-batch-01, front and back views). Source images are never changed.
 - `tools/copy-artwork.sh` exports every supplied illustration for the Artwork page (`public/assets/artwork/`).
 - `tools/copy-assets.sh` copies the selected artwork from the read-only source folders into `public/assets/worlds/{roman,modern,elven,future}/` as web-sized WebP with transparency kept. The selection is listed in `tools/assets.txt`. Source images are never changed.
 
@@ -33,8 +34,11 @@ Then open http://localhost:8097/
 
 | Path | Page |
 | --- | --- |
-| `/` | Home: four world cards |
-| `/worlds/roman/` | Roman city map (6 x 6) linking to 35 building pages |
+| `/` | Home: hero, stats, world cards, vehicles through time, people, tours, compare, teachers, artwork (`build/home.php`) |
+| `/worlds/roman/` etc. | City map (6 x 6 with streets, people and vehicles; zoom, pan, full screen, group highlighting) and directory |
+| `/worlds/{world}/{vehicle}/` | Four vehicle pages per world (`build/vehicles.php`), with front and back views |
+| `/worlds/{world}/people/` | The eight people of each world (`build/people.php`) |
+| `/tours/`, `/tours/{tour}/` | Four guided tours led by a person from that world (`build/tours.php`) |
 | `/worlds/roman/{building}/` | One page per Roman building: history, photos of real sites, artwork notes, questions, sources |
 | `/worlds/modern/` etc. | City map + building directory with detail panels |
 | `/artwork/` | Every supplied illustration (186), by world: view full screen, save, print |
@@ -43,7 +47,7 @@ Then open http://localhost:8097/
 | `/teachers/{guide}/` | One guide each: quick answer, grades, time, steps, FAQ (FAQPage data), building pages to use, sources |
 | `/compare/` | One city question across all four worlds (printable) |
 | `/about/` | About, privacy, accessibility, artwork reuse, sources |
-| `/guided/` | "Coming later" placeholder (not indexed) |
+| `/guided/` | Old address, points to `/tours/` (not indexed) |
 
 ## Artwork inventory
 

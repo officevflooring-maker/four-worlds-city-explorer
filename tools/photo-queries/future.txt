@@ -33,3 +33,7 @@ space-elevator|space elevator illustration;carbon nanotube
 rover-track|Lunar Roving Vehicle Apollo 15;Apollo 17 rover fender repair
 mission-control|Mission Control Houston Apollo 13;Mission Control Center flight control room
 operations-center|McMurdo Station;International Space Station flight control room
+hover-car|Shanghai Maglev;SCMaglev;hovercraft
+pressurized-rover|Space Exploration Vehicle NASA;Lunar Roving Vehicle Control Console;Lunar Roving Vehicle Apollo 15
+cargo-pod|autonomous haul truck mine;Starship robot delivery;Intuitive Machines Odysseus lander Moon
+drone-taxi|intitle:Ingenuity intitle:Mastcam;Dragonfly landing;Volocopter

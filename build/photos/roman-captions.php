@@ -98,4 +98,14 @@ $PHOTO_CAPTIONS["roman"] = [
   'building-materials-1' => 'Opus reticulatum in Pompeii: small square stones set in a net pattern over concrete.',
   'building-materials-2' => 'A Roman clay tile with a maker\'s stamp and the footprints of an animal that walked on it while it was drying.',
   'building-materials-3' => 'Marble quarries in the mountains near Carrara, Italy, the Roman Luna.',
+  // Vehicles
+  'ox-cart-1' => 'The column at Brindisi, in southern Italy, that marks the end of the Via Appia, the first great Roman road.',
+  'ox-cart-2' => 'Roman paving stones by the remains of a Roman bridge at Piercebridge, England.',
+  'chariot-1' => 'The Circus Maximus in Rome today, a long grassy park below the ruins of the emperors\' palace on the Palatine Hill.',
+  'chariot-2' => 'A Roman mosaic from Lyon, France, showing a chariot race in a circus, with the central barrier.',
+  'chariot-3' => 'The quadriga, a chariot pulled by four horses, on top of the Brandenburg Gate in Berlin (a much later statue in the Roman style).',
+  'donkey-cart-1' => 'Pieces of broken amphorae at Monte Testaccio in Rome, a hill made almost entirely of old olive oil jars.',
+  'donkey-cart-2' => 'Roman amphorae displayed beneath the amphitheater in Pula, Croatia.',
+  'donkey-cart-3' => 'A stretch of old road near Villach, Austria, along the line of a Roman road.',
+  'litter-1' => 'A decorated sedan chair, a later relative of the Roman litter, in Amalfi, Italy.',
 ];

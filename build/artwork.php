@@ -8,6 +8,8 @@ $ART_GROUPS = [
   'construction' => 'Construction',
   'trees'        => 'Trees',
   'ground'       => 'Landscapes and ground',
+  'people'       => 'People',
+  'vehicles'     => 'Vehicles',
 ];
 
 $ART_TITLES = [

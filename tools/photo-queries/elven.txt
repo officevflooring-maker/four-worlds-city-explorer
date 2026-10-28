@@ -34,3 +34,7 @@ canopy-market|Metropol Parasol Seville;street trees shade market
 market-hall|farmers market vegetables stall;compost bin food scraps
 woodworking-workshop|Repair Cafe Amsterdam;carpentry workbench hand tools
 building-materials|lotus leaf water droplet;Velcro hooks microscope;Shinkansen 500 series
+deer-sleigh|reindeer sled Sami;reindeer herd Lapland
+flower-cart|Draft horse pulling logs;cargo bike
+mushroom-carriage|flax fiber composite;intitle:"Hemp fiber"
+beetle-rider|dung beetle rolling ball;rhinoceros beetle;legged robot walking

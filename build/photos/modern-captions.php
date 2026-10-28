@@ -78,4 +78,13 @@ $PHOTO_CAPTIONS['modern'] = [
   'tower-crane-2' => 'A tower crane working on a building in Moscow.',
   'building-materials-1' => 'Steel reinforcing bar (rebar) nets, ready to be set inside concrete.',
   'building-materials-2' => 'A brick wall laid in a pattern called a bond, which makes it stronger.',
+  // Vehicles
+  'family-car-2' => 'A small electric car charging at a public charging point in Stuttgart, Germany.',
+  'taxi-1' => 'A yellow New York City taxi. Licensed street taxis there must be yellow.',
+  'taxi-2' => 'A wheelchair-accessible taxi at a taxi rank in Brisbane, Australia.',
+  'pickup-truck-1' => 'An electric pickup truck, the Ford F-150 Lightning, at a motor show.',
+  'pickup-truck-2' => 'A 1956 Chevrolet pickup. Older pickups were lower and smaller than many of today\'s.',
+  'delivery-van-1' => 'A small delivery van at a trade show in Germany.',
+  'delivery-van-2' => 'A cargo tricycle carrying a huge load through Shanghai.',
+  'delivery-van-3' => 'A parcel locker in Astana, Kazakhstan, where people collect deliveries themselves.',
 ];
