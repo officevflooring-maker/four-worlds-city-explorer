@@ -15,6 +15,8 @@ $FUTURE_SOURCES = [
   'nasa-artemis' => 'NASA, Artemis programme overview, including Gateway and plans for a lunar base camp',
   'nasa-ice'     => 'NASA, LCROSS mission (2009) and studies of water ice in permanently shadowed lunar craters',
   'nasa-dsn'     => 'NASA, "Deep Space Network" and Mars relay orbiters',
+  'nasa-ultra'   => 'NASA, "Advanced Diagnostic Ultrasound in Microgravity" (ADUM) experiment on the International Space Station',
+  'nasa-holo'    => 'NASA, first "holoportation" of a doctor to the International Space Station (2021)',
   'nasa-hrp'     => 'NASA Human Research Program, hazards of human spaceflight (radiation, isolation, distance, gravity, hostile environments)',
   'nasa-exercise'=> 'NASA, exercise on the International Space Station (treadmill, cycle and ARED)',
   'nasa-dust'    => 'NASA, studies of lunar dust from the Apollo missions',
@@ -342,7 +344,7 @@ $FUTURE = [
       'Mars\' thin air is mostly carbon dioxide. NASA\'s Perseverance rover carried a lunchbox-sized experiment called MOXIE that heated Martian air and split carbon dioxide into oxygen and carbon monoxide using electricity. Between 2021 and 2023 it ran 16 times and produced 122 grams of oxygen, about what a small dog breathes in ten hours, at its best making 12 grams an hour. It proved the idea works on Mars.',
     ]],
     ['A full-size factory', FUT_WOULD, [
-      'A future factory would be hundreds of times bigger, running for months before astronauts arrive to fill tanks for breathing and for the trip home. On the Moon, oxygen could be released from rock by heating it with chemicals or electricity, since lunar soil is made largely of oxygen-containing minerals. These factories would need lots of steady power.',
+      'A future factory would be hundreds of times bigger, running for months before astronauts arrive to fill tanks for breathing and for the trip home. On the Moon, oxygen could be released from rock by heating it with chemicals or electricity, since oxygen makes up roughly 40 to 45 percent of lunar soil by weight, locked inside minerals. These factories would need lots of steady power.',
     ]],
   ],
   'art' => 'This illustration shows an industrial building with chimneys, tanks and pipes. Here we imagine it as a factory making oxygen.',
@@ -549,7 +551,7 @@ $FUTURE = [
   'look' => ['Find the glass walls. Why might a medical bay need lots of light?', 'Where might an emergency vehicle arrive?'],
   'questions' => ['What medical skills should everyone in a settlement learn?', 'How could doctors help when messages take 20 minutes to arrive?', 'Why is mental health important on long missions?'],
   'words' => ['Telemedicine' => 'Medical care given at a distance using technology.', 'Diagnose' => 'Work out what illness someone has.', 'Ultrasound' => 'A scan that uses sound waves to see inside the body.'],
-  'sources' => ['nasa-hrp'],
+  'sources' => ['nasa-hrp', 'nasa-ultra'],
   'related' => ['gravity-gym', 'telepresence', 'storm-shelter'],
 ],
 
@@ -709,7 +711,7 @@ $FUTURE = [
   'sections' => [
     ['Being there without going there', FUT_REAL, [
       'Telepresence means using technology to feel as if you are somewhere else. Video calls are a simple version. Engineers on Earth already operate rovers on Mars, planning each day\'s drive, and robots on the space station can be controlled from the ground.',
-      'On Earth, surgeons sometimes operate remotely with robotic tools, and NASA has tested ways of sending a 3D image of a doctor to the space station.',
+      'On Earth, surgeons sometimes operate remotely with robotic tools, and in 2021 NASA used "holoportation" to send a live 3D image of a flight doctor to the space station.',
     ]],
     ['The problem of distance', FUT_REAL, [
       'Because messages to Mars take minutes to arrive, nobody on Earth can drive a Mars rover in real time like a video game. Operators send a plan, the rover carries it out, and it reports back. Close to Earth, such as on the Moon, the delay is only a few seconds, so live control is easier.',
@@ -722,7 +724,7 @@ $FUTURE = [
   'look' => ['Look at the glowing figure. Is it a person or an image?', 'Find the projector base.'],
   'questions' => ['How would you keep in touch with family if you lived on Mars?', 'What jobs could be done from far away using robots?', 'Is talking to a hologram the same as being together?'],
   'words' => ['Telepresence' => 'Technology that makes you feel present somewhere else.', 'Hologram' => 'A 3D image made with light.', 'Latency' => 'Delay in sending and receiving signals.'],
-  'sources' => ['nasa-ingenuity', 'nasa-dsn'],
+  'sources' => ['nasa-ingenuity', 'nasa-dsn', 'nasa-holo'],
   'related' => ['comms-relay', 'robot-helpers', 'medical-bay'],
 ],
 
@@ -906,7 +908,8 @@ $WORLD_DATA['future'] = [
   'desc'     => 'Explore a speculative robotic city and how humanity might live on the Moon and Mars. Each of 34 buildings explains how it could work, the real space technology behind it, and how it would be powered, built and maintained.',
   'intro'    => 'One possible future: a settlement on the Moon or Mars. Each building explains how it could work, the real space technology that exists today, and how it would be powered, built and kept running.',
   'note'     => 'This is speculative design, not a prediction. Each page marks what is real today and what is still a possible future.',
-  'aka'      => 'Also called',
+  'aka'      => 'Topic',
+  'aside'    => ['Why the Moon and Mars?', 'The Moon is about 384,000 kilometres away, a trip of about three days. Mars is much further: between about 55 and 400 million kilometres, depending on where the two planets are, and a trip takes around six to nine months. Good launch windows to Mars come only about every 26 months, so a Mars settlement would need to look after itself for a long time.'],
   'akaLang'  => '',
   'pageTitle'=> '%s: how it could work on the Moon and Mars',
   'pageDesc' => ' Learn how it could work beyond Earth, the real technology behind it, and how it would be powered, built and maintained.',
