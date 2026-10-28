@@ -38,7 +38,7 @@ $ROMAN_SOURCES = [
   'un-hadrianvilla'=> 'UNESCO World Heritage Centre, "Villa Adriana (Tivoli)"',
   'un-casale'      => 'UNESCO World Heritage Centre, "Villa Romana del Casale"',
   'un-pompeii'     => 'UNESCO World Heritage Centre, "Archaeological Areas of Pompei, Herculaneum and Torre Annunziata"',
-  'un-rome'        => 'UNESCO World Heritage Centre, "Historic Centre of Rome"',
+  'un-rome'        => 'UNESCO World Heritage Centre, "Historic Center of Rome"',
   'un-ephesus'     => 'UNESCO World Heritage Centre, "Ephesus"',
   'un-frontiers'   => 'UNESCO World Heritage Centre, "Frontiers of the Roman Empire"',
   'un-maison'      => 'UNESCO World Heritage Centre, "Maison Carrée of Nîmes"',
@@ -68,7 +68,7 @@ $ROMAN_CATEGORIES = [
   'trade'   => ['Food, work and trade', 'Shops, snack bars, inns and warehouses that kept the city fed.'],
   'learn'   => ['Learning', 'Schools, libraries and the city\'s written records.'],
   'land'    => ['Gardens and farmland', 'Plants, farms and the food that came from the land.'],
-  'safety'  => ['Defence and travel', 'Walls that protected the city and lights that guided ships.'],
+  'safety'  => ['Defense and travel', 'Walls that protected the city and lights that guided ships.'],
   'build'   => ['Building the city', 'The machines and materials Roman builders used.'],
 ];
 
@@ -77,7 +77,7 @@ $ROMAN = [
 // ---------------- Water and health ----------------
 'aqueduct' => [
   'name' => 'Aqueduct', 'latin' => 'aquaeductus', 'cat' => 'water', 'src' => 'build/aqueduct.png',
-  'summary' => 'A channel that carried fresh water from hills and springs many kilometres away into the city, using only gravity.',
+  'summary' => 'A channel that carried fresh water from hills and springs many kilometers away into the city, using only gravity.',
   'facts' => ['Used for' => 'Bringing clean water into the city', 'First in Rome' => 'Aqua Appia, 312 BC', 'Powered by' => 'Gravity and a gentle downhill slope', 'Still standing' => 'Pont du Gard (France), Segovia (Spain)'],
   'sections' => [
     ['What it was', [
@@ -98,7 +98,7 @@ $ROMAN = [
       'Aqueducts needed constant care: cleaning out mineral deposits, fixing leaks and stopping people from secretly tapping the pipes. Around AD 97, a senator named Frontinus was put in charge of Rome\'s water supply. He wrote a detailed book describing each aqueduct, how much water it carried and the problems of theft and poor repair. It is one of the best sources we have on how the system was run.',
     ]],
     ['Places you can still see', [
-      'The Pont du Gard in southern France carried water to the Roman city of Nîmes and is almost 50 metres high, with three levels of arches. The aqueduct of Segovia in Spain still crosses the middle of the town, built from granite blocks fitted together without mortar. Near Rome, the Park of the Aqueducts preserves long stretches of arches marching across the countryside.',
+      'The Pont du Gard in southern France carried water to the Roman city of Nîmes and is almost 50 meters high, with three levels of arches. The aqueduct of Segovia in Spain still crosses the middle of the town, built from granite blocks fitted together without mortar. Near Rome, the Park of the Aqueducts preserves long stretches of arches marching across the countryside.',
     ]],
   ],
   'art' => 'This short arched section is a simplified illustration. Real aqueduct bridges were much longer, and most of the channel was hidden underground.',
@@ -123,7 +123,7 @@ $ROMAN = [
       'Many spouts were carved with faces of gods, animals or masks, which made each fountain a small landmark people could use to give directions.',
     ]],
     ['Life at the fountain', [
-      'Fetching water was a daily job, often done by children, servants or enslaved workers. Carrying heavy jars meant the fountain was a meeting place where neighbours talked and news spread. In the city of Rome, the water commissioner Frontinus wrote about the importance of keeping the public basins supplied.',
+      'Fetching water was a daily job, often done by children, servants or enslaved workers. Carrying heavy jars meant the fountain was a meeting place where neighbors talked and news spread. In the city of Rome, the water commissioner Frontinus wrote about the importance of keeping the public basins supplied.',
     ]],
   ],
   'art' => 'This fountain is grander than the plain street basins found in Pompeii. Its design is the artist\'s own.',
@@ -137,11 +137,11 @@ $ROMAN = [
 'public-baths' => [
   'name' => 'Public baths', 'latin' => 'thermae', 'cat' => 'water', 'src' => 'art/fitness_1.png',
   'summary' => 'A huge bathhouse with hot, warm and cold pools where Romans washed, exercised, relaxed and met friends.',
-  'facts' => ['Used for' => 'Bathing, exercise and socialising', 'Main rooms' => 'Cold, warm and hot rooms', 'Heating' => 'Hypocaust (hot air under the floor)', 'Famous example' => 'Baths of Caracalla, Rome (opened AD 216)'],
+  'facts' => ['Used for' => 'Bathing, exercise and socializing', 'Main rooms' => 'Cold, warm and hot rooms', 'Heating' => 'Hypocaust (hot air under the floor)', 'Famous example' => 'Baths of Caracalla, Rome (opened AD 216)'],
   'sections' => [
     ['What it was', [
-      'Going to the baths was part of everyday Roman life. Small neighbourhood baths (balneae) were everywhere, and emperors built enormous public baths (thermae) that could serve thousands of people a day. The entry fee was very low, so rich and poor alike could visit.',
-      'The largest baths were more like leisure centres. Besides pools, they could include exercise yards, gardens, meeting halls and even libraries.',
+      'Going to the baths was part of everyday Roman life. Small neighborhood baths (balneae) were everywhere, and emperors built enormous public baths (thermae) that could serve thousands of people a day. The entry fee was very low, so rich and poor alike could visit.',
+      'The largest baths were more like leisure centers. Besides pools, they could include exercise yards, gardens, meeting halls and even libraries.',
     ]],
     ['How it worked', [
       'A visit usually followed a route through rooms of different temperatures.',
@@ -157,7 +157,7 @@ $ROMAN = [
     ['Heating the water and floors', [
       'The hot rooms were heated by a system called a hypocaust. A furnace, kept burning by workers, pushed hot air into a hollow space under the floor, which was raised on short stacks of tiles. The hot air also rose through hollow clay pipes inside the walls, so the whole room was warmed. The floors could get so hot that bathers wore wooden-soled sandals.',
     ]],
-    ['Noisy neighbours', [
+    ['Noisy neighbors', [
       'The Roman writer Seneca once lived above a bathhouse and complained in a letter about the noise: people grunting as they lifted weights, splashing into the pool, and sellers calling out to sell snacks. His letter shows that the baths were busy, lively social places.',
     ]],
   ],
@@ -187,7 +187,7 @@ $ROMAN = [
       'A day of games might begin with animal hunts in the morning and end with gladiator contests in the afternoon. These shows were paid for by emperors and wealthy citizens to win popularity. Many of the contests were violent and cruel, and they were part of how Roman leaders showed their power.',
     ]],
     ['Places you can still see', [
-      'The Colosseum still stands in the centre of Rome. The Arena di Verona in Italy is still used for opera performances, and the amphitheater at El Jem in Tunisia is one of the best preserved in Africa.',
+      'The Colosseum still stands in the center of Rome. The Arena di Verona in Italy is still used for opera performances, and the amphitheater at El Jem in Tunisia is one of the best preserved in Africa.',
     ]],
   ],
   'art' => 'This arena resembles the Colosseum but is an artistic illustration, smaller and simplified.',
@@ -216,7 +216,7 @@ $ROMAN = [
       'The tight turns were the most dangerous part. Drivers wrapped the reins around their bodies to steer by leaning, and are said to have carried a knife to cut themselves free if they crashed.',
     ]],
     ['Teams and fans', [
-      'Under the empire, racing was organised into four teams, or factions, each with its own colour: Red, White, Blue and Green. Fans were fiercely loyal, and rivalries sometimes led to fights. Successful drivers became famous and wealthy, much like sports stars today.',
+      'Under the empire, racing was organized into four teams, or factions, each with its own color: Red, White, Blue and Green. Fans were fiercely loyal, and rivalries sometimes led to fights. Successful drivers became famous and wealthy, much like sports stars today.',
       'Races cost less to stage than gladiator games, so they could be held more often, and chariot racing continued long after gladiator fights ended.',
     ]],
     ['Places you can still see', [
@@ -225,7 +225,7 @@ $ROMAN = [
   ],
   'art' => 'The track shown here is much smaller and shorter than the real Circus Maximus.',
   'look' => ['Find the central barrier down the middle of the track.', 'Look for the starting gates at one end.'],
-  'questions' => ['Why might a long, narrow shape suit chariot racing?', 'Why do you think fans felt so loyal to a team colour?', 'What makes a sport popular enough to fill a stadium?'],
+  'questions' => ['Why might a long, narrow shape suit chariot racing?', 'Why do you think fans felt so loyal to a team color?', 'What makes a sport popular enough to fill a stadium?'],
   'words' => ['Spina' => 'The central barrier the chariots raced around.', 'Carceres' => 'The starting gates.', 'Faction' => 'A racing team.'],
   'sources' => ['brit-circus'],
   'related' => ['amphitheater', 'gladiator-school', 'victory-column'],
@@ -233,7 +233,7 @@ $ROMAN = [
 
 'gladiator-school' => [
   'name' => 'Gladiator school', 'latin' => 'ludus', 'cat' => 'fun', 'src' => 'art/nt_workshop.png',
-  'summary' => 'A training camp with its own small arena where gladiators lived, practised and prepared for the games.',
+  'summary' => 'A training camp with its own small arena where gladiators lived, practiced and prepared for the games.',
   'facts' => ['Used for' => 'Training and housing gladiators', 'Best known' => 'Ludus Magnus, next to the Colosseum', 'Built under' => 'Emperor Domitian', 'Practice weapon' => 'Wooden sword (rudis)'],
   'sections' => [
     ['What it was', [
@@ -242,7 +242,7 @@ $ROMAN = [
     ]],
     ['How it worked', [
       'The Ludus Magnus was built around a courtyard holding a small oval training arena, a reduced version of the Colosseum\'s arena. Around it were rows of seats for up to about 3,000 spectators, who could watch training sessions. Small rooms around the courtyard housed the gladiators, and a tunnel connected the school to the Colosseum.',
-      'Gladiators practised with wooden swords and heavy training weapons under expert trainers. They specialised in different fighting styles, each with its own armour and weapons, and were matched against opponents with a different style.',
+      'Gladiators practiced with wooden swords and heavy training weapons under expert trainers. They specialized in different fighting styles, each with its own armour and weapons, and were matched against opponents with a different style.',
     ]],
     ['A hard life', [
       'Gladiators were expensive to train and feed, so their owners did not want them killed carelessly, but the life was dangerous and most gladiators had no choice about it. A gladiator who survived many fights might be awarded a wooden sword, the rudis, as a sign of release from fighting.',
@@ -384,7 +384,7 @@ $ROMAN = [
       'The Maison Carrée in Nîmes, France, built around the turn of the 1st century AD, is one of the best-preserved Roman temples anywhere and still has its roof. In Rome, the Temple of Portunus beside the river Tiber shows the same plan on a small scale. The most important temple in Rome stood on the Capitoline Hill, dedicated to Jupiter, Juno and Minerva.',
     ]],
   ],
-  'art' => 'The golden statue on the roof and the colours are the artist\'s interpretation, though Roman temples were often brightly painted and decorated with statues.',
+  'art' => 'The golden statue on the roof and the colors are the artist\'s interpretation, though Roman temples were often brightly painted and decorated with statues.',
   'look' => ['Count the columns across the front.', 'Find the statue on top of the roof.'],
   'questions' => ['Why might a temple be built on a high platform?', 'How is this different from places of worship you know?', 'Why do you think public ceremonies happened outside?'],
   'words' => ['Cella' => 'The inner room holding the god\'s statue.', 'Podium' => 'The high platform a temple stands on.', 'Pediment' => 'The triangle shape above the columns at the front.'],
@@ -395,15 +395,15 @@ $ROMAN = [
 'pantheon' => [
   'name' => 'The Pantheon', 'latin' => 'Pantheon', 'cat' => 'belief', 'src' => 'art/family_3.png',
   'summary' => 'A temple with a vast concrete dome and an open circle at the top, still standing and still in use in Rome.',
-  'facts' => ['Used for' => 'Temple, later a church', 'Built' => 'Early 2nd century AD, under Hadrian', 'Dome width' => 'About 43 metres', 'Light source' => 'The oculus, an open circle in the roof'],
+  'facts' => ['Used for' => 'Temple, later a church', 'Built' => 'Early 2nd century AD, under Hadrian', 'Dome width' => 'About 43 meters', 'Light source' => 'The oculus, an open circle in the roof'],
   'sections' => [
     ['What it was', [
-      'The Pantheon was a temple in the centre of Rome. Its name comes from Greek words meaning "all the gods". The building standing today was begun under the emperor Trajan and completed under Hadrian in the early 2nd century AD. The inscription on the front names Marcus Agrippa, who built an earlier temple on the same spot more than a century before.',
+      'The Pantheon was a temple in the center of Rome. Its name comes from Greek words meaning "all the gods". The building standing today was begun under the emperor Trajan and completed under Hadrian in the early 2nd century AD. The inscription on the front names Marcus Agrippa, who built an earlier temple on the same spot more than a century before.',
     ]],
     ['How it worked', [
-      'The Pantheon has a traditional columned porch at the front, but behind it is a huge round hall covered by a dome. The dome is about 43 metres across, the same as the height from the floor to the top, so a giant ball could fit perfectly inside.',
+      'The Pantheon has a traditional columned porch at the front, but behind it is a huge round hall covered by a dome. The dome is about 43 meters across, the same as the height from the floor to the top, so a giant ball could fit perfectly inside.',
       'The dome is made of Roman concrete. Builders used heavier stone in the concrete near the bottom and lighter volcanic stone near the top to reduce the weight. Sunken square panels, called coffers, cut into the inside of the dome also make it lighter.',
-      'At the top is the oculus ("eye"), an open circle about 9 metres wide. It is the building\'s main source of direct light, and a circle of sunlight moves around the walls as the day passes. When it rains, water falls in and drains away through small holes in the gently sloping floor.',
+      'At the top is the oculus ("eye"), an open circle about 9 meters wide. It is the building\'s main source of direct light, and a circle of sunlight moves around the walls as the day passes. When it rains, water falls in and drains away through small holes in the gently sloping floor.',
     ]],
     ['Why it survived', [
       'In AD 609 the Pantheon was turned into a church, which meant it was cared for when many other ancient buildings were taken apart for stone. Nearly 1,900 years after it was built, it remains one of the largest unreinforced concrete domes in the world.',
@@ -423,11 +423,11 @@ $ROMAN = [
   'facts' => ['Goddess' => 'Vesta, goddess of the hearth', 'Shape' => 'Round', 'Inside' => 'A sacred fire that was never allowed to go out', 'Cared for by' => 'The Vestal Virgins, six priestesses'],
   'sections' => [
     ['What it was', [
-      'Vesta was the Roman goddess of the hearth, the fireplace at the centre of every home. Her temple in the Roman Forum held a sacred fire that stood for the hearth of the whole city. Romans believed that if the fire went out, disaster could follow.',
+      'Vesta was the Roman goddess of the hearth, the fireplace at the center of every home. Her temple in the Roman Forum held a sacred fire that stood for the hearth of the whole city. Romans believed that if the fire went out, disaster could follow.',
       'Unlike most Roman temples, which were rectangular, the Temple of Vesta was round. Some historians think the round shape recalls the round huts of Rome\'s earliest settlers.',
     ]],
     ['The Vestal Virgins', [
-      'The fire was tended by six priestesses called the Vestal Virgins. They were chosen as young girls and served for 30 years: ten years learning, ten years performing the duties, and ten years teaching. They lived in a large house right next to the temple, the House of the Vestals, and had special honours and privileges, such as front-row seats at the games.',
+      'The fire was tended by six priestesses called the Vestal Virgins. They were chosen as young girls and served for 30 years: ten years learning, ten years performing the duties, and ten years teaching. They lived in a large house right next to the temple, the House of the Vestals, and had special honors and privileges, such as front-row seats at the games.',
     ]],
     ['What you can see today', [
       'The temple was damaged by fire and rebuilt several times. The section standing in the Roman Forum today was partly reconstructed in the 1930s. The courtyard of the House of the Vestals, with its long pools and statues of senior Vestals, can be seen next to it. A well-preserved round temple, also linked to Vesta, stands at Tivoli near Rome.',
@@ -436,7 +436,7 @@ $ROMAN = [
   'art' => 'The flame shown in the doorway and the decoration are the artist\'s interpretation. The real sacred fire was kept inside, out of public view.',
   'look' => ['Look between the columns. What is burning inside?', 'Notice the round shape.'],
   'questions' => ['Why might a shared flame matter to a whole city?', 'What symbols do cities or countries use today to show they are united?', 'Why would a temple be round instead of rectangular?'],
-  'words' => ['Hearth' => 'A fireplace, the centre of a home.', 'Vestal' => 'A priestess of Vesta.', 'Tholos' => 'A round building with columns.'],
+  'words' => ['Hearth' => 'A fireplace, the center of a home.', 'Vestal' => 'A priestess of Vesta.', 'Tholos' => 'A round building with columns.'],
   'sources' => ['brit-vesta', 'sh-forum', 'brit-forum'],
   'related' => ['temple', 'forum', 'pantheon'],
 ],
@@ -447,7 +447,7 @@ $ROMAN = [
   'facts' => ['Used for' => 'Burial and remembrance', 'Where' => 'Outside the city, along roads', 'Famous examples' => 'Mausoleum of Augustus, Mausoleum of Hadrian', 'Word comes from' => 'King Mausolus\'s tomb in Halicarnassus'],
   'sections' => [
     ['What it was', [
-      'Roman law forbade burials inside the city, so tombs were built outside the walls, often lining the main roads. Travellers on the Via Appia passed mile after mile of tombs, from simple markers to huge monuments. Wealthy families built impressive tombs so that their names would be seen and remembered.',
+      'Roman law forbade burials inside the city, so tombs were built outside the walls, often lining the main roads. Travelers on the Via Appia passed mile after mile of tombs, from simple markers to huge monuments. Wealthy families built impressive tombs so that their names would be seen and remembered.',
       'A mausoleum is a large, grand tomb. The word comes from the tomb of Mausolus, a ruler in what is now Turkey, which was so famous that its name became the general word.',
     ]],
     ['Round tombs', [
@@ -468,7 +468,7 @@ $ROMAN = [
 
 'triumphal-arch' => [
   'name' => 'Triumphal arch', 'latin' => 'arcus triumphalis', 'cat' => 'belief', 'src' => 'art/town_2.png',
-  'summary' => 'A grand stone archway built to celebrate a victory or honour an emperor.',
+  'summary' => 'A grand stone archway built to celebrate a victory or honor an emperor.',
   'facts' => ['Used for' => 'Celebrating victories and honouring leaders', 'Oldest surviving in Rome' => 'Arch of Titus (after AD 81)', 'Largest in Rome' => 'Arch of Constantine (AD 315)', 'Decorated with' => 'Carvings and inscriptions'],
   'sections' => [
     ['What it was', [
@@ -497,7 +497,7 @@ $ROMAN = [
   'facts' => ['Used for' => 'Celebrating victories and honouring an emperor', 'Most famous' => 'Trajan\'s Column, Rome', 'Dedicated' => 'AD 113', 'Inside' => 'A spiral staircase'],
   'sections' => [
     ['What it was', [
-      'Romans set up columns to honour important people and victories. The most famous is Trajan\'s Column, dedicated in AD 113 in the Forum of Trajan. It celebrates the emperor Trajan\'s two wars against the Dacians, who lived in what is now Romania.',
+      'Romans set up columns to honor important people and victories. The most famous is Trajan\'s Column, dedicated in AD 113 in the Forum of Trajan. It celebrates the emperor Trajan\'s two wars against the Dacians, who lived in what is now Romania.',
     ]],
     ['How it works', [
       'A band of carved pictures winds around the column from bottom to top, like a ribbon, telling the story of the wars. It shows soldiers marching, building forts and bridges, crossing rivers and fighting, with more than 2,000 carved figures. Historians study it to learn about Roman army equipment and life on campaign.',
@@ -521,14 +521,14 @@ $ROMAN = [
   'facts' => ['Used for' => 'Showing the emperor\'s image and power', 'Materials' => 'Marble, bronze, sometimes gilded', 'Famous example' => 'Augustus of Primaporta', 'Bronze survivor' => 'Marcus Aurelius on horseback'],
   'sections' => [
     ['What it was', [
-      'In a world without photographs or television, most people in the Roman Empire would never see their emperor in person. Statues, along with portraits on coins, showed everyone what the ruler looked like and what he stood for. They were placed in forums, temples, baths and theatres across the empire.',
+      'In a world without photographs or television, most people in the Roman Empire would never see their emperor in person. Statues, along with portraits on coins, showed everyone what the ruler looked like and what he stood for. They were placed in forums, temples, baths and theaters across the empire.',
     ]],
     ['Sending a message', [
-      'Statues were carefully designed to send a message. The marble statue known as the Augustus of Primaporta shows the first emperor as a young, calm commander, with carvings on his armour celebrating a diplomatic victory. Many statues were originally painted in bright colours, though the paint has mostly worn away.',
+      'Statues were carefully designed to send a message. The marble statue known as the Augustus of Primaporta shows the first emperor as a young, calm commander, with carvings on his armour celebrating a diplomatic victory. Many statues were originally painted in bright colors, though the paint has mostly worn away.',
       'Bronze statues were sometimes covered in a thin layer of gold. Most ancient bronzes were later melted down for their metal. The bronze statue of the emperor Marcus Aurelius on horseback survived because, for centuries, people believed it showed Constantine, the first Christian emperor. The original is now in Rome\'s Capitoline Museums.',
     ]],
     ['Giant statues', [
-      'Some statues were enormous. Pieces of a colossal statue of Constantine, including a head more than two metres tall and a giant hand, can be seen in the courtyard of the Capitoline Museums.',
+      'Some statues were enormous. Pieces of a colossal statue of Constantine, including a head more than two meters tall and a giant hand, can be seen in the courtyard of the Capitoline Museums.',
     ]],
   ],
   'art' => 'This golden statue is the artist\'s interpretation of an imperial statue on a decorated base.',
@@ -546,7 +546,7 @@ $ROMAN = [
   'facts' => ['Used for' => 'Home and offices of the emperor', 'Location' => 'Palatine Hill, Rome', 'Word origin' => '"Palace" comes from "Palatine"', 'Famous palace' => 'Nero\'s Golden House'],
   'sections' => [
     ['What it was', [
-      'The Palatine Hill rises above the Roman Forum. In the Republic it was a neighbourhood of wealthy homes. The first emperor, Augustus, lived there in a fairly modest house, and later emperors built ever larger palaces until the palace complex covered much of the hill. The word "palace" comes from the name of this hill.',
+      'The Palatine Hill rises above the Roman Forum. In the Republic it was a neighborhood of wealthy homes. The first emperor, Augustus, lived there in a fairly modest house, and later emperors built ever larger palaces until the palace complex covered much of the hill. The word "palace" comes from the name of this hill.',
     ]],
     ['How it worked', [
       'An imperial palace was a home, a government office and a stage for ceremonies all at once. It had private living rooms, gardens and baths for the emperor\'s family, but also grand reception halls where the emperor met officials and foreign visitors, and banquet halls for huge dinners. Hundreds of officials, guards and enslaved workers kept it running.',
@@ -566,27 +566,27 @@ $ROMAN = [
 
 'apartment-block' => [
   'name' => 'Apartment block (insula)', 'latin' => 'insula', 'cat' => 'homes', 'src' => 'art/floor_m.png',
-  'summary' => 'A building of several floors with shops on the ground floor and rented flats above, where most city people lived.',
+  'summary' => 'A building of several floors with shops on the ground floor and rented apartments above, where most city people lived.',
   'facts' => ['Used for' => 'Homes and shops', 'Who lived there' => 'Most ordinary city dwellers', 'Best seen at' => 'Ostia, Rome\'s port town', 'Biggest danger' => 'Fire'],
   'sections' => [
     ['What it was', [
-      'Most people in Rome did not live in houses. They rented rooms in apartment blocks called insulae ("islands"), several storeys high, packed along narrow streets. Rome was one of the most crowded cities in the ancient world.',
+      'Most people in Rome did not live in houses. They rented rooms in apartment blocks called insulae ("islands"), several stories high, packed along narrow streets. Rome was one of the most crowded cities in the ancient world.',
     ]],
     ['How it worked', [
-      'The ground floor usually held shops opening onto the street, with the shopkeepers often living in a room behind or above. Stairs led to the flats upstairs. Many blocks were built around a central courtyard that let light and air into the lower floors.',
-      'Unlike today, the best flats were on the lower floors. The upper floors were cheaper because they were smaller, hotter, harder to reach and more dangerous. There was no running water upstairs, so residents fetched water from public fountains and used public toilets.',
+      'The ground floor usually held shops opening onto the street, with the shopkeepers often living in a room behind or above. Stairs led to the apartments upstairs. Many blocks were built around a central courtyard that let light and air into the lower floors.',
+      'Unlike today, the best apartments were on the lower floors. The upper floors were cheaper because they were smaller, hotter, harder to reach and more dangerous. There was no running water upstairs, so residents fetched water from public fountains and used public toilets.',
     ]],
     ['Dangers', [
-      'Apartment blocks were sometimes badly built, and fire was a constant danger, especially for people on the top floors. After the great fire of AD 64, rules were introduced for wider streets and more fire-resistant building. The emperor Augustus also set a height limit for new buildings, recorded by the ancient writer Strabo as about 70 Roman feet (about 20 metres).',
+      'Apartment blocks were sometimes badly built, and fire was a constant danger, especially for people on the top floors. After the great fire of AD 64, rules were introduced for wider streets and more fire-resistant building. The emperor Augustus also set a height limit for new buildings, recorded by the ancient writer Strabo as about 70 Roman feet (about 20 meters).',
     ]],
     ['Places you can still see', [
-      'The best surviving examples are in Ostia, Rome\'s ancient port, where whole streets of apartment buildings stand several storeys high. In Rome itself, the Insula dell\'Ara Coeli at the foot of the Capitoline Hill still shows several floors of a block.',
+      'The best surviving examples are in Ostia, Rome\'s ancient port, where whole streets of apartment buildings stand several stories high. In Rome itself, the Insula dell\'Ara Coeli at the foot of the Capitoline Hill still shows several floors of a block.',
     ]],
   ],
-  'art' => 'The bright colours, plants and balconies are the artist\'s interpretation of a cheerful apartment block.',
+  'art' => 'The bright colors, plants and balconies are the artist\'s interpretation of a cheerful apartment block.',
   'look' => ['Find the shops at street level.', 'Count the floors. Which would you want to live on?'],
-  'questions' => ['What would make living on an upper floor easier or harder?', 'Why do you think the best Roman flats were on the lower floors?', 'How do modern apartment buildings handle water, fire and stairs?'],
-  'words' => ['Insula' => 'An apartment block (Latin for island).', 'Storey' => 'One floor of a building.', 'Landlord' => 'Someone who rents out property.'],
+  'questions' => ['What would make living on an upper floor easier or harder?', 'Why do you think the best Roman apartments were on the lower floors?', 'How do modern apartment buildings handle water, fire and stairs?'],
+  'words' => ['Insula' => 'An apartment block (Latin for island).', 'Story' => 'One floor of a building.', 'Landlord' => 'Someone who rents out property.'],
   'sources' => ['sh-insula', 'sh-ostia', 'anc-strabo'],
   'related' => ['shop', 'public-fountain', 'domus'],
 ],
@@ -594,7 +594,7 @@ $ROMAN = [
 'domus' => [
   'name' => 'Town house (domus)', 'latin' => 'domus', 'cat' => 'homes', 'src' => 'art/family_1.png',
   'summary' => 'A private family house that faced inward, built around open-air halls and gardens.',
-  'facts' => ['Who lived there' => 'Wealthy families and their households', 'Centre of the house' => 'The atrium, with an opening in the roof', 'Decoration' => 'Wall paintings and floor mosaics', 'Best seen at' => 'Pompeii and Herculaneum'],
+  'facts' => ['Who lived there' => 'Wealthy families and their households', 'Center of the house' => 'The atrium, with an opening in the roof', 'Decoration' => 'Wall paintings and floor mosaics', 'Best seen at' => 'Pompeii and Herculaneum'],
   'sections' => [
     ['What it was', [
       'Wealthier Romans lived in a domus, a single-family house. From the street a domus looked plain, often with shops built into the front wall. Inside, it opened up into bright, decorated rooms arranged around open spaces.',
@@ -615,7 +615,7 @@ $ROMAN = [
       'Pompeii and Herculaneum, buried by the eruption of Mount Vesuvius in AD 79, preserve many town houses. The House of the Faun in Pompeii is named after a bronze dancing statue found in its atrium, and the House of the Tragic Poet has a famous floor mosaic of a dog with the words "cave canem" ("beware of the dog").',
     ]],
   ],
-  'art' => 'This is a general illustration of a domus, not a specific house. Real town houses were usually squeezed tightly between neighbours.',
+  'art' => 'This is a general illustration of a domus, not a specific house. Real town houses were usually squeezed tightly between neighbors.',
   'look' => ['Find the pool in the middle of the house.', 'Where does the light come in?'],
   'questions' => ['This house faces inward. What are the benefits of that?', 'Why would a home be designed to impress visitors?', 'How is collecting rainwater useful?'],
   'words' => ['Atrium' => 'The main hall, open to the sky.', 'Impluvium' => 'The pool that catches rainwater.', 'Peristyle' => 'A garden surrounded by columns.'],
@@ -637,13 +637,13 @@ $ROMAN = [
       'Villas were run by large staffs of servants and enslaved workers who lived on the property.',
     ]],
     ['Places you can still see', [
-      'Hadrian\'s Villa at Tivoli, near Rome, built for the emperor Hadrian in the 2nd century AD, is a huge complex of palaces, baths, theatres and pools. The Villa Romana del Casale in Sicily is famous for its colourful floor mosaics. Near Pompeii, the Villa of the Mysteries is known for its brilliant red wall paintings.',
+      'Hadrian\'s Villa at Tivoli, near Rome, built for the emperor Hadrian in the 2nd century AD, is a huge complex of palaces, baths, theaters and pools. The Villa Romana del Casale in Sicily is famous for its colorful floor mosaics. Near Pompeii, the Villa of the Mysteries is known for its brilliant red wall paintings.',
     ]],
   ],
   'art' => 'This villa is an illustration combining features found in many villas, not a specific site.',
   'look' => ['Find the pools and gardens.', 'How many separate wings can you count?'],
   'questions' => ['Why might people want a second home away from the city?', 'Who did the work to keep a villa running?', 'What makes a place feel restful?'],
-  'words' => ['Villa' => 'A country house.', 'Otium' => 'Leisure time for rest, reading and thinking.', 'Mosaic' => 'A picture made of small coloured stones or glass.'],
+  'words' => ['Villa' => 'A country house.', 'Otium' => 'Leisure time for rest, reading and thinking.', 'Mosaic' => 'A picture made of small colored stones or glass.'],
   'sources' => ['sh-villa', 'anc-pliny', 'un-hadrianvilla', 'un-casale'],
   'related' => ['farmhouse', 'domus', 'garden'],
 ],
@@ -654,18 +654,18 @@ $ROMAN = [
   'facts' => ['Used for' => 'Farming and storing produce', 'Main crops' => 'Grain, olives and grapes', 'Storage' => 'Large clay jars called dolia', 'Ancient guides' => 'Cato and Columella'],
   'sections' => [
     ['What it was', [
-      'Most people in the Roman world lived and worked in the countryside. A villa rustica was a farmhouse at the centre of a working farm, with rooms for the farm manager and workers, barns, animal pens and areas for pressing grapes and olives.',
+      'Most people in the Roman world lived and worked in the countryside. A villa rustica was a farmhouse at the center of a working farm, with rooms for the farm manager and workers, barns, animal pens and areas for pressing grapes and olives.',
       'Farms ranged from small family plots to huge estates owned by wealthy landowners and worked largely by enslaved people.',
     ]],
     ['How it worked', [
       'The three most important crops of the Mediterranean world were grain (for bread), olives (for oil) and grapes (for wine). After harvest, grapes and olives were crushed in presses, and the juice or oil was stored in huge clay jars called dolia, often partly sunk into the ground to keep them cool.',
-      'Roman writers left practical guides to farming. Cato the Elder and, later, Columella explained how to choose land, plant vines, look after animals and organise workers.',
+      'Roman writers left practical guides to farming. Cato the Elder and, later, Columella explained how to choose land, plant vines, look after animals and organize workers.',
     ]],
     ['Feeding the city', [
       'A big city like Rome could not grow enough food for itself. Grain came from farms across Italy and from overseas, especially Egypt and North Africa, while wine and oil came from farms all around the Mediterranean.',
     ]],
   ],
-  'art' => 'This small, cosy farmhouse is the artist\'s interpretation. Real villa rustica farms usually had several buildings and work yards.',
+  'art' => 'This small, cozy farmhouse is the artist\'s interpretation. Real villa rustica farms usually had several buildings and work yards.',
   'look' => ['Find the olive tree and storage jars.', 'Notice the covered porch with columns.'],
   'questions' => ['Where does the food in your kitchen come from?', 'Why might farmers store oil and wine underground?', 'How did food get from farms to the city?'],
   'words' => ['Dolium' => 'A very large clay storage jar (plural dolia).', 'Estate' => 'A large area of land owned by one person or family.', 'Harvest' => 'Gathering ripe crops.'],
@@ -701,7 +701,7 @@ $ROMAN = [
 'street-food' => [
   'name' => 'Snack bar (thermopolium)', 'latin' => 'thermopolium', 'cat' => 'trade', 'src' => 'art/floor_s.png',
   'summary' => 'A street counter selling hot food and drinks to people who had no kitchen at home.',
-  'facts' => ['Used for' => 'Selling ready-to-eat food and drinks', 'Counter' => 'Stone, with jars set into it', 'Customers' => 'Workers, travellers and city residents', 'Famous find' => 'Painted counter in Pompeii, excavated 2019-2020'],
+  'facts' => ['Used for' => 'Selling ready-to-eat food and drinks', 'Counter' => 'Stone, with jars set into it', 'Customers' => 'Workers, travelers and city residents', 'Famous find' => 'Painted counter in Pompeii, excavated 2019-2020'],
   'sections' => [
     ['What it was', [
       'Many people living in crowded apartment blocks had no kitchen, and cooking fires upstairs were a danger. So they bought ready-made food and drinks from street counters. Pompeii had dozens of these snack bars.',
@@ -724,24 +724,24 @@ $ROMAN = [
 
 'inn' => [
   'name' => 'Roadside inn', 'latin' => 'caupona / mansio', 'cat' => 'safety', 'src' => 'art/home_b.png',
-  'summary' => 'A place for travellers to eat, sleep and rest their animals along Rome\'s great roads.',
-  'facts' => ['Used for' => 'Food, beds and stabling for travellers', 'Found along' => 'Roman roads and near city gates', 'Famous road' => 'Via Appia, begun 312 BC', 'Distance markers' => 'Milestones'],
+  'summary' => 'A place for travelers to eat, sleep and rest their animals along Rome\'s great roads.',
+  'facts' => ['Used for' => 'Food, beds and stabling for travelers', 'Found along' => 'Roman roads and near city gates', 'Famous road' => 'Via Appia, begun 312 BC', 'Distance markers' => 'Milestones'],
   'sections' => [
     ['What it was', [
       'The Romans built a network of paved roads across their empire to move armies, officials, traders and messages. Travelling was slow, so roads were lined with places to stop. A caupona was an inn or tavern offering food, drink and a bed. A mansio was an official stopping place where government messengers could rest and change horses.',
     ]],
     ['How it worked', [
-      'A roadside inn was often built around a courtyard, with rooms for guests on two floors, a kitchen, a dining area and stables for horses and mules. Travellers paid for a meal, a bed and food for their animals.',
-      'Stone milestones along the roads told travellers how far they had come. Roman maps were usually lists of towns and stopping places with the distances between them, rather than drawings of the land.',
+      'A roadside inn was often built around a courtyard, with rooms for guests on two floors, a kitchen, a dining area and stables for horses and mules. Travelers paid for a meal, a bed and food for their animals.',
+      'Stone milestones along the roads told travelers how far they had come. Roman maps were usually lists of towns and stopping places with the distances between them, rather than drawings of the land.',
     ]],
     ['Roman roads', [
       'The Via Appia, begun in 312 BC by Appius Claudius, ran south from Rome and became known as the "queen of roads". Long stretches of its paving stones can still be walked today, lined with ancient tombs.',
     ]],
   ],
   'art' => 'This building is used to illustrate an inn built around a courtyard. Its design is the artist\'s own.',
-  'look' => ['Find the courtyard and fountain in the middle.', 'Where might travellers sleep?'],
-  'questions' => ['How long might it take to travel 100 kilometres on foot, or with a mule?', 'Why would an empire build roads and inns?', 'Where do travellers rest today on long journeys?'],
-  'words' => ['Caupona' => 'An inn or tavern.', 'Mansio' => 'An official rest stop for government travellers.', 'Milestone' => 'A stone marking distance along a road.'],
+  'look' => ['Find the courtyard and fountain in the middle.', 'Where might travelers sleep?'],
+  'questions' => ['How long might it take to travel 100 kilometers on foot, or with a mule?', 'Why would an empire build roads and inns?', 'Where do travelers rest today on long journeys?'],
+  'words' => ['Caupona' => 'An inn or tavern.', 'Mansio' => 'An official rest stop for government travelers.', 'Milestone' => 'A stone marking distance along a road.'],
   'sources' => ['brit-appia', 'un-rome', 'un-pompeii'],
   'related' => ['mausoleum', 'street-food', 'city-walls'],
 ],
@@ -756,16 +756,16 @@ $ROMAN = [
     ]],
     ['How it worked', [
       'Many warehouses were built around a central courtyard, with rows of storerooms on one or two floors. Thick walls, small windows and raised floors helped keep grain dry, cool and safe from thieves and pests. Heavy doors could be locked.',
-      'In Ostia, the Horrea Epagathiana, a two-storey warehouse from the 2nd century AD, still has its decorated brick entrance with an inscription naming its owners.',
+      'In Ostia, the Horrea Epagathiana, a two-story warehouse from the 2nd century AD, still has its decorated brick entrance with an inscription naming its owners.',
     ]],
     ['Feeding Rome', [
-      'The Roman government organised a regular grain supply for the city, and for long periods free or cheap grain was handed out to many citizens. Olive oil and wine travelled in clay jars called amphorae. In Rome, so many broken oil jars were thrown away near the warehouses by the river that they formed a whole hill, Monte Testaccio, which still stands today.',
+      'The Roman government organized a regular grain supply for the city, and for long periods free or cheap grain was handed out to many citizens. Olive oil and wine traveled in clay jars called amphorae. In Rome, so many broken oil jars were thrown away near the warehouses by the river that they formed a whole hill, Monte Testaccio, which still stands today.',
     ]],
   ],
   'art' => 'This illustration is grander than a typical warehouse. It is used here to show the courtyard plan many warehouses shared.',
   'look' => ['Find the courtyard in the middle.', 'Notice how the rooms surround it.'],
   'questions' => ['How does food reach the shops in your town?', 'Why would a city government care about its food supply?', 'What would happen if the grain ships stopped coming?'],
-  'words' => ['Horrea' => 'Warehouses or storehouses.', 'Amphora' => 'A two-handled clay jar for oil or wine.', 'Port' => 'A town with a harbour for ships.'],
+  'words' => ['Horrea' => 'Warehouses or storehouses.', 'Amphora' => 'A two-handled clay jar for oil or wine.', 'Port' => 'A town with a harbor for ships.'],
   'sources' => ['sh-ostia', 'brit-aerarium'],
   'related' => ['olive-grove', 'shop', 'lighthouse'],
 ],
@@ -809,7 +809,7 @@ $ROMAN = [
       'Scrolls were kept in wooden cupboards set into niches in the walls. Readers asked library staff for the scrolls they wanted and read them in the hall or nearby colonnades. Every copy was written out by hand, often by trained enslaved scribes, so books were valuable.',
     ]],
     ['Places you can still see', [
-      'The Library of Celsus at Ephesus, in modern Turkey, was dedicated around AD 110 in memory of a Roman governor, Celsus. Its two-storey marble front has been rebuilt and is one of the most photographed Roman buildings in the world.',
+      'The Library of Celsus at Ephesus, in modern Turkey, was dedicated around AD 110 in memory of a Roman governor, Celsus. Its two-story marble front has been rebuilt and is one of the most photographed Roman buildings in the world.',
       'At Herculaneum, a villa buried by Mount Vesuvius in AD 79 held a library of scrolls that were turned to charcoal by the heat. Today scientists are using scanning and computer techniques to read some of them without unrolling them.',
     ]],
   ],
@@ -852,7 +852,7 @@ $ROMAN = [
   'facts' => ['Used for' => 'Rest, beauty, herbs and vegetables', 'Shape' => 'Garden surrounded by columns', 'Features' => 'Fountains, pools, statues, paintings', 'Best seen at' => 'Pompeii'],
   'sections' => [
     ['What it was', [
-      'Many Roman homes had a garden at their centre. In larger houses it was surrounded by a colonnade, a covered walkway on columns, forming a peristyle. Smaller homes might have a simple yard for vegetables and herbs, called a hortus.',
+      'Many Roman homes had a garden at their center. In larger houses it was surrounded by a colonnade, a covered walkway on columns, forming a peristyle. Smaller homes might have a simple yard for vegetables and herbs, called a hortus.',
     ]],
     ['What grew there', [
       'Gardens mixed beauty and usefulness: shady trees, flowers such as roses and violets, herbs for cooking and medicine, and vegetables. Owners added fountains, pools, statues and painted walls showing even more plants and birds, making small gardens feel bigger.',
@@ -897,15 +897,15 @@ $ROMAN = [
   'related' => ['farmhouse', 'warehouse', 'garden'],
 ],
 
-// ---------------- Defence and travel ----------------
+// ---------------- Defense and travel ----------------
 'city-walls' => [
   'name' => 'City walls and towers', 'latin' => 'moenia, turris', 'cat' => 'safety', 'src' => 'art/nt_tower.png',
   'summary' => 'Strong walls with towers and gates protected Roman cities, including Rome itself in later centuries.',
-  'facts' => ['Used for' => 'Defence and controlling who entered', 'Rome\'s great wall' => 'Aurelian Walls, AD 271-275', 'Length' => 'About 19 kilometres', 'Frontier wall' => 'Hadrian\'s Wall, Britain'],
+  'facts' => ['Used for' => 'Defense and controlling who entered', 'Rome\'s great wall' => 'Aurelian Walls, AD 271-275', 'Length' => 'About 19 kilometers', 'Frontier wall' => 'Hadrian\'s Wall, Britain'],
   'sections' => [
     ['What it was', [
       'Walls protected cities from attack and let guards control who came in and out through the gates. Rome had early walls, but as the empire grew strong and its borders far away, the city spread far beyond them and for centuries had no need for new defences.',
-      'In the 3rd century AD, the empire faced invasions and civil wars. Between AD 271 and 275, the emperor Aurelian built a new wall around Rome, about 19 kilometres long, with a square tower roughly every 30 metres.',
+      'In the 3rd century AD, the empire faced invasions and civil wars. Between AD 271 and 275, the emperor Aurelian built a new wall around Rome, about 19 kilometers long, with a square tower roughly every 30 meters.',
     ]],
     ['How it worked', [
       'Towers stuck out from the wall so that defenders could shoot along its face at attackers trying to climb it. Gates were the weakest points, so they were usually flanked by two strong towers. Walls were later made taller and stronger as threats grew.',
@@ -924,15 +924,15 @@ $ROMAN = [
 
 'lighthouse' => [
   'name' => 'Lighthouse', 'latin' => 'pharus', 'cat' => 'safety', 'src' => 'art/growth_3.png',
-  'summary' => 'A tall tower with a fire on top that guided ships safely into harbour at night.',
+  'summary' => 'A tall tower with a fire on top that guided ships safely into harbor at night.',
   'facts' => ['Used for' => 'Guiding ships into port', 'Light from' => 'A fire on top (smoke by day)', 'Still in use' => 'Tower of Hercules, Spain', 'Also surviving' => 'Roman lighthouse at Dover, England'],
   'sections' => [
     ['What it was', [
-      'Sea trade was vital to the Roman Empire, and harbours needed lights so that ships could find their way at night and avoid rocks. The Romans were inspired by the famous lighthouse of Alexandria in Egypt, the Pharos, and the Latin word for lighthouse, pharus, comes from its name.',
+      'Sea trade was vital to the Roman Empire, and harbors needed lights so that ships could find their way at night and avoid rocks. The Romans were inspired by the famous lighthouse of Alexandria in Egypt, the Pharos, and the Latin word for lighthouse, pharus, comes from its name.',
     ]],
     ['How it worked', [
-      'A fire was kept burning at the top of the tower at night, and its smoke could help guide ships by day. Keepers had to carry fuel up to the top and tend the flame. Lighthouses were built on headlands and at harbour entrances, where their light could be seen far out to sea.',
-      'At Portus, Rome\'s great harbour near Ostia, the emperor Claudius built a lighthouse on an artificial island in the harbour entrance.',
+      'A fire was kept burning at the top of the tower at night, and its smoke could help guide ships by day. Keepers had to carry fuel up to the top and tend the flame. Lighthouses were built on headlands and at harbor entrances, where their light could be seen far out to sea.',
+      'At Portus, Rome\'s great harbor near Ostia, the emperor Claudius built a lighthouse on an artificial island in the harbor entrance.',
     ]],
     ['Places you can still see', [
       'The Tower of Hercules in A Coruña, Spain, was built in the late 1st century AD and is still a working lighthouse today, the only Roman lighthouse still used for its original purpose. Its Roman core was encased in new stone in the 18th century. At Dover in England, part of a Roman lighthouse still stands beside a church inside Dover Castle.',
@@ -940,8 +940,8 @@ $ROMAN = [
   ],
   'art' => 'This tower is an illustration, not the Tower of Hercules.',
   'look' => ['Find where the fire burns at the top.', 'Notice the walls around the base.'],
-  'questions' => ['How did sailors find a safe harbour before electric lights?', 'Why would an empire invest in lighthouses?', 'What guides ships and planes today?'],
-  'words' => ['Pharos' => 'A lighthouse, named after the one at Alexandria.', 'Headland' => 'A point of land sticking out into the sea.', 'Harbour' => 'A sheltered place where ships can stay safely.'],
+  'questions' => ['How did sailors find a safe harbor before electric lights?', 'Why would an empire invest in lighthouses?', 'What guides ships and planes today?'],
+  'words' => ['Pharos' => 'A lighthouse, named after the one at Alexandria.', 'Headland' => 'A point of land sticking out into the sea.', 'Harbor' => 'A sheltered place where ships can stay safely.'],
   'sources' => ['un-hercules', 'anc-suetonius'],
   'related' => ['warehouse', 'city-walls', 'aqueduct'],
 ],
@@ -977,14 +977,14 @@ $ROMAN = [
   'facts' => ['Secret ingredient' => 'Volcanic ash (pozzolana) in concrete', 'Roof tiles' => 'Flat tegulae and curved imbrices', 'Fine stone' => 'Marble from Luna (Carrara) and overseas', 'Famous boast' => 'Augustus "left Rome a city of marble"'],
   'sections' => [
     ['Roman concrete', [
-      'The Romans made a strong concrete by mixing lime, water and a volcanic ash called pozzolana with chunks of stone or broken brick. It could be poured into wooden frames to make walls, vaults and domes, and some mixtures even set underwater, which helped in building harbours. The Pantheon\'s great dome is made of Roman concrete.',
+      'The Romans made a strong concrete by mixing lime, water and a volcanic ash called pozzolana with chunks of stone or broken brick. It could be poured into wooden frames to make walls, vaults and domes, and some mixtures even set underwater, which helped in building harbors. The Pantheon\'s great dome is made of Roman concrete.',
       'Concrete walls were usually faced with brick or stone. One pattern, called opus reticulatum, used small square stones set diagonally like a net.',
     ]],
     ['Brick and tile', [
       'Fired clay bricks were made in large numbers. Many bricks were stamped by the workshop that made them, and these stamps help archaeologists date buildings. Roofs were covered with flat clay tiles (tegulae) with curved tiles (imbrices) over the joints to keep out rain.',
     ]],
     ['Stone and marble', [
-      'Builders used local stone such as travertine, a hard pale limestone used for much of the Colosseum, and tuff, a softer volcanic stone. For the grandest buildings they used marble, white from Luna (modern Carrara) in Italy and coloured marbles shipped from Greece, Egypt and North Africa. The writer Suetonius reported that Augustus boasted he had found Rome a city of brick and left it a city of marble.',
+      'Builders used local stone such as travertine, a hard pale limestone used for much of the Colosseum, and tuff, a softer volcanic stone. For the grandest buildings they used marble, white from Luna (modern Carrara) in Italy and colored marbles shipped from Greece, Egypt and North Africa. The writer Suetonius reported that Augustus boasted he had found Rome a city of brick and left it a city of marble.',
       'The Roman architect Vitruvius wrote about choosing and preparing building materials, from sand and lime to timber.',
     ]],
   ],

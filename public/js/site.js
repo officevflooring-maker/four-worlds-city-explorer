@@ -72,7 +72,7 @@
     });
     lb.addEventListener('close', function () {
       if (document.fullscreenElement) document.exitFullscreen();
-      lbImg.src = 'data:,';
+      lbImg.removeAttribute('src');
       if (opener) opener.focus();
     });
   }

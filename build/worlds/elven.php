@@ -14,7 +14,7 @@ $ELVEN_SOURCES = [
   'epa-green'  => 'US Environmental Protection Agency, "Green Infrastructure": rain gardens and green roofs',
   'epa-wetland'=> 'US Environmental Protection Agency, "Constructed Treatment Wetlands"',
   'arcata'     => 'City of Arcata, California, "Arcata Marsh and Wildlife Sanctuary"',
-  'nyc-water'  => 'New York City Department of Environmental Protection, watershed protection programme',
+  'nyc-water'  => 'New York City Department of Environmental Protection, watershed protection program',
   'ipbes'      => 'IPBES, "Assessment Report on Pollinators, Pollination and Food Production" (2016)',
   'xerces'     => 'Xerces Society for Invertebrate Conservation, pollinator habitat guidance',
   'parks-ca'   => 'Parks Canada, "Making roads safer for wildlife" (Banff National Park crossing structures)',
@@ -31,7 +31,7 @@ $ELVEN_SOURCES = [
   'shinrin'    => 'Research reviews on shinrin-yoku ("forest bathing"), a term introduced in Japan in 1982',
   'stri'       => 'Smithsonian Tropical Research Institute, forest canopy research and canopy cranes',
   'epidaurus'  => 'UNESCO World Heritage Centre, "Sanctuary of Asklepios at Epidaurus"',
-  'redrocks'   => 'City and County of Denver, "Red Rocks Park and Amphitheatre"',
+  'redrocks'   => 'City and County of Denver, "Red Rocks Park and Amphitheater"',
   'pearce'     => 'Mick Pearce, architect, project information on the Eastgate Centre, Harare (1996)',
   'iceland'    => 'Government of Iceland, information on geothermal energy and district heating',
   'doe-hydro'  => 'US Department of Energy, Energy Saver, "Microhydropower Systems"',
@@ -47,7 +47,7 @@ $ELVEN_SOURCES = [
   'wales'      => 'Welsh Government, "Well-being of Future Generations (Wales) Act 2015"',
   'fsc'        => 'Forest Stewardship Council (founded 1993)',
   'repair'     => 'Repair Café Foundation (first Repair Café, Amsterdam, 2009)',
-  'inbar'      => 'International Bamboo and Rattan Organisation (INBAR)',
+  'inbar'      => 'International Bamboo and Rattan Organization (INBAR)',
   'timber'     => 'Council on Tall Buildings and Urban Habitat, data on tall timber buildings (Mjøstårnet, Ascent)',
   'strawbale'  => 'International Code Council, International Residential Code, Appendix on strawbale construction',
   'isa'        => 'International Society of Arboriculture, tree care guidance',
@@ -57,7 +57,7 @@ $ELVEN_SOURCES = [
 
 $ELVEN_CATEGORIES = [
   'grow'    => ['Living buildings', 'Imagined buildings grown from living trees and plants, and the real science of building with them.'],
-  'homes'   => ['Homes in the forest', 'Cosy homes that stay comfortable with the help of earth, wood, plants and air.'],
+  'homes'   => ['Homes in the forest', 'Cozy homes that stay comfortable with the help of earth, wood, plants and air.'],
   'water'   => ['Water and energy', 'Springs, wetlands, falling water and the warmth of the earth.'],
   'wild'    => ['Wildlife and wild places', 'Making room for bees, deer, forests and night skies.'],
   'learn'   => ['Learning and gathering', 'Places to learn outdoors, store seeds, watch the seasons and make decisions together.'],
@@ -131,7 +131,7 @@ $ELVEN = [
       'Trees are living things that grow and sway. Good treehouse builders work with arborists, who are tree-care experts, to choose healthy, strong trees. They use a few large, specially designed bolts instead of many nails, because each wound is a place where disease can enter. Joints are made to slide or flex so that the tree can move in the wind and keep growing without being strangled.',
     ]],
     ['Lessons for real cities', ELVEN_REAL, [
-      'The idea of "touching the ground lightly" is used in real architecture: buildings raised on posts or piles disturb less soil, let water flow underneath and protect tree roots. But building high up raises a big question of fairness: rope bridges and ladders shut out people who use wheelchairs, older people and young children. A real treetop village would need ramps or lifts.',
+      'The idea of "touching the ground lightly" is used in real architecture: buildings raised on posts or piles disturb less soil, let water flow underneath and protect tree roots. But building high up raises a big question of fairness: rope bridges and ladders shut out people who use wheelchairs, older people and young children. A real treetop village would need ramps or elevators.',
     ]],
   ],
   'art' => 'This illustration shows wooden homes and walkways built around a huge tree trunk, with lanterns and stairways.',
@@ -151,7 +151,7 @@ $ELVEN = [
       'Imagine a tall home where every floor opens onto a balcony of trees. Leaves would shade the windows in summer and drop in winter to let the sun in. Birds and insects would live alongside the family, high above the ground.',
     ]],
     ['A real vertical forest', ELVEN_REAL, [
-      'In 2014 two apartment towers called Bosco Verticale ("Vertical Forest") opened in Milan, Italy. Their balconies hold hundreds of trees and thousands of shrubs and plants. The plants shade the apartments, reduce noise, create homes for birds and insects, and make a grey city greener.',
+      'In 2014 two apartment towers called Bosco Verticale ("Vertical Forest") opened in Milan, Italy. Their balconies hold hundreds of trees and thousands of shrubs and plants. The plants shade the apartments, reduce noise, create homes for birds and insects, and make a gray city greener.',
     ]],
     ['How it works', ELVEN_REAL, [], ['list' => [
       'Deep concrete planters, built into the balconies, hold the soil.',
@@ -199,13 +199,13 @@ $ELVEN = [
 'hillside-home' => [
   'name' => 'Hillside home', 'latin' => 'earth-sheltered house', 'cat' => 'homes', 'src' => 'art/family_1.png',
   'summary' => 'A home tucked into a grassy hill. Real earth-sheltered homes use the soil around them to stay cool in summer and warm in winter.',
-  'facts' => ['Imagined as' => 'A cosy home inside a hill', 'Real-world idea' => 'Earth-sheltered design', 'Works because' => 'Soil temperature stays steady', 'Watch out for' => 'Damp and good drainage'],
+  'facts' => ['Imagined as' => 'A cozy home inside a hill', 'Real-world idea' => 'Earth-sheltered design', 'Works because' => 'Soil temperature stays steady', 'Watch out for' => 'Damp and good drainage'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
       'Imagine a round door in a grassy bank, opening into a warm home where the hill itself is the roof. Wildflowers grow overhead, rabbits graze on the roof, and the home barely shows in the landscape.',
     ]],
     ['Why the earth keeps homes comfortable', ELVEN_REAL, [
-      'A few metres below the surface, the temperature of the ground stays fairly steady all year, while the air above swings from hot to cold. Soil around a home acts like a thick, heavy blanket: it slows heat leaving in winter and entering in summer. This is called thermal mass. Earth-sheltered houses can need much less heating and cooling than ordinary houses.',
+      'A few meters below the surface, the temperature of the ground stays fairly steady all year, while the air above swings from hot to cold. Soil around a home acts like a thick, heavy blanket: it slows heat leaving in winter and entering in summer. This is called thermal mass. Earth-sheltered houses can need much less heating and cooling than ordinary houses.',
     ]],
     ['How they are built', ELVEN_REAL, [], ['list' => [
       'Strong walls and roofs, usually of reinforced concrete, hold back the weight of the soil.',
@@ -234,7 +234,7 @@ $ELVEN = [
       'As trees grow, they take carbon dioxide from the air and lock carbon into their wood. If that wood becomes a building, the carbon stays stored for as long as the building lasts. Making wood products also usually needs much less energy than making steel or cement.',
     ]],
     ['Tall buildings made of wood', ELVEN_REAL, [
-      'Engineered timbers such as cross-laminated timber are made by gluing layers of boards together, each layer at right angles to the last. The panels are strong, stable and surprisingly fire-resistant, because thick wood chars on the outside and protects the inside. Wooden towers of more than 80 metres have been built, such as Mjøstårnet in Norway and Ascent in Milwaukee, USA.',
+      'Engineered timbers such as cross-laminated timber are made by gluing layers of boards together, each layer at right angles to the last. The panels are strong, stable and surprisingly fire-resistant, because thick wood chars on the outside and protects the inside. Wooden towers of more than 80 meters have been built, such as Mjøstårnet in Norway and Ascent in Milwaukee, USA.',
       'It only helps the planet if forests are managed well, with trees replanted and wildlife protected. Certification schemes such as the Forest Stewardship Council help buyers find wood from responsible sources.',
     ]],
   ],
@@ -320,7 +320,7 @@ $ELVEN = [
   ],
   'art' => 'This illustration shows a small timber-framed cottage with a teal roof and a garden. Here we imagine it built from natural materials.',
   'look' => ['Find the roof overhang. How does it protect the walls?', 'What could the walls be made of?'],
-  'questions' => ['What materials could you find within a few kilometres of your home to build with?', 'Why might natural materials be healthier to live with?', 'What are the downsides of building with earth and straw?'],
+  'questions' => ['What materials could you find within a few kilometers of your home to build with?', 'Why might natural materials be healthier to live with?', 'What are the downsides of building with earth and straw?'],
   'words' => ['Cob' => 'A building mix of clay, sand and straw.', 'Straw bale' => 'A tight block of straw used like a giant brick.', 'Lime plaster' => 'A breathable plaster made from lime.'],
   'sources' => ['strawbale', 'benyus'],
   'related' => ['timber-house', 'hillside-home', 'mushroom-cottage'],
@@ -362,14 +362,14 @@ $ELVEN = [
       'The mushroom we see is only the fruit of a fungus. Most of the fungus is underground: a huge network of fine white threads called mycelium. Mycelium grows through soil, wood and plant waste, binding it together like a natural glue.',
     ]],
     ['Growing bricks', ELVEN_REAL, [
-      'Companies and researchers mix mycelium with farm waste such as corn stalks or sawdust and let it grow in moulds for a few days. It fills the mould, then is heated to stop it growing. The result is light, insulating and compostable, and is already used for packaging instead of plastic foam.',
+      'Companies and researchers mix mycelium with farm waste such as corn stalks or sawdust and let it grow in moulds for a few days. It fills the mold, then is heated to stop it growing. The result is light, insulating and compostable, and is already used for packaging instead of plastic foam.',
       'In 2014, the architecture firm The Living built "Hy-Fi", a temporary tower of mycelium bricks, at the MoMA PS1 museum in New York. After the summer, the bricks were composted. Mycelium is not yet strong or water-resistant enough for most permanent buildings, so researchers are working on that.',
     ]],
   ],
   'art' => 'This illustration shows a cottage under a red-and-white spotted mushroom cap, with round windows and a stone chimney.',
   'look' => ['Which parts look practical, and which are just for fun?', 'Find the chimney. What would it be made of in a mushroom house?'],
   'questions' => ['Should buildings be designed to delight people, not only to be useful?', 'What could you make from materials that grow?', 'Why might compostable materials help reduce waste?'],
-  'words' => ['Fungus' => 'A living thing, like a mushroom or mould, that is neither plant nor animal.', 'Mycelium' => 'The network of thread-like roots of a fungus.', 'Compostable' => 'Able to break down naturally into soil.'],
+  'words' => ['Fungus' => 'A living thing, like a mushroom or mold, that is neither plant nor animal.', 'Mycelium' => 'The network of thread-like roots of a fungus.', 'Compostable' => 'Able to break down naturally into soil.'],
   'sources' => ['hyfi', 'mycelium'],
   'related' => ['natural-cottage', 'building-materials', 'woodworking-workshop'],
 ],
@@ -408,7 +408,7 @@ $ELVEN = [
       'Imagine a courtyard where every drop of rain from the roofs runs into a sunken garden, sinks into the soil and slowly fills a clear pool, so the garden is green even in the dry season.',
     ]],
     ['The problem with hard cities', ELVEN_REAL, [
-      'In nature, most rain soaks into the ground. In cities, roofs, roads and car parks are hard surfaces, so rain rushes into drains, picking up oil and litter. In heavy storms, drains overflow, causing floods and sometimes sending sewage into rivers.',
+      'In nature, most rain soaks into the ground. In cities, roofs, roads and parking lots are hard surfaces, so rain rushes into drains, picking up oil and litter. In heavy storms, drains overflow, causing floods and sometimes sending sewage into rivers.',
     ]],
     ['How a rain garden works', ELVEN_REAL, [
       'A rain garden is a shallow dip planted with tough, deep-rooted plants. Rainwater from roofs and paths is directed into it. The water pools for a short time, then soaks into the soil, which filters out pollution. The US Environmental Protection Agency promotes rain gardens as part of "green infrastructure".',
@@ -455,7 +455,7 @@ $ELVEN = [
       'Imagine a waterfall pouring down a crystal spire, its energy captured to light lanterns all over the elven city, day and night, while the stream below stays healthy for fish.',
     ]],
     ['How falling water makes electricity', ELVEN_REAL, [
-      'Water falling from a height has energy. In a hydropower system, water is channelled through a pipe to a turbine, a wheel with blades. The rushing water spins the turbine, which turns a generator to make electricity. The more water and the bigger the drop, the more power.',
+      'Water falling from a height has energy. In a hydropower system, water is channeled through a pipe to a turbine, a wheel with blades. The rushing water spins the turbine, which turns a generator to make electricity. The more water and the bigger the drop, the more power.',
       'Small "micro-hydro" systems can power a single home, farm or village from a stream. Because water usually flows all the time, they can make electricity day and night, unlike solar panels.',
     ]],
     ['Keeping rivers healthy', ELVEN_REAL, [
@@ -479,13 +479,13 @@ $ELVEN = [
       'Imagine a ring of log seats around a glowing heart that never burns wood and never goes out, warmed by heat rising from deep in the earth. On cold nights, the whole village gathers here.',
     ]],
     ['Heat from inside the Earth', ELVEN_REAL, [
-      'The deep inside of the Earth is very hot, and that heat slowly flows outward. In volcanic places like Iceland, hot water and steam lie close to the surface. Iceland pipes this hot water to homes through district heating networks, and about nine in ten Icelandic homes are heated by geothermal energy. It is also used to warm pavements, swimming pools and greenhouses.',
+      'The deep inside of the Earth is very hot, and that heat slowly flows outward. In volcanic places like Iceland, hot water and steam lie close to the surface. Iceland pipes this hot water to homes through district heating networks, and about nine in ten Icelandic homes are heated by geothermal energy. It is also used to warm sidewalks, swimming pools and greenhouses.',
     ]],
     ['Earth energy everywhere', ELVEN_REAL, [
-      'Even where there are no volcanoes, the ground a few metres down stays at a fairly steady temperature all year. A ground-source heat pump circulates fluid through pipes buried in the ground and uses that steady temperature to heat homes in winter and cool them in summer, using much less energy than ordinary heaters.',
+      'Even where there are no volcanoes, the ground a few meters down stays at a fairly steady temperature all year. A ground-source heat pump circulates fluid through pipes buried in the ground and uses that steady temperature to heat homes in winter and cool them in summer, using much less energy than ordinary heaters.',
     ]],
   ],
-  'art' => 'This illustration shows log benches in a ring around a softly glowing centre, surrounded by trees and flowers.',
+  'art' => 'This illustration shows log benches in a ring around a softly glowing center, surrounded by trees and flowers.',
   'look' => ['Find the glowing heart of the circle.', 'Count the seats around it.'],
   'questions' => ['What makes an outdoor meeting place comfortable for everyone?', 'Why might Iceland be especially good for geothermal energy?', 'Where could your town get clean heat from?'],
   'words' => ['Geothermal' => 'Heat from inside the Earth.', 'District heating' => 'Heating many buildings from one shared source.', 'Heat pump' => 'A machine that moves heat from one place to another.'],
@@ -515,7 +515,7 @@ $ELVEN = [
     ]]],
   ],
   'art' => 'This illustration shows a raised bed of large purple and blue flowers with crystal markers.',
-  'look' => ['Look at the different flower colours and shapes.', 'Where might a bee land?'],
+  'look' => ['Look at the different flower colors and shapes.', 'Where might a bee land?'],
   'questions' => ['Why might a city plant flowers for pollinators?', 'Could your school or street have a meadow?', 'What foods would we lose without pollinators?'],
   'words' => ['Pollinator' => 'An animal that carries pollen between flowers.', 'Native plant' => 'A plant that grows naturally in an area.', 'Habitat' => 'The home of a living thing.'],
   'sources' => ['ipbes', 'xerces'],
@@ -528,10 +528,10 @@ $ELVEN = [
   'facts' => ['Imagined as' => 'A sacred grove in the city', 'Real-world idea' => 'Urban forests and tiny forests', 'Method' => 'The Miyawaki method', 'Benefits' => 'Shade, wildlife, cooler air'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine a grove of ancient trees and blossoms that no one ever cuts, in the very centre of the elven city, where anyone can sit in the shade and listen to birds.',
+      'Imagine a grove of ancient trees and blossoms that no one ever cuts, in the very center of the elven city, where anyone can sit in the shade and listen to birds.',
     ]],
     ['Trees cool the city', ELVEN_REAL, [
-      'Trees shade streets and buildings and release water vapour through their leaves, which cools the air. The US Environmental Protection Agency explains that trees and plants help reduce the heat island effect that makes cities hotter than the countryside. Trees also soak up rain, provide homes for wildlife and make places more pleasant.',
+      'Trees shade streets and buildings and release water vapor through their leaves, which cools the air. The US Environmental Protection Agency explains that trees and plants help reduce the heat island effect that makes cities hotter than the countryside. Trees also soak up rain, provide homes for wildlife and make places more pleasant.',
     ]],
     ['Tiny forests', ELVEN_REAL, [
       'The Japanese botanist Akira Miyawaki developed a way to grow native forest quickly on small sites. Many different native trees and shrubs are planted very close together, in carefully prepared soil, and the young forest is looked after for its first few years. The trees compete for light and grow fast.',
@@ -609,7 +609,7 @@ $ELVEN = [
     ], ['list' => [
       'Shield lights so they point down, not up into the sky.',
       'Use only as much light as needed, only when needed.',
-      'Choose warmer-coloured lights, which disturb wildlife less.',
+      'Choose warmer-colored lights, which disturb wildlife less.',
       'Turn off decorative lighting late at night.',
     ]]],
   ],
@@ -640,7 +640,7 @@ $ELVEN = [
     ]],
   ],
   'art' => 'This illustration shows a tall crystal tower with blue glowing panels and vines.',
-  'look' => ['Find the glowing crystal panels.', 'What colour is the light?'],
+  'look' => ['Find the glowing crystal panels.', 'What color is the light?'],
   'questions' => ['Would you want a garden that glows at night?', 'What should we think about before changing the genes of plants?', 'Why do so many deep-sea animals make light?'],
   'words' => ['Bioluminescence' => 'Light made by living things.', 'Gene' => 'Instructions inside a cell that shape how a living thing grows.', 'Enzyme' => 'A molecule that speeds up a chemical reaction.'],
   'sources' => ['lightbio', 'benyus'],
@@ -660,7 +660,7 @@ $ELVEN = [
       'Thousands of crop varieties and wild plants are at risk from disease, climate change, war and habitat loss. Seeds are like tiny backups of a plant\'s whole genetic recipe. If they are dried and frozen, many kinds can survive for decades or even centuries, ready to be grown again.',
     ]],
     ['The world\'s seed vaults', ELVEN_REAL, [
-      'The Svalbard Global Seed Vault, opened in 2008, is dug deep into a mountain on an Arctic island in Norway. It stores backup copies of seeds from gene banks around the world. In 2015, during the war in Syria, a research centre that had lost access to its own seed bank withdrew seeds from Svalbard to grow new stocks: the first withdrawal in the vault\'s history.',
+      'The Svalbard Global Seed Vault, opened in 2008, is dug deep into a mountain on an Arctic island in Norway. It stores backup copies of seeds from gene banks around the world. In 2015, during the war in Syria, a research center that had lost access to its own seed bank withdrew seeds from Svalbard to grow new stocks: the first withdrawal in the vault\'s history.',
       'In England, the Royal Botanic Gardens, Kew, runs the Millennium Seed Bank, which focuses on wild plants. Many towns also have small "seed libraries" where gardeners share seeds from their own plants.',
     ]],
   ],
@@ -719,7 +719,7 @@ $ELVEN = [
   'art' => 'This illustration shows a tall, slender tower with a purple roof and a glowing orb at the top, wrapped in vines.',
   'look' => ['Find the glowing orb at the top. What might it measure?', 'Notice the windows facing different directions.'],
   'questions' => ['What signs tell you the seasons are changing where you live?', 'Why might a record kept for hundreds of years be so valuable?', 'What could you observe and record each week?'],
-  'words' => ['Phenology' => 'The study of when natural events happen.', 'Citizen science' => 'Research that anyone can help with.', 'Migration' => 'Animals travelling between places with the seasons.'],
+  'words' => ['Phenology' => 'The study of when natural events happen.', 'Citizen science' => 'Research that anyone can help with.', 'Migration' => 'Animals traveling between places with the seasons.'],
   'sources' => ['phenology'],
   'related' => ['domed-observatory', 'tree-library', 'spire-house'],
 ],
@@ -784,7 +784,7 @@ $ELVEN = [
   'facts' => ['Imagined as' => 'A training ground in the forest', 'Real-world idea' => 'Shinrin-yoku ("forest bathing")', 'Named in' => 'Japan, 1982', 'Also' => 'Green exercise outdoors'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine a sunny glade where elves practise archery, stretch and run among the trees, then sit quietly listening to the leaves before heading home.',
+      'Imagine a sunny glade where elves practice archery, stretch and run among the trees, then sit quietly listening to the leaves before heading home.',
     ]],
     ['Forest bathing', ELVEN_REAL, [
       'In 1982, Japan\'s forestry agency introduced the term "shinrin-yoku", meaning "forest bathing": spending time slowly and calmly in a forest, noticing sights, sounds and smells. It is not exercise in the usual sense, but a way of relaxing in nature.',
@@ -808,10 +808,10 @@ $ELVEN = [
   'facts' => ['Imagined as' => 'A treetop climbing course', 'Real-world idea' => 'Forest canopy science', 'Why study it' => 'Much forest life lives high up', 'Tools' => 'Ropes, walkways, towers, cranes, drones'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine ladders, nets and rope bridges strung through the treetops, where young elves practise balance and climbing while learning about the creatures that live high above the forest floor.',
+      'Imagine ladders, nets and rope bridges strung through the treetops, where young elves practice balance and climbing while learning about the creatures that live high above the forest floor.',
     ]],
     ['The last frontier of the forest', ELVEN_REAL, [
-      'In tropical rainforests, a huge share of life, including insects, birds, frogs, orchids and mosses, lives in the canopy, tens of metres above the ground. For a long time this world was very hard to study. Scientists have called the canopy one of the least explored habitats on land.',
+      'In tropical rainforests, a huge share of life, including insects, birds, frogs, orchids and mosses, lives in the canopy, tens of meters above the ground. For a long time this world was very hard to study. Scientists have called the canopy one of the least explored habitats on land.',
     ]],
     ['How scientists get up there', ELVEN_REAL, [], ['list' => [
       'Climbing ropes, using techniques borrowed from rock climbing.',
@@ -825,32 +825,32 @@ $ELVEN = [
   ],
   'art' => 'This illustration shows a treetop climbing frame of logs, ropes and platforms with red flags.',
   'look' => ['Find the rope bridges and ladders.', 'What would you see from the highest platform?'],
-  'questions' => ['What creatures might live in the treetops above your local park?', 'Why might the canopy be hard to study?', 'Would you walk on a rope bridge 30 metres up?'],
+  'questions' => ['What creatures might live in the treetops above your local park?', 'Why might the canopy be hard to study?', 'Would you walk on a rope bridge 30 meters up?'],
   'words' => ['Canopy' => 'The upper layer of a forest.', 'Epiphyte' => 'A plant that grows on another plant, such as an orchid on a branch.', 'Walkway' => 'A raised path or bridge.'],
   'sources' => ['stri'],
   'related' => ['treetop-village', 'forest-gym', 'treehouse-school'],
 ],
 
 'open-air-theater' => [
-  'name' => 'Open-air theatre', 'latin' => 'natural amphitheatre', 'cat' => 'learn', 'src' => 'art/fitness_3.png',
-  'summary' => 'An imagined theatre among the trees. Real open-air theatres use the shape of hills and stone to carry sound without microphones.',
-  'facts' => ['Imagined as' => 'A stage in a forest bowl', 'Real-world idea' => 'Natural acoustics', 'Famous ancient example' => 'Theatre of Epidaurus, Greece', 'Natural rock example' => 'Red Rocks Amphitheatre, Colorado'],
+  'name' => 'Open-air theater', 'latin' => 'natural amphitheater', 'cat' => 'learn', 'src' => 'art/fitness_3.png',
+  'summary' => 'An imagined theater among the trees. Real open-air theaters use the shape of hills and stone to carry sound without microphones.',
+  'facts' => ['Imagined as' => 'A stage in a forest bowl', 'Real-world idea' => 'Natural acoustics', 'Famous ancient example' => 'Theater of Epidaurus, Greece', 'Natural rock example' => 'Red Rocks Amphitheatre, Colorado'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
       'Imagine a bowl of carved seats in a forest clearing where a single voice on stage can be heard in the back row, with only birdsong and wind as the background music.',
     ]],
     ['Ancient sound engineering', ELVEN_REAL, [
-      'The ancient Greek theatre at Epidaurus, built in the 4th century BC and part of a UNESCO World Heritage Site, is famous for its acoustics; it is often said that people in the top rows can hear a coin dropped on the stage. Researchers believe the steep, curved rows of stone seats reflect speech toward the audience while scattering lower background noise.',
+      'The ancient Greek theater at Epidaurus, built in the 4th century BC and part of a UNESCO World Heritage Site, is famous for its acoustics; it is often said that people in the top rows can hear a coin dropped on the stage. Researchers believe the steep, curved rows of stone seats reflect speech toward the audience while scattering lower background noise.',
     ]],
     ['Nature\'s own concert hall', ELVEN_REAL, [
       'Near Denver, Colorado, Red Rocks Amphitheatre is built between two giant red sandstone rocks that reflect sound back to the audience. Concerts have been held there for about a century.',
-      'Designing an open-air theatre today means choosing a site sheltered from traffic noise, shaping the slope so everyone can see and hear, and providing paths and seating for people with limited mobility.',
+      'Designing an open-air theater today means choosing a site sheltered from traffic noise, shaping the slope so everyone can see and hear, and providing paths and seating for people with limited mobility.',
     ]],
   ],
   'art' => 'This illustration shows a round arena of pale stone seats among trees, with carved arches.',
   'look' => ['Look at how the seats curve around the stage.', 'Where would the audience enter?'],
-  'questions' => ['Why might a curved shape help people hear?', 'What performance would you put on in a forest theatre?', 'How could people with limited mobility reach the seats?'],
-  'words' => ['Acoustics' => 'How sound behaves in a space.', 'Amphitheatre' => 'A round or oval open-air venue with rising seats.', 'Reflect' => 'Bounce back.'],
+  'questions' => ['Why might a curved shape help people hear?', 'What performance would you put on in a forest theater?', 'How could people with limited mobility reach the seats?'],
+  'words' => ['Acoustics' => 'How sound behaves in a space.', 'Amphitheater' => 'A round or oval open-air venue with rising seats.', 'Reflect' => 'Bounce back.'],
   'sources' => ['epidaurus', 'redrocks'],
   'related' => ['forest-gym', 'gathering-circle', 'council-terrace'],
 ],
@@ -889,7 +889,7 @@ $ELVEN = [
       'Imagine a market hall where every fruit is sold, shared or turned into jam, every peel goes back to the gardens as compost, and goods are carried home in woven baskets instead of plastic.',
     ]],
     ['The problem of waste', ELVEN_REAL, [
-      'Around the world, a large share of the food that is grown is lost or thrown away, along with the water, land and energy used to grow it. The UN Environment Programme estimated that in 2022 about a fifth of the food available to shoppers, shops and restaurants was wasted. Food rotting in landfill also releases methane, a powerful greenhouse gas.',
+      'Around the world, a large share of the food that is grown is lost or thrown away, along with the water, land and energy used to grow it. The UN Environment Program estimated that in 2022 about a fifth of the food available to shoppers, shops and restaurants was wasted. Food rotting in landfill also releases methane, a powerful greenhouse gas.',
     ]],
     ['Ideas towns are using', ELVEN_REAL, [], ['list' => [
       'Farmers\' markets that sell food grown nearby, often with less packaging.',
@@ -963,7 +963,7 @@ $ELVEN = [
 ];
 
 $WORLD_DATA['elven'] = [
-  'title'    => 'Elven Green City Explorer: 35 imagined buildings and the real nature technology behind them',
+  'title'    => 'Elven City Explorer: imagined buildings, real nature technology',
   'desc'     => 'Explore an imagined elven city that lives in harmony with nature. Each of 35 buildings pairs a fantasy idea with real nature-based technology, from living root bridges and seed vaults to glowing plants and algae buildings.',
   'intro'    => 'A fantasy city that grows with the forest. Every building is imagined, but each page shows the real science and nature-based technology that could make parts of it possible.',
   'note'     => 'This world is imagined and does not describe any real culture. Each page marks what is imagined, what is real today and what is still being researched.',

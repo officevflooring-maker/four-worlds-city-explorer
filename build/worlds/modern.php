@@ -16,7 +16,7 @@ $MODERN_SOURCES = [
   'chc-history' => 'Massachusetts League of Community Health Centers, "History of Community Health Centers"',
   'cdc-water'   => 'US Centers for Disease Control and Prevention, "Water Treatment" (community water systems)',
   'epa-water'   => 'US Environmental Protection Agency, drinking water and wastewater treatment overviews',
-  'who-jmp'     => 'WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation and Hygiene',
+  'who-jmp'     => 'WHO/UNICEF Joint Monitoring Program for Water Supply, Sanitation and Hygiene',
   'who-road'    => 'World Health Organization, "Global status report on road safety"',
   'nacto'       => 'National Association of City Transportation Officials, "Urban Street Design Guide"',
   'ada'         => 'US Department of Justice, "2010 ADA Standards for Accessible Design"',
@@ -28,7 +28,7 @@ $MODERN_SOURCES = [
   'iea-build'   => 'International Energy Agency, "Buildings" (energy use and emissions)',
   'epa-lead'    => 'US Environmental Protection Agency, "Protect Your Family from Sources of Lead"',
   'epa-heat'    => 'US Environmental Protection Agency, "Heat Island Effect"',
-  'who-pa'      => 'World Health Organization, "Guidelines on physical activity and sedentary behaviour" (2020)',
+  'who-pa'      => 'World Health Organization, "Guidelines on physical activity and sedentary behavior" (2020)',
   'tpl'         => 'Trust for Public Land, ParkScore and the "10-minute walk" research',
   'olmsted'     => 'National Park Service, "Frederick Law Olmsted" and Central Park history',
   'cpsc'        => 'US Consumer Product Safety Commission, "Public Playground Safety Handbook"',
@@ -66,7 +66,7 @@ $MODERN_CATEGORIES = [
   'infra'  => ['Streets, water and safety', 'The systems most people only notice when they stop working.'],
   'learn'  => ['Learning and culture', 'Places to learn, explore and share ideas, free or nearly free.'],
   'work'   => ['Work and shopping', 'Where people earn a living and get the things they need.'],
-  'gather' => ['Gathering and community', 'Spaces that bring neighbours together and help them remember.'],
+  'gather' => ['Gathering and community', 'Spaces that bring neighbors together and help them remember.'],
   'play'   => ['Parks, sport and play', 'Green space, games and exercise, for health and for fun.'],
   'build'  => ['Building the town', 'The machines and materials that make modern buildings possible.'],
 ];
@@ -77,10 +77,10 @@ $MODERN = [
 'single-family-house' => [
   'name' => 'Family house', 'latin' => 'detached house', 'cat' => 'homes', 'src' => 'art/family_1.png',
   'summary' => 'A detached house with a porch and garden, built for one household. It is the most common home in many countries.',
-  'facts' => ['Who lives here' => 'One household', 'Usual frame' => 'Wood or masonry', 'Takes up' => 'More land per person than flats', 'Key systems' => 'Water, power, heating, drainage'],
+  'facts' => ['Who lives here' => 'One household', 'Usual frame' => 'Wood or masonry', 'Takes up' => 'More land per person than apartments', 'Key systems' => 'Water, power, heating, drainage'],
   'sections' => [
     ['Why towns build them', [
-      'A detached house gives a family private space indoors and out: a garden for children to play, room to grow food, and no shared walls with neighbours. For many people it is a dream home and a way to build savings, because a house can grow in value.',
+      'A detached house gives a family private space indoors and out: a garden for children to play, room to grow food, and no shared walls with neighbors. For many people it is a dream home and a way to build savings, because a house can grow in value.',
       'But each house uses more land than an apartment, so neighbourhoods of detached houses spread out. That means longer pipes, cables and roads per home, and often a longer trip to school, shops and work.',
     ]],
     ['How a house is built', [
@@ -162,23 +162,23 @@ $MODERN = [
 'apartment-building' => [
   'name' => 'Apartment building', 'latin' => 'mid-rise housing', 'cat' => 'homes', 'src' => 'art/floor_m.png',
   'summary' => 'A building of several floors with many homes stacked together, sharing walls, stairs and services.',
-  'facts' => ['Homes per plot' => 'Many more than houses', 'Shared' => 'Entrances, stairs, lifts, heating', 'Safety' => 'Fire-resistant walls and escape routes', 'Helps support' => 'Shops and public transport nearby'],
+  'facts' => ['Homes per plot' => 'Many more than houses', 'Shared' => 'Entrances, stairs, elevators, heating', 'Safety' => 'Fire-resistant walls and escape routes', 'Helps support' => 'Shops and public transport nearby'],
   'sections' => [
     ['Why cities need them', [
       'More than half of the world\'s people now live in cities, and the United Nations expects that share to reach about two thirds by 2050. Apartment buildings let many households live on a small piece of land, close to jobs, schools and services.',
-      'When more people live close together, it becomes worthwhile to run frequent buses, open local shops and build parks within walking distance. Shared walls also mean flats usually need less energy to heat than detached houses.',
+      'When more people live close together, it becomes worthwhile to run frequent buses, open local shops and build parks within walking distance. Shared walls also mean apartments usually need less energy to heat than detached houses.',
     ]],
     ['How they are built', [
-      'Mid-rise apartment buildings are often built with a concrete or steel frame, or increasingly with engineered timber. Floors are stacked one above another, and each flat is separated by walls and floors designed to block fire and noise.',
-      'Building codes require safe ways out in a fire: protected stairways, fire doors that close by themselves, smoke alarms and, in many places, sprinklers. Larger buildings need lifts so that everyone, including people using wheelchairs, can reach every floor.',
+      'Mid-rise apartment buildings are often built with a concrete or steel frame, or increasingly with engineered timber. Floors are stacked one above another, and each apartment is separated by walls and floors designed to block fire and noise.',
+      'Building codes require safe ways out in a fire: protected stairways, fire doors that close by themselves, smoke alarms and, in many places, sprinklers. Larger buildings need elevators so that everyone, including people using wheelchairs, can reach every floor.',
     ]],
     ['Living together', [
-      'Sharing a building means sharing decisions: who cleans the stairs, how to fix the roof, how loud is too loud. Good design helps, with bright entrances, places to store bikes and prams, courtyards and balconies that give each home some outdoor space.',
+      'Sharing a building means sharing decisions: who cleans the stairs, how to fix the roof, how loud is too loud. Good design helps, with bright entrances, places to store bikes and strollers, courtyards and balconies that give each home some outdoor space.',
     ]],
   ],
-  'art' => 'This building is an illustration. The balconies and planting show features that make flats more pleasant to live in.',
+  'art' => 'This building is an illustration. The balconies and planting show features that make apartments more pleasant to live in.',
   'look' => ['Count the balconies.', 'Find the main entrance. Is it easy to see and reach?'],
-  'questions' => ['What would you share with your neighbours if you lived here?', 'How do people using wheelchairs or pushchairs reach the upper floors?', 'Why might a bus route be easier to run near apartment buildings?'],
+  'questions' => ['What would you share with your neighbors if you lived here?', 'How do people using wheelchairs or strollers reach the upper floors?', 'Why might a bus route be easier to run near apartment buildings?'],
   'words' => ['Density' => 'How many people or homes are in an area.', 'Fire separation' => 'Walls and floors built to stop fire spreading.', 'Mid-rise' => 'A building of about four to twelve floors.'],
   'sources' => ['un-wup', 'icc', 'nfpa', 'ada'],
   'related' => ['residential-tower', 'mixed-use-building', 'older-home'],
@@ -187,24 +187,24 @@ $MODERN = [
 'residential-tower' => [
   'name' => 'Residential tower', 'latin' => 'high-rise apartments', 'cat' => 'homes', 'src' => 'art/floor_l.png',
   'summary' => 'A tall glass tower of apartments that fits hundreds of homes onto a small plot of land.',
-  'facts' => ['Needs' => 'Lifts, pumps and strong foundations', 'Biggest force' => 'Wind', 'Clever trick' => 'Tuned mass dampers reduce sway', 'Tallest building' => 'Burj Khalifa, Dubai (828 m)'],
+  'facts' => ['Needs' => 'Elevators, pumps and strong foundations', 'Biggest force' => 'Wind', 'Clever trick' => 'Tuned mass dampers reduce sway', 'Tallest building' => 'Burj Khalifa, Dubai (828 m)'],
   'sections' => [
     ['Why build so tall?', [
       'Where land is scarce and expensive, building upward lets a city house many people without spreading outward. Towers can leave more space at ground level for parks and streets, and residents may enjoy views and light.',
-      'Tall towers also bring challenges: they cost more to build and maintain, depend on lifts and pumps, and can feel isolating if there are no shared spaces where neighbours meet.',
+      'Tall towers also bring challenges: they cost more to build and maintain, depend on elevators and pumps, and can feel isolating if there are no shared spaces where neighbors meet.',
     ]],
     ['How a tower stands up', [
-      'A tall building must carry its own weight down to the ground and resist wind pushing on its side. Most towers have a strong central core of concrete, which holds the lifts, stairs and pipes, and acts like a spine. Floors and columns spread out from the core.',
-      'Deep foundations, sometimes piles driven or drilled tens of metres into the ground, anchor the tower. Engineers test models in wind tunnels, and some very tall buildings use a tuned mass damper: a huge weight near the top that moves against the sway to keep the building steady.',
+      'A tall building must carry its own weight down to the ground and resist wind pushing on its side. Most towers have a strong central core of concrete, which holds the elevators, stairs and pipes, and acts like a spine. Floors and columns spread out from the core.',
+      'Deep foundations, sometimes piles driven or drilled tens of meters into the ground, anchor the tower. Engineers test models in wind tunnels, and some very tall buildings use a tuned mass damper: a huge weight near the top that moves against the sway to keep the building steady.',
     ]],
     ['Living in the sky', [
-      'Water must be pumped up to the upper floors. Fast lifts are essential, and people need protected stairways for escape in a fire. Building codes for high-rises require sprinklers, fire-resistant construction and refuge floors in the tallest towers.',
+      'Water must be pumped up to the upper floors. Fast elevators are essential, and people need protected stairways for escape in a fire. Building codes for high-rises require sprinklers, fire-resistant construction and refuge floors in the tallest towers.',
     ]],
   ],
   'art' => 'This illustration shows a glass tower with a stepped top. Its design is the artist\'s own.',
   'look' => ['Look for the shape of the core and floors through the glass.', 'How does the tower get narrower toward the top?'],
-  'questions' => ['Would you like to live on the 40th floor? What would be good and hard about it?', 'What happens in a tower when the power goes out?', 'How could a tower help neighbours meet each other?'],
-  'words' => ['Core' => 'The strong central part holding lifts and stairs.', 'Pile' => 'A long column driven into the ground to support a building.', 'Tuned mass damper' => 'A heavy weight that reduces swaying.'],
+  'questions' => ['Would you like to live on the 40th floor? What would be good and hard about it?', 'What happens in a tower when the power goes out?', 'How could a tower help neighbors meet each other?'],
+  'words' => ['Core' => 'The strong central part holding elevators and stairs.', 'Pile' => 'A long column driven into the ground to support a building.', 'Tuned mass damper' => 'A heavy weight that reduces swaying.'],
   'sources' => ['brit-sky', 'ctbuh', 'nfpa'],
   'related' => ['skyscraper', 'apartment-building', 'tower-crane'],
 ],
@@ -216,9 +216,9 @@ $MODERN = [
   'sections' => [
     ['Why mix homes and shops?', [
       'For most of history, people lived above or behind their workplaces. In the 20th century many cities separated homes from shops and offices with zoning rules. Today many planners are bringing back the mix.',
-      'In 1961 the writer Jane Jacobs argued that lively, safe streets need "eyes on the street": people coming and going at different times of day, shopkeepers watching the pavement, residents looking out of windows. Mixed-use buildings help create that.',
+      'In 1961 the writer Jane Jacobs argued that lively, safe streets need "eyes on the street": people coming and going at different times of day, shopkeepers watching the sidewalk, residents looking out of windows. Mixed-use buildings help create that.',
     ]],
-    ['What it does for a neighbourhood', [], ['list' => [
+    ['What it does for a neighborhood', [], ['list' => [
       'Residents can walk downstairs to buy food or see a doctor.',
       'Shops get customers living right above them.',
       'Streets stay busy and feel safer in the evening.',
@@ -229,7 +229,7 @@ $MODERN = [
     ]],
   ],
   'art' => 'This illustration shows awnings over the shops and windows of the homes above.',
-  'look' => ['Find the shop awnings and the homes above them.', 'Where is the door to the flats?'],
+  'look' => ['Find the shop awnings and the homes above them.', 'Where is the door to the apartments?'],
   'questions' => ['What are the benefits of living above shops? Are there downsides?', 'What shops would you want under your home?', 'Why might a busy street feel safer than an empty one?'],
   'words' => ['Mixed-use' => 'Combining homes, shops and work in one place.', 'Eyes on the street' => 'Jane Jacobs\'s idea that watchful people make streets safer.', 'Shopfront' => 'The front of a shop facing the street.'],
   'sources' => ['jacobs', 'un-habitat', 'icc'],
@@ -243,11 +243,11 @@ $MODERN = [
   'facts' => ['Who works here' => 'Mayor, council and staff', 'Decides' => 'Local budgets, rules and services', 'Open to' => 'All residents', 'Common forms' => 'Mayor-council or council-manager'],
   'sections' => [
     ['What local government does', [
-      'Many things that shape daily life are decided locally: rubbish collection, street repairs, parks, libraries, local planning, and often police, fire services and public transport. The town hall is where these decisions are debated and voted on, and where staff carry them out.',
+      'Many things that shape daily life are decided locally: trash collection, street repairs, parks, libraries, local planning, and often police, fire services and public transport. The town hall is where these decisions are debated and voted on, and where staff carry them out.',
     ]],
     ['How it works', [
       'Residents elect a council, and often a mayor. In a mayor-council system, the mayor leads the town\'s administration. In a council-manager system, the council hires a professional manager to run day-to-day services. Council meetings are usually open to the public, and many towns let residents speak during a public comment period.',
-      'The town hall also handles practical services: permits to build a house extension, licences for businesses, birth and marriage records, and paying local taxes.',
+      'The town hall also handles practical services: permits to build a house extension, licenses for businesses, birth and marriage records, and paying local taxes.',
     ]],
     ['A building for everyone', [
       'Town halls are often designed to look important, with steps, columns and a clock or tower, to show that local government belongs to the whole community. Modern accessibility rules require that everyone, including people using wheelchairs, can get in and take part.',
@@ -288,22 +288,22 @@ $MODERN = [
 ],
 
 'health-clinic' => [
-  'name' => 'Health clinic', 'latin' => 'primary care centre', 'cat' => 'civic', 'src' => 'art/family_2.png',
-  'summary' => 'A neighbourhood clinic where people see a doctor or nurse, get vaccines and stay healthy before small problems grow.',
-  'facts' => ['Type of care' => 'Primary health care', 'Typical services' => 'Check-ups, vaccines, prescriptions', 'Global goal' => 'Health care for all (Declaration of Astana, 2018)', 'US community health centres began' => '1965'],
+  'name' => 'Health clinic', 'latin' => 'primary care center', 'cat' => 'civic', 'src' => 'art/family_2.png',
+  'summary' => 'A neighborhood clinic where people see a doctor or nurse, get vaccines and stay healthy before small problems grow.',
+  'facts' => ['Type of care' => 'Primary health care', 'Typical services' => 'Check-ups, vaccines, prescriptions', 'Global goal' => 'Health care for all (Declaration of Astana, 2018)', 'US community health centers began' => '1965'],
   'sections' => [
-    ['Why every neighbourhood needs one', [
+    ['Why every neighborhood needs one', [
       'Most health needs, such as check-ups, vaccinations, minor illnesses, pregnancy care and managing long-term conditions like diabetes, do not need a hospital. They are best handled close to home by a primary care team. The World Health Organization says strong primary health care is the most effective way to improve a population\'s health.',
       'When clinics are hard to reach, people delay care, and small problems can turn into emergencies.',
     ]],
     ['Health care for everyone', [
-      'In 1965, two doctors, Jack Geiger and Count Gibson, helped open one of the first community health centres in the United States, at the Columbia Point housing development in Boston, with another at Mound Bayou in rural Mississippi soon after. They treated people regardless of their ability to pay and also tackled the causes of illness, such as poor housing and lack of food.',
+      'In 1965, two doctors, Jack Geiger and Count Gibson, helped open one of the first community health centers in the United States, at the Columbia Point housing development in Boston, with another at Mound Bayou in rural Mississippi soon after. They treated people regardless of their ability to pay and also tackled the causes of illness, such as poor housing and lack of food.',
     ]],
     ['How a clinic is designed', [
       'A clinic needs a welcoming entrance with step-free access, a waiting area, private consultation rooms with sinks for hand washing, and spaces for tests and vaccines. Good ventilation and easy-to-clean surfaces help stop infections spreading. Many new clinics include rooms for social workers, dentists or mental health support.',
     ]],
   ],
-  'art' => 'This illustration shows a welcoming single-storey building with big windows. We use it to represent a neighbourhood health clinic.',
+  'art' => 'This illustration shows a welcoming single-story building with big windows. We use it to represent a neighborhood health clinic.',
   'look' => ['Find the main entrance. Is it easy to reach?', 'Notice the big windows. How might daylight help people feel calmer?'],
   'questions' => ['How far is the nearest clinic from your home? How would you get there?', 'Why might it be cheaper to keep people healthy than to treat them later?', 'Besides medicine, what helps people stay healthy?'],
   'words' => ['Primary care' => 'Everyday health care, usually the first place people go.', 'Vaccine' => 'A medicine that trains the body to fight a disease.', 'Prevention' => 'Stopping illness before it starts.'],
@@ -320,7 +320,7 @@ $MODERN = [
       'Before watches were cheap, most people could not own a clock. A clock high on a tower, often with bells, let a whole town know when to start work, open markets or go to church or school. Clock towers became symbols of civic pride.',
     ]],
     ['The problem of time zones', [
-      'Until the late 1800s, each town set its clocks by the sun, so noon in one town was a few minutes different from noon in the next. That was fine until railways arrived: trains needed timetables that worked across hundreds of kilometres. On 18 November 1883, the railways of the United States and Canada switched to standard time zones. Countries later agreed world time zones based on Greenwich, in London.',
+      'Until the late 1800s, each town set its clocks by the sun, so noon in one town was a few minutes different from noon in the next. That was fine until railways arrived: trains needed timetables that worked across hundreds of kilometers. On 18 November 1883, the railways of the United States and Canada switched to standard time zones. Countries later agreed world time zones based on Greenwich, in London.',
     ]],
     ['How a tower clock works', [
       'A traditional tower clock is driven by heavy weights that slowly fall, with a swinging pendulum controlling the speed. Gears turn the hands on each face. Big Ben\'s clock is still wound and adjusted by hand; its keepers fine-tune it by adding or removing small coins on the pendulum. Today most public clocks are set by radio or internet signals from atomic clocks.',
@@ -338,29 +338,29 @@ $MODERN = [
 'streets-crosswalks' => [
   'name' => 'Streets and crosswalks', 'latin' => 'complete streets', 'cat' => 'infra', 'src' => 'ground/tex_cross.png',
   'summary' => 'Streets are a town\'s largest public space. Their design decides whether walking, cycling and crossing feel safe.',
-  'facts' => ['Global problem' => 'Over a million road deaths a year (WHO)', 'Safety idea' => 'Vision Zero (Sweden, 1997)', 'Helps everyone' => 'Kerb ramps and clear crossings', 'Street includes' => 'Pavement, crossing, lanes, trees, drains'],
+  'facts' => ['Global problem' => 'Over a million road deaths a year (WHO)', 'Safety idea' => 'Vision Zero (Sweden, 1997)', 'Helps everyone' => 'Curb ramps and clear crossings', 'Street includes' => 'Pavement, crossing, lanes, trees, drains'],
   'sections' => [
     ['More than roads', [
-      'Streets carry cars and lorries, but also people walking, cycling, pushing prams and using wheelchairs. Under the surface they carry water, sewers, power and internet. Streets are also places to meet, shop and play.',
+      'Streets carry cars and trucks, but also people walking, cycling, pushing strollers and using wheelchairs. Under the surface they carry water, sewers, power and internet. Streets are also places to meet, shop and play.',
       'Road traffic crashes kill over a million people around the world each year, according to the World Health Organization, and are a leading cause of death for children and young people.',
     ]],
     ['Designing safer streets', [], ['list' => [
       'Clearly marked crossings, with signals where traffic is heavy.',
-      'Kerb extensions that shorten the distance to cross.',
+      'Curb extensions that shorten the distance to cross.',
       'Lower speed limits near schools and homes: a person hit at lower speed is much more likely to survive.',
-      'Kerb ramps and tactile paving so wheelchair users and blind people can cross.',
+      'Curb ramps and tactile paving so wheelchair users and blind people can cross.',
       'Separate lanes for bikes and buses.',
       'Street trees, lighting and benches.',
     ]]],
     ['Vision Zero and the "curb-cut effect"', [
       'In 1997 Sweden adopted Vision Zero, a policy that says no one should be killed or seriously injured on the roads, and that streets should be designed to forgive human mistakes. Many cities have since copied it.',
-      'Kerb ramps were first pushed for by disability campaigners, and in the United States the Americans with Disabilities Act of 1990 made them required in new work. They turned out to help almost everyone: people with prams, suitcases, bikes and trolleys. This is sometimes called the "curb-cut effect".',
+      'Curb ramps were first pushed for by disability campaigners, and in the United States the Americans with Disabilities Act of 1990 made them required in new work. They turned out to help almost everyone: people with strollers, suitcases, bikes and trolleys. This is sometimes called the "curb-cut effect".',
     ]],
   ],
-  'art' => 'This is the crossroads ground artwork from the Modern world: a road junction with zebra crossings and corner pavements, seen from above.',
-  'look' => ['Find the zebra crossings on all four sides.', 'Where would a wheelchair user cross the kerb?'],
+  'art' => 'This is the crossroads ground artwork from the Modern world: a road junction with zebra crossings and corner sidewalks, seen from above.',
+  'look' => ['Find the zebra crossings on all four sides.', 'Where would a wheelchair user cross the curb?'],
   'questions' => ['Is the walk to your school safe? What would make it safer?', 'Who should streets be designed for first: people walking, cycling, riding buses or driving?', 'Can you think of other designs that help one group but end up helping everyone?'],
-  'words' => ['Kerb ramp' => 'A slope from pavement to road (also called a curb cut).', 'Vision Zero' => 'A goal of no deaths or serious injuries on the roads.', 'Tactile paving' => 'Bumpy paving that blind people can feel.'],
+  'words' => ['Curb ramp' => 'A slope from sidewalk to road (also called a curb cut).', 'Vision Zero' => 'A goal of no deaths or serious injuries on the roads.', 'Tactile paving' => 'Bumpy paving that blind people can feel.'],
   'sources' => ['who-road', 'nacto', 'vision-zero', 'ada'],
   'related' => ['suburban-house', 'school', 'water-system'],
 ],
@@ -397,15 +397,15 @@ $MODERN = [
 
 'lighthouse' => [
   'name' => 'Lighthouse', 'latin' => 'aid to navigation', 'cat' => 'infra', 'src' => 'art/growth_3.png',
-  'summary' => 'A tower with a powerful light that warns ships of rocks and guides them safely into harbour.',
+  'summary' => 'A tower with a powerful light that warns ships of rocks and guides them safely into harbor.',
   'facts' => ['Purpose' => 'Guiding ships safely', 'Key invention' => 'Fresnel lens (1820s)', 'Each light' => 'Has its own pattern of flashes', 'Today' => 'Mostly automated'],
   'sections' => [
     ['Why lighthouses are still needed', [
       'Ships carry most of the world\'s trade. Even with satellite navigation, ships need visible markers near dangerous coasts, in case electronics fail, and to confirm their position. Lighthouses, buoys and beacons are called aids to navigation.',
     ]],
     ['How a lighthouse works', [
-      'Early lighthouses burned wood, coal or oil. In the 1820s, the French physicist Augustin Fresnel designed a lens made of rings of glass prisms that bends light into a strong, narrow beam. Fresnel lenses made lights visible many kilometres out to sea and were used around the world.',
-      'Each lighthouse has its own "signature": a pattern of flashes and a colour, printed on nautical charts, so sailors can tell which light they are seeing at night. Painted stripes or colours help identify it by day.',
+      'Early lighthouses burned wood, coal or oil. In the 1820s, the French physicist Augustin Fresnel designed a lens made of rings of glass prisms that bends light into a strong, narrow beam. Fresnel lenses made lights visible many kilometers out to sea and were used around the world.',
+      'Each lighthouse has its own "signature": a pattern of flashes and a color, printed on nautical charts, so sailors can tell which light they are seeing at night. Painted stripes or colors help identify it by day.',
     ]],
     ['From keepers to automation', [
       'For generations, lighthouse keepers and their families lived at remote stations, trimming wicks, winding clockwork and cleaning lenses. During the 20th century, electric lamps and automatic controls replaced most keepers. Many old lighthouses are now museums, while modern LED lights do the work.',
@@ -431,7 +431,7 @@ $MODERN = [
       'A lookout is a small cabin with windows on all sides, set on a tower or peak. The watcher scans the horizon through the day. When they see smoke, they use a sighting instrument such as the Osborne Fire Finder, developed in the 1910s by forester William Osborne, to measure its exact direction on a map. If two lookouts take a direction from different places, the fire is where the two lines cross. The lookout then radios the location to firefighters.',
     ]],
     ['Old and new technology', [
-      'In the United States, fire lookouts were most common from the 1930s to the 1950s. Aircraft and satellites later took over much of the work, but many towers are still staffed in fire season. Today, networks of cameras with smart software also watch for smoke, and communities near forests practise creating defensible space around homes.',
+      'In the United States, fire lookouts were most common from the 1930s to the 1950s. Aircraft and satellites later took over much of the work, but many towers are still staffed in fire season. Today, networks of cameras with smart software also watch for smoke, and communities near forests practice creating defensible space around homes.',
     ]],
   ],
   'art' => 'This illustration shows a wooden lookout cabin on a tall frame with stairs.',
@@ -487,7 +487,7 @@ $MODERN = [
       'How children travel to school shapes their health and independence. Safe footpaths, crossings, cycle lanes and lower speed limits near schools let more children walk or cycle. Some towns run "school streets", closing roads outside the school gate to cars at the start and end of the day.',
     ]],
   ],
-  'art' => 'This illustration shows a two-storey brick school with a clock above the entrance.',
+  'art' => 'This illustration shows a two-story brick school with a clock above the entrance.',
   'look' => ['Find the clock above the door.', 'What surrounds the school: roads, paths or green space?'],
   'questions' => ['What would make the trip to your school safer or more fun?', 'If you could redesign one room in your school, which would it be?', 'Why might a school be a good place for community events?'],
   'words' => ['Curriculum' => 'What a school teaches.', 'Acoustics' => 'How sound behaves in a space.', 'Accessible' => 'Easy for everyone to reach and use.'],
@@ -496,17 +496,17 @@ $MODERN = [
 ],
 
 'science-center' => [
-  'name' => 'Science centre and observatory', 'latin' => 'hands-on museum', 'cat' => 'learn', 'src' => 'art/knowledge_3.png',
+  'name' => 'Science center and observatory', 'latin' => 'hands-on museum', 'cat' => 'learn', 'src' => 'art/knowledge_3.png',
   'summary' => 'A museum where visitors learn by doing experiments, with a telescope dome for looking at the night sky.',
   'facts' => ['Big idea' => 'Learning by doing', 'Pioneer' => 'Exploratorium, San Francisco (1969)', 'Dome' => 'Opens and rotates to point a telescope', 'Visitors' => 'Families, schools, everyone'],
   'sections' => [
     ['Why hands-on science?', [
-      'Traditional museums often keep objects behind glass. In 1969 the physicist Frank Oppenheimer opened the Exploratorium in San Francisco, where visitors could touch, build and experiment with exhibits that showed how light, sound, electricity and living things work. The idea spread worldwide, and science centres now welcome millions of school groups and families.',
+      'Traditional museums often keep objects behind glass. In 1969 the physicist Frank Oppenheimer opened the Exploratorium in San Francisco, where visitors could touch, build and experiment with exhibits that showed how light, sound, electricity and living things work. The idea spread worldwide, and science centers now welcome millions of school groups and families.',
     ]],
     ['How an observatory dome works', [
       'A telescope needs to point at any part of the sky but also be protected from rain and wind. The answer is a dome with a long opening called a slit. Motors rotate the dome so the slit faces the right direction, and shutters open to let the telescope see out. Observatories are best placed away from bright city lights.',
     ]],
-    ['What a science centre does for a town', [], ['list' => [
+    ['What a science center does for a town', [], ['list' => [
       'Sparks curiosity and helps people understand science in the news.',
       'Supports teachers with workshops and resources.',
       'Hosts public star-gazing nights, talks and events.',
@@ -522,12 +522,12 @@ $MODERN = [
 ],
 
 'cultural-center' => [
-  'name' => 'Cultural centre', 'latin' => 'heritage and arts centre', 'cat' => 'learn', 'src' => 'art/growth_2.png',
-  'summary' => 'A place where a community shares its traditions, art, food, language and history with neighbours and visitors.',
+  'name' => 'Cultural center', 'latin' => 'heritage and arts center', 'cat' => 'learn', 'src' => 'art/growth_2.png',
+  'summary' => 'A place where a community shares its traditions, art, food, language and history with neighbors and visitors.',
   'facts' => ['Purpose' => 'Sharing culture and heritage', 'Activities' => 'Exhibitions, classes, festivals, performances', 'Museums today' => 'Defined as open to all and inclusive (ICOM, 2022)', 'Brings together' => 'Long-time residents and newcomers'],
   'sections' => [
-    ['Why towns have cultural centres', [
-      'Modern towns are home to people from many backgrounds. A cultural centre gives a community a place to keep its traditions alive: teaching a language to children, celebrating festivals, displaying art and telling its history. It also invites neighbours to learn and take part.',
+    ['Why towns have cultural centers', [
+      'Modern towns are home to people from many backgrounds. A cultural center gives a community a place to keep its traditions alive: teaching a language to children, celebrating festivals, displaying art and telling its history. It also invites neighbors to learn and take part.',
       'In 2022 the International Council of Museums agreed a new definition of a museum, describing it as open to the public, accessible and inclusive, and working with communities.',
     ]],
     ['What happens inside', [], ['list' => [
@@ -538,12 +538,12 @@ $MODERN = [
       'Archives that keep photos, letters and stories safe.',
     ]]],
     ['Respect and design', [
-      'A cultural centre is designed with the community it serves, often using traditional forms, materials or gardens. Displays should be planned with the people whose culture is shown, so that they tell their own story.',
+      'A cultural center is designed with the community it serves, often using traditional forms, materials or gardens. Displays should be planned with the people whose culture is shown, so that they tell their own story.',
     ]],
   ],
-  'art' => 'This illustration shows a pavilion with layered roofs in a garden. We use it to represent a cultural centre; the building style is the artist\'s choice.',
+  'art' => 'This illustration shows a pavilion with layered roofs in a garden. We use it to represent a cultural center; the building style is the artist\'s choice.',
   'look' => ['Notice the layered roofs and the garden around the building.', 'Where could a festival or performance take place?'],
-  'questions' => ['What traditions in your family or community would you share at a cultural centre?', 'Why does it matter who tells a community\'s story?', 'How can neighbours from different backgrounds get to know each other?'],
+  'questions' => ['What traditions in your family or community would you share at a cultural center?', 'Why does it matter who tells a community\'s story?', 'How can neighbors from different backgrounds get to know each other?'],
   'words' => ['Heritage' => 'Traditions and history passed down through generations.', 'Inclusive' => 'Welcoming to everyone.', 'Archive' => 'A collection of historical records.'],
   'sources' => ['icom', 'un-habitat'],
   'related' => ['community-center', 'place-of-worship', 'public-art'],
@@ -551,7 +551,7 @@ $MODERN = [
 
 // ---------------- Work and shopping ----------------
 'corner-store' => [
-  'name' => 'Corner store', 'latin' => 'neighbourhood grocery', 'cat' => 'work', 'src' => 'art/business_1.png',
+  'name' => 'Corner store', 'latin' => 'neighborhood grocery', 'cat' => 'work', 'src' => 'art/business_1.png',
   'summary' => 'A small shop within walking distance selling food and everyday items, a lifeline for many neighbourhoods.',
   'facts' => ['Sells' => 'Food and everyday items', 'Big issue' => 'Food access ("food deserts")', 'Walk time' => 'Ideally a few minutes from home', 'Often run by' => 'Local families'],
   'sections' => [
@@ -565,8 +565,8 @@ $MODERN = [
       'Farmers\' markets and community gardens.',
       'Safe footpaths and bus routes to larger food shops.',
     ]]],
-    ['A neighbourhood hub', [
-      'Corner shops are often family-run businesses that know their customers by name. They can be places to pick up news, leave a parcel or ask for help, part of what makes a neighbourhood feel like a community.',
+    ['A neighborhood hub', [
+      'Corner shops are often family-run businesses that know their customers by name. They can be places to pick up news, leave a parcel or ask for help, part of what makes a neighborhood feel like a community.',
     ]],
   ],
   'art' => 'This illustration shows a brick corner shop with green and white striped awnings.',
@@ -595,7 +595,7 @@ $MODERN = [
   ],
   'art' => 'This illustration shows a mid-rise brick and glass office building.',
   'look' => ['Find the large windows. How might they help people working inside?', 'Where could workers park a bike or catch a bus?'],
-  'questions' => ['How do people get to work here, and what does each way of travelling need?', 'Would you rather work from home or in an office? Why?', 'What could happen to empty office buildings?'],
+  'questions' => ['How do people get to work here, and what does each way of traveling need?', 'Would you rather work from home or in an office? Why?', 'What could happen to empty office buildings?'],
   'words' => ['Curtain wall' => 'A non-structural outer wall, often of glass.', 'Hybrid work' => 'Splitting time between home and the workplace.', 'Open plan' => 'A large space without many walls.'],
   'sources' => ['iea-build', 'icc'],
   'related' => ['skyscraper', 'mixed-use-building', 'corner-store'],
@@ -607,15 +607,15 @@ $MODERN = [
   'facts' => ['Made possible by' => 'Steel frames and safety elevators', 'Often called the first' => 'Home Insurance Building, Chicago (1885)', 'Safety brake demonstrated' => 'Elisha Otis, 1854', 'Tallest today' => 'Burj Khalifa, 828 m'],
   'sections' => [
     ['Two inventions that changed cities', [
-      'Before the 1850s, people did not want to climb more than five or six flights of stairs, and walls of thick stone limited how tall buildings could be. Two inventions changed that. In 1854 Elisha Otis demonstrated a safety brake that stopped a lift from falling if its rope broke, making passenger lifts trustworthy. Then engineers began using frames of iron and steel to carry a building\'s weight, so walls no longer had to.',
+      'Before the 1850s, people did not want to climb more than five or six flights of stairs, and walls of thick stone limited how tall buildings could be. Two inventions changed that. In 1854 Elisha Otis demonstrated a safety brake that stopped an elevator from falling if its rope broke, making passenger elevators trustworthy. Then engineers began using frames of iron and steel to carry a building\'s weight, so walls no longer had to.',
       'The Home Insurance Building in Chicago, completed in 1885, is often called the first skyscraper because of its metal frame.',
     ]],
     ['How a skyscraper works', [], ['list' => [
       'A steel or concrete frame carries the weight down to deep foundations.',
       'A stiff core and bracing resist wind and earthquakes.',
-      'Lifts are grouped into zones, with express lifts to "sky lobbies" in the tallest towers.',
+      'Elevators are grouped into zones, with express elevators to "sky lobbies" in the tallest towers.',
       'Pumps push water to the top floors.',
-      'Fire safety systems include sprinklers, fire-resistant stairs and pressurised escape routes.',
+      'Fire safety systems include sprinklers, fire-resistant stairs and pressurized escape routes.',
     ]]],
     ['The art deco style', [
       'Many skyscrapers of the 1920s and 1930s, such as the Chrysler Building and Empire State Building in New York, were built in the Art Deco style, with stepped tops, vertical lines and decorative metalwork. New York\'s 1916 zoning law required tall buildings to step back as they rose, so that light and air could still reach the street.',
@@ -624,43 +624,43 @@ $MODERN = [
   'art' => 'This illustration shows a stepped Art Deco style tower with a spire.',
   'look' => ['Find the setbacks where the tower steps in as it rises.', 'Look at the spire. Is it for people or just for show?'],
   'questions' => ['Why do cities build skyscrapers?', 'How might a tall building affect the street below: light, wind, crowds?', 'What would you put at the top of a skyscraper?'],
-  'words' => ['Setback' => 'A step back in the face of a building as it rises.', 'Art Deco' => 'A bold, decorative style from the 1920s and 1930s.', 'Sky lobby' => 'A floor where people change between lifts.'],
+  'words' => ['Setback' => 'A step back in the face of a building as it rises.', 'Art Deco' => 'A bold, decorative style from the 1920s and 1930s.', 'Sky lobby' => 'A floor where people change between elevators.'],
   'sources' => ['brit-sky', 'ctbuh'],
   'related' => ['residential-tower', 'office-building', 'tower-crane'],
 ],
 
 'warehouse' => [
-  'name' => 'Warehouse', 'latin' => 'distribution centre', 'cat' => 'work', 'src' => 'art/nt_workshop.png',
+  'name' => 'Warehouse', 'latin' => 'distribution center', 'cat' => 'work', 'src' => 'art/nt_workshop.png',
   'summary' => 'A large shed where goods are stored, sorted and sent out, the hidden link between factories and shops.',
-  'facts' => ['Used for' => 'Storing and sorting goods', 'Key inventions' => 'Shipping containers and barcodes', 'Busy because of' => 'Online shopping', 'Usually found' => 'Near motorways, ports and railways'],
+  'facts' => ['Used for' => 'Storing and sorting goods', 'Key inventions' => 'Shipping containers and barcodes', 'Busy because of' => 'Online shopping', 'Usually found' => 'Near highways, ports and railways'],
   'sections' => [
     ['Why towns need warehouses', [
       'Almost everything you buy has passed through a warehouse. Goods arrive from factories and farms in bulk, are stored, then split into smaller orders for shops or for delivery to homes. Warehouses help keep shelves stocked and smooth out the gap between when things are made and when people buy them.',
     ]],
     ['How a modern warehouse works', [
-      'Goods often travel in standard shipping containers, an idea developed in the 1950s, which can move from ship to train to lorry without being unpacked. Barcodes, first scanned in a shop in 1974, and computer systems track every item. Some warehouses use robots to carry shelves to workers or to sort parcels.',
-      'Warehouses are simple to build: a steel frame, a wide-span roof, a concrete floor strong enough for forklift trucks, and loading docks for lorries. Large flat roofs are good places for solar panels.',
+      'Goods often travel in standard shipping containers, an idea developed in the 1950s, which can move from ship to train to truck without being unpacked. Barcodes, first scanned in a shop in 1974, and computer systems track every item. Some warehouses use robots to carry shelves to workers or to sort parcels.',
+      'Warehouses are simple to build: a steel frame, a wide-span roof, a concrete floor strong enough for forklifts, and loading docks for trucks. Large flat roofs are good places for solar panels.',
     ]],
     ['Effects on a town', [
-      'Warehouses provide many jobs, but they also bring lorry traffic, noise and pollution to nearby streets. Planners try to place them near major roads and railways, away from homes, and many now require electric vehicles and loading bays that keep lorries off residential streets.',
+      'Warehouses provide many jobs, but they also bring truck traffic, noise and pollution to nearby streets. Planners try to place them near major roads and railways, away from homes, and many now require electric vehicles and loading bays that keep trucks off residential streets.',
     ]],
   ],
   'art' => 'This illustration shows a steel warehouse with a large roller door and skylights.',
   'look' => ['Find the roller door. What size of vehicle could use it?', 'Notice the skylights in the roof.'],
-  'questions' => ['Pick something you own. How many places might it have travelled through to reach you?', 'What are the good and bad effects of a warehouse next to homes?', 'How could deliveries be made cleaner and quieter?'],
-  'words' => ['Logistics' => 'Organising how goods are moved and stored.', 'Loading dock' => 'A platform where lorries load and unload.', 'Barcode' => 'Lines a scanner reads to identify a product.'],
+  'questions' => ['Pick something you own. How many places might it have traveled through to reach you?', 'What are the good and bad effects of a warehouse next to homes?', 'How could deliveries be made cleaner and quieter?'],
+  'words' => ['Logistics' => 'Organizing how goods are moved and stored.', 'Loading dock' => 'A platform where trucks load and unload.', 'Barcode' => 'Lines a scanner reads to identify a product.'],
   'sources' => ['bls-ware', 'brit-cont'],
   'related' => ['corner-store', 'office-building', 'lighthouse'],
 ],
 
 // ---------------- Gathering and community ----------------
 'community-center' => [
-  'name' => 'Community centre', 'latin' => 'neighbourhood centre', 'cat' => 'gather', 'src' => 'art/shared_3.png',
-  'summary' => 'A shared building for classes, clubs, meetings, celebrations and support, open to the whole neighbourhood.',
+  'name' => 'Community center', 'latin' => 'neighborhood center', 'cat' => 'gather', 'src' => 'art/shared_3.png',
+  'summary' => 'A shared building for classes, clubs, meetings, celebrations and support, open to the whole neighborhood.',
   'facts' => ['Used for' => 'Classes, clubs, meetings, events', 'Usually run by' => 'Local government or charities', 'Also used as' => 'Shelter in emergencies', 'Key idea' => '"Third places" outside home and work'],
   'sections' => [
     ['Why neighbourhoods need them', [
-      'The sociologist Ray Oldenburg described "third places": spaces outside home (the first place) and work or school (the second) where people meet, talk and build friendships. Community centres are one of the most important third places, because they are free or cheap and open to everyone.',
+      'The sociologist Ray Oldenburg described "third places": spaces outside home (the first place) and work or school (the second) where people meet, talk and build friendships. Community centers are one of the most important third places, because they are free or cheap and open to everyone.',
     ]],
     ['What happens there', [], ['list' => [
       'Classes for adults and after-school clubs for children.',
@@ -671,12 +671,12 @@ $MODERN = [
       'Shelter, warmth or cooling during storms, heatwaves and emergencies.',
     ]]],
     ['Designing for many uses', [
-      'A community centre needs a large hall that can be set up in different ways, smaller rooms, a kitchen, accessible toilets and storage. Movable walls, good acoustics and an entrance on the ground floor help it serve everyone.',
+      'A community center needs a large hall that can be set up in different ways, smaller rooms, a kitchen, accessible toilets and storage. Movable walls, good acoustics and an entrance on the ground floor help it serve everyone.',
     ]],
   ],
   'art' => 'This illustration shows a timber and stone building with large windows and a welcoming entrance.',
   'look' => ['Notice the large windows. What activities might happen inside?', 'Find the benches and paths outside.'],
-  'questions' => ['What services or activities would you put in a community centre?', 'Where are the "third places" in your life?', 'Why might a community centre matter during an emergency?'],
+  'questions' => ['What services or activities would you put in a community center?', 'Where are the "third places" in your life?', 'Why might a community center matter during an emergency?'],
   'words' => ['Third place' => 'A social space outside home and work.', 'Volunteer' => 'Someone who helps without being paid.', 'Multi-purpose' => 'Designed for many uses.'],
   'sources' => ['oldenburg', 'un-habitat'],
   'related' => ['gathering-circle', 'public-library', 'health-clinic'],
@@ -697,7 +697,7 @@ $MODERN = [
       'Shade: trees and awnings for hot days.',
       'Water: fountains for cooling, sound and play.',
       'Edges: shops and cafés facing the square.',
-      'Access: level paths for wheelchairs and prams.',
+      'Access: level paths for wheelchairs and strollers.',
     ]]],
     ['How a fountain works', [
       'Most modern fountains reuse the same water. A pump pushes water up through nozzles, it falls into the basin, is filtered and treated to keep it clean, and then pumped round again. The sound of splashing water can soften traffic noise and help people relax.',
@@ -741,7 +741,7 @@ $MODERN = [
   'facts' => ['Used for' => 'Gatherings, stories, outdoor learning', 'Cost' => 'Low to build', 'Safety' => 'Fire rules and supervision', 'Works best' => 'In parks near homes and schools'],
   'sections' => [
     ['Why a circle?', [
-      'People have gathered around fires for hundreds of thousands of years. Sitting in a circle, everyone can see and hear each other, and no seat is more important than another. A simple ring of benches makes it easy for neighbours, scouts, school classes or families to meet outdoors.',
+      'People have gathered around fires for hundreds of thousands of years. Sitting in a circle, everyone can see and hear each other, and no seat is more important than another. A simple ring of benches makes it easy for neighbors, scouts, school classes or families to meet outdoors.',
     ]],
     ['What it is used for', [], ['list' => [
       'Outdoor lessons and nature clubs.',
@@ -767,14 +767,14 @@ $MODERN = [
   'facts' => ['Purpose' => 'Remembering people and events', 'Famous obelisk' => 'Washington Monument (completed 1884)', 'Famous memorial' => 'Vietnam Veterans Memorial (1982)', 'Big question' => 'Who and what gets remembered?'],
   'sections' => [
     ['Why towns build memorials', [
-      'Memorials honour people who died in wars or disasters, celebrate important events, and remind future generations of lessons from the past. Many towns have a war memorial where people gather on days of remembrance.',
+      'Memorials honor people who died in wars or disasters, celebrate important events, and remind future generations of lessons from the past. Many towns have a war memorial where people gather on days of remembrance.',
     ]],
     ['Different ways to remember', [
-      'Some memorials are tall and grand, like the Washington Monument, a stone obelisk in Washington, DC, completed in 1884. Construction stopped for many years, and you can still see a change in the colour of the stone partway up where building began again with stone from a different quarry.',
+      'Some memorials are tall and grand, like the Washington Monument, a stone obelisk in Washington, DC, completed in 1884. Construction stopped for many years, and you can still see a change in the color of the stone partway up where building began again with stone from a different quarry.',
       'Others are quiet and personal. The Vietnam Veterans Memorial, designed by Maya Lin when she was a 21-year-old architecture student and opened in 1982, is a low black wall carved with the names of more than 58,000 people. Visitors see their own reflection among the names.',
     ]],
     ['Changing memories', [
-      'What a community chooses to remember can change. Some statues and monuments have been moved or explained with new signs, because people today see the people or events they honour differently. Deciding who to remember, and how, is a conversation every generation has.',
+      'What a community chooses to remember can change. Some statues and monuments have been moved or explained with new signs, because people today see the people or events they honor differently. Deciding who to remember, and how, is a conversation every generation has.',
     ]],
   ],
   'art' => 'This illustration shows a tall stone obelisk in a small paved plaza with planting.',
@@ -788,7 +788,7 @@ $MODERN = [
 'public-art' => [
   'name' => 'Public art', 'latin' => 'statue and sculpture', 'cat' => 'gather', 'src' => 'art/nt_statue.png',
   'summary' => 'Statues, sculptures and murals in public places that anyone can enjoy, free of charge.',
-  'facts' => ['Free to see' => 'Yes, it is outdoors', 'Funding idea' => '"Percent for Art"', 'First US city programme' => 'Philadelphia, 1959', 'Forms' => 'Statues, murals, sculptures, light art'],
+  'facts' => ['Free to see' => 'Yes, it is outdoors', 'Funding idea' => '"Percent for Art"', 'First US city program' => 'Philadelphia, 1959', 'Forms' => 'Statues, murals, sculptures, light art'],
   'sections' => [
     ['Why towns invest in art', [
       'Public art makes places memorable, tells local stories, sparks conversation and gives people landmarks to meet by. Unlike art in a gallery, it is free and in everyone\'s daily path.',
@@ -816,13 +816,13 @@ $MODERN = [
   'sections' => [
     ['Why parks matter', [
       'Parks give people places to exercise, play, picnic and relax, which supports both physical and mental health. Trees and plants cool the air through shade and by releasing water, helping reduce the "urban heat island" effect that makes cities hotter than the countryside.',
-      'Parks also soak up rain, provide homes for birds and insects, and give neighbours a free place to meet.',
+      'Parks also soak up rain, provide homes for birds and insects, and give neighbors a free place to meet.',
     ]],
     ['A park for everyone', [
-      'In 1858 Frederick Law Olmsted and Calvert Vaux won the competition to design Central Park in New York, believing that green space should be open to people of every class. Today, organisations such as the Trust for Public Land promote the goal that everyone should live within a 10-minute walk of a good park, because in many cities poorer neighbourhoods have far less green space.',
+      'In 1858 Frederick Law Olmsted and Calvert Vaux won the competition to design Central Park in New York, believing that green space should be open to people of every class. Today, organizations such as the Trust for Public Land promote the goal that everyone should live within a 10-minute walk of a good park, because in many cities poorer neighbourhoods have far less green space.',
     ]],
     ['How a park is designed and cared for', [], ['list' => [
-      'Paths that are level and wide enough for wheelchairs and prams.',
+      'Paths that are level and wide enough for wheelchairs and strollers.',
       'A mix of open lawns, shady trees and quiet corners.',
       'Ponds and rain gardens that collect and clean storm water.',
       'Toilets, drinking fountains, lighting and seating.',
@@ -843,7 +843,7 @@ $MODERN = [
   'facts' => ['Children\'s right' => 'Play is a right (UN, 1989, Article 31)', 'First adventure playground' => 'Emdrup, Copenhagen (1943)', 'Safety' => 'Soft surfaces, safe heights', 'Daily activity goal' => '60 minutes for children (WHO)'],
   'sections' => [
     ['Why play matters', [
-      'Play helps children grow strong, solve problems, make friends and manage feelings. The UN Convention on the Rights of the Child recognises play as a right of every child, and the World Health Organization recommends that children and teenagers get an average of 60 minutes of physical activity a day.',
+      'Play helps children grow strong, solve problems, make friends and manage feelings. The UN Convention on the Rights of the Child recognizes play as a right of every child, and the World Health Organization recommends that children and teenagers get an average of 60 minutes of physical activity a day.',
     ]],
     ['The adventure playground idea', [
       'In 1943 the Danish landscape architect C. Th. Sørensen noticed that children preferred playing on building sites to neat playgrounds. A "junk playground" opened at Emdrup, near Copenhagen, where children could build with wood, ropes and tools under the eye of a playworker. The idea spread to Britain and beyond as the adventure playground movement.',
@@ -862,7 +862,7 @@ $MODERN = [
 
 'sports-field' => [
   'name' => 'Sports field', 'latin' => 'playing field', 'cat' => 'play', 'src' => 'art/fitness_2.png',
-  'summary' => 'An open field with goals and lights where people play football and other team sports.',
+  'summary' => 'An open field with goals and lights where people play soccer and other team sports.',
   'facts' => ['Used for' => 'Team sports and training', 'Surfaces' => 'Natural grass or artificial turf', 'Lights' => 'Allow evening games', 'Shared by' => 'Schools, clubs and the public'],
   'sections' => [
     ['Why towns need playing fields', [
@@ -875,7 +875,7 @@ $MODERN = [
       'Under a good field is a layer of drainage: gravel and pipes that carry rainwater away so games are not cancelled. Fences keep balls in, lights on tall poles allow evening games, and there are changing rooms, toilets and seating for spectators.',
     ]],
   ],
-  'art' => 'This illustration shows a fenced football pitch with goals and floodlights.',
+  'art' => 'This illustration shows a fenced soccer field with goals and floodlights.',
   'look' => ['Find the floodlights. When would they be used?', 'Notice the fence. What is it for?'],
   'questions' => ['Who gets to use a public field, and when?', 'Would you choose grass or artificial turf? Why?', 'How could a sports field also be used by people who do not play sport?'],
   'words' => ['Artificial turf' => 'A surface of plastic grass.', 'Drainage' => 'Removing water from the ground.', 'Floodlights' => 'Bright lights for evening play.'],
@@ -897,14 +897,14 @@ $MODERN = [
       'Steel or concrete stands with clear sightlines.',
       'Floodlights, giant screens and sound systems.',
       'Kitchens, toilets, first-aid rooms and security.',
-      'Grass or hybrid pitches kept healthy with lighting rigs and under-soil heating in some stadiums.',
+      'Grass or hybrid fields kept healthy with lighting rigs and under-soil heating in some stadiums.',
     ]]],
     ['Costs and benefits', [
       'Stadiums are very expensive. Cities sometimes pay part of the cost with public money, hoping for jobs and visitors. Researchers often find the economic benefits are smaller than promised, so many towns now debate who should pay, and how the stadium can be used on days without matches.',
     ]],
   ],
-  'art' => 'This illustration shows a football stadium with red seats and floodlights. It is much smaller than a real stadium.',
-  'look' => ['Look at how the seats rise around the pitch.', 'Find the floodlights.'],
+  'art' => 'This illustration shows a soccer stadium with red seats and floodlights. It is much smaller than a real stadium.',
+  'look' => ['Look at how the seats rise around the field.', 'Find the floodlights.'],
   'questions' => ['Compare this with the Roman amphitheater. What is the same, and what is different?', 'Should cities pay to build stadiums for private teams?', 'How can tens of thousands of people leave a stadium safely?'],
   'words' => ['Sightline' => 'A clear view from a seat to the field.', 'Capacity' => 'How many people a place can hold.', 'Crowd management' => 'Planning how large crowds move safely.'],
   'sources' => ['brit-stadium', 'nfpa'],
@@ -912,9 +912,9 @@ $MODERN = [
 ],
 
 'recreation-center' => [
-  'name' => 'Recreation centre', 'latin' => 'gym and fitness centre', 'cat' => 'play', 'src' => 'art/fitness_1.png',
+  'name' => 'Recreation center', 'latin' => 'gym and fitness center', 'cat' => 'play', 'src' => 'art/fitness_1.png',
   'summary' => 'A building with gym equipment and classes where people of every age can exercise, whatever the weather.',
-  'facts' => ['Used for' => 'Exercise, classes, sport', 'Adults need' => '150 minutes of moderate activity a week (WHO)', 'Children need' => 'About 60 minutes a day', 'Public centres' => 'Keep prices low'],
+  'facts' => ['Used for' => 'Exercise, classes, sport', 'Adults need' => '150 minutes of moderate activity a week (WHO)', 'Children need' => 'About 60 minutes a day', 'Public centers' => 'Keep prices low'],
   'sections' => [
     ['Why exercise needs a place', [
       'Regular physical activity lowers the risk of heart disease, diabetes and some cancers, and helps mental health. The World Health Organization recommends that adults get at least 150 to 300 minutes of moderate activity each week, and that children and teenagers get an average of 60 minutes a day.',
@@ -927,7 +927,7 @@ $MODERN = [
       'Changing rooms, showers and accessible facilities.',
     ]]],
     ['A place for everyone', [
-      'Public recreation centres are often run by the town and keep prices low, with discounts for young people, older people and people on low incomes. Good design includes step-free access, equipment for different abilities, and classes for people who are new to exercise.',
+      'Public recreation centers are often run by the town and keep prices low, with discounts for young people, older people and people on low incomes. Good design includes step-free access, equipment for different abilities, and classes for people who are new to exercise.',
     ]],
   ],
   'art' => 'This illustration shows a gym with large glass windows and exercise machines inside.',
@@ -939,12 +939,12 @@ $MODERN = [
 ],
 
 'community-garden' => [
-  'name' => 'Community garden', 'latin' => 'allotments', 'cat' => 'play', 'src' => 'art/nt_garden.png',
-  'summary' => 'Shared land where neighbours grow vegetables, fruit and flowers together.',
+  'name' => 'Community garden', 'latin' => 'garden plots', 'cat' => 'play', 'src' => 'art/nt_garden.png',
+  'summary' => 'Shared land where neighbors grow vegetables, fruit and flowers together.',
   'facts' => ['Grows' => 'Vegetables, fruit, herbs, flowers', 'Raised beds' => 'Easier to reach and keep clean', 'In wartime' => 'Millions of "victory gardens"', 'Brings' => 'Food, exercise, friendship, wildlife'],
   'sections' => [
     ['Why grow food in town?', [
-      'Community gardens give people without gardens a place to grow fresh food. During both World Wars, governments encouraged people to plant "victory gardens" in yards, parks and empty lots, and millions did. Today community gardens provide food, exercise, outdoor learning and a way to meet neighbours.',
+      'Community gardens give people without gardens a place to grow fresh food. During both World Wars, governments encouraged people to plant "victory gardens" in yards, parks and empty lots, and millions did. Today community gardens provide food, exercise, outdoor learning and a way to meet neighbors.',
       'Gardens also help nature: flowers feed bees and butterflies, compost improves soil, and plants soak up rain.',
     ]],
     ['How a community garden works', [], ['list' => [
@@ -968,11 +968,11 @@ $MODERN = [
 // ---------------- Building the town ----------------
 'tower-crane' => [
   'name' => 'Tower crane', 'latin' => 'construction crane', 'cat' => 'build', 'src' => 'build/crane.png',
-  'summary' => 'A tall crane that lifts steel, concrete and glass to the upper floors of new buildings.',
-  'facts' => ['Lifts' => 'Steel, concrete buckets, panels', 'Balance' => 'Counterweights on the short arm', 'Grows with the building' => 'Climbing cranes add sections', 'Controlled by' => 'An operator in the cab, guided by signallers'],
+  'summary' => 'A tall crane that elevators steel, concrete and glass to the upper floors of new buildings.',
+  'facts' => ['Elevators' => 'Steel, concrete buckets, panels', 'Balance' => 'Counterweights on the short arm', 'Grows with the building' => 'Climbing cranes add sections', 'Controlled by' => 'An operator in the cab, guided by signalers'],
   'sections' => [
     ['Why cranes are needed', [
-      'Modern buildings are made of heavy parts: steel beams, bundles of reinforcing bars, concrete buckets, glass panels. Tower cranes lift these quickly and precisely to where they are needed, sometimes hundreds of metres up.',
+      'Modern buildings are made of heavy parts: steel beams, bundles of reinforcing bars, concrete buckets, glass panels. Tower cranes lift these quickly and precisely to where they are needed, sometimes hundreds of meters up.',
     ]],
     ['How a tower crane works', [], ['list' => [
       'A concrete foundation or the building itself anchors the tall mast.',
@@ -981,7 +981,7 @@ $MODERN = [
       'The whole top slews (turns) on a ring.',
       'The operator sits in a cab at the top; a signaller on the ground guides them by radio.',
     ]], [
-      'Many tower cranes "climb" as the building rises: the crane lifts a new mast section, slides it into place, and raises itself onto it.',
+      'Many tower cranes "climb" as the building rises: the crane elevators a new mast section, slides it into place, and raises itself onto it.',
     ]],
     ['Safety', [
       'Cranes are dangerous if overloaded or used in high wind. Each crane has a load chart showing how much it can lift at each distance from the mast, and computers warn the operator if a lift is too heavy. Workers are trained and certified, and areas under the load are kept clear.',
@@ -989,7 +989,7 @@ $MODERN = [
   ],
   'art' => 'This illustration shows a yellow tower crane lifting a load. The soft glow is part of the original artwork.',
   'look' => ['Find the counterweight on the short arm.', 'Follow the cable from the trolley to the hook.'],
-  'questions' => ['Building sites can block pavements. How can a town keep people safe and moving while it builds?', 'Why does a crane need a counterweight?', 'How might a crane get to the top of a tall building, and back down?'],
+  'questions' => ['Building sites can block sidewalks. How can a town keep people safe and moving while it builds?', 'Why does a crane need a counterweight?', 'How might a crane get to the top of a tall building, and back down?'],
   'words' => ['Jib' => 'The long horizontal arm of a crane.', 'Counterweight' => 'A heavy weight that balances a load.', 'Load chart' => 'A table of how much a crane can safely lift.'],
   'sources' => ['osha'],
   'related' => ['building-materials', 'skyscraper', 'residential-tower'],
@@ -1008,7 +1008,7 @@ $MODERN = [
       'Engineers are cutting this by using less cement, replacing some of it with other materials, designing lighter structures and reusing old buildings.',
     ]],
     ['Building with wood again', [
-      'New engineered woods, such as cross-laminated timber, glue layers of boards together at right angles to make large, strong panels. These can be used to build apartment and office buildings many storeys high. Wood from well-managed forests can store carbon for the life of the building.',
+      'New engineered woods, such as cross-laminated timber, glue layers of boards together at right angles to make large, strong panels. These can be used to build apartment and office buildings many stories high. Wood from well-managed forests can store carbon for the life of the building.',
     ]],
   ],
   'art' => 'This illustration shows bricks, timber, cement bags and a traffic cone on a pallet, ready for a building site.',

@@ -174,7 +174,8 @@ details summary { cursor: pointer; font-weight: 700; color: var(--accent); paddi
 .place-link a { display: flex; flex-direction: column; height: 100%; padding: 1rem 1.1rem; color: var(--ink); text-decoration: none; border-radius: var(--radius); }
 .place-link a:hover { box-shadow: 0 8px 22px rgb(0 0 0 / .1); }
 .place-link .place-art { display: block; }
-.place-name { font: 700 1.15rem/1.2 var(--serif); margin-bottom: .3rem; color: var(--accent); }
+.place-name { font: 700 1.15rem/1.2 var(--serif); margin-bottom: .3rem; color: var(--accent); overflow-wrap: anywhere; hyphens: auto; }
+.place .what, .cmp-cell, .art-title { overflow-wrap: anywhere; }
 .place-link .what { font-size: .95rem; }
 .places-3 { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 
@@ -284,7 +285,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 }
 @media (max-width: 520px) {
   .world-cards { grid-template-columns: 1fr; }
-  .places { grid-template-columns: 1fr 1fr; gap: .7rem; }
+  .places { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
   .place { padding: .7rem; }
   .place h3 { font-size: 1.02rem; }
   .what { font-size: .92rem; }

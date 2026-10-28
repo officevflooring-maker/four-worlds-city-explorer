@@ -84,7 +84,7 @@ function page($path, $o) {
   </div>
   <div class="lb-stage">
     <button type="button" class="lb-step lb-prev" aria-label="Previous image">&larr;</button>
-    <img class="lb-img" src="data:," alt="">
+    <img class="lb-img" alt="">
     <button type="button" class="lb-step lb-next" aria-label="Next image">&rarr;</button>
   </div>
   <p class="lb-credit"></p>
@@ -317,9 +317,9 @@ page('/about/', [
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
 
   <h2 id="artwork">Artwork and reuse</h2>
-  <p>All illustrations of the four worlds are free for everyone to use, under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 (CC BY 4.0)</a> licence. You can copy, print, change, share and use them for any purpose, including in lessons, books, websites and commercial projects. The only condition is to credit them, for example: "Illustration: Four Worlds City Explorer".</p>
+  <p>All illustrations of the four worlds are free for everyone to use, under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 (CC BY 4.0)</a> license. You can copy, print, change, share and use them for any purpose, including in lessons, books, websites and commercial projects. The only condition is to credit them, for example: "Illustration: Four Worlds City Explorer".</p>
   <p>Save or print any of them from the <a href="/artwork/">Artwork</a> page.</p>
-  <p>Photos of real Roman places come from Wikimedia Commons and are public domain or shared under Creative Commons licences. Each photo is credited where it appears, and all licences are listed on the <a href="/credits/">photo credits</a> page.</p>
+  <p>Photos of real Roman places come from Wikimedia Commons and are public domain or shared under Creative Commons licenses. Each photo is credited where it appears, and all licenses are listed on the <a href="/credits/">photo credits</a> page.</p>
 
   <h2 id="sources">Sources</h2>
   <p>The building pages are based on these sources, listed by world. Each page also lists the sources it uses.</p>
@@ -390,7 +390,7 @@ foreach (WORLD_ORDER as $w) {
       . '<p class="art-title">' . h($title) . $more . '</p>'
       . '<p class="art-actions"><a href="' . $full . '" download="' . "four-worlds-$w-$name.webp" . '">Save</a> <button type="button" class="linkish js-print-art" data-full="' . $full . '" data-title="' . h($label) . '">Print</button></p></li>';
     $count++;
-    // Licence data per image, so search engines can show the artwork as free to reuse.
+    // License data per image, so search engines can show the artwork as free to reuse.
     $artLd[] = ['@type' => 'ImageObject', 'contentUrl' => url($full), 'name' => $label, 'license' => 'https://creativecommons.org/licenses/by/4.0/',
       'acquireLicensePage' => url('/about/#artwork'), 'creditText' => 'Illustration: Four Worlds City Explorer',
       'creator' => ['@type' => 'Organization', 'name' => SITE_NAME], 'copyrightNotice' => SITE_NAME];
@@ -423,7 +423,7 @@ HTML,
       'license' => 'https://creativecommons.org/licenses/by/4.0/', 'hasPart' => $artLd]],
 ]);
 
-// ---------- Photo credits (licences require a link to each source and licence) ----------
+// ---------- Photo credits (licenses require a link to each source and license) ----------
 $rows = '';
 foreach ($WORLD_DATA as $w => $D) {
   $list = '';
@@ -440,20 +440,20 @@ foreach ($WORLD_DATA as $w => $D) {
 }
 page('/credits/', [
   'title' => 'Photo credits',
-  'desc' => h('Credits and licences for the photos of real Roman places used on Four Worlds City Explorer.'),
+  'desc' => h('Credits and licenses for the photos of real Roman places used on Four Worlds City Explorer.'),
   'noindex' => true,
   'body' => <<<HTML
 <section class="wrap section page-head narrow">
   <h1>Photo credits</h1>
-  <p class="lead">Photos of real places and technology come from Wikimedia Commons. They are public domain or shared under Creative Commons licences, and we thank the photographers and organisations who shared them.</p>
-  <p>Photos have been resized and converted to WebP for this website. Under their licences you may reuse them by following the licence linked beside each one. The illustrations of the four worlds are shared separately under CC BY 4.0; see <a href="/about/#artwork">Artwork and reuse</a>.</p>
+  <p class="lead">Photos of real places and technology come from Wikimedia Commons. They are public domain or shared under Creative Commons licenses, and we thank the photographers and organizations who shared them.</p>
+  <p>Photos have been resized and converted to WebP for this website. Under their licenses you may reuse them by following the license linked beside each one. The illustrations of the four worlds are shared separately under CC BY 4.0; see <a href="/about/#artwork">Artwork and reuse</a>.</p>
   {$rows}
 </section>
 HTML,
 ]);
 page('/404.html', [
   'title' => 'Page not found',
-  'desc' => h('This page could not be found.'),
+  'desc' => h('This page could not be found. Explore the four city worlds of Four Worlds City Explorer instead.'),
   'noindex' => true,
   'body' => <<<HTML
 <section class="wrap section page-head narrow">

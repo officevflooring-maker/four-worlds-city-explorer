@@ -12,7 +12,7 @@ $FUTURE_SOURCES = [
   'nasa-chapea'  => 'NASA, Crew Health and Performance Exploration Analog (CHAPEA) and the Mars Dune Alpha habitat',
   'nasa-3dp'     => 'NASA Centennial Challenges, "3D-Printed Habitat Challenge" (2015-2019)',
   'nasa-beam'    => 'NASA, Bigelow Expandable Activity Module (BEAM) on the International Space Station (2016)',
-  'nasa-artemis' => 'NASA, Artemis programme overview, including Gateway and plans for a lunar base camp',
+  'nasa-artemis' => 'NASA, Artemis program overview, including Gateway and plans for a lunar base camp',
   'nasa-ice'     => 'NASA, LCROSS mission (2009) and studies of water ice in permanently shadowed lunar craters',
   'nasa-dsn'     => 'NASA, "Deep Space Network" and Mars relay orbiters',
   'nasa-ultra'   => 'NASA, "Advanced Diagnostic Ultrasound in Microgravity" (ADUM) experiment on the International Space Station',
@@ -45,7 +45,7 @@ $FUTURE_CATEGORIES = [
   'support' => ['Air, water and food', 'Life support: making, recycling and growing everything people need to stay alive.'],
   'power'   => ['Power, factories and building', 'Energy, robots and local materials to build and run a settlement.'],
   'health'  => ['Health and community', 'Keeping bodies strong, minds healthy and decisions fair, far from home.'],
-  'science' => ['Science and communication', 'Studying new worlds and staying in touch across millions of kilometres.'],
+  'science' => ['Science and communication', 'Studying new worlds and staying in touch across millions of kilometers.'],
   'travel'  => ['Travel and operations', 'Getting there, moving around and keeping everything running.'],
 ];
 
@@ -84,14 +84,14 @@ $FUTURE = [
 
 'lunar-base' => [
   'name' => 'Moon base home', 'latin' => 'surface habitat', 'cat' => 'live', 'src' => 'art/family_2.png',
-  'summary' => 'Linked domes where a crew could live on the Moon, shielded from radiation and connected by pressurised tunnels.',
+  'summary' => 'Linked domes where a crew could live on the Moon, shielded from radiation and connected by pressurized tunnels.',
   'facts' => ['Purpose' => 'Long stays on the Moon', 'Likely place' => 'Near the lunar south pole', 'Biggest dangers' => 'Radiation, dust, extreme cold and heat', 'Status' => 'Being planned under Artemis'],
   'sections' => [
     ['How it would work', FUT_WOULD, [
-      'A Moon base would be made of several connected modules: sleeping quarters, a kitchen, labs, a gym and storage. If one module sprang a leak, hatches could seal it off, keeping the rest safe. Most of the base would be covered with metres of lunar soil to block radiation.',
+      'A Moon base would be made of several connected modules: sleeping quarters, a kitchen, labs, a gym and storage. If one module sprang a leak, hatches could seal it off, keeping the rest safe. Most of the base would be covered with meters of lunar soil to block radiation.',
     ]],
     ['Why the south pole?', FUT_REAL, [
-      'The Moon turns slowly: a full day-and-night cycle lasts about a month, so most places have about two weeks of sunlight followed by two weeks of freezing darkness. Near the poles, some mountain peaks are lit almost all the time, which is good for solar power, while nearby craters stay permanently shadowed and may hold water ice. NASA\'s Artemis programme is focusing on the south polar region for this reason.',
+      'The Moon turns slowly: a full day-and-night cycle lasts about a month, so most places have about two weeks of sunlight followed by two weeks of freezing darkness. Near the poles, some mountain peaks are lit almost all the time, which is good for solar power, while nearby craters stay permanently shadowed and may hold water ice. NASA\'s Artemis program is focusing on the south polar region for this reason.',
     ]],
     ['The challenges', FUT_REAL, [], ['list' => [
       'Radiation: the Moon has no magnetic field or thick atmosphere to block cosmic rays and solar storms.',
@@ -103,7 +103,7 @@ $FUTURE = [
   'art' => 'This illustration shows several domes joined together with glowing windows and plants. Its design is imagined.',
   'look' => ['Count the domes and find the links between them.', 'Where is the main entrance?'],
   'questions' => ['Why might it be safer to build several small modules than one big one?', 'How would you spend two weeks of darkness on the Moon?', 'What would you miss most about Earth?'],
-  'words' => ['Module' => 'One section of a larger structure.', 'Pressurised' => 'Filled with air at a pressure people can breathe.', 'Permanently shadowed crater' => 'A crater where sunlight never reaches the floor.'],
+  'words' => ['Module' => 'One section of a larger structure.', 'Pressurized' => 'Filled with air at a pressure people can breathe.', 'Permanently shadowed crater' => 'A crater where sunlight never reaches the floor.'],
   'sources' => ['nasa-artemis', 'nasa-hrp', 'nasa-ice'],
   'related' => ['habitat-cluster', 'storm-shelter', 'ice-mine'],
 ],
@@ -121,10 +121,10 @@ $FUTURE = [
       'Fans keep air moving, because in weightlessness warm air does not rise and carbon dioxide can build up around a sleeping astronaut\'s face.',
     ]],
     ['Maintaining it', FUT_WOULD, [
-      'Life support must never fail, so critical parts are doubled or tripled. Crews carry spare parts, track every filter, and practise emergencies such as fires, leaks and toxic spills. On Mars, where resupply could take many months, crews would need to repair almost anything themselves.',
+      'Life support must never fail, so critical parts are doubled or tripled. Crews carry spare parts, track every filter, and practice emergencies such as fires, leaks and toxic spills. On Mars, where resupply could take many months, crews would need to repair almost anything themselves.',
     ]],
   ],
-  'art' => 'This illustration shows a cluster of linked domes with glowing windows and pipes. Here we imagine it as the settlement\'s life support centre.',
+  'art' => 'This illustration shows a cluster of linked domes with glowing windows and pipes. Here we imagine it as the settlement\'s life support center.',
   'look' => ['Follow the pipes between the domes.', 'Which dome would you put the backup machines in?'],
   'questions' => ['Sealed homes control air and temperature. What might residents miss?', 'Why is it important to have backups for life support?', 'How is the air in your classroom kept fresh?'],
   'words' => ['Life support' => 'Systems that keep people alive in a hostile place.', 'Electrolysis' => 'Splitting a substance using electricity.', 'Redundancy' => 'Having spare systems in case one fails.'],
@@ -142,7 +142,7 @@ $FUTURE = [
     ]],
     ['Technology we already have', FUT_REAL, [
       'NASA ran a 3D-Printed Habitat Challenge from 2015 to 2019, inviting teams to design and print habitats using materials that could be found on Mars. On Earth, companies already 3D print concrete houses.',
-      'At NASA\'s Johnson Space Center in Houston, a 3D-printed habitat called Mars Dune Alpha, about 160 square metres in size, hosts long simulated Mars missions. In its first mission, four volunteers lived inside for 378 days, from June 2023 to July 2024.',
+      'At NASA\'s Johnson Space Center in Houston, a 3D-printed habitat called Mars Dune Alpha, about 160 square meters in size, hosts long simulated Mars missions. In its first mission, four volunteers lived inside for 378 days, from June 2023 to July 2024.',
     ]],
     ['Challenges to solve', FUT_WOULD, [
       'Lunar and Martian soils are different from earth and sand, so engineers are testing ways to bind them: melting them with heat or microwaves (sintering), or mixing them with small amounts of binder brought from Earth. Printed walls may crack in extreme temperature swings, so they would need inner airtight liners and regular inspection.',
@@ -212,12 +212,12 @@ $FUTURE = [
   'facts' => ['Purpose' => 'Reuse water again and again', 'ISS record' => 'About 98% of water recovered (2023)', 'Sources of water' => 'Sinks, showers, sweat, breath, urine', 'Why it matters' => 'Water is heavy to launch'],
   'sections' => [
     ['Why recycle water?', FUT_REAL, [
-      'Every kilogram launched into space costs a lot, and each person needs several litres of water a day for drinking, food and washing. Instead of bringing new water, space stations recycle it.',
+      'Every kilogram launched into space costs a lot, and each person needs several liters of water a day for drinking, food and washing. Instead of bringing new water, space stations recycle it.',
       'On the International Space Station, humidity from breath and sweat is collected from the air, and urine is distilled and filtered. In 2023 NASA announced that, with a new brine processor, the station could recover about 98 percent of the water crews bring aboard.',
     ]],
     ['How the system works', FUT_REAL, [], ['list' => [
       'Collect: water from sinks, condensed humidity and urine.',
-      'Distil: urine is boiled at low pressure and the vapour is collected.',
+      'Distil: urine is boiled at low pressure and the vapor is collected.',
       'Filter: water passes through filters and beds that remove impurities.',
       'Clean: a high-temperature reactor breaks down remaining contaminants.',
       'Check: sensors test the water before anyone drinks it.',
@@ -229,7 +229,7 @@ $FUTURE = [
   'art' => 'This illustration shows a glowing fountain in a plaza. Here we imagine it as the visible part of the settlement\'s water recycling.',
   'look' => ['Find the glowing column of water.', 'Where could the cleaned water flow next?'],
   'questions' => ['Would you drink recycled water if you knew it was cleaner than tap water?', 'How much water do you use in a day?', 'What could cities on Earth learn from space water recycling?'],
-  'words' => ['Closed loop' => 'A system that reuses its materials over and over.', 'Distillation' => 'Boiling a liquid and collecting the vapour to purify it.', 'Brine' => 'Very salty leftover water.'],
+  'words' => ['Closed loop' => 'A system that reuses its materials over and over.', 'Distillation' => 'Boiling a liquid and collecting the vapor to purify it.', 'Brine' => 'Very salty leftover water.'],
   'sources' => ['nasa-eclss'],
   'related' => ['habitat-cluster', 'ice-mine', 'indoor-farm'],
 ],
@@ -263,7 +263,7 @@ $FUTURE = [
   'facts' => ['Purpose' => 'Fresh food in space', 'First space salad' => 'Lettuce eaten on the ISS, 2015', 'Grown in' => 'Water and nutrients, under LEDs', 'Also used on Earth' => 'Vertical farms in cities'],
   'sections' => [
     ['How it would work', FUT_WOULD, [
-      'An indoor farm would grow leafy greens, herbs, tomatoes, peppers and more in stacked trays, watered with nutrient solution and lit by LEDs tuned to the colours plants use best. Computers would control temperature, humidity and light. Fresh food would add vitamins and variety to packaged meals.',
+      'An indoor farm would grow leafy greens, herbs, tomatoes, peppers and more in stacked trays, watered with nutrient solution and lit by LEDs tuned to the colors plants use best. Computers would control temperature, humidity and light. Fresh food would add vitamins and variety to packaged meals.',
     ]],
     ['Plants in space today', FUT_REAL, [
       'NASA\'s Veggie system on the International Space Station grows plants under red, blue and green LEDs. In 2015, astronauts ate red romaine lettuce grown on the station, the first time NASA astronauts ate food grown in space. Since then crews have grown cabbage, mustard greens, chilli peppers and flowers.',
@@ -290,7 +290,7 @@ $FUTURE = [
       'At the heart of the settlement, a real tree would grow in a tall, sealed atrium, with homes and gathering pods arranged around it. It would add oxygen, humidity and green views, but mostly it would remind people of home.',
     ]],
     ['Why nature matters to astronauts', FUT_REAL, [
-      'Astronauts living for months on the International Space Station often say how much they enjoy tending plants, and photos of Earth from the station\'s windows are among their favourite views. Long isolation, small spaces and the same faces every day can be stressful.',
+      'Astronauts living for months on the International Space Station often say how much they enjoy tending plants, and photos of Earth from the station\'s windows are among their favorite views. Long isolation, small spaces and the same faces every day can be stressful.',
       'Studies on Earth that copy long space missions, such as the 520-day Mars-500 isolation study in Russia (2010-2011) and research at remote Antarctic stations, look at how crews cope. Contact with nature, privacy, light that changes like a day, and meaningful work all seem to help.',
     ]],
     ['Could a tree grow on Mars?', FUT_WOULD, [
@@ -298,7 +298,7 @@ $FUTURE = [
     ]],
   ],
   'art' => 'This illustration shows a great tree with glowing pods built around its trunk and branches.',
-  'look' => ['Find the tree trunk at the centre.', 'Count the pods around it.'],
+  'look' => ['Find the tree trunk at the center.', 'Count the pods around it.'],
   'questions' => ['Can technology and nature share the same space?', 'What would you bring to remind you of home?', 'Is a tree on Mars a luxury or a need?'],
   'words' => ['Isolation' => 'Being cut off from other people and places.', 'Analogue study' => 'A study on Earth that copies space conditions.', 'Atrium' => 'A tall, open central space in a building.'],
   'sources' => ['mars500', 'nasa-hrp', 'nasa-veggie'],
@@ -315,8 +315,8 @@ $FUTURE = [
     ]],
     ['How it would work', FUT_WOULD, [], ['list' => [
       'Robotic diggers would work inside dark craters colder than anywhere on Earth.',
-      'Icy soil would be heated in sealed ovens so the water turns to vapour.',
-      'The vapour would be captured, frozen again and cleaned.',
+      'Icy soil would be heated in sealed ovens so the water turns to vapor.',
+      'The vapor would be captured, frozen again and cleaned.',
       'Electrolysis would split some water into hydrogen and oxygen.',
       'Gases would be chilled into liquids and stored as rocket fuel.',
     ]]],
@@ -333,12 +333,12 @@ $FUTURE = [
 ],
 
 'oxygen-factory' => [
-  'name' => 'Oxygen factory', 'latin' => 'in-situ resource utilisation', 'cat' => 'support', 'src' => 'art/floor_m.png',
+  'name' => 'Oxygen factory', 'latin' => 'in-situ resource utilization', 'cat' => 'support', 'src' => 'art/floor_m.png',
   'summary' => 'A factory that would pull oxygen out of the Martian air or Moon rock, so settlers can breathe and rockets can fly home.',
   'facts' => ['Purpose' => 'Make oxygen from local materials', 'Real test' => 'MOXIE on Mars, 2021-2023', 'MOXIE made' => '122 grams of oxygen in total', 'Moon rock' => 'Contains lots of oxygen bound in minerals'],
   'sections' => [
     ['Living off the land', FUT_REAL, [
-      'Bringing everything from Earth is extremely expensive. "In-situ resource utilisation", or ISRU, means using what is already there. Oxygen is a top priority: people need it to breathe, and rockets need large amounts of it to burn their fuel.',
+      'Bringing everything from Earth is extremely expensive. "In-situ resource utilization", or ISRU, means using what is already there. Oxygen is a top priority: people need it to breathe, and rockets need large amounts of it to burn their fuel.',
     ]],
     ['Making oxygen on Mars, for real', FUT_REAL, [
       'Mars\' thin air is mostly carbon dioxide. NASA\'s Perseverance rover carried a lunchbox-sized experiment called MOXIE that heated Martian air and split carbon dioxide into oxygen and carbon monoxide using electricity. Between 2021 and 2023 it ran 16 times and produced 122 grams of oxygen, about what a small dog breathes in ten hours, at its best making 12 grams an hour. It proved the idea works on Mars.',
@@ -350,7 +350,7 @@ $FUTURE = [
   'art' => 'This illustration shows an industrial building with chimneys, tanks and pipes. Here we imagine it as a factory making oxygen.',
   'look' => ['Find the chimneys and storage tanks.', 'Where would the oxygen be stored?'],
   'questions' => ['Why would astronauts want the oxygen factory running before they arrive?', 'What else could be made from local materials?', 'What would happen to the settlement if the factory broke down?'],
-  'words' => ['ISRU' => 'In-situ resource utilisation: using local resources.', 'Carbon dioxide' => 'A gas made of carbon and oxygen; most of Mars\' air.', 'Oxidiser' => 'The oxygen a rocket burns with its fuel.'],
+  'words' => ['ISRU' => 'In-situ resource utilization: using local resources.', 'Carbon dioxide' => 'A gas made of carbon and oxygen; most of Mars\' air.', 'Oxidiser' => 'The oxygen a rocket burns with its fuel.'],
   'sources' => ['nasa-moxie', 'nasa-isru'],
   'related' => ['ice-mine', 'power-tower', 'habitat-cluster'],
 ],
@@ -400,7 +400,7 @@ $FUTURE = [
   ],
   'art' => 'This illustration shows a factory with glass walls, robotic arms and machinery inside.',
   'look' => ['Look for robotic arms through the windows.', 'Where would finished parts come out?'],
-  'questions' => ['If robots build things, who checks they are safe and fair?', 'What jobs should robots do, and what jobs should people keep?', 'How would you repair a robot millions of kilometres from a shop?'],
+  'questions' => ['If robots build things, who checks they are safe and fair?', 'What jobs should robots do, and what jobs should people keep?', 'How would you repair a robot millions of kilometers from a shop?'],
   'words' => ['Autonomous' => 'Able to work without being controlled step by step.', 'Robotic arm' => 'A machine arm that can grip, lift and move things.', 'Spare part' => 'A replacement for a broken piece.'],
   'sources' => ['nasa-robots', 'nasa-isru'],
   'related' => ['robot-helpers', 'fab-shop', 'printed-habitat'],
@@ -449,7 +449,7 @@ $FUTURE = [
       'The crane would be designed to fold for launch and set itself up on arrival. Its motors and joints would need sealing against dust, and its cables would need regular inspection. Remote operators could control it from inside the base, or even from Earth for slow, careful jobs.',
     ]],
   ],
-  'art' => 'This illustration shows a red and grey robotic crane lifting a glowing module. The glow is part of the original artwork.',
+  'art' => 'This illustration shows a red and gray robotic crane lifting a glowing module. The glow is part of the original artwork.',
   'look' => ['Is anyone operating it? How can you tell?', 'Find the glowing module on the hook.'],
   'questions' => ['If machines did most building work, what work would people still choose to do?', 'Why might a swinging load be dangerous on the Moon?', 'What is the difference between weight and mass?'],
   'words' => ['Mass' => 'How much matter an object has.', 'Weight' => 'The force of gravity pulling on an object.', 'Inertia' => 'An object\'s resistance to starting or stopping.'],
@@ -466,7 +466,7 @@ $FUTURE = [
       'Some things are very hard to make far from Earth: computer chips, precision machines, medicines and special seals. These would be shipped from Earth, packed into standard modules and containers like the ones in this picture.',
     ]],
     ['What could be made locally', FUT_WOULD, [
-      'Bulk materials, such as shielding, walls, roads and landing pads, would be made from local soil. Lunar soil contains oxygen, silicon, iron, aluminium, titanium and calcium bound up in minerals, which could one day be extracted. The European Space Agency and NASA have tested ways to turn simulated lunar soil into bricks and printed structures.',
+      'Bulk materials, such as shielding, walls, roads and landing pads, would be made from local soil. Lunar soil contains oxygen, silicon, iron, aluminum, titanium and calcium bound up in minerals, which could one day be extracted. The European Space Agency and NASA have tested ways to turn simulated lunar soil into bricks and printed structures.',
     ]],
     ['Nothing wasted', FUT_WOULD, [
       'Every container, panel and piece of packaging that arrives from Earth would be designed to be reused: crates that become furniture, tanks that become rooms, plastic that becomes printer filament. Engineers sometimes describe this goal as "ship the brains, build the bulk".',
@@ -522,7 +522,7 @@ $FUTURE = [
   'art' => 'This illustration shows a domed arena with an oval track. Here we imagine it as a spinning ring for artificial gravity.',
   'look' => ['Find the oval track inside the dome.', 'Which way would you feel pushed as it spins?'],
   'questions' => ['Why do you feel pushed outward on a fast roundabout?', 'Would you rather exercise every day or live in a spinning station?', 'What problems would a spinning station need to solve?'],
-  'words' => ['Centrifuge' => 'A machine that spins things very fast.', 'Artificial gravity' => 'A force that feels like gravity, created by spinning or speeding up.', 'Rotation' => 'Turning around a centre.'],
+  'words' => ['Centrifuge' => 'A machine that spins things very fast.', 'Artificial gravity' => 'A force that feels like gravity, created by spinning or speeding up.', 'Rotation' => 'Turning around a center.'],
   'sources' => ['artgrav', 'nasa-hrp'],
   'related' => ['gravity-gym', 'medical-bay', 'space-elevator'],
 ],
@@ -690,7 +690,7 @@ $FUTURE = [
       'In 1859, a powerful solar storm, known as the Carrington Event, produced auroras seen far from the poles and caused sparks and fires on telegraph lines.',
     ]],
     ['Forecasting today', FUT_REAL, [
-      'Organisations such as the US NOAA Space Weather Prediction Center use satellites that watch the Sun and measure the solar wind upstream of Earth to give warnings, from a few days to less than an hour ahead, depending on the event.',
+      'Organizations such as the US NOAA Space Weather Prediction Center use satellites that watch the Sun and measure the solar wind upstream of Earth to give warnings, from a few days to less than an hour ahead, depending on the event.',
     ]],
     ['On the Moon or Mars', FUT_WOULD, [
       'Without a protective magnetic field, a settlement would rely on warnings to send people into the storm shelter and to protect electronics. A local station would measure radiation levels and particles, and combine its readings with data from spacecraft watching the Sun.',
@@ -771,7 +771,7 @@ $FUTURE = [
   ],
   'art' => 'This illustration shows a rocket beside its tall launch tower.',
   'look' => ['Look at the tower beside the rocket.', 'Where would the exhaust go at lift-off?'],
-  'questions' => ['Is a launch pad a good neighbour? What trade-offs does it bring?', 'Why is it easier to launch from the Moon than from Earth?', 'How would you protect buildings from flying dust?'],
+  'questions' => ['Is a launch pad a good neighbor? What trade-offs does it bring?', 'Why is it easier to launch from the Moon than from Earth?', 'How would you protect buildings from flying dust?'],
   'words' => ['Launch pad' => 'The platform a rocket lifts off from.', 'Flame trench' => 'A channel that carries rocket exhaust away.', 'Escape velocity' => 'The speed needed to break free of a world\'s gravity.'],
   'sources' => ['nasa-sls', 'nasa-artemis'],
   'related' => ['spaceport', 'mission-control', 'ice-mine'],
@@ -783,7 +783,7 @@ $FUTURE = [
   'facts' => ['Purpose' => 'Landing, refuelling, relaunching', 'Key step' => 'Reusable rockets', 'First orbital booster landing' => 'December 2015', 'Future idea' => 'Fuel depots in space'],
   'sections' => [
     ['Why reuse rockets?', FUT_REAL, [
-      'For most of the space age, rockets were thrown away after one flight, like flying an aeroplane once and scrapping it. In December 2015, SpaceX landed the first stage of an orbital rocket back on Earth, and boosters have since flown many times. The Space Shuttle was also partly reusable. Reuse can make spaceflight cheaper and more frequent.',
+      'For most of the space age, rockets were thrown away after one flight, like flying an airplane once and scrapping it. In December 2015, SpaceX landed the first stage of an orbital rocket back on Earth, and boosters have since flown many times. The Space Shuttle was also partly reusable. Reuse can make spaceflight cheaper and more frequent.',
     ]],
     ['How a spaceport would work', FUT_WOULD, [], ['list' => [
       'Landing pads where rockets touch down upright.',
@@ -793,7 +793,7 @@ $FUTURE = [
       'Control towers tracking every arrival and departure.',
     ]]],
     ['Refuelling in space', FUT_WOULD, [
-      'Going far requires lots of fuel. One idea is to refuel spacecraft in orbit from tanker ships or fuel depots, like a petrol station in space. Moving very cold liquid fuels between spacecraft in weightlessness is difficult and is being tested and developed.',
+      'Going far requires lots of fuel. One idea is to refuel spacecraft in orbit from tanker ships or fuel depots, like a gas station in space. Moving very cold liquid fuels between spacecraft in weightlessness is difficult and is being tested and developed.',
     ]],
   ],
   'art' => 'This illustration shows a large complex with rockets, antennas and launch towers.',
@@ -810,13 +810,13 @@ $FUTURE = [
   'facts' => ['Purpose' => 'Reaching orbit without rockets', 'Needs' => 'A cable stronger than any material made in bulk', 'Easier on' => 'The Moon or Mars', 'Status' => 'A concept, not yet possible on Earth'],
   'sections' => [
     ['The idea', FUT_WOULD, [
-      'A space elevator would be a cable anchored at the equator and stretching tens of thousands of kilometres up to a counterweight in space. As the planet spins, the counterweight keeps the cable tight. Electric "climbers" would ride up and down, carrying cargo and people into orbit without burning rocket fuel.',
+      'A space elevator would be a cable anchored at the equator and stretching tens of thousands of kilometers up to a counterweight in space. As the planet spins, the counterweight keeps the cable tight. Electric "climbers" would ride up and down, carrying cargo and people into orbit without burning rocket fuel.',
     ]],
     ['Why it is not built yet', FUT_REAL, [
-      'On Earth, the cable would need to be far stronger for its weight than any material we can make in long lengths. Carbon nanotubes and graphene are very strong in tiny samples, but making them flawlessly over tens of thousands of kilometres is far beyond today\'s technology. The cable would also need to survive lightning, storms, space debris and radiation.',
+      'On Earth, the cable would need to be far stronger for its weight than any material we can make in long lengths. Carbon nanotubes and graphene are very strong in tiny samples, but making them flawlessly over tens of thousands of kilometers is far beyond today\'s technology. The cable would also need to survive lightning, storms, space debris and radiation.',
     ]],
     ['Maybe on the Moon first', FUT_WOULD, [
-      'Because the Moon\'s gravity is weaker, a lunar elevator might be possible with materials that exist today, such as strong plastic fibres. Engineers have studied the idea, though it would still be a huge project. Like many great ideas, it may take a long time, or turn out to be impractical.',
+      'Because the Moon\'s gravity is weaker, a lunar elevator might be possible with materials that exist today, such as strong plastic fibers. Engineers have studied the idea, though it would still be a huge project. Like many great ideas, it may take a long time, or turn out to be impractical.',
     ]],
   ],
   'art' => 'This illustration shows a tall spire with glowing rings. Here we imagine it as the anchor station of a space elevator.',
@@ -833,54 +833,54 @@ $FUTURE = [
   'facts' => ['Purpose' => 'Testing and training with rovers', 'Apollo rover' => 'Lunar Roving Vehicle, 1971-1972', 'Coming next' => 'Lunar Terrain Vehicle for Artemis', 'Big challenges' => 'Dust, rocks, cold, batteries'],
   'sections' => [
     ['Driving on the Moon', FUT_REAL, [
-      'On the last three Apollo missions, in 1971 and 1972, astronauts drove a folding electric car called the Lunar Roving Vehicle. It let them travel kilometres from the lander and collect far more samples. Its wire-mesh wheels coped with soft dust, and its fenders were essential: when one broke, the astronauts were showered with dust.',
-      'NASA\'s Artemis programme plans a new Lunar Terrain Vehicle that astronauts can drive, and that can also be driven remotely when no crew is present.',
+      'On the last three Apollo missions, in 1971 and 1972, astronauts drove a folding electric car called the Lunar Roving Vehicle. It let them travel kilometers from the lander and collect far more samples. Its wire-mesh wheels coped with soft dust, and its fenders were essential: when one broke, the astronauts were showered with dust.',
+      'NASA\'s Artemis program plans a new Lunar Terrain Vehicle that astronauts can drive, and that can also be driven remotely when no crew is present.',
     ]],
     ['How the track would work', FUT_WOULD, [
-      'Before driving out into rough country, crews would test rovers on a track with slopes, rocks, soft sand and craters. They would practise steering in low gravity, where vehicles bounce and skid more easily, and rehearse emergencies such as a breakdown far from base.',
+      'Before driving out into rough country, crews would test rovers on a track with slopes, rocks, soft sand and craters. They would practice steering in low gravity, where vehicles bounce and skid more easily, and rehearse emergencies such as a breakdown far from base.',
     ]],
-    ['Pressurised rovers', FUT_WOULD, [
-      'For long trips, future rovers would be pressurised, like small mobile homes, so astronauts could drive in normal clothes and only suit up to go outside. Some designs include suitports on the back.',
+    ['Pressurized rovers', FUT_WOULD, [
+      'For long trips, future rovers would be pressurized, like small mobile homes, so astronauts could drive in normal clothes and only suit up to go outside. Some designs include suitports on the back.',
     ]],
   ],
   'art' => 'This illustration shows an oval track inside a high-tech arena with vehicles on it. Here we imagine it as a rover test track.',
   'look' => ['Find the vehicles on the track.', 'Where might spectators or trainers watch?'],
   'questions' => ['How would you design wheels for soft, sharp dust?', 'Why would a rover need to be able to drive itself?', 'What should every rover carry in case of emergency?'],
-  'words' => ['Rover' => 'A vehicle for driving on another world.', 'Pressurised' => 'Holding air at a pressure people can breathe.', 'Traction' => 'Grip between wheels and ground.'],
+  'words' => ['Rover' => 'A vehicle for driving on another world.', 'Pressurized' => 'Holding air at a pressure people can breathe.', 'Traction' => 'Grip between wheels and ground.'],
   'sources' => ['nasa-lrv', 'nasa-dust'],
   'related' => ['airlock-hangar', 'robot-helpers', 'operations-center'],
 ],
 
 'mission-control' => [
   'name' => 'Mission control', 'latin' => 'flight operations', 'cat' => 'travel', 'src' => 'art/business_2.png',
-  'summary' => 'The control centre where teams of experts watch over every spacecraft, ready to help the crew around the clock.',
-  'facts' => ['Purpose' => 'Monitoring and supporting missions', 'Famous centre' => 'Mission Control, Houston', 'Works' => '24 hours a day in shifts', 'Changes on Mars' => 'Crews must act on their own'],
+  'summary' => 'The control center where teams of experts watch over every spacecraft, ready to help the crew around the clock.',
+  'facts' => ['Purpose' => 'Monitoring and supporting missions', 'Famous center' => 'Mission Control, Houston', 'Works' => '24 hours a day in shifts', 'Changes on Mars' => 'Crews must act on their own'],
   'sections' => [
     ['How mission control works', FUT_REAL, [
-      'At NASA\'s Johnson Space Center in Houston, Mission Control has guided human spaceflights since the Gemini programme in the 1960s, including the Apollo Moon landings. Each console is staffed by a specialist responsible for one system, such as power, life support or communications, and a flight director leads the team. The space station is watched over 24 hours a day.',
+      'At NASA\'s Johnson Space Center in Houston, Mission Control has guided human spaceflights since the Gemini program in the 1960s, including the Apollo Moon landings. Each console is staffed by a specialist responsible for one system, such as power, life support or communications, and a flight director leads the team. The space station is watched over 24 hours a day.',
       'Mission Control famously helped save the crew of Apollo 13 in 1970, after an oxygen tank exploded on the way to the Moon, by working out how to use the lunar module as a lifeboat.',
     ]],
     ['Changing roles far from Earth', FUT_REAL, [
       'Near Earth, Mission Control can talk to the crew almost instantly. On Mars missions, with delays of up to about 20 minutes each way, ground teams cannot respond in an emergency in time. Crews will need to make many decisions themselves, with Mission Control acting more like a support team.',
     ]],
     ['Building and running it', FUT_WOULD, [
-      'A future control centre would need reliable power, backup sites in case of disaster, secure computer networks and staff who work in shifts. Simulations, where teams practise emergencies again and again, are a key part of the job.',
+      'A future control center would need reliable power, backup sites in case of disaster, secure computer networks and staff who work in shifts. Simulations, where teams practice emergencies again and again, are a key part of the job.',
     ]],
   ],
-  'art' => 'This illustration shows a tall tower with screens and a glowing globe. Here we imagine it as a mission control centre.',
+  'art' => 'This illustration shows a tall tower with screens and a glowing globe. Here we imagine it as a mission control center.',
   'look' => ['Find the glowing globe display.', 'How many floors of consoles might there be?'],
-  'questions' => ['What makes a team work well under pressure?', 'Why do flight controllers practise emergencies so often?', 'How should decisions be shared between a crew and Mission Control?'],
+  'questions' => ['What makes a team work well under pressure?', 'Why do flight controllers practice emergencies so often?', 'How should decisions be shared between a crew and Mission Control?'],
   'words' => ['Flight director' => 'The leader of a mission control team.', 'Console' => 'A workstation with screens and controls.', 'Simulation' => 'A practice exercise that imitates a real situation.'],
   'sources' => ['nasa-mcc'],
   'related' => ['operations-center', 'comms-relay', 'launch-pad'],
 ],
 
 'operations-center' => [
-  'name' => 'Settlement operations centre', 'latin' => 'local control', 'cat' => 'travel', 'src' => 'art/town_1.png',
+  'name' => 'Settlement operations center', 'latin' => 'local control', 'cat' => 'travel', 'src' => 'art/town_1.png',
   'summary' => 'The local control room that runs the settlement\'s power, air, water and traffic, and takes charge in emergencies.',
   'facts' => ['Purpose' => 'Running the settlement day to day', 'Why local' => 'Earth is too far to help in real time', 'Watches' => 'Power, life support, robots, weather', 'In emergencies' => 'Coordinates the response'],
   'sections' => [
-    ['Why a local control centre?', FUT_WOULD, [
+    ['Why a local control center?', FUT_WOULD, [
       'A Moon or Mars settlement would be like a small town, a factory and a spacecraft all at once. Someone must keep track of every system: power, life support, water, robots working outside, people on the surface, and incoming ships. Because Earth is minutes away by radio from Mars, this must be done locally.',
     ]],
     ['How it would work', FUT_WOULD, [], ['list' => [
@@ -891,7 +891,7 @@ $FUTURE = [
       'A backup control room in a separate building.',
     ]]],
     ['Lessons from Earth', FUT_REAL, [
-      'Remote research stations in Antarctica, offshore oil platforms and the International Space Station all rely on careful monitoring, checklists and drills. Experience shows that clear communication, well-practised procedures and a culture where anyone can raise a safety concern are as important as technology.',
+      'Remote research stations in Antarctica, offshore oil platforms and the International Space Station all rely on careful monitoring, checklists and drills. Experience shows that clear communication, well-practiced procedures and a culture where anyone can raise a safety concern are as important as technology.',
     ]],
   ],
   'art' => 'This illustration shows a large command building with a glass dome, antennas and dishes.',
@@ -909,7 +909,7 @@ $WORLD_DATA['future'] = [
   'intro'    => 'One possible future: a settlement on the Moon or Mars. Each building explains how it could work, the real space technology that exists today, and how it would be powered, built and kept running.',
   'note'     => 'This is speculative design, not a prediction. Each page marks what is real today and what is still a possible future.',
   'aka'      => 'Topic',
-  'aside'    => ['Why the Moon and Mars?', 'The Moon is about 384,000 kilometres away, a trip of about three days. Mars is much further: between about 55 and 400 million kilometres, depending on where the two planets are, and a trip takes around six to nine months. Good launch windows to Mars come only about every 26 months, so a Mars settlement would need to look after itself for a long time.'],
+  'aside'    => ['Why the Moon and Mars?', 'The Moon is about 384,000 kilometers away, a trip of about three days. Mars is much further: between about 55 and 400 million kilometers, depending on where the two planets are, and a trip takes around six to nine months. Good launch windows to Mars come only about every 26 months, so a Mars settlement would need to look after itself for a long time.'],
   'akaLang'  => '',
   'pageTitle'=> '%s: how it could work on the Moon and Mars',
   'pageDesc' => ' Learn how it could work beyond Earth, the real technology behind it, and how it would be powered, built and maintained.',
