@@ -106,7 +106,7 @@ HTML;
 <meta name="description" content="{$o['desc']}">
 <meta name="robots" content="{$robots}">
 <link rel="canonical" href="{$canonical}">
-<meta name="theme-color" content="#f7f3ec">
+<meta name="theme-color" content="#f7f5f0">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{$GLOBALS['siteNameH']}">
 <meta property="og:title" content="{$title}">
