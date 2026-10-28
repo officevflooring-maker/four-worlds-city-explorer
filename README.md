@@ -1,4 +1,6 @@
-# Four Worlds City Explorer
+# The Atlas of Cities: Past, Present and Imagined
+
+(Formerly "The Atlas of Cities". The GitHub repository keeps its original name.)
 
 A free educational website: explore four illustrated isometric cities (Ancient Rome, a Modern Town, an Elven Green World and a Robotic Future), learn what each building does, and compare how each world provides water, places to gather, safe travel and room for nature.
 
@@ -78,4 +80,4 @@ After each change: run `php build/build.php`, commit and push to `main`, Hosting
 
 ## Licence
 
-The illustrations are shared under Creative Commons Attribution 4.0 (CC BY 4.0): free for anyone to use for any purpose, with credit to "Four Worlds City Explorer". Photos of real Roman places keep their own Wikimedia Commons licences (see `/credits/`).
+The illustrations are shared under Creative Commons Attribution 4.0 (CC BY 4.0): free for anyone to use for any purpose, with credit to "The Atlas of Cities". Photos of real Roman places keep their own Wikimedia Commons licences (see `/credits/`).

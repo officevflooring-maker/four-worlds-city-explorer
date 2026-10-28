@@ -281,7 +281,7 @@ HTML,
     $rear = '';
     if (!empty($r['vehicle'])) {
       $rearFull = "/assets/artwork/$w/" . artwork_name($r['src']) . '-back.webp';
-      $rear = '<figure class="rear-view"><button type="button" class="lb" data-full="' . $rearFull . '" data-title="' . h($r['name']) . ' (back view)" data-credit="Illustration: Four Worlds City Explorer, free to use under CC BY 4.0" data-download="' . "$w-$slug-back.webp" . '" aria-label="View the back view full size">'
+      $rear = '<figure class="rear-view"><button type="button" class="lb" data-full="' . $rearFull . '" data-title="' . h($r['name']) . ' (back view)" data-credit="Illustration: The Atlas of Cities, free to use under CC BY 4.0" data-download="' . "$w-$slug-back.webp" . '" aria-label="View the back view full size">'
         . img($w, "rear-$slug", 'Back view of the ' . strtolower($r['name']) . " ($label)", '(min-width: 900px) 260px, 60vw', 'loading="lazy"') . '</button><figcaption>Back view</figcaption></figure>';
     }
     $catH = h($catLabel);
@@ -301,7 +301,7 @@ HTML,
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/worlds/{$w}/">{$label}</a></li><li><a href="/worlds/{$w}/#{$r['cat']}">{$catH}</a></li><li aria-current="page">{$nameH}</li></ol></nav>
 </div>
 <section class="wrap b-hero">
-  <div class="b-art"><button type="button" class="lb" data-full="{$heroFull}" data-title="{$nameH} (illustration)" data-credit="Illustration: Four Worlds City Explorer, free to use under CC BY 4.0" data-download="{$w}-{$slug}.webp" aria-label="View the illustration full size">{$hero}</button></div>
+  <div class="b-art"><button type="button" class="lb" data-full="{$heroFull}" data-title="{$nameH} (illustration)" data-credit="Illustration: The Atlas of Cities, free to use under CC BY 4.0" data-download="{$w}-{$slug}.webp" aria-label="View the illustration full size">{$hero}</button></div>
   <div class="b-intro">
     <p class="tag">{$label} · {$catH}</p>
     <h1>{$nameH}</h1>
@@ -374,7 +374,7 @@ function people_page($w) {
       $links[] = '<a href="/worlds/' . $w . '/' . $p . '/">' . h($WORLD_DATA[$w]['pages'][$p]['name']) . '</a>';
     }
     $full = "/assets/artwork/$w/$file.webp";
-    $cards .= '<li class="person world-' . $w . '" id="' . $file . '"><button type="button" class="lb person-art" data-full="' . $full . '" data-title="' . h("$label: $name") . '" data-credit="Illustration: Four Worlds City Explorer, free to use under CC BY 4.0" data-download="four-worlds-' . "$w-$file" . '.webp" aria-label="View full size: ' . h($name) . '">'
+    $cards .= '<li class="person world-' . $w . '" id="' . $file . '"><button type="button" class="lb person-art" data-full="' . $full . '" data-title="' . h("$label: $name") . '" data-credit="Illustration: The Atlas of Cities, free to use under CC BY 4.0" data-download="atlas-of-cities-' . "$w-$file" . '.webp" aria-label="View full size: ' . h($name) . '">'
       . img($w, $file, $name, '(min-width: 900px) 200px, 40vw', 'loading="lazy"') . '</button>'
       . '<div class="person-text"><h2>' . h($name) . '</h2><p class="tag">' . h($role) . '</p><p>' . h($text) . '</p>'
       . '<p class="person-where"><strong>Where to find them:</strong> ' . implode(', ', $links) . '</p></div></li>';

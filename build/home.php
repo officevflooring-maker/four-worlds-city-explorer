@@ -115,7 +115,7 @@ foreach ([['roman', 'fitness-3'], ['elven', 'shared-2'], ['future', 'growth-1'],
 }
 
 page('/', [
-  'title' => SITE_NAME . ': how cities work, in four illustrated worlds',
+  'title' => SITE_NAME . ': how cities work, past, present and imagined',
   'desc' => h(SITE_DESC),
   'class' => 'home',
   'body' => <<<HTML
@@ -190,7 +190,7 @@ page('/', [
   <ul class="mosaic" aria-hidden="true">{$mosaic}</ul>
   <div>
     <h2 id="art-h">Free artwork for everyone</h2>
-    <p>All {$artCount} illustrations of buildings, people and vehicles are free to save, print and reuse for any purpose under CC BY 4.0. Just credit "Illustration: Four Worlds City Explorer".</p>
+    <p>All {$artCount} illustrations of buildings, people and vehicles are free to save, print and reuse for any purpose under CC BY 4.0. Just credit "Illustration: The Atlas of Cities".</p>
     <p><a class="btn" href="/artwork/">Browse the artwork</a> <a class="btn btn-quiet" href="/about/">About this project</a></p>
   </div>
 </section>

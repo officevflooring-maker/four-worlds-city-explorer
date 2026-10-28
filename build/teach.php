@@ -718,7 +718,7 @@ $TEACH = [
       'Source: where you found it (a link if online).',
       'License: the license name, ideally linked.',
     ]], [
-      'Example: "Aqueduct" illustration by Four Worlds City Explorer, CC BY 4.0.',
+      'Example: "Aqueduct" illustration by The Atlas of Cities, CC BY 4.0.',
     ]],
     ['Teaching students to credit images', [
       'Make it a habit: every slide image gets a small credit line. This builds digital citizenship and avoids copying other people\'s work without permission. Photos on this site have their own licenses, shown under each photo and on the Photo credits page.',
@@ -729,7 +729,7 @@ $TEACH = [
   ],
   'faq' => [
     ['Can teachers use images from the internet in class?', 'Only if the license allows it or an exception such as fair use applies. The safest choice is openly licensed images, such as Creative Commons or public domain, credited correctly.'],
-    ['How do you credit a Creative Commons image?', 'Give the title, author, source and license (TASL). For example: "Aqueduct" by Four Worlds City Explorer, CC BY 4.0.'],
+    ['How do you credit a Creative Commons image?', 'Give the title, author, source and license (TASL). For example: "Aqueduct" by The Atlas of Cities, CC BY 4.0.'],
   ],
   'links' => ['roman/aqueduct', 'modern/public-library', 'elven/treetop-village', 'future/greenhouse-dome'],
   'sources' => ['cc'],
