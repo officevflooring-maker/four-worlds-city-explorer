@@ -1,0 +1,35 @@
+# page|Wikimedia Commons search terms, separated by ;  (one photo per search)
+inflatable-habitat|BEAM Bigelow Expandable Activity Module ISS;BEAM module expanded interior
+lunar-base|Shackleton crater lunar south pole;lunar base concept illustration NASA
+habitat-cluster|ISS Oxygen Generation System rack;Destiny laboratory module interior
+printed-habitat|Mars Dune Alpha;3D-Printed Habitat Challenge;3D printed concrete house construction
+storm-shelter|Orion crew module;solar flare Solar Dynamics Observatory
+airlock-hangar|Quest Joint Airlock;Apollo 17 spacesuit lunar dust;Harrison Schmitt lunar dust
+water-recycler|ISS Water Recovery System rack;ISS Urine Processor Assembly
+greenhouse-dome|Biosphere 2 Oracle Arizona glass;Biosphere 2 exterior
+indoor-farm|Veggie plant growth ISS lettuce;vertical farm LED lettuce
+tree-pod-habitat|ISS Cupola Earth view;Concordia Station Antarctica;Mars-500 facility
+ice-mine|LCROSS Centaur impact;lunar south pole water ice map
+oxygen-factory|MOXIE instrument Perseverance;Perseverance rover selfie
+power-tower|KRUSTY Kilopower reactor;ISS solar arrays
+robotics-factory|Canadarm2;industrial robots welding car factory
+fab-shop|3D printer International Space Station;ratchet wrench printed International Space Station
+robotic-crane|Lunar Surface Manipulation System;Canadarm2 grapple Dragon
+building-materials|lunar regolith simulant;Apollo lunar sample rock
+gravity-gym|COLBERT treadmill ISS;Advanced Resistive Exercise Device
+centrifuge-arena|Stanford torus;human centrifuge;Gemini 11 Agena tether
+medical-bay|ISS ultrasound;ISS crew medical
+public-plaza|ISS crew meal Unity;Antarctic station dining
+civic-dome|Outer Space Treaty 1967 signing;Artemis Accords signing
+science-lab|Lunar Sample Laboratory Facility;Perseverance sample tube
+radio-telescope|Very Large Array;Yutu-2 rover far side;Five-hundred-meter Aperture Spherical Telescope
+comms-relay|Goldstone Deep Space Communications Complex;Mars Reconnaissance Orbiter
+space-weather-station|coronal mass ejection SOHO LASCO;aurora borealis from ISS
+telepresence|Robonaut 2;Mars rover driving team JPL
+robot-helpers|Ingenuity helicopter Mars;Astrobee robot ISS;Sojourner rover
+launch-pad|Launch Complex 39A;sound suppression water deluge test
+spaceport|Falcon 9 first stage landing;Space Shuttle Atlantis landing
+space-elevator|space elevator illustration;carbon nanotube
+rover-track|Lunar Roving Vehicle Apollo 15;Apollo 17 rover fender repair
+mission-control|Mission Control Houston Apollo 13;Mission Control Center flight control room
+operations-center|McMurdo Station;International Space Station flight control room
