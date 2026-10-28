@@ -140,6 +140,7 @@ function full_world($w) {
     'desc' => h($D['desc']),
     'og' => $w,
     'class' => "world world-$w",
+    'js' => ['hunt'],
     'body' => <<<HTML
 <section class="world-hero">
   <div class="world-horizon" aria-hidden="true">{$horizon}</div>
@@ -150,7 +151,7 @@ function full_world($w) {
   </div>
 </section>
 
-<section class="map-section" aria-labelledby="map-h">
+<section class="map-section" id="hunt" aria-labelledby="map-h">
   <div class="wrap map-head">
     <div>
       <h2 id="map-h">Look around the city</h2>
@@ -165,8 +166,10 @@ function full_world($w) {
         <label class="toggle"><input type="checkbox" id="show-labels"> Names</label>
         <span class="zoom" role="group" aria-label="Zoom" hidden><button type="button" class="ctrl" data-zoom="-1" aria-label="Zoom out">&minus;</button><button type="button" class="ctrl" data-zoom="0" aria-label="Reset zoom">Fit</button><button type="button" class="ctrl" data-zoom="1" aria-label="Zoom in">+</button></span>
         <button type="button" class="ctrl map-full" hidden>Full screen</button>
+        <button type="button" class="ctrl hunt-start" hidden>Map hunt</button>
       </div>
     </div>
+    <div class="wrap hunt-bar" hidden></div>
     <div class="map-view">
       <div class="city city-6" style="--tex:url({$groundTex});--roadtex:url({$roadTex});--n:6;--y0:10">
         <div class="city-ground" aria-hidden="true"></div>

@@ -16,7 +16,8 @@ No accounts, forms, cookies, ads, analytics or third-party requests. Passport st
 - `tools/copy-people-vehicles.sh` copies the people art (first pose of each walk strip in people-batch-03) and the vehicle art (vehicle-batch-01, front and back views). Source images are never changed.
 - `tools/copy-artwork.sh` exports every supplied illustration for the Artwork page (`public/assets/artwork/`).
 - `tools/make-thumbs.sh` makes the small preview images in `public/assets/thumbs/` (search results, city builder, quiz, passport) from the web-sized building images.
-- `build/play.php` builds search (`/data/search.json` and the A to Z page), the play hub, the city builder, the quiz and the passport. Their browser code is `public/js/site.js` (search, phone menu, passport), `public/js/builder.js` and `public/js/quiz.js`.
+- `build/play.php` builds search (`/data/search.json` and the A to Z page), the play hub and the games: city builder (with challenges), quiz, map hunt, memory match, word search and passport. Their browser code is `public/js/site.js` (search, phone menu, passport, badges), `builder.js`, `quiz.js`, `hunt.js` (runs on the world maps), `memory.js` and `wordsearch.js`.
+- `build/classroom.php` builds the teacher tools: printable worksheets with answer keys, the glossary and the question bank. Word search puzzles are made once in `build/play.php` and shared by the game and the worksheets.
 - `tools/copy-assets.sh` copies the selected artwork from the read-only source folders into `public/assets/worlds/{roman,modern,elven,future}/` as web-sized WebP with transparency kept. The selection is listed in `tools/assets.txt`. Source images are never changed.
 
 ## Preview locally
@@ -50,10 +51,16 @@ Then open http://localhost:8097/
 | `/teachers/` | Teachers & Schools hub: 20 free lessons, projects and explainers (content in `build/teach.php`) |
 | `/teachers/{guide}/` | One guide each: quick answer, grades, time, steps, FAQ (FAQPage data), building pages to use, sources |
 | `/compare/` | One city question across all four worlds (printable) |
-| `/play/` | Play and create: the three activities below |
-| `/play/city-builder/` | City builder: place buildings, trees, water and squares from all four worlds on a 6 x 6 city, check off ten needs, save a picture, share a link, print |
-| `/play/quiz/` | City quiz: ten picture questions in three kinds (name it, which world, same job in another world) |
-| `/play/passport/` | Passport: a stamp for every place page opened, kept in the browser |
+| `/play/` | Play and create: the six games below |
+| `/play/city-builder/` | City builder: place buildings, trees, water and squares from all four worlds on a 6 x 6 city, check off ten needs, seven challenges, save a picture, share a link, print |
+| `/play/quiz/` | City quiz: ten questions in five kinds (name it, which world, same job in another world, key words, who works here) |
+| `/play/map-hunt/` | Map hunt: read a clue, find the place on a world map (the game runs on `/worlds/{world}/#hunt`) |
+| `/play/memory/` | Memory match: six pairs (same job in two worlds, or picture and name) |
+| `/play/word-search/` | Word search: 30 puzzles from the key words, tap or drag to find words |
+| `/play/passport/` | Passport: a stamp for every place page opened, and twelve badges for exploring and playing, kept in the browser |
+| `/teachers/worksheets/` | 12 printable worksheets with answer keys: vocabulary and word search for each world, compare chart, two matching sheets, city planner |
+| `/teachers/glossary/` | Every key word from the building pages, A to Z, filtered as you type |
+| `/teachers/question-bank/` | Every "Think about it" question by world and group, with a question of the day |
 | `/search/` | Every page from A to Z, filtered as you type (the header search box uses `/data/search.json`) |
 | `/about/` | About, privacy, accessibility, artwork reuse, sources |
 | `/guided/` | Old address, points to `/tours/` (not indexed) |

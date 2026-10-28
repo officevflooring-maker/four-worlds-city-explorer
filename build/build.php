@@ -186,6 +186,7 @@ require __DIR__ . '/worldpages.php';
 require __DIR__ . '/teachpages.php';
 require __DIR__ . '/tours.php';
 require __DIR__ . '/play.php';
+require __DIR__ . '/classroom.php';
 require __DIR__ . '/home.php';
 
 // ---------- Compare ----------
@@ -452,6 +453,13 @@ $urls['/play/'] = '0.8';
 $urls['/play/city-builder/'] = '0.8';
 $urls['/play/quiz/'] = '0.8';
 $urls['/play/passport/'] = '0.5';
+$urls['/play/map-hunt/'] = '0.8';
+$urls['/play/memory/'] = '0.8';
+$urls['/play/word-search/'] = '0.8';
+$urls['/teachers/worksheets/'] = '0.9';
+foreach ($SHEETS as [$slug]) $urls["/teachers/worksheets/$slug/"] = '0.8';
+$urls['/teachers/glossary/'] = '0.8';
+$urls['/teachers/question-bank/'] = '0.8';
 $urls['/search/'] = '0.4';
 $urls['/artwork/'] = '0.7';
 $urls['/about/'] = '0.5';

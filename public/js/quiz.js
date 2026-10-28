@@ -66,6 +66,43 @@
           options: shuffle([b].concat(wrong)).map(function (o) { return { text: o.n, img: o.t, ok: o === b }; }) });
       });
       return out;
+    },
+    // A key word's meaning, and four words from the same world.
+    words: function () {
+      var out = [], seen = {};
+      shuffle(data.words.slice()).forEach(function (wd) {
+        var key = wd.t.toLowerCase();
+        if (out.length >= ROUND || seen[key]) return;
+        var others = [], names = {};
+        names[key] = 1;
+        shuffle(data.words.filter(function (o) { return o.w === wd.w && o.d !== wd.d; })).forEach(function (o) {
+          if (others.length < 3 && !names[o.t.toLowerCase()]) { names[o.t.toLowerCase()] = 1; others.push(o); }
+        });
+        if (others.length < 3) return;
+        seen[key] = 1;
+        out.push({ tag: worlds[wd.w][0], ask: 'Which word means \u201c' + wd.d.replace(/\.$/, '') + '\u201d?', right: wd.t,
+          why: 'Read about it on the ' + wd.n + ' page.', links: [{ n: wd.n, u: wd.u, t: wd.p, w: wd.w }],
+          options: shuffle([wd].concat(others)).map(function (o) { return { text: o.t, ok: o === wd }; }) });
+      });
+      return out;
+    },
+    // A person, and four places in their world: one is where you would find them.
+    people: function () {
+      var out = [];
+      shuffle(data.people.slice()).forEach(function (pp) {
+        if (out.length >= ROUND) return;
+        var slug = function (it) { return it.k.split('/')[1]; };
+        var right = items.filter(function (it) { return it.w === pp.w && pp.pl.indexOf(slug(it)) > -1; });
+        if (!right.length) return;
+        var b = right[Math.floor(Math.random() * right.length)];
+        var cats = right.map(function (it) { return it.c; });
+        var wrong = shuffle(items.filter(function (it) { return it.w === pp.w && pp.pl.indexOf(slug(it)) < 0 && cats.indexOf(it.c) < 0; })).slice(0, 3);
+        if (wrong.length < 3) return;
+        out.push({ pic: { i: pp.i, w: pp.w }, alt: pp.n, caption: pp.n + ' \u00b7 ' + pp.r, ask: 'Where would you find this person?', right: b.n, why: pp.x,
+          links: [{ n: pp.n, u: pp.u, t: pp.t, w: pp.w }, b],
+          options: shuffle([b].concat(wrong)).map(function (o) { return { text: o.n, img: o.t, ok: o === b }; }) });
+      });
+      return out;
     }
   };
 
@@ -77,11 +114,14 @@
     $('.q-ask').textContent = q.ask;
     var pic = $('.q-pic');
     pic.innerHTML = '';
-    var fig = make('figure'), img = make('img');
-    img.src = q.pic.i; img.alt = q.alt;
-    fig.appendChild(img);
-    if (q.caption) fig.appendChild(make('figcaption', '', q.caption));
-    pic.appendChild(fig);
+    if (q.tag) pic.appendChild(make('p', 'tag', q.tag));
+    if (q.pic) {
+      var fig = make('figure'), img = make('img');
+      img.src = q.pic.i; img.alt = q.alt;
+      fig.appendChild(img);
+      if (q.caption) fig.appendChild(make('figcaption', '', q.caption));
+      pic.appendChild(fig);
+    }
     var opts = $('.q-options');
     opts.innerHTML = '';
     opts.className = 'q-options q-' + mode;
@@ -95,7 +135,7 @@
     });
     $('.q-feedback').innerHTML = '';
     $('.q-next').hidden = true;
-    if (qs[at + 1]) new Image().src = qs[at + 1].pic.i;
+    if (qs[at + 1] && qs[at + 1].pic) new Image().src = qs[at + 1].pic.i;
     $('.q-ask').focus({ preventScroll: true });
   };
   var answer = function (o, btn) {
@@ -125,6 +165,11 @@
     var best = store.get(KEY, {}) || {};
     var prev = best[mode] || 0;
     if (score > prev) { best[mode] = score; store.set(KEY, best); }
+    if (score === qs.length) {
+      var done = store.get('atlas.done', {}) || {};
+      if (!done.quiz) { done.quiz = 1; store.set('atlas.done', done); }
+      if (window.atlasBadges) window.atlasBadges();
+    }
     $('.q-result').textContent = 'You got ' + score + ' out of ' + qs.length + '!';
     var msg = score === qs.length ? 'A perfect score. You really know your cities!' : score >= 7 ? 'Great work!' : score >= 4 ? 'Good try. Explore a few more places, then play again.' : 'Keep exploring the worlds, then try again.';
     if (prev && score > prev) msg += ' That is your best score yet.';

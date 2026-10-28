@@ -134,15 +134,15 @@
     });
   }
 
-  // Search page: filter the A to Z list as you type (?q= fills the box).
-  var spq = document.getElementById('sp-q');
+  // Search page and glossary: filter the A to Z list as you type (?q= fills the box).
+  var spq = document.getElementById('sp-q') || document.querySelector('.az-filter');
   if (spq) {
     spq.disabled = false;
-    var rows = Array.prototype.slice.call(document.querySelectorAll('.az li[data-s]'));
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.az-all [data-s]'));
     rows.forEach(function (li) { li._s = ' ' + li.getAttribute('data-s'); });
     var secs = Array.prototype.slice.call(document.querySelectorAll('.az-sec'));
     var jumps = Array.prototype.slice.call(document.querySelectorAll('.az-jump a'));
-    var spCount = document.querySelector('.sp-count');
+    var spCount = document.querySelector('.sp-count'), noun = spq.getAttribute('data-noun') || 'page';
     var filter = function () {
       var words = norm(spq.value).split(' ').filter(Boolean);
       var n = 0;
@@ -151,9 +151,9 @@
         li.hidden = !on;
         if (on) n++;
       });
-      secs.forEach(function (s) { s.hidden = !s.querySelector('li:not([hidden])'); });
+      secs.forEach(function (s) { s.hidden = !s.querySelector('[data-s]:not([hidden])'); });
       jumps.forEach(function (a) { a.parentNode.hidden = document.getElementById(a.getAttribute('href').slice(1)).hidden; });
-      spCount.textContent = words.length ? (n ? n + (n === 1 ? ' page' : ' pages') + ' found' : 'Nothing found. Try another word.') : '';
+      spCount.textContent = words.length ? (n ? n + ' ' + noun + (n === 1 ? '' : 's') + ' found' : 'Nothing found. Try another word.') : '';
       try { history.replaceState(null, '', words.length ? '?q=' + encodeURIComponent(spq.value.trim()) : location.pathname); } catch (e) {}
     };
     spq.addEventListener('input', filter);
@@ -219,13 +219,121 @@
     });
     document.querySelector('.pp-total strong').textContent = sum;
     var clear = document.querySelector('.pp-clear');
-    clear.hidden = !sum;
+    var saved = ['atlas.passport', 'atlas.badges', 'atlas.done', 'atlas.quiz', 'atlas.hunt', 'atlas.memory', 'atlas.challenges', 'atlas.challenge', 'atlas.city'];
+    clear.hidden = !saved.some(function (k) { return store.get(k, null) !== null; });
     clear.addEventListener('click', function () {
-      if (!window.confirm('Clear all your passport stamps? This cannot be undone.')) return;
-      store.set(PP, {});
+      if (!window.confirm('Clear your stamps, badges, scores and saved city on this device? This cannot be undone.')) return;
+      saved.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} });
       location.reload();
     });
   }
+
+  // ---------- Badges: earned by exploring and playing (passport page), with a note when one is new ----------
+  var BADGES = [
+    ['first', 'First stamp', 'Open any place page.', 'modern/people-3'],
+    ['traveler', 'World traveler', 'Visit a place in all four worlds.', 'roman/chariot'],
+    ['roman', 'Rome explorer', 'Visit every place in Ancient Rome.', 'roman/amphitheater'],
+    ['modern', 'Town explorer', 'Visit every place in the Modern Town.', 'modern/mixed-use-building'],
+    ['elven', 'Forest explorer', 'Visit every place in the Elven Green World.', 'elven/treetop-village'],
+    ['future', 'Space explorer', 'Visit every place in the Robotic Future.', 'future/greenhouse-dome'],
+    ['planner', 'City planner', 'Build a city that meets all ten needs.', 'modern/tower-crane'],
+    ['challenge', 'Challenge champion', 'Finish a city builder challenge.', 'roman/triumphal-arch'],
+    ['quiz', 'Quiz whiz', 'Score 10 out of 10 in any quiz.', 'roman/library'],
+    ['hunt', 'Map hunter', 'Finish a map hunt.', 'elven/canopy-walkway'],
+    ['memory', 'Memory master', 'Find all the pairs in memory match.', 'elven/tree-library'],
+    ['words', 'Word finder', 'Find every word in a word search.', 'modern/public-library']
+  ];
+  var earned = function () {
+    var done = store.get('atlas.done', {}) || {}, got = {}, worldsSeen = 0;
+    ['roman', 'modern', 'elven', 'future'].forEach(function (w) {
+      var n = visited(w);
+      if (n) worldsSeen++;
+      if (totals[w] && n >= totals[w]) got[w] = 1;
+    });
+    if (Object.keys(stamps).length) got.first = 1;
+    if (worldsSeen === 4) got.traveler = 1;
+    ['planner', 'challenge', 'quiz', 'hunt', 'memory', 'words'].forEach(function (k) { if (done[k]) got[k] = 1; });
+    return got;
+  };
+  var drawBadges = function (got) {
+    var box = document.querySelector('[data-badges]');
+    if (!box) return;
+    box.innerHTML = '';
+    BADGES.forEach(function (b) {
+      var li = make('li', 'medal' + (got[b[0]] ? ' got' : ''));
+      var art = make('span', 'medal-art'), im = make('img');
+      im.src = '/assets/thumbs/' + b[3] + '.webp'; im.alt = ''; im.loading = 'lazy';
+      art.appendChild(im);
+      li.append(art, make('span', 'medal-name', b[1]), make('span', 'medal-how', got[b[0]] ? 'Earned!' : b[2]));
+      box.appendChild(li);
+    });
+  };
+  var toastList = [], toastTimer = 0;
+  var showToast = function (list) {
+    var old = document.querySelector('.toast');
+    if (old) old.remove(); else toastList = [];
+    clearTimeout(toastTimer);
+    list = toastList = toastList.concat(list);
+    var names = list.map(function (b) { return b[1]; });
+    var t = make('div', 'toast');
+    t.setAttribute('role', 'status');
+    var im = make('img');
+    im.src = '/assets/thumbs/' + list[0][3] + '.webp'; im.alt = '';
+    var tx = make('p', '', list.length === 1 ? 'New badge: ' + names[0] + '!' : 'New badges: ' + names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] + '!');
+    var a = make('a', '', 'See your badges');
+    a.href = '/play/passport/#badges-h';
+    tx.append(' ', a);
+    var x = make('button', 'toast-x', '\u00d7');
+    x.type = 'button';
+    x.setAttribute('aria-label', 'Close');
+    x.addEventListener('click', function () { t.remove(); });
+    t.append(im, tx, x);
+    document.body.appendChild(t);
+    toastTimer = setTimeout(function () { t.classList.add('toast-out'); setTimeout(function () { t.remove(); }, 400); }, 8000);
+  };
+  window.atlasBadges = function () {
+    stamps = store.get(PP, {}) || {};
+    var got = earned(), seen = store.get('atlas.badges', {}) || {};
+    var fresh = BADGES.filter(function (b) { return got[b[0]] && !seen[b[0]]; });
+    if (fresh.length) {
+      fresh.forEach(function (b) { seen[b[0]] = 1; });
+      store.set('atlas.badges', seen);
+      showToast(fresh);
+    }
+    drawBadges(got);
+  };
+  window.atlasBadges();
+
+  // Question bank: a question of the day (the same for everyone on a given day), and another on request.
+  var qotd = document.querySelector('.qotd');
+  if (qotd) {
+    var qs = Array.prototype.slice.call(document.querySelectorAll('.qb-list li'));
+    var showQ = function (li) {
+      var a = li.querySelector('a');
+      qotd.querySelector('.qotd-q').textContent = li.querySelector('.qb-q').textContent;
+      var from = qotd.querySelector('.qotd-from a');
+      from.href = a.getAttribute('href');
+      from.textContent = a.textContent;
+    };
+    if (qs.length) {
+      showQ(qs[Math.floor(Date.now() / 864e5) % qs.length]);
+      var more = qotd.querySelector('.qotd-next');
+      more.hidden = false;
+      more.addEventListener('click', function () { showQ(qs[Math.floor(Math.random() * qs.length)]); });
+    }
+  }
+
+  // Worksheets: print the sheet alone, or with its answer key on a new page.
+  document.querySelectorAll('.js-print-sheet').forEach(function (b) {
+    b.hidden = false;
+    b.addEventListener('click', function () {
+      var withKey = b.getAttribute('data-key') === '1', box = document.querySelector('.sheet-key-box');
+      document.body.classList.toggle('print-key', withKey);
+      if (withKey && box) box.open = true;
+      window.print();
+    });
+  });
+  window.addEventListener('afterprint', function () { document.body.classList.remove('print-key'); });
 
   // Print buttons (Compare page).
   document.querySelectorAll('.js-print').forEach(function (b) {
@@ -305,6 +413,7 @@
 
     // Info strip: shows what the pointer or keyboard focus is on.
     var describe = function (tile) {
+      if (map.classList.contains('hunting')) return;
       var a = tile.querySelector('a');
       var src = tile.querySelector('img').currentSrc;
       info.innerHTML = '';

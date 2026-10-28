@@ -33,6 +33,17 @@ foreach (TEACH_GROUPS as $n => [$label, $slugs]) {
   $jump .= '<li><a href="#' . $id . '">' . h($label) . '</a></li>';
 }
 $teachCount = count($TEACH);
+// Classroom tools (build/classroom.php and the games in build/play.php).
+$wordCount = 0;
+$questionCount = 0;
+foreach ($WORLD_DATA as $D) foreach ($D['pages'] as $r) { $wordCount += count($r['words']); $questionCount += count($r['questions']); }
+$tools = '';
+foreach ([
+  ['/teachers/worksheets/', 'Printables', 'Printable worksheets', 'Vocabulary, word searches, a compare chart, matching and a city planner, all with answer keys.'],
+  ['/teachers/glossary/', 'Reference', "Glossary of $wordCount city words", 'Every key word from the building pages, with a simple meaning.'],
+  ['/teachers/question-bank/', 'Discussion', 'Question bank', "$questionCount questions for warm-ups, discussions and writing, with a question of the day."],
+  ['/play/', 'Games', 'Games for class', 'City builder challenges, five quizzes, map hunts, memory match and word search.'],
+] as [$href, $tag, $title, $text]) $tools .= '<li class="guide-card tool-card"><a href="' . $href . '"><span class="tag">' . h($tag) . '</span><span class="guide-title">' . h($title) . '</span><span class="what">' . h($text) . '</span></a></li>';
 $hubList = [];
 foreach (array_keys($TEACH) as $k => $slug) $hubList[] = ['@type' => 'ListItem', 'position' => $k + 1, 'name' => $TEACH[$slug]['h1'], 'url' => url("/teachers/$slug/")];
 page('/teachers/', [
@@ -50,7 +61,11 @@ page('/teachers/', [
     <li>Printable: use your browser's print button on any page.</li>
     <li>All illustrations are free to reuse under CC BY 4.0.</li>
   </ul>
-  <nav aria-label="Guide groups"><ul class="jump">{$jump}</ul></nav>
+  <nav aria-label="Guide groups"><ul class="jump"><li><a href="#tools-h">Classroom tools</a></li>{$jump}</ul></nav>
+</section>
+<section class="wrap tools" aria-labelledby="tools-h">
+  <h2 id="tools-h">Classroom tools</h2>
+  <ul class="guide-grid">{$tools}</ul>
 </section>
 <div class="wrap">{$hubBody}</div>
 HTML,

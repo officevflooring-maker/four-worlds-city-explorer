@@ -22,9 +22,9 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/css/site.css?v=5ec2a7e8">
-<script src="/js/site.js?v=f77d2966" defer></script>
-<script src="/js/builder.js?v=828b94ad" defer></script>
+<link rel="stylesheet" href="/css/site.css?v=0832b801">
+<script src="/js/site.js?v=89d91d43" defer></script>
+<script src="/js/builder.js?v=b6cc64e3" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://atlasofcities.koaa01.workers.dev/"},{"@type":"ListItem","position":2,"name":"Play and create","item":"https://atlasofcities.koaa01.workers.dev/play/"},{"@type":"ListItem","position":3,"name":"City builder","item":"https://atlasofcities.koaa01.workers.dev/play/city-builder/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Build your own city","description":"An online city builder: place buildings from four illustrated worlds and check that the city meets every need.","url":"https://atlasofcities.koaa01.workers.dev/play/city-builder/","inLanguage":"en","learningResourceType":"Interactive resource","isAccessibleForFree":true,"educationalUse":"Discussion, observation","audience":{"@type":"EducationalAudience","educationalRole":"student, teacher, parent"},"about":"City planning and what a city needs","isPartOf":{"@type":"WebSite","name":"The Atlas of Cities","url":"https://atlasofcities.koaa01.workers.dev/"}}</script>
 </head>
@@ -46,7 +46,7 @@
 </div>
 <section class="wrap builder-head">
   <h1>Build your own city</h1>
-  <p class="lead">Pick a building, then tap a square. Mix all four worlds. Can your city meet every need?</p>
+  <p class="lead">Pick a building, then tap a square. Mix all four worlds, meet every need, then try the challenges.</p>
 </section>
 <div class="wrap builder" data-builder>
   <div class="b-main">
@@ -79,12 +79,19 @@
     <p class="b-done" hidden>Your city has everything it needs. What would make it a great place to live?</p>
     <p class="small"><a href="/teachers/what-does-a-city-need/">What does a city need to work?</a></p>
   </section>
+  <section class="b-chal" aria-labelledby="chal-h">
+    <h2 id="chal-h">Challenges</h2>
+    <p class="b-score"><strong class="chal-n">0</strong> of 7 done</p>
+    <div class="chal-list" role="group" aria-label="Pick a challenge"><button type="button" class="chip chal-chip" data-chal="roman-town" aria-pressed="false">A Roman town</button><button type="button" class="chip chal-chip" data-chal="mars-base" aria-pressed="false">A base on Mars</button><button type="button" class="chip chal-chip" data-chal="small-village" aria-pressed="false">A small village</button><button type="button" class="chip chal-chip" data-chal="green-city" aria-pressed="false">A green city</button><button type="button" class="chip chal-chip" data-chal="waterfront" aria-pressed="false">A waterfront city</button><button type="button" class="chip chal-chip" data-chal="time-travel" aria-pressed="false">Time travel town</button><button type="button" class="chip chal-chip" data-chal="forest-city" aria-pressed="false">An elven forest city</button></div>
+    <div class="chal-card" hidden><p class="chal-title"></p><p class="chal-text"></p><ul class="chal-goals"></ul><p class="chal-done" hidden>Challenge complete! Pick another one.</p></div>
+  </section>
   <div class="b-actions">
     <button type="button" class="btn" data-act="picture">Save picture</button>
     <button type="button" class="btn btn-quiet" data-act="link">Copy link</button>
     <button type="button" class="btn btn-quiet" data-act="print">Print</button>
   </div>
 </div>
+<script type="application/json" id="challenge-data">{"roman-town":{"t":"A Roman town","d":"Use only pieces from Ancient Rome and meet all ten needs.","g":[["only","roman"],["needs",10]]},"mars-base":{"t":"A base on Mars","d":"Use only Robotic Future pieces and meet all ten needs.","g":[["only","future"],["needs",10]]},"small-village":{"t":"A small village","d":"Meet all ten needs with eight buildings or fewer. Trees and ground do not count.","g":[["needs",10],["max",8]]},"green-city":{"t":"A green city","d":"Meet all ten needs and give nature at least ten squares.","g":[["needs",10],["nature",10]]},"waterfront":{"t":"A waterfront city","d":"Add at least four squares of water and meet all ten needs.","g":[["water",4],["needs",10]]},"time-travel":{"t":"Time travel town","d":"Use at least two buildings from every world and meet all ten needs.","g":[["every",2],["needs",10]]},"forest-city":{"t":"An elven forest city","d":"Use only Elven pieces. Which need is hardest? Try to meet nine.","g":[["only","elven"],["needs",9]]}}</script>
 <noscript><p class="wrap setting-note">The city builder needs JavaScript. You can still explore every building from the <a href="/">home page</a>.</p></noscript>
 <section class="wrap section b-think" aria-labelledby="think-h">
   <h2 id="think-h">Think about it</h2>

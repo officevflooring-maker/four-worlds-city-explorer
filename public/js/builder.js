@@ -32,6 +32,84 @@
   all('[data-base]').forEach(function (b) { bases[b.dataset.base] = { tex: b.dataset.tex, road: b.dataset.road, btn: b }; });
   needEls.forEach(function (li) { li.appendChild(document.createElement('span')).className = 'sr-only need-state'; });
 
+  // Games finished and badges (see public/js/site.js) are kept in this browser only.
+  var setDone = function (k) {
+    var d = store.get('atlas.done', {}) || {};
+    if (d[k]) return;
+    d[k] = 1;
+    store.set('atlas.done', d);
+    if (window.atlasBadges) window.atlasBadges();
+  };
+
+  // ---------- Challenges: goals checked after every change ----------
+  var chalEl = document.getElementById('challenge-data');
+  var CHAL = chalEl ? JSON.parse(chalEl.textContent) : {};
+  var chalDone = store.get('atlas.challenges', {}) || {};
+  var chal = store.get('atlas.challenge', null);
+  if (!CHAL[chal]) chal = null;
+  var metCount = 0;
+  var tally = function () {
+    var t = { all: 0, only: {}, b: 0, per: {}, nature: 0, water: 0 };
+    state.cells.forEach(function (c) {
+      var ps = [c.g, c.b].filter(Boolean).map(function (code) { return pieces[code]; });
+      ps.forEach(function (p) {
+        t.all++;
+        t.only[p.world] = (t.only[p.world] || 0) + 1;
+        if (p.kind === 'b') { t.b++; t.per[p.world] = (t.per[p.world] || 0) + 1; }
+      });
+      if (ps.some(function (p) { return p.needs.indexOf('nature') > -1; })) t.nature++;
+      if (c.g && /~water$/.test(c.g)) t.water++;
+    });
+    return t;
+  };
+  var goal = function (g, t) {
+    var n = g[1];
+    switch (g[0]) {
+      case 'needs': return [metCount >= n, 'Meet ' + n + ' needs (now ' + metCount + ')'];
+      case 'only': return [t.all > 0 && t.only[n] === t.all, 'Only pieces from ' + WORLD[n]];
+      case 'every': return [['roman', 'modern', 'elven', 'future'].every(function (w) { return (t.per[w] || 0) >= n; }), 'At least ' + n + ' buildings from every world'];
+      case 'max': return [t.b > 0 && t.b <= n, 'No more than ' + n + ' buildings (now ' + t.b + ')'];
+      case 'nature': return [t.nature >= n, 'At least ' + n + ' squares of nature (now ' + t.nature + ')'];
+      case 'water': return [t.water >= n, 'At least ' + n + ' squares of water (now ' + t.water + ')'];
+    }
+    return [false, ''];
+  };
+  var drawChallenge = function () {
+    var card = root.querySelector('.chal-card');
+    if (!card) return;
+    all('.chal-chip').forEach(function (b) {
+      var id = b.getAttribute('data-chal');
+      b.setAttribute('aria-pressed', String(id === chal));
+      b.classList.toggle('done', !!chalDone[id]);
+    });
+    root.querySelector('.chal-n').textContent = Object.keys(chalDone).filter(function (id) { return CHAL[id]; }).length;
+    card.hidden = !chal;
+    if (!chal) return;
+    var c = CHAL[chal], t = tally(), ok = true, ul = card.querySelector('.chal-goals');
+    card.querySelector('.chal-title').textContent = c.t;
+    card.querySelector('.chal-text').textContent = c.d;
+    ul.innerHTML = '';
+    c.g.forEach(function (g) {
+      var r = goal(g, t), li = document.createElement('li');
+      li.className = r[0] ? 'met' : '';
+      li.textContent = r[1];
+      var st = document.createElement('span');
+      st.className = 'sr-only';
+      st.textContent = r[0] ? ' (done)' : ' (not yet)';
+      li.appendChild(st);
+      ul.appendChild(li);
+      ok = ok && r[0];
+    });
+    card.querySelector('.chal-done').hidden = !ok;
+    if (ok && !chalDone[chal]) {
+      chalDone[chal] = 1;
+      store.set('atlas.challenges', chalDone);
+      setDone('challenge');
+      say('Challenge complete: ' + c.t + '! Pick another challenge.');
+      drawChallenge();
+    }
+  };
+
   var blank = function () { var a = []; for (var k = 0; k < N * N; k++) a.push({ g: null, b: null }); return a; };
   var state = { base: 'modern', cells: blank() };
   var tool = 'look';
@@ -128,6 +206,9 @@
     });
     root.querySelector('.b-score strong').textContent = n;
     root.querySelector('.b-done').hidden = n < needEls.length;
+    metCount = n;
+    if (n === needEls.length) setDone('planner');
+    drawChallenge();
   };
   var drawAll = function () {
     for (var k = 0; k < N * N; k++) drawCell(k);
@@ -431,6 +512,15 @@
     print: function () { window.print(); }
   };
   root.addEventListener('click', function (e) {
+    var ch = e.target.closest('.chal-chip');
+    if (ch) {
+      var id = ch.getAttribute('data-chal');
+      chal = chal === id ? null : id;
+      store.set('atlas.challenge', chal);
+      drawChallenge();
+      if (chal) say('Challenge: ' + CHAL[chal].t + '. ' + CHAL[chal].d);
+      return;
+    }
     var p = e.target.closest('.piece');
     if (p) { setTool(tool === p.dataset.code ? 'look' : p.dataset.code); return; }
     var t = e.target.closest('.b-tool');
