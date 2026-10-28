@@ -270,7 +270,7 @@ HTML,
 // ---------- Coming later ----------
 page('/library/', [
   'title' => 'Art collection',
-  'desc' => h('The art collection is now on the Artwork page.'),
+  'desc' => h('The art collection of The Atlas of Cities is now on the Artwork page, where you can view, save and print every illustration.'),
   'noindex' => true,
   'body' => <<<HTML
 <section class="wrap section page-head narrow">
