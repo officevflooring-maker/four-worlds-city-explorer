@@ -65,7 +65,7 @@ Not used yet: the remaining building variants (`*_2`, `*_3`, `floor_*` etc.), mo
 
 ## Placeholders and open items
 
-- `SITE_URL` is set to the temporary Hostinger domain (`https://atlasofcities.koaa01.workers.dev (Cloudflare; the Hostinger copy at yellowgreen-crab-278867.hostingersite.com points search engines here)`). Change it to the real domain when one is chosen.
+- `SITE_URL` is the Cloudflare address `https://atlasofcities.koaa01.workers.dev`, which Google can crawl. The Hostinger copy (`yellowgreen-crab-278867.hostingersite.com`) points search engines there. Change `SITE_URL` when a custom domain is connected.
 - Icons (`favicon.svg`, PNG icons) are a simple four-diamond mark made for this site; replace them with a real logo when one exists.
 - Social share images (`public/assets/og/*.jpg`) are composed from the supplied artwork.
 - The Roman "Library" and "Building materials" have no historical notes yet. They're marked as the artist's interpretation.
