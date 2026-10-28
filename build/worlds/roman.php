@@ -51,7 +51,10 @@ $ROMAN_SOURCES = [
   'anc-pliny'      => 'Pliny the Younger, Letters, Book 2, Letter 17 (his villa at Laurentum)',
   'anc-cato'       => 'Cato the Elder, On Agriculture; Columella, On Agriculture',
   'anc-quintilian' => 'Quintilian, The Orator\'s Education, Book 1',
-  'anc-suetonius'  => 'Suetonius, Lives of the Caesars: Augustus and Nero',
+  'anc-suetonius'  => 'Suetonius, Lives of the Caesars: Augustus, Claudius and Nero',
+  'brit-appia'     => 'Encyclopaedia Britannica, "Appian Way"',
+  'brit-edu'       => 'Encyclopaedia Britannica, "Education": the Roman world',
+  'brit-tombs'     => 'Encyclopaedia Britannica, "Mausoleum of Augustus" and "Castel Sant\'Angelo"',
   'anc-strabo'     => 'Strabo, Geography, Book 5',
 ];
 
@@ -201,7 +204,7 @@ $ROMAN = [
   'facts' => ['Used for' => 'Chariot races', 'Most famous' => 'Circus Maximus, Rome', 'A race' => 'Usually seven laps', 'Teams' => 'Red, White, Blue and Green'],
   'sections' => [
     ['What it was', [
-      'The circus was Rome\'s home of chariot racing, the most popular sport in the Roman world. The biggest was the Circus Maximus, in the valley between the Palatine and Aventine hills. It was rebuilt and enlarged many times and held a vast crowd, many times larger than the Colosseum.',
+      'The circus was Rome\'s home of chariot racing, the most popular sport in the Roman world. The biggest was the Circus Maximus, in the valley between the Palatine and Aventine hills. It was rebuilt and enlarged many times and held a vast crowd: estimates range from about 150,000 to more than 200,000 people, several times the Colosseum\'s capacity.',
     ]],
     ['How a race worked', [], ['list' => [
       'Chariots, usually pulled by four horses, lined up in starting gates called carceres.',
@@ -210,7 +213,7 @@ $ROMAN = [
       'Lap counters shaped like eggs and dolphins showed the crowd how many laps were left.',
       'A race was usually seven laps.',
     ]], [
-      'The tight turns were the most dangerous part. Drivers wrapped the reins around their bodies and carried a knife to cut themselves free if they crashed.',
+      'The tight turns were the most dangerous part. Drivers wrapped the reins around their bodies to steer by leaning, and are said to have carried a knife to cut themselves free if they crashed.',
     ]],
     ['Teams and fans', [
       'Under the empire, racing was organised into four teams, or factions, each with its own colour: Red, White, Blue and Green. Fans were fiercely loyal, and rivalries sometimes led to fights. Successful drivers became famous and wealthy, much like sports stars today.',
@@ -459,7 +462,7 @@ $ROMAN = [
   'look' => ['Notice the round shape and the single doorway.', 'How does this building look different from a temple?'],
   'questions' => ['Why might Romans build tombs along busy roads?', 'How do people remember those who have died today?', 'Why do you think a tomb became a castle?'],
   'words' => ['Mausoleum' => 'A large, grand tomb.', 'Necropolis' => 'A "city of the dead", a large cemetery.', 'Epitaph' => 'Words written on a tomb.'],
-  'sources' => ['sh-haterii', 'un-rome'],
+  'sources' => ['brit-tombs', 'sh-haterii', 'un-rome'],
   'related' => ['inn', 'triumphal-arch', 'victory-column'],
 ],
 
@@ -739,7 +742,7 @@ $ROMAN = [
   'look' => ['Find the courtyard and fountain in the middle.', 'Where might travellers sleep?'],
   'questions' => ['How long might it take to travel 100 kilometres on foot, or with a mule?', 'Why would an empire build roads and inns?', 'Where do travellers rest today on long journeys?'],
   'words' => ['Caupona' => 'An inn or tavern.', 'Mansio' => 'An official rest stop for government travellers.', 'Milestone' => 'A stone marking distance along a road.'],
-  'sources' => ['un-rome', 'un-pompeii'],
+  'sources' => ['brit-appia', 'un-rome', 'un-pompeii'],
   'related' => ['mausoleum', 'street-food', 'city-walls'],
 ],
 
@@ -790,7 +793,7 @@ $ROMAN = [
   'look' => ['Find the shelves of scrolls.', 'Notice the open arches. Could people passing by hear the lessons?'],
   'questions' => ['Who was left out of Roman education, and why does that matter?', 'How is your school different from a Roman one?', 'Do you agree with Quintilian that encouragement works better than punishment?'],
   'words' => ['Stylus' => 'A pointed tool for writing on wax.', 'Grammaticus' => 'A teacher of literature and language.', 'Rhetoric' => 'The art of persuasive speaking.'],
-  'sources' => ['anc-quintilian'],
+  'sources' => ['brit-edu', 'anc-quintilian'],
   'related' => ['library', 'records-office', 'domus'],
 ],
 
@@ -939,7 +942,7 @@ $ROMAN = [
   'look' => ['Find where the fire burns at the top.', 'Notice the walls around the base.'],
   'questions' => ['How did sailors find a safe harbour before electric lights?', 'Why would an empire invest in lighthouses?', 'What guides ships and planes today?'],
   'words' => ['Pharos' => 'A lighthouse, named after the one at Alexandria.', 'Headland' => 'A point of land sticking out into the sea.', 'Harbour' => 'A sheltered place where ships can stay safely.'],
-  'sources' => ['un-hercules'],
+  'sources' => ['un-hercules', 'anc-suetonius'],
   'related' => ['warehouse', 'city-walls', 'aqueduct'],
 ],
 
@@ -1001,7 +1004,9 @@ $WORLD_DATA['roman'] = [
   'note'     => 'The buildings are illustrations, not exact reconstructions. Each page separates what history tells us from what the artist imagined, and lists its sources.',
   'aka'      => 'Latin',
   'akaLang'  => 'la',
-  'pageTitle'=> '%s in Ancient Rome: what it was and how it worked',
+  'pageTitle'=> '%s in Ancient Rome: how it worked',
+  'defaultTag' => 'history',
+  'aside'    => ['About dates', 'Dates marked BC count backwards from the traditional year of the birth of Jesus, so 312 BC came before 100 BC. Dates marked AD count forwards, so AD 80 came before AD 216. Many historians write BCE and CE instead; they mean the same years.'],
   'pageDesc' => ' Learn how it worked, see photos of real Roman examples, and explore questions for discussion.',
   'sourcesIntro' => 'The history on this page is a short summary based on these sources:',
   'about'    => 'Ancient Roman architecture and city life',

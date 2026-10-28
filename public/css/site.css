@@ -75,6 +75,8 @@ main:focus { outline: none; }
 .hero-piece:nth-child(2), .hero-piece:nth-child(4) { margin-top: 18%; }
 .hero-piece:nth-child(3), .hero-piece:nth-child(4) { margin-top: -22%; }
 .hero-piece:nth-child(4) { margin-top: -4%; }
+.aside-note { margin-top: 1rem; max-width: 75ch; }
+.aside-note h3 { font-size: 1.05rem; margin-bottom: .3rem; }
 .setting-note { background: var(--paper); border-left: 4px solid var(--accent); padding: .8rem 1rem; border-radius: 0 10px 10px 0; max-width: 75ch; }
 .world-cards { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 .world-card a { display: flex; flex-direction: column; height: 100%; background: var(--paper); border: 1px solid var(--line); border-top: 6px solid var(--accent); border-radius: var(--radius); overflow: hidden; color: var(--ink); text-decoration: none; transition: box-shadow .2s, transform .2s; }

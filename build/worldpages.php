@@ -45,6 +45,7 @@ const SECTION_TAGS = [
   'real'        => ['badge-fact', 'Real world'],
   'imagined'    => ['badge-art', 'Imagined'],
   'speculative' => ['badge-spec', 'Possible future'],
+  'history'     => ['badge-fact', 'History'],
 ];
 
 function full_world($w) {
@@ -82,6 +83,7 @@ function full_world($w) {
   $groundTex = tex($w, $W['ground']);
   $introH = h($D['intro']);
   $noteH = h($D['note']);
+  $aside = empty($D['aside']) ? '' : '<aside class="panel aside-note" aria-labelledby="aside-h"><h3 id="aside-h">' . h($D['aside'][0]) . '</h3><p>' . h($D['aside'][1]) . '</p></aside>';
   $itemList = [];
   foreach (array_keys($pages) as $k => $slug) $itemList[] = ['@type' => 'ListItem', 'position' => $k + 1, 'name' => $pages[$slug]['name'], 'url' => url("/worlds/$w/$slug/")];
   page("/worlds/$w/", [
@@ -110,6 +112,7 @@ function full_world($w) {
     <ul class="city-tiles" aria-label="Buildings in the {$label} city">{$map}</ul>
   </div>
   <p class="setting-note">{$noteH}</p>
+  {$aside}
 </section>
 
 <section class="wrap section" aria-labelledby="dir-h">
@@ -146,7 +149,9 @@ HTML,
     $pi = 0;
     foreach ($r['sections'] as $n => $sec) {
       $id = 's' . ($n + 1);
+      // A world can give every section a default label (Rome: History); a section can override it.
       $badge = '';
+      if (!empty($D['defaultTag'])) { [$cls, $txt] = SECTION_TAGS[$D['defaultTag']]; $badge = '<span class="badge ' . $cls . '">' . $txt . '</span> '; }
       foreach (array_slice($sec, 1) as $part) {
         if (isset($part['tag'])) { [$cls, $txt] = SECTION_TAGS[$part['tag']]; $badge = '<span class="badge ' . $cls . '">' . $txt . '</span> '; }
       }

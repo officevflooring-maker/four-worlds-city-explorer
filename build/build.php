@@ -304,7 +304,7 @@ page('/about/', [
   <p>The <strong>modern town</strong> is imagined, but its 36 pages explain real buildings and systems: why towns need them, how they are built and who they serve.</p>
   <p>The <strong>green elven world</strong> and <strong>robotic future</strong> are imagined and speculative. They don't describe real places, real cultures or predictions. Each page uses labels so you always know what you are reading:</p>
   <ul>
-    <li><span class="badge badge-fact">Real world</span> facts about real places, technology and research, with sources.</li>
+    <li><span class="badge badge-fact">History</span> and <span class="badge badge-fact">Real world</span> facts about the past and about real places, technology and research, with sources.</li>
     <li><span class="badge badge-art">Imagined</span> ideas that belong to the fantasy world.</li>
     <li><span class="badge badge-spec">Possible future</span> ideas being researched or proposed, which may or may not happen.</li>
   </ul>
