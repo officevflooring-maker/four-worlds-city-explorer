@@ -1,95 +1,7 @@
 <?php
-// World pages. Worlds with a content file in build/worlds/{world}.php get a 6 x 6 city map where every
-// building links to its own page. Worlds without one keep the simple map with a detail dialog.
+// World pages: every world has a content file in build/worlds/{world}.php, a 6 x 6 city map where
+// every building links to its own page, and one page per building.
 // Included from build.php, which defines page(), img() and the other helpers.
-
-// ---------- Simple worlds: map buttons open a detail dialog ----------
-function place_body($p) {
-  [$id, $name, $imgName, $what, $look, $ask] = $p;
-  return '<h4>Look closer</h4><p>' . h($look) . '</p><h4>Question to consider</h4><p class="ask">' . h($ask) . '</p>';
-}
-
-function simple_world($w) {
-  global $WORLDS;
-  $W = $WORLDS[$w];
-  $map = '';
-  $dir = '';
-  foreach ($W['places'] as $k => $p) {
-    [$id, $name, $imgName, $what] = $p;
-    // Reverse order on the map so the crane and materials sit at the back and low, wide pieces in front.
-    $slot = count($W['places']) - 1 - $k;
-    $i = $slot % 4; $j = intdiv($slot, 4);
-    $map .= '<li class="tile" style="--i:' . $i . ';--j:' . $j . '"><button type="button" class="tile-btn" data-place="' . $id . '" aria-haspopup="dialog">'
-      . img($w, $imgName, '', '(min-width: 1100px) 300px, 27vw', 'loading="lazy" draggable="false"')
-      . '<span class="tile-label">' . h($name) . '</span></button></li>';
-    $dir .= '<li class="place" id="place-' . $id . '">'
-      . '<div class="place-art">' . img($w, $imgName, "$name: illustration from the {$W['name']} city", '(min-width: 1100px) 240px, (min-width: 600px) 30vw, 45vw', 'loading="lazy"') . '</div>'
-      . '<h3>' . h($name) . '</h3><p class="what">' . h($what) . '</p>'
-      . '<details><summary>Look closer<span class="sr-only"> at the ' . h($name) . '</span></summary><div class="place-body">' . place_body($p) . '</div></details></li>';
-  }
-  $others = other_worlds($w);
-  $horizon = img($w, 'horizon', '', '100vw', 'fetchpriority="high"');
-  $count = count($W['places']);
-  $groundTex = tex($w, $W['ground']);
-  page("/worlds/$w/", [
-    'title' => $W['title'],
-    'desc' => h($W['desc']),
-    'og' => $w,
-    'class' => "world world-$w",
-    'body' => <<<HTML
-<section class="world-hero">
-  <div class="world-horizon" aria-hidden="true">{$horizon}</div>
-  <div class="wrap world-hero-text">
-    <p class="tag">{$W['type']}</p>
-    <h1>{$W['name']}</h1>
-    <p class="lead">{$W['lead']}</p>
-  </div>
-</section>
-
-<section class="wrap section" aria-labelledby="map-h">
-  <div class="map-head">
-    <h2 id="map-h">Look around the city</h2>
-    <label class="toggle"><input type="checkbox" id="show-labels"> Show building names</label>
-  </div>
-  <p class="hint">Select a building to learn about it. Every place is also listed below.</p>
-  <div class="city" style="--tex:url({$groundTex});--n:4;--y0:18;aspect-ratio:100/72">
-    <div class="city-ground" aria-hidden="true"></div>
-    <ul class="city-tiles" aria-label="Buildings in the {$W['name']} city">{$map}</ul>
-  </div>
-  <p class="setting-note">{$W['note']}</p>
-</section>
-
-<section class="wrap section" aria-labelledby="dir-h">
-  <h2 id="dir-h">All {$count} places</h2>
-  <ul class="places">{$dir}</ul>
-</section>
-
-<section class="wrap section next" aria-labelledby="next-h">
-  <h2 id="next-h">Keep exploring</h2>
-  <p><a class="btn" href="/compare/">Compare all four worlds</a></p>
-  <ul class="world-links">{$others}</ul>
-</section>
-
-<dialog class="place-dialog" aria-labelledby="dlg-title">
-  <div class="dlg-inner">
-    <button type="button" class="dlg-close" aria-label="Close">&times;</button>
-    <div class="dlg-art"></div>
-    <div class="dlg-text">
-      <p class="tag">{$W['name']}</p>
-      <h3 id="dlg-title"></h3>
-      <p class="what"></p>
-      <div class="dlg-body"></div>
-      <div class="dlg-nav"><button type="button" class="btn btn-quiet" data-step="-1">&larr; Previous</button><button type="button" class="btn btn-quiet" data-step="1">Next &rarr;</button></div>
-    </div>
-  </div>
-</dialog>
-HTML,
-    'ld' => [
-      crumbs([['Home', '/'], [$W['name'], "/worlds/$w/"]]),
-      learning($W['title'], $W['desc'], "/worlds/$w/", 'City design and how cities work'),
-    ],
-  ]);
-}
 
 // ---------- Full worlds: city map + one page per building ----------
 function other_worlds($w) {
@@ -359,7 +271,4 @@ HTML,
   }
 }
 
-foreach (WORLD_ORDER as $w) {
-  if (isset($WORLD_DATA[$w])) full_world($w);
-  else simple_world($w);
-}
+foreach (WORLD_ORDER as $w) full_world($w);

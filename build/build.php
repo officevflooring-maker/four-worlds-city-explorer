@@ -207,8 +207,8 @@ page('/', [
 <section class="wrap section how" aria-labelledby="how-h">
   <h2 id="how-h">How to use this site</h2>
   <ol class="steps">
-    <li><strong>Look around.</strong> Open a world and select any building to learn what it does.</li>
-    <li><strong>Look closer.</strong> Each place has something to notice and a question to think about.</li>
+    <li><strong>Look around.</strong> Open a world and select any of its 140 buildings to read its own page.</li>
+    <li><strong>Look closer.</strong> Every page has photos of real places, things to notice and questions to talk about.</li>
     <li><strong>Compare.</strong> See how all four worlds handle water, gathering, travel and nature.</li>
   </ol>
 </section>
@@ -216,14 +216,14 @@ page('/', [
 <section class="wrap section two-col" aria-label="For families and educators, and what is coming next">
   <div class="panel">
     <h2>For families and educators</h2>
-    <p>Free to use, with no sign-up, ads or tracking. Questions are open-ended and work well for discussion at home or in class. Each of the 35 Roman building pages lists the sources its history is based on.</p>
+    <p>Free to use, with no sign-up, ads or tracking. Questions are open-ended and work well for discussion at home or in class. Every building page lists the sources its facts are based on, and marks clearly what is real, what is imagined and what is a possible future.</p>
     <p><a href="/artwork/">View, save and print the artwork</a> · <a href="/about/">About this project</a></p>
   </div>
   <div class="panel panel-later">
     <h2>Coming later</h2>
     <ul class="plain">
-      <li><a href="/guided/">Guided explorations</a> - short tours such as Roman engineering.</li>
-      <li>Detailed building pages for the modern, elven and future worlds.</li>
+      <li><a href="/guided/">Guided explorations</a>: short tours such as Roman engineering or living on Mars.</li>
+      <li>Printable worksheets for classes.</li>
     </ul>
   </div>
 </section>
@@ -243,11 +243,14 @@ foreach ($COMPARE as [$key, $label, $question, $cells]) {
   $li = '';
   foreach (WORLD_ORDER as $w) {
     [$imgName, $name, $prompt] = $cells[$w];
+    // Link to the building page: the one named in the data, or a page with the same name as the image.
+    $page = $cells[$w][3] ?? (isset($WORLD_DATA[$w]['pages'][$imgName]) ? $imgName : null);
+    $more = $page ? '<p class="cmp-more"><a href="/worlds/' . $w . '/' . $page . '/">Read about the ' . h(strtolower($WORLD_DATA[$w]['pages'][$page]['name'])) . '</a></p>' : '';
     $art = str_starts_with($imgName, 'ground-')
       ? '<img class="tex-img" src="' . tex($w, $imgName) . '" width="512" height="512" alt="' . h("$name in the {$WORLDS[$w]['name']} city, seen from above") . '" loading="lazy">'
       : img($w, $imgName, "$name in the {$WORLDS[$w]['name']} city", '(min-width: 1000px) 230px, 45vw', 'loading="lazy"');
     $li .= '<li class="cmp-cell world-' . $w . '"><p class="tag">' . h($WORLDS[$w]['name']) . '</p><div class="cmp-art">' . $art . '</div>'
-      . '<h4>' . h($name) . '</h4><p>' . h($prompt) . '</p></li>';
+      . '<h4>' . h($name) . '</h4><p>' . h($prompt) . '</p>' . $more . '</li>';
   }
   $rows .= '<section class="cmp-row" id="' . $key . '" aria-labelledby="cmp-' . $key . '"><h2 id="cmp-' . $key . '">' . h($label) . '</h2>'
     . '<p class="cmp-q">' . h($question) . '</p><ul class="cmp-grid">' . $li . '</ul></section>';
@@ -298,7 +301,13 @@ page('/about/', [
 
   <h2>What is real and what is imagined</h2>
   <p><strong>Ancient Rome</strong> is a historical setting. Each of its 35 building pages keeps history separate from the artist's interpretation and lists the sources it is based on. The illustrations are not exact reconstructions; photos of real Roman sites show what survives today.</p>
-  <p>The <strong>modern town</strong>, <strong>green elven world</strong> and <strong>robotic future</strong> are imagined design settings. They don't describe real places, real cultures or predictions.</p>
+  <p>The <strong>modern town</strong> is imagined, but its 36 pages explain real buildings and systems: why towns need them, how they are built and who they serve.</p>
+  <p>The <strong>green elven world</strong> and <strong>robotic future</strong> are imagined and speculative. They don't describe real places, real cultures or predictions. Each page uses labels so you always know what you are reading:</p>
+  <ul>
+    <li><span class="badge badge-fact">Real world</span> facts about real places, technology and research, with sources.</li>
+    <li><span class="badge badge-art">Imagined</span> ideas that belong to the fantasy world.</li>
+    <li><span class="badge badge-spec">Possible future</span> ideas being researched or proposed, which may or may not happen.</li>
+  </ul>
 
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
