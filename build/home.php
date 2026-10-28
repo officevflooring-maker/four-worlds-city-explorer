@@ -125,8 +125,11 @@ page('/', [
 <section class="hero3">
   <div class="wrap hero3-inner">
     <div class="hero3-text">
-      <img class="hero-logo" src="/assets/brand/atlas-emblem-400.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w, /assets/brand/atlas-emblem-800.webp 800w" sizes="(min-width: 900px) 210px, 160px" width="400" height="382" alt="" fetchpriority="high">
-      <h1>How does a city <span>work?</span></h1>
+      <div class="hero-brand">
+        <img class="hero-logo" src="/assets/brand/atlas-emblem-400.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w, /assets/brand/atlas-emblem-800.webp 800w" sizes="(min-width: 900px) 170px, 120px" width="400" height="382" alt="" fetchpriority="high">
+        <h1 class="hero-title">Past, Present and Imagined</h1>
+      </div>
+      <h2 class="hero-q">How does a city <span>work?</span></h2>
       <p class="lead">Explore four illustrated cities, from ancient Rome to a settlement on Mars. Open any building, meet the people and compare how each world solves the same problems.</p>
       <p class="hero-actions"><a class="btn" href="#worlds">Choose a world</a> <a class="btn btn-quiet" href="/tours/">Take a guided tour</a></p>
       <p class="hero-free">Free for everyone. No sign-up, ads or tracking.</p>

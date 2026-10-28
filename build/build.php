@@ -133,7 +133,7 @@ HTML;
 <a class="skip" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="/"><img src="/favicon.svg" width="28" height="28" alt=""> <span>The Atlas of Cities <span class="brand-sub">Past, Present and Imagined</span></span></a>
+    <a class="brand" href="/"><img src="/favicon.svg" width="28" height="28" alt=""> <span>The Atlas of Cities</span></a>
     <nav aria-label="Main" id="main-nav"><ul>{$nav}</ul></nav>
     <div class="hdr-tools">
       <a class="hdr-search" href="/search/"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></a>
