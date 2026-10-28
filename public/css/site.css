@@ -1081,3 +1081,24 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .q-opt img { flex: none; width: 70px; height: 70px; object-fit: contain; }
 .q-people .q-opt { padding: .5rem .9rem .5rem .5rem; }
 .q-words .q-ask { font-size: clamp(1.2rem, 1.05rem + .8vw, 1.55rem); }
+
+/* ---------- Life RPG (/life-rpg/ and the home band): the game's own dark look and gold ---------- */
+.lrpg-top { padding-block: clamp(2.2rem, 1.4rem + 3vw, 4rem); }
+.lrpg-top h1 { color: #fff; font-size: clamp(2.4rem, 1.8rem + 3vw, 3.8rem); margin: 0 0 .2em; }
+.lrpg-top .lead { color: #d6dcea; }
+.lrpg-top .tag, .lrpg-home .tag { color: #f0c674; }
+.lrpg-soon { display: inline-block; margin: .6rem 0 0; padding: .45rem 1.1rem; border: 2px solid #f0c674; border-radius: 999px; color: #f0c674; font-weight: 700; }
+.lrpg-top .btn, .lrpg-home .btn { background: #f0c674; border-color: #f0c674; color: #1d1608; }
+.lrpg-top .small, .lrpg-top .small a { color: #d6dcea; }
+.lrpg-shots { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
+.lrpg-shots figure { margin: 0; }
+.lrpg-shots img { display: block; width: 100%; height: auto; border-radius: 18px; background: #0e0c14; box-shadow: 0 12px 30px rgba(14, 12, 20, .22); }
+.lrpg-shots figcaption { margin-top: .6rem; text-align: center; font-weight: 600; }
+.lrpg-home-inner { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 1.5rem 2.5rem; align-items: center; }
+.lrpg-home-inner img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.lrpg-home h2 { margin: 0 0 .3rem; }
+.lrpg-home p { color: #d6dcea; }
+@media (max-width: 760px) {
+  .lrpg-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+  .lrpg-home-inner { grid-template-columns: 1fr; }
+}

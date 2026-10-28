@@ -114,6 +114,9 @@ foreach ([['roman', 'fitness-3'], ['elven', 'shared-2'], ['future', 'growth-1'],
   $mosaic .= '<li class="world-' . $w . '"><img src="' . $f . '" width="480" height="480" alt="" loading="lazy" decoding="async"></li>';
 }
 
+// Life RPG, the separate game for grown-ups (build/liferpg.php)
+$lrpgTag = 'For grown-ups · ' . (LIFE_RPG_BUY ? h(LIFE_RPG_PRICE) . ', one time' : 'Coming soon');
+
 page('/', [
   'title' => SITE_NAME . ': how cities work, past, present and imagined',
   'desc' => h(SITE_DESC),
@@ -199,6 +202,18 @@ page('/', [
     <h2 id="art-h">Free artwork for everyone</h2>
     <p>All {$artCount} illustrations of buildings, people and vehicles are free to save, print and reuse for any purpose under CC BY 4.0. Just credit "Illustration: The Atlas of Cities".</p>
     <p><a class="btn" href="/artwork/">Browse the artwork</a> <a class="btn btn-quiet" href="/about/">About this project</a></p>
+  </div>
+</section>
+
+<section class="band band-dark lrpg-home" aria-labelledby="lrpg-h">
+  <div class="wrap lrpg-home-inner">
+    <img src="/assets/life-rpg/city-roman-wide.webp" width="520" height="300" alt="A Roman city built in Life RPG" loading="lazy" decoding="async">
+    <div>
+      <p class="tag">{$lrpgTag}</p>
+      <h2 id="lrpg-h">Life RPG</h2>
+      <p>Turn real-life goals into quests and grow your own city in these four worlds.</p>
+      <p><a class="btn" href="/life-rpg/">Find out more</a></p>
+    </div>
   </div>
 </section>
 

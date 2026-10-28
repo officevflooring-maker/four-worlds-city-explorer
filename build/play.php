@@ -107,6 +107,7 @@ foreach ([
   ['Artwork', '/artwork/', 'Page', 'View, save and print every illustration, free under CC BY 4.0.', 'art pictures images download print free'],
   ['About this project', '/about/', 'Page', 'What is real and what is imagined, privacy, accessibility and sources.', 'about privacy sources accessibility'],
   ['Support this project', '/support/', 'Page', 'Help keep the site free, with no ads.', 'donate patreon support'],
+  ['Life RPG', '/life-rpg/', 'Page', 'A game for grown-ups and teens: real-life goals become quests.' . (LIFE_RPG_BUY ? '' : ' Coming soon.'), 'life rpg game app habits goals quests grown-ups parents teens buy'],
 ] as [$n, $u, $y, $d, $k]) $SEARCH[] = [$n, $u, $y, '', null, $d, $k];
 
 $json = [];
