@@ -55,6 +55,8 @@ function page($path, $o) {
   $ogImage = url('/assets/og/' . ($o['og'] ?? 'home') . '.jpg');
   $robots = !empty($o['noindex']) ? 'noindex, follow' : 'index, follow, max-image-preview:large';
   $bodyClass = $o['class'] ?? '';
+  $verify = $path === '/' && GOOGLE_VERIFY ? '<meta name="google-site-verification" content="' . h(GOOGLE_VERIFY) . '">' . "
+" : '';
   $cssV = asset_v('/css/site.css');
   $jsV = asset_v('/js/site.js');
   $ld = '';
@@ -105,7 +107,7 @@ HTML;
 <title>{$fullTitle}</title>
 <meta name="description" content="{$o['desc']}">
 <meta name="robots" content="{$robots}">
-<link rel="canonical" href="{$canonical}">
+{$verify}<link rel="canonical" href="{$canonical}">
 <meta name="theme-color" content="#f7f5f0">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{$GLOBALS['siteNameH']}">
