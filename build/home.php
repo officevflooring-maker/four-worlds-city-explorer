@@ -114,8 +114,8 @@ foreach ([['roman', 'fitness-3'], ['elven', 'shared-2'], ['future', 'growth-1'],
   $mosaic .= '<li class="world-' . $w . '"><img src="' . $f . '" width="480" height="480" alt="" loading="lazy" decoding="async"></li>';
 }
 
-// Life RPG, the separate game for grown-ups (build/liferpg.php)
-$lrpgTag = 'For grown-ups · ' . (LIFE_RPG_BUY ? h(LIFE_RPG_PRICE) . ', one time' : 'Coming soon');
+// The shop's products, for grown-ups (build/shop.php)
+$shopCards = shop_cards();
 
 page('/', [
   'title' => SITE_NAME . ': how cities work, past, present and imagined',
@@ -205,15 +205,11 @@ page('/', [
   </div>
 </section>
 
-<section class="band band-dark lrpg-home" aria-labelledby="lrpg-h">
-  <div class="wrap lrpg-home-inner">
-    <img src="/assets/life-rpg/city-roman-wide.webp" width="520" height="300" alt="A Roman city built in Life RPG" loading="lazy" decoding="async">
-    <div>
-      <p class="tag">{$lrpgTag}</p>
-      <h2 id="lrpg-h">Life RPG</h2>
-      <p>Turn real-life goals into quests and grow your own city in these four worlds.</p>
-      <p><a class="btn" href="/life-rpg/">Find out more</a></p>
-    </div>
+<section class="band band-dark shop-home" aria-labelledby="shop-h">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag">For grown-ups</p><h2 id="shop-h">From the shop</h2><p>A game for real-life goals, a card game and a classroom pack, all made from these four worlds.</p></div>
+    {$shopCards}
+    <p class="shop-home-more"><a class="btn" href="/shop/">Visit the shop</a></p>
   </div>
 </section>
 

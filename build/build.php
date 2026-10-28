@@ -147,7 +147,7 @@ HTML;
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work.</p>
-    <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/life-rpg/">Life RPG</a></p>
+    <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/shop/">Shop</a></p>
     <p class="small">Illustrations &copy; {$year} The Atlas of Cities, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
   </div>
 </footer>
@@ -187,7 +187,7 @@ require __DIR__ . '/teachpages.php';
 require __DIR__ . '/tours.php';
 require __DIR__ . '/play.php';
 require __DIR__ . '/classroom.php';
-require __DIR__ . '/liferpg.php';
+require __DIR__ . '/shop.php';
 require __DIR__ . '/home.php';
 
 // ---------- Compare ----------
@@ -266,7 +266,7 @@ page('/about/', [
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
   <p>Passport stamps, quiz scores and the city you build are saved only in your own browser and never sent anywhere. You can clear them on the <a href="/play/passport/">passport page</a>.</p>
   <p>Donations are optional and handled entirely by Patreon, a separate website with its own privacy policy. This site never sees payment or personal details. See <a href="/support/">Support this project</a>.</p>
-  <p><a href="/life-rpg/">Life RPG</a>, our separate game for grown-ups, is bought on a store website under that store's own privacy policy. This site never sees those payment details either.</p>
+  <p>Things in <a href="/shop/">the shop</a> are bought on a store website, under that store's own privacy policy. This site never sees those payment details either.</p>
 
   <h2 id="accessibility">Accessibility</h2>
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
@@ -466,7 +466,10 @@ $urls['/search/'] = '0.4';
 $urls['/artwork/'] = '0.7';
 $urls['/about/'] = '0.5';
 $urls['/support/'] = '0.4';
+$urls['/shop/'] = '0.5';
 $urls['/life-rpg/'] = '0.5';
+$urls['/city-builders/'] = '0.5';
+$urls['/classroom-pack/'] = '0.5';
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . LASTMOD . "</lastmod><priority>$pr</priority></url>\n";
 $xml .= "</urlset>\n";

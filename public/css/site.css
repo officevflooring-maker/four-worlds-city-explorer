@@ -1082,23 +1082,63 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .q-people .q-opt { padding: .5rem .9rem .5rem .5rem; }
 .q-words .q-ask { font-size: clamp(1.2rem, 1.05rem + .8vw, 1.55rem); }
 
-/* ---------- Life RPG (/life-rpg/ and the home band): the game's own dark look and gold ---------- */
-.lrpg-top { padding-block: clamp(2.2rem, 1.4rem + 3vw, 4rem); }
-.lrpg-top h1 { color: #fff; font-size: clamp(2.4rem, 1.8rem + 3vw, 3.8rem); margin: 0 0 .2em; }
-.lrpg-top .lead { color: #d6dcea; }
-.lrpg-top .tag, .lrpg-home .tag { color: #f0c674; }
-.lrpg-soon { display: inline-block; margin: .6rem 0 0; padding: .45rem 1.1rem; border: 2px solid #f0c674; border-radius: 999px; color: #f0c674; font-weight: 700; }
-.lrpg-top .btn, .lrpg-home .btn { background: #f0c674; border-color: #f0c674; color: #1d1608; }
-.lrpg-top .small, .lrpg-top .small a { color: #d6dcea; }
-.lrpg-shots { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
-.lrpg-shots figure { margin: 0; }
-.lrpg-shots img { display: block; width: 100%; height: auto; border-radius: 18px; background: #0e0c14; box-shadow: 0 12px 30px rgba(14, 12, 20, .22); }
-.lrpg-shots figcaption { margin-top: .6rem; text-align: center; font-weight: 600; }
-.lrpg-home-inner { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 1.5rem 2.5rem; align-items: center; }
-.lrpg-home-inner img { display: block; width: 100%; height: auto; border-radius: 14px; }
-.lrpg-home h2 { margin: 0 0 .3rem; }
-.lrpg-home p { color: #d6dcea; }
+/* ---------- Shop (/shop/, the product pages and the home band) ---------- */
+.shop-top { padding-block: clamp(2rem, 1.2rem + 3vw, 3.6rem); }
+.shop-top:not(.shop-top-dark) { background: var(--cream); }
+.shop-top-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2rem 3rem; align-items: center; }
+.shop-top h1 { font-size: clamp(2.4rem, 1.8rem + 3vw, 3.8rem); margin: 0 0 .2em; }
+.shop-top-pic img { display: block; width: 100%; height: auto; }
+.shop-top-dark h1 { color: #fff; }
+.shop-top-dark .lead { color: #d6dcea; }
+.shop-top-dark .tag, .shop-home .tag { color: #f0c674; }
+.shop-top-dark .shop-top-pic { text-align: center; }
+.shop-phone { display: inline-block !important; width: min(250px, 66%) !important; border-radius: 26px; box-shadow: 0 24px 60px rgba(0, 0, 0, .45); }
+.shop-soon { display: inline-block; margin: .5rem 0 0; padding: .5rem 1.2rem; border: 2px solid var(--brand); border-radius: 999px; color: var(--brand); font-weight: 700; }
+.shop-top-dark .shop-soon, .band-dark .shop-soon { border-color: #f0c674; color: #f0c674; }
+.shop-top-dark .btn, .shop-home .btn { background: #f0c674; border-color: #f0c674; color: #1d1608; }
+.shop-top-dark .shop-note, .shop-top-dark .shop-note a { color: #d6dcea; }
+.shop-facts { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; gap: .4rem .6rem; }
+.shop-facts li { font-size: .9rem; font-weight: 600; padding: .25rem .75rem; border-radius: 999px; background: rgba(35, 57, 107, .08); }
+.shop-top-dark .shop-facts li { background: rgba(255, 255, 255, .1); color: #e8ecf5; }
+.shop-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.shop-steps li { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.2rem; }
+.shop-steps b { display: block; font-family: var(--serif); font-size: 1.15rem; margin-bottom: .2rem; }
+.shop-step-n { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; margin-bottom: .6rem; }
+.shop-gallery { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 300px)); justify-content: center; gap: 1.4rem; }
+.shop-gallery figure { margin: 0; }
+.shop-gallery img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 28px rgba(20, 32, 57, .18); }
+.shop-life-rpg .shop-gallery img { background: #0e0c14; border-radius: 18px; }
+.shop-gallery figcaption { margin-top: .6rem; text-align: center; font-weight: 600; }
+.shop-feats { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 1rem; }
+.shop-feats li { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; display: grid; grid-template-columns: auto 1fr; gap: .1rem .8rem; }
+.shop-feat-icon { grid-row: span 2; font-size: 1.6rem; line-height: 1.2; }
+.shop-feats b { font-family: var(--serif); font-size: 1.05rem; }
+.shop-feats span:last-child { color: var(--muted); font-size: .95rem; }
+.shop-worlds { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.shop-worlds li { margin: 0; }
+.shop-worlds img { display: block; width: 100%; height: auto; border-radius: 12px; border: 3px solid var(--accent); }
+.shop-worlds span { display: block; margin-top: .45rem; text-align: center; font-weight: 700; color: var(--accent); }
+.shop-faq details { border-bottom: 1px solid var(--line); padding: .85rem 0; }
+.shop-faq summary { cursor: pointer; font-weight: 700; font-size: 1.05rem; }
+.shop-faq p { margin: .5rem 0 0; color: #2f3a48; }
+.shop-again { background: var(--cream); text-align: center; }
+.shop-again h2 { margin: 0 0 .4rem; }
+.shop-cards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 1.2rem; }
+.shop-card a { display: flex; flex-direction: column; height: 100%; background: var(--paper); color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.shop-card a:hover .shop-name { text-decoration: underline; }
+.shop-card-pic { aspect-ratio: 16 / 9; background: var(--cream); display: grid; place-items: center; overflow: hidden; }
+.shop-card-pic img { width: 100%; height: 100%; object-fit: contain; }
+.shop-card:first-child .shop-card-pic img { object-fit: cover; }
+.shop-card-text { display: flex; flex-direction: column; gap: .2rem; padding: 1rem 1.1rem 1.1rem; flex: 1; }
+.shop-kind { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.shop-name { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; }
+.shop-line { color: #2f3a48; }
+.shop-state { margin-top: auto; padding-top: .5rem; font-weight: 700; color: var(--brand); }
+.shop-home .sec-head p { color: #c8d2e3; }
+.shop-home-more { margin: 1.4rem 0 0; text-align: center; }
 @media (max-width: 760px) {
-  .lrpg-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
-  .lrpg-home-inner { grid-template-columns: 1fr; }
+  .shop-top-inner { grid-template-columns: 1fr; }
+  .shop-steps { grid-template-columns: 1fr; }
+  .shop-worlds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shop-phone { width: min(240px, 66%) !important; }
 }
