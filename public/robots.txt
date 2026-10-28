@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yellowgreen-crab-278867.hostingersite.com/sitemap.xml
+Sitemap: https://atlasofcities.koaa01.workers.dev/sitemap.xml
