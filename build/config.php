@@ -10,9 +10,9 @@ const PATREON_URL = 'https://www.patreon.com/cw/SamPetrov/home';
 // The shop (build/shop.php): things for grown-ups to buy, each with its own page. While a product's 'buy' link is
 // empty its page says "Coming soon". At launch, paste in the store's checkout link. 'open' is where Life RPG lives.
 const SHOP = [
-  'life-rpg'       => ['price' => '$3', 'buy' => '', 'open' => 'https://life-rpg.koaa01.workers.dev/'],
+  'life-rpg'       => ['price' => '$5', 'buy' => '', 'open' => 'https://life-rpg.koaa01.workers.dev/'],
   'city-builders'  => ['price' => '$3', 'buy' => ''],
-  'classroom-pack' => ['price' => '$3', 'buy' => ''],
+  'classroom-pack' => ['price' => '$5', 'buy' => ''],
 ];
 // Google Search Console verification code (meta tag on the home page).
 const GOOGLE_VERIFY = 'hyYqg7CSEBBH3g2PZXng4J2Cx3ihW_7mYysjgOQfAfI';
