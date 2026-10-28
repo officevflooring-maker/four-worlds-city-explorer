@@ -1,7 +1,7 @@
 # Apache / Hostinger settings for a static site.
 Options -Indexes
 # Cloudflare Pages settings files are not web pages.
-<FilesMatch "^_(headers|redirects)$">
+<FilesMatch "^(_headers|_redirects|\.assetsignore)$">
   Require all denied
 </FilesMatch>
 DirectoryIndex index.html

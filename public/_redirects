@@ -1,2 +1,2 @@
-# Cloudflare Pages: old Hostinger-style /public/... addresses go to the clean address.
+# Cloudflare (Workers or Pages): old Hostinger-style /public/... addresses go to the clean address.
 /public/* /:splat 301
