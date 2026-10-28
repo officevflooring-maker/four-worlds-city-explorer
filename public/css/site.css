@@ -139,15 +139,18 @@ main:focus { outline: none; }
 .world-modern .city { --road: #6b6e73; --curb: #d9d6cf; }
 .world-elven .city { --road: #b8996a; --curb: #8fb36a; }
 .world-future .city { --road: #3d4a57; --curb: #6fe0f0; }
-.city-ground { --cell: calc(70.71cqw / var(--n)); --rw: calc(var(--cell) * .3);
+.city-ground { --cell: calc(70.71cqw / var(--n)); --rw: calc(var(--cell) * .32);
   position: absolute; left: 50cqw; top: calc((var(--y0) + 25) * 1cqw); width: 70.71cqw; height: 70.71cqw;
   transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg);
-  background:
-    linear-gradient(90deg, var(--curb) 0 .25cqw, var(--road) 0 calc(var(--rw) - .25cqw), var(--curb) 0 var(--rw), transparent 0) calc(var(--rw) / -2) 0 / var(--cell) var(--cell),
-    linear-gradient(var(--curb) 0 .25cqw, var(--road) 0 calc(var(--rw) - .25cqw), var(--curb) 0 var(--rw), transparent 0) 0 calc(var(--rw) / -2) / var(--cell) var(--cell),
-    var(--tex) 0 0 / var(--cell) var(--cell);
-  box-shadow: 0 0 0 calc(var(--rw) / 2) var(--road), 0 0 0 calc(var(--rw) / 2 + .4cqw) var(--curb), 1.5cqw 1.5cqw 4cqw rgb(0 0 0 / .28); border-radius: 2px; }
-.world-future .city-ground { box-shadow: 0 0 0 calc(var(--rw) / 2) var(--road), 0 0 0 calc(var(--rw) / 2 + .4cqw) var(--curb), 0 0 4cqw rgb(111 224 240 / .45); }
+  background: var(--tex) 0 0 / var(--cell) var(--cell);
+  box-shadow: 0 0 0 calc(var(--rw) / 2) var(--road), 0 0 0 calc(var(--rw) / 2 + .5cqw) var(--curb), 1.5cqw 1.5cqw 4cqw rgb(0 0 0 / .28); border-radius: 2px; }
+/* Streets: the world's crossroads texture, one tile per grid corner, shown only along the grid lines
+   (and half a street beyond the edge), so every corner gets a crossing. */
+.city-ground::before, .hq::before { content: ""; position: absolute; inset: calc(var(--rw) / -2);
+  background: var(--roadtex) calc(var(--rw) / 2 - var(--cell) / 2) calc(var(--rw) / 2 - var(--cell) / 2) / var(--cell) var(--cell);
+  -webkit-mask: linear-gradient(90deg, #000 var(--rw), transparent 0) 0 0 / var(--cell) var(--cell), linear-gradient(#000 var(--rw), transparent 0) 0 0 / var(--cell) var(--cell);
+  mask: linear-gradient(90deg, #000 var(--rw), transparent 0) 0 0 / var(--cell) var(--cell), linear-gradient(#000 var(--rw), transparent 0) 0 0 / var(--cell) var(--cell); }
+.world-future .city-ground { box-shadow: 0 0 0 calc(var(--rw) / 2) var(--road), 0 0 0 calc(var(--rw) / 2 + .5cqw) var(--curb), 0 0 4cqw rgb(111 224 240 / .45); }
 .city-tiles { list-style: none; margin: 0; padding: 0; }
 .tile { position: absolute; width: calc(var(--s) * 96cqw / var(--n));
   left: calc((50 + (var(--i) - var(--j)) * 50 / var(--n) - var(--s) * 48 / var(--n)) * 1cqw);
@@ -492,11 +495,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .hero3 .lead { font-size: 1.2rem; }
 .hero3-map .city { margin: 0 -4% 0 0; width: 108%; max-width: none; aspect-ratio: 100 / 61; --s: .8; }
 .hero-ground { background: none !important; box-shadow: 0 0 0 1cqw #efe4cf, 0 0 0 1.4cqw #fff, 2cqw 2.5cqw 5cqw rgb(0 0 0 / .25) !important; }
-.hq { position: absolute; width: 50%; height: 50%; --cell: calc(70.71cqw / 4); --rw: calc(var(--cell) * .28);
-  background:
-    linear-gradient(90deg, var(--curb) 0 .3cqw, var(--road) 0 calc(var(--rw) - .3cqw), var(--curb) 0 var(--rw), transparent 0) calc(var(--rw) / -2) 0 / var(--cell) var(--cell),
-    linear-gradient(var(--curb) 0 .3cqw, var(--road) 0 calc(var(--rw) - .3cqw), var(--curb) 0 var(--rw), transparent 0) 0 calc(var(--rw) / -2) / var(--cell) var(--cell),
-    var(--tex) 0 0 / var(--cell) var(--cell); }
+.hq { position: absolute; width: 50%; height: 50%; --cell: calc(70.71cqw / 4); --rw: calc(var(--cell) * .32); background: var(--tex) 0 0 / var(--cell) var(--cell); }
 .hq.world-roman { --road: #cdbb9b; --curb: #f4ead6; }
 .hq.world-modern { --road: #6b6e73; --curb: #d9d6cf; }
 .hq.world-elven { --road: #b8996a; --curb: #8fb36a; }
@@ -517,9 +516,11 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .wcards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
 .wcard { position: relative; display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
 .wcard:hover { box-shadow: 0 16px 36px rgb(0 0 0 / .14); transform: translateY(-4px); }
-.wcard-top { position: relative; display: block; height: 250px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, #fff), color-mix(in srgb, var(--accent) 22%, #fff)); }
-.wcard-sky img { width: 100%; height: 150px; object-fit: cover; object-position: center bottom; }
-.wcard-sky::after { content: ""; position: absolute; inset: 90px 0 0; background: linear-gradient(transparent, color-mix(in srgb, var(--accent) 22%, #fff) 55%); }
+.wcard-top { position: relative; display: block; height: 250px; overflow: hidden; background: color-mix(in srgb, var(--accent) 12%, #fff); }
+.wcard-ground { position: absolute; inset: 112px 0 0; overflow: hidden; }
+.wcard-floor { position: absolute; left: 50%; bottom: -400px; width: 800px; height: 800px; transform: translateX(-50%) rotateX(60deg) rotateZ(45deg); background: var(--tex) 0 0 / 165px 165px; box-shadow: inset 0 0 80px rgb(0 0 0 / .18); }
+.wcard-sky { position: relative; z-index: 1; display: block; }
+.wcard-sky img { width: 100%; height: 150px; object-fit: cover; object-position: center bottom; -webkit-mask: linear-gradient(#000 70%, transparent); mask: linear-gradient(#000 70%, transparent); }
 .wcard-art { position: absolute; left: 50%; bottom: -4px; width: 74%; transform: translateX(-50%); z-index: 1; transition: transform .3s; }
 .wcard:hover .wcard-art { transform: translateX(-50%) scale(1.04); }
 .wcard-art img { filter: drop-shadow(0 12px 14px rgb(0 0 0 / .25)); }

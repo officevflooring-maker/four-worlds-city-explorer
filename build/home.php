@@ -27,7 +27,7 @@ $quarters = [
 $heroGround = '';
 $heroTiles = '';
 foreach ($quarters as $w => [$io, $jo, $slugs]) {
-  $heroGround .= '<span class="hq world-' . $w . '" style="--tex:url(' . tex($w, $WORLDS[$w]['ground']) . ');left:' . ($io * 25) . '%;top:' . ($jo * 25) . '%"></span>';
+  $heroGround .= '<span class="hq world-' . $w . '" style="--tex:url(' . tex($w, $WORLDS[$w]['ground']) . ');--roadtex:url(' . tex($w, 'ground-crossroads') . ');left:' . ($io * 25) . '%;top:' . ($jo * 25) . '%"></span>';
   foreach ($slugs as $k => $s) {
     $i = $io + $k % 2; $j = $jo + intdiv($k, 2);
     if (!isset($WORLD_DATA[$w]['pages'][$s])) { fwrite(STDERR, "home hero: unknown page $w/$s\n"); continue; }
@@ -72,7 +72,7 @@ foreach (WORLD_ORDER as $w) {
   foreach ($starts[$w] as $s) $links .= '<li><a href="/worlds/' . $w . '/' . $s . '/">' . h($WORLD_DATA[$w]['pages'][$s]['name']) . '</a></li>';
   $count = count($WORLD_DATA[$w]['pages']);
   $cards .= '<li class="wcard world-' . $w . '">'
-    . '<a class="wcard-top" href="/worlds/' . $w . '/" tabindex="-1" aria-hidden="true"><span class="wcard-sky">' . img($w, 'horizon', '', '(min-width: 900px) 300px, 90vw', 'loading="lazy"') . '</span>'
+    . '<a class="wcard-top" href="/worlds/' . $w . '/" tabindex="-1" aria-hidden="true"><span class="wcard-ground"><span class="wcard-floor" style="--tex:url(' . tex($w, $W['ground']) . ')"></span></span><span class="wcard-sky">' . img($w, 'horizon', '', '(min-width: 900px) 300px, 90vw', 'loading="lazy"') . '</span>'
     . '<span class="wcard-art">' . img($w, $W['card'], '', '(min-width: 900px) 240px, 70vw', 'loading="lazy"') . '</span>'
     . '<span class="wcard-person">' . img($w, 'people-1', '', '80px', 'loading="lazy"') . '</span></a>'
     . '<div class="wcard-text"><p class="tag">' . h($W['type']) . '</p><h3><a href="/worlds/' . $w . '/">' . h($W['name']) . '</a></h3>'

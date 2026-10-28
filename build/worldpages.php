@@ -129,6 +129,7 @@ function full_world($w) {
   $horizon = img($w, 'horizon', '', '100vw', 'fetchpriority="high"');
   $count = count($pages);
   $groundTex = tex($w, $W['ground']);
+  $roadTex = tex($w, 'ground-crossroads');
   $introH = h($D['intro']);
   $noteH = h($D['note']);
   $aside = empty($D['aside']) ? '' : '<aside class="panel aside-note" aria-labelledby="aside-h"><h3 id="aside-h">' . h($D['aside'][0]) . '</h3><p>' . h($D['aside'][1]) . '</p></aside>';
@@ -167,7 +168,7 @@ function full_world($w) {
       </div>
     </div>
     <div class="map-view">
-      <div class="city city-6" style="--tex:url({$groundTex});--n:6;--y0:10">
+      <div class="city city-6" style="--tex:url({$groundTex});--roadtex:url({$roadTex});--n:6;--y0:10">
         <div class="city-ground" aria-hidden="true"></div>
         <ul class="city-tiles" aria-label="Buildings, people and vehicles in the {$label} city">{$map}</ul>
       </div>
