@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Makes the social sharing images (public/assets/og/*.jpg, 1200 x 630) from the supplied artwork,
-# with the site name drawn in. Re-run after renaming the site. Needs ffmpeg and Georgia Bold (Windows).
+# with the site name drawn in; the home page's uses the logo (brand/, see tools/make-logo.sh). Re-run after renaming
+# the site. Needs ffmpeg and Georgia Bold (Windows).
 set -euo pipefail
 cd "$(dirname "$0")/../public"
 NAME='The Atlas of Cities'
@@ -11,5 +12,6 @@ og roman 0xf3e2d6 amphitheater "Ancient Rome"
 og modern 0xdde6f3 mixed-use-building "Modern Town"
 og elven 0xdfecd9 treetop-village "Elven Green World"
 og future 0xd7e9ec greenhouse-dome "Robotic Future"
-ffmpeg -nostdin -loglevel error -y -f lavfi -i "color=c=0xf7f5f0:s=1200x630" -i $A/roman/amphitheater-480.webp -i $A/modern/public-library-480.webp -i $A/elven/treetop-village-480.webp -i $A/future/greenhouse-dome-480.webp -filter_complex "[1]scale=300:300[a];[2]scale=300:300[b];[3]scale=300:300[c];[4]scale=300:300[d];[0][a]overlay=0:300[t1];[t1][b]overlay=300:300[t2];[t2][c]overlay=600:300[t3];[t3][d]overlay=900:300,drawtext=$F:text='$NAME':fontsize=40:fontcolor=0x23396b:x=(w-tw)/2:y=70,drawtext=$F:text='Past, Present and Imagined':fontsize=28:fontcolor=0x536072:x=(w-tw)/2:y=122,drawtext=$F:text='How does a city work?':fontsize=64:fontcolor=0x17202b:x=(w-tw)/2:y=175" -frames:v 1 -q:v 3 assets/og/home.jpg
+# the home page (and every page without its own picture): the logo, and the question the site asks
+ffmpeg -nostdin -loglevel error -y -f lavfi -i "color=c=0xfbf5e8:s=1200x630" -i ../brand/atlas-wordmark-cutout.png -filter_complex "[1]scale=-1:580:flags=lanczos[l];[0][l]overlay=40:(H-h)/2,drawtext=$F:text='How does a':fontsize=74:fontcolor=0x17202b:x=640:y=150,drawtext=$F:text='city work?':fontsize=74:fontcolor=0x17202b:x=640:y=240,drawtext=$F:text='Four illustrated cities,':fontsize=34:fontcolor=0x3d4757:x=642:y=362,drawtext=$F:text='past, present and imagined.':fontsize=34:fontcolor=0x3d4757:x=642:y=410,drawtext=$F:text='Free · No ads · No sign-up':fontsize=27:fontcolor=0x23396b:x=642:y=492" -frames:v 1 -q:v 3 assets/og/home.jpg
 ls -la assets/og

@@ -146,9 +146,12 @@ HTML;
 </main>
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work.</p>
-    <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/shop/">Shop</a></p>
-    <p class="small">Illustrations &copy; {$year} The Atlas of Cities, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
+    <img class="footer-logo" src="/assets/brand/atlas-emblem-200.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w" sizes="110px" width="200" height="192" alt="" loading="lazy" decoding="async">
+    <div>
+      <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work.</p>
+      <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/shop/">Shop</a></p>
+      <p class="small">Illustrations &copy; {$year} The Atlas of Cities, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
+    </div>
   </div>
 </footer>
 {$lightbox}
@@ -255,6 +258,7 @@ page('/about/', [
   'class' => 'about',
   'body' => <<<HTML
 <section class="wrap section page-head narrow">
+  <img class="about-logo" src="/assets/brand/atlas-wordmark-360.webp" srcset="/assets/brand/atlas-wordmark-360.webp 360w, /assets/brand/atlas-wordmark-720.webp 720w" sizes="(min-width: 640px) 220px, 180px" width="360" height="364" alt="The Atlas of Cities">
   <h1>About this project</h1>
   <p class="lead">The Atlas of Cities is a free educational and creative website. It uses illustrated cities to help visitors notice how cities work and think about what makes a good place to live.</p>
 
@@ -445,6 +449,7 @@ page('/404.html', [
   'noindex' => true,
   'body' => <<<HTML
 <section class="wrap section page-head narrow">
+  <img class="nf-logo" src="/assets/brand/atlas-emblem-400.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w" sizes="170px" width="400" height="382" alt="">
   <h1>Page not found</h1>
   <p class="lead">That page doesn't exist. Try one of the worlds instead:</p>
   <ul class="world-links"><li><a class="world-link world-roman" href="/worlds/roman/">Ancient Rome</a></li><li><a class="world-link world-modern" href="/worlds/modern/">Modern Town</a></li><li><a class="world-link world-elven" href="/worlds/elven/">Elven Green World</a></li><li><a class="world-link world-future" href="/worlds/future/">Robotic Future</a></li></ul>

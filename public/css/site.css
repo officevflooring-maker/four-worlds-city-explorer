@@ -72,7 +72,10 @@ main:focus { outline: none; }
 .nav-future { box-shadow: inset 0 -3px 0 var(--future); }
 .site-footer { background: var(--night); color: #dfe6f2; padding-block: 2rem; margin-top: 2rem; }
 .site-footer a { color: var(--gold); }
+.footer-inner { display: flex; align-items: center; gap: 1rem 1.6rem; }
 .footer-inner p { margin: .3rem 0; }
+.footer-logo { flex: none; width: 110px; height: auto; }
+@media (max-width: 600px) { .footer-inner { flex-direction: column; align-items: flex-start; } .footer-logo { width: 92px; } }
 
 /* Home */
 .hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
@@ -494,6 +497,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .hero3 h1 { font-size: clamp(2.5rem, 1.4rem + 4.2vw, 4.4rem); line-height: 1; margin-bottom: .35em; }
 .hero3 h1 span { background: linear-gradient(90deg, var(--roman), var(--modern) 40%, var(--elven) 70%, var(--future)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero3 .lead { font-size: 1.2rem; }
+.hero-logo { display: block; width: clamp(150px, 15vw, 210px); height: auto; margin: 0 0 .7rem -.3rem; filter: drop-shadow(0 6px 12px rgb(20 32 57 / .16)); }
 .hero3-map .city { margin: 0 -4% 0 0; width: 108%; max-width: none; aspect-ratio: 100 / 61; --s: .8; }
 .hero-ground { background: none !important; box-shadow: 0 0 0 1cqw #efe4cf, 0 0 0 1.4cqw #fff, 2cqw 2.5cqw 5cqw rgb(0 0 0 / .25) !important; }
 .hq { position: absolute; width: 50%; height: 50%; --cell: calc(70.71cqw / 4); --rw: calc(var(--cell) * .32); background: var(--tex) 0 0 / var(--cell) var(--cell); }
@@ -559,6 +563,10 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .hero3-map .city { width: 100%; margin: 0 auto; }
 }
 @media (max-width: 560px) { .stats-list li:last-child { grid-column: 1 / -1; } }
+/* the logo on the About page and the missing-page page */
+.about-logo { float: right; width: 220px; height: auto; margin: -.4rem 0 1rem 1.6rem; }
+.nf-logo { display: block; width: 170px; height: auto; margin-bottom: .6rem; }
+@media (max-width: 640px) { .about-logo { float: none; display: block; width: 180px; margin: 0 auto 1rem; } }
 @media (max-width: 560px) {
   .hero3 h1 { font-size: 2.4rem; }
   .wcard-top { height: 220px; }

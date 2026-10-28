@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Logo background remover</title></head>
+<body>
+<pre id="out"></pre>
+<script>
+// Used by tools/make-logo.sh in headless Chrome: takes the plain, pale mint background out of a supplied logo and
+// writes the see-through, trimmed result into #out as a PNG data address. make-logo.sh puts the logo in place of
+// the image placeholder below.
+//  - Background: large connected areas close to the border color that are mint-tinted (green above red and blue).
+//    Big areas shut in by the logo's thin rings count too; small specks are the logo's own highlights and stay.
+//  - Edges and soft shadows next to the background turn partly see-through ("color to alpha" against the
+//    background color nearby), so the logo sits cleanly on light and dark pages.
+const T = 22;            // how far from the border color the background may vary
+const MIN_AREA = 600;    // smaller mint areas are the logo's own
+const EDGE = 3;          // steps from the background where any pixel may be an edge
+const SHADOW = 40;       // steps from the background where mint-tinted pixels may be shadow
+const KEEP = 0.6;        // pixels this much darker than the background are the logo itself
+const R = 20;            // the square, around a pixel, that gives the background color near it
+
+const img = new Image();
+img.onload = () => {
+  const W = img.naturalWidth, H = img.naturalHeight, N = W * H;
+  const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  const cx = cv.getContext('2d'); cx.drawImage(img, 0, 0);
+  const id = cx.getImageData(0, 0, W, H), d = id.data;
+
+  // the border color
+  const ref = [0, 0, 0]; let n = 0;
+  const addRef = p => { for (let c = 0; c < 3; c++) ref[c] += d[p * 4 + c]; n++; };
+  for (let x = 0; x < W; x++) { addRef(x); addRef((H - 1) * W + x); }
+  for (let y = 1; y < H - 1; y++) { addRef(y * W); addRef(y * W + W - 1); }
+  for (let c = 0; c < 3; c++) ref[c] /= n;
+
+  const mint = i => d[i + 1] - d[i] >= 6 && d[i + 1] - d[i + 2] >= 3;
+  const like = new Uint8Array(N);
+  for (let p = 0, i = 0; p < N; p++, i += 4) {
+    const diff = Math.max(Math.abs(d[i] - ref[0]), Math.abs(d[i + 1] - ref[1]), Math.abs(d[i + 2] - ref[2]));
+    like[p] = diff <= T && mint(i) ? 1 : 0;
+  }
+
+  // connected areas of background-like pixels; the big ones are background
+  const seen = new Uint8Array(N), bg = new Uint8Array(N), queue = new Int32Array(N);
+  for (let s = 0; s < N; s++) {
+    if (!like[s] || seen[s]) continue;
+    let head = 0, tail = 0; queue[tail++] = s; seen[s] = 1;
+    while (head < tail) {
+      const p = queue[head++], x = p % W;
+      if (x > 0 && like[p - 1] && !seen[p - 1]) { seen[p - 1] = 1; queue[tail++] = p - 1; }
+      if (x < W - 1 && like[p + 1] && !seen[p + 1]) { seen[p + 1] = 1; queue[tail++] = p + 1; }
+      if (p >= W && like[p - W] && !seen[p - W]) { seen[p - W] = 1; queue[tail++] = p - W; }
+      if (p < N - W && like[p + W] && !seen[p + W]) { seen[p + W] = 1; queue[tail++] = p + W; }
+    }
+    if (tail >= MIN_AREA) for (let k = 0; k < tail; k++) bg[queue[k]] = 1;
+  }
+
+  // steps from the background, up to SHADOW
+  const dist = new Uint8Array(N).fill(255);
+  let head = 0, tail = 0;
+  for (let p = 0; p < N; p++) if (bg[p]) { dist[p] = 0; queue[tail++] = p; }
+  while (head < tail) {
+    const p = queue[head++], x = p % W, dn = dist[p] + 1;
+    if (dn > SHADOW) continue;
+    for (const q of [x > 0 ? p - 1 : -1, x < W - 1 ? p + 1 : -1, p - W, p + W]) {
+      if (q >= 0 && q < N && dist[q] === 255) { dist[q] = dn; queue[tail++] = q; }
+    }
+  }
+
+  // the background color near each pixel: the average of the background pixels in a square around it
+  const S = [new Float64Array((W + 1) * (H + 1)), new Float64Array((W + 1) * (H + 1)), new Float64Array((W + 1) * (H + 1)), new Float64Array((W + 1) * (H + 1))];
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    const p = y * W + x, i = p * 4, o = (y + 1) * (W + 1) + x + 1, v = bg[p];
+    for (let c = 0; c < 4; c++) S[c][o] = (c < 3 ? d[i + c] * v : v) + S[c][o - 1] + S[c][o - W - 1] - S[c][o - W - 2];
+  }
+  const sum = (c, x0, y0, x1, y1) => S[c][y1 * (W + 1) + x1] - S[c][y0 * (W + 1) + x1] - S[c][y1 * (W + 1) + x0] + S[c][y0 * (W + 1) + x0];
+  const near = p => {
+    const x = p % W, y = (p / W) | 0, x0 = Math.max(0, x - R), y0 = Math.max(0, y - R), x1 = Math.min(W, x + R + 1), y1 = Math.min(H, y + R + 1);
+    const k = sum(3, x0, y0, x1, y1);
+    return k ? [sum(0, x0, y0, x1, y1) / k, sum(1, x0, y0, x1, y1) / k, sum(2, x0, y0, x1, y1) / k] : ref;
+  };
+
+  for (let p = 0, i = 0; p < N; p++, i += 4) {
+    if (bg[p]) { d[i + 3] = 0; continue; }
+    if (dist[p] > SHADOW || (dist[p] > EDGE && !mint(i))) continue;
+    const b = near(p);
+    let a = 0;
+    for (let c = 0; c < 3; c++) a = Math.max(a, (b[c] - d[i + c]) / b[c]);
+    if (a >= KEEP) continue;
+    if (a <= 0.01) { d[i + 3] = 0; continue; }
+    for (let c = 0; c < 3; c++) d[i + c] = Math.max(0, Math.min(255, Math.round((d[i + c] - b[c]) / a + b[c])));
+    d[i + 3] = Math.round(a * 255);
+  }
+  cx.putImageData(id, 0, 0);
+
+  // trim to what can be seen, with a little room
+  let x0 = W, y0 = H, x1 = -1, y1 = -1;
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (d[(y * W + x) * 4 + 3] > 8) {
+    if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+  }
+  const pad = 4; x0 = Math.max(0, x0 - pad); y0 = Math.max(0, y0 - pad); x1 = Math.min(W - 1, x1 + pad); y1 = Math.min(H - 1, y1 + pad);
+  const out = document.createElement('canvas'); out.width = x1 - x0 + 1; out.height = y1 - y0 + 1;
+  out.getContext('2d').drawImage(cv, x0, y0, out.width, out.height, 0, 0, out.width, out.height);
+  document.getElementById('out').textContent = out.toDataURL('image/png');
+};
+img.src = '@IMAGE@';
+</script>
+</body></html>

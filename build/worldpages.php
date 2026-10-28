@@ -356,7 +356,7 @@ HTML,
         ['@context' => 'https://schema.org', '@type' => 'Article', 'headline' => sprintf($D['pageTitle'], $r['name']), 'description' => $r['summary'],
           'image' => $images, 'inLanguage' => 'en', 'dateModified' => LASTMOD, 'url' => url("/worlds/$w/$slug/"),
           'about' => ['@type' => 'Thing', 'name' => $r['name']],
-          'author' => ['@type' => 'Organization', 'name' => SITE_NAME], 'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'logo' => ['@type' => 'ImageObject', 'url' => url('/icon-512.png')]],
+          'author' => ['@type' => 'Organization', 'name' => SITE_NAME], 'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'logo' => ['@type' => 'ImageObject', 'url' => url('/assets/brand/atlas-logo-512.png')]],
           'isAccessibleForFree' => true, 'educationalUse' => 'Reading, discussion'],
       ],
     ]);

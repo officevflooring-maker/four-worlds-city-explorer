@@ -125,7 +125,7 @@ page('/', [
 <section class="hero3">
   <div class="wrap hero3-inner">
     <div class="hero3-text">
-      <p class="eyebrow">Ancient Rome · Today · Imagined · Possible future</p>
+      <img class="hero-logo" src="/assets/brand/atlas-emblem-400.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w, /assets/brand/atlas-emblem-800.webp 800w" sizes="(min-width: 900px) 210px, 160px" width="400" height="382" alt="" fetchpriority="high">
       <h1>How does a city <span>work?</span></h1>
       <p class="lead">Explore four illustrated cities, from ancient Rome to a settlement on Mars. Open any building, meet the people and compare how each world solves the same problems.</p>
       <p class="hero-actions"><a class="btn" href="#worlds">Choose a world</a> <a class="btn btn-quiet" href="/tours/">Take a guided tour</a></p>
@@ -223,6 +223,6 @@ HTML,
   'ld' => [[
     '@context' => 'https://schema.org', '@type' => 'WebSite', 'name' => SITE_NAME, 'url' => url('/'),
     'description' => SITE_DESC, 'inLanguage' => 'en',
-    'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'url' => url('/'), 'logo' => url('/apple-touch-icon.png')],
+    'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'url' => url('/'), 'logo' => url('/assets/brand/atlas-logo-512.png')],
   ]],
 ]);
