@@ -8,5 +8,5 @@ const SITE_DESC = 'Explore four illustrated isometric cities - ancient Rome, a m
 // Patreon page for donations (shown only on /support/). Leave empty until the page exists.
 const PATREON_URL = 'https://www.patreon.com/cw/SamPetrov/home';
 // Google Search Console verification code (meta tag on the home page).
-const GOOGLE_VERIFY = 'oqxFhmRB_aE5qj_-tq3YLH8fYMA4C8hNd3UpNpjlAZs';
+const GOOGLE_VERIFY = 'hyYqg7CSEBBH3g2PZXng4J2Cx3ihW_7mYysjgOQfAfI';
 const LASTMOD   = '2026-10-28';
