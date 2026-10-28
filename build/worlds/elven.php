@@ -180,7 +180,7 @@ $ELVEN = [
       'Imagine a crane grown from twisted vines, with a basket of woven branches to lift stone. When the building was finished, the crane could be planted again, or composted to feed the soil.',
     ]],
     ['The real "living" building material: bamboo', ELVEN_REAL, [
-      'Bamboo is a giant grass. Some species can grow tens of centimetres in a single day and reach full height in a few months, and the plant regrows from its roots after it is cut. For its weight, bamboo is remarkably strong, especially when pulled.',
+      'Bamboo is a giant grass. Some species can grow tens of centimeters in a single day and reach full height in a few months, and the plant regrows from its roots after it is cut. For its weight, bamboo is remarkably strong, especially when pulled.',
       'In Hong Kong, skilled workers still put up tall scaffolding from bamboo poles tied together, even around skyscrapers. In many tropical countries, bamboo is used for houses, bridges and furniture.',
     ]],
     ['Limits and new ideas', ELVEN_REAL, [
@@ -362,7 +362,7 @@ $ELVEN = [
       'The mushroom we see is only the fruit of a fungus. Most of the fungus is underground: a huge network of fine white threads called mycelium. Mycelium grows through soil, wood and plant waste, binding it together like a natural glue.',
     ]],
     ['Growing bricks', ELVEN_REAL, [
-      'Companies and researchers mix mycelium with farm waste such as corn stalks or sawdust and let it grow in moulds for a few days. It fills the mold, then is heated to stop it growing. The result is light, insulating and compostable, and is already used for packaging instead of plastic foam.',
+      'Companies and researchers mix mycelium with farm waste such as corn stalks or sawdust and let it grow in molds for a few days. It fills the mold, then is heated to stop it growing. The result is light, insulating and compostable, and is already used for packaging instead of plastic foam.',
       'In 2014, the architecture firm The Living built "Hy-Fi", a temporary tower of mycelium bricks, at the MoMA PS1 museum in New York. After the summer, the bricks were composted. Mycelium is not yet strong or water-resistant enough for most permanent buildings, so researchers are working on that.',
     ]],
   ],
@@ -549,7 +549,7 @@ $ELVEN = [
 'stag-monument' => [
   'name' => 'Stag crossing', 'latin' => 'wildlife crossing', 'cat' => 'wild', 'src' => 'art/monument.png',
   'summary' => 'An imagined monument to the forest\'s animals. Real wildlife bridges let deer, bears and wolves cross busy roads safely.',
-  'facts' => ['Imagined as' => 'A monument honouring animals', 'Real-world idea' => 'Wildlife crossings', 'Real example' => 'Banff National Park, Canada', 'Result there' => 'Collisions down by more than 80%'],
+  'facts' => ['Imagined as' => 'A monument honoring animals', 'Real-world idea' => 'Wildlife crossings', 'Real example' => 'Banff National Park, Canada', 'Result there' => 'Collisions down by more than 80%'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
       'Imagine a great stag carved in white stone, marking the paths where animals have always walked. Elven roads would bend around these paths, or pass beneath them, so that animals could always travel freely.',

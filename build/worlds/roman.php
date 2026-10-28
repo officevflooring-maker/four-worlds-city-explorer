@@ -242,7 +242,7 @@ $ROMAN = [
     ]],
     ['How it worked', [
       'The Ludus Magnus was built around a courtyard holding a small oval training arena, a reduced version of the Colosseum\'s arena. Around it were rows of seats for up to about 3,000 spectators, who could watch training sessions. Small rooms around the courtyard housed the gladiators, and a tunnel connected the school to the Colosseum.',
-      'Gladiators practiced with wooden swords and heavy training weapons under expert trainers. They specialized in different fighting styles, each with its own armour and weapons, and were matched against opponents with a different style.',
+      'Gladiators practiced with wooden swords and heavy training weapons under expert trainers. They specialized in different fighting styles, each with its own armor and weapons, and were matched against opponents with a different style.',
     ]],
     ['A hard life', [
       'Gladiators were expensive to train and feed, so their owners did not want them killed carelessly, but the life was dangerous and most gladiators had no choice about it. A gladiator who survived many fights might be awarded a wooden sword, the rudis, as a sign of release from fighting.',
@@ -271,7 +271,7 @@ $ROMAN = [
       'Basilicas: large halls for law courts and business.',
       'The Curia, where the Senate met.',
       'The Rostra, a raised platform for public speeches, decorated with the bronze prows of captured warships.',
-      'Statues and monuments honouring famous people.',
+      'Statues and monuments honoring famous people.',
       'The Sacred Way (Via Sacra), the main street through the forum, used for processions.',
     ]]],
     ['A growing city', [
@@ -469,10 +469,10 @@ $ROMAN = [
 'triumphal-arch' => [
   'name' => 'Triumphal arch', 'latin' => 'arcus triumphalis', 'cat' => 'belief', 'src' => 'art/town_2.png',
   'summary' => 'A grand stone archway built to celebrate a victory or honor an emperor.',
-  'facts' => ['Used for' => 'Celebrating victories and honouring leaders', 'Oldest surviving in Rome' => 'Arch of Titus (after AD 81)', 'Largest in Rome' => 'Arch of Constantine (AD 315)', 'Decorated with' => 'Carvings and inscriptions'],
+  'facts' => ['Used for' => 'Celebrating victories and honoring leaders', 'Oldest surviving in Rome' => 'Arch of Titus (after AD 81)', 'Largest in Rome' => 'Arch of Constantine (AD 315)', 'Decorated with' => 'Carvings and inscriptions'],
   'sections' => [
     ['What it was', [
-      'When a Roman general won an important war, he could be honoured with a triumph: a grand parade through the city with soldiers, prisoners and captured treasure. Triumphal arches were built to remember these victories and other important events. They were often free-standing monuments rather than gates in a wall.',
+      'When a Roman general won an important war, he could be honored with a triumph: a grand parade through the city with soldiers, prisoners and captured treasure. Triumphal arches were built to remember these victories and other important events. They were often free-standing monuments rather than gates in a wall.',
       'By the 4th century AD, more than 30 arches had been built in Rome.',
     ]],
     ['Reading an arch', [
@@ -494,7 +494,7 @@ $ROMAN = [
 'victory-column' => [
   'name' => 'Victory column', 'latin' => 'columna', 'cat' => 'belief', 'src' => 'art/monument.png',
   'summary' => 'A tall column carved with a spiral picture story of an emperor\'s wars.',
-  'facts' => ['Used for' => 'Celebrating victories and honouring an emperor', 'Most famous' => 'Trajan\'s Column, Rome', 'Dedicated' => 'AD 113', 'Inside' => 'A spiral staircase'],
+  'facts' => ['Used for' => 'Celebrating victories and honoring an emperor', 'Most famous' => 'Trajan\'s Column, Rome', 'Dedicated' => 'AD 113', 'Inside' => 'A spiral staircase'],
   'sections' => [
     ['What it was', [
       'Romans set up columns to honor important people and victories. The most famous is Trajan\'s Column, dedicated in AD 113 in the Forum of Trajan. It celebrates the emperor Trajan\'s two wars against the Dacians, who lived in what is now Romania.',
@@ -524,7 +524,7 @@ $ROMAN = [
       'In a world without photographs or television, most people in the Roman Empire would never see their emperor in person. Statues, along with portraits on coins, showed everyone what the ruler looked like and what he stood for. They were placed in forums, temples, baths and theaters across the empire.',
     ]],
     ['Sending a message', [
-      'Statues were carefully designed to send a message. The marble statue known as the Augustus of Primaporta shows the first emperor as a young, calm commander, with carvings on his armour celebrating a diplomatic victory. Many statues were originally painted in bright colors, though the paint has mostly worn away.',
+      'Statues were carefully designed to send a message. The marble statue known as the Augustus of Primaporta shows the first emperor as a young, calm commander, with carvings on his armor celebrating a diplomatic victory. Many statues were originally painted in bright colors, though the paint has mostly worn away.',
       'Bronze statues were sometimes covered in a thin layer of gold. Most ancient bronzes were later melted down for their metal. The bronze statue of the emperor Marcus Aurelius on horseback survived because, for centuries, people believed it showed Constantine, the first Christian emperor. The original is now in Rome\'s Capitoline Museums.',
     ]],
     ['Giant statues', [
@@ -532,7 +532,7 @@ $ROMAN = [
     ]],
   ],
   'art' => 'This golden statue is the artist\'s interpretation of an imperial statue on a decorated base.',
-  'look' => ['Notice the pose: the raised arm and the armour.', 'Why might the statue be golden?'],
+  'look' => ['Notice the pose: the raised arm and the armor.', 'Why might the statue be golden?'],
   'questions' => ['How do leaders today make sure people know what they look like?', 'Why would a statue show a ruler as young and strong?', 'What happens to statues of leaders when opinions about them change?'],
   'words' => ['Portrait' => 'An image of a real person.', 'Gilded' => 'Covered with a thin layer of gold.', 'Propaganda' => 'Images or messages designed to shape what people think.'],
   'sources' => ['sh-augustus', 'un-rome'],
@@ -608,7 +608,7 @@ $ROMAN = [
       'Peristyle: a garden surrounded by a covered colonnade.',
     ]]],
     ['A home and a workplace', [
-      'A domus was not only a private home. Each morning, people who depended on the owner, called clients, came to greet him and ask for help or favours. The atrium was designed to impress them, with family portraits, fine paintings and a view straight through the house to the garden.',
+      'A domus was not only a private home. Each morning, people who depended on the owner, called clients, came to greet him and ask for help or favors. The atrium was designed to impress them, with family portraits, fine paintings and a view straight through the house to the garden.',
       'The household included the family, but also enslaved workers who cooked, cleaned and served.',
     ]],
     ['Places you can still see', [
@@ -728,7 +728,7 @@ $ROMAN = [
   'facts' => ['Used for' => 'Food, beds and stabling for travelers', 'Found along' => 'Roman roads and near city gates', 'Famous road' => 'Via Appia, begun 312 BC', 'Distance markers' => 'Milestones'],
   'sections' => [
     ['What it was', [
-      'The Romans built a network of paved roads across their empire to move armies, officials, traders and messages. Travelling was slow, so roads were lined with places to stop. A caupona was an inn or tavern offering food, drink and a bed. A mansio was an official stopping place where government messengers could rest and change horses.',
+      'The Romans built a network of paved roads across their empire to move armies, officials, traders and messages. Traveling was slow, so roads were lined with places to stop. A caupona was an inn or tavern offering food, drink and a bed. A mansio was an official stopping place where government messengers could rest and change horses.',
     ]],
     ['How it worked', [
       'A roadside inn was often built around a courtyard, with rooms for guests on two floors, a kitchen, a dining area and stables for horses and mules. Travelers paid for a meal, a bed and food for their animals.',
@@ -904,7 +904,7 @@ $ROMAN = [
   'facts' => ['Used for' => 'Defense and controlling who entered', 'Rome\'s great wall' => 'Aurelian Walls, AD 271-275', 'Length' => 'About 19 kilometers', 'Frontier wall' => 'Hadrian\'s Wall, Britain'],
   'sections' => [
     ['What it was', [
-      'Walls protected cities from attack and let guards control who came in and out through the gates. Rome had early walls, but as the empire grew strong and its borders far away, the city spread far beyond them and for centuries had no need for new defences.',
+      'Walls protected cities from attack and let guards control who came in and out through the gates. Rome had early walls, but as the empire grew strong and its borders far away, the city spread far beyond them and for centuries had no need for new defenses.',
       'In the 3rd century AD, the empire faced invasions and civil wars. Between AD 271 and 275, the emperor Aurelian built a new wall around Rome, about 19 kilometers long, with a square tower roughly every 30 meters.',
     ]],
     ['How it worked', [

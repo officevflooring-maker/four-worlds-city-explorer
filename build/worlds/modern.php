@@ -61,7 +61,7 @@ $MODERN_SOURCES = [
 ];
 
 $MODERN_CATEGORIES = [
-  'homes'  => ['Homes and neighbourhoods', 'Where people live, from houses with yards to towers in the sky.'],
+  'homes'  => ['Homes and neighborhoods', 'Where people live, from houses with yards to towers in the sky.'],
   'civic'  => ['Government and public services', 'How a town makes decisions and looks after people\'s health.'],
   'infra'  => ['Streets, water and safety', 'The systems most people only notice when they stop working.'],
   'learn'  => ['Learning and culture', 'Places to learn, explore and share ideas, free or nearly free.'],
@@ -73,7 +73,7 @@ $MODERN_CATEGORIES = [
 
 $MODERN = [
 
-// ---------------- Homes and neighbourhoods ----------------
+// ---------------- Homes and neighborhoods ----------------
 'single-family-house' => [
   'name' => 'Family house', 'latin' => 'detached house', 'cat' => 'homes', 'src' => 'art/family_1.png',
   'summary' => 'A detached house with a porch and garden, built for one household. It is the most common home in many countries.',
@@ -81,7 +81,7 @@ $MODERN = [
   'sections' => [
     ['Why towns build them', [
       'A detached house gives a family private space indoors and out: a garden for children to play, room to grow food, and no shared walls with neighbors. For many people it is a dream home and a way to build savings, because a house can grow in value.',
-      'But each house uses more land than an apartment, so neighbourhoods of detached houses spread out. That means longer pipes, cables and roads per home, and often a longer trip to school, shops and work.',
+      'But each house uses more land than an apartment, so neighborhoods of detached houses spread out. That means longer pipes, cables and roads per home, and often a longer trip to school, shops and work.',
     ]],
     ['How a house is built', [
       'In North America most houses are built with a light timber frame: a skeleton of sawn wooden studs, joists and rafters nailed together, then covered with sheathing boards, insulation and siding. In much of Europe, houses are more often built from brick or concrete blocks.',
@@ -338,7 +338,7 @@ $MODERN = [
 'streets-crosswalks' => [
   'name' => 'Streets and crosswalks', 'latin' => 'complete streets', 'cat' => 'infra', 'src' => 'ground/tex_cross.png',
   'summary' => 'Streets are a town\'s largest public space. Their design decides whether walking, cycling and crossing feel safe.',
-  'facts' => ['Global problem' => 'Over a million road deaths a year (WHO)', 'Safety idea' => 'Vision Zero (Sweden, 1997)', 'Helps everyone' => 'Curb ramps and clear crossings', 'Street includes' => 'Pavement, crossing, lanes, trees, drains'],
+  'facts' => ['Global problem' => 'Over a million road deaths a year (WHO)', 'Safety idea' => 'Vision Zero (Sweden, 1997)', 'Helps everyone' => 'Curb ramps and clear crossings', 'Street includes' => 'Sidewalk, crossing, lanes, trees, drains'],
   'sections' => [
     ['More than roads', [
       'Streets carry cars and trucks, but also people walking, cycling, pushing strollers and using wheelchairs. Under the surface they carry water, sewers, power and internet. Streets are also places to meet, shop and play.',
@@ -552,16 +552,16 @@ $MODERN = [
 // ---------------- Work and shopping ----------------
 'corner-store' => [
   'name' => 'Corner store', 'latin' => 'neighborhood grocery', 'cat' => 'work', 'src' => 'art/business_1.png',
-  'summary' => 'A small shop within walking distance selling food and everyday items, a lifeline for many neighbourhoods.',
+  'summary' => 'A small shop within walking distance selling food and everyday items, a lifeline for many neighborhoods.',
   'facts' => ['Sells' => 'Food and everyday items', 'Big issue' => 'Food access ("food deserts")', 'Walk time' => 'Ideally a few minutes from home', 'Often run by' => 'Local families'],
   'sections' => [
     ['Why local shops matter', [
       'A corner store lets people buy milk, bread and fruit without driving. For older people, families without a car and busy parents, being able to walk to a shop makes daily life much easier.',
-      'Some neighbourhoods have no supermarket nearby. The US Department of Agriculture maps "low-access" areas, where many people live far from a supermarket, often called food deserts. If the only nearby shop sells mostly snacks, it is harder to eat well.',
+      'Some neighborhoods have no supermarket nearby. The US Department of Agriculture maps "low-access" areas, where many people live far from a supermarket, often called food deserts. If the only nearby shop sells mostly snacks, it is harder to eat well.',
     ]],
     ['How towns help', [], ['list' => [
       'Allowing small shops in residential areas instead of banning them through zoning.',
-      'Programmes that help corner stores stock fresh fruit and vegetables.',
+      'Programs that help corner stores stock fresh fruit and vegetables.',
       'Farmers\' markets and community gardens.',
       'Safe footpaths and bus routes to larger food shops.',
     ]]],
@@ -659,7 +659,7 @@ $MODERN = [
   'summary' => 'A shared building for classes, clubs, meetings, celebrations and support, open to the whole neighborhood.',
   'facts' => ['Used for' => 'Classes, clubs, meetings, events', 'Usually run by' => 'Local government or charities', 'Also used as' => 'Shelter in emergencies', 'Key idea' => '"Third places" outside home and work'],
   'sections' => [
-    ['Why neighbourhoods need them', [
+    ['Why neighborhoods need them', [
       'The sociologist Ray Oldenburg described "third places": spaces outside home (the first place) and work or school (the second) where people meet, talk and build friendships. Community centers are one of the most important third places, because they are free or cheap and open to everyone.',
     ]],
     ['What happens there', [], ['list' => [
@@ -819,7 +819,7 @@ $MODERN = [
       'Parks also soak up rain, provide homes for birds and insects, and give neighbors a free place to meet.',
     ]],
     ['A park for everyone', [
-      'In 1858 Frederick Law Olmsted and Calvert Vaux won the competition to design Central Park in New York, believing that green space should be open to people of every class. Today, organizations such as the Trust for Public Land promote the goal that everyone should live within a 10-minute walk of a good park, because in many cities poorer neighbourhoods have far less green space.',
+      'In 1858 Frederick Law Olmsted and Calvert Vaux won the competition to design Central Park in New York, believing that green space should be open to people of every class. Today, organizations such as the Trust for Public Land promote the goal that everyone should live within a 10-minute walk of a good park, because in many cities poorer neighborhoods have far less green space.',
     ]],
     ['How a park is designed and cared for', [], ['list' => [
       'Paths that are level and wide enough for wheelchairs and strollers.',
@@ -872,7 +872,7 @@ $MODERN = [
       'Natural grass is cooler on hot days, soaks up rain and supports insects and soil life, but it can be damaged by heavy use and needs mowing, watering and rest. Artificial turf can be used in all weather, but it gets much hotter in the sun, does not absorb heat or water in the same way, and some types shed tiny rubber or plastic pieces. Towns weigh up these trade-offs.',
     ]],
     ['How a field is built', [
-      'Under a good field is a layer of drainage: gravel and pipes that carry rainwater away so games are not cancelled. Fences keep balls in, lights on tall poles allow evening games, and there are changing rooms, toilets and seating for spectators.',
+      'Under a good field is a layer of drainage: gravel and pipes that carry rainwater away so games are not canceled. Fences keep balls in, lights on tall poles allow evening games, and there are changing rooms, toilets and seating for spectators.',
     ]],
   ],
   'art' => 'This illustration shows a fenced soccer field with goals and floodlights.',
@@ -979,7 +979,7 @@ $MODERN = [
       'The long working arm (the jib) carries a trolley that moves the hook in and out.',
       'The short arm carries heavy concrete counterweights to balance the load.',
       'The whole top slews (turns) on a ring.',
-      'The operator sits in a cab at the top; a signaller on the ground guides them by radio.',
+      'The operator sits in a cab at the top; a signaler on the ground guides them by radio.',
     ]], [
       'Many tower cranes "climb" as the building rises: the crane elevators a new mast section, slides it into place, and raises itself onto it.',
     ]],
