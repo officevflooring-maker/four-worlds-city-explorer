@@ -194,6 +194,13 @@ page('/', [
     <p><a class="btn" href="/artwork/">Browse the artwork</a> <a class="btn btn-quiet" href="/about/">About this project</a></p>
   </div>
 </section>
+
+<section class="band support-band" aria-labelledby="sup-h">
+  <div class="wrap support-inner">
+    <div><h2 id="sup-h">Free for everyone, with no ads</h2><p>If the site helps your class or family, you can help it grow.</p></div>
+    <p><a class="btn" href="/support/">Support this project</a></p>
+  </div>
+</section>
 HTML,
   'ld' => [[
     '@context' => 'https://schema.org', '@type' => 'WebSite', 'name' => SITE_NAME, 'url' => url('/'),

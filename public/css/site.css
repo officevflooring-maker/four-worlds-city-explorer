@@ -568,3 +568,9 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 }
 @media (max-width: 1060px) { .wcards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .wcards { grid-template-columns: minmax(0, 1fr); } }
+
+.btn-big { font-size: 1.15rem; padding: .9rem 1.6rem; }
+.support-band { background: var(--cream); }
+.support-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem 2rem; flex-wrap: wrap; }
+.support-inner h2 { margin-bottom: .2rem; }
+.support-inner p { margin: 0; }

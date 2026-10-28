@@ -138,7 +138,7 @@ HTML;
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work.</p>
-    <p>No accounts, no ads, no tracking. <a href="/about/#privacy">Privacy</a> · <a href="/artwork/">Artwork</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a></p>
+    <p>No accounts, no ads, no tracking. <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/artwork/">Artwork</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a></p>
     <p class="small">Illustrations &copy; {$year} The Atlas of Cities, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
   </div>
 </footer>
@@ -250,6 +250,7 @@ page('/about/', [
 
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
+  <p>Donations are optional and handled entirely by Patreon, a separate website with its own privacy policy. This site never sees payment or personal details. See <a href="/support/">Support this project</a>.</p>
 
   <h2 id="accessibility">Accessibility</h2>
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
@@ -265,6 +266,43 @@ page('/about/', [
 </section>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['About', '/about/']])],
+]);
+
+// ---------- Support (the only page that links to Patreon) ----------
+$give = PATREON_URL
+  ? '<p><a class="btn btn-big" href="' . h(PATREON_URL) . '" rel="noopener">Support on Patreon</a></p><p class="small">This button opens Patreon, a separate website.</p>'
+  : '<p class="setting-note"><strong>Donations are opening soon.</strong> Until then, the best way to help is to share the site with a teacher or family who would enjoy it.</p>';
+page('/support/', [
+  'title' => 'Support this free project',
+  'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. Optional donations through Patreon help add new worlds, printable packs and expert fact-checking.'),
+  'class' => 'support',
+  'body' => <<<HTML
+<section class="wrap section page-head narrow">
+  <p class="tag">Support</p>
+  <h1>Help keep it free</h1>
+  <p class="lead">The Atlas of Cities is free for everyone, with no ads, accounts or tracking. If it helps your class or your family, you can help it grow.</p>
+  {$give}
+  <h2>What support pays for</h2>
+  <ul class="plain-points">
+    <li>New worlds, buildings, vehicles and guided tours.</li>
+    <li>Printable packs and worksheets for classrooms.</li>
+    <li>Fact-checking by teachers and historians.</li>
+    <li>Hosting, so the site stays fast and free.</li>
+  </ul>
+  <h2>Before you give</h2>
+  <ul class="plain-points">
+    <li>Donations are optional. Everything on the site stays free either way.</li>
+    <li>Payments and personal details are handled by Patreon, under Patreon's own privacy policy. This site never sees them.</li>
+    <li>Under 18? Please ask a parent or guardian first.</li>
+  </ul>
+  <h2>Free ways to help</h2>
+  <ul class="plain-points">
+    <li>Share the site with a teacher, school or family.</li>
+    <li>Use the illustrations in your lessons and projects, with the credit "Illustration: The Atlas of Cities".</li>
+  </ul>
+</section>
+HTML,
+  'ld' => [crumbs([['Home', '/'], ['Support', '/support/']])],
 ]);
 
 // ---------- Coming later ----------
@@ -398,6 +436,7 @@ $urls['/teachers/'] = '0.9';
 foreach (array_keys($TEACH) as $slug) $urls["/teachers/$slug/"] = '0.8';
 $urls['/artwork/'] = '0.7';
 $urls['/about/'] = '0.5';
+$urls['/support/'] = '0.4';
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . LASTMOD . "</lastmod><priority>$pr</priority></url>\n";
 $xml .= "</urlset>\n";

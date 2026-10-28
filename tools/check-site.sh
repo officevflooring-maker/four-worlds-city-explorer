@@ -13,7 +13,8 @@ for f in $(find . -name '*.html' | sort); do
   [ "$noalt" != 0 ] && { echo "NO ALT  $p ($noalt images)"; fail=1; }
   h1=$(grep -o '<h1' "$f" | wc -l); [ "$h1" != 1 ] && { echo "H1=$h1  $p"; fail=1; }
   grep -q '<meta name="description" content="[^"]' "$f" || { echo "NO DESC $p"; fail=1; }
-  if [ "$p" != "/credits/index.html" ]; then
+  # Credits (licenses require source links) and Support (the Patreon link) may link out.
+  if [ "$p" != "/credits/index.html" ] && [ "$p" != "/support/index.html" ]; then
     ext=$(grep -oE 'href="https?://[^"]+' "$f" | grep -v 'creativecommons.org/licenses/by/4.0' | grep -vc "$(grep -oE "const SITE_URL *= *'[^']+" ../build/config.php | sed "s/.*'//")")
     [ "$ext" != 0 ] && { echo "OUTLINK $p ($ext)"; fail=1; }
   fi
