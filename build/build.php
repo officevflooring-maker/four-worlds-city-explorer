@@ -6,6 +6,7 @@ require __DIR__ . '/config.php';
 require __DIR__ . '/data.php';
 require __DIR__ . '/artwork.php';
 require __DIR__ . '/crosslinks.php';
+require __DIR__ . '/teach.php';
 
 const PUB = __DIR__ . '/../public';
 const WORLD_ORDER = ['roman', 'modern', 'elven', 'future'];
@@ -62,6 +63,7 @@ function page($path, $o) {
   $links = ['/' => 'Home'];
   foreach (WORLD_ORDER as $w) $links["/worlds/$w/"] = $WORLDS[$w]['short'];
   $links['/compare/'] = 'Compare';
+  $links['/teachers/'] = 'Teachers';
   $links['/artwork/'] = 'Artwork';
   $links['/about/'] = 'About';
   foreach ($links as $href => $label) {
@@ -218,7 +220,7 @@ page('/', [
   <div class="panel">
     <h2>For families and educators</h2>
     <p>Free to use, with no sign-up, ads or tracking. Questions are open-ended and work well for discussion at home or in class. Every building page lists the sources its facts are based on, and marks clearly what is real, what is imagined and what is a possible future.</p>
-    <p><a href="/artwork/">View, save and print the artwork</a> · <a href="/about/">About this project</a></p>
+    <p><a href="/teachers/">Free lessons and projects for teachers</a> · <a href="/artwork/">View, save and print the artwork</a> · <a href="/about/">About this project</a></p>
   </div>
   <div class="panel panel-later">
     <h2>Coming later</h2>
@@ -237,6 +239,7 @@ HTML,
 ]);
 
 require __DIR__ . '/worldpages.php';
+require __DIR__ . '/teachpages.php';
 
 // ---------- Compare ----------
 $rows = '';
@@ -470,6 +473,8 @@ $urls = ['/' => '1.0'];
 foreach (WORLD_ORDER as $w) $urls["/worlds/$w/"] = '0.9';
 foreach ($WORLD_DATA as $w => $D) foreach (array_keys($D['pages']) as $slug) $urls["/worlds/$w/$slug/"] = '0.8';
 $urls['/compare/'] = '0.8';
+$urls['/teachers/'] = '0.9';
+foreach (array_keys($TEACH) as $slug) $urls["/teachers/$slug/"] = '0.8';
 $urls['/artwork/'] = '0.7';
 $urls['/about/'] = '0.5';
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";

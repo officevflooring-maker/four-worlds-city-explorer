@@ -210,6 +210,11 @@ HTML,
     }
     $cross = '';
     foreach (cross_links($w, $slug) as [$ow, $os]) $cross .= str_replace('<span class="place-name">', '<span class="tag">' . h($WORLDS[$ow]['name']) . '</span><span class="place-name">', building_card($ow, $os, '(min-width: 900px) 200px, 45vw'));
+    // Teacher guides that use this building page.
+    global $TEACH;
+    $guides = '';
+    foreach ($TEACH as $gs => $g) if (in_array("$w/$slug", $g['links'])) $guides .= '<li><a href="/teachers/' . $gs . '/">' . h($g['h1']) . '</a> <span class="what">(' . h($g['kind']) . ', grades ' . h($g['grades']) . ')</span></li>';
+    $guideBlock = $guides ? '<section class="read teach-box" aria-labelledby="teach-h"><h2 id="teach-h">Use it in class</h2><ul class="read-list">' . $guides . '</ul></section>' : '';
     $crossBlock = $cross ? '<h2 id="cross-h">The same idea in other worlds</h2><ul class="places places-3">' . $cross . '</ul>' : '';
     $prev = $slugs[($k - 1 + count($slugs)) % count($slugs)];
     $next = $slugs[($k + 1) % count($slugs)];
@@ -266,6 +271,7 @@ HTML,
       <h3>Key words</h3>
       <dl class="words">{$words}</dl>
     </section>
+    {$guideBlock}
     <section class="read sources-box" id="sources" aria-labelledby="src-h">
       <h2 id="src-h">Sources</h2>
       <p>{$srcIntro}</p>

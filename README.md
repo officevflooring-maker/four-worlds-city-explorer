@@ -10,6 +10,7 @@ No accounts, forms, cookies, ads, analytics or third-party requests.
 - `build/` holds the content (`data.php`), settings (`config.php`) and the page generator (`build.php`). Edit content there, then run `php build/build.php` to regenerate the HTML in `public/`.
 - Roman building pages: content in `build/roman.php`, photo captions in `build/photo-captions.php`, photo credits in `build/photo-credits.json`.
 - `tools/fetch-photos.php` finds openly licensed photos on Wikimedia Commons (searches in `tools/photo-queries.txt`, rejected files in `tools/photo-reject.txt`). Every photo was checked by eye.
+- Checks: `bash tools/check-site.sh` (links, images, alt text, outbound links) and `php tools/deep-check.php` (ids, JSON-LD, stray characters, titles, sitemap).
 - `tools/copy-artwork.sh` exports every supplied illustration for the Artwork page (`public/assets/artwork/`).
 - `tools/copy-assets.sh` copies the selected artwork from the read-only source folders into `public/assets/worlds/{roman,modern,elven,future}/` as web-sized WebP with transparency kept. The selection is listed in `tools/assets.txt`. Source images are never changed.
 
@@ -38,6 +39,8 @@ Then open http://localhost:8097/
 | `/worlds/modern/` etc. | City map + building directory with detail panels |
 | `/artwork/` | Every supplied illustration (186), by world: view full screen, save, print |
 | `/credits/` | Photo credits and licences (the only page with outbound links) |
+| `/teachers/` | Teachers & Schools hub: 20 free lessons, projects and explainers (content in `build/teach.php`) |
+| `/teachers/{guide}/` | One guide each: quick answer, grades, time, steps, FAQ (FAQPage data), building pages to use, sources |
 | `/compare/` | One city question across all four worlds (printable) |
 | `/about/` | About, privacy, accessibility, artwork reuse, sources |
 | `/guided/` | "Coming later" placeholder (not indexed) |
