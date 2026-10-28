@@ -28,7 +28,7 @@ function photo_figure($w, $p, $cls = '') {
 function building_card($w, $slug, $sizes = '(min-width: 1100px) 220px, (min-width: 600px) 30vw, 45vw') {
   global $WORLD_DATA;
   $r = $WORLD_DATA[$w]['pages'][$slug];
-  return '<li class="place place-link"><a href="/worlds/' . $w . '/' . $slug . '/">'
+  return '<li class="place place-link world-' . $w . '"><a href="/worlds/' . $w . '/' . $slug . '/">'
     . '<span class="place-art">' . img($w, $slug, '', $sizes, 'loading="lazy"') . '</span>'
     . '<span class="place-name">' . h($r['name']) . '</span><span class="what">' . h($r['summary']) . '</span></a></li>';
 }
@@ -47,6 +47,23 @@ const SECTION_TAGS = [
   'speculative' => ['badge-spec', 'Possible future'],
   'history'     => ['badge-fact', 'History'],
 ];
+
+// Buildings in other worlds that share a group with this one (see build/crosslinks.php).
+function cross_links($w, $slug) {
+  global $CROSSLINKS, $WORLD_DATA;
+  $out = [];
+  foreach ($CROSSLINKS as $group) {
+    if (!in_array("$w/$slug", $group)) continue;
+    foreach ($group as $key) {
+      [$ow, $os] = explode('/', $key);
+      if ($ow === $w || isset($out[$key])) continue;
+      if (!isset($WORLD_DATA[$ow]['pages'][$os])) { fwrite(STDERR, "unknown crosslink $key
+"); continue; }
+      $out[$key] = [$ow, $os];
+    }
+  }
+  return array_slice(array_values($out), 0, 6);
+}
 
 function full_world($w) {
   global $WORLDS, $WORLD_DATA, $PHOTOS;
@@ -191,6 +208,9 @@ HTML,
       if (!isset($pages[$s])) { fwrite(STDERR, "unknown related page $w/$slug: $s\n"); continue; }
       $rel .= building_card($w, $s, '(min-width: 900px) 200px, 45vw');
     }
+    $cross = '';
+    foreach (cross_links($w, $slug) as [$ow, $os]) $cross .= str_replace('<span class="place-name">', '<span class="tag">' . h($WORLDS[$ow]['name']) . '</span><span class="place-name">', building_card($ow, $os, '(min-width: 900px) 200px, 45vw'));
+    $crossBlock = $cross ? '<h2 id="cross-h">The same idea in other worlds</h2><ul class="places places-3">' . $cross . '</ul>' : '';
     $prev = $slugs[($k - 1 + count($slugs)) % count($slugs)];
     $next = $slugs[($k + 1) % count($slugs)];
     $hero = img($w, $slug, "Illustration of the " . strtolower($r['name']) . " ($label)", '(min-width: 900px) 480px, 90vw', 'fetchpriority="high"');
@@ -257,6 +277,7 @@ HTML,
 <section class="wrap section" aria-labelledby="rel-h">
   <h2 id="rel-h">Related buildings</h2>
   <ul class="places places-3">{$rel}</ul>
+  {$crossBlock}
   <nav class="pager" aria-label="More buildings">
     <a href="/worlds/{$w}/{$prev}/" rel="prev"><span>Previous</span> {$prevName}</a>
     <a href="/worlds/{$w}/" class="pager-all">All buildings</a>

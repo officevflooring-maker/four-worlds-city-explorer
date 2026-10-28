@@ -1,0 +1,32 @@
+<?php
+// Groups of buildings that do the same job in different worlds. Every building page shows the
+// others from its groups under "The same idea in other worlds" (only buildings from other worlds).
+$CROSSLINKS = [
+  'water'      => ['roman/aqueduct', 'roman/public-fountain', 'modern/water-system', 'elven/spring-circle', 'elven/crystal-fountain', 'future/water-recycler', 'future/ice-mine'],
+  'flats'      => ['roman/apartment-block', 'modern/apartment-building', 'modern/residential-tower', 'elven/treetop-village', 'future/lunar-base'],
+  'houses'     => ['roman/domus', 'roman/villa', 'modern/single-family-house', 'modern/suburban-house', 'elven/hillside-home', 'elven/timber-house', 'future/inflatable-habitat', 'future/printed-habitat'],
+  'shows'      => ['roman/amphitheater', 'roman/circus', 'modern/stadium', 'elven/open-air-theater', 'future/centrifuge-arena'],
+  'squares'    => ['roman/forum', 'modern/plaza-fountain', 'modern/gathering-circle', 'elven/gathering-circle', 'future/public-plaza'],
+  'government' => ['roman/curia', 'roman/basilica', 'modern/town-hall', 'modern/capitol', 'elven/council-terrace', 'elven/elven-palace', 'future/civic-dome', 'future/operations-center'],
+  'books'      => ['roman/library', 'roman/records-office', 'modern/public-library', 'elven/tree-library'],
+  'schools'    => ['roman/school', 'modern/school', 'elven/treehouse-school'],
+  'fitness'    => ['roman/public-baths', 'modern/recreation-center', 'modern/sports-field', 'elven/forest-gym', 'future/gravity-gym'],
+  'shops'      => ['roman/shop', 'roman/street-food', 'modern/corner-store', 'modern/mixed-use-building', 'elven/canopy-market', 'elven/market-hall', 'future/fab-shop'],
+  'storage'    => ['roman/warehouse', 'modern/warehouse', 'future/spaceport'],
+  'food'       => ['roman/farmhouse', 'roman/garden', 'roman/olive-grove', 'modern/community-garden', 'elven/flower-meadow', 'future/indoor-farm', 'future/greenhouse-dome'],
+  'cranes'     => ['roman/crane', 'modern/tower-crane', 'elven/living-crane', 'future/robotic-crane'],
+  'materials'  => ['roman/building-materials', 'modern/building-materials', 'elven/building-materials', 'future/building-materials'],
+  'memory'     => ['roman/triumphal-arch', 'roman/victory-column', 'roman/mausoleum', 'modern/memorial', 'elven/stag-monument', 'future/robot-helpers'],
+  'statues'    => ['roman/imperial-statue', 'modern/public-art', 'elven/deer-statue', 'future/telepresence'],
+  'worship'    => ['roman/temple', 'roman/pantheon', 'roman/temple-of-vesta', 'modern/place-of-worship'],
+  'palaces'    => ['roman/imperial-palace', 'elven/elven-palace'],
+  'safety'     => ['roman/city-walls', 'roman/lighthouse', 'modern/lighthouse', 'modern/fire-lookout', 'future/storm-shelter', 'future/space-weather-station'],
+  'travel'     => ['roman/inn', 'modern/streets-crosswalks', 'elven/stag-monument', 'future/rover-track', 'future/launch-pad'],
+  'science'    => ['modern/science-center', 'elven/domed-observatory', 'elven/weather-tower', 'future/radio-telescope', 'future/science-lab'],
+  'energy'     => ['elven/crystal-waterfall', 'elven/gathering-circle', 'elven/grand-tree-hall', 'future/power-tower', 'future/oxygen-factory'],
+  'making'     => ['modern/warehouse', 'elven/woodworking-workshop', 'future/fab-shop', 'future/robotics-factory'],
+  'health'     => ['roman/public-baths', 'modern/health-clinic', 'elven/leafy-cottage', 'future/medical-bay'],
+  'nature'     => ['roman/garden', 'modern/park-pond', 'modern/playground', 'elven/wild-grove', 'elven/canopy-walkway', 'future/tree-pod-habitat'],
+  'homes-tech' => ['modern/older-home', 'elven/spire-house', 'elven/green-roof-cottage', 'elven/natural-cottage', 'future/habitat-cluster'],
+  'time'       => ['modern/clock-tower', 'elven/weather-tower', 'future/comms-relay'],
+];

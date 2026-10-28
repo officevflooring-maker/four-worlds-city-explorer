@@ -5,6 +5,7 @@
 require __DIR__ . '/config.php';
 require __DIR__ . '/data.php';
 require __DIR__ . '/artwork.php';
+require __DIR__ . '/crosslinks.php';
 
 const PUB = __DIR__ . '/../public';
 const WORLD_ORDER = ['roman', 'modern', 'elven', 'future'];
