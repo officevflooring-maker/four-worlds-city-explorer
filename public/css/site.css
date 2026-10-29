@@ -404,6 +404,9 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .guide-head { padding-block: 1rem 1.5rem; max-width: 900px; }
 .guide-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 1.2rem; }
 .share-note { margin: -.5rem 0 1.2rem; color: var(--muted); font-size: .95rem; }
+.week-plan { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 165px), 1fr)); gap: 1rem; }
+.week-plan li { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; }
+.week-plan b { display: block; font-family: var(--serif); font-size: 1.12rem; margin-bottom: .25rem; }
 .quick-answer { background: var(--cream); border: 1px solid var(--cream-line); border-left: 6px solid var(--gold); border-radius: var(--radius); padding: 1rem 1.3rem; }
 .quick-answer h2 { font-size: 1.15rem; margin-bottom: .4rem; }
 .quick-answer p { margin: 0; font-size: 1.1rem; }

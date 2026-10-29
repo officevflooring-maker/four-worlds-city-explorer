@@ -154,7 +154,7 @@ HTML;
   <div class="wrap footer-inner">
     <img class="footer-logo" src="/assets/brand/atlas-emblem-200.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w" sizes="110px" width="200" height="192" alt="" loading="lazy" decoding="async">
     <div>
-      <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work.</p>
+      <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work, for classrooms and <a href="/teachers/homeschool/">homeschool families</a>.</p>
       <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/shop/">Shop</a></p>
       <p class="small">Illustrations &copy; {$year} The Atlas of Cities, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
     </div>
@@ -483,6 +483,7 @@ $urls['/compare/'] = '0.8';
 $urls['/tours/'] = '0.8';
 foreach (array_keys($TOURS) as $slug) $urls["/tours/$slug/"] = '0.8';
 $urls['/teachers/'] = '0.9';
+$urls['/teachers/homeschool/'] = '0.9';
 foreach (array_keys($TEACH) as $slug) $urls["/teachers/$slug/"] = '0.8';
 $urls['/play/'] = '0.8';
 $urls['/play/city-builder/'] = '0.8';

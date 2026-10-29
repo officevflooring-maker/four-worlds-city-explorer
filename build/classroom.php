@@ -152,7 +152,7 @@ page('/teachers/worksheets/', [
   'class' => 'teachers',
   'body' => <<<HTML
 <div class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Schools</a></li><li aria-current="page">Worksheets</li></ol></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Homeschool</a></li><li aria-current="page">Worksheets</li></ol></nav>
 </div>
 <section class="wrap section page-head">
   <h1>Printable worksheets</h1>
@@ -160,7 +160,7 @@ page('/teachers/worksheets/', [
   <div>{$sheetCards}</div>
 </section>
 HTML,
-  'ld' => [crumbs([['Home', '/'], ['Teachers & Schools', '/teachers/'], ['Worksheets', '/teachers/worksheets/']])],
+  'ld' => [crumbs([['Home', '/'], ['Teachers & Homeschool', '/teachers/'], ['Worksheets', '/teachers/worksheets/']])],
 ]);
 foreach ($SHEETS as [$slug, $kind, $h1, $title, $desc, $grades, $time, $sheet, $answers]) {
   $keyBtn = $answers ? ' <button type="button" class="btn btn-quiet js-print-sheet" data-key="1">Print with answer key</button>' : '';
@@ -173,7 +173,7 @@ foreach ($SHEETS as [$slug, $kind, $h1, $title, $desc, $grades, $time, $sheet, $
     'class' => 'teachers worksheet',
     'body' => <<<HTML
 <div class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Schools</a></li><li><a href="/teachers/worksheets/">Worksheets</a></li><li aria-current="page">{$h1H}</li></ol></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Homeschool</a></li><li><a href="/teachers/worksheets/">Worksheets</a></li><li aria-current="page">{$h1H}</li></ol></nav>
 </div>
 <section class="wrap sheet-head">
   <p class="tag">Printable worksheet · Grades {$grades} · {$time}</p>
@@ -190,7 +190,7 @@ foreach ($SHEETS as [$slug, $kind, $h1, $title, $desc, $grades, $time, $sheet, $
   <p><a class="btn btn-quiet" href="/teachers/worksheets/">All worksheets</a> <a class="btn btn-quiet" href="/teachers/glossary/">Glossary</a> <a class="btn btn-quiet" href="/teachers/question-bank/">Question bank</a></p>
 </section>
 HTML,
-    'ld' => [crumbs([['Home', '/'], ['Teachers & Schools', '/teachers/'], ['Worksheets', '/teachers/worksheets/'], [$h1, "/teachers/worksheets/$slug/"]]),
+    'ld' => [crumbs([['Home', '/'], ['Teachers & Homeschool', '/teachers/'], ['Worksheets', '/teachers/worksheets/'], [$h1, "/teachers/worksheets/$slug/"]]),
       ['@context' => 'https://schema.org', '@type' => 'LearningResource', 'name' => $title, 'description' => $desc, 'url' => url("/teachers/worksheets/$slug/"),
         'inLanguage' => 'en', 'learningResourceType' => 'Worksheet', 'educationalLevel' => "Grades $grades", 'timeRequired' => $time, 'isAccessibleForFree' => true,
         'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'url' => url('/')]]],
@@ -224,7 +224,7 @@ page('/teachers/glossary/', [
   'class' => 'teachers glossary',
   'body' => <<<HTML
 <div class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Schools</a></li><li aria-current="page">Glossary</li></ol></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Homeschool</a></li><li aria-current="page">Glossary</li></ol></nav>
 </div>
 <section class="wrap section page-head">
   <h1>Glossary</h1>
@@ -238,7 +238,7 @@ page('/teachers/glossary/', [
 </section>
 <div class="wrap az-all">{$glossH}</div>
 HTML,
-  'ld' => [crumbs([['Home', '/'], ['Teachers & Schools', '/teachers/'], ['Glossary', '/teachers/glossary/']])],
+  'ld' => [crumbs([['Home', '/'], ['Teachers & Homeschool', '/teachers/'], ['Glossary', '/teachers/glossary/']])],
 ]);
 
 // ---------- Question bank: every "Think about it" question, by world and building group ----------
@@ -273,7 +273,7 @@ page('/teachers/question-bank/', [
   'class' => 'teachers question-bank',
   'body' => <<<HTML
 <div class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Schools</a></li><li aria-current="page">Question bank</li></ol></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Homeschool</a></li><li aria-current="page">Question bank</li></ol></nav>
 </div>
 <section class="wrap section page-head">
   <h1>Question bank</h1>
@@ -288,5 +288,5 @@ page('/teachers/question-bank/', [
 </section>
 <div class="wrap qb">{$qb}</div>
 HTML,
-  'ld' => [crumbs([['Home', '/'], ['Teachers & Schools', '/teachers/'], ['Question bank', '/teachers/question-bank/']])],
+  'ld' => [crumbs([['Home', '/'], ['Teachers & Homeschool', '/teachers/'], ['Question bank', '/teachers/question-bank/']])],
 ]);

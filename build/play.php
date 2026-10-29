@@ -92,8 +92,10 @@ foreach ($TOURS as $slug => $t) {
 }
 foreach ($TEACH as $slug => $g) {
   [$lw, $ls] = explode('/', $g['links'][0] ?? 'roman/aqueduct');
-  $SEARCH[] = [$g['h1'], "/teachers/$slug/", 'Teacher guide', '', thumb($lw, $ls), $g['kind'] . ', grades ' . $g['grades'], $g['subjects'] . ' lesson teacher class ' . $g['desc']];
+  $SEARCH[] = [$g['h1'], "/teachers/$slug/", 'Teacher guide', '', thumb($lw, $ls), $g['kind'] . ', grades ' . $g['grades'], $g['subjects'] . ' lesson teacher class homeschool ' . $g['desc']];
 }
+$SEARCH[] = ['Free homeschool resources', '/teachers/homeschool/', 'Teacher guide', '', thumb('egypt', 'pyramid'), 'A week with one city, lessons by subject, printables and games',
+  'homeschool home school homeschooling free resources curriculum co-op parents bible lessons'];
 foreach ($COMPARE as [$key, $label, $question, $cells]) {
   $SEARCH[] = ["Compare: $label", "/compare/#$key", 'Compare', '', thumb('roman', $cells['roman'][0]) ?? thumb('modern', $cells['modern'][3] ?? ''), $question, 'compare six worlds'];
 }

@@ -213,9 +213,9 @@ page('/', [
 
 <section class="band band-teach" aria-labelledby="teach-h">
   <div class="wrap">
-    <div class="sec-head"><h2 id="teach-h">For teachers and families</h2><p>Free lessons, projects and explainers with grade levels, timings, printable pages and sources.</p></div>
+    <div class="sec-head"><h2 id="teach-h">For teachers and homeschool families</h2><p>Free lessons, projects and explainers for public school, private school and homeschool, with grade levels, timings, printable pages and sources.</p></div>
     <ul class="guide-grid">{$teachPick}</ul>
-    <p><a class="btn" href="/teachers/">All {$teachCount} teacher guides</a></p>
+    <p><a class="btn" href="/teachers/">All {$teachCount} teacher guides</a> <a class="btn btn-quiet" href="/teachers/homeschool/">Free homeschool resources</a></p>
   </div>
 </section>
 
