@@ -1337,3 +1337,16 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .crowd .world-egypt img, .crowd .world-heaven img, .tour-card.world-egypt .tour-guide img, .tour-card.world-heaven .tour-guide img,
 .person.world-egypt .person-art img, .person.world-heaven .person-art img { transform: scale(1.12); transform-origin: 50% 100%; }
 .crowd .world-egypt a:hover img, .crowd .world-heaven a:hover img { transform: translateY(-6%) scale(1.12); }
+
+/* ---------- Under every game: how to play, what you learn, more games ---------- */
+.game-about { border-top: 1px solid var(--line); }
+.game-about-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2.4rem; max-width: 980px; }
+.game-about h2 { font-size: 1.35rem; margin-bottom: .3rem; }
+.game-about p { margin: 0; }
+.more-games-h { margin-top: 1.6rem; }
+.more-games { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; margin: .6rem 0 1.2rem; padding: 0; }
+.more-games a { display: flex; flex-direction: column; gap: .15rem; height: 100%; padding: .8rem 1rem; border: 1px solid var(--line); border-left: 5px solid var(--brand); border-radius: 14px; background: var(--paper); color: var(--ink); text-decoration: none; }
+.more-games a:hover { border-color: var(--brand); box-shadow: 0 8px 18px rgb(0 0 0 / .08); }
+.more-games strong { font: 700 1.05rem/1.2 var(--serif); color: var(--brand); }
+.more-games span { color: var(--muted); font-size: .92rem; }
+@media (max-width: 700px) { .game-about-grid, .more-games { grid-template-columns: minmax(0, 1fr); } }

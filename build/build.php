@@ -53,7 +53,8 @@ function page($path, $o) {
   global $WORLDS;
   $canonical = url($path);
   $title = h($o['title']);
-  $fullTitle = $path === '/' ? $title : "$title | " . SITE_NAME;
+  // Search results show about 60 characters of a title, so the site's name goes on the end only where it fits.
+  $fullTitle = $path === '/' || strlen($o['title'] . ' | ' . SITE_NAME) > 65 ? $title : "$title | " . SITE_NAME;
   $ogImage = url('/assets/og/' . ($o['og'] ?? 'home') . '.jpg');
   $ogType = $o['ogType'] ?? 'website';
   $ogAlt = h($o['ogAlt'] ?? $o['title']);
