@@ -633,7 +633,12 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .hdr-search { display: inline-flex; align-items: center; gap: .4rem; padding: .42rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); text-decoration: none; font-weight: 600; font-size: .95rem; }
 .hdr-search:hover { border-color: var(--brand); color: var(--brand); }
 .menu-btn:not([hidden]) { display: none; }
-/* six worlds and five more links: below this width the menu folds behind the Menu button */
+/* Wide screens: the worlds in the middle, with the same space on each side, and the other pages beside Search */
+@media (min-width: 1181px) {
+  #main-nav { flex: 1; display: flex; align-items: center; gap: 1rem; }
+  .site-header .nav-worlds { margin-inline: auto; }
+}
+/* six worlds and four more links: below this width the menu folds behind the Menu button */
 @media (max-width: 1180px) {
   .menu-btn:not([hidden]) { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .85rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); font: 700 .95rem/1 var(--sans); cursor: pointer; }
   .menu-icon, .menu-icon::before, .menu-icon::after { display: block; position: relative; width: 16px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .2s, background .2s; }
@@ -647,6 +652,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .has-menu nav { display: none; order: 3; width: 100%; padding: .2rem 0 .4rem; }
   .has-menu.menu-open nav { display: block; }
   .has-menu nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .35rem; }
+  .has-menu .nav-more { margin-top: .35rem; }
   .has-menu nav a { padding: .7rem .9rem; background: var(--bg); }
 }
 @media (max-width: 760px) {

@@ -117,7 +117,7 @@ foreach ([
   ['Teachers and families', '/teachers/', 'Page', 'Free lessons, projects and explainers for every grade.', 'teachers lessons school class'],
   ['Artwork', '/artwork/', 'Page', 'View, save and print every illustration, free under CC BY 4.0.', 'art pictures images download print free'],
   ['About this project', '/about/', 'Page', 'What is real and what is imagined, privacy, accessibility and sources.', 'about privacy sources accessibility'],
-  ['Support this project', '/support/', 'Page', 'Help keep the site free, with no ads.', 'donate patreon support'],
+  ['Support this project', '/support/', 'Page', 'Help keep the site free, with no ads.', 'donate support give shop'],
   ['Shop', '/shop/', 'Page', 'Board games, posters and classroom packs for grown-ups, made from the worlds of this site.', 'shop buy store games posters packs printable'],
   ['Life RPG', '/life-rpg/', 'Shop', 'An app for grown-ups and teens: real-life goals become quests.', 'life rpg game app habits goals quests grown-ups parents teens buy'],
   ['City Builders card game', '/city-builders/', 'Shop', 'A card game to print at home about what every city needs.', 'card game print play printable family classroom needs buy'],

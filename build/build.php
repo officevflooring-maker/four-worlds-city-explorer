@@ -85,7 +85,8 @@ function page($path, $o) {
   foreach ($o['ld'] ?? [] as $block) {
     $ld .= '<script type="application/ld+json">' . json_encode($block, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "</script>\n";
   }
-  $nav = '';
+  // The worlds sit in the middle of the header, the other pages beside Search (site.css).
+  $nav = $navMore = '';
   $links = [];
   foreach (WORLD_ORDER as $w) $links["/worlds/$w/"] = $WORLDS[$w]['short'];
   $links['/play/'] = 'Play';
@@ -100,7 +101,8 @@ function page($path, $o) {
   foreach ($links as $href => $label) {
     $cur = $href === $path ? ' aria-current="page"' : ($href !== '/' && str_starts_with($section, $href) ? ' aria-current="true"' : '');
     $wc = str_starts_with($href, '/worlds/') ? ' class="nav-' . basename($href) . '"' : '';
-    $nav .= "<li><a href=\"$href\"$cur$wc>" . h($label) . "</a></li>";
+    $li = "<li><a href=\"$href\"$cur$wc>" . h($label) . "</a></li>";
+    if ($wc) $nav .= $li; else $navMore .= $li;
   }
   $year = substr(LASTMOD, 0, 4);
   // Shared full-screen viewer for any page with .lb image buttons (Roman pages, Artwork).
@@ -158,7 +160,7 @@ HTML;
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="/"><img src="/favicon.svg" width="28" height="28" alt=""> <span>The Atlas of Cities</span></a>
-    <nav aria-label="Main" id="main-nav"><ul>{$nav}</ul></nav>
+    <nav aria-label="Main" id="main-nav"><ul class="nav-worlds">{$nav}</ul><ul class="nav-more">{$navMore}</ul></nav>
     <div class="hdr-tools">
       <a class="hdr-search" href="/search/"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></a>
       <button type="button" class="menu-btn" aria-expanded="false" aria-controls="main-nav" hidden><span class="menu-icon" aria-hidden="true"></span><span class="menu-text">Menu</span></button>
@@ -270,12 +272,6 @@ HTML,
 ]);
 
 // ---------- About ----------
-// Support goes through the store (the poster set, pay what you want) once its link is set; until then through Patreon.
-$storeSupport = shop_open('posters');
-$payPrivacy = $storeSupport
-  ? '<p>Support and things in <a href="/shop/">the shop</a> are paid for on our store\'s website, under that store\'s own privacy policy. This site never sees payment or personal details. See <a href="/support/">Support this project</a>.</p>'
-  : '<p>Donations are optional and handled entirely by Patreon, a separate website with its own privacy policy. This site never sees payment or personal details. See <a href="/support/">Support this project</a>.</p>'
-    . "\n  " . '<p>Things in <a href="/shop/">the shop</a> are bought on a store website, under that store\'s own privacy policy. This site never sees those payment details either.</p>';
 $srcList = '';
 foreach ($WORLD_DATA as $w => $D) {
   $srcList .= '<h3>' . h($WORLDS[$w]['name']) . '</h3><ul class="sources">';
@@ -306,7 +302,7 @@ page('/about/', [
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
   <p>Passport stamps, quiz scores and the city you build are saved only in your own browser and never sent anywhere. You can clear them on the <a href="/play/passport/">passport page</a>.</p>
-  {$payPrivacy}
+  <p>Things in <a href="/shop/">the shop</a> are paid for on our store's website, under that store's own privacy policy. This site never sees payment or personal details.</p>
 
   <h2 id="accessibility">Accessibility</h2>
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
@@ -325,27 +321,22 @@ HTML,
   'ld' => [crumbs([['Home', '/'], ['About', '/about/']])],
 ]);
 
-// ---------- Support (the only page that links to Patreon, until the store takes support) ----------
-if ($storeSupport) {
-  $give = '<p><a class="btn btn-big" href="' . h(SHOP['posters']['buy']) . '" rel="noopener">Support with ' . shop_price('posters') . ' or more</a></p>'
-    . '<p class="small">You choose the amount and get the <a href="/posters/">Poster Set</a> as a thank-you. The button opens our store, a separate website.</p>';
-  $giveBy = ['Support is optional. Everything on the site stays free either way.', 'Payments and personal details are handled by our store, under its own privacy policy. This site never sees them.'];
-} else {
-  $give = PATREON_URL
-    ? '<p><a class="btn btn-big" href="' . h(PATREON_URL) . '" rel="noopener">Support on Patreon</a></p><p class="small">This button opens Patreon, a separate website.</p>'
-    : '<p class="setting-note"><strong>Donations are opening soon.</strong> Until then, the best way to help is to share the site with a teacher or family who would enjoy it.</p>';
-  $giveBy = ['Donations are optional. Everything on the site stays free either way.', 'Payments and personal details are handled by Patreon, under Patreon\'s own privacy policy. This site never sees them.'];
-}
+// ---------- Support: visitors help by buying from the shop ----------
+// (until a product has its store link, the note says the shop is coming soon)
+$shopNote = array_filter(array_keys(SHOP), 'shop_open')
+  ? 'Printable board games, an activity book, classroom packs, posters and the Life RPG game.'
+  : 'Coming soon: printable board games, an activity book, classroom packs, posters and the Life RPG game.';
 page('/support/', [
   'title' => 'Support this free project',
-  'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. ' . ($storeSupport ? 'Paying what you want for the posters helps' : 'Optional donations help') . ' add new worlds and fact-checking.'),
+  'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. Buying from the shop helps add new worlds and fact-checking.'),
   'class' => 'support',
   'body' => <<<HTML
 <section class="wrap section page-head narrow">
   <p class="tag">Support</p>
   <h1>Help keep it free</h1>
-  <p class="lead">The Atlas of Cities is free for everyone, with no ads, accounts or tracking. If it helps your class or your family, you can help it grow.</p>
-  {$give}
+  <p class="lead">The Atlas of Cities is free for everyone, with no ads, accounts or tracking. If it helps your class or your family, you can help it grow by buying something from the shop.</p>
+  <p><a class="btn btn-big" href="/shop/">Visit the shop</a></p>
+  <p class="small">{$shopNote}</p>
   <h2>What support pays for</h2>
   <ul class="plain-points">
     <li>New worlds, buildings, vehicles and guided tours.</li>
@@ -353,10 +344,10 @@ page('/support/', [
     <li>Fact-checking by teachers and historians.</li>
     <li>Hosting, so the site stays fast and free.</li>
   </ul>
-  <h2>Before you give</h2>
+  <h2>Before you buy</h2>
   <ul class="plain-points">
-    <li>{$giveBy[0]}</li>
-    <li>{$giveBy[1]}</li>
+    <li>Buying is optional. Everything on the site stays free either way.</li>
+    <li>Payments and personal details are handled by our store, under its own privacy policy. This site never sees them.</li>
     <li>Under 18? Please ask a parent or guardian first.</li>
   </ul>
   <h2>Free ways to help</h2>

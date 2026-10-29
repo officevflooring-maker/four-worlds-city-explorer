@@ -101,6 +101,6 @@ The illustrations are shared under Creative Commons Attribution 4.0 (CC BY 4.0):
 
 The site can also be served by Cloudflare Pages straight from this repository: no build command, output directory `public`. `public/_headers` and `public/_redirects` give Cloudflare the same security headers, caching and redirects as `public/.htaccess` gives Apache/Hostinger. Set `SITE_URL` in `build/config.php` to the address search engines should use, then rebuild.
 
-## Donations
+## Support
 
-Set `PATREON_URL` in `build/config.php` to show the "Support on Patreon" button on `/support/`, the only page that links to Patreon.
+The Support page (`/support/`) asks visitors to help by buying from the shop, and its button goes to `/shop/`. Until a product has its store link, the page says the shop is coming soon.
