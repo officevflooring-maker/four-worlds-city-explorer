@@ -45,7 +45,19 @@ function img($world, $name, $alt, $sizes, $attrs = '') {
     $world, $set[$first][0], implode(', ', $srcset), $sizes, $first, $ratioH, h($alt), $attrs ? " $attrs" : '');
 }
 function tex($world, $name) { return "/assets/worlds/$world/$name.webp"; }
-function asset_v($file) { return substr(md5_file(PUB . $file), 0, 8); }
+function asset_v($file) { static $v = []; return $v[$file] ??= substr(md5_file(PUB . $file), 0, 8); }
+// Pictures can change under the same name (a new shop picture, a retaken screenshot), and browsers keep /assets/ for
+// 30 days (public/_headers). So every picture address in a page carries its file's version, as the CSS and JS do.
+// Addresses inside scripts (game data that JavaScript reads) stay as they are.
+function version_assets($html) {
+  $parts = preg_split('~(<script\b.*?</script>)~s', $html, -1, PREG_SPLIT_DELIM_CAPTURE);
+  foreach ($parts as $i => $part) {
+    if ($i % 2) continue;
+    $parts[$i] = preg_replace_callback('~(?<=["\s,(])/assets/[^"\s,?)]+\.(?:webp|jpe?g|png|svg|gif)(?=[\s",)])~',
+      fn($m) => is_file(PUB . $m[0]) ? $m[0] . '?v=' . asset_v($m[0]) : $m[0], $part);
+  }
+  return implode('', $parts);
+}
 
 function world_label($w) { global $WORLDS; return $WORLDS[$w]['name']; }
 
@@ -76,13 +88,17 @@ function page($path, $o) {
   $nav = '';
   $links = [];
   foreach (WORLD_ORDER as $w) $links["/worlds/$w/"] = $WORLDS[$w]['short'];
-  $links['/compare/'] = 'Compare';
-  $links['/tours/'] = 'Tours';
   $links['/play/'] = 'Play';
   $links['/teachers/'] = 'Teachers';
   $links['/artwork/'] = 'Artwork';
+  $links['/shop/'] = 'Shop';
+  // The menu's sections: Compare is part of Play, the guided tours of Teachers, and each product of the Shop.
+  $section = $path;
+  if (str_starts_with($path, '/compare/')) $section = '/play/';
+  elseif (str_starts_with($path, '/tours/') || $path === '/guided/') $section = '/teachers/';
+  elseif (in_array($path, array_column($GLOBALS['SHOP_INFO'] ?? [], 1))) $section = '/shop/';
   foreach ($links as $href => $label) {
-    $cur = $href === $path ? ' aria-current="page"' : ($href !== '/' && str_starts_with($path, $href) ? ' aria-current="true"' : '');
+    $cur = $href === $path ? ' aria-current="page"' : ($href !== '/' && str_starts_with($section, $href) ? ' aria-current="true"' : '');
     $wc = str_starts_with($href, '/worlds/') ? ' class="nav-' . basename($href) . '"' : '';
     $nav .= "<li><a href=\"$href\"$cur$wc>" . h($label) . "</a></li>";
   }
@@ -169,7 +185,7 @@ HTML;
 HTML;
   $file = PUB . ($path === '/' ? '/index.html' : (str_ends_with($path, '.html') ? $path : $path . 'index.html'));
   @mkdir(dirname($file), 0777, true);
-  file_put_contents($file, $html);
+  file_put_contents($file, version_assets($html));
   echo "wrote $path\n";
 }
 
@@ -195,8 +211,8 @@ $GLOBALS['ppTotals'] = implode(' ', array_map(fn($w) => "$w:" . count($WORLD_DAT
 
 require __DIR__ . '/worldpages.php';
 require __DIR__ . '/shop.php';          // before the pages that point to the shop
+require __DIR__ . '/tours.php';         // before the Teachers page, which lists the tours
 require __DIR__ . '/teachpages.php';
-require __DIR__ . '/tours.php';
 // The world maps and their pages, after the tours they point to.
 // The Green World has no people, so no people page.
 foreach (WORLD_ORDER as $w) { full_world($w); if (!empty($PEOPLE[$w])) people_page($w); }
@@ -229,6 +245,9 @@ page('/compare/', [
   'desc' => h('One city question, six worlds: compare how ancient Egypt, Rome, a modern town, a green forest city, Mars and a heavenly city provide water, travel and more.'),
   'class' => 'compare',
   'body' => <<<HTML
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/play/">Play</a></li><li aria-current="page">Compare the worlds</li></ol></nav>
+</div>
 <section class="wrap section page-head">
   <h1>Compare the worlds</h1>
   <p class="big-q">How could a city provide water, places to gather, safe travel, goods and room for nature?</p>
@@ -246,7 +265,7 @@ page('/compare/', [
   <p><button type="button" class="btn btn-quiet js-print">Print this page</button></p>
 </section>
 HTML,
-  'ld' => [crumbs([['Home', '/'], ['Compare the worlds', '/compare/']]),
+  'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Compare the worlds', '/compare/']]),
     learning('Compare the Worlds', 'Compare how six city settings provide water, gathering places, safe travel and room for nature.', '/compare/', 'City design and infrastructure')],
 ]);
 

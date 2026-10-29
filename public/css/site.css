@@ -1168,8 +1168,9 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .shop-worlds li { margin: 0; }
 .shop-worlds img { display: block; width: 100%; height: auto; border-radius: 12px; border: 3px solid var(--accent); }
 .shop-worlds span { display: block; margin-top: .45rem; text-align: center; font-weight: 700; color: var(--accent); }
-.lrpg-heroes { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: .3rem; align-items: end; }
-.lrpg-heroes li { margin: 0; }
+.lrpg-heroes { list-style: none; padding: 0; margin: 0; display: flex; gap: .3rem; align-items: flex-end; }
+.lrpg-heroes li { margin: 0; flex: var(--w, 500) 1 0; min-width: 0; }
+.lrpg-heroes .break { display: none; }
 .lrpg-heroes img { display: block; width: 100%; height: auto; }
 .lrpg-outfits-h { margin: 2.2rem 0 1rem; text-align: center; }
 .lrpg-outfits { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: end; gap: 1rem 1.8rem; }
@@ -1197,7 +1198,8 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .shop-top-inner { grid-template-columns: 1fr; }
   .shop-steps { grid-template-columns: 1fr; }
   .shop-worlds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .lrpg-heroes { grid-template-columns: repeat(6, minmax(0, 1fr)); row-gap: 1rem; }
+  .lrpg-heroes { flex-wrap: wrap; row-gap: 1rem; }
+  .lrpg-heroes .break { display: block; flex: 0 0 100%; height: 0; }
   .lrpg-outfits { gap: 1rem 1.2rem; }
   .lrpg-outfits img { height: 150px; }
 }

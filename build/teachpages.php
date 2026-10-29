@@ -50,6 +50,10 @@ foreach ([
 $hubList = [];
 foreach (array_keys($TEACH) as $k => $slug) $hubList[] = ['@type' => 'ListItem', 'position' => $k + 1, 'name' => $TEACH[$slug]['h1'], 'url' => url("/teachers/$slug/")];
 $promo = shop_cards('', ['classroom-pack', 'wordwall', 'bingo', 'planners']);
+// The guided tours belong with the lessons (build/tours.php, loaded before this file).
+$teachTours = '';
+foreach (array_keys($TOURS) as $slug) $teachTours .= tour_card($slug);
+$tourCount = count($TOURS);
 page('/teachers/', [
   'title' => 'Free Lessons for Teachers and Homeschool: Rome, Cities, Mars',
   'desc' => h("$teachCount free lessons for public school, private school and homeschool: design a city, the pyramids, Roman aqueducts, the story of Jesus, Mars and more."),
@@ -66,11 +70,16 @@ page('/teachers/', [
     <li>All illustrations are free to reuse under CC BY 4.0.</li>
   </ul>
   <p class="try-it"><span class="badge badge-art">Homeschool</span> <a href="/teachers/homeschool/">Free homeschool resources</a>: a week with one city, lessons by subject, printables and games.</p>
-  <nav aria-label="Guide groups"><ul class="jump"><li><a href="#tools-h">Classroom tools</a></li>{$jump}</ul></nav>
+  <nav aria-label="Guide groups"><ul class="jump"><li><a href="#tools-h">Classroom tools</a></li><li><a href="#tours-h">Guided tours</a></li>{$jump}</ul></nav>
 </section>
 <section class="wrap tools" aria-labelledby="tools-h">
   <h2 id="tools-h">Classroom tools</h2>
   <ul class="guide-grid">{$tools}</ul>
+</section>
+<section class="wrap section" aria-labelledby="tours-h">
+  <h2 id="tours-h">Guided tours</h2>
+  <p>{$tourCount} short walks, one through each world, led by one of its people, with a question at every stop. Use them on your own, as a family or with a class. <a href="/tours/">All guided tours</a></p>
+  <ul class="tour-grid">{$teachTours}</ul>
 </section>
 <div class="wrap">{$hubBody}</div>
 <section class="band shop-promo" aria-labelledby="promo-h"><div class="wrap"><div class="sec-head"><p class="tag">From the shop</p><h2 id="promo-h">Ready to print for your class</h2><p>Everything on this site stays free. For a whole unit in one file, or a game for Friday afternoon:</p></div>{$promo}<p class="shop-home-more"><a class="btn btn-quiet" href="/shop/">See everything in the shop</a></p></div></section>

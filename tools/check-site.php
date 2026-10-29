@@ -22,8 +22,8 @@ foreach ($files as $p) {
   $refs = [];
   preg_match_all('~(?:href|src|data-full)="(/[^"#?]*)~', $h, $a); $refs = array_merge($refs, $a[1]);
   preg_match_all('~srcset="([^"]*)"~', $h, $a);
-  foreach ($a[1] as $set) { preg_match_all('~/assets/[^ ,"]+~', $set, $b); $refs = array_merge($refs, $b[0]); }
-  preg_match_all('~url\((/[^)]*)~', $h, $a); $refs = array_merge($refs, $a[1]);
+  foreach ($a[1] as $set) { preg_match_all('~/assets/[^ ,"?]+~', $set, $b); $refs = array_merge($refs, $b[0]); }
+  preg_match_all('~url\((/[^)?]*)~', $h, $a); $refs = array_merge($refs, $a[1]);
   foreach (array_unique($refs) as $r) {
     $n++;
     if (!$ok($r)) { echo "BROKEN  $p -> $r\n"; $fail = 1; }

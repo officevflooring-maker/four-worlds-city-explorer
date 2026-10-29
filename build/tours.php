@@ -166,6 +166,9 @@ page('/tours/', [
   'desc' => h('Six short guided tours, one through each world, led by one of its people, with a question at every stop. For families and classrooms.'),
   'class' => 'tours',
   'body' => <<<HTML
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Homeschool</a></li><li aria-current="page">Guided tours</li></ol></nav>
+</div>
 <section class="wrap section page-head">
   <p class="tag">Guided tours</p>
   <h1>Take a guided tour</h1>
@@ -173,7 +176,7 @@ page('/tours/', [
   <ul class="tour-grid">{$tourCards}</ul>
 </section>
 HTML,
-  'ld' => [crumbs([['Home', '/'], ['Guided tours', '/tours/']]),
+  'ld' => [crumbs([['Home', '/'], ['Teachers & Homeschool', '/teachers/'], ['Guided tours', '/tours/']]),
     ['@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => 'Guided tours', 'numberOfItems' => count($TOURS),
       'itemListElement' => array_map(fn($k, $slug) => ['@type' => 'ListItem', 'position' => $k + 1, 'name' => $TOURS[$slug]['h1'], 'url' => url("/tours/$slug/")], array_keys(array_keys($TOURS)), array_keys($TOURS))]],
 ]);
@@ -223,7 +226,7 @@ foreach ($TOURS as $slug => $t) {
     'class' => "tours tour world-$w",
     'body' => <<<HTML
 <div class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/tours/">Guided tours</a></li><li aria-current="page">{$h1}</li></ol></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/teachers/">Teachers &amp; Homeschool</a></li><li><a href="/tours/">Guided tours</a></li><li aria-current="page">{$h1}</li></ol></nav>
 </div>
 <section class="wrap tour-head">
   <div class="tour-head-text">
@@ -251,7 +254,7 @@ foreach ($TOURS as $slug => $t) {
   <ul class="tour-grid">{$others}</ul>
 </section>
 HTML,
-    'ld' => [crumbs([['Home', '/'], ['Guided tours', '/tours/'], [$t['h1'], "/tours/$slug/"]]),
+    'ld' => [crumbs([['Home', '/'], ['Teachers & Homeschool', '/teachers/'], ['Guided tours', '/tours/'], [$t['h1'], "/tours/$slug/"]]),
       learning($t['title'], $t['desc'], "/tours/$slug/", $t['theme']),
       ['@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => $t['h1'] . ': tour stops', 'numberOfItems' => count($stopList), 'itemListElement' => $stopList]],
   ]);

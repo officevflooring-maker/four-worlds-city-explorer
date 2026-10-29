@@ -162,11 +162,15 @@ $heroPic = function ($file, $alt) {
   [$w, $h] = getimagesize(PUB . "/assets/life-rpg/heroes/$file.webp");
   return '<img src="/assets/life-rpg/heroes/' . $file . '.webp" width="' . $w . '" height="' . $h . '" alt="' . h($alt) . '" loading="lazy" decoding="async">';
 };
+// Each hero's place is as wide as its picture (--w), so all twelve stand the same height: in equal places a wide
+// pose, like the man in the polo shirt, came out shorter. On phones they break into two rows of six.
 $lrpgHeroes = '';
 foreach (['Boy in a blue hoodie', 'Girl in a yellow T-shirt', 'Boy in a green T-shirt', 'Girl in a red jacket', 'Teen boy in a gray hoodie',
   'Teen girl with a red ponytail', 'Teen boy with round glasses', 'Teen girl with long braids', 'Dad in a flannel shirt',
   'Mom in a coral blouse', 'Man in a navy polo shirt', 'Grandma in a green cardigan'] as $n => $alt) {
-  $lrpgHeroes .= '<li>' . $heroPic(sprintf('h%02d_casual', $n + 1), $alt) . '</li>';
+  $file = sprintf('h%02d_casual', $n + 1);
+  [$hw, $hh] = getimagesize(PUB . "/assets/life-rpg/heroes/$file.webp");
+  $lrpgHeroes .= ($n === 6 ? '<li class="break" aria-hidden="true"></li>' : '') . '<li style="--w:' . round(1000 * $hw / $hh) . '">' . $heroPic($file, $alt) . '</li>';
 }
 $lrpgOutfits = '';
 foreach (['modern' => ['casual', 'In everyday clothes'], 'roman' => ['toga', 'In a tunic and toga'], 'egypt' => ['egypt', 'In a linen dress and a wide collar'],

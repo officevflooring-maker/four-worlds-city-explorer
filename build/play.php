@@ -229,6 +229,12 @@ function play_cards($only = null) {
 $playCards = play_cards();
 // Every card but the passport is a game.
 $gameCount = substr_count($playCards, 'class="play-card"') - 1;
+// Compare the worlds is part of Play: the same need in all six worlds (not a game, so it is not counted).
+$cmpArt = '';
+foreach ([['roman', 'aqueduct'], ['egypt', 'lotus-pool'], ['future', 'water-recycler'], ['heaven', 'fountain-of-life']] as [$w, $s]) $cmpArt .= '<span>' . thumb_img(thumb($w, $s)) . '</span>';
+$compareCard = '<li class="play-card"><a href="/compare/"><span class="pa pa-odd" aria-hidden="true"><span class="pa-oddgrid">' . $cmpArt . '</span></span>'
+  . '<span class="play-text"><span class="play-title">Compare the worlds</span><span class="what">One need, six worlds: see how each city brings water, travel and more.</span>'
+  . '<span class="play-go">Compare them <span aria-hidden="true">&rarr;</span></span></span></a></li>';
 $gameWord = ['Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'][$gameCount - 6] ?? (string)$gameCount;
 $promo = shop_cards('', ['journey', 'trivia', 'activity', 'playset']);
 // The games, listed for search engines.
@@ -243,11 +249,11 @@ page('/play/', [
 <section class="wrap section page-head">
   <h1>Play and create</h1>
   <p class="lead">{$gameWord} free games about how cities work, and a passport to collect stamps. No sign-up, and nothing leaves your device.</p>
-  <ul class="play-cards">{$playCards}</ul>
+  <ul class="play-cards">{$playCards}{$compareCard}</ul>
 </section>
 <section class="wrap section next" aria-labelledby="more-h">
   <h2 id="more-h">More ways to explore</h2>
-  <p><a class="btn" href="/tours/">Take a guided tour</a> <a class="btn btn-quiet" href="/compare/">Compare the worlds</a> <button type="button" class="btn btn-quiet" data-surprise hidden>Surprise me</button></p>
+  <p><a class="btn" href="/tours/">Take a guided tour</a> <button type="button" class="btn btn-quiet" data-surprise hidden>Surprise me</button></p>
 </section>
 <section class="band shop-promo" aria-labelledby="promo-h"><div class="wrap"><div class="sec-head"><p class="tag">From the shop</p><h2 id="promo-h">Games to play away from the screen</h2><p>The games here are free. These ones you print at home and play around the table:</p></div>{$promo}<p class="shop-home-more"><a class="btn btn-quiet" href="/shop/">See everything in the shop</a></p></div></section>
 HTML,
