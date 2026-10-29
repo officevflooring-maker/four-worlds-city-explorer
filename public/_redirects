@@ -4,6 +4,13 @@
 # and the beetle rider are gone, so they go to the world's own page.
 /worlds/elven /worlds/green/ 301
 /worlds/elven/ /worlds/green/ 301
+# pages renamed earlier, before the world was renamed
+/worlds/elven/crystal-fountain /worlds/green/wetland-fountain/ 301
+/worlds/elven/crystal-fountain/ /worlds/green/wetland-fountain/ 301
+/worlds/elven/crystal-tower /worlds/green/firefly-tower/ 301
+/worlds/elven/crystal-tower/ /worlds/green/firefly-tower/ 301
+/worlds/elven/crystal-waterfall /worlds/green/waterfall-tower/ 301
+/worlds/elven/crystal-waterfall/ /worlds/green/waterfall-tower/ 301
 /worlds/elven/beetle-rider /worlds/green/ 301
 /worlds/elven/beetle-rider/ /worlds/green/ 301
 /worlds/elven/building-materials /worlds/green/building-materials/ 301
