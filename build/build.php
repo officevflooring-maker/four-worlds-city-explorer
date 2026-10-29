@@ -292,6 +292,7 @@ page('/about/', [
   <h2 id="artwork">Artwork and reuse</h2>
   <p>All illustrations of the six worlds are free for everyone to use, under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 (CC BY 4.0)</a> license. You can copy, print, change, share and use them for any purpose, including in lessons, books, websites and commercial projects. The only condition is to credit them, for example: "Illustration: The Atlas of Cities".</p>
   <p>Save or print any of them from the <a href="/artwork/">Artwork</a> page.</p>
+  <p>The <a href="/teachers/">teacher guides</a>, worksheets, glossary and question bank are free to print and share for teaching. Please credit The Atlas of Cities.</p>
   <p>Photos of real places come from Wikimedia Commons and are public domain or shared under Creative Commons licenses. Each photo is credited where it appears, and all licenses are listed on the <a href="/credits/">photo credits</a> page.</p>
 
   <h2 id="sources">Sources</h2>

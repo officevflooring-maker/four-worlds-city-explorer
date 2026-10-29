@@ -156,7 +156,7 @@ page('/teachers/worksheets/', [
 </div>
 <section class="wrap section page-head">
   <h1>Printable worksheets</h1>
-  <p class="lead">{$sheetCount} free worksheets that go with the six city worlds, each with an answer key. Open one, then print it.</p>
+  <p class="lead">{$sheetCount} free worksheets that go with the six city worlds, each with an answer key. Open one, then print it. They're free to print and share for teaching.</p>
   <div>{$sheetCards}</div>
 </section>
 HTML,
@@ -182,7 +182,7 @@ foreach ($SHEETS as [$slug, $kind, $h1, $title, $desc, $grades, $time, $sheet, $
   <p class="sheet-btns"><button type="button" class="btn js-print-sheet" data-key="0" hidden>Print worksheet</button>{$keyBtn}</p>
 </section>
 <div class="wrap sheet-wrap">
-  <article class="sheet">{$sheet}<p class="sheet-credit">The Atlas of Cities · free to copy for classroom use</p></article>
+  <article class="sheet">{$sheet}<p class="sheet-credit">The Atlas of Cities · free to print and share for teaching</p></article>
   {$keyBox}
 </div>
 <section class="wrap section" aria-labelledby="more-h">
@@ -228,7 +228,7 @@ page('/teachers/glossary/', [
 </div>
 <section class="wrap section page-head">
   <h1>Glossary</h1>
-  <p class="lead">All {$glossCount} key words from the building pages, with what each one means and where to read more.</p>
+  <p class="lead">All {$glossCount} key words from the building pages, with what each one means and where to read more. Free to print and share for teaching.</p>
   <div class="sp-form" role="search">
     <label for="gl-q" class="sr-only">Filter the glossary</label>
     <input type="search" id="gl-q" class="az-filter" data-noun="word" placeholder="Try arch, solar or water" autocomplete="off" spellcheck="false" disabled>
@@ -277,7 +277,7 @@ page('/teachers/question-bank/', [
 </div>
 <section class="wrap section page-head">
   <h1>Question bank</h1>
-  <p class="lead">All {$qbCount} "Think about it" questions from the building pages, for warm-ups, discussions and writing prompts.</p>
+  <p class="lead">All {$qbCount} "Think about it" questions from the building pages, for warm-ups, discussions and writing prompts. Free to print and share for teaching.</p>
   <div class="qotd">
     <p class="tag">Question of the day</p>
     <p class="qotd-q" aria-live="polite">{$fqH}</p>

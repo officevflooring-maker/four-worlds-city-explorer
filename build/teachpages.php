@@ -59,7 +59,7 @@ page('/teachers/', [
   <ul class="plain-points">
     <li>Free, with no sign-up, ads or tracking.</li>
     <li>Grade ranges, time needed and subject areas for every guide.</li>
-    <li>Printable: use your browser's print button on any page.</li>
+    <li>Free to print and share for teaching: use your browser's print button on any page.</li>
     <li>All illustrations are free to reuse under CC BY 4.0.</li>
   </ul>
   <nav aria-label="Guide groups"><ul class="jump"><li><a href="#tools-h">Classroom tools</a></li>{$jump}</ul></nav>
@@ -158,6 +158,7 @@ foreach ($slugsT as $k => $slug) {
   <p class="tag">{$kind}</p>
   <h1>{$h1}</h1>
   <dl class="facts guide-meta"><div><dt>Grades</dt><dd>{$grades}</dd></div><div><dt>Time</dt><dd>{$time}</dd></div><div><dt>Subjects</dt><dd>{$subjects}</dd></div></dl>
+  <p class="share-note">Free to print and share for teaching. Please credit The Atlas of Cities.</p>
   <div class="quick-answer" id="answer"><h2>Quick answer</h2><p>{$quick}</p></div>
   {$try}
 </section>
