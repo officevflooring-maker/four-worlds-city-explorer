@@ -97,7 +97,7 @@ shop_page('wordwall', [
       ['2 to 4', 'Six world banners, two to a page'],
       ['5 to 40', '144 word cards, four to a page, six pages for each world'],
       ['41 to 49', 'The glossary: all 661 words by world, A to Z, with the place each comes from'],
-    ], 'A PDF of 49 pages, in US Letter and A4.')
+    ], 'A PDF of 49 pages in US Letter, or 48 in A4.')
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['What grades is it for?', 'Grades 2 to 8. The definitions are short and written for children; older students can use the glossary for research.'],
