@@ -183,7 +183,7 @@ HTML,
 
 // ---------- Cards for the activities (play hub, and a few on the home page) ----------
 function play_cards($only = null) {
-  global $WORLD_DATA;
+  global $WORLD_DATA, $WORLDS;   // $WORLDS for each world's face (the Green World has no people: its flower cart)
   $total = 0;
   foreach ($WORLD_DATA as $D) $total += count($D['pages']);
   $b = '';
