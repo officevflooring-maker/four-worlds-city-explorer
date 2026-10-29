@@ -28,6 +28,7 @@ const SHOP = [
   'playset'        => ['price' => '$5', 'buy' => ''],
   'activity'       => ['price' => '$4', 'buy' => ''],
 ];
-// Google Search Console verification code (meta tag on the home page).
-const GOOGLE_VERIFY = 'hyYqg7CSEBBH3g2PZXng4J2Cx3ihW_7mYysjgOQfAfI';
+// Google Search Console verification code (meta tag on the home page). Empty: the domain is verified as a Domain
+// property by a TXT record in Cloudflare's DNS, which needs no tag.
+const GOOGLE_VERIFY = '';
 const LASTMOD   = '2026-10-29';
