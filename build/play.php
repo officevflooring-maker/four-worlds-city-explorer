@@ -112,6 +112,9 @@ foreach ([
   ['City Builders card game', '/city-builders/', 'Shop', 'A card game to print at home about what every city needs.', 'card game print play printable family classroom needs buy'],
   ['Classroom Pack', '/classroom-pack/', 'Shop', 'Fact cards, worksheets and discussion cards in one file to print.', 'classroom pack teachers printable fact cards worksheets discussion buy'],
   ['Poster Set', '/posters/', 'Shop', 'Six posters to print: the four worlds and the ten things every city needs.', 'posters print wall classroom support donate pay what you want buy'],
+  ['Journey Through the Worlds', '/journey/', 'Shop', 'A board game to print: race through every world.', 'board game race dice print play family classroom buy'],
+  ['City Bingo', '/bingo/', 'Shop', 'Picture bingo with 30 different cards, for a whole class.', 'bingo game classroom party print play pictures buy'],
+  ['City Planners', '/planners/', 'Shop', 'A drawing game: plan a city where homes have what they need.', 'flip and write drawing game planning map print play classroom buy'],
 ] as [$n, $u, $y, $d, $k]) $SEARCH[] = [$n, $u, $y, '', null, $d, $k];
 
 $json = [];

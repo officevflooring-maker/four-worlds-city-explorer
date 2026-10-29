@@ -114,6 +114,9 @@ HTML,
   ]);
 }
 
+// the print-and-play games: their entries go in $SHOP_INFO before any product page lists the others
+require __DIR__ . '/games.php';
+
 /* ---------- Life RPG ---------- */
 $lrpgShots = shop_gallery([
   ['/assets/life-rpg/today.webp', 520, 1123, 'The Today screen: level 7, an 18-day streak and three quests for the day, one of them done.', "Today's quests"],
@@ -288,13 +291,13 @@ shop_page('posters', [
 $shopCards = shop_cards();
 page('/shop/', [
   'title' => 'Shop: games, posters and classroom packs',
-  'desc' => h('Games, posters and classroom packs made from the four worlds of The Atlas of Cities: Life RPG, the City Builders card game, the Classroom Pack and the Poster Set. The rest of the site stays free.'),
+  'desc' => h('Board games, card games, posters and classroom packs made from the worlds of The Atlas of Cities, and Life RPG, an app for real-life goals. The rest of the site stays free.'),
   'class' => 'shop shop-home-page',
   'body' => <<<HTML
 <section class="wrap section page-head">
   <p class="tag">Shop · For grown-ups</p>
   <h1>Games, posters and classroom packs</h1>
-  <p class="lead">Made from the four worlds of this site. You get a download or a key right after paying, and the rest of The Atlas of Cities stays free.</p>
+  <p class="lead">Made from the worlds of this site. You get a download or a key right after paying, and the rest of The Atlas of Cities stays free.</p>
 </section>
 <section class="wrap section shop-list" aria-label="Products">
   {$shopCards}

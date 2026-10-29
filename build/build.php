@@ -488,6 +488,7 @@ $urls['/life-rpg/'] = '0.5';
 $urls['/city-builders/'] = '0.5';
 $urls['/classroom-pack/'] = '0.5';
 $urls['/posters/'] = '0.5';
+foreach (['/journey/', '/bingo/', '/planners/'] as $u) $urls[$u] = '0.5';
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . LASTMOD . "</lastmod><priority>$pr</priority></url>\n";
 $xml .= "</urlset>\n";

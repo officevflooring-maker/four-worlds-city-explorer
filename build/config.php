@@ -19,6 +19,9 @@ const SHOP = [
   'city-builders'  => ['price' => '$3', 'buy' => ''],
   'classroom-pack' => ['price' => '$5', 'buy' => ''],
   'posters'        => ['price' => '$2', 'buy' => '', 'from' => true],
+  'journey'        => ['price' => '$4', 'buy' => ''],
+  'bingo'          => ['price' => '$4', 'buy' => ''],
+  'planners'       => ['price' => '$3', 'buy' => ''],
 ];
 // Google Search Console verification code (meta tag on the home page).
 const GOOGLE_VERIFY = 'hyYqg7CSEBBH3g2PZXng4J2Cx3ihW_7mYysjgOQfAfI';
