@@ -54,6 +54,15 @@ $EGYPT_SOURCES = [
   'stevens'       => 'Anna Stevens and colleagues, "From representation to reality: ancient Egyptian wax head cones from Amarna", Antiquity (2019)',
   'tut-carter'    => 'Griffith Institute, University of Oxford, Howard Carter\'s records of the tomb of Tutankhamun',
   'soulhouse'     => 'Petrie Museum of Egyptian Archaeology, University College London, pottery "soul house" models',
+  'gawasis'       => 'Kathryn Bard and Rodolfo Fattovich, excavations at the harbor of Mersa/Wadi Gawasis on the Red Sea (2001 to 2011)',
+  'turin-map'     => 'Museo Egizio, Turin, the Turin Papyrus Map (about 1160 BC)',
+  'met-collar'    => 'The Metropolitan Museum of Art, floral collars from Tutankhamun\'s embalming cache',
+  'ra2'           => 'Kon-Tiki Museum, Oslo, "Ra, 1969 - Ra II, 1970"',
+  'mesehti'       => 'Egyptian Museum, Cairo, wooden model soldiers from the tomb of Mesehti, Asyut, about 2000 BC',
+  'tt104'         => 'Tomb of Djehutynefer (TT104), Thebes: painting of his house, about 1420 BC',
+  'hatnub'        => 'French Institute for Oriental Archaeology (IFAO) and University of Liverpool, the ramp at the Hatnub quarry (2018)',
+  'meketre-cattle' => 'Egyptian Museum, Cairo, model of a cattle count from the tomb of Meketre, about 1980 BC',
+  'brit-eratosthenes' => 'Encyclopaedia Britannica, "Eratosthenes"',
 ];
 
 // category => [label, short description]
@@ -77,7 +86,7 @@ $EGYPT = [
   'facts' => ['Built for' => 'King Khufu', 'Finished' => 'About 2560 BC', 'Height' => 'About 146 meters when new, 138 meters today', 'Blocks' => 'About 2.3 million'],
   'sections' => [
     ['A tomb fit for a king', [
-      'Egyptian kings, called pharaohs, were buried with everything they would need in the next life. The first pyramid, the Step Pyramid of King Djoser at Saqqara, was built around 2650 BC as a stack of six ever-smaller platforms. Within about a hundred years, builders had learned to make the smooth-sided shape we picture today.',
+      'Egyptian kings, called pharaohs, were buried with everything they would need in the next life. The first pyramid, the Step Pyramid of King Djoser at Saqqara, was built around 2650 BC as a stack of six ever-smaller platforms. Within about fifty years, builders had learned to make the smooth-sided shape we picture today: the Red Pyramid of King Sneferu at Dahshur, built around 2600 BC, was the first true pyramid.',
       'The Great Pyramid at Giza was built for King Khufu around 2560 BC. When new it was about 146 meters tall and covered in polished white limestone that shone in the sun. Most of that outer casing was later taken away for other buildings, so today it is about 138 meters tall.',
     ]],
     ['Who built it', [
@@ -348,7 +357,7 @@ $EGYPT = [
   'look' => ['Find the statues of seated scribes.', 'Look for the shelves of scrolls in the walls.'],
   'questions' => ['Why might a king want a copy of every book?', 'What would be lost if a big library disappeared?', 'How do libraries today keep their books safe?'],
   'words' => ['Mouseion' => 'A Greek "home of the Muses", a place of study and the origin of the word museum.', 'Scholar' => 'A person who studies a subject deeply.', 'Circumference' => 'The distance all the way around a circle or sphere.'],
-  'sources' => ['brit-library', 'shaw'],
+  'sources' => ['brit-library', 'brit-eratosthenes', 'shaw'],
   'related' => ['house-of-life', 'scribe-school', 'temple-gateway'],
 ],
 
@@ -406,12 +415,15 @@ $EGYPT = [
     ['Khufu\'s boat', [
       'In 1954 archaeologists opened a sealed pit beside the Great Pyramid and found a full-size cedar boat taken apart into 1,224 pieces. It took years to put it back together. About 43 meters long and 4,500 years old, it is one of the oldest boats in the world. In 2021 it was moved to the Grand Egyptian Museum near Giza.',
     ]],
+    ['Ships for the Red Sea', [
+      'Some ships sailed far beyond the Nile. Archaeologists think they were built by the river, carried across the desert in pieces and put back together on the Red Sea coast. In caves at a harbor called Mersa Gawasis, they found cedar ship timbers, coils of rope and wooden cargo boxes, two of them labeled "the wonders of Punt", left there about 3,800 years ago.',
+    ]],
   ],
   'art' => 'The illustration shows a shaded workshop where a wooden river boat is being built, with planks and tools around it.',
   'look' => ['Find the boat that is being built.', 'What tools can you see?'],
   'questions' => ['Why might boats be so important in a country built along a river?', 'Why would builders join planks with rope instead of nails?', 'What is built or made near where you live?'],
   'words' => ['Shipwright' => 'A person who builds ships.', 'Tenon' => 'A tongue of wood that fits into a slot to join two pieces.', 'Hull' => 'The main body of a boat.'],
-  'sources' => ['lehner', 'brit-khufu', 'shaw'],
+  'sources' => ['lehner', 'brit-khufu', 'gawasis', 'shaw'],
   'related' => ['sailing-boat', 'papyrus-boat', 'building-materials'],
 ],
 
@@ -426,12 +438,15 @@ $EGYPT = [
     ['The land of Punt', [
       'Around 1470 BC, Queen Hatshepsut sent ships down the Red Sea to the land of Punt, probably on the coast of East Africa. Carvings at her temple at Deir el-Bahari show the travelers bringing home incense trees, ebony, gold and baboons.',
     ]],
+    ['The oldest map', [
+      'The desert routes were known well enough to be drawn. The Turin Papyrus Map, made around 1160 BC for an expedition of King Ramesses IV, shows a desert valley with its roads, hills, a gold mine, the miners\' houses and a quarry of fine dark stone. It is the oldest known geological map, and it is kept today in the Egyptian Museum in Turin, Italy.',
+    ]],
   ],
   'art' => 'The illustration shows a striped canopy over cushions and rugs around a small fire. Travelers\' camps were usually much simpler, but tents do appear in pictures of Egyptian army camps.',
   'look' => ['Find the fire in the middle.', 'Where would travelers sleep?'],
   'questions' => ['What would you need for a long journey across a desert?', 'Why might a country send people so far for stone and metal?', 'How do people travel to remote places today?'],
   'words' => ['Expedition' => 'A long journey made for a purpose.', 'Oasis' => 'A green place in a desert, with water.', 'Turquoise' => 'A blue-green stone used in jewelry.'],
-  'sources' => ['brit-punt', 'brit-hatshepsut', 'shaw'],
+  'sources' => ['brit-punt', 'brit-hatshepsut', 'turin-map', 'shaw'],
   'related' => ['market', 'watchtower', 'camel'],
 ],
 
@@ -447,12 +462,15 @@ $EGYPT = [
     ['Gardens for the gods', [
       'Temples had gardens too, growing flowers and vegetables for offerings. At Deir el-Bahari, Queen Hatshepsut planted incense trees brought back from the land of Punt, and archaeologists have found the pits where their roots once grew.',
     ]],
+    ['Flowers for a funeral', [
+      'Flowers mattered at parties and at funerals. Collars made of real olive leaves, cornflowers, berries and blue beads, probably worn at the funeral feast of Tutankhamun, were buried in jars near his tomb. They survived for more than 3,300 years, and some are now in the Metropolitan Museum of Art in New York.',
+    ]],
   ],
   'art' => 'The illustration shows a walled garden with a lotus pool, papyrus reeds, date palms and a shaded seat, very like the gardens in Egyptian paintings.',
   'look' => ['Find the lotus flowers in the pool.', 'Where could you sit in the shade?'],
   'questions' => ['Why would a garden be so precious in a dry land?', 'What would you plant in a garden with very little water?', 'How do gardens make people feel?'],
   'words' => ['Lotus' => 'The blue water lily of the Nile.', 'Shaduf' => 'A pole with a bucket and a weight, for lifting water.', 'Frankincense' => 'A sweet-smelling tree resin, burned as incense.'],
-  'sources' => ['bm-nebamun', 'brit-hatshepsut', 'brit-shaduf'],
+  'sources' => ['bm-nebamun', 'brit-hatshepsut', 'brit-shaduf', 'met-collar'],
   'related' => ['lotus-pool', 'palm-grove', 'garden-villa'],
 ],
 
@@ -466,6 +484,9 @@ $EGYPT = [
     ]],
     ['Three seasons', [
       'Egyptian farmers divided the year into three seasons: the flood, when the fields lay under water; the growing season, when they plowed and sowed in the wet mud; and the harvest. Canals and basins held floodwater so that fields and palm groves could be watered for longer.',
+    ]],
+    ['A goddess in a tree', [
+      'Trees were so precious that Egyptians linked them with the gods. Some tomb paintings show a goddess appearing out of a sycamore fig tree, pouring cool water and offering bread to the dead, just as a tree gives shade and fruit to the living.',
     ]],
   ],
   'art' => 'The illustration shows three date palms heavy with fruit beside a small water channel with a low mud-brick edge.',
@@ -487,12 +508,15 @@ $EGYPT = [
     ['Sacred lakes', [
       'Temples had stone-lined lakes, fed by water seeping up from the ground. Priests washed in them before ceremonies, because they had to be pure to serve the gods. The sacred lake at Karnak, about 120 meters long, can still be seen today.',
     ]],
+    ['A king in a flower', [
+      'Among the treasures from the tomb of Tutankhamun is a painted wooden head of the young king rising out of a blue lotus flower, like the sun god at the beginning of the world. It is one of the best-known pieces from his tomb.',
+    ]],
   ],
   'art' => 'The little spout of water is the artist\'s touch: Egyptian garden pools held still water, not fountains.',
   'look' => ['Find the lotus flowers.', 'Where does the water come from?'],
   'questions' => ['Why might people link a flower that opens each morning with the sun?', 'Why would priests need to wash before a ceremony?', 'What flowers are special in your culture?'],
   'words' => ['Lotus' => 'The blue water lily of the Nile.', 'Sacred' => 'Holy, set apart for the gods.', 'Rebirth' => 'Being born again into new life.'],
-  'sources' => ['brit-karnak', 'wilkinson', 'bm-nebamun'],
+  'sources' => ['brit-karnak', 'wilkinson', 'bm-nebamun', 'tut-carter'],
   'related' => ['lotus-garden', 'lotus-pavilion', 'hall-of-columns'],
 ],
 
@@ -507,12 +531,15 @@ $EGYPT = [
     ['Boats for the next life', [
       'Wealthy Egyptians were buried with model boats so they could travel in the next life. The tomb of Meketre, from around 1980 BC, held a whole fleet of painted wooden models, with tiny sailors pulling ropes and steering.',
     ]],
+    ['The sun\'s boat', [
+      'Egyptians imagined that even the sun traveled by boat: the sun god Ra sailed across the sky every day and through the underworld every night. Temples kept small boat-shaped shrines for their gods, and kings were buried with boats too, like the great cedar boat found beside the pyramid of King Khufu.',
+    ]],
   ],
   'art' => 'The illustration shows a wooden boat with a tall white triangular sail. Ancient Egyptian sails were tall and rectangular; triangular sails belong to later boats, like the feluccas still seen on the Nile.',
   'look' => ['Find the sailor steering at the back.', 'Which way is the wind blowing?'],
   'questions' => ['Why did the Nile make travel easy in one direction?', 'How do river boats carry goods today?', 'What is the main "highway" where you live?'],
   'words' => ['Current' => 'The flow of water in a river.', 'Upstream' => 'Against the flow of a river.', 'Rudder' => 'A paddle or blade used to steer a boat.'],
-  'sources' => ['brit-nile', 'met-meketre', 'shaw'],
+  'sources' => ['brit-nile', 'met-meketre', 'lehner', 'shaw'],
   'related' => ['papyrus-boat', 'boat-workshop', 'rowing-pool'],
 ],
 
@@ -527,12 +554,15 @@ $EGYPT = [
     ['A plant of many uses', [
       'Papyrus was also turned into a writing material. Thin strips of the stem were laid side by side, a second layer was laid across them, and the sheet was pressed and dried. Our word "paper" comes from "papyrus".',
     ]],
+    ['Across an ocean', [
+      'How far could a reed boat go? In 1970 the Norwegian explorer Thor Heyerdahl and his crew sailed Ra II, a boat made of bundles of papyrus, across the Atlantic Ocean from Morocco to Barbados in 57 days. It was built by boatbuilders from Lake Titicaca in South America, where people still make boats of reeds.',
+    ]],
   ],
   'art' => 'The illustration shows a reed boat with curled-up ends and a fisherman holding a net, very like the boats in Egyptian tomb paintings.',
   'look' => ['Find the curled-up ends of the boat.', 'What is the fisherman holding?'],
   'questions' => ['Why might reeds float so well?', 'What can people make from plants that grow near water?', 'Where does the paper you use come from?'],
   'words' => ['Papyrus' => 'A tall marsh reed, and the writing material made from it.', 'Marsh' => 'Low, wet land where reeds grow.', 'Net' => 'A mesh of knotted string for catching fish.'],
-  'sources' => ['brit-papyrus', 'bm-nebamun', 'shaw'],
+  'sources' => ['brit-papyrus', 'bm-nebamun', 'ra2', 'shaw'],
   'related' => ['sailing-boat', 'scribe-school', 'lotus-pool'],
 ],
 
@@ -548,12 +578,15 @@ $EGYPT = [
     ['A king\'s boast', [
       'King Amenhotep II, who ruled around 1420 BC, set up a stone slab near the Great Sphinx telling of his strength. It claims he shot arrows right through targets of copper as thick as a hand while driving his chariot. It is a royal boast rather than a measured record, but it shows how much Egyptians admired skill with the bow.',
     ]],
+    ['An army of models', [
+      'In the tomb of Mesehti, a governor at Asyut, archaeologists found two wooden companies of 40 soldiers each, made around 2000 BC: Egyptian spearmen with shields, and Nubian archers with bows and arrows. Nubian archers were so famous that Egyptians called Nubia Ta-Seti, "the land of the bow".',
+    ]],
   ],
   'art' => 'The illustration shows a sandy yard with round straw targets, a rack of bows and a shaded stand for watchers.',
   'look' => ['Count the targets.', 'Find the rack of bows.'],
   'questions' => ['Why would an army need so many archers?', 'Why might a king want people to believe he was very strong?', 'Which sports today began as training for war or hunting?'],
   'words' => ['Composite bow' => 'A bow made of layers of wood, horn and sinew.', 'Sinew' => 'Tough tissue that joins muscle to bone.', 'Target' => 'A mark to aim at.'],
-  'sources' => ['amenhotep2', 'tut-carter', 'shaw'],
+  'sources' => ['amenhotep2', 'tut-carter', 'mesehti', 'brit-nubia', 'shaw'],
   'related' => ['chariot-arena', 'watchtower', 'chariot'],
 ],
 
@@ -566,14 +599,17 @@ $EGYPT = [
       'Boats carried almost everything in Egypt, from grain and cattle to giant blocks of stone, so the country needed many skilled rowers and sailors. Paintings and models show crews pulling long oars in time, with a steersman at the back holding a big steering oar.',
     ]],
     ['Showing off', [
-      'Amenhotep II also boasted about his rowing. His inscription says he took the steering oar of his boat and kept rowing long after a crew of 200 men had grown tired. Like his archery story, it was meant to show that the king was stronger than anyone.',
+      'King Amenhotep II, who ruled around 1420 BC, set up a stone slab near the Great Sphinx boasting of his strength. It says he took the steering oar of his boat and kept rowing long after a crew of 200 men had grown tired. Like his claim to have shot arrows through copper targets, it was meant to show that the king was stronger than anyone.',
+    ]],
+    ['Rowing for the gods', [
+      'At the yearly Opet festival in Thebes, the boat-shaped shrines of the god Amun, his wife Mut and their son Khonsu traveled on great river barges from Karnak to Luxor temple, towed by boats full of rowers while crowds celebrated on the banks. Carvings in the colonnade of Luxor temple show the whole journey.',
     ]],
   ],
   'art' => 'The illustration shows a long sandstone pool with a wooden dock and a small rowing boat. A pool like this is the artist\'s idea; Egyptians learned to row on the river itself.',
   'look' => ['Find the rowing boat and its oars.', 'Where would you climb in?'],
   'questions' => ['Why must rowers pull their oars at the same time?', 'Why would rowing matter so much on the Nile?', 'What water sports do people enjoy today?'],
   'words' => ['Oar' => 'A long pole with a flat blade for rowing.', 'Crew' => 'The people who work a boat together.', 'Dock' => 'A platform where boats tie up.'],
-  'sources' => ['amenhotep2', 'met-meketre', 'shaw'],
+  'sources' => ['amenhotep2', 'met-meketre', 'wilkinson', 'shaw'],
   'related' => ['sailing-boat', 'archery-range', 'lotus-pool'],
 ],
 
@@ -588,12 +624,15 @@ $EGYPT = [
     ['Racing came later', [
       'No racing arena has been found from the time of the pharaohs. Chariot racing in a stadium arrived with the Greeks: after Alexander the Great, the Ptolemy kings built a hippodrome, or racetrack, at Alexandria. The Romans, who ruled Egypt after 30 BC, loved chariot racing too.',
     ]],
+    ['A prince who loved horses', [
+      'Horses were costly, and only kings, nobles and the army kept them. The stone slab that King Amenhotep II set up near the Great Sphinx says that as a young prince he cared for his father\'s horses at Memphis and trained them so well that they never tired.',
+    ]],
   ],
   'art' => 'The oval arena with seats, banners and two racing chariots is imagined. It mixes Egyptian decoration with the kind of racetrack that Greeks and Romans built.',
   'look' => ['Find the two chariots on the track.', 'Where would the crowd sit?'],
   'questions' => ['How might the arrival of horses and chariots have changed Egypt?', 'Why do you think racing became so popular in later times?', 'What do people race today?'],
   'words' => ['Chariot' => 'A light two-wheeled vehicle pulled by horses.', 'Hippodrome' => 'A Greek racetrack for horses and chariots.', 'Hyksos' => 'Rulers from western Asia who controlled northern Egypt around 1650 to 1550 BC.'],
-  'sources' => ['brit-chariot', 'tut-carter', 'brit-library', 'shaw'],
+  'sources' => ['brit-chariot', 'tut-carter', 'amenhotep2', 'brit-library', 'shaw'],
   'related' => ['archery-range', 'chariot', 'pharaohs-palace'],
 ],
 
@@ -607,6 +646,9 @@ $EGYPT = [
     ]],
     ['Cones on their heads', [
       'In many paintings, guests wear small cones on top of their heads. For a long time people guessed they were lumps of scented fat. In 2019, archaeologists described two real cones made of wax, found in graves at Amarna, the first proof that they existed. What they were for is still a mystery.',
+    ]],
+    ['Songs at the party', [
+      'Musicians played harps, lutes, flutes and drums while singers clapped the beat. Some paintings show a blind harpist, and the words of harpers\' songs survive. They tell guests to enjoy the day, put on perfume and fine linen, and be happy while they can.',
     ]],
   ],
   'art' => 'The illustration shows a columned hall with painted walls, banners and a long table set for a feast. Egyptian guests more often sat on chairs or mats with small tables of food.',
@@ -649,12 +691,15 @@ $EGYPT = [
     ['Lost under modern cities', [
       'We know much more about Egyptian tombs and temples than about town houses. Tombs and temples were built of stone in the dry desert, but towns stood on the river banks, were built of mud brick and often lie under modern towns today.',
     ]],
+    ['A house in a painting', [
+      'A painting in the tomb of Djehutynefer, a royal scribe at Thebes around 1420 BC, shows his house on three levels joined by stairs, with Djehutynefer and his scribes at work inside. It is one of very few pictures of the inside of an Egyptian town house.',
+    ]],
   ],
   'art' => 'The illustration shows a three-story house of mud brick and sandstone with small windows, a painted blue band and a canopy on the roof.',
   'look' => ['Count the floors.', 'Find the canopy on the roof.'],
   'questions' => ['Why do people build upward in crowded places?', 'Why do houses last less well than temples?', 'How many floors do the homes near you have?'],
-  'words' => ['Storey' => 'One floor of a building.', 'Soul house' => 'A clay model of a house placed in a tomb.', 'Terrace' => 'A flat outdoor space, often on a roof.'],
-  'sources' => ['soulhouse', 'kemp', 'shaw'],
+  'words' => ['Story' => 'One floor or level of a building, as in "a three-story house".', 'Soul house' => 'A clay model of a house placed in a tomb.', 'Terrace' => 'A flat outdoor space, often on a roof.'],
+  'sources' => ['soulhouse', 'tt104', 'kemp', 'shaw'],
   'related' => ['rooftop-house', 'mud-brick-house', 'porch-house'],
 ],
 
@@ -669,6 +714,9 @@ $EGYPT = [
     ]],
     ['Women\'s rights', [
       'Egyptian women had more rights than in many ancient lands. They could own and inherit land, run businesses, make contracts and go to court, and some women ruled the country as queens and pharaohs.',
+    ]],
+    ['Growing up', [
+      'Young children often wore no clothes at all in the heat. Many had their heads shaved except for one long lock of hair on the side, called the sidelock of youth, which was cut off as they grew up.',
     ]],
   ],
   'art' => 'The illustration shows a cozy mud-brick house with a palm tree, a small garden and steps up to the roof.',
@@ -689,6 +737,9 @@ $EGYPT = [
     ]],
     ['Keeping cool', [
       'Thick walls kept out the heat, and windows were small and set high up to let out hot air and keep out dust and glare. Porches gave shade, and houses were often built to catch the cool breeze that blows from the north.',
+    ]],
+    ['Gods at home', [
+      'Families prayed at home as well as in temples. Many houses had a niche in the wall for a small statue of a household god, such as Bes, who was thought to scare away snakes and bad dreams, or Taweret, a hippopotamus goddess who protected mothers and babies.',
     ]],
   ],
   'art' => 'The illustration shows a two-story whitewashed house with a columned porch, an awning on the roof and pots of flowers.',
@@ -731,6 +782,9 @@ $EGYPT = [
     ['Inside a villa', [
       'Wealthy families at Amarna lived in walled compounds. The house had a tall central room with high windows, bedrooms and even a bathroom, with a stone slab for washing and a toilet seat. Around it stood a well, a garden, round granaries, stables, kitchens and rooms for servants.',
     ]],
+    ['A queen in a workshop', [
+      'In 1912, archaeologists digging at Amarna found the painted bust of Queen Nefertiti, Akhenaten\'s wife, in the house and workshop of a sculptor named Thutmose. It had been left behind when the city was abandoned. Today it is in the Neues Museum in Berlin.',
+    ]],
   ],
   'art' => 'The illustration shows a large villa built around a courtyard with a lotus pool and palms.',
   'look' => ['Find the pool in the courtyard.', 'How many different buildings can you see inside the walls?'],
@@ -751,12 +805,15 @@ $EGYPT = [
     ['A home for the next life', [
       'Egyptians hoped the next life would be like the best of this one. A painted scroll called the Book of the Dead of Nakht, in the British Museum, shows Nakht and his wife beside their house and garden pool, a picture of the life they hoped to go on enjoying after death.',
     ]],
+    ['Food from the garden', [
+      'Gardens fed the family as well as giving shade. Egyptians grew grapes for wine and raisins, figs, dates and, later, pomegranates, with vegetables such as onions, leeks, lettuce and cucumbers, all watered by hand from a pool or a well.',
+    ]],
   ],
   'art' => 'The illustration shows a large villa with whitewashed walls, a palm garden, two lotus pools and shady columned porches.',
   'look' => ['Find the two pools.', 'Where would you sit to stay out of the sun?'],
   'questions' => ['What does a dream home tell us about what people value?', 'Why might someone want a model of their garden in their tomb?', 'What would your dream home look like?'],
   'words' => ['Noble' => 'A person of high rank.', 'Pomegranate' => 'A round fruit full of juicy red seeds.', 'Book of the Dead' => 'A collection of spells meant to help the dead in the next life.'],
-  'sources' => ['met-meketre', 'bm-nakht', 'bm-nebamun'],
+  'sources' => ['met-meketre', 'bm-nakht', 'bm-nebamun', 'shaw'],
   'related' => ['lotus-garden', 'courtyard-villa', 'feast-hall'],
 ],
 
@@ -771,12 +828,15 @@ $EGYPT = [
     ['Catching the breeze', [
       'The cooler wind in Egypt usually blows from the north, off the Mediterranean Sea. Houses were often built to catch it, with openings facing north, and shady canopies made the roof a pleasant place to sit in the evening.',
     ]],
+    ['A roof for the next life', [
+      'Clay "soul house" models placed in tombs often have stairs to the roof and a little shelter on top. They were meant to give the dead a home, with a cool roof to rest on, in the next life.',
+    ]],
   ],
   'art' => 'The illustration shows a two-story family house with a big rooftop canopy, beds and cushions on the roof, and palm trees.',
   'look' => ['Find the beds on the roof.', 'What gives the roof shade?'],
   'questions' => ['Why would people sleep on the roof?', 'What could a roof be used for where you live?', 'How do the people near you cope with very hot weather?'],
   'words' => ['Canopy' => 'A cloth or reed cover that gives shade.', 'Fodder' => 'Food for farm animals.', 'Breeze' => 'A gentle wind.'],
-  'sources' => ['whe-deir', 'kemp', 'shaw'],
+  'sources' => ['whe-deir', 'soulhouse', 'kemp', 'shaw'],
   'related' => ['town-house', 'family-house', 'palm-grove'],
 ],
 
@@ -792,12 +852,15 @@ $EGYPT = [
     ['The Medjay', [
       'The Medjay were at first Nubian desert scouts who worked for Egypt. Later the name was used for a kind of police, who guarded the desert roads and the royal tombs in the Valley of the Kings.',
     ]],
+    ['Saved from the lake', [
+      'When the Aswan High Dam was built in the 1960s, its rising lake covered most of the old forts. Archaeologists recorded Buhen before the water came, and its stone temple, built in the time of Queen Hatshepsut, was taken apart and rebuilt in the garden of the National Museum of Sudan in Khartoum.',
+    ]],
   ],
   'art' => 'The illustration shows a slim mud-brick lookout tower with a shaded top and a small banner.',
   'look' => ['Find the shaded lookout at the top.', 'Where would the guard climb up?'],
   'questions' => ['Why would a country build forts along its borders?', 'How could guards send news quickly without phones?', 'Who keeps watch over your town?'],
   'words' => ['Fort' => 'A strong building where soldiers live and keep guard.', 'Border' => 'The line where one country ends and another begins.', 'Scout' => 'A person sent ahead to look around.'],
-  'sources' => ['brit-nubia', 'brit-egypt', 'shaw'],
+  'sources' => ['brit-nubia', 'un-nubia', 'brit-egypt', 'shaw'],
   'related' => ['caravan-camp', 'archery-range', 'temple-gateway'],
 ],
 
@@ -832,12 +895,15 @@ $EGYPT = [
     ['Tools', [
       'Stonemasons cut soft stone with copper chisels and saws. To cut hard granite they used copper saws with sand as a grinding powder, and pounded the rock with balls of even harder stone. Plumb lines and set squares helped them keep walls straight and corners square. Roofs of houses were made of palm logs, reeds and mud.',
     ]],
+    ['A ramp in a quarry', [
+      'In 2018, archaeologists at Hatnub, a quarry of white alabaster stone in the eastern desert, found a steep ramp with a staircase on each side and holes for wooden posts. Ropes tied around the posts could help workers haul sledges of stone up the slope. It is at least as old as the time of King Khufu, about 4,500 years ago.',
+    ]],
   ],
   'art' => 'The illustration shows a neat pile of cut sandstone blocks, a stack of mud bricks, a bundle of reeds and a jar of tools.',
   'look' => ['Find the bundle of reeds.', 'Which materials would be used for a temple, and which for a house?'],
   'questions' => ['Why build temples of stone but houses of mud brick?', 'How do you cut a stone that is harder than your tools?', 'What are buildings near you made of?'],
   'words' => ['Chisel' => 'A tool with a sharp edge for cutting stone or wood.', 'Plumb line' => 'A string with a weight, used to check that something is upright.', 'Granite' => 'A very hard, speckled rock.'],
-  'sources' => ['arnold', 'rekhmire', 'lehner', 'brit-egypt'],
+  'sources' => ['arnold', 'rekhmire', 'hatnub', 'lehner', 'brit-egypt'],
   'related' => ['lifting-lever', 'mud-brick-house', 'obelisk'],
 ],
 ];

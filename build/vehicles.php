@@ -455,12 +455,15 @@ $VEHICLES = [
     ['Royal chariots', [
       'Kings were shown riding chariots into battle and on hunts. When Howard Carter opened the tomb of Tutankhamun in 1922, he found six chariots, some covered in gold. They show how carefully chariots were made: every part could be taken apart, carried and put back together.',
     ]],
+    ['Gifts for a king', [
+      'Horses and chariots were costly and prized. In the Amarna letters, the kings of other lands sent the pharaoh fine horses and decorated chariots as gifts, and asked for gold in return.',
+    ]],
   ],
   'art' => 'The illustration shows a blue and gold chariot pulled by one horse with a feather plume. Real Egyptian chariots were almost always pulled by a pair of horses.',
   'look' => ['Count the spokes in a wheel.', 'Find the feather plume on the horse.'],
   'questions' => ['Why would a light chariot be faster than a heavy one?', 'How might chariots have changed the way wars were fought?', 'What is the fastest way to travel where you live?'],
   'words' => ['Chariot' => 'A light two-wheeled vehicle pulled by horses.', 'Spoke' => 'A bar joining the middle of a wheel to its rim.', 'Plume' => 'A large feather worn for decoration.'],
-  'sources' => ['brit-chariot', 'tut-carter', 'shaw'],
+  'sources' => ['brit-chariot', 'tut-carter', 'amarna-letters', 'shaw'],
   'related' => ['chariot-arena', 'archery-range', 'pharaohs-palace'],
 ],
 'camel' => [
@@ -473,6 +476,9 @@ $VEHICLES = [
     ]],
     ['A late arrival', [
       'Egyptian texts hardly mention camels before the first millennium BC. They became common only in Greek and Roman times, when camel caravans linked the Nile with ports on the Red Sea. For thousands of years before that, the donkey was Egypt\'s pack animal: donkeys carried grain, water and goods, and some of the earliest known tame donkeys were buried at Abydos around 3000 BC.',
+    ]],
+    ['Built for the desert', [
+      'A camel can squeeze its nostrils shut against blowing sand, and heavy eyelashes protect its eyes. After a long trip without water, a thirsty camel can drink more than 100 liters in about ten minutes.',
     ]],
   ],
   'art' => 'The illustration shows a camel with a rider, colorful saddle blankets and bags. A camel would have been a rare sight in the Egypt of the pharaohs; the artist added one for desert journeys.',
@@ -493,12 +499,15 @@ $VEHICLES = [
     ['Oxen at work', [
       'Oxen pulled plows after the flood, trod the harvested grain to separate it from the stalks, and dragged sledges loaded with stone. A farmer\'s oxen were among the most valuable things he owned.',
     ]],
+    ['Counting the cattle', [
+      'Cattle were counted for taxes. A wooden model from the tomb of the official Meketre, made around 1980 BC, shows herdsmen driving his cattle past a shady porch, where Meketre sits with his scribes, who write down every animal.',
+    ]],
   ],
   'art' => 'The illustration shows an ox pulling a wooden cart loaded with sacks of grain, with the driver sitting on top.',
   'look' => ['Count the sacks on the cart.', 'Look at the wheels. How are they made?'],
   'questions' => ['Why might a river be better than a road for moving heavy loads?', 'What jobs did oxen do before tractors?', 'How are heavy goods moved near you?'],
   'words' => ['Ox' => 'A cow or bull trained to work (plural oxen).', 'Threshing' => 'Separating grain from the stalks.', 'Migrant' => 'A person who moves to live in another place.'],
-  'sources' => ['medinet-habu', 'shaw', 'brit-egypt'],
+  'sources' => ['medinet-habu', 'meketre-cattle', 'shaw', 'brit-egypt'],
   'related' => ['granary', 'stone-sledge', 'palm-grove'],
 ],
 'stone-sledge' => [
@@ -511,6 +520,9 @@ $VEHICLES = [
     ]],
     ['Why pour water?', [
       'In 2014, scientists at the University of Amsterdam tested the idea with model sledges. With the right amount of water, sand becomes stiffer, so a sledge slides over it instead of pushing up a heap in front. They found it could halve the force needed. It doesn\'t prove exactly how every stone was moved, but it shows the picture makes sense.',
+    ]],
+    ['Sledges, not rollers', [
+      'People often picture stones being rolled along on logs, but Egyptian paintings show heavy loads on sledges. Rollers sink into soft sand, while a sledge slides well on a firm track, and remains of tracks of mud and timber have been found at ancient building sites.',
     ]],
   ],
   'art' => 'The illustration shows two workers pulling a wooden sledge loaded with a big sandstone block. Real teams were much larger, from dozens to hundreds of people for the heaviest loads.',
