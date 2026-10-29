@@ -194,6 +194,8 @@ require __DIR__ . '/worldpages.php';
 require __DIR__ . '/shop.php';          // before the pages that point to the shop
 require __DIR__ . '/teachpages.php';
 require __DIR__ . '/tours.php';
+// The world maps and their pages, after the tours they point to.
+foreach (WORLD_ORDER as $w) { full_world($w); people_page($w); }
 require __DIR__ . '/play.php';
 require __DIR__ . '/classroom.php';
 require __DIR__ . '/home.php';

@@ -867,7 +867,7 @@ $HEAVEN = [
 
 $WORLD_DATA['heaven'] = [
   'title'    => 'Heavenly City: an imagined city of goodness and happiness',
-  'desc'     => 'Explore an imagined heavenly city of gold and light above the clouds. Each of 31 places pairs a picture of heaven from the Bible and other faiths with something real: gates of pearl and real pearls, the tree of life and the oldest trees on Earth, a feast for all and free community kitchens.',
+  'desc'     => 'Explore an imagined heavenly city of gold and light: 31 places, each pairing a picture of heaven from many faiths with something real in our world.',
   'intro'    => 'An imagined city of goodness and happiness, inspired by how many faiths picture heaven. Each place shows the belief behind it, and something real in our world that brings a little of that goodness here.',
   'note'     => 'This city is imagined. It is inspired mostly by the Bible\'s pictures of heaven, and by ideas of paradise in other faiths. People picture heaven in many different ways, and some people don\'t believe in it. Each page marks what is imagined, what faiths teach and what is real today.',
   'aka'      => 'Inspired by',
@@ -875,6 +875,7 @@ $WORLD_DATA['heaven'] = [
   'pageTitle'=> '%s in the Heavenly City: belief and the real world',
   'aside'    => ['How to read these pages', 'Each page has three kinds of section. Imagined sections describe the artist\'s city. Belief sections describe what a faith teaches, in its own words where possible. Real world sections describe people, places and science in our world today, with sources.'],
   'pageDesc' => ' Explore the imagined place, the beliefs behind it and something real in our world, with questions for discussion.',
+  'pageDescShort' => ' Explore the belief and something real today.',
   'sourcesIntro' => 'The beliefs and real-world facts on this page are based on these sources:',
   'about'    => 'Ideas of heaven and paradise in world religions, and kindness in community life',
   // Positions on the 6 x 6 map, from the back corner (0) to the front corner (35). Tall pieces stand at the back;

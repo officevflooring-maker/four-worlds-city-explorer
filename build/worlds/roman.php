@@ -1019,7 +1019,7 @@ $ROMAN = [
 
 $WORLD_DATA['roman'] = [
   'title'    => 'Ancient Rome: 35 buildings and how they worked',
-  'desc'     => 'Explore an illustrated ancient Roman city. Open any of 35 buildings, from aqueducts and baths to the Pantheon and the Senate house, to learn how it worked, with photos of real Roman sites.',
+  'desc'     => 'Explore an illustrated ancient Roman city: 35 buildings from aqueducts and baths to the Pantheon, how each worked, and photos of real Roman sites.',
   'intro'    => 'Ancient Rome was a real city of perhaps a million people. Explore 35 of its buildings: what each one was for, how it worked and where you can still see real examples today.',
   'note'     => 'The buildings are illustrations, not exact reconstructions. Each page separates what history tells us from what the artist imagined, and lists its sources.',
   'aka'      => 'Latin',
@@ -1028,6 +1028,7 @@ $WORLD_DATA['roman'] = [
   'defaultTag' => 'history',
   'aside'    => ['About dates', 'Dates marked BC count backwards from the traditional year of the birth of Jesus, so 312 BC came before 100 BC. Dates marked AD count forwards, so AD 80 came before AD 216. Many historians write BCE and CE instead; they mean the same years.'],
   'pageDesc' => ' Learn how it worked, see photos of real Roman examples, and explore questions for discussion.',
+  'pageDescShort' => ' See how it worked, with photos of real places.',
   'sourcesIntro' => 'The history on this page is a short summary based on these sources:',
   'about'    => 'Ancient Roman architecture and city life',
   // Positions on the 6 x 6 map, from the back corner (0) to the front corner (35).

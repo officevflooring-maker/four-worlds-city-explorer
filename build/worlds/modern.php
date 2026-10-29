@@ -1029,7 +1029,7 @@ $MODERN = [
 
 $WORLD_DATA['modern'] = [
   'title'    => 'Modern Town: 36 buildings and how a town works',
-  'desc'     => 'Explore an illustrated modern town. Open any of 36 buildings and systems, from libraries and clinics to water treatment and skyscrapers, to learn why towns need them, how they are built and what they do for people.',
+  'desc'     => 'Explore an illustrated modern town: 36 buildings and systems, from libraries and clinics to water treatment, and why every town needs them.',
   'intro'    => 'An imagined modern town with real buildings. Open any of its 36 buildings and systems to learn why towns need them, how they are built and how they serve the people who live there.',
   'note'     => 'This town is imagined, not a specific real place. The facts on each page are about real buildings and systems and list their sources.',
   'aka'      => 'Topic',
@@ -1038,6 +1038,7 @@ $WORLD_DATA['modern'] = [
   'akaLang'  => '',
   'pageTitle'=> '%s: why towns need it and how it works',
   'pageDesc' => ' Learn why towns need it, how it is built and how it serves people, with photos and questions for discussion.',
+  'pageDescShort' => ' Learn why towns need it and how it works.',
   'sourcesIntro' => 'The facts on this page are based on these sources:',
   'about'    => 'City design, infrastructure and public services',
   // Back corner (0) to front corner (35). Streets and water are systems, not buildings,

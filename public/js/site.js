@@ -462,7 +462,8 @@
       tiles.forEach(function (t) {
         t.classList.remove('found');
         var a = t.querySelector('a');
-        if (a && new RegExp('/' + m[1] + '/$').test(a.getAttribute('href'))) tile = t;
+        // a place or vehicle (/worlds/egypt/chariot/) or a person (/worlds/egypt/people/#people-2)
+        if (a && new RegExp('(/' + m[1] + '/|#' + m[1] + ')$').test(a.getAttribute('href'))) tile = t;
       });
       if (!tile) return;
       tile.classList.add('found');

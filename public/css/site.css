@@ -1324,3 +1324,11 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .sort-streak.pop { animation: none; opacity: 1; }
   .sort-fly, .pz-board, .pz-piece, .q-sil img { transition: none; }
 }
+
+/* ---------- World pages: the world at a glance; people on the map and on tour ---------- */
+.glance { list-style: none; display: flex; flex-wrap: wrap; gap: .45rem; margin: 1rem 0 0; padding: 0; }
+.glance li { padding: .35rem .8rem; border: 1px solid color-mix(in srgb, var(--accent) 30%, #fff); border-radius: 999px; background: color-mix(in srgb, var(--accent) 8%, #fff); font-size: .92rem; }
+.glance strong { color: var(--accent); }
+.glance a { font-weight: 700; }
+.person-more { margin: .4rem 0 0; font-size: .92rem; font-weight: 600; }
+.play-line { margin: .8rem 0 0; }

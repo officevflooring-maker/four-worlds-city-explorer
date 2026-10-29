@@ -49,6 +49,22 @@ const SECTION_TAGS = [
   'belief'      => ['badge-belief', 'Belief'],
 ];
 
+// A world's guided tour (build/tours.php): [slug, tour], or [null, null].
+function world_tour($w) {
+  global $TOURS;
+  foreach ($TOURS ?? [] as $slug => $t) if ($t['world'] === $w) return [$slug, $t];
+  return [null, null];
+}
+// Whole sentences from the start of $text, as many as fit in a search result (about 160 characters).
+function fit_desc($text, $max = 160) {
+  $out = '';
+  foreach (preg_split('/(?<=[.?!])\s+/', $text) as $s) {
+    if (strlen(trim("$out $s")) > $max) break;
+    $out = trim("$out $s");
+  }
+  return $out !== '' ? $out : $text;
+}
+
 // Where a person or vehicle stands on a map, and how big it is drawn (see .decor in site.css).
 function decor_at($u, $v) { return '--u:' . $u . ';--v:' . $v . ';--z:' . floor($u + $v); }
 function vehicle_fit($w, $slug, $side) {
@@ -139,6 +155,15 @@ function full_world($w) {
   $others = other_worlds($w);
   $horizon = img($w, 'horizon', '', '100vw', 'fetchpriority="high"');
   $count = count($pages);
+  // The world at a glance, and its guided tour.
+  global $TOURS, $PEOPLE;
+  [$tourSlug, $tour] = world_tour($w);
+  $vehicleCount = count(array_filter($pages, fn($r) => !empty($r['vehicle'])));
+  $photoCount = array_sum(array_map('count', $PHOTOS[$w] ?? []));
+  $glance = '<li><strong>' . ($count - $vehicleCount) . '</strong> places</li><li><strong>' . $vehicleCount . '</strong> vehicles</li><li><strong>' . count($PEOPLE[$w] ?? []) . '</strong> people</li>'
+    . ($photoCount ? '<li><strong>' . $photoCount . '</strong> photos of real places</li>' : '')
+    . ($tour ? '<li><a href="/tours/' . $tourSlug . '/">Guided tour: ' . h($tour['h1']) . '</a></li>' : '');
+  $tourLink = $tour ? '<a href="/tours/' . $tourSlug . '/">Take the tour</a>' : '<a href="/tours/">Guided tours</a>';
   $groundTex = tex($w, $W['ground']);
   $roadTex = tex($w, 'ground-crossroads');
   $introH = h($D['intro']);
@@ -159,6 +184,7 @@ function full_world($w) {
     <p class="tag">{$W['type']}</p>
     <h1>{$label}</h1>
     <p class="lead">{$introH}</p>
+    <ul class="glance" aria-label="{$label} at a glance">{$glance}</ul>
   </div>
 </section>
 
@@ -168,7 +194,7 @@ function full_world($w) {
       <h2 id="map-h">Look around the city</h2>
       <p class="hint">Select any building, person or vehicle to open its page. Everything is also listed below.</p>
     </div>
-    <p class="map-links"><a href="/worlds/{$w}/people/">Meet the people</a> · <a href="/tours/">Guided tours</a></p>
+    <p class="map-links"><a href="/worlds/{$w}/people/">Meet the people</a> · {$tourLink}</p>
   </div>
   <div class="map-shell" data-map>
     <div class="wrap map-tools">
@@ -204,13 +230,14 @@ function full_world($w) {
 <section class="wrap section next" aria-labelledby="next-h">
   <h2 id="next-h">Keep exploring</h2>
   <p><a class="btn" href="/compare/">Compare all six worlds</a> <a class="btn btn-quiet" href="/artwork/#{$w}">See all {$label} artwork</a></p>
+  <p class="play-line">Games with this world: <a href="#hunt">Map hunt</a> · <a href="/play/world-sort/">World sort</a> · <a href="/play/shadows/">Shadow match</a> · <a href="/play/puzzle/">Picture puzzle</a></p>
   <ul class="world-links">{$others}</ul>
 </section>
 HTML,
     'ld' => [
       crumbs([['Home', '/'], [$label, "/worlds/$w/"]]),
       learning($D['title'], $D['desc'], "/worlds/$w/", $D['about']),
-      ['@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => "Buildings of the $label city", 'itemListElement' => $itemList],
+      ['@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => "Buildings of the $label city", 'numberOfItems' => $count, 'itemListElement' => $itemList],
     ],
   ]);
 
@@ -307,8 +334,12 @@ HTML,
       'acquireLicensePage' => url('/artwork/'), 'creditText' => SITE_NAME, 'creator' => ['@type' => 'Organization', 'name' => SITE_NAME],
       'copyrightNotice' => 'Illustration: ' . SITE_NAME . ', CC BY 4.0']];
     foreach ($photos as $p) $images[] = url("/assets/photos/$w/{$p['img']}-1600.webp");
-    // Search results show about 160 characters: the page's extra line goes on only where it fits.
-    $desc = strlen($r['summary'] . $D['pageDesc']) <= 160 ? $r['summary'] . $D['pageDesc'] : $r['summary'];
+    // Search results show about 160 characters: the page's extra line goes on only where it fits, or a
+    // shorter one.
+    $desc = $r['summary'];
+    foreach ([$D['pageDesc'], $D['pageDescShort'] ?? ''] as $more) {
+      if ($more !== '' && strlen($r['summary'] . $more) <= 160) { $desc = $r['summary'] . $more; break; }
+    }
     // On the world's map (or driving around it), so the page can point to it there.
     $onMap = in_array($slug, $D['map']) || !empty($r['vehicle']);
     $findH = $onMap ? '<a class="btn btn-quiet btn-sm" href="/worlds/' . $w . '/#find-' . $slug . '">Find it on the map</a> ' : '';
@@ -392,8 +423,14 @@ function people_page($w) {
   [$title, $intro, $tag] = $PEOPLE_INTRO[$w];
   $label = $WORLDS[$w]['name'];
   [$bcls, $btxt] = SECTION_TAGS[$tag];
+  [$tourSlug, $tour] = world_tour($w);
   $cards = '';
+  $list = [];
   foreach ($PEOPLE[$w] as $file => [$name, $role, $text, $places]) {
+    $list[] = ['@type' => 'ListItem', 'position' => count($list) + 1, 'name' => $name, 'url' => url("/worlds/$w/people/#$file")];
+    // Everyone walks on the world's map; one of them also leads its guided tour.
+    $more = '<a href="/worlds/' . $w . '/#find-' . $file . '">Find them on the map</a>';
+    if ($tour && $tour['guide'] === $file) $more .= ' · <a href="/tours/' . $tourSlug . '/">Join their tour: ' . h($tour['h1']) . '</a>';
     $links = [];
     foreach ($places as $p) {
       if (!isset($WORLD_DATA[$w]['pages'][$p])) { fwrite(STDERR, "unknown people link $w/$file: $p\n"); continue; }
@@ -403,14 +440,15 @@ function people_page($w) {
     $cards .= '<li class="person world-' . $w . '" id="' . $file . '"><button type="button" class="lb person-art" data-full="' . $full . '" data-title="' . h("$label: $name") . '" data-credit="Illustration: The Atlas of Cities, free to use under CC BY 4.0" data-download="atlas-of-cities-' . "$w-$file" . '.webp" aria-label="View full size: ' . h($name) . '">'
       . img($w, $file, $name, '(min-width: 900px) 200px, 40vw', 'loading="lazy"') . '</button>'
       . '<div class="person-text"><h2>' . h($name) . '</h2><p class="tag">' . h($role) . '</p><p>' . h($text) . '</p>'
-      . '<p class="person-where"><strong>Where to find them:</strong> ' . implode(', ', $links) . '</p></div></li>';
+      . '<p class="person-where"><strong>Where to find them:</strong> ' . implode(', ', $links) . '</p><p class="person-more">' . $more . '</p></div></li>';
   }
+  $tourBtn = $tour ? '<a class="btn btn-quiet" href="/tours/' . $tourSlug . '/">Take the tour: ' . h($tour['h1']) . '</a>' : '<a class="btn btn-quiet" href="/tours/">Take a guided tour</a>';
   $others = '';
   foreach (WORLD_ORDER as $o) if ($o !== $w) $others .= '<li><a class="world-link world-' . $o . '" href="/worlds/' . $o . '/people/">' . h($WORLDS[$o]['short']) . ' people</a></li>';
   $titleH = h($title); $introH = h($intro);
   page("/worlds/$w/people/", [
     'title' => $title . ': who lives in the city',
-    'desc' => h($intro),
+    'desc' => h($PEOPLE_INTRO[$w][3] ?? fit_desc($intro)),
     'og' => $w,
     'class' => "world world-$w people-page",
     'lightbox' => true,
@@ -426,12 +464,12 @@ function people_page($w) {
 </section>
 <section class="wrap section next" aria-labelledby="next-h">
   <h2 id="next-h">Keep exploring</h2>
-  <p><a class="btn" href="/worlds/{$w}/">Back to the {$label} map</a> <a class="btn btn-quiet" href="/tours/">Take a guided tour</a></p>
+  <p><a class="btn" href="/worlds/{$w}/">Back to the {$label} map</a> {$tourBtn}</p>
   <ul class="world-links">{$others}</ul>
 </section>
 HTML,
-    'ld' => [crumbs([['Home', '/'], [$label, "/worlds/$w/"], ['People', "/worlds/$w/people/"]])],
+    'ld' => [crumbs([['Home', '/'], [$label, "/worlds/$w/"], ['People', "/worlds/$w/people/"]]),
+      ['@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => $title, 'numberOfItems' => count($list), 'itemListElement' => $list]],
   ]);
 }
 
-foreach (WORLD_ORDER as $w) { full_world($w); people_page($w); }

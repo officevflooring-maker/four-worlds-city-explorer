@@ -14,7 +14,8 @@ $PEOPLE_INTRO = [
   'elven'  => ['People of the Elven World', 'The elves are imagined. Their roles, though, are real ones every community needs: elders, gardeners, makers, keepers of knowledge and protectors.', 'imagined'],
   'future' => ['People and robots of the Future', 'An imagined Moon and Mars settlement. Every person has an important job, and robots do the dull, dirty and dangerous work. The jobs are based on real space careers.', 'speculative'],
   'egypt'  => ['People of Ancient Egypt', 'Who lived and worked along the Nile? Most Egyptians were farmers, but the country also needed scribes, builders, soldiers, priests and traders. In the heat, most people wore simple white linen; jewelry and wigs showed who was rich.', 'history'],
-  'heaven' => ['People of the Heavenly City', 'The people of this city are imagined. Many faiths describe heaven as a place of peace, where people from every nation are welcome and no one is sick, hungry or sad. The pictures show residents, musicians, builders and angels.', 'imagined'],
+  'heaven' => ['People of the Heavenly City', 'The people of this city are imagined. Many faiths describe heaven as a place of peace, where people from every nation are welcome and no one is sick, hungry or sad. The pictures show residents, musicians, builders and angels.', 'imagined',
+    'Meet the imagined people of the Heavenly City: residents, musicians, builders and angels, with the beliefs behind them and something real for each.'],
 ];
 
 $PEOPLE = [

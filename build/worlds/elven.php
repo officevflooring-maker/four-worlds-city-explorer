@@ -976,7 +976,7 @@ $ELVEN = [
 
 $WORLD_DATA['elven'] = [
   'title'    => 'Elven Green World: imagined buildings, real nature technology',
-  'desc'     => 'Explore an imagined elven city that lives in harmony with nature. Each of 35 buildings pairs a fantasy idea with real nature-based technology, from living root bridges and seed vaults to glowing plants and algae buildings.',
+  'desc'     => 'Explore an imagined elven city where each of 35 buildings pairs a fantasy idea with real nature-based technology, from root bridges to seed vaults.',
   'intro'    => 'A fantasy city that grows with the forest. Every building is imagined, but each page shows the real science and nature-based technology that could make parts of it possible.',
   'note'     => 'This world is imagined and does not describe any real culture. Each page marks what is imagined, what is real today and what is still being researched.',
   'aka'      => 'Real-world idea',
@@ -984,6 +984,7 @@ $WORLD_DATA['elven'] = [
   'pageTitle'=> '%s: elven idea, real nature technology',
   'aside'    => ['How to read these pages', 'Each page has three kinds of section. Imagined sections describe the fantasy building. Real world sections describe science, places and technology that exist today, with sources. Possible future sections describe ideas still being researched, which may or may not work.'],
   'pageDesc' => ' Explore the imagined idea, the real science behind it, and questions for discussion.',
+  'pageDescShort' => ' Explore the idea and the real science behind it.',
   'sourcesIntro' => 'The real-world facts on this page are based on these sources:',
   'about'    => 'Ecological design, biomimicry and nature-based technology',
   'map' => [

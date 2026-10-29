@@ -913,7 +913,7 @@ $FUTURE = [
 
 $WORLD_DATA['future'] = [
   'title'    => 'Robotic Future: 34 buildings for living on the Moon and Mars',
-  'desc'     => 'Explore a speculative robotic city and how humanity might live on the Moon and Mars. Each of 34 buildings explains how it could work, the real space technology behind it, and how it would be powered, built and maintained.',
+  'desc'     => 'Explore a possible future city on the Moon and Mars: 34 buildings, the real space technology behind each, and how it would be powered and built.',
   'intro'    => 'One possible future: a settlement on the Moon or Mars. Each building explains how it could work, the real space technology that exists today, and how it would be powered, built and kept running.',
   'note'     => 'This is speculative design, not a prediction. Each page marks what is real today and what is still a possible future.',
   'aka'      => 'Topic',
@@ -921,6 +921,7 @@ $WORLD_DATA['future'] = [
   'akaLang'  => '',
   'pageTitle'=> '%s: how it could work on the Moon and Mars',
   'pageDesc' => ' Learn how it could work beyond Earth, the real technology behind it, and how it would be powered, built and maintained.',
+  'pageDescShort' => ' Learn the real space technology behind it.',
   'sourcesIntro' => 'The real-world facts on this page are based on these sources:',
   'about'    => 'Space exploration, space settlements and future technology',
   'map' => [
