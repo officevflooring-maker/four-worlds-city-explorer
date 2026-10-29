@@ -214,7 +214,7 @@ foreach ($COMPARE as [$key, $label, $question, $cells]) {
       ? '<img class="tex-img" src="' . tex($w, $imgName) . '" width="512" height="512" alt="' . h("$name in the {$WORLDS[$w]['name']} city, seen from above") . '" loading="lazy">'
       : img($w, $imgName, "$name in the {$WORLDS[$w]['name']} city", '(min-width: 1000px) 230px, 45vw', 'loading="lazy"');
     $li .= '<li class="cmp-cell world-' . $w . '"><p class="tag">' . h($WORLDS[$w]['name']) . '</p><div class="cmp-art">' . $art . '</div>'
-      . '<h4>' . h($name) . '</h4><p>' . h($prompt) . '</p>' . $more . '</li>';
+      . '<h3>' . h($name) . '</h3><p>' . h($prompt) . '</p>' . $more . '</li>';
   }
   $rows .= '<section class="cmp-row" id="' . $key . '" aria-labelledby="cmp-' . $key . '"><h2 id="cmp-' . $key . '">' . h($label) . '</h2>'
     . '<p class="cmp-q">' . h($question) . '</p><ul class="cmp-grid">' . $li . '</ul></section>';
@@ -223,7 +223,7 @@ $jump = '';
 foreach ($COMPARE as [$key, $label]) $jump .= '<li><a href="#' . $key . '">' . h($label) . '</a></li>';
 page('/compare/', [
   'title' => 'Compare the Worlds: water, gathering, travel, goods and nature',
-  'desc' => h('One city question, six settings. Compare how ancient Egypt, ancient Rome, a modern town, a green world, a robotic future and an imagined heavenly city could provide water, places to gather, safe travel, deliveries of goods and room for nature.'),
+  'desc' => h('One city question, six worlds: compare how ancient Egypt, Rome, a modern town, an elven forest, Mars and a heavenly city provide water, travel and more.'),
   'class' => 'compare',
   'body' => <<<HTML
 <section class="wrap section page-head">
@@ -315,7 +315,7 @@ if ($storeSupport) {
 }
 page('/support/', [
   'title' => 'Support this free project',
-  'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. ' . ($storeSupport ? 'Paying what you want for the Poster Set helps' : 'Optional donations through Patreon help') . ' add new worlds, printable packs and expert fact-checking.'),
+  'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. ' . ($storeSupport ? 'Paying what you want for the posters helps' : 'Optional donations help') . ' add new worlds and fact-checking.'),
   'class' => 'support',
   'body' => <<<HTML
 <section class="wrap section page-head narrow">
@@ -441,7 +441,7 @@ foreach ($WORLD_DATA as $w => $D) {
 }
 page('/credits/', [
   'title' => 'Photo credits',
-  'desc' => h('Credits and licenses for the photos of real places used on The Atlas of Cities.'),
+  'desc' => h('Credits and licenses for every photo of a real place on The Atlas of Cities: who took it, its license, and a link to the original on Wikimedia Commons.'),
   'noindex' => true,
   'body' => <<<HTML
 <section class="wrap section page-head narrow">
@@ -454,7 +454,7 @@ HTML,
 ]);
 page('/404.html', [
   'title' => 'Page not found',
-  'desc' => h('This page could not be found. Explore the six city worlds of The Atlas of Cities instead.'),
+  'desc' => h('This page could not be found. Explore six illustrated city worlds, free games and guided tours on The Atlas of Cities instead.'),
   'noindex' => true,
   'body' => <<<HTML
 <section class="wrap section page-head narrow">

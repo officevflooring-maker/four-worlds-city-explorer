@@ -159,7 +159,7 @@ foreach ($az as $letter => $list) {
 $searchCount = count($SEARCH);
 page('/search/', [
   'title' => 'Find a page: every building, vehicle, person and tour, A to Z',
-  'desc' => h("Search all $searchCount pages of The Atlas of Cities: buildings and vehicles in six city worlds, the people who live there, guided tours, teacher guides and activities."),
+  'desc' => h("Search all $searchCount pages of The Atlas of Cities: buildings and vehicles in six worlds, their people, guided tours, teacher guides and games."),
   'class' => 'search-page',
   'body' => <<<HTML
 <section class="wrap section page-head">
