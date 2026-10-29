@@ -129,7 +129,7 @@ foreach ([
   ['Atlas Trivia', '/trivia/', 'Shop', 'A family quiz game: 162 questions at three levels.', 'trivia quiz questions game family party classroom print buy'],
   ['Atlas Word Wall', '/wordwall/', 'Shop', '144 vocabulary cards and a glossary for the classroom.', 'word wall vocabulary words cards glossary classroom teacher print buy'],
   ['2027 Calendar', '/calendar/', 'Shop', 'A wall calendar with a landmark from a different world every month.', 'calendar 2027 wall months year gift print buy'],
-  ['Build-a-City Play Set', '/playset/', 'Shop', 'A play mat and 96 stand-up buildings, people and vehicles.', 'play set mat toy stand up paper buildings kids build city print buy'],
+  ['Build-a-City Play Set', '/playset/', 'Shop', 'A play mat and 89 stand-up buildings, people and vehicles.', 'play set mat toy stand up paper buildings kids build city print buy'],
   ['Activity Book', '/activity/', 'Shop', 'Crosswords, mazes, word scrambles and puzzles from six worlds.', 'activity book puzzles crossword maze word scramble kids print buy'],
 ] as [$n, $u, $y, $d, $k]) $SEARCH[] = [$n, $u, $y, '', null, $d, $k];
 
@@ -390,7 +390,8 @@ $quizItems = [];
 foreach ($WORLD_DATA as $w => $D) foreach ($D['pages'] as $slug => $r) {
   if (in_array("$w/$slug", NOT_PIECES)) continue;
   $quizItems[] = ['k' => "$w/$slug", 'w' => $w, 'n' => $r['name'], 'u' => "/worlds/$w/$slug/", 'i' => small_src($w, $slug), 't' => thumb($w, $slug)[0] ?? '',
-    'c' => $r['cat'], 'd' => $r['summary'], 'g' => groups_of("$w/$slug"), 'nd' => needs_of("$w/$slug")];
+    'c' => $r['cat'], 'd' => $r['summary'], 'g' => groups_of("$w/$slug"), 'nd' => needs_of("$w/$slug")]
+    + (empty($r['vehicle']) ? [] : ['v' => 1]);   // the Heavenly City's vehicles are filed under its story's chapters
 }
 // Key words from every page (a definition that names its own word would give the answer away).
 $quizWords = [];

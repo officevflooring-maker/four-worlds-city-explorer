@@ -9,7 +9,7 @@ $SHOP_INFO += [
   'trivia' => ['Atlas Trivia', '/trivia/', 'A family quiz game to print', '162 questions at three levels, so children and grown-ups play together.', '/assets/shop/trivia-fan.webp', 1100, 697],
   'wordwall' => ['Atlas Word Wall', '/wordwall/', 'Classroom vocabulary to print', '144 big word cards, a banner for every world and a glossary of 661 words.', '/assets/shop/wordwall-fan.webp', 1100, 697],
   'calendar' => ['2027 Calendar', '/calendar/', 'A wall calendar to print', 'A landmark from a different world every month, with room to write.', '/assets/shop/calendar-fan.webp', 1100, 697],
-  'playset' => ['Build-a-City Play Set', '/playset/', 'A play set to print', 'A big play mat and 96 stand-up buildings, people and vehicles.', '/assets/shop/playset-fan.webp', 1100, 697],
+  'playset' => ['Build-a-City Play Set', '/playset/', 'A play set to print', 'A big play mat and 89 stand-up buildings, people and vehicles.', '/assets/shop/playset-fan.webp', 1100, 697],
   'activity' => ['Activity Book', '/activity/', 'An activity book to print', 'A crossword, a maze, a word scramble and a puzzle for every world.', '/assets/shop/activity-fan.webp', 1100, 697],
 ];
 
@@ -154,10 +154,10 @@ shop_page('calendar', [
 /* ---------- Build-a-City Play Set ---------- */
 shop_page('playset', [
   'title' => 'Build-a-City Play Set: a play mat and stand-up city to print',
-  'desc' => 'A printable play set for ages 4 and up: a big play mat with a district for each of six worlds, and 96 stand-up buildings, people and vehicles to cut out and fold.',
+  'desc' => 'A printable play set for ages 4 and up: a big play mat with a district for each of six worlds, and 89 stand-up buildings, people and vehicles to cut out and fold.',
   'tag' => 'Print at home · For young builders',
   'lead' => 'Turn the kitchen table into a city. Tape the mat together, fold the stand-ups, and build a Roman street, a Mars base, a city in the clouds, or all of them at once.',
-  'facts' => ['Ages 4 and up', 'Mat about 16 by 21 inches', '96 stand-ups'],
+  'facts' => ['Ages 4 and up', 'Mat about 16 by 21 inches', '89 stand-ups'],
   'perfect' => ['imaginative play', 'rainy days', 'storytelling', 'classroom centers'],
   'pic' => '<img src="/assets/shop/playset-mat.webp" width="760" height="1001" alt="The play mat: six districts, one for each world, each with its own ground and crossing streets.">',
   'again' => shop_open('playset') ? 'Build a city on the kitchen table' : 'The Build-a-City Play Set is coming soon',

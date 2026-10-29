@@ -245,7 +245,7 @@ shop_page('city-builders', [
     ]) . '</section>'
     . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
     . shop_feats([
-      ['🏛️', '155 building cards', 'From all six worlds. Each shows the needs it meets and what it does.'],
+      ['🏛️', '156 building cards', 'From all six worlds. Each shows the needs it meets and what it does.'],
       ['🎯', '9 challenge cards', 'Secret goals for bonus points, like a Roman town or a Mars base.'],
       ['🃏', 'Helper cards and card backs', 'A turn summary, the ten needs, and backs for two-sided printing.'],
       ['👶', 'Ways to play', 'An open-hand game for younger players, a short game, and a class version for teams.'],
@@ -254,7 +254,7 @@ shop_page('city-builders', [
     ]) . '</div></section>'
     . shop_pages([
       ['1 and 2', 'Rules: setup, turns, scoring, other ways to play and questions to talk about'],
-      ['3 to 20', '155 building cards, nine to a page, world by world, and 2 helper cards'],
+      ['3 to 20', '156 building cards, nine to a page, world by world, and 2 helper cards'],
       ['21', '9 challenge cards'],
       ['22', 'Card backs, for printing on both sides'],
     ], 'A PDF of 22 pages, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
@@ -270,7 +270,7 @@ shop_page('city-builders', [
 /* ---------- Classroom Pack ---------- */
 shop_page('classroom-pack', [
   'title' => 'Classroom Pack: how cities work, ready to print',
-  'desc' => 'A print-ready teaching pack from The Atlas of Cities: fact cards for 230 places, 16 worksheets with answer keys, the ten needs of a city and 90 discussion cards.',
+  'desc' => 'A print-ready teaching pack from The Atlas of Cities: fact cards for 229 places, 16 worksheets with answer keys, the ten needs of a city and 90 discussion cards.',
   'tag' => 'Print at home · For teachers and homeschool',
   'lead' => 'Everything for teaching how cities work, in one file: fact cards for every place, the worksheets with their answer keys, and questions that get a class talking.',
   'facts' => ['83 pages', 'Grades 2 to 9', 'PDF in Letter and A4'],
@@ -292,7 +292,7 @@ shop_page('classroom-pack', [
     ]) . '</section>'
     . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
     . shop_feats([
-      ['🗂️', '230 fact cards', 'Every place, vehicle and green space: a picture, what it does, the needs it meets and a question.'],
+      ['🗂️', '229 fact cards', 'Every place, vehicle and green space: a picture, what it does, the needs it meets and a question.'],
       ['📝', '16 worksheets', 'Vocabulary and a word search for every world, matching, a comparison chart and a city plan, each followed by its answer key.'],
       ['🏙️', 'The ten needs', 'Two pages that compare how each world gives its people water, homes, food and more.'],
       ['💬', '90 discussion cards', 'Questions for warm-ups, exit tickets and journals, 15 from each world.'],
@@ -302,7 +302,7 @@ shop_page('classroom-pack', [
     . shop_pages([
       ['1 and 2', 'Cover, contents and ideas for using the pack'],
       ['3 and 4', 'Ten things every city needs, compared across the six worlds'],
-      ['5 to 43', '230 fact cards, six to a page'],
+      ['5 to 43', '229 fact cards, six to a page'],
       ['44 to 74', '16 worksheets, each followed by its answer key'],
       ['75 to 83', '90 discussion cards, ten to a page'],
     ], 'A PDF of 83 pages, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
