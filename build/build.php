@@ -30,7 +30,8 @@ function url($path) { return SITE_URL . $path; }
 
 // Builds a responsive <img> from every size of one asset (e.g. aqueduct-960.webp, aqueduct-1600.webp).
 function img($world, $name, $alt, $sizes, $attrs = '') {
-  $files = glob(PUB . "/assets/worlds/$world/$name-*.webp");
+  // Only {name}-{width}.webp: chariot-arena-480.webp is another picture, not a size of chariot.
+  $files = preg_grep('~/' . preg_quote($name, '~') . '-\d+\.webp$~', glob(PUB . "/assets/worlds/$world/$name-*.webp"));
   $set = [];
   foreach ($files as $f) { [$w, $hgt] = getimagesize($f); $set[$w] = [basename($f), $hgt]; }
   if (!$set) { fwrite(STDERR, "missing image $world/$name\n"); return ''; }

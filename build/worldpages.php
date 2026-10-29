@@ -49,6 +49,14 @@ const SECTION_TAGS = [
   'belief'      => ['badge-belief', 'Belief'],
 ];
 
+// Where a person or vehicle stands on a map, and how big it is drawn (see .decor in site.css).
+function decor_at($u, $v) { return '--u:' . $u . ';--v:' . $v . ';--z:' . floor($u + $v); }
+function vehicle_fit($w, $slug, $side) {
+  [$width, $front, $back] = VEHICLE_FIT["$w/$slug"] ?? [6, 1, 1];
+  return ';--w:' . $width . ';--b:' . ($side ? $back : $front);
+}
+function person_fit($w) { return isset(PEOPLE_SCALE[$w]) ? ';--sc:' . PEOPLE_SCALE[$w] : ''; }
+
 // Buildings in other worlds that share a group with this one (see build/crosslinks.php).
 function cross_links($w, $slug) {
   global $CROSSLINKS, $WORLD_DATA;
@@ -90,21 +98,23 @@ function full_world($w) {
       . img($w, $slug, '', $tileSizes, 'draggable="false"')
       . '<span class="tile-label">' . h($pages[$slug]['name']) . '</span></a></li>';
   }
-  // Street life: points are in grid units (u along i, v along j); whole numbers are street lines.
+  // Street life on the two front edges, where no building hides it. Points are grid units (u along i, v along j);
+  // whole numbers are street lines. Every vehicle picture heads along u, so the vehicles drive along the left
+  // front street (v = 6): front views come toward you in the near lane, back views drive away in the far lane.
   global $VEHICLES, $PEOPLE;
   $decor = '';
-  // Inner streets are hidden behind buildings, so street life uses the two front edges of the city.
-  $carSpots = [[6.1, .95, ''], [6.1, 2.4, 'rear-'], [6.1, 3.85, ''], [6.1, 5.3, 'rear-']];
+  $carSpots = [[1.15, 6.14, ''], [2.65, 6.02, 'rear-'], [4.1, 6.14, ''], [5.5, 6.02, 'rear-']];
   foreach (array_keys($VEHICLES[$w] ?? []) as $k => $vslug) {
     [$u, $v, $side] = $carSpots[$k];
-    $decor .= '<li class="tile decor decor-car" style="--u:' . $u . ';--v:' . $v . ';--z:' . floor($u + $v) . '"' . $tileData($vslug) . '><a class="tile-btn" href="/worlds/' . $w . '/' . $vslug . '/">'
-      . img($w, $side . $vslug, '', '120px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pages[$vslug]['name']) . '</span></a></li>';
+    $decor .= '<li class="tile decor decor-car" style="' . decor_at($u, $v) . vehicle_fit($w, $vslug, $side) . '"' . $tileData($vslug) . '><a class="tile-btn" href="/worlds/' . $w . '/' . $vslug . '/">'
+      . img($w, $side . $vslug, '', '90px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pages[$vslug]['name']) . '</span></a></li>';
   }
-  $personSpots = [[.45, 6.1], [1.15, 6.1], [2.05, 6.1], [2.75, 6.1], [3.6, 6.1], [4.3, 6.1], [5.05, 6.1], [5.65, 6.1]];
+  // People: three on the sidewalk between the vehicles, the rest along the right front street.
+  $personSpots = [[.45, 6.2], [1.95, 6.2], [3.4, 6.2], [6.2, 5.55], [6.2, 4.45], [6.2, 3.35], [6.2, 2.2], [6.2, 1.05]];
   foreach (array_keys($PEOPLE[$w] ?? []) as $k => $file) {
     [$u, $v] = $personSpots[$k];
     [$pname, $prole] = $PEOPLE[$w][$file];
-    $decor .= '<li class="tile decor decor-person" style="--u:' . $u . ';--v:' . $v . ';--z:' . floor($u + $v) . '" data-cat="people" data-name="' . h($pname) . '" data-catname="People" data-sum="' . h($prole) . '"><a class="tile-btn" href="/worlds/' . $w . '/people/#' . $file . '">'
+    $decor .= '<li class="tile decor decor-person" style="' . decor_at($u, $v) . person_fit($w) . '" data-cat="people" data-name="' . h($pname) . '" data-catname="People" data-sum="' . h($prole) . '"><a class="tile-btn" href="/worlds/' . $w . '/people/#' . $file . '">'
       . img($w, $file, '', '64px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pname) . '</span></a></li>';
   }
   $map .= $decor;

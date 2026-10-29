@@ -44,17 +44,18 @@ foreach ($blocks as $w => [$io, $jo, $slugs]) {
   // the world's own trees on the front row of its block
   foreach ([0, 1] as $di) $heroTiles .= '<li class="tile tile-tree" style="--i:' . ($io + $di) . ';--j:' . ($jo + 2) . '" aria-hidden="true">' . img($w, $WORLD_DATA[$w]['tree'], '', '(min-width: 900px) 120px, 15vw', 'draggable="false"') . '</li>';
 }
-// Street life on the front edges: [world, image, page link, u, v]. Whole numbers are street lines.
+// Street life on the front edges: [world, image, page link, u, v]. Whole numbers are street lines. As on the
+// world maps, vehicles drive along the left front street, each in front of its own world.
 foreach ([
-  ['heaven', 'golden-chariot', 'golden-chariot', 6.12, .8], ['heaven', 'people-4', 'people/#people-4', 6.12, 1.7],
-  ['egypt', 'camel', 'camel', 6.12, 2.75], ['future', 'rear-hover-car', 'hover-car', 6.12, 3.9], ['future', 'people-2', 'people/#people-2', 6.12, 5.1],
-  ['elven', 'people-5', 'people/#people-5', .5, 6.12], ['elven', 'people-1', 'people/#people-1', 1.3, 6.12],
-  ['roman', 'chariot', 'chariot', 2.35, 6.12], ['roman', 'people-6', 'people/#people-6', 3.55, 6.12],
-  ['future', 'people-5', 'people/#people-5', 4.6, 6.12], ['future', 'people-6', 'people/#people-6', 5.4, 6.12],
+  ['heaven', 'people-4', 'people/#people-4', 6.2, .9], ['heaven', 'people-2', 'people/#people-2', 6.2, 2.05],
+  ['future', 'people-2', 'people/#people-2', 6.2, 3.95], ['future', 'people-5', 'people/#people-5', 6.2, 5.05],
+  ['elven', 'people-5', 'people/#people-5', .45, 6.2], ['elven', 'flower-cart', 'flower-cart', 1.35, 6.14],
+  ['roman', 'chariot', 'chariot', 2.75, 6.14], ['roman', 'people-6', 'people/#people-6', 3.6, 6.2],
+  ['future', 'rear-hover-car', 'hover-car', 4.7, 6.02], ['future', 'people-6', 'people/#people-6', 5.5, 6.2],
 ] as [$w, $f, $link, $u, $v]) {
   $car = !str_starts_with($f, 'people');
-  $heroTiles .= '<li class="tile decor ' . ($car ? 'decor-car' : 'decor-person') . '" style="--u:' . $u . ';--v:' . $v . ';--z:20"><a class="tile-btn" href="/worlds/' . $w . '/' . $link . ($car ? '/' : '') . '" aria-label="' . h($WORLDS[$w]['name'] . ($car ? ' vehicle' : ' person')) . '">'
-    . img($w, $f, '', $car ? '90px' : '48px', 'draggable="false"') . '</a></li>';
+  $heroTiles .= '<li class="tile decor ' . ($car ? 'decor-car' : 'decor-person') . '" style="--u:' . $u . ';--v:' . $v . ';--z:20' . ($car ? vehicle_fit($w, $link, str_starts_with($f, 'rear-')) : person_fit($w)) . '"><a class="tile-btn" href="/worlds/' . $w . '/' . $link . ($car ? '/' : '') . '" aria-label="' . h($WORLDS[$w]['name'] . ($car ? ' vehicle' : ' person')) . '">'
+    . img($w, $f, '', $car ? '72px' : '48px', 'draggable="false"') . '</a></li>';
 }
 $heroLegend = '';
 foreach (WORLD_ORDER as $w) $heroLegend .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';

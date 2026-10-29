@@ -179,8 +179,10 @@ main:focus { outline: none; }
 /* People and vehicles stand on the streets: --u and --v are grid points (whole numbers are streets). */
 .decor { left: calc((50 + (var(--u) - var(--v)) * 50 / var(--n)) * 1cqw); top: calc((var(--y0) + (var(--u) + var(--v)) * 25 / var(--n) + .5) * 1cqw);
   transform: translate(-50%, -100%); z-index: var(--z); }
-.decor-person { width: 4.8cqw; }
-.decor-car { width: 8.5cqw; }
+/* --sc evens out people pictures framed differently; a vehicle is --w % of the map wide, and --b is how far down
+   its picture the wheels reach, so they touch the street. */
+.decor-person { width: calc(4.8cqw * var(--sc, 1)); }
+.decor-car { width: calc(var(--w, 6) * 1cqw); transform: translate(-50%, calc(var(--b, 1) * -100%)); }
 .decor .tile-label { bottom: -1.2em; font-size: clamp(.55rem, 1.1cqw, .8rem); }
 .show-labels .decor .tile-label, .city.hide-decor .decor { display: none; }
 .show-labels .decor-person .tile-label { display: none; }
@@ -517,8 +519,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .hq.world-future { --road: #3d4a57; --curb: #6fe0f0; }
 .hq.world-egypt { --road: #cfae74; --curb: #f1dfb0; }
 .hq.world-heaven { --road: #d9b24c; --curb: #f6f0e1; }
-.hero-city .decor-person { width: 4.4cqw; }
-.hero-city .decor-car { width: 8.5cqw; }
+.hero-city .decor-person { width: calc(4.4cqw * var(--sc, 1)); }
 .hero-city .tile-label { font-size: clamp(.62rem, 1.7cqw, .85rem); }
 .hero-legend { justify-content: center; gap: .4rem; margin: .4rem 0 0; }
 .hero-legend .world-link { font-size: .85rem; padding: .4rem .8rem; }
@@ -1169,7 +1170,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 
 /* ---------- Shop: buying facts, who it is for, page by page, shelves ---------- */
 .shop-trust { list-style: none; padding: 0; margin: .6rem 0 0; display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .9rem; font-weight: 600; color: #2f3a48; }
-.shop-trust li::before { content: "¹3"; color: #1f7a4d; font-weight: 800; margin-right: .35rem; }
+.shop-trust li::before { content: "\2713"; color: #1f7a4d; font-weight: 800; margin-right: .35rem; }
 .shop-top-dark .shop-trust { color: #d6dcea; }
 .shop-top-dark .shop-trust li::before { color: #9fe0b8; }
 .shop-perfect { margin: .9rem 0 0; font-size: .95rem; color: var(--muted); }

@@ -6,6 +6,24 @@
 
 const VEHICLE_CAT = ['Vehicles and getting around', 'How people and goods move around the city.'];
 
+// How each vehicle stands on a city map: its width (% of the map's width), chosen so it looks right next to the
+// people, and how far down its front and back pictures the wheels, hooves or hull reach (fraction of the
+// picture's height, measured from the pictures), so it stands on the street instead of floating above it.
+const VEHICLE_FIT = [
+  'roman/ox-cart'            => [6.6, .88, .86], 'roman/chariot'          => [5.6, .93, .90],
+  'roman/donkey-cart'        => [6.0, .90, .88], 'roman/litter'           => [6.0, .94, .96],
+  'modern/family-car'        => [5.2, .85, .87], 'modern/taxi'            => [5.6, .83, .82],
+  'modern/pickup-truck'      => [5.9, .87, .85], 'modern/delivery-van'    => [6.0, .88, .87],
+  'elven/deer-sleigh'        => [5.8, .91, .91], 'elven/flower-cart'      => [5.8, .90, .91],
+  'elven/mushroom-carriage'  => [5.9, .96, .91], 'elven/beetle-rider'     => [5.4, .97, .97],
+  'future/hover-car'         => [5.6, .78, .79], 'future/pressurized-rover' => [5.8, .89, .89],
+  'future/cargo-pod'         => [6.0, .84, .83], 'future/drone-taxi'      => [6.0, .84, .85],
+  'egypt/chariot'            => [7.0, .88, .87], 'egypt/camel'            => [6.4, .94, .95],
+  'egypt/ox-cart'            => [8.4, .72, .71], 'egypt/stone-sledge'     => [8.6, .72, .74],
+  'heaven/golden-chariot'    => [6.2, .95, .91], 'heaven/cloud-carriage'  => [5.8, .87, .91],
+  'heaven/swan-boat'         => [6.2, .93, .87], 'heaven/fruit-donkey'    => [5.8, .91, .93],
+];
+
 $VEHICLE_SOURCES = [
   'roman' => [
     'brit-roads'   => 'Encyclopaedia Britannica, "Roman road system"',

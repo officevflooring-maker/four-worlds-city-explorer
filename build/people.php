@@ -4,6 +4,10 @@
 // tools/copy-people-vehicles.sh. Each world gets a page at /worlds/{world}/people/.
 // Each person: [name, short role, text, building pages where you might meet them].
 
+// The Egypt and Heaven pictures leave more room above the head (the figure fills .8 of the frame, not .9), so the
+// maps draw those people a little bigger to match the other worlds.
+const PEOPLE_SCALE = ['egypt' => 1.125, 'heaven' => 1.125];
+
 $PEOPLE_INTRO = [
   'roman'  => ['People of Ancient Rome', 'Who lived and worked in a Roman city? At its height Rome may have had around a million people, from senators to enslaved workers. Their clothes often showed who they were.', 'history'],
   'modern' => ['People of the Modern Town', 'A town has to work for everyone: children walking to school, runners, older people, dog walkers and workers. Each person uses the same streets in a different way.', 'real'],
