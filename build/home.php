@@ -8,58 +8,70 @@ $artCount = count(glob(PUB . '/assets/artwork/*/*-thumb.webp'));
 $photoCount = count(glob(PUB . '/assets/photos/*/*-800.webp'));
 $peopleCount = array_sum(array_map('count', $PEOPLE));
 $stats = [
-  [4, 'illustrated worlds'], [$pageCount, 'building and vehicle pages'], [$peopleCount, 'people to meet'],
+  [count(WORLD_ORDER), 'illustrated worlds'], [$pageCount, 'building and vehicle pages'], [$peopleCount, 'people to meet'],
   [count($TOURS), 'guided tours'], [count($TEACH), 'free teacher guides'], [$artCount, 'free illustrations'], [$photoCount, 'photos of real places'],
 ];
 $statsH = '';
 foreach ($stats as [$n, $l]) $statsH .= '<li><strong>' . $n . '</strong> <span>' . h($l) . '</span></li>';
 
-// Hero: one isometric city made of all four worlds, a 2 x 2 quarter each, built with the same map CSS
-// as the world pages. Modern sits at the back (its towers make a skyline); people and vehicles stand
-// on the two front edges, where no building hides them.
-$quarters = [
+// Hero: one isometric city made of all six worlds, built with the same map CSS as the world pages: a 6 x 6
+// grid with a block of 2 x 3 squares for each world, four buildings at the back of the block and two of the
+// world's trees in front. Modern and Egypt sit at the back (towers and the pyramid make a skyline); people and
+// vehicles stand on the two front edges, where no building hides them.
+$blocks = [
   // world => [i offset, j offset, four buildings in order (0,0) (1,0) (0,1) (1,1)]
   'modern' => [0, 0, ['skyscraper', 'residential-tower', 'public-library', 'park-pond']],
-  'roman'  => [2, 0, ['pantheon', 'amphitheater', 'triumphal-arch', 'public-fountain']],
-  'elven'  => [0, 2, ['great-tree-hall', 'treetop-village', 'mushroom-cottage', 'flower-meadow']],
-  'future' => [2, 2, ['spaceport', 'power-tower', 'greenhouse-dome', 'habitat-cluster']],
+  'egypt'  => [2, 0, ['obelisk', 'pyramid', 'temple-gateway', 'sphinx']],
+  'heaven' => [4, 0, ['bell-tower', 'palace-of-light', 'pearl-gate', 'tree-of-life']],
+  'elven'  => [0, 3, ['great-tree-hall', 'treetop-village', 'mushroom-cottage', 'flower-meadow']],
+  'roman'  => [2, 3, ['pantheon', 'amphitheater', 'triumphal-arch', 'public-fountain']],
+  'future' => [4, 3, ['spaceport', 'power-tower', 'greenhouse-dome', 'habitat-cluster']],
 ];
+$heroN = 6;
 $heroGround = '';
 $heroTiles = '';
-foreach ($quarters as $w => [$io, $jo, $slugs]) {
-  $heroGround .= '<span class="hq world-' . $w . '" style="--tex:url(' . tex($w, $WORLDS[$w]['ground']) . ');--roadtex:url(' . tex($w, 'ground-crossroads') . ');left:' . ($io * 25) . '%;top:' . ($jo * 25) . '%"></span>';
+foreach ($blocks as $w => [$io, $jo, $slugs]) {
+  $heroGround .= '<span class="hq world-' . $w . '" style="--tex:url(' . tex($w, $WORLDS[$w]['ground']) . ');--roadtex:url(' . tex($w, 'ground-crossroads') . ');left:'
+    . round($io * 100 / $heroN, 3) . '%;top:' . round($jo * 100 / $heroN, 3) . '%;width:' . round(200 / $heroN, 3) . '%;height:' . round(300 / $heroN, 3) . '%"></span>';
   foreach ($slugs as $k => $s) {
     $i = $io + $k % 2; $j = $jo + intdiv($k, 2);
     if (!isset($WORLD_DATA[$w]['pages'][$s])) { fwrite(STDERR, "home hero: unknown page $w/$s\n"); continue; }
     $name = $WORLD_DATA[$w]['pages'][$s]['name'];
     $heroTiles .= '<li class="tile" style="--i:' . $i . ';--j:' . $j . '"><a class="tile-btn" href="/worlds/' . $w . '/' . $s . '/">'
-      . img($w, $s, '', '(min-width: 900px) 170px, 22vw', ($w === 'roman' && $k === 0 ? 'fetchpriority="high" ' : '') . 'draggable="false"')
+      . img($w, $s, '', '(min-width: 900px) 120px, 15vw', ($w === 'egypt' && $k === 1 ? 'fetchpriority="high" ' : '') . 'draggable="false"')
       . '<span class="tile-label">' . h($name . ' · ' . $WORLDS[$w]['short']) . '</span></a></li>';
   }
+  // the world's own trees on the front row of its block
+  foreach ([0, 1] as $di) $heroTiles .= '<li class="tile tile-tree" style="--i:' . ($io + $di) . ';--j:' . ($jo + 2) . '" aria-hidden="true">' . img($w, $WORLD_DATA[$w]['tree'], '', '(min-width: 900px) 120px, 15vw', 'draggable="false"') . '</li>';
 }
 // Street life on the front edges: [world, image, page link, u, v]. Whole numbers are street lines.
 foreach ([
-  ['roman', 'chariot', 'chariot', 4.12, .75], ['roman', 'people-6', 'people/#people-6', 4.12, 1.55],
-  ['future', 'rear-hover-car', 'hover-car', 4.12, 2.75], ['future', 'people-2', 'people/#people-2', 4.12, 3.55],
-  ['elven', 'people-5', 'people/#people-5', .5, 4.12], ['elven', 'people-1', 'people/#people-1', 1.3, 4.12],
-  ['future', 'people-5', 'people/#people-5', 2.6, 4.12], ['future', 'people-6', 'people/#people-6', 3.4, 4.12],
+  ['heaven', 'golden-chariot', 'golden-chariot', 6.12, .8], ['heaven', 'people-4', 'people/#people-4', 6.12, 1.7],
+  ['egypt', 'camel', 'camel', 6.12, 2.75], ['future', 'rear-hover-car', 'hover-car', 6.12, 3.9], ['future', 'people-2', 'people/#people-2', 6.12, 5.1],
+  ['elven', 'people-5', 'people/#people-5', .5, 6.12], ['elven', 'people-1', 'people/#people-1', 1.3, 6.12],
+  ['roman', 'chariot', 'chariot', 2.35, 6.12], ['roman', 'people-6', 'people/#people-6', 3.55, 6.12],
+  ['future', 'people-5', 'people/#people-5', 4.6, 6.12], ['future', 'people-6', 'people/#people-6', 5.4, 6.12],
 ] as [$w, $f, $link, $u, $v]) {
   $car = !str_starts_with($f, 'people');
   $heroTiles .= '<li class="tile decor ' . ($car ? 'decor-car' : 'decor-person') . '" style="--u:' . $u . ';--v:' . $v . ';--z:20"><a class="tile-btn" href="/worlds/' . $w . '/' . $link . ($car ? '/' : '') . '" aria-label="' . h($WORLDS[$w]['name'] . ($car ? ' vehicle' : ' person')) . '">'
-    . img($w, $f, '', $car ? '120px' : '64px', 'draggable="false"') . '</a></li>';
+    . img($w, $f, '', $car ? '90px' : '48px', 'draggable="false"') . '</a></li>';
 }
 $heroLegend = '';
 foreach (WORLD_ORDER as $w) $heroLegend .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';
-$parade = [['roman', 'chariot', 'About 2,000 years ago'], ['modern', 'taxi', 'Today'], ['elven', 'flower-cart', 'Imagined'], ['future', 'hover-car', 'Possible future']];
+$parade = [['egypt', 'chariot', 'About 3,500 years ago'], ['roman', 'chariot', 'About 2,000 years ago'], ['modern', 'taxi', 'Today'], ['elven', 'flower-cart', 'Imagined'], ['future', 'hover-car', 'Possible future'], ['heaven', 'golden-chariot', 'Inspired by belief']];
 
 // World cards: horizon, signature building, a person, and three places to start.
 $starts = [
+  'egypt'  => ['pyramid', 'scribe-school', 'village-house'],
+  'heaven' => ['pearl-gate', 'tree-of-life', 'banquet-hall'],
   'roman'  => ['aqueduct', 'amphitheater', 'public-baths'],
   'modern' => ['water-system', 'public-library', 'streets-crosswalks'],
   'elven'  => ['great-tree-hall', 'flower-meadow', 'tree-library'],
   'future' => ['water-recycler', 'oxygen-factory', 'pressurized-rover'],
 ];
 $oneLine = [
+  'egypt'  => 'The real civilization on the Nile, from the pyramids to the homes of the tomb builders.',
+  'heaven' => 'An imagined city of goodness: the beliefs behind it, and real kindness today.',
   'roman'  => 'The real city, about 2,000 years ago, with photos of what survives.',
   'modern' => 'A town like yours: why each building is there and who it serves.',
   'elven'  => 'A forest city, and the real nature technology behind each idea.',
@@ -89,14 +101,15 @@ foreach ($parade as [$w, $v, $era]) {
 
 // People strip: two from each world.
 $crowd = '';
-foreach ([['roman', 'people-1'], ['roman', 'people-6'], ['modern', 'people-5'], ['modern', 'worker-1'], ['elven', 'people-1'], ['elven', 'people-4'], ['future', 'people-5'], ['future', 'people-6']] as [$w, $f]) {
+foreach ([['egypt', 'people-2'], ['egypt', 'people-6'], ['roman', 'people-1'], ['roman', 'people-6'], ['modern', 'people-5'], ['modern', 'worker-1'], ['elven', 'people-1'], ['elven', 'people-4'], ['future', 'people-5'], ['future', 'people-6'], ['heaven', 'people-2'], ['heaven', 'people-3']] as [$w, $f]) {
   $crowd .= '<li class="world-' . $w . '"><a href="/worlds/' . $w . '/people/#' . $f . '">' . img($w, $f, '', '(min-width: 900px) 140px, 22vw', 'loading="lazy"')
     . '<span class="p-name">' . h($PEOPLE[$w][$f][0]) . '</span><span class="what">' . h($WORLDS[$w]['short']) . '</span></a></li>';
 }
 
-// Compare teaser: water in four worlds.
+// Compare teaser: water in every world.
 $water = '';
-foreach ($COMPARE[0][3] as $w => [$imgName, $name]) {
+foreach (WORLD_ORDER as $w) {
+  [$imgName, $name] = $COMPARE[0][3][$w];
   $water .= '<li class="world-' . $w . '"><span class="cmp-mini">' . img($w, $imgName, '', '(min-width: 900px) 200px, 40vw', 'loading="lazy"') . '</span><span class="p-name">' . h($name) . '</span><span class="what">' . h($WORLDS[$w]['short']) . '</span></li>';
 }
 
@@ -108,7 +121,7 @@ foreach (['design-a-city-project', 'build-a-roman-aqueduct', 'design-a-mars-colo
 
 // Artwork mosaic: a few favorites from every world.
 $mosaic = '';
-foreach ([['roman', 'fitness-3'], ['elven', 'shared-2'], ['future', 'growth-1'], ['modern', 'business-3'], ['roman', 'vehicle-car-2'], ['elven', 'knowledge-1'], ['future', 'town-3'], ['modern', 'vehicle-car-2'], ['roman', 'family-3'], ['elven', 'vehicle-car-3'], ['future', 'vehicle-car-4'], ['modern', 'knowledge-3']] as [$w, $n]) {
+foreach ([['egypt', 'town-3'], ['roman', 'fitness-3'], ['elven', 'shared-2'], ['heaven', 'growth-3'], ['future', 'growth-1'], ['modern', 'business-3'], ['egypt', 'vehicle-car-1'], ['roman', 'vehicle-car-2'], ['heaven', 'town-1'], ['elven', 'vehicle-car-3'], ['future', 'town-3'], ['modern', 'knowledge-3']] as [$w, $n]) {
   $f = "/assets/artwork/$w/$n-thumb.webp";
   if (!is_file(PUB . $f)) { fwrite(STDERR, "home mosaic missing $f\n"); continue; }
   $mosaic .= '<li class="world-' . $w . '"><img src="' . $f . '" width="480" height="480" alt="" loading="lazy" decoding="async"></li>';
@@ -130,14 +143,14 @@ page('/', [
         <h1 class="hero-title">Past, Present and Imagined</h1>
       </div>
       <h2 class="hero-q">How does a city <span>work?</span></h2>
-      <p class="lead">Explore four illustrated cities, from ancient Rome to a settlement on Mars. Open any building, meet the people and compare how each world solves the same problems.</p>
+      <p class="lead">Explore six illustrated cities, from ancient Egypt to a settlement on Mars. Open any building, meet the people and compare how each world solves the same problems.</p>
       <p class="hero-actions"><a class="btn" href="#worlds">Choose a world</a> <a class="btn btn-quiet" href="/tours/">Take a guided tour</a></p>
       <p class="hero-free">Free for everyone. No sign-up, ads or tracking.</p>
     </div>
     <div class="hero3-map">
-      <div class="city hero-city" style="--n:4;--y0:9">
+      <div class="city hero-city" style="--n:6;--y0:9">
         <div class="city-ground hero-ground" aria-hidden="true">{$heroGround}</div>
-        <ul class="city-tiles" aria-label="A city made of all four worlds">{$heroTiles}</ul>
+        <ul class="city-tiles" aria-label="A city made of all six worlds">{$heroTiles}</ul>
       </div>
       <ul class="world-links hero-legend">{$heroLegend}</ul>
     </div>
@@ -183,7 +196,7 @@ page('/', [
 
 <section class="wrap section split" aria-labelledby="cmp-h">
   <div>
-    <h2 id="cmp-h">One question, four answers</h2>
+    <h2 id="cmp-h">One question, six answers</h2>
     <p class="big-q">Where does clean water come from?</p>
     <p>See how each world handles water, gathering places, safe travel, deliveries and nature, then decide which ideas would work where you live.</p>
     <p><a class="btn" href="/compare/">Compare the worlds</a></p>
@@ -210,7 +223,7 @@ page('/', [
 
 <section class="band band-dark shop-home" aria-labelledby="shop-h">
   <div class="wrap">
-    <div class="sec-head"><p class="tag">For grown-ups</p><h2 id="shop-h">From the shop</h2><p>A game for real-life goals, a card game, a classroom pack and posters, all made from these four worlds.</p></div>
+    <div class="sec-head"><p class="tag">For grown-ups</p><h2 id="shop-h">From the shop</h2><p>A game for real-life goals, a card game, a classroom pack and posters, all made from these worlds.</p></div>
     {$shopCards}
     <p class="shop-home-more"><a class="btn" href="/shop/">Visit the shop</a></p>
   </div>

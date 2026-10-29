@@ -2,7 +2,7 @@
 
 (Formerly "Four Worlds City Explorer". The GitHub repository keeps its original name.)
 
-A free educational website: explore four illustrated isometric cities (Ancient Rome, a Modern Town, an Elven Green World and a Robotic Future), learn what each building does, and compare how each world provides water, places to gather, safe travel and room for nature.
+A free educational website: explore six illustrated isometric cities (Ancient Egypt, Ancient Rome, a Modern Town, an Elven Green World, a Robotic Future and an imagined Heavenly City), learn what each building does, and compare how each world provides water, places to gather, safe travel and room for nature.
 
 No accounts, forms, cookies, ads, analytics or third-party requests. Passport stamps, quiz scores and saved cities stay in the visitor's own browser (localStorage) and are never sent anywhere.
 
@@ -18,7 +18,7 @@ No accounts, forms, cookies, ads, analytics or third-party requests. Passport st
 - `tools/make-thumbs.sh` makes the small preview images in `public/assets/thumbs/` (search results, city builder, quiz, passport) from the web-sized building images.
 - `build/play.php` builds search (`/data/search.json` and the A to Z page), the play hub and the games: city builder (with challenges), quiz, map hunt, memory match, word search and passport. Their browser code is `public/js/site.js` (search, phone menu, passport, badges), `builder.js`, `quiz.js`, `hunt.js` (runs on the world maps), `memory.js` and `wordsearch.js`.
 - `build/classroom.php` builds the teacher tools: printable worksheets with answer keys, the glossary and the question bank. Word search puzzles are made once in `build/play.php` and shared by the game and the worksheets.
-- `tools/copy-assets.sh` copies the selected artwork from the read-only source folders into `public/assets/worlds/{roman,modern,elven,future}/` as web-sized WebP with transparency kept. The selection is listed in `tools/assets.txt`. Source images are never changed.
+- `tools/copy-assets.sh` copies the selected artwork from the read-only source folders into `public/assets/worlds/{egypt,roman,modern,elven,future,heaven}/` as web-sized WebP with transparency kept. The selection is listed in `tools/assets.txt`. Ancient Egypt and the Heavenly City come from the Life RPG game's art folder (its full-size originals in `art/inbox/done/{egypt,heaven}/`, and its cut-out horizons). Source images are never changed.
 
 ## Preview locally
 
@@ -50,9 +50,9 @@ Then open http://localhost:8097/
 | `/credits/` | Photo credits and licences (the only page with outbound links) |
 | `/teachers/` | Teachers & Schools hub: 20 free lessons, projects and explainers (content in `build/teach.php`) |
 | `/teachers/{guide}/` | One guide each: quick answer, grades, time, steps, FAQ (FAQPage data), building pages to use, sources |
-| `/compare/` | One city question across all four worlds (printable) |
+| `/compare/` | One city question across all six worlds (printable) |
 | `/play/` | Play and create: the six games below |
-| `/play/city-builder/` | City builder: place buildings, trees, water and squares from all four worlds on a 6 x 6 city, check off ten needs, seven challenges, save a picture, share a link, print |
+| `/play/city-builder/` | City builder: place buildings, trees, water and squares from all six worlds on a 6 x 6 city, check off ten needs, nine challenges, save a picture, share a link, print |
 | `/play/quiz/` | City quiz: ten questions in five kinds (name it, which world, same job in another world, key words, who works here) |
 | `/play/map-hunt/` | Map hunt: read a clue, find the place on a world map (the game runs on `/worlds/{world}/#hunt`) |
 | `/play/memory/` | Memory match: six pairs (same job in two worlds, or picture and name) |
@@ -73,7 +73,7 @@ Source batches (read-only):
 - Ground and environment: `life-rpg-ground-batch-01/raw/art/inbox/{world}/` - `horizon.png` (2172x724; elven 1983x793), 7 textures `tex_*.png` (1254x1254, opaque), 4 trees `tree_1-4.png` (1254x1254).
 - Construction: `life-rpg-construction-batch-01/art/inbox/{world}/` - `crane.png` (1024x1536), `materials.png` (1254x1254), and `roman/aqueduct.png` (1774x887).
 
-Selected per world (16 places each, plus horizon and ground textures): see `tools/assets.txt` for the source file to website filename mapping. All four cranes and all four construction-material images are used.
+Selected per world (16 places each, plus horizon and ground textures): see `tools/assets.txt` for the source file to website filename mapping. Every world's crane and construction-material images are used.
 
 Not used yet: the remaining building variants (`*_2`, `*_3`, `floor_*` etc.), most ground textures and trees, and the `nt_statue` / `monument` statues (several show human or humanoid figures).
 

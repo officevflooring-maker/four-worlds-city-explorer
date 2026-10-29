@@ -40,12 +40,13 @@ function artwork_name($src) {
   return ['art' => '', 'build' => 'construction-', 'ground' => 'ground-', 'vehicle' => 'vehicle-'][$batch] . $stem;
 }
 
-// Badges that mark a section as real-world fact, imagined, or speculative.
+// Badges that mark a section as real-world fact, imagined, speculative, or what a faith teaches (Heavenly City).
 const SECTION_TAGS = [
   'real'        => ['badge-fact', 'Real world'],
   'imagined'    => ['badge-art', 'Imagined'],
   'speculative' => ['badge-spec', 'Possible future'],
   'history'     => ['badge-fact', 'History'],
+  'belief'      => ['badge-belief', 'Belief'],
 ];
 
 // Buildings in other worlds that share a group with this one (see build/crosslinks.php).
@@ -192,7 +193,7 @@ function full_world($w) {
 
 <section class="wrap section next" aria-labelledby="next-h">
   <h2 id="next-h">Keep exploring</h2>
-  <p><a class="btn" href="/compare/">Compare all four worlds</a> <a class="btn btn-quiet" href="/artwork/#{$w}">See all {$label} artwork</a></p>
+  <p><a class="btn" href="/compare/">Compare all six worlds</a> <a class="btn btn-quiet" href="/artwork/#{$w}">See all {$label} artwork</a></p>
   <ul class="world-links">{$others}</ul>
 </section>
 HTML,

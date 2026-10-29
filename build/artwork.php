@@ -55,6 +55,21 @@ $ART_TITLES = [
     'town-1' => 'Command center', 'town-2' => 'Launch pad', 'town-3' => 'Spaceport',
     'tree-1' => 'Pine tree', 'tree-2' => 'Planter cypress', 'tree-3' => 'Ringed tree', 'tree-4' => 'Light tree',
   ],
+  // pictures with no page of their own (the other Egypt and Heaven pictures are titled by their pages)
+  'egypt' => [
+    'floor-l' => 'Tower house',
+    'tree-1' => 'Date palm', 'tree-2' => 'Doum palm', 'tree-3' => 'Sycamore fig', 'tree-4' => 'Papyrus reeds',
+    'horizon' => 'Desert horizon with pyramids', 'tex-grass' => 'Ground: sand and grass', 'tex-far' => 'Ground: desert dunes',
+    'tex-water' => 'Ground: the Nile', 'tex-plaza' => 'Ground: painted sandstone paving', 'tex-road' => 'Ground: sandstone road',
+  ],
+  'heaven' => [
+    'floor-s' => 'Little domed house', 'floor-m' => 'Marble house with balconies', 'floor-l' => 'Spire tower',
+    'home-a' => 'Round domed house', 'home-b' => 'Villa with a gold roof', 'island-2' => 'Floating tower island',
+    'tree-1' => 'Cypress tree', 'tree-2' => 'White blossom tree', 'tree-3' => 'Golden tree', 'tree-4' => 'Tree of flowering vines',
+    'horizon' => 'Horizon: a sea of clouds', 'tex-grass' => 'Ground: clouds', 'tex-far' => 'Ground: a sea of clouds',
+    'tex-water' => 'Ground: crystal water', 'tex-plaza' => 'Ground: marble with gold stars', 'tex-road' => 'Ground: golden street',
+    'tex-cross' => 'Ground: golden crossroads', 'tex-lot' => 'Ground: marble building lot',
+  ],
   'roman' => [
     'tree-1' => 'Cypress tree', 'tree-2' => 'Umbrella pine', 'tree-3' => 'Olive tree', 'tree-4' => 'Fig tree',
   ],

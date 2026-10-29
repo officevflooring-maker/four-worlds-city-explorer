@@ -44,6 +44,7 @@ $nameLine = '<div class="sheet-name"><span>Name: </span><span>Date: </span></div
 $SHEETS = [];
 foreach (WORLD_ORDER as $w) {
   $W = $WORLDS[$w];
+  $cityOf = 'the ' . $W['name'] . (str_ends_with($W['name'], 'City') ? '' : ' city');   // "the Heavenly City", not "the Heavenly City city"
   // Vocabulary: ten words and their meanings, matched by letter.
   $pool = [];
   foreach ($quizWords as $e) if ($e['w'] === $w && strlen($e['d']) <= 80 && strlen($e['t']) <= 22) $pool[strtolower($e['t'])] ??= $e;
@@ -56,7 +57,7 @@ foreach (WORLD_ORDER as $w) {
   foreach ($order as $pos => $n) $right .= '<li><b>' . SHEET_LETTERS[$pos] . '.</b> ' . h($pick[$n]['d']) . '</li>';
   foreach ($pick as $n => $e) $key .= '<li><b>' . SHEET_LETTERS[array_search($n, $order)] . '</b> ' . h($e['t']) . ': ' . h($e['d']) . ' <span class="key-from">(' . h($e['n']) . ')</span></li>';
   $SHEETS[] = ["$w-vocabulary", 'Vocabulary', $W['name'] . ' vocabulary', $W['name'] . ' vocabulary worksheet with answer key',
-    "A free printable vocabulary worksheet: match ten key words from the {$W['name']} city to their meanings. With an answer key and links to the illustrated building pages.",
+    "A free printable vocabulary worksheet: match ten key words from {$cityOf} to their meanings. With an answer key and links to the illustrated building pages.",
     '3-8', '15 minutes',
     $nameLine . '<h2>' . h($W['name']) . ': key words</h2><p class="sheet-do">Write the letter of the right meaning next to each word.</p>'
       . '<div class="vocab"><div><h3>Words</h3><ol class="vocab-words">' . $left . '</ol></div><div><h3>Meanings</h3><ul class="vocab-means">' . $right . '</ul></div></div>',
@@ -81,14 +82,14 @@ foreach (WORLD_ORDER as $w) {
   $wordsList = '';
   foreach ($p['w'] as $e) $wordsList .= '<li><b>' . h(ucfirst(strtolower($e[0]))) . '</b>: ' . h($e[5]) . '</li>';
   $SHEETS[] = ["$w-word-search", 'Word search', $W['name'] . ' word search', $W['name'] . ' word search with answer key',
-    "A free printable word search with ten key words from the {$W['name']} city, each with its meaning, plus an answer key. Words read across, down or diagonally.",
+    "A free printable word search with ten key words from {$cityOf}, each with its meaning, plus an answer key. Words read across, down or diagonally.",
     '2-6', '15 minutes',
     $nameLine . '<h2>' . h($W['name']) . ': word search</h2><p class="sheet-do">Find the ten words. They read across, down or diagonally. Then read what each one means.</p>'
       . '<table class="wsp">' . $grid . '</table><ul class="wsp-words">' . $wordsList . '</ul>',
     '<h2>Answer key: ' . h($W['name']) . ' word search</h2><table class="wsp wsp-key">' . $gridKey . '</table>'];
 }
 
-// Compare chart: five city needs, four worlds.
+// Compare chart: five city needs, every world. (The address keeps its old name, compare-four-cities-chart.)
 $head = '<th scope="col"><span class="sr-only">Need</span></th>';
 foreach (WORLD_ORDER as $w) $head .= '<th scope="col" class="world-' . $w . '">' . thumb_img(thumb($w, $WORLDS[$w]['card']), '', '') . h($WORLDS[$w]['name']) . '</th>';
 $rows = '';
@@ -99,8 +100,8 @@ foreach ($COMPARE as [$ckey, $label, $question, $cells]) {
   foreach (WORLD_ORDER as $w) $keyRows .= '<td><b>' . h($cells[$w][1]) . '</b> ' . h($cells[$w][2]) . '</td>';
   $keyRows .= '</tr>';
 }
-$SHEETS[] = ['compare-four-cities-chart', 'Compare', 'Compare four cities', 'Compare four cities: printable chart with answer key',
-  'A free printable chart for comparing how ancient Rome, a modern town, an elven world and a Mars settlement provide water, places to gather, safe travel, goods and room for nature.',
+$SHEETS[] = ['compare-four-cities-chart', 'Compare', 'Compare six cities', 'Compare six cities: printable chart with answer key',
+  'A free printable chart for comparing how ancient Egypt, ancient Rome, a modern town, an elven world, a Mars settlement and a heavenly city provide water, places to gather, safe travel, goods and room for nature.',
   '4-9', '30 to 40 minutes',
   $nameLine . '<h2>How does each city meet its needs?</h2><p class="sheet-do">Use the <b>Compare the worlds</b> page. In each box, write how that world meets the need.</p><table class="chart"><thead><tr>' . $head . '</tr></thead><tbody>' . $rows . '</tbody></table>'
     . '<p class="sheet-do">Which world meets the needs best, in your opinion? Why?</p><div class="lines"></div>',
@@ -155,7 +156,7 @@ page('/teachers/worksheets/', [
 </div>
 <section class="wrap section page-head">
   <h1>Printable worksheets</h1>
-  <p class="lead">{$sheetCount} free worksheets that go with the four city worlds, each with an answer key. Open one, then print it.</p>
+  <p class="lead">{$sheetCount} free worksheets that go with the six city worlds, each with an answer key. Open one, then print it.</p>
   <div>{$sheetCards}</div>
 </section>
 HTML,

@@ -1,4 +1,4 @@
-// City builder (/play/city-builder/): place buildings from all four worlds on a 6 x 6 city, see which
+// City builder (/play/city-builder/): place buildings from all six worlds on a 6 x 6 city, see which
 // needs the city meets, then save a picture, copy a link or print it. The city is kept in the page
 // address (#city=...) and in this browser only; nothing is sent anywhere.
 (function () {
@@ -7,8 +7,8 @@
   if (!root) return;
 
   var N = 6, Y0 = 12, KEY = 'atlas.city';
-  var LETTER = { r: 'roman', m: 'modern', e: 'elven', f: 'future' };
-  var WORLD = { roman: 'Ancient Rome', modern: 'the Modern Town', elven: 'the Elven Green World', future: 'the Robotic Future' };
+  var LETTER = { g: 'egypt', r: 'roman', m: 'modern', e: 'elven', f: 'future', h: 'heaven' };
+  var WORLD = { egypt: 'Ancient Egypt', roman: 'Ancient Rome', modern: 'the Modern Town', elven: 'the Elven Green World', future: 'the Robotic Future', heaven: 'the Heavenly City' };
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -67,7 +67,7 @@
     switch (g[0]) {
       case 'needs': return [metCount >= n, 'Meet ' + n + ' needs (now ' + metCount + ')'];
       case 'only': return [t.all > 0 && t.only[n] === t.all, 'Only pieces from ' + WORLD[n]];
-      case 'every': return [['roman', 'modern', 'elven', 'future'].every(function (w) { return (t.per[w] || 0) >= n; }), 'At least ' + n + ' buildings from every world'];
+      case 'every': return [Object.keys(WORLD).every(function (w) { return (t.per[w] || 0) >= n; }), 'At least ' + n + ' buildings from every world'];
       case 'max': return [t.b > 0 && t.b <= n, 'No more than ' + n + ' buildings (now ' + t.b + ')'];
       case 'nature': return [t.nature >= n, 'At least ' + n + ' squares of nature (now ' + t.nature + ')'];
       case 'water': return [t.water >= n, 'At least ' + n + ' squares of water (now ' + t.water + ')'];

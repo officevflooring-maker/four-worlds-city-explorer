@@ -47,6 +47,22 @@ $VEHICLE_SOURCES = [
     'ingenuity'    => 'NASA Jet Propulsion Laboratory, Ingenuity Mars Helicopter (first flight April 19, 2021; 72 flights)',
     'dragonfly'    => 'NASA and Johns Hopkins Applied Physics Laboratory, Dragonfly rotorcraft mission to Titan',
   ],
+  'egypt' => [
+    'brit-chariot' => 'Encyclopaedia Britannica, "Chariot"',
+    'brit-camel'   => 'Encyclopaedia Britannica, "Camel" and "Dromedary"',
+    'heide'        => 'Martin Heide and Joaquín Peters, Camels in the Biblical World (2021)',
+    'medinet-habu' => 'Reliefs of Ramesses III at Medinet Habu, Thebes, about 1175 BC',
+    'bonn'         => 'Fall, Bonn and colleagues, "Sliding Friction on Wet and Dry Sand", Physical Review Letters (2014)',
+  ],
+  'heaven' => [
+    'brit-helios'     => 'Encyclopaedia Britannica, "Helios"',
+    'brit-chariot'    => 'Encyclopaedia Britannica, "Chariot"',
+    'brit-maglev'     => 'Encyclopaedia Britannica, "Maglev"',
+    'brit-saraswati'  => 'Encyclopaedia Britannica, "Sarasvati"',
+    'boston-swan'     => 'Swan Boats of Boston, "History of the Swan Boats"',
+    'brit-donkey'     => 'Encyclopaedia Britannica, "Donkey"',
+    'cnn-biblioburro' => 'CNN Heroes, Luis Soriano and the Biblioburro (2010)',
+  ],
 ];
 
 $VEHICLES = [
@@ -407,6 +423,174 @@ $VEHICLES = [
   'words' => ['Rotor' => 'A set of spinning blades that lifts an aircraft.', 'Atmosphere' => 'The layer of gas around a planet or moon.', 'Rotorcraft' => 'An aircraft lifted by rotors, such as a helicopter or drone.'],
   'sources' => ['ingenuity', 'dragonfly'],
   'related' => ['spaceport', 'robot-helpers', 'launch-pad'],
+],
+],
+'egypt' => [
+'chariot' => [
+  'name' => 'Chariot', 'cat' => 'vehicles', 'src' => 'vehicle/car_1.png',
+  'summary' => 'A light two-wheeled chariot pulled by horses: the fastest way to travel in Egypt after about 1600 BC.',
+  'facts' => ['Arrived' => 'About 1600 BC', 'Pulled by' => 'Two horses', 'Crew' => 'A driver and an archer', 'Famous finds' => 'Six chariots in Tutankhamun\'s tomb'],
+  'sections' => [
+    ['A new invention', [
+      'Horses and chariots reached Egypt around 1600 BC, probably with the Hyksos, rulers from western Asia. Egyptian chariots were light and fast: a frame of bent wood covered with leather, two spoked wheels and a floor of woven leather straps that worked like a spring. A driver steered while an archer shot from beside him.',
+    ]],
+    ['Royal chariots', [
+      'Kings were shown riding chariots into battle and on hunts. When Howard Carter opened the tomb of Tutankhamun in 1922, he found six chariots, some covered in gold. They show how carefully chariots were made: every part could be taken apart, carried and put back together.',
+    ]],
+  ],
+  'art' => 'The illustration shows a blue and gold chariot pulled by one horse with a feather plume. Real Egyptian chariots were almost always pulled by a pair of horses.',
+  'look' => ['Count the spokes in a wheel.', 'Find the feather plume on the horse.'],
+  'questions' => ['Why would a light chariot be faster than a heavy one?', 'How might chariots have changed the way wars were fought?', 'What is the fastest way to travel where you live?'],
+  'words' => ['Chariot' => 'A light two-wheeled vehicle pulled by horses.', 'Spoke' => 'A bar joining the middle of a wheel to its rim.', 'Plume' => 'A large feather worn for decoration.'],
+  'sources' => ['brit-chariot', 'tut-carter', 'shaw'],
+  'related' => ['chariot-arena', 'archery-range', 'pharaohs-palace'],
+],
+'camel' => [
+  'name' => 'Camel rider', 'cat' => 'vehicles', 'src' => 'vehicle/car_2.png',
+  'summary' => 'A camel with a rider and colorful saddle bags. Camels are perfect for deserts, but they came to Egypt late: for most of its history, donkeys carried the loads.',
+  'facts' => ['Kind' => 'The one-humped camel, or dromedary', 'Common in Egypt from' => 'The last few centuries BC', 'Before that' => 'Donkeys carried most loads', 'Good at' => 'Crossing hot, dry deserts'],
+  'sections' => [
+    ['Ships of the desert', [
+      'A dromedary can go for days without drinking, walks easily on soft sand with its wide feet, and can carry heavy loads across the desert. Its hump is a store of fat, not water.',
+    ]],
+    ['A late arrival', [
+      'Egyptian texts hardly mention camels before the first millennium BC. They became common only in Greek and Roman times, when camel caravans linked the Nile with ports on the Red Sea. For thousands of years before that, the donkey was Egypt\'s pack animal: donkeys carried grain, water and goods, and some of the earliest known tame donkeys were buried at Abydos around 3000 BC.',
+    ]],
+  ],
+  'art' => 'The illustration shows a camel with a rider, colorful saddle blankets and bags. A camel would have been a rare sight in the Egypt of the pharaohs; the artist added one for desert journeys.',
+  'look' => ['Find the saddle bags.', 'Look at the camel\'s feet. Why might they be so wide?'],
+  'questions' => ['Why would camels make desert travel easier?', 'How did people manage before they had camels?', 'Which animals help people where you live?'],
+  'words' => ['Dromedary' => 'A camel with one hump.', 'Caravan' => 'A group of travelers and animals journeying together.', 'Pack animal' => 'An animal that carries loads.'],
+  'sources' => ['brit-camel', 'heide', 'shaw'],
+  'related' => ['caravan-camp', 'market', 'ox-cart'],
+],
+'ox-cart' => [
+  'name' => 'Ox cart', 'cat' => 'vehicles', 'src' => 'vehicle/car_3.png',
+  'summary' => 'An ox pulling a cart loaded with grain. Wheels came late to Egypt; oxen mostly plowed fields and pulled sledges.',
+  'facts' => ['Oxen used for' => 'Plowing, threshing grain and pulling', 'Wheels known from' => 'About 2400 BC, but rarely used for carts', 'Most goods moved by' => 'Boat and donkey', 'Carts shown in' => 'Carvings from about 1200 BC'],
+  'sections' => [
+    ['Why so few carts?', [
+      'The Nile was Egypt\'s highway, so heavy loads usually went by boat, and fields were crossed by canals and soft mud that are hard for wheels. Egyptians knew the wheel: a carving from around 2400 BC shows a ladder on wheels. But wheeled carts only appear now and then, much later. Carvings of King Ramesses III at Medinet Habu, from around 1175 BC, show ox carts carrying the families of the Sea Peoples, migrants who tried to settle in Egypt.',
+    ]],
+    ['Oxen at work', [
+      'Oxen pulled plows after the flood, trod the harvested grain to separate it from the stalks, and dragged sledges loaded with stone. A farmer\'s oxen were among the most valuable things he owned.',
+    ]],
+  ],
+  'art' => 'The illustration shows an ox pulling a wooden cart loaded with sacks of grain, with the driver sitting on top.',
+  'look' => ['Count the sacks on the cart.', 'Look at the wheels. How are they made?'],
+  'questions' => ['Why might a river be better than a road for moving heavy loads?', 'What jobs did oxen do before tractors?', 'How are heavy goods moved near you?'],
+  'words' => ['Ox' => 'A cow or bull trained to work (plural oxen).', 'Threshing' => 'Separating grain from the stalks.', 'Migrant' => 'A person who moves to live in another place.'],
+  'sources' => ['medinet-habu', 'shaw', 'brit-egypt'],
+  'related' => ['granary', 'stone-sledge', 'palm-grove'],
+],
+'stone-sledge' => [
+  'name' => 'Stone sledge', 'cat' => 'vehicles', 'src' => 'vehicle/car_4.png',
+  'summary' => 'Workers dragging a stone block on a wooden sledge, the way Egyptians moved heavy loads over land.',
+  'facts' => ['Made of' => 'Wooden runners and crossbeams', 'Pulled by' => 'Teams of workers, sometimes oxen', 'Trick' => 'Pouring water on the sand in front', 'Famous picture' => 'Tomb of Djehutihotep, about 1880 BC'],
+  'sections' => [
+    ['Dragging a giant', [
+      'A painting in the tomb of a governor named Djehutihotep, from around 1880 BC, shows 172 men pulling a huge statue of him on a wooden sledge. A man stands at the front pouring water onto the sand in front of the runners.',
+    ]],
+    ['Why pour water?', [
+      'In 2014, scientists at the University of Amsterdam tested the idea with model sledges. With the right amount of water, sand becomes stiffer, so a sledge slides over it instead of pushing up a heap in front. They found it could halve the force needed. It doesn\'t prove exactly how every stone was moved, but it shows the picture makes sense.',
+    ]],
+  ],
+  'art' => 'The illustration shows two workers pulling a wooden sledge loaded with a big sandstone block. Real teams were much larger, from dozens to hundreds of people for the heaviest loads.',
+  'look' => ['Find the sledge\'s runners.', 'How many workers are pulling?'],
+  'questions' => ['Why does wet sand help a sledge slide?', 'How many people would you need to move a statue as heavy as a truck?', 'How are very heavy things moved today?'],
+  'words' => ['Sledge' => 'A vehicle that slides on runners instead of wheels.', 'Friction' => 'The force that slows things rubbing together.', 'Runner' => 'A long smooth strip under a sledge.'],
+  'sources' => ['bonn', 'arnold', 'lehner'],
+  'related' => ['lifting-lever', 'pyramid', 'building-materials'],
+],
+],
+'heaven' => [
+'golden-chariot' => [
+  'name' => 'Golden chariot', 'latin' => '2 Kings 2:11', 'cat' => 'vehicles', 'src' => 'vehicle/car_1.png',
+  'summary' => 'A small golden chariot pulled by a white horse. In the Bible, the prophet Elijah is carried up to heaven in a chariot of fire.',
+  'facts' => ['Inspired by' => '2 Kings 2:11', 'Greek myth' => 'Helios drives the sun across the sky in a chariot', 'Real chariots' => 'First made about 4,000 years ago', 'Pulled by' => 'One white horse'],
+  'sections' => [
+    ['The chariot', HEAVEN_IMAGINE, [
+      'No one in this city is ever in a hurry, so the golden chariot is for slow, happy rides, not races.',
+    ]],
+    ['A chariot of fire', HEAVEN_BELIEF, [
+      'The Second Book of Kings tells how the prophet Elijah was taken up to heaven: "Suddenly a chariot of fire and horses of fire appeared… and Elijah went up to heaven in a whirlwind" (2 Kings 2:11). In Greek myths, the sun god Helios drives a golden chariot across the sky every day.',
+    ]],
+    ['Real chariots', HEAVEN_REAL, [
+      'Light chariots with spoked wheels were first made about 4,000 years ago and spread across Asia, Egypt and Europe. You can find out how Egyptians and Romans used them in the Ancient Egypt and Ancient Rome worlds of this atlas.',
+    ]],
+  ],
+  'art' => 'The illustration shows a small golden chariot with blue seats, pulled by a white horse.',
+  'look' => ['Find the white horse.', 'What color are the seats?'],
+  'questions' => ['Why do you think stories show people being carried up to heaven?', 'How did chariots change travel long ago?', 'What would you like to ride in an imagined city?'],
+  'words' => ['Chariot' => 'A light two-wheeled vehicle pulled by horses.', 'Whirlwind' => 'A column of air spinning very fast.', 'Prophet' => 'A person believed to speak for God.'],
+  'sources' => ['bible-kings', 'brit-helios', 'brit-chariot'],
+  'related' => ['cloud-carriage', 'victors-arena', 'pearl-gate'],
+],
+'cloud-carriage' => [
+  'name' => 'Cloud carriage', 'latin' => 'Psalm 104:3', 'cat' => 'vehicles', 'src' => 'vehicle/car_2.png',
+  'summary' => 'A little white carriage with gold trim that floats on a puff of cloud instead of wheels.',
+  'facts' => ['Inspired by' => 'Psalm 104:3', 'The words' => '"He makes the clouds his chariot"', 'Real floating trains' => 'Maglev trains, lifted by magnets', 'Fastest maglev' => '603 kilometers an hour, in a test in Japan in 2015'],
+  'sections' => [
+    ['The carriage', HEAVEN_IMAGINE, [
+      'With no wheels, the carriage never bumps or rattles. It glides wherever its passengers want to go.',
+    ]],
+    ['Clouds as chariots', HEAVEN_BELIEF, [
+      'A psalm in the Bible says that God "makes the clouds his chariot and rides on the wings of the wind" (Psalm 104:3). The Book of Acts tells how Jesus was taken up into heaven "and a cloud hid him from their sight" (Acts 1:9).',
+    ]],
+    ['Floating for real', HEAVEN_REAL, [
+      'Maglev trains really do float: powerful magnets lift them about a centimeter above the track and push them along, so there are no wheels to rub. A maglev line has carried passengers in Shanghai since 2004, and in 2015 a test train in Japan reached 603 kilometers an hour.',
+    ]],
+  ],
+  'art' => 'The illustration shows a little white carriage with gold trim and blue seats, floating on a puff of cloud.',
+  'look' => ['Find the cloud under the carriage.', 'Where would passengers sit?'],
+  'questions' => ['What would be good about a vehicle with no wheels?', 'How can magnets lift a whole train?', 'How do people travel without cars where you live?'],
+  'words' => ['Maglev' => 'Short for magnetic levitation: floating on magnets.', 'Carriage' => 'A vehicle for carrying people.', 'Friction' => 'The force that slows things rubbing together.'],
+  'sources' => ['bible-psalms', 'bible-acts', 'brit-maglev'],
+  'related' => ['golden-chariot', 'cloud-island', 'sky-bridge'],
+],
+'swan-boat' => [
+  'name' => 'Swan boat', 'cat' => 'vehicles', 'src' => 'vehicle/car_3.png',
+  'summary' => 'A swan-shaped golden boat with white wings, gliding just above the ground.',
+  'facts' => ['Imagined as' => 'A boat that glides over land', 'In Hindu tradition' => 'The goddess Saraswati rides a swan', 'Real swan boats' => 'Boston Public Garden, since 1877', 'Real swans' => 'Among the heaviest flying birds'],
+  'sections' => [
+    ['The boat', HEAVEN_IMAGINE, [
+      'The swan boat glides just above the streets and gardens, and over the pools, carrying people wherever they want to go.',
+    ]],
+    ['The swan of wisdom', HEAVEN_BELIEF, [
+      'In Hindu tradition, Saraswati, the goddess of knowledge, music and the arts, is often shown riding a swan or goose called a hamsa. The hamsa stands for wisdom and grace, because it was said to be able to separate milk from water: to tell what is good from what is not.',
+    ]],
+    ['Real swan boats', HEAVEN_REAL, [
+      'Since 1877, the Swan Boats of Boston\'s Public Garden have carried visitors around a pond on pedal-powered boats decorated with large swans. Real swans are among the heaviest birds that can fly, and they need a long run across the water to take off.',
+    ]],
+  ],
+  'art' => 'The illustration shows a golden boat shaped like a swan, with white wings and a blue seat.',
+  'look' => ['Find the swan\'s head.', 'Where is the seat?'],
+  'questions' => ['Why might a swan stand for grace and wisdom?', 'Why do heavy birds need a long run to take off?', 'What would you like to ride on a slow, quiet trip?'],
+  'words' => ['Hamsa' => 'A swan or goose in Hindu tradition, a symbol of wisdom.', 'Grace' => 'Smooth, beautiful movement; also kindness.', 'Pedal' => 'A lever pushed with the foot.'],
+  'sources' => ['brit-saraswati', 'boston-swan'],
+  'related' => ['spring-pool', 'cloud-carriage', 'harp-workshop'],
+],
+'fruit-donkey' => [
+  'name' => 'Donkey with fruit', 'latin' => 'Matthew 21:7–9', 'cat' => 'vehicles', 'src' => 'vehicle/car_4.png',
+  'summary' => 'A white donkey carrying baskets of fruit and flowers, led by a smiling boy.',
+  'facts' => ['Inspired by' => 'Matthew 21:7–9 and Zechariah 9:9', 'The story' => 'Jesus rides a donkey into Jerusalem', 'Donkeys tamed' => 'In Africa, about 7,000 years ago', 'Real world' => 'A donkey library in Colombia'],
+  'sections' => [
+    ['The donkey', HEAVEN_IMAGINE, [
+      'The donkey visits every street, and the fruit and flowers in its baskets are free for anyone who wants them.',
+    ]],
+    ['A sign of peace', HEAVEN_BELIEF, [
+      'The Gospels tell how Jesus rode into Jerusalem on a donkey while crowds spread branches on the road and shouted for joy (Matthew 21:7–9). Riding a donkey instead of a war horse was a sign of peace and humility, as the prophet Zechariah had described (Zechariah 9:9). Christians remember the day on Palm Sunday.',
+    ]],
+    ['Donkeys in our world', HEAVEN_REAL, [
+      'Donkeys were tamed in Africa about 7,000 years ago and still carry loads in many countries. In Colombia, a teacher named Luis Soriano has for years carried books to children in faraway villages on two donkeys, Alfa and Beto, as his "Biblioburro", or donkey library.',
+    ]],
+  ],
+  'art' => 'The illustration shows a white donkey carrying baskets of fruit and flowers, led by a smiling boy in a white tunic.',
+  'look' => ['Find the baskets of fruit.', 'Who is leading the donkey?'],
+  'questions' => ['Why might riding a donkey be a sign of peace?', 'How could a donkey library help children?', 'What could you bring to people who live far away?'],
+  'words' => ['Humility' => 'Not thinking of yourself as more important than others.', 'Palm Sunday' => 'The Sunday before Easter, remembering Jesus\'s ride into Jerusalem.', 'Library' => 'A collection of books that people can borrow.'],
+  'sources' => ['bible-matthew', 'bible-zechariah', 'brit-donkey', 'cnn-biblioburro'],
+  'related' => ['sharing-pavilion', 'tree-of-life', 'welcome-hall'],
 ],
 ],
 ];

@@ -7,7 +7,7 @@
   if (!root || !dataEl) return;
   var data = JSON.parse(dataEl.textContent);
   var items = data.items, worlds = data.worlds, jobs = data.jobs;
-  var ORDER = ['roman', 'modern', 'elven', 'future'];
+  var ORDER = ['egypt', 'roman', 'modern', 'elven', 'future', 'heaven'];
   var ROUND = 10, KEY = 'atlas.quiz';
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -17,7 +17,7 @@
   var make = function (tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
   var shuffle = function (a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
   var shares = function (a, b) { return a.some(function (x) { return b.indexOf(x) > -1; }); };
-  var inWorld = function (w) { return w === 'roman' ? 'in Ancient Rome' : 'in the ' + worlds[w][0]; };
+  var inWorld = function (w) { return (w === 'roman' || w === 'egypt' ? 'in ' : 'in the ') + worlds[w][0]; };
   var start = $('.quiz-start'), play = $('.quiz-play'), end = $('.quiz-end');
   var mode = null, qs = [], at = 0, score = 0;
 
@@ -30,7 +30,7 @@
           options: shuffle([it].concat(others)).map(function (o) { return { text: o.n, ok: o === it }; }) };
       });
     },
-    // A picture and the four worlds.
+    // A picture and every world.
     world: function () {
       return shuffle(items.slice()).slice(0, ROUND).map(function (it) {
         return { pic: it, alt: it.n, ask: 'Which world is this from?', right: worlds[it.w][0], why: it.n + ': ' + it.d, links: [it],

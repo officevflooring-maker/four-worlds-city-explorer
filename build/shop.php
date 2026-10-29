@@ -125,7 +125,7 @@ $lrpgShots = shop_gallery([
   ['/assets/life-rpg/city-elven.webp', 520, 1123, 'An elven city in the forest.', 'An elven city'],
 ]);
 $lrpgWorlds = '';
-foreach (WORLD_ORDER as $w) {
+foreach (['roman', 'modern', 'elven', 'future'] as $w) {   // the four worlds in the Life RPG edition for sale
   $lrpgWorlds .= "<li class=\"world-$w\"><img src=\"/assets/life-rpg/city-$w-wide.webp\" width=\"520\" height=\"300\" alt=\"A " . h($WORLDS[$w]['short']) . ' city in Life RPG" loading="lazy" decoding="async"><span>' . h($WORLDS[$w]['name']) . '</span></li>';
 }
 $lrpgOpen = shop_open('life-rpg');

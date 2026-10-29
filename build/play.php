@@ -4,7 +4,7 @@
 // tour pages, because it uses their data, and before home.php. Everything runs in the browser, and
 // anything a visitor makes or collects is kept only in their own browser.
 
-const WORLD_LETTER = ['roman' => 'r', 'modern' => 'm', 'elven' => 'e', 'future' => 'f'];
+const WORLD_LETTER = ['roman' => 'r', 'modern' => 'm', 'elven' => 'e', 'future' => 'f', 'egypt' => 'g', 'heaven' => 'h'];
 // Pages whose picture is a ground texture, not a building, so they are not builder or quiz pieces.
 const NOT_PIECES = ['modern/water-system', 'modern/streets-crosswalks'];
 
@@ -13,14 +13,14 @@ const NOT_PIECES = ['modern/water-system', 'modern/streets-crosswalks'];
 $NEEDS = [
   'water'  => ['Water', ['water'], []],
   'homes'  => ['Homes', ['houses', 'flats', 'homes-tech', 'palaces'], ['elven/tree-tower-home', 'elven/mushroom-cottage', 'elven/leafy-cottage', 'modern/mixed-use-building', 'future/tree-pod-habitat']],
-  'food'   => ['Food', ['food'], ['roman/street-food', 'modern/corner-store', 'elven/canopy-market', 'elven/market-hall']],
+  'food'   => ['Food', ['food'], ['roman/street-food', 'modern/corner-store', 'elven/canopy-market', 'elven/market-hall', 'egypt/market', 'egypt/granary', 'heaven/banquet-hall', 'heaven/sharing-pavilion', 'heaven/tree-of-life']],
   'health' => ['Health', ['health', 'fitness'], []],
   'learn'  => ['Learning', ['schools', 'books', 'science'], ['modern/cultural-center']],
-  'lead'   => ['Leaders', ['government'], ['roman/forum', 'roman/treasury', 'future/mission-control']],
-  'meet'   => ['Places to meet', ['squares', 'shows', 'worship'], ['modern/community-center', 'modern/cultural-center', 'elven/great-tree-hall']],
+  'lead'   => ['Leaders', ['government'], ['roman/forum', 'roman/treasury', 'future/mission-control', 'egypt/pharaohs-palace', 'heaven/palace-of-light']],
+  'meet'   => ['Places to meet', ['squares', 'shows', 'worship'], ['modern/community-center', 'modern/cultural-center', 'elven/great-tree-hall', 'egypt/feast-hall', 'heaven/banquet-hall', 'heaven/welcome-hall', 'heaven/rainbow-pavilion']],
   'work'   => ['Work and shops', ['shops', 'making', 'storage'], ['modern/office-building', 'modern/skyscraper']],
   'safety' => ['Safety', ['safety'], []],
-  'nature' => ['Nature', ['nature'], ['roman/olive-grove', 'elven/flower-meadow', 'modern/community-garden', 'future/greenhouse-dome']],
+  'nature' => ['Nature', ['nature'], ['roman/olive-grove', 'elven/flower-meadow', 'modern/community-garden', 'future/greenhouse-dome', 'egypt/palm-grove', 'heaven/tree-of-life', 'heaven/lily-garden']],
 ];
 // Ground squares in the builder: [label, need it meets].
 const GROUND_PIECES = ['water' => ['Water', 'water'], 'grass' => ['Grass', 'nature'], 'plaza' => ['Paved square', 'meet']];
@@ -94,14 +94,14 @@ foreach ($TEACH as $slug => $g) {
   $SEARCH[] = [$g['h1'], "/teachers/$slug/", 'Teacher guide', '', thumb($lw, $ls), $g['kind'] . ', grades ' . $g['grades'], $g['subjects'] . ' lesson teacher class ' . $g['desc']];
 }
 foreach ($COMPARE as [$key, $label, $question, $cells]) {
-  $SEARCH[] = ["Compare: $label", "/compare/#$key", 'Compare', '', thumb('roman', $cells['roman'][0]) ?? thumb('modern', $cells['modern'][3] ?? ''), $question, 'compare four worlds'];
+  $SEARCH[] = ["Compare: $label", "/compare/#$key", 'Compare', '', thumb('roman', $cells['roman'][0]) ?? thumb('modern', $cells['modern'][3] ?? ''), $question, 'compare six worlds'];
 }
 foreach ([
   ['Play and create', '/play/', 'Activity', 'Build a city, take the quiz and collect passport stamps.', 'games play fun'],
-  ['Build your own city', '/play/city-builder/', 'Activity', 'Mix buildings from all four worlds and give your city everything it needs.', 'city builder game make design'],
-  ['City quiz', '/play/quiz/', 'Activity', 'Ten picture questions about the four worlds.', 'quiz test game questions'],
+  ['Build your own city', '/play/city-builder/', 'Activity', 'Mix buildings from all six worlds and give your city everything it needs.', 'city builder game make design'],
+  ['City quiz', '/play/quiz/', 'Activity', 'Ten picture questions about the six worlds.', 'quiz test game questions'],
   ['Your city passport', '/play/passport/', 'Activity', 'Collect a stamp for every place you open.', 'passport stamps visited progress'],
-  ['Compare the worlds', '/compare/', 'Page', 'One question, four answers: water, gathering, travel, goods and nature.', 'compare'],
+  ['Compare the worlds', '/compare/', 'Page', 'One question, six answers: water, gathering, travel, goods and nature.', 'compare'],
   ['Guided tours', '/tours/', 'Page', 'Short walks with a guide and a question at every stop.', 'tours'],
   ['Teachers and families', '/teachers/', 'Page', 'Free lessons, projects and explainers for every grade.', 'teachers lessons school class'],
   ['Artwork', '/artwork/', 'Page', 'View, save and print every illustration, free under CC BY 4.0.', 'art pictures images download print free'],
@@ -146,7 +146,7 @@ foreach ($az as $letter => $list) {
 $searchCount = count($SEARCH);
 page('/search/', [
   'title' => 'Find a page: every building, vehicle, person and tour, A to Z',
-  'desc' => h("Search all $searchCount pages of The Atlas of Cities: buildings and vehicles in four city worlds, the people who live there, guided tours, teacher guides and activities."),
+  'desc' => h("Search all $searchCount pages of The Atlas of Cities: buildings and vehicles in six city worlds, the people who live there, guided tours, teacher guides and activities."),
   'class' => 'search-page',
   'body' => <<<HTML
 <section class="wrap section page-head">
@@ -182,7 +182,7 @@ function play_cards() {
     foreach (str_split($row) as $c => $ch) $letters .= '<span' . ($r === 1 && $c < 5 ? ' class="on"' : '') . '>' . $ch . '</span>';
   }
   $cards = [
-    ['/play/city-builder/', 'Build your own city', 'Mix buildings from all four worlds, then try the seven challenges.', 'Start building', '<span class="pa pa-build" aria-hidden="true"><span class="pa-ground"></span>' . $b . '</span>'],
+    ['/play/city-builder/', 'Build your own city', 'Mix buildings from all six worlds, then try the nine challenges.', 'Start building', '<span class="pa pa-build" aria-hidden="true"><span class="pa-ground"></span>' . $b . '</span>'],
     ['/play/quiz/', 'City quiz', 'Five quizzes: buildings, worlds, jobs, key words and people.', 'Take the quiz', '<span class="pa pa-quiz" aria-hidden="true">' . thumb_img(thumb('roman', 'aqueduct')) . '<span class="pa-q">?</span><span class="pa-opts"><span></span><span></span><span></span></span></span>'],
     ['/play/map-hunt/', 'Map hunt', 'Read a clue, then find the place on a city map.', 'Start hunting', '<span class="pa pa-hunt" aria-hidden="true"><span class="pa-lens">' . thumb_img(thumb('elven', 'treetop-village')) . '</span><span class="pa-handle"></span></span>'],
     ['/play/memory/', 'Memory match', 'Turn over two cards at a time and find the pairs that go together.', 'Play memory', '<span class="pa pa-mem" aria-hidden="true"><span class="pa-card pa-card-back"><img src="/favicon.svg" width="44" height="44" alt=""></span><span class="pa-card">' . thumb_img(thumb('roman', 'aqueduct')) . '</span><span class="pa-card">' . thumb_img(thumb('future', 'water-recycler')) . '</span></span>'],
@@ -258,6 +258,8 @@ $needCount = count($NEEDS);
 const CHALLENGES = [
   'roman-town'   => ['A Roman town', 'Use only pieces from Ancient Rome and meet all ten needs.', [['only', 'roman'], ['needs', 10]]],
   'mars-base'    => ['A base on Mars', 'Use only Robotic Future pieces and meet all ten needs.', [['only', 'future'], ['needs', 10]]],
+  'nile-town'    => ['A town on the Nile', 'Use only Ancient Egypt pieces and meet all ten needs.', [['only', 'egypt'], ['needs', 10]]],
+  'heaven-city'  => ['A heavenly city', 'Use only Heavenly City pieces and meet all ten needs.', [['only', 'heaven'], ['needs', 10]]],
   'small-village'=> ['A small village', 'Meet all ten needs with eight buildings or fewer. Trees and ground do not count.', [['needs', 10], ['max', 8]]],
   'green-city'   => ['A green city', 'Meet all ten needs and give nature at least ten squares.', [['needs', 10], ['nature', 10]]],
   'waterfront'   => ['A waterfront city', 'Add at least four squares of water and meet all ten needs.', [['water', 4], ['needs', 10]]],
@@ -272,7 +274,7 @@ $modernTex = tex('modern', 'ground-grass');
 $modernRoad = tex('modern', 'ground-crossroads');
 page('/play/city-builder/', [
   'title' => 'Build your own city: a free city builder for students',
-  'desc' => h("A free online city builder for kids and classrooms. Place buildings from ancient Rome, a modern town, an elven forest city and a Mars settlement, and check that your city meets all $needCount needs."),
+  'desc' => h("A free online city builder for kids and classrooms. Place buildings from ancient Egypt, ancient Rome, a modern town, an elven forest city, a Mars settlement and an imagined heavenly city, and check that your city meets all $needCount needs."),
   'class' => 'play builder-page',
   'js' => ['builder'],
   'body' => <<<HTML
@@ -281,7 +283,7 @@ page('/play/city-builder/', [
 </div>
 <section class="wrap builder-head">
   <h1>Build your own city</h1>
-  <p class="lead">Pick a building, then tap a square. Mix all four worlds, meet every need, then try the challenges.</p>
+  <p class="lead">Pick a building, then tap a square. Mix all six worlds, meet every need, then try the challenges.</p>
 </section>
 <div class="wrap builder" data-builder>
   <div class="b-main">
@@ -338,7 +340,7 @@ page('/play/city-builder/', [
 </section>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['City builder', '/play/city-builder/']]),
-    learning('Build your own city', 'An online city builder: place buildings from four illustrated worlds and check that the city meets every need.', '/play/city-builder/', 'City planning and what a city needs')],
+    learning('Build your own city', 'An online city builder: place buildings from six illustrated worlds and check that the city meets every need.', '/play/city-builder/', 'City planning and what a city needs')],
 ]);
 
 // ---------- Quiz ----------
@@ -364,7 +366,7 @@ $quizData = json_encode(['worlds' => array_map(fn($W) => [$W['name'], $W['short'
 $modes = '';
 foreach ([
   ['name', 'Name that building', 'Look at the picture and pick its name.', [['roman', 'pantheon'], ['modern', 'public-library']]],
-  ['world', 'Which world?', 'Is it from Rome, the modern town, the elven world or the future?', [['elven', 'treehouse-school'], ['future', 'radio-telescope']]],
+  ['world', 'Which world?', 'Is it from Egypt, Rome, the modern town, the elven world, the future or the heavenly city?', [['elven', 'treehouse-school'], ['future', 'radio-telescope']]],
   ['job', 'Same job, different world', 'Find the building that does the same job in another world.', [['roman', 'aqueduct'], ['future', 'water-recycler']]],
   ['words', 'Key words', 'Read the meaning and pick the right word.', [['roman', 'library'], ['elven', 'tree-library']]],
   ['people', 'Who works here?', 'Meet a person and find the place where they work or live.', [['modern', 'worker-1'], ['future', 'people-2']]],
@@ -374,8 +376,8 @@ foreach ([
   $modes .= '<li><button type="button" class="qmode" data-mode="' . $m . '"><span class="qmode-art" aria-hidden="true">' . $art . '</span><span class="qmode-title">' . h($title) . '</span><span class="what">' . h($text) . '</span><span class="qbest" data-best="' . $m . '"></span></button></li>';
 }
 page('/play/quiz/', [
-  'title' => 'City quiz: picture questions about four city worlds',
-  'desc' => h('A free picture quiz for students in five parts: name the building, guess its world, match buildings that do the same job, learn key words and find where people work, in ancient Rome, a modern town, an elven world and on Mars.'),
+  'title' => 'City quiz: picture questions about six city worlds',
+  'desc' => h('A free picture quiz for students in five parts: name the building, guess its world, match buildings that do the same job, learn key words and find where people work, in ancient Egypt, ancient Rome, a modern town, an elven world, on Mars and in a heavenly city.'),
   'class' => 'play quiz-page',
   'js' => ['quiz'],
   'body' => <<<HTML
@@ -409,7 +411,7 @@ page('/play/quiz/', [
 <script type="application/json" id="quiz-data">{$quizData}</script>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['City quiz', '/play/quiz/']]),
-    learning('City quiz', 'Picture questions about buildings in four illustrated city worlds.', '/play/quiz/', 'Cities, buildings and what they are for')],
+    learning('City quiz', 'Picture questions about buildings in six illustrated city worlds.', '/play/quiz/', 'Cities, buildings and what they are for')],
 ]);
 
 // ---------- Passport ----------
@@ -429,7 +431,7 @@ foreach (WORLD_ORDER as $w) {
 }
 page('/play/passport/', [
   'title' => 'Your city passport: collect a stamp for every place',
-  'desc' => h("Collect a passport stamp for every one of the $ppTotal places and vehicles you visit in the four city worlds of The Atlas of Cities. Stamps stay on your own device."),
+  'desc' => h("Collect a passport stamp for every one of the $ppTotal places and vehicles you visit in the six city worlds of The Atlas of Cities. Stamps stay on your own device."),
   'class' => 'play passport-page',
   'body' => <<<HTML
 <div class="wrap">
@@ -488,7 +490,7 @@ function ws_make($entries, $seed, $size = 12, $count = 10) {
   unset($row, $ch);
   return ['g' => array_map('implode', $grid), 'w' => array_values($placed)];
 }
-// Six puzzles for each world and six with words from all four: one-word key words of 4 to 10 letters.
+// Six puzzles for each world and six with words from all of them: one-word key words of 4 to 10 letters.
 $wsWords = ['all' => []];
 foreach ($quizWords as $e) {
   if (!preg_match('/^[A-Za-z]{4,10}$/', $e['t'])) continue;
@@ -503,8 +505,8 @@ foreach (array_merge(WORLD_ORDER, ['all']) as $n => $key) {
   $wsChips .= '<button type="button" class="chip' . ($key === 'all' ? '' : ' world-' . $key) . '" data-set="' . $key . '" aria-pressed="' . ($n ? 'false' : 'true') . '">' . ($key === 'all' ? 'All worlds' : h($WORLDS[$key]['short'])) . '</button>';
 }
 page('/play/word-search/', [
-  'title' => 'City word search: find hidden words from four city worlds',
-  'desc' => h('A free online word search for students with key words from ancient Rome, a modern town, an elven forest city and a Mars settlement. Find each word, then learn what it means. Printable.'),
+  'title' => 'City word search: find hidden words from six city worlds',
+  'desc' => h('A free online word search for students with key words from ancient Egypt, ancient Rome, a modern town, an elven forest city, a Mars settlement and a heavenly city. Find each word, then learn what it means. Printable.'),
   'class' => 'play wsearch-page',
   'js' => ['wordsearch'],
   'body' => <<<HTML
@@ -530,7 +532,7 @@ page('/play/word-search/', [
 <script type="application/json" id="ws-data">{$wsData}</script>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Word search', '/play/word-search/']]),
-    learning('City word search', 'Word searches with key words about buildings and city systems in four worlds.', '/play/word-search/', 'City vocabulary')],
+    learning('City word search', 'Word searches with key words about buildings and city systems in six worlds.', '/play/word-search/', 'City vocabulary')],
 ]);
 
 // ---------- Memory match ----------
@@ -546,8 +548,8 @@ foreach ([
   $memModes .= '<li><button type="button" class="qmode" data-mode="' . $m . '"><span class="qmode-art" aria-hidden="true">' . $art . '</span><span class="qmode-title">' . h($title) . '</span><span class="what">' . h($text) . '</span><span class="qbest" data-best="' . $m . '"></span></button></li>';
 }
 page('/play/memory/', [
-  'title' => 'Memory match: city buildings from four worlds',
-  'desc' => h('A free memory card game for students: turn over cards to match buildings that do the same job in ancient Rome, a modern town, an elven world and on Mars, or match pictures with names.'),
+  'title' => 'Memory match: city buildings from six worlds',
+  'desc' => h('A free memory card game for students: turn over cards to match buildings that do the same job in ancient Egypt, ancient Rome, a modern town, an elven world, on Mars and in a heavenly city, or match pictures with names.'),
   'class' => 'play memory-page',
   'js' => ['memory'],
   'body' => <<<HTML
@@ -571,7 +573,7 @@ page('/play/memory/', [
 <script type="application/json" id="memory-data">{$memData}</script>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Memory match', '/play/memory/']]),
-    learning('Memory match', 'A card game: match buildings that do the same job in four city worlds.', '/play/memory/', 'Comparing cities')],
+    learning('Memory match', 'A card game: match buildings that do the same job in six city worlds.', '/play/memory/', 'Comparing cities')],
 ]);
 
 // ---------- Map hunt (the game runs on each world's map: /worlds/{world}/#hunt) ----------
@@ -583,8 +585,8 @@ foreach (WORLD_ORDER as $w) {
     . '<span class="play-text"><span class="play-title">' . h($W['name']) . '</span><span class="what">' . h($W['type']) . '</span><span class="play-go">Start the hunt <span aria-hidden="true">&rarr;</span></span></span></a></li>';
 }
 page('/play/map-hunt/', [
-  'title' => 'Map hunt: find places on four illustrated city maps',
-  'desc' => h('A free map game for students: read a clue about a building, then find it on an illustrated city map of ancient Rome, a modern town, an elven forest city or a Mars settlement.'),
+  'title' => 'Map hunt: find places on six illustrated city maps',
+  'desc' => h('A free map game for students: read a clue about a building, then find it on an illustrated city map of ancient Egypt, ancient Rome, a modern town, an elven forest city, a Mars settlement or a heavenly city.'),
   'class' => 'play',
   'body' => <<<HTML
 <div class="wrap">

@@ -109,7 +109,7 @@ function tour_card($slug) {
 $tourCards = '';
 foreach (array_keys($TOURS) as $slug) $tourCards .= tour_card($slug);
 page('/tours/', [
-  'title' => 'Guided tours of the four city worlds',
+  'title' => 'Guided tours of the city worlds',
   'desc' => h('Four short guided tours: Roman engineering, modern neighborhoods, ecological design and human choices in a robotic future. Each stop links to a full illustrated page.'),
   'class' => 'tours',
   'body' => <<<HTML

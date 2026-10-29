@@ -4,12 +4,15 @@
 #     -> public/assets/worlds/{world}/{people-1..6,worker-1..2}-{256,512}.webp   (site use)
 #     -> public/assets/artwork/{world}/{name}.webp and {name}-thumb.webp      (Artwork page)
 #   Vehicles: vehicle-batch-01 car_N (front view) and car_N_back (back view)
+#   Ancient Egypt and the Heavenly City: the same pictures from the Life RPG game's full-size originals
+#     (art/inbox/done/{world}/people_N, worker_N and car_N[_back])
 #     -> public/assets/worlds/{world}/{slug}-{480,960}.webp and rear-{slug}-{480,960}.webp
 #     -> public/assets/artwork/{world}/vehicle-car-N[-back].webp and -thumb.webp
 # Usage: bash tools/copy-people-vehicles.sh   (needs ffmpeg with libwebp; skips files that already exist)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SRC="${ART_SOURCE:-/c/Users/ax707/Documents/Codex/2026-10-25/referenced-chatgpt-conversation-this-is-an/outputs}"
+LRPG="${LRPG_ART:-/c/Users/ax707/OneDrive/Desktop/Stuff/Life Game/life-rpg/art}"
 webp() { # in, out, filter, quality
   [ -f "$2" ] && return
   ffmpeg -nostdin -loglevel error -y -i "$1" -vf "$3" -c:v libwebp -quality "$4" -compression_level 4 "$2"; }
@@ -19,11 +22,18 @@ declare -A CARS=(
   [modern]="family-car taxi pickup-truck delivery-van"
   [elven]="deer-sleigh flower-cart mushroom-carriage beetle-rider"
   [future]="hover-car pressurized-rover cargo-pod drone-taxi"
+  [egypt]="chariot camel ox-cart stone-sledge"
+  [heaven]="golden-chariot cloud-carriage swan-boat fruit-donkey"
 )
-for world in roman modern elven future; do
+for world in roman modern elven future egypt heaven; do
   W="$ROOT/public/assets/worlds/$world"; A="$ROOT/public/assets/artwork/$world"
   mkdir -p "$W" "$A"
-  for f in "$SRC/people-batch-03/art/inbox/$world/"*.png; do
+  if [ "$world" = egypt ] || [ "$world" = heaven ]; then
+    strips=("$LRPG/inbox/done/$world/"people_[0-9].png "$LRPG/inbox/done/$world/"worker_[0-9].png); cars="$LRPG/inbox/done/$world"
+  else
+    strips=("$SRC/people-batch-03/art/inbox/$world/"*.png); cars="$SRC/vehicle-batch-01/art/inbox/$world"
+  fi
+  for f in "${strips[@]}"; do
     name=$(basename "$f" .png); name="${name//_/-}"
     pose="crop=512:512:0:0,format=rgba"
     webp "$f" "$W/$name-256.webp" "$pose,scale=256:-1:flags=lanczos" 82
@@ -34,7 +44,7 @@ for world in roman modern elven future; do
   n=1
   for slug in ${CARS[$world]}; do
     for side in "" "_back"; do
-      in="$SRC/vehicle-batch-01/art/inbox/$world/car_$n$side.png"
+      in="$cars/car_$n$side.png"
       out="$W/$slug"; [ -n "$side" ] && out="$W/rear-$slug"
       webp "$in" "$out-480.webp" "format=rgba,scale=480:-1:flags=lanczos" 82
       webp "$in" "$out-960.webp" "format=rgba,scale=960:-1:flags=lanczos" 82

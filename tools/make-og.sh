@@ -12,6 +12,8 @@ og roman 0xf3e2d6 amphitheater "Ancient Rome"
 og modern 0xdde6f3 mixed-use-building "Modern Town"
 og elven 0xdfecd9 treetop-village "Elven Green World"
 og future 0xd7e9ec greenhouse-dome "Robotic Future"
+og egypt 0xf1e3c8 pharaohs-palace "Ancient Egypt"
+og heaven 0xe9e5f5 palace-of-light "Heavenly City"
 # the home page (and every page without its own picture): the logo, and the question the site asks
 ffmpeg -nostdin -loglevel error -y -f lavfi -i "color=c=0xfbf5e8:s=1200x630" -i ../brand/atlas-wordmark-cutout.png -filter_complex "[1]scale=-1:580:flags=lanczos[l];[0][l]overlay=40:(H-h)/2,drawtext=$F:text='How does a':fontsize=74:fontcolor=0x17202b:x=640:y=150,drawtext=$F:text='city work?':fontsize=74:fontcolor=0x17202b:x=640:y=240,drawtext=$F:text='Four illustrated cities,':fontsize=34:fontcolor=0x3d4757:x=642:y=362,drawtext=$F:text='past, present and imagined.':fontsize=34:fontcolor=0x3d4757:x=642:y=410,drawtext=$F:text='Free · No ads · No sign-up':fontsize=27:fontcolor=0x23396b:x=642:y=492" -frames:v 1 -q:v 3 assets/og/home.jpg
 ls -la assets/og
