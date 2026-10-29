@@ -1143,7 +1143,6 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .shop-top-dark .lead { color: #d6dcea; }
 .shop-top-dark .tag, .shop-home .tag { color: #f0c674; }
 .shop-top-dark .shop-top-pic { text-align: center; }
-.shop-phone { display: inline-block !important; width: min(250px, 66%) !important; border-radius: 26px; box-shadow: 0 24px 60px rgba(0, 0, 0, .45); }
 .shop-soon { display: inline-block; margin: .5rem 0 0; padding: .5rem 1.2rem; border: 2px solid var(--brand); border-radius: 999px; color: var(--brand); font-weight: 700; }
 .shop-top-dark .shop-soon, .band-dark .shop-soon { border-color: #f0c674; color: #f0c674; }
 .shop-top-dark .btn, .shop-home .btn { background: #f0c674; border-color: #f0c674; color: #1d1608; }
@@ -1165,7 +1164,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .shop-feat-icon { grid-row: span 2; font-size: 1.6rem; line-height: 1.2; }
 .shop-feats b { font-family: var(--serif); font-size: 1.05rem; }
 .shop-feats span:last-child { color: var(--muted); font-size: .95rem; }
-.shop-worlds { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.shop-worlds { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .shop-worlds li { margin: 0; }
 .shop-worlds img { display: block; width: 100%; height: auto; border-radius: 12px; border: 3px solid var(--accent); }
 .shop-worlds span { display: block; margin-top: .45rem; text-align: center; font-weight: 700; color: var(--accent); }
@@ -1198,7 +1197,6 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .shop-top-inner { grid-template-columns: 1fr; }
   .shop-steps { grid-template-columns: 1fr; }
   .shop-worlds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .shop-phone { width: min(240px, 66%) !important; }
   .lrpg-heroes { grid-template-columns: repeat(6, minmax(0, 1fr)); row-gap: 1rem; }
   .lrpg-outfits { gap: 1rem 1.2rem; }
   .lrpg-outfits img { height: 150px; }

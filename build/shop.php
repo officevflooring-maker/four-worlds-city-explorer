@@ -7,7 +7,7 @@
 // product says "Coming soon". The pictures come from the products themselves (see the README).
 
 $SHOP_INFO = [
-  'life-rpg' => ['Life RPG', '/life-rpg/', 'An app for real-life goals', 'Turn real-life goals into quests, earn XP and grow your own city.', '/assets/life-rpg/city-roman-wide.webp', 520, 300],
+  'life-rpg' => ['Life RPG', '/life-rpg/', 'An app for real-life goals', 'Turn real-life goals into quests, earn XP and grow your own city.', '/assets/life-rpg/phones-card.webp', 960, 540],
   'city-builders' => ['City Builders', '/city-builders/', 'A card game to print at home', 'Collect buildings from every world and build a city that has everything its people need.', '/assets/shop/city-builders-fan.webp', 1100, 513],
   'classroom-pack' => ['Classroom Pack', '/classroom-pack/', 'A teaching pack to print', 'Fact cards, worksheets with answer keys and discussion cards, in one file.', '/assets/shop/classroom-pack-pages.webp', 1100, 697],
   'posters' => ['Poster Set', '/posters/', 'Posters to print', 'Every world, its places and the ten things every city needs, for your wall.', '/assets/shop/posters-fan.webp', 1100, 697],
@@ -145,12 +145,18 @@ require __DIR__ . '/games.php';
 require __DIR__ . '/printables.php';
 
 /* ---------- Life RPG ---------- */
-$lrpgShots = shop_gallery([
-  ['/assets/life-rpg/today.webp', 520, 1123, 'The Today screen: level 7, an 18-day streak and three quests for the day, one of them done.', "Today's quests"],
-  ['/assets/life-rpg/city-roman.webp', 520, 1123, 'A Roman city of temples, homes and an aqueduct, built by finishing quests.', 'Your city grows'],
-  ['/assets/life-rpg/hero.webp', 520, 1123, 'The Hero screen: a block character, the next unlock and progress in seven skills.', 'Skills and badges'],
-  ['/assets/life-rpg/city-green.webp', 520, 1123, 'A green city in the forest.', 'A green city'],
-]);
+// Screenshots from the game (its dev/shots.sh), at the shape of most phone screens.
+$lrpgShots = shop_gallery(array_map(function ($s) {
+  [$w, $hh] = getimagesize(PUB . "/assets/life-rpg/$s[0].webp");
+  return ["/assets/life-rpg/$s[0].webp", $w, $hh, $s[1], $s[2]];
+}, [
+  ['today', 'The Today screen: level 7, an 18-day streak and three quests for the day.', "Today's quests"],
+  ['hero', 'The Hero screen: a painted hero in a Roman toga, the next unlock and progress in seven skills.', 'Your hero and skills'],
+  ['wins', 'The Wins screen: records like quests done and the best streak, quest levels and badges.', 'Records and badges'],
+  ['trees', 'A skill tree: steps unlocked by real progress, like Focus Mode and Streak Keeper.', 'Skill trees'],
+  ['bosses', 'Boss battles: big tasks you have been putting off, each with a large XP reward.', 'Boss battles'],
+  ['rewards', 'Rewards bought with XP: a movie night, new headphones and a weekend trip.', 'Your own rewards'],
+]));
 // The heroes (tools/copy-heroes.sh): all twelve in everyday clothes, then hero 4 dressed for five of the worlds.
 $heroPic = function ($file, $alt) {
   [$w, $h] = getimagesize(PUB . "/assets/life-rpg/heroes/$file.webp");
@@ -168,19 +174,20 @@ foreach (['modern' => ['casual', 'In everyday clothes'], 'roman' => ['toga', 'In
   $lrpgOutfits .= "<li class=\"world-$w\">" . $heroPic("h04_$o", $alt) . '<span>' . h($WORLDS[$w]['name']) . '</span></li>';
 }
 $lrpgWorlds = '';
-foreach (['roman', 'modern', 'green', 'future'] as $w) {   // the four worlds in the Life RPG edition for sale
-  $lrpgWorlds .= "<li class=\"world-$w\"><img src=\"/assets/life-rpg/city-$w-wide.webp\" width=\"520\" height=\"300\" alt=\"A " . h($WORLDS[$w]['short']) . ' city in Life RPG" loading="lazy" decoding="async"><span>' . h($WORLDS[$w]['name']) . '</span></li>';
+foreach (WORLD_ORDER as $w) {   // all six worlds are in the game
+  $lrpgWorlds .= "<li class=\"world-$w\"><img src=\"/assets/life-rpg/city-$w-wide.webp\" width=\"520\" height=\"300\" alt=\"" . h($WORLDS[$w]['name']) . ' in Life RPG" loading="lazy" decoding="async"><span>' . h($WORLDS[$w]['name']) . '</span></li>';
 }
 $lrpgOpen = shop_open('life-rpg');
 shop_page('life-rpg', [
   'title' => 'Life RPG: turn real-life goals into quests',
-  'desc' => 'Life RPG is a game for grown-ups and teens: finish real-life quests to earn XP, level up and grow your own city in one of four worlds. One payment, no subscription.',
+  'desc' => 'Life RPG is a game for grown-ups and teens: finish real-life quests to earn XP, level up and grow your own city in one of six worlds. One payment, no subscription.',
   'tag' => 'For grown-ups and teens',
   'lead' => 'Turn real-life goals into quests. Finish them to earn XP, level up and grow your own city.',
   'facts' => ['No subscription', 'No ads', 'No account', 'Works offline'],
   'perfect' => ['building habits', 'family goals', 'teens with big plans'],
   'dark' => true,
-  'pic' => '<img class="shop-phone" src="/assets/life-rpg/today.webp" width="520" height="1123" alt="Life RPG on a phone: today\'s quests, level 7 and an 18-day streak.">',
+  'pic' => '<img src="/assets/life-rpg/phones.webp" width="' . implode('" height="', array_slice(getimagesize(PUB . '/assets/life-rpg/phones.webp'), 0, 2))
+    . '" alt="Life RPG on three phones: a hero with seven skills, today\'s quests and a Roman city, with two of the game\'s heroes.">',
   'again' => $lrpgOpen ? 'Start your first quest today' : 'Life RPG is coming soon',
   'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
     . shop_steps([
@@ -202,7 +209,7 @@ shop_page('life-rpg', [
     ]) . '</div></section>'
     . '<section class="wrap section" aria-labelledby="heroes-h"><div class="sec-head"><h2 id="heroes-h">Pick your hero</h2><p>Twelve painted heroes, from kids to grandparents. Gear you earn, like a cape or a crown, shows on your hero.</p></div>'
     . "<ul class=\"lrpg-heroes\">$lrpgHeroes</ul><h3 class=\"lrpg-outfits-h\">Dressed for each world</h3><ul class=\"lrpg-outfits\">$lrpgOutfits</ul></section>"
-    . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of four worlds</h2><p>Four of the worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
+    . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of six worlds</h2><p>The six worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['Is it a subscription?', 'No. You pay ' . shop_price('life-rpg') . ' once, and it\'s yours. There are no ads and nothing else to buy.'],
