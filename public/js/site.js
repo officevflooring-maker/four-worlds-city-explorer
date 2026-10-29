@@ -453,7 +453,80 @@
         else info.innerHTML = empty;
       });
     });
+
+    // "Find it on the map" links from the place pages (#find-{page}): show that place, glowing, and say what it is.
+    var find = function () {
+      var m = /^#find-([a-z0-9-]+)$/.exec(location.hash);
+      if (!m) return;
+      var tile = null;
+      tiles.forEach(function (t) {
+        t.classList.remove('found');
+        var a = t.querySelector('a');
+        if (a && new RegExp('/' + m[1] + '/$').test(a.getAttribute('href'))) tile = t;
+      });
+      if (!tile) return;
+      tile.classList.add('found');
+      describe(tile);
+      shell.scrollIntoView({ block: 'start' });
+      // A zoomed-in map (phones) scrolls the place to the middle of the view.
+      var r = tile.getBoundingClientRect(), v = view.getBoundingClientRect();
+      view.scrollLeft += r.left + r.width / 2 - v.left - v.width / 2;
+      view.scrollTop += r.top + r.height / 2 - v.top - v.height / 2;
+      tile.querySelector('a').focus({ preventScroll: true });
+    };
+    // After the pictures above the map have loaded, so it scrolls to the right place.
+    if (document.readyState === 'complete') find(); else window.addEventListener('load', find);
+    window.addEventListener('hashchange', find);
   });
+
+  // Listen (place pages): reads the page aloud with a voice that runs on this device, so no text leaves it.
+  // Browsers without such a voice keep the button hidden.
+  var listen = document.querySelector('[data-listen]');
+  if (listen && window.speechSynthesis && window.SpeechSynthesisUtterance) {
+    var synth = window.speechSynthesis;
+    var voice = function () {
+      var en = synth.getVoices().filter(function (v) { return v.localService && /^en([-_]|$)/i.test(v.lang); });
+      return en.filter(function (v) { return /^en[-_]US/i.test(v.lang); })[0] || en[0] || null;
+    };
+    var offer = function () { if (voice()) listen.hidden = false; };
+    offer();
+    synth.addEventListener && synth.addEventListener('voiceschanged', offer);
+    var reading = null;
+    var stop = function () {
+      reading = null;
+      synth.cancel();
+      document.querySelectorAll('.reading').forEach(function (e) { e.classList.remove('reading'); });
+      listen.textContent = 'Listen';
+      listen.setAttribute('aria-pressed', 'false');
+    };
+    listen.addEventListener('click', function () {
+      if (reading) { stop(); return; }
+      // The title, the summary, then each part of the page (not the sources or the lesson links).
+      var parts = [document.querySelector('h1'), document.querySelector('.b-intro .lead')];
+      document.querySelectorAll('.b-body > .read:not(.sources-box):not(.teach-box)').forEach(function (sec) {
+        sec.querySelectorAll('h2, h3, p, li, dt, dd').forEach(function (e) { parts.push(e); });
+      });
+      var run = reading = {};
+      var next = function (i) {
+        if (reading !== run) return;
+        document.querySelectorAll('.reading').forEach(function (e) { e.classList.remove('reading'); });
+        if (i >= parts.length) { stop(); return; }
+        var e = parts[i], text = e && e.textContent.replace(/\s+/g, ' ').trim();
+        if (!text) { next(i + 1); return; }
+        var u = new SpeechSynthesisUtterance(text);
+        u.voice = voice(); u.lang = u.voice ? u.voice.lang : 'en-US'; u.rate = .95;
+        u.onend = function () { next(i + 1); };
+        u.onerror = function () { stop(); };
+        e.classList.add('reading');
+        synth.speak(u);
+      };
+      synth.cancel();
+      listen.textContent = 'Stop';
+      listen.setAttribute('aria-pressed', 'true');
+      next(0);
+    });
+    window.addEventListener('pagehide', stop);
+  }
 
   // Print a single image: fill the hidden print sheet, then print only that.
   var sheet = document.querySelector('.print-sheet');

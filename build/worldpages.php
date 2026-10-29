@@ -302,12 +302,22 @@ HTML,
     $prevName = h($pages[$prev]['name']);
     $nextName = h($pages[$next]['name']);
     $srcIntro = h($D['sourcesIntro']);
-    $images = [url($heroFull)];
+    // The illustration is free to reuse, and says so to search engines (Google Images shows it as licensable).
+    $images = [['@type' => 'ImageObject', 'contentUrl' => url($heroFull), 'license' => 'https://creativecommons.org/licenses/by/4.0/',
+      'acquireLicensePage' => url('/artwork/'), 'creditText' => SITE_NAME, 'creator' => ['@type' => 'Organization', 'name' => SITE_NAME],
+      'copyrightNotice' => 'Illustration: ' . SITE_NAME . ', CC BY 4.0']];
     foreach ($photos as $p) $images[] = url("/assets/photos/$w/{$p['img']}-1600.webp");
+    // Search results show about 160 characters: the page's extra line goes on only where it fits.
+    $desc = strlen($r['summary'] . $D['pageDesc']) <= 160 ? $r['summary'] . $D['pageDesc'] : $r['summary'];
+    // On the world's map (or driving around it), so the page can point to it there.
+    $onMap = in_array($slug, $D['map']) || !empty($r['vehicle']);
+    $findH = $onMap ? '<a class="btn btn-quiet btn-sm" href="/worlds/' . $w . '/#find-' . $slug . '">Find it on the map</a> ' : '';
     page("/worlds/$w/$slug/", [
       'title' => sprintf($D['pageTitle'], $r['name']),
-      'desc' => h($r['summary'] . $D['pageDesc']),
-      'og' => $w,
+      'desc' => h($desc),
+      'og' => is_file(PUB . "/assets/og/$w/$slug.jpg") ? "$w/$slug" : $w,
+      'ogType' => 'article',
+      'ogAlt' => $r['name'] . ', ' . $label . ': an illustration from ' . SITE_NAME,
       'class' => "world world-$w building",
       'lightbox' => true,
       'body' => <<<HTML
@@ -322,6 +332,7 @@ HTML,
     {$aka}
     <p class="lead">{$summaryH}</p>
     <dl class="facts">{$facts}</dl>
+    <p class="b-tools">{$findH}<button type="button" class="btn btn-quiet btn-sm" data-listen hidden aria-pressed="false">Listen</button></p>
   </div>
 </section>
 
@@ -365,8 +376,9 @@ HTML,
       'ld' => [
         crumbs([['Home', '/'], [$label, "/worlds/$w/"], [$r['name'], "/worlds/$w/$slug/"]]),
         ['@context' => 'https://schema.org', '@type' => 'Article', 'headline' => sprintf($D['pageTitle'], $r['name']), 'description' => $r['summary'],
-          'image' => $images, 'inLanguage' => 'en', 'dateModified' => LASTMOD, 'url' => url("/worlds/$w/$slug/"),
-          'about' => ['@type' => 'Thing', 'name' => $r['name']],
+          'image' => $images, 'inLanguage' => 'en', 'dateModified' => LASTMOD, 'url' => url("/worlds/$w/$slug/"), 'mainEntityOfPage' => url("/worlds/$w/$slug/"),
+          'about' => ['@type' => 'Thing', 'name' => $r['name']], 'keywords' => implode(', ', array_merge([$r['name'], $label], array_keys($r['words']))),
+          'isPartOf' => ['@type' => 'CollectionPage', 'name' => $D['title'], 'url' => url("/worlds/$w/")],
           'author' => ['@type' => 'Organization', 'name' => SITE_NAME], 'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'logo' => ['@type' => 'ImageObject', 'url' => url('/assets/brand/atlas-logo-512.png')]],
           'isAccessibleForFree' => true, 'educationalUse' => 'Reading, discussion'],
       ],

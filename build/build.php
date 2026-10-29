@@ -55,6 +55,8 @@ function page($path, $o) {
   $title = h($o['title']);
   $fullTitle = $path === '/' ? $title : "$title | " . SITE_NAME;
   $ogImage = url('/assets/og/' . ($o['og'] ?? 'home') . '.jpg');
+  $ogType = $o['ogType'] ?? 'website';
+  $ogAlt = h($o['ogAlt'] ?? $o['title']);
   $robots = !empty($o['noindex']) ? 'noindex, follow' : 'index, follow, max-image-preview:large';
   $bodyClass = $o['class'] ?? '';
   $verify = $path === '/' && GOOGLE_VERIFY ? '<meta name="google-site-verification" content="' . h(GOOGLE_VERIFY) . '">' . "
@@ -114,7 +116,7 @@ HTML;
 <meta name="robots" content="{$robots}">
 {$verify}<link rel="canonical" href="{$canonical}">
 <meta name="theme-color" content="#f7f5f0">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{$ogType}">
 <meta property="og:site_name" content="{$GLOBALS['siteNameH']}">
 <meta property="og:title" content="{$title}">
 <meta property="og:description" content="{$o['desc']}">
@@ -122,6 +124,7 @@ HTML;
 <meta property="og:image" content="{$ogImage}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{$ogAlt}">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
