@@ -23,7 +23,7 @@ skyscraper|Home Insurance Building 1885;Chrysler Building;Burj Khalifa Dubai sky
 warehouse|warehouse pallet racking;container ship port gantry cranes
 community-center|Hull House Chicago;community hall interior
 plaza-fountain|Piazza Navona fountain;Bryant Park New York chairs
-place-of-worship|New England church steeple;mosque dome minaret;synagogue exterior
+place-of-worship|New England church steeple
 gathering-circle|campfire ring benches;fire pit park
 memorial|Washington Monument;Vietnam Veterans Memorial Washington names wall
 public-art|Chicago Picasso sculpture Daley Plaza;Cloud Gate Millennium Park sculpture;mural Philadelphia Mural Arts

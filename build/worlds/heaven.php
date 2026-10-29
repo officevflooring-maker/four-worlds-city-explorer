@@ -1,296 +1,217 @@
 <?php
-// The Heavenly City: an imagined city of goodness and happiness, inspired by how many faiths picture heaven
-// (mostly the Bible's Book of Revelation). One page per place, in the same format as the other worlds.
-// Every page has three kinds of section: Imagined (the artist's city), Belief (what a faith teaches, quoted
-// with chapter and verse, never stated as fact) and Real world (people, places and science today, with
-// sources). Pages stay gentle: nothing about who goes to heaven, or about hell.
-// The art is the Life RPG game's Heaven set (tools/assets.txt).
+// The Heavenly City: an imagined city of gold and light that tells the story of Jesus, as the Bible tells it.
+// Each page (and each vehicle in build/vehicles.php) tells one part of the story, in order: 'part' => [number,
+// title]. The categories are the story's chapters. Section kinds: Gospel (the story, quoted from the Berean
+// Standard Bible with chapter and verse), Bible (other passages), Imagined (the artist's city) and Real world
+// (places, history and science today, with sources). The art is the Life RPG game's Heaven set (tools/assets.txt).
 
+const HEAVEN_GOSPEL  = ['tag' => 'gospel'];
+const HEAVEN_BIBLE   = ['tag' => 'bible'];
 const HEAVEN_IMAGINE = ['tag' => 'imagined'];
-const HEAVEN_BELIEF  = ['tag' => 'belief'];
 const HEAVEN_REAL    = ['tag' => 'real'];
 
 $HEAVEN_SOURCES = [
-  'bible-genesis'   => 'The Bible, Book of Genesis (chapters 2, 8, 9, 18 and 28)',
-  'bible-kings'     => 'The Bible, Second Book of Kings, chapter 2',
-  'bible-nehemiah'  => 'The Bible, Book of Nehemiah, chapter 2',
-  'bible-psalms'    => 'The Bible, Book of Psalms (Psalms 23, 104, 119 and 150)',
-  'bible-proverbs'  => 'The Bible, Book of Proverbs, chapter 3',
-  'bible-ecclesiastes' => 'The Bible, Book of Ecclesiastes, chapter 12',
-  'bible-isaiah'    => 'The Bible, Book of Isaiah (chapters 11, 25, 56 and 65)',
-  'bible-micah'     => 'The Bible, Book of Micah, chapter 4',
-  'bible-zechariah' => 'The Bible, Book of Zechariah, chapter 9',
-  'bible-samuel'    => 'The Bible, First Book of Samuel, chapter 16',
-  'bible-matthew'   => 'The Bible, Gospel of Matthew (chapters 3, 5, 6 and 21)',
-  'bible-luke'      => 'The Bible, Gospel of Luke (chapters 2 and 13)',
-  'bible-john'      => 'The Bible, Gospel of John (chapters 4, 5, 8, 12 and 14)',
-  'bible-acts'      => 'The Bible, Acts of the Apostles (chapters 1 and 4)',
-  'bible-corinthians' => 'The Bible, First Letter to the Corinthians, chapter 9',
-  'bible-timothy'   => 'The Bible, Second Letter to Timothy, chapter 4',
-  'bible-hebrews'   => 'The Bible, Letter to the Hebrews (chapters 12 and 13)',
-  'bible-james'     => 'The Bible, Letter of James, chapter 1',
-  'bible-rev'       => 'The Bible, Book of Revelation (chapters 4, 7, 14, 21 and 22)',
-  'quran-rivers'    => 'The Quran, Surah Muhammad (47), verse 15',
-  'quran-light'     => 'The Quran, Surah An-Nur (24), verse 35, "the Verse of Light"',
-  'quran-read'      => 'The Quran, Surah Al-Alaq (96), verse 1',
-  'hadith-rayyan'   => 'Sahih al-Bukhari, the hadith of al-Rayyan, the gate of paradise for those who fast',
-  'hadith-tuba'     => 'Sahih al-Bukhari and Sahih Muslim, hadiths on the great tree of paradise',
-  'brit-heaven'     => 'Encyclopaedia Britannica, "Heaven"',
-  'brit-paradise'   => 'Encyclopaedia Britannica, "Paradise"',
-  'brit-pureland'   => 'Encyclopaedia Britannica, "Pure Land Buddhism"',
-  'brit-bifrost'    => 'Encyclopaedia Britannica, "Bifrost"',
-  'brit-chinvat'    => 'Encyclopaedia Britannica, "Chinvat Bridge"',
-  'brit-angel'      => 'Encyclopaedia Britannica, "Angel"',
-  'brit-gabriel'    => 'Encyclopaedia Britannica, "Gabriel"',
-  'brit-bodhi'      => 'Encyclopaedia Britannica, "Bodhi tree"',
-  'brit-yggdrasil'  => 'Encyclopaedia Britannica, "Yggdrasill"',
-  'brit-diwali'     => 'Encyclopaedia Britannica, "Diwali" and "Hanukkah"',
-  'brit-hagia'      => 'Encyclopaedia Britannica, "Hagia Sophia" and "Dome of the Rock"',
-  'brit-lighthouse' => 'Encyclopaedia Britannica, "Lighthouse" and "Pharos of Alexandria"',
-  'brit-prayer'     => 'Encyclopaedia Britannica, "Prayer"',
-  'brit-bell'       => 'Encyclopaedia Britannica, "Bell"',
-  'brit-carillon'   => 'Encyclopaedia Britannica, "Carillon"',
-  'brit-picasso'    => 'Encyclopaedia Britannica, "Pablo Picasso"',
-  'brit-pigeon'     => 'Encyclopaedia Britannica, "Homing pigeon"',
-  'brit-langar'     => 'Encyclopaedia Britannica, "Langar" and "Golden Temple"',
-  'brit-zakat'      => 'Encyclopaedia Britannica, "Zakat"',
-  'brit-lantern'    => 'Encyclopaedia Britannica, "Lantern Festival"',
-  'brit-deadsea'    => 'Encyclopaedia Britannica, "Dead Sea Scrolls"',
-  'brit-olympics'   => 'Encyclopaedia Britannica, "Olympic Games"',
-  'brit-crane'      => 'Encyclopaedia Britannica, "Crane (machine)"',
-  'brit-gold'       => 'Encyclopaedia Britannica, "Gold"',
-  'brit-marble'     => 'Encyclopaedia Britannica, "Marble"',
-  'brit-pearl'      => 'Encyclopaedia Britannica, "Pearl"',
+  'bible-genesis'   => 'The Bible, Genesis',
+  'bible-kings'     => 'The Bible, 2 Kings',
+  'bible-psalms'    => 'The Bible, Psalms',
+  'bible-isaiah'    => 'The Bible, Isaiah',
+  'bible-micah'     => 'The Bible, Micah',
+  'bible-zechariah' => 'The Bible, Zechariah',
+  'bible-matthew'   => 'The Bible, Gospel of Matthew',
+  'bible-mark'      => 'The Bible, Gospel of Mark',
+  'bible-luke'      => 'The Bible, Gospel of Luke',
+  'bible-john'      => 'The Bible, Gospel of John',
+  'bible-acts'      => 'The Bible, Acts of the Apostles',
+  'bible-romans'    => 'The Bible, Letter to the Romans',
+  'bible-1cor'      => 'The Bible, First Letter to the Corinthians',
+  'bible-1thess'    => 'The Bible, First Letter to the Thessalonians',
+  'bible-1peter'    => 'The Bible, First Letter of Peter',
+  'bible-rev'       => 'The Bible, Book of Revelation',
   'brit-aspirin'    => 'Encyclopaedia Britannica, "Aspirin"',
   'nci-taxol'       => 'National Cancer Institute, "Success Story: Taxol"',
   'usfs-bristlecone'=> 'U.S. Forest Service, Great Basin bristlecone pine',
-  'usgs-clouds'     => 'U.S. Geological Survey, Water Science School, "How much does a cloud weigh?"',
-  'usgs-springs'    => 'U.S. Geological Survey, Water Science School, "Springs and the water cycle"',
   'noaa-rainbow'    => 'NOAA SciJinks, "What causes a rainbow?"',
-  'who-water'       => 'WHO and UNICEF Joint Monitoring Programme, "Progress on household drinking water, sanitation and hygiene 2000–2022" (2023)',
-  'who-green'       => 'World Health Organization, Regional Office for Europe, "Urban green spaces and health" (2016)',
-  'un-persian'      => 'UNESCO World Heritage Centre, "The Persian Garden"',
-  'un-fez'          => 'UNESCO World Heritage Centre, "Medina of Fez"',
-  'un-peace'        => 'United Nations, "International Day of Peace, 21 September"',
-  'unhcr'           => 'UNHCR, the UN Refugee Agency, "Mid-Year Trends 2024"',
-  'fao-pollinators' => 'Food and Agriculture Organization of the United Nations, "Why bees matter" (2018)',
-  'sgpc'            => 'Shiromani Gurdwara Parbandhak Committee, the langar at the Golden Temple (Harmandir Sahib), Amritsar',
-  'feeding-america' => 'Feeding America, "What is a food bank?"',
-  'dunn'            => 'Dunn, Aknin and Norton, "Spending money on others promotes happiness", Science (2008)',
-  'loc'             => 'Library of Congress, "About the Library"',
-  'imj-scrolls'     => 'The Israel Museum, Jerusalem, the Shrine of the Book and the Dead Sea Scrolls Digital Project',
-  'bm-ur'           => 'British Museum, the Queen\'s Lyre from the Royal Cemetery at Ur',
-  'guinness-uni'    => 'Guinness World Records, "Oldest existing, and continually operating educational institution in the world"',
-  'guinness-bridge' => 'Guinness World Records, "Longest bridge"',
-  'ipc'             => 'International Paralympic Committee, "History of the Paralympic Movement"',
-  'parkrun'         => 'parkrun, "About us"',
-  'habitat'         => 'Habitat for Humanity, "History of Habitat"',
-  'whr'             => 'World Happiness Report (Sustainable Development Solutions Network), chapters on social connection and trust',
   'angel-north'     => 'Gateshead Council, "The Angel of the North"',
-  'rothko'          => 'Rothko Chapel, Houston, "About the Chapel"',
+  'brit-augustus'   => 'Encyclopaedia Britannica, "Augustus"',
+  'unesco-nativity' => 'UNESCO World Heritage Centre, "Birthplace of Jesus: Church of the Nativity and the Pilgrimage Route, Bethlehem"',
+  'brit-bell'       => 'Encyclopaedia Britannica, "Bell"',
+  'brit-carillon'   => 'Encyclopaedia Britannica, "Carillon"',
   'nps-liberty'     => 'National Park Service, Independence National Historical Park, "The Liberty Bell"',
-  'unhcr'           => 'UNHCR, the UN Refugee Agency, "Global Trends" report',
-  'un-swords'       => 'United Nations, "Let Us Beat Swords into Plowshares", sculpture by Evgeny Vuchetich (1959)',
-  'un-persian'      => 'UNESCO World Heritage Centre, "The Persian Garden"',
+  'brit-herod'      => 'Encyclopaedia Britannica, "Herod" (king of Judaea)',
+  'imj-herod'       => 'The Israel Museum, Jerusalem, "Herod the Great: The King\'s Final Journey" (2013)',
+  'brit-frankincense' => 'Encyclopaedia Britannica, "Frankincense" and "Myrrh"',
+  'brit-temple'     => 'Encyclopaedia Britannica, "Temple of Jerusalem" and "Western Wall"',
+  'iaa-nazareth'    => 'Israel Antiquities Authority, remains of a dwelling from the time of Jesus found in Nazareth (2009)',
+  'unesco-baptism'  => 'UNESCO World Heritage Centre, "Baptism Site \'Bethany Beyond the Jordan\' (Al-Maghtas)"',
+  'brit-pigeon'     => 'Encyclopaedia Britannica, "Homing pigeon"',
+  'un-fez'          => 'UNESCO World Heritage Centre, "Medina of Fez"',
+  'brit-lighthouse' => 'Encyclopaedia Britannica, "Lighthouse" and "Pharos of Alexandria"',
+  'who-water'       => 'WHO and UNICEF Joint Monitoring Programme, "Progress on household drinking water, sanitation and hygiene 2000–2022" (2023)',
+  'brit-deadsea'    => 'Encyclopaedia Britannica, "Dead Sea Scrolls"',
+  'imj-scrolls'     => 'The Israel Museum, Jerusalem, the Shrine of the Book and the Dead Sea Scrolls Digital Project',
+  'brit-sermon'     => 'Encyclopaedia Britannica, "Sermon on the Mount"',
+  'krisciunas'      => 'Kevin Krisciunas and Don Carona, "At what distance can the human eye detect a candle flame?" (2015)',
+  'brit-lordsprayer'=> 'Encyclopaedia Britannica, "Lord\'s Prayer"',
+  'brit-sundayschool' => 'Encyclopaedia Britannica, "Sunday school"',
+  'fao-pollinators' => 'Food and Agriculture Organization of the United Nations, "Why bees matter" (2018)',
+  'brit-pisa'       => 'Encyclopaedia Britannica, "Leaning Tower of Pisa"',
   'brit-amish'      => 'Encyclopaedia Britannica, "Amish"',
-  'epa-ewaste'      => 'US Environmental Protection Agency, "Electronics Donation and Recycling"',
-  'usgs-cloud'      => 'US Geological Survey, Water Science School, on how much a cloud weighs',
+  'gibson'          => 'Shimon Gibson, "The Final Days of Jesus: The Archaeological Evidence" (2009)',
+  'feeding-america' => 'Feeding America, "What is a food bank?"',
+  'muller'          => 'Müllers (the George Müller Charitable Trust), Bristol, the history of the orphan houses',
+  'ioc-redmond'     => 'International Olympic Committee, Olympics.com, Derek Redmond at the Barcelona 1992 Games',
+  'brit-jericho'    => 'Encyclopaedia Britannica, "Jericho"',
+  'dunn'            => 'Dunn, Aknin and Norton, "Spending money on others promotes happiness", Science (2008)',
+  'brit-passover'   => 'Encyclopaedia Britannica, "Passover"',
+  'brit-lastsupper' => 'Encyclopaedia Britannica, "Last Supper", the painting by Leonardo da Vinci',
+  'habitat'         => 'Habitat for Humanity, "History of Habitat"',
+  'brit-gethsemane' => 'Encyclopaedia Britannica, "Gethsemane"',
+  'cnr-olives'      => 'National Research Council of Italy (CNR), study of the olive trees of Gethsemane (2012)',
+  'brit-pilate'     => 'Encyclopaedia Britannica, "Pontius Pilate"',
+  'imj-pilate'      => 'The Israel Museum, Jerusalem, the Pilate inscription from Caesarea',
+  'brit-sepulchre'  => 'Encyclopaedia Britannica, "Church of the Holy Sepulchre"',
+  'brit-gold'       => 'Encyclopaedia Britannica, "Gold"',
+  'brit-marble'     => 'Encyclopaedia Britannica, "Marble"',
+  'brit-easter'     => 'Encyclopaedia Britannica, "Easter"',
+  'gardentomb'      => 'The Garden Tomb (Jerusalem) Association',
+  'usgs-clouds'     => 'U.S. Geological Survey, Water Science School, "How much does a cloud weigh?"',
+  'unesco-philippi' => 'UNESCO World Heritage Centre, "Archaeological Site of Philippi"',
+  'oxyrhynchus'     => 'The Oxyrhynchus Papyri, volume 15 (1922), no. 1786: a Christian hymn with musical notation',
+  'brit-pearl'      => 'Encyclopaedia Britannica, "Pearl"',
   'brit-swan'       => 'Encyclopaedia Britannica, "Swan"',
+  'wachsmann'       => 'Shelley Wachsmann, "The Sea of Galilee Boat: A 2000-Year-Old Discovery from the Sea of Legends" (1995)',
   'iucn-ass'        => 'IUCN Red List of Threatened Species, "African Wild Ass" (Equus africanus)',
-  'brit-earth'      => 'Encyclopaedia Britannica, "Earth" (rotation and the day)',
+  'brit-kush'       => 'Encyclopaedia Britannica, "Kush"',
 ];
 
-// category => [label, short description]
+// The chapters of the story: category => [label, short description].
 $HEAVEN_CATEGORIES = [
-  'welcome' => ['Gates and welcome', 'How the city greets everyone who arrives.'],
-  'light'   => ['Light and peace', 'Places of light, prayer and peace.'],
-  'life'    => ['Water, trees and gardens', 'The river, the trees and the gardens that so many pictures of paradise share.'],
-  'share'   => ['Sharing and feasts', 'Where everything is shared and everyone has enough.'],
-  'learn'   => ['Wisdom and music', 'Where people keep learning, and the city fills with music.'],
-  'joy'     => ['Play and celebration', 'Running, games and joy.'],
-  'homes'   => ['Homes', 'A home for everyone.'],
-  'build'   => ['Building the city', 'The tools and treasures that build it.'],
+  'promise' => ['1. The promise', 'God makes a good world, people turn away from him, and God promises a rescuer.'],
+  'born'    => ['2. Jesus is born', 'An angel brings the news, and God\'s Son is born in Bethlehem.'],
+  'young'   => ['3. Growing up', 'Jesus grows up in Nazareth and is baptized in the Jordan River.'],
+  'begins'  => ['4. Jesus begins his work', 'His first sign, his first followers and good news for everyone.'],
+  'teaches' => ['5. Jesus teaches', 'The Sermon on the Mount: how to live, how to pray and how to trust God.'],
+  'helps'   => ['6. Jesus heals and welcomes', 'Healing, feeding, welcoming children and finding the lost.'],
+  'week'    => ['7. The last week', 'Jesus rides into Jerusalem, shares a last supper and is arrested.'],
+  'cross'   => ['8. The cross and the empty tomb', 'Jesus dies on the cross, and on the third day he rises again.'],
+  'news'    => ['9. The good news spreads', 'Jesus goes up into heaven, and his followers carry the good news to the world.'],
+  'new'     => ['10. Everything new', 'Jesus will come again, and God will make all things new.'],
 ];
 
 $HEAVEN = [
 
-// ---------------- Gates and welcome ----------------
-'pearl-gate' => [
-  'name' => 'Pearl gate', 'latin' => 'Revelation 21:21', 'cat' => 'welcome', 'src' => 'art/town_1.png',
-  'summary' => 'A gate made of one giant pearl. In the Bible\'s Book of Revelation, the heavenly city has twelve gates, each made of a single pearl.',
-  'facts' => ['Inspired by' => 'Revelation 21:21 and 21:25', 'In the vision' => 'Twelve gates, each one pearl, never shut', 'The saying' => '"The pearly gates"', 'Real pearls grow in' => 'Oysters and mussels'],
+// ---------------- 1. The promise ----------------
+'tree-of-life' => [
+  'name' => 'Tree of life', 'latin' => 'Genesis 1–3', 'cat' => 'promise', 'src' => 'art/growth_3.png', 'part' => [1, 'In the beginning'],
+  'summary' => 'A great tree with golden leaves and glowing fruit. The Bible begins and ends with a tree of life, and the story of Jesus begins here.',
+  'facts' => ['Read it' => 'Genesis 1–3 and John 1:1–5', 'Where' => 'The garden of Eden', 'Key words' => '"It was very good"', 'Real world' => 'Bristlecone pines, nearly 5,000 years old'],
   'sections' => [
-    ['The gate', HEAVEN_IMAGINE, [
-      'A giant shining pearl stands in a white marble wall between two golden towers. The gate is open all day and all night, and every visitor is greeted by name.',
+    ['In the beginning', HEAVEN_GOSPEL, [
+      'The Bible begins: "In the beginning God created the heavens and the earth" (Genesis 1:1). God made light, land and sea, plants, animals and people, and "indeed, it was very good" (Genesis 1:31). In the middle of the garden of Eden grew "the tree of life" (Genesis 2:9).',
+      'But the first people, Adam and Eve, disobeyed God. Wrongdoing, which the Bible calls sin, came into the world, and they had to leave the garden and the tree of life behind (Genesis 3:22–24). Ever since, the Bible says, "all have sinned and fall short of the glory of God" (Romans 3:23).',
+      'God did not give up on the people he loved. The rest of the Bible tells how he made a way back to him through his Son, Jesus, who was there at the very beginning: "Through Him all things were made" (John 1:3). On the Bible\'s last page the tree of life stands again, and "the leaves of the tree are for the healing of the nations" (Revelation 22:2).',
     ]],
-    ['Gates of pearl', HEAVEN_BELIEF, [
-      'The Book of Revelation, the last book of the Christian Bible, describes a vision of a new, heavenly Jerusalem: "The twelve gates were twelve pearls, each gate made of a single pearl" (Revelation 21:21), and "on no day will its gates ever be shut" (Revelation 21:25). From this picture comes the saying "the pearly gates".',
-      'Islamic tradition also speaks of the gates of paradise. A well-known saying of the Prophet Muhammad names one of them al-Rayyan, the gate for those who fast.',
+    ['The tree', HEAVEN_IMAGINE, [
+      'At the center of the city grows a tree that never stops giving: shade for everyone, fruit in every season and leaves that make sick people well.',
     ]],
-    ['How pearls grow', HEAVEN_REAL, [
-      'A pearl forms inside an oyster or a mussel when something gets in that the animal cannot push out. The animal covers it, layer by layer, with nacre, the same shiny material that lines its shell. A pearl takes years to grow, which is one reason pearls have always been precious.',
+    ['Trees that heal', HEAVEN_REAL, [
+      'Many medicines come from trees and plants. Aspirin was developed from a substance found in willow bark, and a cancer medicine called Taxol was first found in the bark of the Pacific yew tree. The oldest living trees, bristlecone pines in the mountains of California, are nearly 5,000 years old.',
     ]],
   ],
-  'art' => 'The artist imagined a gate that is one giant shining pearl, set in a white marble wall with golden towers on both sides.',
-  'look' => ['Find the pearl in the middle of the gate.', 'How many towers can you count?'],
-  'questions' => ['What would a city whose gates never close be like?', 'How does it feel to be welcomed somewhere new?', 'How could your school or town welcome newcomers?'],
-  'words' => ['Pearl' => 'A shiny gem that grows inside an oyster or mussel.', 'Nacre' => 'The shiny material that makes pearls and lines shells.', 'Vision' => 'Something seen in a dream or in the mind, often with a special meaning.'],
-  'sources' => ['bible-rev', 'hadith-rayyan', 'brit-pearl'],
-  'related' => ['welcome-hall', 'sky-bridge', 'building-materials'],
+  'art' => 'The illustration shows an enormous tree with golden leaves and glowing fruit, its roots in a round marble pool of clear water.',
+  'look' => ['Find the glowing fruit.', 'Follow the roots into the pool.'],
+  'questions' => ['What do you think "very good" says about the world God made?', 'Why do you think the Bible begins and ends with a tree of life?', 'What do trees give to people and animals?'],
+  'words' => ['Creation' => 'Everything God made.', 'Sin' => 'Doing wrong against God and other people.', 'Eden' => 'The garden where the Bible\'s first people lived.'],
+  'sources' => ['bible-genesis', 'bible-romans', 'bible-john', 'bible-rev', 'brit-aspirin', 'nci-taxol', 'usfs-bristlecone'],
+  'related' => ['rainbow-pavilion', 'garden-of-light', 'pearl-gate'],
+],
+
+'rainbow-pavilion' => [
+  'name' => 'Rainbow pavilion', 'latin' => 'Genesis 9:13 and Isaiah 9:6', 'cat' => 'promise', 'src' => 'art/shared_2.png', 'part' => [2, 'A promise from God'],
+  'summary' => 'An open pavilion of flowers under a soft rainbow. In the Bible, the rainbow is a sign that God keeps his promises.',
+  'facts' => ['Read it' => 'Genesis 9:13, Isaiah 9:6 and Micah 5:2', 'Where' => 'The words of God\'s prophets', 'Key words' => '"For unto us a child is born"', 'Real world' => 'Sunlight split into colors by raindrops'],
+  'sections' => [
+    ['A promise from God', HEAVEN_GOSPEL, [
+      'After the great flood in Noah\'s time, God said: "I have set My rainbow in the clouds, and it will be a sign of the covenant between Me and the earth" (Genesis 9:13). A covenant is a promise that will not be broken.',
+      'God made more promises. He told Abraham that "all the families of the earth will be blessed through you" (Genesis 12:3). Through his prophets, he promised to send a King who would bring peace: "For unto us a child is born, unto us a son is given… And He will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace" (Isaiah 9:6). The prophet Micah even named the little town he would come from: Bethlehem (Micah 5:2).',
+      'People waited hundreds of years for these promises to come true.',
+    ]],
+    ['The pavilion', HEAVEN_IMAGINE, [
+      'Under the arch of a rainbow, a white pavilion stands among flowers: a place to make promises and keep them.',
+    ]],
+    ['How rainbows form', HEAVEN_REAL, [
+      'A rainbow appears when sunlight shines into falling raindrops. Each drop bends the light, splits it into its colors, from red to violet, and reflects it back toward you. That is why you can only see a rainbow with the sun behind you and rain in front of you.',
+    ]],
+  ],
+  'art' => 'The illustration shows an open marble pavilion with flowers under a soft rainbow arch.',
+  'look' => ['Find the rainbow.', 'Name the colors you can see.'],
+  'questions' => ['Why might a rainbow be a good sign of a promise?', 'Which of God\'s promises in this part would you most like to remember?', 'Why does it matter to keep a promise?'],
+  'words' => ['Covenant' => 'A solemn promise or agreement.', 'Prophet' => 'A person who speaks God\'s messages.', 'Spectrum' => 'The band of colors that white light splits into.'],
+  'sources' => ['bible-genesis', 'bible-isaiah', 'bible-micah', 'noaa-rainbow'],
+  'related' => ['tree-of-life', 'angel-statue', 'welcome-hall'],
+],
+
+// ---------------- 2. Jesus is born ----------------
+'angel-statue' => [
+  'name' => 'Angel statue', 'latin' => 'Luke 1:26–38', 'cat' => 'born', 'src' => 'art/monument.png', 'part' => [3, 'The angel\'s message'],
+  'summary' => 'A golden angel with open wings on a tall column. In the Bible, the angel Gabriel told Mary that she would have a son, Jesus.',
+  'facts' => ['Read it' => 'Luke 1:26–38 and Matthew 1:18–25', 'Where' => 'Nazareth, a town in Galilee', 'Key words' => '"His kingdom will never end!"', 'Real world' => 'The Angel of the North, England, 20 meters tall'],
+  'sections' => [
+    ['The angel\'s message', HEAVEN_GOSPEL, [
+      'In the town of Nazareth lived a young woman named Mary, who was engaged to marry a man named Joseph. God sent the angel Gabriel to her. "Do not be afraid, Mary, for you have found favor with God," the angel said. "Behold, you will conceive and give birth to a son, and you are to give Him the name Jesus. He will be great and will be called the Son of the Most High… His kingdom will never end!" (Luke 1:30–33).',
+      'Mary asked how this could be, and the angel told her the child would come from the Holy Spirit, "for no word from God will ever fail." Mary answered: "I am the Lord\'s servant. May it happen to me according to your word" (Luke 1:34–38).',
+      'An angel also spoke to Joseph in a dream: "You are to give Him the name Jesus, because He will save His people from their sins" (Matthew 1:21). He would be called Immanuel, which means "God with us" (Matthew 1:23).',
+    ]],
+    ['The statue', HEAVEN_IMAGINE, [
+      'A shining angel stands high above the city with open wings, as if about to bring good news.',
+    ]],
+    ['Angels in our world', HEAVEN_REAL, [
+      'Angel statues stand in many cities. The Angel of the North, a steel sculpture by Antony Gormley put up near Gateshead in England in 1998, is 20 meters tall, with wings 54 meters wide, almost as wide as a jumbo jet\'s.',
+    ]],
+  ],
+  'art' => 'The illustration shows a tall marble column with a golden angel with open wings on top.',
+  'look' => ['Find the angel\'s wings.', 'What is the angel standing on?'],
+  'questions' => ['How do you think Mary felt when she heard the angel\'s news?', 'What does the name Immanuel, "God with us", tell us about Jesus?', 'What good news would you like to bring someone?'],
+  'words' => ['Angel' => 'A messenger from God.', 'Immanuel' => 'A name that means "God with us".', 'Servant' => 'Someone who serves and obeys another.'],
+  'sources' => ['bible-luke', 'bible-matthew', 'angel-north'],
+  'related' => ['rainbow-pavilion', 'welcome-hall', 'bell-tower'],
 ],
 
 'welcome-hall' => [
-  'name' => 'Welcome hall', 'latin' => 'Hebrews 13:2', 'cat' => 'welcome', 'src' => 'art/business_2.png',
-  'summary' => 'A hall where every newcomer is welcomed. Many faiths teach that welcoming strangers is one of the best things a person can do.',
-  'facts' => ['Inspired by' => 'Hebrews 13:2', 'The idea' => 'Hospitality: welcoming guests and strangers', 'Bible story' => 'Abraham welcomes three strangers', 'Real world' => 'Volunteers who welcome refugees'],
+  'name' => 'Welcome hall', 'latin' => 'Luke 2:1–7', 'cat' => 'born', 'src' => 'art/business_2.png', 'part' => [4, 'No room in the inn'],
+  'summary' => 'A hall with a bed for every guest. When Jesus was born in Bethlehem, there was no room at the inn, so he was laid in a manger.',
+  'facts' => ['Read it' => 'Luke 2:1–7', 'Where' => 'Bethlehem, near Jerusalem', 'Key words' => '"No room for them in the inn"', 'Real world' => 'The Church of the Nativity, Bethlehem'],
   'sections' => [
+    ['No room in the inn', HEAVEN_GOSPEL, [
+      '"Now in those days a decree went out from Caesar Augustus that a census should be taken of the whole empire" (Luke 2:1). Everyone had to go to their own town to be counted. Joseph belonged to the family of King David, so he and Mary traveled from Nazareth to Bethlehem, the town of David, just as the prophet Micah had said.',
+      'While they were there, Mary\'s baby was born. "She wrapped Him in swaddling cloths and laid Him in a manger, because there was no room for them in the inn" (Luke 2:7). A manger is a feeding box for animals. God\'s Son was born not in a palace, but in a place where animals were fed.',
+    ]],
     ['The hall', HEAVEN_IMAGINE, [
-      'In this hall, a meal, a bed and a friend are waiting for every person who arrives, whoever they are and wherever they come from.',
+      'In this hall, a meal, a bed and a friend are waiting for every person who arrives, whoever they are and wherever they come from. Here, no one is ever told there is no room.',
     ]],
-    ['Welcoming strangers', HEAVEN_BELIEF, [
-      'In the Bible, Abraham runs to welcome three strangers, brings water to wash their feet and cooks them a meal, and they turn out to be messengers from God (Genesis 18). The Letter to the Hebrews says: "Do not forget to show hospitality to strangers, for by so doing some people have shown hospitality to angels without knowing it" (Hebrews 13:2). Welcoming guests is also an important duty in Islam, Judaism, Sikhism and many other traditions.',
-    ]],
-    ['Welcome in our world', HEAVEN_REAL, [
-      'Around the world, volunteers meet newcomers at airports and stations, help them find homes and schools, and teach them the local language. In 2024 the United Nations counted more than 120 million people who had been forced from their homes by war, danger or disaster.',
+    ['The Church of the Nativity', HEAVEN_REAL, [
+      'In Bethlehem, the Church of the Nativity stands over a cave that Christians have honored as the place of Jesus\'s birth since at least the 300s. Its main door is so low, about 1.2 meters, that most visitors must bow to go in. In 2012 it became a UNESCO World Heritage Site.',
     ]],
   ],
   'art' => 'The illustration shows a two-story white marble hall with gold doors and gold-trimmed windows.',
   'look' => ['Find the gold doors.', 'How many windows can you count?'],
-  'questions' => ['What makes someone feel welcome?', 'Why might so many faiths teach kindness to strangers?', 'How could you welcome a new student at your school?'],
-  'words' => ['Hospitality' => 'Welcoming and caring for guests.', 'Refugee' => 'A person who has had to leave their country to escape danger.', 'Volunteer' => 'A person who helps without being paid.'],
-  'sources' => ['bible-genesis', 'bible-hebrews', 'unhcr'],
-  'related' => ['pearl-gate', 'banquet-hall', 'house-of-many-rooms'],
-],
-
-'sky-bridge' => [
-  'name' => 'Sky bridge', 'latin' => 'Genesis 28:12', 'cat' => 'welcome', 'src' => 'art/bridge.png',
-  'summary' => 'A golden bridge across the sky. Many traditions picture a bridge or a stairway between the earth and heaven.',
-  'facts' => ['Inspired by' => 'Genesis 28:12, Jacob\'s ladder', 'Norse myth' => 'Bifrost, a rainbow bridge', 'Zoroastrian belief' => 'The Chinvat Bridge', 'Longest real bridge' => 'About 165 kilometers, in China'],
-  'sections' => [
-    ['The bridge', HEAVEN_IMAGINE, [
-      'White marble arches carry a golden walkway between the floating islands, so no part of the city is ever cut off from another.',
-    ]],
-    ['Bridges to heaven', HEAVEN_BELIEF, [
-      'In the Bible, Jacob dreams of a stairway reaching from the earth to heaven, with angels going up and down it (Genesis 28:12). In Norse myths, the gods\' home is reached by Bifrost, a rainbow bridge. Zoroastrianism, an ancient faith from Iran, teaches that after death each soul crosses the Chinvat Bridge. A bridge is a natural picture for a journey between two worlds.',
-    ]],
-    ['Bridges in our world', HEAVEN_REAL, [
-      'The longest bridge in the world, the Danyang–Kunshan Grand Bridge in China, carries high-speed trains for about 165 kilometers, over rice fields, rivers and lakes. Arches like the ones in this picture push a bridge\'s weight sideways and down into the ground, which is why stone arch bridges built by the Romans are still standing.',
-    ]],
-  ],
-  'art' => 'The illustration shows one section of a sky bridge: two white marble arches with a walkway on top, gold railings, small gold spires and flowering vines.',
-  'look' => ['Count the arches.', 'Find the flowering vines.'],
-  'questions' => ['Why might a bridge be a good picture for going from one world to another?', 'Which bridges are important where you live?', 'What makes an arch so strong?'],
-  'words' => ['Arch' => 'A curved structure that spans an opening.', 'Myth' => 'A traditional story, often about gods or heroes.', 'Span' => 'The distance a bridge crosses.'],
-  'sources' => ['bible-genesis', 'brit-bifrost', 'brit-chinvat', 'guinness-bridge'],
-  'related' => ['cloud-island', 'pearl-gate', 'rainbow-pavilion'],
-],
-
-'cloud-island' => [
-  'name' => 'Cloud island', 'latin' => 'Psalm 104:3', 'cat' => 'welcome', 'src' => 'art/island_1.png',
-  'summary' => 'A little island of marble and cloud floating in the sky, with a waterfall pouring from its edge.',
-  'facts' => ['Inspired by' => 'Pictures of heaven above the clouds', 'In many languages' => 'The same word means "sky" and "heaven"', 'A real cloud' => 'Can hold hundreds of tons of water', 'Why it floats' => 'Its droplets are tiny and spread out'],
-  'sections' => [
-    ['The island', HEAVEN_IMAGINE, [
-      'Islands drift through the sky like boats, each with a little garden, a gazebo and a waterfall falling into the clouds below.',
-    ]],
-    ['Heaven and the sky', HEAVEN_BELIEF, [
-      'In many languages the word for heaven is also the word for sky: shamayim in Hebrew, ouranos in Greek and sama in Arabic. Because the sky is high, bright and out of reach, people of many faiths have pictured God\'s home above it; a psalm in the Bible says God "makes the clouds his chariot" (Psalm 104:3). Many people today think of heaven as a different kind of place altogether, not somewhere you could fly to.',
-    ]],
-    ['Real clouds', HEAVEN_REAL, [
-      'A cloud is made of billions of tiny water droplets or ice crystals. A puffy cumulus cloud can hold hundreds of tons of water, yet it floats, because the droplets are so small and so widely spread that rising warm air holds them up.',
-    ]],
-  ],
-  'art' => 'The illustration shows a small floating island of white marble and cloud with a round gazebo, cypress trees, white flowers and a thin waterfall.',
-  'look' => ['Follow the waterfall. Where does the water go?', 'Find the gazebo with the gold dome.'],
-  'questions' => ['Why do you think so many people picture heaven in the sky?', 'How can something as heavy as a cloud float?', 'If you could build an island anywhere, what would you put on it?'],
-  'words' => ['Cumulus' => 'A puffy, white, heaped-up cloud.', 'Droplet' => 'A very small drop of liquid.', 'Gazebo' => 'A small open garden building with a roof.'],
-  'sources' => ['bible-psalms', 'brit-heaven', 'usgs-clouds'],
-  'related' => ['sky-bridge', 'spring-pool', 'garden-of-light'],
-],
-
-// ---------------- Light and peace ----------------
-'palace-of-light' => [
-  'name' => 'Palace of light', 'latin' => 'Revelation 21:23', 'cat' => 'light', 'src' => 'art/town_3.png',
-  'summary' => 'A great golden palace full of light. The Book of Revelation describes a city that needs no sun, because God\'s glory gives it light.',
-  'facts' => ['Inspired by' => 'Revelation 21:23', 'The idea' => 'A city lit by God\'s glory', 'Festivals of light' => 'Diwali, Hanukkah and Christmas', 'Real domes of light' => 'Hagia Sophia, Istanbul'],
-  'sections' => [
-    ['The palace', HEAVEN_IMAGINE, [
-      'At the heart of the city stands a palace with a huge gold dome and a star on top. Its doors glow, and light spills out from inside, so the whole city is bright even at night.',
-    ]],
-    ['A city with no need of the sun', HEAVEN_BELIEF, [
-      'Revelation describes the heavenly city this way: "The city does not need the sun or the moon to shine on it, for the glory of God gives it light" (Revelation 21:23). In many faiths, light is a picture of goodness and of God. Hindus, Sikhs and Jains celebrate Diwali, the festival of lights; Jews light candles for eight nights at Hanukkah; and Christians call Jesus "the light of the world" (John 8:12).',
-    ]],
-    ['Domes of light', HEAVEN_REAL, [
-      'Builders have long used domes with windows to fill holy places with light. The dome of Hagia Sophia in Istanbul, finished in AD 537, rests on a ring of 40 windows, so it seems to float on light. The golden Dome of the Rock in Jerusalem, a holy place for Muslims, shines above the city.',
-    ]],
-  ],
-  'art' => 'The illustration shows a palace of white marble with a huge gold dome topped by a star, wide steps, glowing golden doors and small towers at the corners.',
-  'look' => ['Find the star on top of the dome.', 'Where does the light come from?'],
-  'questions' => ['Why do you think so many faiths use light as a picture of goodness?', 'How does light change the way a place feels?', 'Which festivals of light do people celebrate near you?'],
-  'words' => ['Glory' => 'Great beauty, honor and light.', 'Dome' => 'A rounded roof shaped like half a ball.', 'Festival' => 'A day or time of celebration.'],
-  'sources' => ['bible-rev', 'bible-john', 'brit-diwali', 'brit-hagia'],
-  'related' => ['lamp-tower', 'prayer-chapel', 'bell-tower'],
-],
-
-'lamp-tower' => [
-  'name' => 'Lamp tower', 'latin' => 'Psalm 119:105', 'cat' => 'light', 'src' => 'art/nt_tower.png',
-  'summary' => 'A slim tower with a golden lamp on top, shining over the city all night long.',
-  'facts' => ['Inspired by' => 'Psalm 119:105', 'The words' => '"Your word is a lamp for my feet"', 'Real towers of light' => 'Lighthouses', 'First famous lighthouse' => 'The Pharos of Alexandria, about 280 BC'],
-  'sections' => [
-    ['The tower', HEAVEN_IMAGINE, [
-      'Lamp towers stand all over the city, so that no one ever has to walk in the dark or feel lost.',
-    ]],
-    ['A lamp for the path', HEAVEN_BELIEF, [
-      'The Psalms, songs in the Bible, say: "Your word is a lamp for my feet, a light on my path" (Psalm 119:105), meaning that God\'s teaching shows people the way to live. In the Quran, a famous passage called the Verse of Light compares God\'s light to a lamp shining in a niche, inside a glass that shines like a brilliant star (Quran 24:35).',
-    ]],
-    ['Lights that keep people safe', HEAVEN_REAL, [
-      'Lighthouses have guided ships for more than 2,000 years. The Pharos of Alexandria in Egypt, built around 280 BC, was one of the Seven Wonders of the Ancient World. Today street lights make towns safer at night, but too much light hides the stars, so some towns now use softer lights that point downward.',
-    ]],
-  ],
-  'art' => 'The illustration shows a slim white marble tower with a glowing golden lamp at the top.',
-  'look' => ['Find the lamp at the top.', 'How tall is the tower compared with the trees?'],
-  'questions' => ['What could it mean to say that words are a lamp?', 'How do lights help people in your town?', 'Why might some people want fewer lights at night?'],
-  'words' => ['Psalm' => 'A song or poem in the Bible\'s Book of Psalms.', 'Lighthouse' => 'A tower with a bright light that guides ships.', 'Light pollution' => 'Too much artificial light at night.'],
-  'sources' => ['bible-psalms', 'quran-light', 'brit-lighthouse'],
-  'related' => ['palace-of-light', 'lantern-circle', 'bell-tower'],
-],
-
-'prayer-chapel' => [
-  'name' => 'Prayer chapel', 'latin' => 'Isaiah 56:7', 'cat' => 'light', 'src' => 'art/growth_2.png',
-  'summary' => 'A small round chapel, warm with light: a quiet place to pray, think or simply be still.',
-  'facts' => ['Inspired by' => 'Isaiah 56:7', 'The words' => '"A house of prayer for all nations"', 'Prayer' => 'Part of almost every faith', 'Real world' => 'Quiet rooms in hospitals and airports'],
-  'sections' => [
-    ['The chapel', HEAVEN_IMAGINE, [
-      'A small round chapel with columns and a gold dome, where anyone can come in, sit quietly and rest.',
-    ]],
-    ['A house of prayer', HEAVEN_BELIEF, [
-      'The prophet Isaiah, in the Hebrew Bible, describes God\'s house as "a house of prayer for all nations" (Isaiah 56:7). People pray in many ways: Muslims pray five times a day facing Mecca; Jews say set prayers three times a day; Christians pray the Lord\'s Prayer; Hindus offer puja at home and in temples; and Buddhists meditate.',
-    ]],
-    ['Quiet places today', HEAVEN_REAL, [
-      'Many hospitals, airports and universities have quiet rooms that are open to people of every faith, or of none, where they can pray, meditate or simply sit in silence.',
-    ]],
-    ['A chapel for everyone', HEAVEN_REAL, [
-      'The Rothko Chapel in Houston, Texas, opened in 1971, is a quiet, eight-sided room open to people of every faith or none. Its walls hold 14 large, dark paintings by the artist Mark Rothko, and visitors come to sit, think or pray in silence.',
-    ]],
-  ],
-  'art' => 'The illustration shows a small round chapel with columns, a gold dome and warm light shining from inside.',
-  'look' => ['Find the light coming from inside.', 'Count the columns.'],
-  'questions' => ['Why might people want a quiet place?', 'How do people you know pray, think or reflect?', 'Where could you find a quiet moment in a busy day?'],
-  'words' => ['Chapel' => 'A small place of worship.', 'Prophet' => 'A person believed to speak for God.', 'Meditate' => 'To quiet and focus the mind.'],
-  'sources' => ['bible-isaiah', 'brit-prayer', 'rothko'],
-  'related' => ['palace-of-light', 'bell-tower', 'garden-of-light'],
+  'questions' => ['Why do you think God\'s Son was born in such a humble place?', 'How would you have welcomed Mary and Joseph?', 'How could you make a newcomer feel welcome?'],
+  'words' => ['Census' => 'An official count of the people in a country.', 'Manger' => 'A box that holds food for animals.', 'Swaddling cloths' => 'Strips of cloth wrapped snugly around a baby.'],
+  'sources' => ['bible-luke', 'bible-micah', 'brit-augustus', 'unesco-nativity'],
+  'related' => ['angel-statue', 'bell-tower', 'house-of-many-rooms'],
 ],
 
 'bell-tower' => [
-  'name' => 'Bell tower', 'latin' => 'Psalm 150', 'cat' => 'light', 'src' => 'art/town_2.png',
-  'summary' => 'A tall white tower of golden bells that ring out across the city in celebration.',
-  'facts' => ['Inspired by' => 'Psalm 150', 'The words' => '"Praise him with the clash of cymbals"', 'Bells call people to' => 'Worship, celebration and remembrance', 'Biggest bell' => 'The Tsar Bell in Moscow, about 200 tons, never rung'],
+  'name' => 'Bell tower', 'latin' => 'Luke 2:8–20', 'cat' => 'born', 'src' => 'art/town_2.png', 'part' => [5, 'Good news of great joy'],
+  'summary' => 'A tall white tower of golden bells that ring out across the city. On the night Jesus was born, angels told shepherds the good news.',
+  'facts' => ['Read it' => 'Luke 2:8–20', 'Where' => 'The fields near Bethlehem', 'Key words' => '"Good news of great joy"', 'Real world' => 'The Liberty Bell, Philadelphia'],
   'sections' => [
+    ['Good news of great joy', HEAVEN_GOSPEL, [
+      'That night, shepherds were watching their sheep in the fields near Bethlehem. Suddenly an angel of the Lord stood before them, and the glory of the Lord shone around them. They were terrified, but the angel said: "Do not be afraid! For behold, I bring you good news of great joy that will be for all the people: Today in the city of David a Savior has been born to you. He is Christ the Lord!" (Luke 2:10–11).',
+      'Then a great crowd of angels appeared, praising God: "Glory to God in the highest, and on earth peace to men on whom His favor rests!" (Luke 2:14). The shepherds hurried to Bethlehem and found the baby lying in the manger, just as they had been told. They went home "glorifying and praising God for all they had heard and seen" (Luke 2:20).',
+    ]],
     ['The tower', HEAVEN_IMAGINE, [
       'When something good happens in this city, the bells ring, and everyone stops to listen and celebrate.',
-    ]],
-    ['Music of praise', HEAVEN_BELIEF, [
-      'The last psalm in the Bible calls on "everything that has breath" to praise God with trumpets, harps, drums, dancing and cymbals (Psalm 150). Bells call people to worship in Christian churches, and in Buddhist temples in Japan a great bell is rung 108 times on New Year\'s Eve, to let go of the troubles of the old year.',
     ]],
     ['How bells sing', HEAVEN_REAL, [
       'A bell rings when it is struck and its metal shakes, sending out waves of sound. Bell makers tune a bell by shaving metal from the inside. Some towers hold a carillon, a set of at least 23 bells played from a keyboard.',
@@ -301,93 +222,163 @@ $HEAVEN = [
   ],
   'art' => 'The illustration shows a tall white tower with an open top holding golden bells, and a gold spire.',
   'look' => ['Find the golden bells.', 'Why is the top of the tower open?'],
-  'questions' => ['Why might bells be used for celebrations and remembrance?', 'What sounds mean celebration where you live?', 'How does sound travel from a bell to your ears?'],
-  'words' => ['Carillon' => 'A set of at least 23 bells played from a keyboard.', 'Vibrate' => 'To shake quickly back and forth.', 'Praise' => 'To speak or sing about how good someone is.'],
-  'sources' => ['bible-psalms', 'brit-bell', 'brit-carillon', 'nps-liberty'],
-  'related' => ['prayer-chapel', 'harp-workshop', 'angel-statue'],
+  'questions' => ['Why do you think the angels told shepherds first?', 'Why is the birth of a Savior called "good news of great joy"?', 'What sounds mean celebration where you live?'],
+  'words' => ['Savior' => 'Someone who saves or rescues.', 'Christ' => 'From the Greek for "anointed one": the King God promised to send.', 'Carillon' => 'A set of at least 23 bells played from a keyboard.'],
+  'sources' => ['bible-luke', 'brit-bell', 'brit-carillon', 'nps-liberty'],
+  'related' => ['welcome-hall', 'palace-of-light', 'angel-statue'],
 ],
 
-'angel-statue' => [
-  'name' => 'Angel statue', 'latin' => 'Luke 2:13–14', 'cat' => 'light', 'src' => 'art/monument.png',
-  'summary' => 'A golden angel with open wings on top of a tall column. In Judaism, Christianity and Islam, angels are God\'s messengers.',
-  'facts' => ['Inspired by' => 'Luke 2:13–14', 'The word angel' => 'From the Greek for "messenger"', 'Best-known angels' => 'Gabriel and Michael', 'Real statue' => 'The Angel of the North, England, 20 meters tall'],
+'palace-of-light' => [
+  'name' => 'Palace of light', 'latin' => 'Matthew 2:1–12', 'cat' => 'born', 'src' => 'art/town_3.png', 'part' => [6, 'The star and the king'],
+  'summary' => 'A great golden palace with a star on its dome. Wise men followed a star to find the newborn King, Jesus.',
+  'facts' => ['Read it' => 'Matthew 2:1–15', 'Where' => 'Jerusalem and Bethlehem', 'Key words' => '"We saw His star in the east"', 'Real world' => 'King Herod\'s hilltop palace, the Herodium'],
   'sections' => [
-    ['The statue', HEAVEN_IMAGINE, [
-      'A shining angel stands high above the city with open wings, as if about to bring good news.',
+    ['The star and the king', HEAVEN_GOSPEL, [
+      'Some time later, wise men called Magi came from the east to Jerusalem, asking: "Where is the One who has been born King of the Jews? We saw His star in the east and have come to worship Him" (Matthew 2:2). King Herod was troubled, and he sent them to Bethlehem, secretly planning to harm the child.',
+      'The star went ahead of the Magi until it stopped over the place where Jesus was. "When they saw the star, they rejoiced with great delight" (Matthew 2:10). They bowed down and worshiped him, and gave him gifts of gold, frankincense and myrrh. Warned in a dream, they went home another way, and an angel told Joseph to take Mary and Jesus to Egypt until Herod died (Matthew 2:12–15).',
     ]],
-    ['Messengers of God', HEAVEN_BELIEF, [
-      'The word "angel" comes from the Greek angelos, meaning "messenger". In the Bible, the angel Gabriel tells Mary that she will have a son, Jesus, and on the night he is born, angels sing "peace on earth" to shepherds (Luke 2:13–14). In Islam, the angel Jibril, or Gabriel, brought the words of the Quran to the Prophet Muhammad. Artists usually give angels wings, but holy books describe them in many different ways.',
+    ['The palace', HEAVEN_IMAGINE, [
+      'At the heart of the city stands a palace with a huge gold dome and a star on top. Its doors glow, and light spills out from inside, so the whole city is bright even at night.',
     ]],
-    ['Angels in our world', HEAVEN_REAL, [
-      'Angel statues stand in many cities. The Angel of the North, a steel sculpture by Antony Gormley put up near Gateshead in England in 1998, is 20 meters tall, with wings 54 meters wide, almost as wide as a jumbo jet\'s.',
+    ['Herod\'s hilltop palace', HEAVEN_REAL, [
+      'King Herod the Great was a famous builder. A few kilometers from Bethlehem he built the Herodium, a palace and fortress on top of a cone-shaped hill. In 2007, the archaeologist Ehud Netzer announced that he had found Herod\'s tomb on its slope.',
+    ]],
+    ['Gold, frankincense and myrrh', HEAVEN_REAL, [
+      'Frankincense and myrrh are sweet-smelling resins, a kind of dried tree sap, from small trees that grow in southern Arabia and the Horn of Africa. In Jesus\'s time they were used in perfume and medicine, and they could be very costly.',
     ]],
   ],
-  'art' => 'The illustration shows a tall marble column with a golden angel with open wings on top.',
-  'look' => ['Find the angel\'s wings.', 'What is the angel standing on?'],
-  'questions' => ['Why do you think artists give angels wings?', 'What good news would you like to bring someone?', 'What statues stand in your town, and what do they mean?'],
-  'words' => ['Angel' => 'A messenger of God in many faiths.', 'Scripture' => 'The holy writings of a religion.', 'Sculpture' => 'A work of art carved, cast or built in three dimensions.'],
-  'sources' => ['bible-luke', 'brit-angel', 'brit-gabriel', 'angel-north'],
-  'related' => ['dove-statue', 'bell-tower', 'pearl-gate'],
+  'art' => 'The illustration shows a palace of white marble with a huge gold dome topped by a star, wide steps, glowing golden doors and small towers at the corners.',
+  'look' => ['Find the star on top of the dome.', 'Where does the light come from?'],
+  'questions' => ['Why do you think the wise men traveled so far?', 'What gift would you bring to Jesus?', 'Why might Herod have been afraid of a baby king?'],
+  'words' => ['Magi' => 'Wise men from the east who studied the stars.', 'Frankincense' => 'A sweet-smelling tree resin, burned like incense.', 'Myrrh' => 'A fragrant tree resin used in perfume and medicine.'],
+  'sources' => ['bible-matthew', 'brit-herod', 'imj-herod', 'brit-frankincense'],
+  'related' => ['bell-tower', 'hall-of-wisdom', 'lamp-tower'],
+],
+
+// ---------------- 3. Growing up ----------------
+'hall-of-wisdom' => [
+  'name' => 'Hall of wisdom', 'latin' => 'Luke 2:41–52', 'cat' => 'young', 'src' => 'art/knowledge_3.png', 'part' => [7, 'In his Father\'s house'],
+  'summary' => 'A domed library full of light. When Jesus was twelve, he sat among the teachers in the temple, listening and asking questions.',
+  'facts' => ['Read it' => 'Luke 2:41–52 and Mark 6:3', 'Where' => 'The temple in Jerusalem, and Nazareth', 'Key words' => '"I had to be in My Father\'s house"', 'Real world' => 'The Western Wall, Jerusalem'],
+  'sections' => [
+    ['In his Father\'s house', HEAVEN_GOSPEL, [
+      'Jesus grew up in Nazareth. Every year his family went to Jerusalem for the Feast of the Passover. When he was twelve, his parents set off for home and did not notice that he had stayed behind. After three days of searching, "they found Him in the temple courts, sitting among the teachers, listening to them and asking them questions. And all who heard Him were astounded at His understanding and His answers" (Luke 2:46–47).',
+      '"Did you not know that I had to be in My Father\'s house?" Jesus asked (Luke 2:49). Then he went home with them and obeyed them, "and Jesus grew in wisdom and stature, and in favor with God and man" (Luke 2:52). He learned a trade, and the people of Nazareth later called him "the carpenter" (Mark 6:3).',
+    ]],
+    ['The hall', HEAVEN_IMAGINE, [
+      'Every question anyone has ever asked has an answer waiting somewhere on these shelves, and there is always time to read it.',
+    ]],
+    ['The temple and its wall', HEAVEN_REAL, [
+      'The temple Jesus visited had been rebuilt by King Herod on a huge stone platform. Roman soldiers destroyed it in AD 70, but part of the platform\'s western wall still stands in Jerusalem. Some of its stones weigh hundreds of tons.',
+    ]],
+    ['A house from Jesus\'s time', HEAVEN_REAL, [
+      'In 2009, archaeologists in Nazareth uncovered the remains of a small, simple house from the time of Jesus, with a pit for storing rainwater. It suggests that Nazareth was then a small village.',
+    ]],
+  ],
+  'art' => 'The illustration shows a domed marble library with a columned porch, a gold dome and glowing windows.',
+  'look' => ['Find the columned porch.', 'Where does the light shine out?'],
+  'questions' => ['What questions would you have asked the teachers in the temple?', 'What do you think it means to grow "in wisdom and stature"?', 'Why might Jesus have called the temple his Father\'s house?'],
+  'words' => ['Temple' => 'The great house of worship in Jerusalem.', 'Passover' => 'A yearly feast remembering how God freed Israel from slavery in Egypt.', 'Stature' => 'Height and growth.'],
+  'sources' => ['bible-luke', 'bible-mark', 'brit-temple', 'iaa-nazareth'],
+  'related' => ['palace-of-light', 'dove-statue', 'scroll-library'],
 ],
 
 'dove-statue' => [
-  'name' => 'Dove statue', 'latin' => 'Genesis 8:11', 'cat' => 'light', 'src' => 'art/nt_statue.png',
-  'summary' => 'A golden dove with open wings: a picture of peace and new beginnings.',
-  'facts' => ['Inspired by' => 'Genesis 8:11', 'The story' => 'A dove brings Noah an olive leaf', 'Stands for' => 'Peace, hope and gentleness', 'Famous picture' => 'Picasso\'s Dove, 1949'],
+  'name' => 'Dove statue', 'latin' => 'Matthew 3:13–17', 'cat' => 'young', 'src' => 'art/nt_statue.png', 'part' => [8, 'The dove and the voice'],
+  'summary' => 'A golden dove with open wings. When Jesus was baptized, the Spirit of God came down on him like a dove.',
+  'facts' => ['Read it' => 'Matthew 3:13–4:11 and John 1:29', 'Where' => 'The Jordan River, then the wilderness', 'Key words' => '"This is My beloved Son"', 'Real world' => 'The baptism site, a World Heritage Site'],
   'sections' => [
+    ['The dove and the voice', HEAVEN_GOSPEL, [
+      'When Jesus was about thirty, his relative John was baptizing people in the Jordan River, calling them to turn away from their sins. When John saw Jesus coming, he said: "Look, the Lamb of God, who takes away the sin of the world!" (John 1:29).',
+      'Jesus asked John to baptize him too. "As soon as Jesus was baptized, He went up out of the water. Suddenly the heavens were opened, and He saw the Spirit of God descending like a dove and resting on Him. And a voice from heaven said, \'This is My beloved Son, in whom I am well pleased!\'" (Matthew 3:16–17).',
+      'Then Jesus went into the wilderness, where he fasted for forty days and was tempted by the devil. Each time, he answered with God\'s word: "Man shall not live on bread alone, but on every word that comes from the mouth of God" (Matthew 4:4).',
+    ]],
     ['The statue', HEAVEN_IMAGINE, [
       'A golden dove rises from a marble pedestal, wings open, as if setting off to carry peace across the city.',
     ]],
-    ['The dove of peace', HEAVEN_BELIEF, [
-      'In the Bible\'s story of the great flood, Noah sends out a dove, and it comes back with a fresh olive leaf in its beak, a sign that the waters have gone down and life can begin again (Genesis 8:11). In the Gospels, the Spirit of God comes down on Jesus "like a dove" when he is baptized (Matthew 3:16).',
+    ['Where Jesus was baptized', HEAVEN_REAL, [
+      'On the east bank of the Jordan River, archaeologists have uncovered churches, pools and caves at a place called Bethany beyond the Jordan, where Christians have remembered the baptism of Jesus since early times. In 2015 it became a UNESCO World Heritage Site.',
     ]],
     ['Doves in our world', HEAVEN_REAL, [
-      'In 1949 the artist Pablo Picasso drew a dove for a peace conference in Paris, and his dove became a famous symbol of peace. Real doves and pigeons are expert navigators: homing pigeons can find their way home from hundreds of kilometers away, and they carried messages in both World Wars.',
+      'Doves and pigeons are expert navigators: homing pigeons can find their way home from hundreds of kilometers away, and they carried messages in both World Wars.',
     ]],
   ],
   'art' => 'The illustration shows a golden dove with open wings on a white marble pedestal with gold trim.',
   'look' => ['Find the dove\'s outstretched wings.', 'Look at the pedestal. What is it made of?'],
-  'questions' => ['Why might a dove be a good symbol of peace?', 'What does peace look like in a classroom or a family?', 'What other symbols of peace do you know?'],
-  'words' => ['Symbol' => 'A picture or object that stands for an idea.', 'Pedestal' => 'A base that a statue stands on.', 'Homing pigeon' => 'A pigeon that can fly home from far away.'],
-  'sources' => ['bible-genesis', 'bible-matthew', 'brit-picasso', 'brit-pigeon'],
-  'related' => ['angel-statue', 'rainbow-pavilion', 'lily-garden'],
+  'questions' => ['Why do you think John called Jesus "the Lamb of God"?', 'What did the voice from heaven say about Jesus?', 'How did Jesus answer when he was tempted?'],
+  'words' => ['Baptize' => 'To dip in water or pour water over someone, as a sign of a new start with God.', 'Wilderness' => 'Wild, empty land where few people live.', 'Tempt' => 'To try to get someone to do wrong.'],
+  'sources' => ['bible-matthew', 'bible-john', 'unesco-baptism', 'brit-pigeon'],
+  'related' => ['hall-of-wisdom', 'garden-villa', 'rainbow-pavilion'],
 ],
 
-// ---------------- Water, trees and gardens ----------------
-'tree-of-life' => [
-  'name' => 'Tree of life', 'latin' => 'Revelation 22:2', 'cat' => 'life', 'src' => 'art/growth_3.png',
-  'summary' => 'A huge tree with golden leaves and glowing fruit, its roots in a pool of clear water.',
-  'facts' => ['Inspired by' => 'Genesis 2:9 and Revelation 22:2', 'In the vision' => 'Twelve kinds of fruit, and leaves that heal', 'In other traditions' => 'The Bodhi tree, the tree Tuba, Yggdrasil', 'Oldest real trees' => 'Bristlecone pines, nearly 5,000 years old'],
+// ---------------- 4. Jesus begins his work ----------------
+'garden-villa' => [
+  'name' => 'Garden villa', 'latin' => 'John 2:1–11', 'cat' => 'begins', 'src' => 'art/family_2.png', 'part' => [9, 'Water into wine'],
+  'summary' => 'A villa built around a courtyard with a fountain. At a wedding in Cana, Jesus turned water into wine, the first of his signs.',
+  'facts' => ['Read it' => 'John 2:1–11', 'Where' => 'Cana, a village in Galilee', 'Key words' => '"Do whatever He tells you"', 'Real world' => 'Courtyard homes, from Rome to Morocco'],
   'sections' => [
-    ['The tree', HEAVEN_IMAGINE, [
-      'At the center of the garden grows a tree that never stops giving: shade for everyone, fruit in every season and leaves that make sick people well.',
+    ['Water into wine', HEAVEN_GOSPEL, [
+      'Jesus, his mother and his first followers were invited to a wedding in the village of Cana. During the feast the wine ran out, which would have shamed the family. Mary told the servants: "Do whatever He tells you" (John 2:5).',
+      'Six large stone water jars stood nearby. "Fill the jars with water," Jesus told the servants, and they filled them to the brim. When the master of the banquet tasted it, the water had become wine, better than any served before: "You have saved the fine wine until now!" (John 2:10).',
+      '"Jesus performed this, the first of His signs, at Cana in Galilee. He thus revealed His glory, and His disciples believed in Him" (John 2:11).',
     ]],
-    ['Trees of life', HEAVEN_BELIEF, [
-      'In the Bible, the tree of life grows in the Garden of Eden (Genesis 2:9), and it appears again at the very end, in the heavenly city: "On each side of the river stood the tree of life, bearing twelve crops of fruit… And the leaves of the tree are for the healing of the nations" (Revelation 22:2).',
-      'Islamic tradition describes a vast tree in paradise called Tuba. Buddhists honor the Bodhi tree, under which the Buddha is said to have found enlightenment, and Norse myths tell of Yggdrasil, a giant tree that holds the worlds together.',
+    ['The villa', HEAVEN_IMAGINE, [
+      'Every room opens onto a sunny courtyard with a fountain, where the family eats, plays and celebrates, and there is always enough for every guest.',
     ]],
-    ['Trees that heal', HEAVEN_REAL, [
-      'Many medicines come from trees and plants. Aspirin was developed from a substance found in willow bark, and a cancer medicine called Taxol was first found in the bark of the Pacific yew tree. The oldest living trees, bristlecone pines in the mountains of California, are nearly 5,000 years old.',
+    ['Courtyard homes', HEAVEN_REAL, [
+      'Houses built around a private courtyard are found all over the world, from the Roman domus to the courtyard houses of Beijing and the riads of Fez in Morocco. The courtyard brings light, fresh air and a safe place to play into the middle of the home.',
     ]],
   ],
-  'art' => 'The illustration shows an enormous tree with golden leaves and glowing fruit, its roots in a round marble pool of clear water.',
-  'look' => ['Find the glowing fruit.', 'Follow the roots into the pool.'],
-  'questions' => ['Why do you think trees appear in so many stories about paradise?', 'What do trees give to people and animals?', 'Is there a special tree in your neighborhood?'],
-  'words' => ['Enlightenment' => 'In Buddhism, waking up to the truth and being freed from suffering.', 'Bark' => 'The tough outer skin of a tree.', 'Medicine' => 'Something used to treat illness.'],
-  'sources' => ['bible-genesis', 'bible-rev', 'hadith-tuba', 'brit-bodhi', 'brit-yggdrasil', 'brit-aspirin', 'nci-taxol', 'usfs-bristlecone'],
-  'related' => ['fountain-of-life', 'garden-of-light', 'lily-garden'],
+  'art' => 'The illustration shows a large white villa built around a courtyard with a fountain, with gold domes and cypress trees.',
+  'look' => ['Find the fountain in the courtyard.', 'How many gold domes can you see?'],
+  'questions' => ['Why do you think Jesus helped at a wedding?', 'What did Mary tell the servants to do?', 'What does a sign point to?'],
+  'words' => ['Sign' => 'In John\'s Gospel, a miracle that points to who Jesus is.', 'Miracle' => 'An amazing act of God\'s power.', 'Courtyard' => 'An open space surrounded by buildings or walls.'],
+  'sources' => ['bible-john', 'un-fez'],
+  'related' => ['dove-statue', 'lamp-tower', 'banquet-hall'],
+],
+
+'lamp-tower' => [
+  'name' => 'Lamp tower', 'latin' => 'John 3:1–21', 'cat' => 'begins', 'src' => 'art/nt_tower.png', 'part' => [10, 'A visitor at night'],
+  'summary' => 'A slim tower with a golden lamp that shines all night. A teacher named Nicodemus came to Jesus in the dark and heard about God\'s great love.',
+  'facts' => ['Read it' => 'John 3:1–21', 'Where' => 'Jerusalem, at night', 'Key words' => '"For God so loved the world"', 'Real world' => 'The Pharos of Alexandria, an ancient lighthouse'],
+  'sections' => [
+    ['A visitor at night', HEAVEN_GOSPEL, [
+      'A leader named Nicodemus, a teacher of God\'s law, came to Jesus at night. "Rabbi," he said, "we know that You are a teacher who has come from God" (John 3:2). Jesus told him: "Truly, truly, I tell you, no one can see the kingdom of God unless he is born again" (John 3:3). He meant that a person needs a new life from God\'s Spirit.',
+      'Then Jesus spoke words that many people call the heart of the whole Bible: "For God so loved the world that He gave His one and only Son, that everyone who believes in Him shall not perish but have eternal life. For God did not send His Son into the world to condemn the world, but to save the world through Him" (John 3:16–17).',
+    ]],
+    ['A light in the dark', HEAVEN_BIBLE, [
+      'Later Jesus said: "I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life" (John 8:12). A psalm says to God: "Your word is a lamp to my feet and a light to my path" (Psalm 119:105).',
+    ]],
+    ['The tower', HEAVEN_IMAGINE, [
+      'Lamp towers stand all over the city, so that no one ever has to walk in the dark or feel lost.',
+    ]],
+    ['Lights that keep people safe', HEAVEN_REAL, [
+      'Lighthouses have guided ships for more than 2,000 years. The Pharos of Alexandria in Egypt, built around 280 BC, was one of the Seven Wonders of the Ancient World. Today street lights make towns safer at night, but too much light hides the stars, so some towns now use softer lights that point downward.',
+    ]],
+  ],
+  'art' => 'The illustration shows a slim white marble tower with a glowing golden lamp at the top.',
+  'look' => ['Find the lamp at the top.', 'How tall is the tower compared with the trees?'],
+  'questions' => ['What do you think Jesus meant by being "born again"?', 'What does John 3:16 say God did because he loved the world?', 'How is Jesus like a light in the dark?'],
+  'words' => ['Eternal life' => 'Life with God that never ends.', 'Perish' => 'To die or be lost.', 'Rabbi' => 'A Jewish teacher.'],
+  'sources' => ['bible-john', 'bible-psalms', 'brit-lighthouse'],
+  'related' => ['garden-villa', 'fountain-of-life', 'lantern-circle'],
 ],
 
 'fountain-of-life' => [
-  'name' => 'Fountain of life', 'latin' => 'Revelation 22:1', 'cat' => 'life', 'src' => 'art/fountain.png',
-  'summary' => 'A marble fountain of sparkling water. Many pictures of paradise have a river or spring of pure, living water at their heart.',
-  'facts' => ['Inspired by' => 'Revelation 22:1', 'In the Quran' => 'Rivers of water that never goes stale (47:15)', 'In Genesis' => 'A river flows out of Eden', 'Real world' => 'About 2 billion people lack safe water at home'],
+  'name' => 'Fountain of life', 'latin' => 'John 4:5–42', 'cat' => 'begins', 'src' => 'art/fountain.png', 'part' => [11, 'Living water'],
+  'summary' => 'A marble fountain of sparkling water. At a well in Samaria, Jesus offered a woman "living water" that would never run out.',
+  'facts' => ['Read it' => 'John 4:5–42', 'Where' => 'Jacob\'s well, in Samaria', 'Key words' => '"Living water"', 'Real world' => 'About 2 billion people lack safe water at home'],
   'sections' => [
+    ['Living water', HEAVEN_GOSPEL, [
+      'Traveling through Samaria, Jesus sat down, tired, by Jacob\'s well. When a Samaritan woman came to draw water, he said: "Give Me a drink" (John 4:7). She was amazed, because Jews and Samaritans did not get along.',
+      'Jesus answered: "If you knew the gift of God and who is asking you for a drink, you would have asked Him, and He would have given you living water… Everyone who drinks this water will be thirsty again. But whoever drinks the water I give him will never thirst" (John 4:10–14).',
+      'The woman went back to her town and told everyone about him. Many came to hear Jesus for themselves and said: "We know that this man truly is the Savior of the world" (John 4:42).',
+    ]],
+    ['The river of life', HEAVEN_BIBLE, [
+      'The last book of the Bible pictures "a river of the water of life, as clear as crystal, flowing from the throne of God and of the Lamb" through the heavenly city (Revelation 22:1).',
+    ]],
     ['The fountain', HEAVEN_IMAGINE, [
       'Clear water flows from a golden top into a wide marble basin, and anyone may drink. The water never runs out and never makes anyone sick.',
-    ]],
-    ['Living water', HEAVEN_BELIEF, [
-      'The Book of Revelation describes "the river of the water of life, as clear as crystal" flowing through the heavenly city (Revelation 22:1), and in the Gospel of John, Jesus speaks of "living water" (John 4:10). The Quran describes the gardens of paradise with rivers of water that never goes stale, and rivers of milk and honey (Quran 47:15). In Genesis, a river flows out of Eden to water the garden.',
     ]],
     ['Clean water for all', HEAVEN_REAL, [
       'Clean water is one of the most important things for good health. The World Health Organization and UNICEF reported that in 2022 about 2.2 billion people still did not have safe drinking water at home. Wells, pipes, filters and water treatment save millions of lives.',
@@ -395,68 +386,98 @@ $HEAVEN = [
   ],
   'art' => 'The illustration shows a round marble fountain with clear, sparkling water flowing from a gold top.',
   'look' => ['Find where the water comes out.', 'How many levels does the fountain have?'],
-  'questions' => ['Why do you think water appears in so many pictures of paradise?', 'Where does the water in your home come from?', 'What could people do so that everyone has clean water?'],
-  'words' => ['Fountain' => 'A structure that sends out a stream of water.', 'Basin' => 'A wide bowl that holds water.', 'Water treatment' => 'Cleaning water so that it is safe to drink.'],
-  'sources' => ['bible-rev', 'bible-john', 'quran-rivers', 'who-water'],
-  'related' => ['spring-pool', 'tree-of-life', 'garden-of-light'],
+  'questions' => ['What do you think Jesus meant by "living water"?', 'Why was the woman surprised that Jesus spoke to her?', 'What could people do so that everyone has clean water?'],
+  'words' => ['Samaritan' => 'A person from Samaria, a region between Galilee and Judea.', 'Well' => 'A deep hole dug to reach water underground.', 'Thirst' => 'The need to drink.'],
+  'sources' => ['bible-john', 'bible-rev', 'who-water'],
+  'related' => ['lamp-tower', 'scroll-library', 'spring-pool'],
 ],
 
-'spring-pool' => [
-  'name' => 'Spring pool', 'latin' => 'Psalm 23:2', 'cat' => 'life', 'src' => 'art/fitness_1.png',
-  'summary' => 'A marble pool fed by a waterfall and shaded by cypress trees: a place to rest by quiet water.',
-  'facts' => ['Inspired by' => 'Psalm 23:2', 'The words' => '"He leads me beside quiet waters"', 'Real springs' => 'Water from underground rising to the surface', 'A real healing pool' => 'The Pool of Bethesda, Jerusalem'],
+'scroll-library' => [
+  'name' => 'Scroll library', 'latin' => 'Luke 4:16–22', 'cat' => 'begins', 'src' => 'art/knowledge_1.png', 'part' => [12, 'Good news for the poor'],
+  'summary' => 'A small marble library of scrolls. In his hometown, Jesus unrolled the scroll of Isaiah and said that the prophet\'s words had come true.',
+  'facts' => ['Read it' => 'Luke 4:14–22', 'Where' => 'The synagogue in Nazareth', 'Key words' => '"Today this Scripture is fulfilled"', 'Real world' => 'The Great Isaiah Scroll, more than 2,000 years old'],
   'sections' => [
-    ['The pool', HEAVEN_IMAGINE, [
-      'Water tumbles over marble steps into a cool, clear pool where people swim, paddle or just sit and listen.',
+    ['Good news for the poor', HEAVEN_GOSPEL, [
+      'Jesus came back to Nazareth, where he had grown up. On the Sabbath he went to the synagogue, the meeting place for prayer, and stood up to read. He was handed the scroll of the prophet Isaiah. "Unrolling it, He found the place where it was written: \'The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed, to proclaim the year of the Lord\'s favor\'" (Luke 4:17–19).',
+      'He rolled up the scroll and sat down, and everyone stared at him. Then he said: "Today this Scripture is fulfilled in your hearing" (Luke 4:21). Jesus was saying that he was the one Isaiah had written about.',
     ]],
-    ['Beside quiet waters', HEAVEN_BELIEF, [
-      'Psalm 23, one of the best-known passages in the Bible, pictures God as a shepherd who "leads me beside quiet waters" and "refreshes my soul" (Psalm 23:2–3). In the Gospel of John, Jesus heals a man at the Pool of Bethesda in Jerusalem (John 5:2–9), and archaeologists have found the remains of that pool.',
+    ['The library', HEAVEN_IMAGINE, [
+      'In this library every story, song and prayer is kept safe, and anyone may unroll a scroll and read.',
     ]],
-    ['Springs and waterfalls', HEAVEN_REAL, [
-      'A spring is a place where water from underground comes up to the surface. Rain soaks into the ground and can travel through the rock for years before it flows out again, often cool and clear. Waterfalls form where a river flows over hard rock onto softer rock, which wears away faster.',
+    ['The Great Isaiah Scroll', HEAVEN_REAL, [
+      'In 1947, young shepherds exploring caves near the Dead Sea found clay jars holding ancient scrolls. Among them was a complete copy of the book of Isaiah, more than 7 meters long, copied over a hundred years before Jesus was born. It is kept at the Israel Museum in Jerusalem and can be read online.',
     ]],
   ],
-  'art' => 'The illustration shows a marble pool fed by a small waterfall over marble steps, with cypress trees.',
-  'look' => ['Follow the water from the top to the pool.', 'Find the cypress trees.'],
-  'questions' => ['Why do you think quiet water helps people feel calm?', 'Where does spring water come from?', 'Where do you go to feel calm?'],
-  'words' => ['Spring' => 'A place where water comes up from under the ground.', 'Shepherd' => 'A person who looks after sheep.', 'Groundwater' => 'Water held in the soil and rock underground.'],
-  'sources' => ['bible-psalms', 'bible-john', 'usgs-springs'],
-  'related' => ['fountain-of-life', 'cloud-island', 'golden-track'],
+  'art' => 'The illustration shows a small marble library with shelves of scrolls and a gold roof.',
+  'look' => ['Find the shelves of scrolls.', 'What color is the roof?'],
+  'questions' => ['What good news did Isaiah say the promised one would bring?', 'Why do you think everyone stared at Jesus?', 'Why would people copy books by hand so carefully?'],
+  'words' => ['Scroll' => 'A long roll of writing material.', 'Synagogue' => 'A Jewish meeting place for prayer and reading the Scriptures.', 'Sabbath' => 'The weekly day of rest.'],
+  'sources' => ['bible-luke', 'bible-isaiah', 'brit-deadsea', 'imj-scrolls'],
+  'related' => ['fountain-of-life', 'swan-boat', 'hall-of-wisdom'],
 ],
 
-'garden-of-light' => [
-  'name' => 'Garden of light', 'latin' => 'Genesis 2:8', 'cat' => 'life', 'src' => 'art/growth_1.png',
-  'summary' => 'A walled garden of glowing lilies, a long pool and cypress trees. The word "paradise" first meant a walled garden.',
-  'facts' => ['Inspired by' => 'Genesis 2:8, the Garden of Eden', 'The word paradise' => 'From an old Persian word for a walled garden', 'In Islam' => 'Paradise is Jannah, "the garden"', 'Real gardens' => 'The Persian gardens of Iran, a World Heritage Site'],
+// ---------------- 5. Jesus teaches ----------------
+'lantern-circle' => [
+  'name' => 'Lantern circle', 'latin' => 'Matthew 5:1–16', 'cat' => 'teaches', 'src' => 'art/shared_1.png', 'part' => [14, 'The light of the world'],
+  'summary' => 'Marble benches around a great golden lamp. On a mountainside, Jesus taught: "You are the light of the world. A city on a hill cannot be hidden."',
+  'facts' => ['Read it' => 'Matthew 5:1–16', 'Where' => 'A mountainside in Galilee', 'Key words' => '"Blessed are the peacemakers"', 'Real world' => 'A candle can be seen 2.6 kilometers away'],
   'sections' => [
-    ['The garden', HEAVEN_IMAGINE, [
-      'Glowing white lilies line a long pool, and tall cypress trees stand along the walls. Inside, it is always peaceful.',
+    ['The light of the world', HEAVEN_GOSPEL, [
+      'Crowds followed Jesus everywhere. One day "He went up on the mountain and sat down" and began to teach (Matthew 5:1). This teaching is called the Sermon on the Mount. It begins with blessings: "Blessed are the poor in spirit, for theirs is the kingdom of heaven… Blessed are the merciful, for they will be shown mercy… Blessed are the peacemakers, for they will be called sons of God" (Matthew 5:3–9).',
+      'Then Jesus told his followers: "You are the light of the world. A city on a hill cannot be hidden. Neither do people light a lamp and put it under a basket… In the same way, let your light shine before men, that they may see your good deeds and glorify your Father in heaven" (Matthew 5:14–16).',
     ]],
-    ['Paradise means garden', HEAVEN_BELIEF, [
-      'The Bible begins in a garden: God plants a garden in Eden and puts the first people in it (Genesis 2:8). In the Quran, paradise is called Jannah, which means "garden", a place of shade, fruit and flowing water. Our word "paradise" comes, through Greek, from an old Persian word for a walled garden or park.',
+    ['The circle', HEAVEN_IMAGINE, [
+      'Every evening, people gather around the great lamp. No one sits at the head of a circle, so everyone can see and hear everyone else.',
     ]],
-    ['Gardens in our world', HEAVEN_REAL, [
-      'Persian gardens, divided into four parts by long pools and water channels, were copied from Spain to India; the gardens of the Taj Mahal follow this plan. Research collected by the World Health Organization has found that time in parks and green spaces can lower stress and help people feel better.',
+    ['How far a little light shines', HEAVEN_REAL, [
+      'A small light is hard to hide in the dark. In 2015, two scientists worked out that on a clear, dark night, the human eye can see a single candle flame from about 2.6 kilometers away.',
     ]],
   ],
-  'art' => 'The illustration shows a walled garden with glowing white lilies, a long pool, cypress trees and a low marble wall.',
-  'look' => ['Find the long pool.', 'Count the cypress trees.'],
-  'questions' => ['Why do you think so many people picture paradise as a garden?', 'How does being in a garden make you feel?', 'What would you plant in a garden of peace?'],
-  'words' => ['Paradise' => 'A place of perfect happiness; first, a walled garden.', 'Cypress' => 'A tall, slim evergreen tree.', 'Evergreen' => 'Keeping its leaves all year.'],
-  'sources' => ['bible-genesis', 'brit-paradise', 'un-persian', 'who-green'],
-  'related' => ['lily-garden', 'tree-of-life', 'garden-villa'],
+  'art' => 'The illustration shows a circle of marble benches around a tall, glowing golden lamp.',
+  'look' => ['Find the glowing lamp.', 'How many benches are there?'],
+  'questions' => ['Which blessing from the Sermon on the Mount do you like best, and why?', 'What does it mean to "let your light shine"?', 'What good deed could you do this week?'],
+  'words' => ['Blessed' => 'Happy because God is pleased with you.', 'Merciful' => 'Kind and forgiving to people who do not deserve it.', 'Peacemaker' => 'Someone who helps people stop fighting and get along.'],
+  'sources' => ['bible-matthew', 'brit-sermon', 'krisciunas'],
+  'related' => ['school-of-wisdom', 'lamp-tower', 'lily-garden'],
+],
+
+'school-of-wisdom' => [
+  'name' => 'School of wisdom', 'latin' => 'Matthew 6:9–13', 'cat' => 'teaches', 'src' => 'art/knowledge_2.png', 'part' => [15, 'Teach us to pray'],
+  'summary' => 'A school with a little gold dome and a bell. When his friends asked, "Lord, teach us to pray," Jesus taught them the Lord\'s Prayer.',
+  'facts' => ['Read it' => 'Matthew 6:5–13 and Luke 11:1–4', 'Where' => 'Galilee', 'Key words' => '"Our Father in heaven"', 'Real world' => 'Sunday schools, since 1780'],
+  'sections' => [
+    ['Teach us to pray', HEAVEN_GOSPEL, [
+      'Jesus taught that prayer is not for showing off. "When you pray, go into your inner room, shut your door, and pray to your Father, who is unseen" (Matthew 6:6). One day, after Jesus had finished praying, one of his disciples asked: "Lord, teach us to pray" (Luke 11:1). So he gave them the prayer now called the Lord\'s Prayer:',
+      '"Our Father in heaven, hallowed be Your name. Your kingdom come, Your will be done, on earth as it is in heaven. Give us this day our daily bread. And forgive us our debts, as we also have forgiven our debtors. And lead us not into temptation, but deliver us from the evil one" (Matthew 6:9–13).',
+      'Christians all over the world still pray it, in hundreds of languages.',
+    ]],
+    ['The school', HEAVEN_IMAGINE, [
+      'No one is ever too old or too young for this school, and every student is also a teacher of something.',
+    ]],
+    ['Schools on Sundays', HEAVEN_REAL, [
+      'In 1780, in Gloucester, England, Robert Raikes began opening schools on Sundays for poor children who worked in factories the rest of the week. The children learned to read, using the Bible. Sunday schools spread quickly, and by the 1830s more than a million children in Britain went to one.',
+    ]],
+  ],
+  'art' => 'The illustration shows a two-story hall with columns, a small gold dome and a bell.',
+  'look' => ['Find the bell.', 'Where would students come in?'],
+  'questions' => ['What do you think "on earth as it is in heaven" means?', 'Which part of the Lord\'s Prayer would you most like to remember?', 'When could you find a quiet moment to pray?'],
+  'words' => ['Hallowed' => 'Treated as holy and honored.', 'Debt' => 'Something owed; in the Lord\'s Prayer, the wrong we have done.', 'Temptation' => 'Something that pulls you toward doing wrong.'],
+  'sources' => ['bible-matthew', 'bible-luke', 'brit-lordsprayer', 'brit-sundayschool'],
+  'related' => ['lantern-circle', 'lily-garden', 'prayer-chapel'],
 ],
 
 'lily-garden' => [
-  'name' => 'Lily garden', 'latin' => 'Matthew 6:28–29', 'cat' => 'life', 'src' => 'art/nt_garden.png',
-  'summary' => 'A bed of white lilies and golden flowers. Jesus pointed to the flowers of the field to teach people not to worry.',
-  'facts' => ['Inspired by' => 'Matthew 6:28–29', 'The words' => '"See how the flowers of the field grow"', 'In Buddhism' => 'The lotus rises clean from muddy water', 'Real world' => 'Flowers feed bees and other pollinators'],
+  'name' => 'Lily garden', 'latin' => 'Matthew 6:19–34', 'cat' => 'teaches', 'src' => 'art/nt_garden.png', 'part' => [16, 'Do not worry'],
+  'summary' => 'A bed of white lilies and golden flowers. Jesus pointed to the flowers of the field to teach people to trust God and not to worry.',
+  'facts' => ['Read it' => 'Matthew 6:19–34', 'Where' => 'The Sermon on the Mount', 'Key words' => '"Consider how the lilies of the field grow"', 'Real world' => 'Flowers feed bees and other pollinators'],
   'sections' => [
+    ['Do not worry', HEAVEN_GOSPEL, [
+      'Jesus taught that riches on earth do not last: "Store up for yourselves treasures in heaven… For where your treasure is, there your heart will be also" (Matthew 6:20–21).',
+      'He told his listeners not to worry about food or clothes. "Look at the birds of the air: They do not sow or reap or gather into barns, and yet your heavenly Father feeds them… Consider how the lilies of the field grow: They do not labor or spin. Yet I tell you that not even Solomon in all his glory was adorned like one of these" (Matthew 6:26–29).',
+      '"But seek first the kingdom of God and His righteousness, and all these things will be added unto you" (Matthew 6:33).',
+    ]],
     ['The garden', HEAVEN_IMAGINE, [
       'Flowers bloom here all year round, and no one has to worry about tomorrow.',
-    ]],
-    ['The flowers of the field', HEAVEN_BELIEF, [
-      'In the Sermon on the Mount, Jesus tells his listeners not to worry about what they will eat or wear: "See how the flowers of the field grow. They do not labor or spin. Yet I tell you that not even Solomon in all his splendor was dressed like one of these" (Matthew 6:28–29). In Buddhism, the lotus, which grows up from the mud into a clean and beautiful flower, stands for a pure mind, and Pure Land texts describe heavenly ponds full of lotus flowers.',
     ]],
     ['Flowers and pollinators', HEAVEN_REAL, [
       'Flowers are not only beautiful. Bees, butterflies and other pollinators carry pollen from flower to flower, which helps plants make fruit and seeds. About three out of every four kinds of food crops depend at least partly on pollinators.',
@@ -464,367 +485,26 @@ $HEAVEN = [
   ],
   'art' => 'The illustration shows a bed of white lilies and golden flowers with a low marble edge.',
   'look' => ['Find the white lilies.', 'Which flowers are golden?'],
-  'questions' => ['What do you think Jesus meant about not worrying?', 'How do flowers help the food we eat?', 'What could you plant to help bees?'],
-  'words' => ['Pollinator' => 'An animal that carries pollen from flower to flower.', 'Pollen' => 'A fine powder that flowers need to make seeds.', 'Sermon' => 'A talk about faith or how to live.'],
-  'sources' => ['bible-matthew', 'brit-pureland', 'fao-pollinators'],
-  'related' => ['garden-of-light', 'dove-statue', 'tree-of-life'],
+  'questions' => ['What do you think Jesus meant about not worrying?', 'What are "treasures in heaven"?', 'What could you plant to help bees?'],
+  'words' => ['Righteousness' => 'Being right with God and doing what is right.', 'Pollinator' => 'An animal that carries pollen from flower to flower.', 'Solomon' => 'A king of Israel famous for his wisdom and riches.'],
+  'sources' => ['bible-matthew', 'fao-pollinators'],
+  'related' => ['school-of-wisdom', 'light-crane', 'hall-of-treasures'],
 ],
 
-// ---------------- Sharing and feasts ----------------
-'banquet-hall' => [
-  'name' => 'Banquet hall', 'latin' => 'Isaiah 25:6', 'cat' => 'share', 'src' => 'art/shared_3.png',
-  'summary' => 'A long golden hall with a table set for a feast. Many faiths picture heaven as a great meal where everyone is invited.',
-  'facts' => ['Inspired by' => 'Isaiah 25:6', 'The words' => '"A feast of rich food for all peoples"', 'Real world' => 'Sikh community kitchens, called langar', 'Biggest langar' => 'The Golden Temple, Amritsar: tens of thousands of free meals a day'],
-  'sections' => [
-    ['The hall', HEAVEN_IMAGINE, [
-      'The table is so long you cannot see the end of it, with a seat for everyone and plenty for all.',
-    ]],
-    ['A feast for all peoples', HEAVEN_BELIEF, [
-      'The prophet Isaiah describes a day when God will prepare "a feast of rich food for all peoples" and "wipe away the tears from all faces" (Isaiah 25:6–8). Jesus said that people "will come from east and west and north and south, and will take their places at the feast in the kingdom of God" (Luke 13:29). The Quran, too, describes the people of paradise sharing fruit and drink together in peace.',
-    ]],
-    ['Free meals for everyone', HEAVEN_REAL, [
-      'In Sikh gurdwaras around the world, a community kitchen called the langar serves free meals to anyone who comes, whatever their faith or background, and everyone sits together on the floor as equals. The langar at the Golden Temple in Amritsar, India, cooked by volunteers, serves tens of thousands of people every day.',
-    ]],
-  ],
-  'art' => 'The illustration shows a long golden hall with open arches and a long table set for a feast inside.',
-  'look' => ['Find the long table.', 'How many arches can you count?'],
-  'questions' => ['Why might sharing a meal bring people together?', 'Who might be missing from the table in your town?', 'How could your class share food with others?'],
-  'words' => ['Banquet' => 'A big, special meal for many guests.', 'Langar' => 'A free community kitchen in a Sikh gurdwara.', 'Gurdwara' => 'A Sikh place of worship.'],
-  'sources' => ['bible-isaiah', 'bible-luke', 'brit-langar', 'sgpc'],
-  'related' => ['sharing-pavilion', 'welcome-hall', 'lantern-circle'],
-],
-
-'sharing-pavilion' => [
-  'name' => 'Sharing pavilion', 'latin' => 'Acts 4:32', 'cat' => 'share', 'src' => 'art/business_1.png',
-  'summary' => 'A golden pavilion full of fruit and flowers, where everything is free to take and free to give.',
-  'facts' => ['Inspired by' => 'Acts 4:32', 'The words' => '"They shared everything they had"', 'In many faiths' => 'Zakat, tzedakah, dana: giving to people in need', 'Real world' => 'Food banks and little free pantries'],
-  'sections' => [
-    ['The pavilion', HEAVEN_IMAGINE, [
-      'There are no prices here. People bring what they have grown or made and take what they need.',
-    ]],
-    ['Sharing everything', HEAVEN_BELIEF, [
-      'The Book of Acts describes the first Christians in Jerusalem: "No one claimed that any of their possessions was their own, but they shared everything they had", so that "there were no needy persons among them" (Acts 4:32–34). Giving to people in need is a duty in many faiths: zakat in Islam, tzedakah in Judaism and dana in Buddhism and Hinduism.',
-    ]],
-    ['Sharing in our world', HEAVEN_REAL, [
-      'Food banks collect food that would otherwise go to waste and give it to families who need it. In many neighborhoods, small "little free pantries" let anyone leave food or take some, no questions asked.',
-    ]],
-    ['A kitchen for everyone', HEAVEN_REAL, [
-      'At the Golden Temple in Amritsar, India, the Sikh community kitchen, called the langar, serves free meals to tens of thousands of people every day. Volunteers cook and wash up, anyone may come, and everyone sits on the floor together, as equals.',
-    ]],
-  ],
-  'art' => 'The illustration shows a small open marble pavilion with a gold canopy roof and baskets of fruit and flowers.',
-  'look' => ['Find the baskets of fruit.', 'What else is in the pavilion?'],
-  'questions' => ['What would a market with no prices be like?', 'Why do so many faiths ask people to give to others?', 'What could you share with someone this week?'],
-  'words' => ['Pavilion' => 'A light, open building, often in a garden or park.', 'Zakat' => 'In Islam, giving a share of one\'s wealth to people in need.', 'Food bank' => 'A place that gives free food to people who need it.'],
-  'sources' => ['bible-acts', 'brit-zakat', 'feeding-america', 'brit-langar'],
-  'related' => ['banquet-hall', 'hall-of-treasures', 'tree-of-life'],
-],
-
-'hall-of-treasures' => [
-  'name' => 'Hall of treasures', 'latin' => 'Matthew 6:19–21', 'cat' => 'share', 'src' => 'art/business_3.png',
-  'summary' => 'A marble hall overflowing with glowing gold. Jesus taught that the real treasure is goodness, stored up in heaven.',
-  'facts' => ['Inspired by' => 'Matthew 6:19–21', 'The words' => '"Store up for yourselves treasures in heaven"', 'The idea' => 'Kindness matters more than money', 'Real research' => 'Spending on others can make people happier'],
-  'sections' => [
-    ['The hall', HEAVEN_IMAGINE, [
-      'Chests of glowing gold spill out onto the steps of this great hall, but no one guards them, because in this city no one needs to steal.',
-    ]],
-    ['Treasures in heaven', HEAVEN_BELIEF, [
-      'Jesus told his listeners: "Do not store up for yourselves treasures on earth, where moths and vermin destroy, and where thieves break in and steal. But store up for yourselves treasures in heaven… For where your treasure is, there your heart will be also" (Matthew 6:19–21). Many Christians understand this to mean that kindness, generosity and love matter more than money.',
-    ]],
-    ['Giving and happiness', HEAVEN_REAL, [
-      'In a study published in 2008, psychologists gave people a small amount of money in the morning. Some were told to spend it on themselves and others to spend it on someone else. By the evening, the people who had spent the money on others felt happier.',
-    ]],
-  ],
-  'art' => 'The illustration shows a grand marble hall with tall gold doors, gold columns and open chests of glowing gold on the steps.',
-  'look' => ['Find the open chests of gold.', 'Look at the doors. What are they made of?'],
-  'questions' => ['What do you think is the most valuable thing a person can have?', 'Why might giving make people happy?', 'What kind of "treasure" could you give that doesn\'t cost money?'],
-  'words' => ['Treasure' => 'Something very valuable.', 'Generosity' => 'Being happy to give and share.', 'Psychologist' => 'A scientist who studies how people think and feel.'],
-  'sources' => ['bible-matthew', 'dunn'],
-  'related' => ['sharing-pavilion', 'building-materials', 'palace-of-light'],
-],
-
-'lantern-circle' => [
-  'name' => 'Lantern circle', 'latin' => 'Matthew 5:14–16', 'cat' => 'share', 'src' => 'art/shared_1.png',
-  'summary' => 'A circle of marble benches around a great golden lamp, where people gather in the evening to talk and share stories.',
-  'facts' => ['Inspired by' => 'Matthew 5:14–16', 'The words' => '"You are the light of the world"', 'Lantern festivals' => 'The Chinese Lantern Festival and Diwali', 'Real world' => 'Talking circles where everyone has a turn'],
-  'sections' => [
-    ['The circle', HEAVEN_IMAGINE, [
-      'Every evening, people gather around the great lamp. No one sits at the head of a circle, so everyone can see and hear everyone else.',
-    ]],
-    ['Let your light shine', HEAVEN_BELIEF, [
-      'In the Sermon on the Mount, Jesus tells his followers: "You are the light of the world… let your light shine before others, that they may see your good deeds" (Matthew 5:14–16). Light shared in the dark is a picture of hope in many traditions, from the oil lamps of Diwali to the candles of Hanukkah.',
-    ]],
-    ['Gathering in a circle', HEAVEN_REAL, [
-      'People have gathered around fires to share food and stories for hundreds of thousands of years. Many schools and communities still talk things through in circles, where everyone has a turn to speak, and at the Chinese Lantern Festival, on the 15th day of the New Year, families light lanterns together.',
-    ]],
-  ],
-  'art' => 'The illustration shows a circle of marble benches around a tall, glowing golden lamp.',
-  'look' => ['Find the glowing lamp.', 'How many benches are there?'],
-  'questions' => ['Why might sitting in a circle feel different from sitting in rows?', 'What does it mean to "let your light shine"?', 'Where do people in your town gather in the evening?'],
-  'words' => ['Lantern' => 'A lamp with a protective cover.', 'Hope' => 'The feeling that good things can happen.', 'Tradition' => 'A custom handed down over many years.'],
-  'sources' => ['bible-matthew', 'brit-lantern', 'brit-diwali'],
-  'related' => ['lamp-tower', 'banquet-hall', 'rainbow-pavilion'],
-],
-
-'rainbow-pavilion' => [
-  'name' => 'Rainbow pavilion', 'latin' => 'Genesis 9:13', 'cat' => 'share', 'src' => 'art/shared_2.png',
-  'summary' => 'An open pavilion of flowers under a soft rainbow, a sign of promise and peace.',
-  'facts' => ['Inspired by' => 'Genesis 9:13', 'The story' => 'After the flood, a rainbow is a promise', 'In Revelation' => 'A rainbow shines around God\'s throne', 'Science' => 'Sunlight split into colors by raindrops'],
-  'sections' => [
-    ['The pavilion', HEAVEN_IMAGINE, [
-      'Under the arch of a rainbow, a white pavilion stands among flowers: a place to make promises and keep them.',
-    ]],
-    ['A sign of promise', HEAVEN_BELIEF, [
-      'In the Bible, after the great flood, God sets a rainbow in the clouds as the sign of a promise never to flood the whole earth again (Genesis 9:13). In Revelation, a rainbow "shone like an emerald" around God\'s throne (Revelation 4:3). In Norse myths, the rainbow is Bifrost, the bridge to the home of the gods.',
-    ]],
-    ['How rainbows form', HEAVEN_REAL, [
-      'A rainbow appears when sunlight shines into falling raindrops. Each drop bends the light, splits it into its colors, from red to violet, and reflects it back toward you. That is why you can only see a rainbow with the sun behind you and rain in front of you.',
-    ]],
-  ],
-  'art' => 'The illustration shows an open marble pavilion with flowers under a soft rainbow arch.',
-  'look' => ['Find the rainbow.', 'Name the colors you can see.'],
-  'questions' => ['Why might a rainbow be a good sign of hope after a storm?', 'What promises are important to keep?', 'Where should you stand to see a rainbow?'],
-  'words' => ['Promise' => 'Saying you will certainly do something.', 'Refraction' => 'The bending of light as it passes from one material into another.', 'Spectrum' => 'The band of colors that white light splits into.'],
-  'sources' => ['bible-genesis', 'bible-rev', 'brit-bifrost', 'noaa-rainbow'],
-  'related' => ['dove-statue', 'sky-bridge', 'lantern-circle'],
-],
-
-// ---------------- Wisdom and music ----------------
-'hall-of-wisdom' => [
-  'name' => 'Hall of wisdom', 'latin' => 'Proverbs 3:13–14', 'cat' => 'learn', 'src' => 'art/knowledge_3.png',
-  'summary' => 'A domed library of light where learning never ends, inspired by faiths that treasure wisdom and by the great libraries of today.',
-  'facts' => ['Inspired by' => 'Proverbs 3:13–14', 'The words' => '"Blessed are those who find wisdom"', 'Largest real library' => 'The Library of Congress, Washington, D.C.', 'Its collection' => 'More than 170 million items'],
-  'sections' => [
-    ['The hall', HEAVEN_IMAGINE, [
-      'Every question anyone has ever asked has an answer waiting somewhere on these shelves, and there is always time to read it.',
-    ]],
-    ['Wisdom more precious than silver', HEAVEN_BELIEF, [
-      'The Book of Proverbs says: "Blessed are those who find wisdom, those who gain understanding, for she is more profitable than silver and yields better returns than gold" (Proverbs 3:13–14). Many faiths treasure learning: the first word of the Quran to be revealed was "Read!" (Quran 96:1), and Jewish tradition honors a lifetime of study of the Torah.',
-    ]],
-    ['Great libraries', HEAVEN_REAL, [
-      'The Library of Congress in Washington, D.C., is the largest library in the world, with more than 170 million items, from books and maps to recordings and photographs. Public libraries lend books for free, so anyone can keep learning all their life.',
-    ]],
-  ],
-  'art' => 'The illustration shows a domed marble library with a columned porch, a gold dome and glowing windows.',
-  'look' => ['Find the columned porch.', 'Where does the light shine out?'],
-  'questions' => ['What is the difference between knowing facts and being wise?', 'What would you love to learn if you had all the time in the world?', 'Why are free public libraries important?'],
-  'words' => ['Wisdom' => 'Knowing how to use what you know well.', 'Proverb' => 'A short, wise saying.', 'Torah' => 'The first five books of the Hebrew Bible, and Jewish teaching more broadly.'],
-  'sources' => ['bible-proverbs', 'quran-read', 'loc'],
-  'related' => ['scroll-library', 'school-of-wisdom', 'palace-of-light'],
-],
-
-'scroll-library' => [
-  'name' => 'Scroll library', 'latin' => 'Ecclesiastes 12:12', 'cat' => 'learn', 'src' => 'art/knowledge_1.png',
-  'summary' => 'A small marble library of scrolls. Some of the oldest scrolls in the world are copies of holy books.',
-  'facts' => ['Inspired by' => 'Ecclesiastes 12:12', 'The words' => '"Of making many books there is no end"', 'Famous find' => 'The Dead Sea Scrolls, found in 1947', 'Their age' => 'About 2,000 years or more'],
-  'sections' => [
-    ['The library', HEAVEN_IMAGINE, [
-      'In this library every story, song and prayer is kept safe, and anyone may unroll a scroll and read.',
-    ]],
-    ['Many books', HEAVEN_BELIEF, [
-      'The Book of Ecclesiastes says, with a smile, "Of making many books there is no end, and much study wearies the body" (Ecclesiastes 12:12). Holy books were copied by hand for centuries. Jewish scribes still copy the Torah onto scrolls with great care, and Muslims honor those who learn the whole Quran by heart.',
-    ]],
-    ['The Dead Sea Scrolls', HEAVEN_REAL, [
-      'In 1947, young shepherds exploring caves near the Dead Sea found clay jars holding ancient scrolls. Over the next years nearly a thousand scrolls were found, some more than 2,000 years old, including the oldest known copies of books of the Hebrew Bible. Many are kept at the Israel Museum in Jerusalem, and many can be read online.',
-    ]],
-  ],
-  'art' => 'The illustration shows a small marble library with shelves of scrolls and a gold roof.',
-  'look' => ['Find the shelves of scrolls.', 'What color is the roof?'],
-  'questions' => ['Why would people copy books by hand so carefully?', 'What would you want to keep safe for people 2,000 years from now?', 'How are old books kept safe today?'],
-  'words' => ['Scroll' => 'A long roll of paper or parchment with writing on it.', 'Manuscript' => 'A book or document written by hand.', 'Parchment' => 'Animal skin prepared for writing on.'],
-  'sources' => ['bible-ecclesiastes', 'brit-deadsea', 'imj-scrolls'],
-  'related' => ['hall-of-wisdom', 'school-of-wisdom', 'harp-workshop'],
-],
-
-'school-of-wisdom' => [
-  'name' => 'School of wisdom', 'latin' => 'Isaiah 11:9', 'cat' => 'learn', 'src' => 'art/knowledge_2.png',
-  'summary' => 'A school with a little gold dome and a bell, where people of every age keep learning.',
-  'facts' => ['Inspired by' => 'Isaiah 11:6–9', 'The words' => '"The earth will be filled with the knowledge of the LORD"', 'Oldest school still open' => 'Al-Qarawiyyin, Fez, Morocco, founded in 859', 'Founded by' => 'Fatima al-Fihri'],
-  'sections' => [
-    ['The school', HEAVEN_IMAGINE, [
-      'No one is ever too old or too young for this school, and every student is also a teacher of something.',
-    ]],
-    ['A world full of knowledge', HEAVEN_BELIEF, [
-      'The prophet Isaiah imagines a peaceful world where "the wolf will live with the lamb" and "the earth will be filled with the knowledge of the LORD as the waters cover the sea" (Isaiah 11:6–9). Teaching is honored in every faith: Jesus\'s followers called him "rabbi", which means "teacher", and the Buddha spent his life teaching.',
-    ]],
-    ['A school that has lasted', HEAVEN_REAL, [
-      'The University of al-Qarawiyyin in Fez, Morocco, was founded in 859 by Fatima al-Fihri, a woman who used her inheritance to build a mosque and a place of learning. Guinness World Records calls it the oldest educational institution in the world that is still open.',
-    ]],
-  ],
-  'art' => 'The illustration shows a two-story hall with columns, a small gold dome and a bell.',
-  'look' => ['Find the bell.', 'Where would students come in?'],
-  'questions' => ['What can older people teach younger people, and the other way round?', 'Why do you think Fatima al-Fihri used her money to build a school?', 'What would you teach if you were the teacher for a day?'],
-  'words' => ['Rabbi' => 'A Jewish teacher.', 'University' => 'A place of higher learning and research.', 'Inheritance' => 'Money or property received from someone who has died.'],
-  'sources' => ['bible-isaiah', 'guinness-uni', 'un-fez'],
-  'related' => ['hall-of-wisdom', 'scroll-library', 'bell-tower'],
-],
-
-'harp-workshop' => [
-  'name' => 'Harp workshop', 'latin' => 'Revelation 14:2', 'cat' => 'learn', 'src' => 'art/nt_workshop.png',
-  'summary' => 'A marble workshop where golden harps and trumpets are made for the city\'s music.',
-  'facts' => ['Inspired by' => 'Revelation 14:2', 'The words' => '"Like that of harpists playing their harps"', 'Oldest real harps and lyres' => 'From Ur, in Mesopotamia, about 4,500 years old', 'How strings sing' => 'They vibrate and make sound waves'],
-  'sections' => [
-    ['The workshop', HEAVEN_IMAGINE, [
-      'Makers here build harps, trumpets and drums, and every instrument is finished by playing it.',
-    ]],
-    ['The music of heaven', HEAVEN_BELIEF, [
-      'Revelation describes a sound from heaven "like that of harpists playing their harps" (Revelation 14:2), and trumpets announce great moments in its visions. In the Hebrew Bible, the young shepherd David plays the lyre to soothe King Saul (1 Samuel 16:23). Music is part of worship in many faiths, from Christian hymns to the devotional singing called kirtan in Sikh and Hindu worship.',
-    ]],
-    ['Ancient instruments', HEAVEN_REAL, [
-      'Some of the oldest stringed instruments ever found come from the royal tombs of Ur, in what is now Iraq. They were made around 2500 BC and decorated with gold and shell; one of them, the Queen\'s Lyre, is in the British Museum. A string makes a sound when it vibrates: shorter, tighter strings vibrate faster and play higher notes.',
-    ]],
-  ],
-  'art' => 'The illustration shows a marble workshop with open arches where golden harps and trumpets are being made.',
-  'look' => ['Find a golden harp.', 'Can you spot a trumpet?'],
-  'questions' => ['Why do you think music is part of so many pictures of heaven?', 'How does music change the way you feel?', 'How could you make an instrument from things at home?'],
-  'words' => ['Harp' => 'A stringed instrument played by plucking.', 'Lyre' => 'An ancient stringed instrument with a U-shaped frame.', 'Hymn' => 'A song of praise, often sung in worship.'],
-  'sources' => ['bible-rev', 'bible-samuel', 'bm-ur'],
-  'related' => ['bell-tower', 'school-of-wisdom', 'victors-arena'],
-],
-
-// ---------------- Play and celebration ----------------
-'golden-track' => [
-  'name' => 'Golden track', 'latin' => 'Hebrews 12:1', 'cat' => 'joy', 'src' => 'art/fitness_2.png',
-  'summary' => 'An oval running track with gold lanes around a green field, where every race is run for joy.',
-  'facts' => ['Inspired by' => 'Hebrews 12:1', 'The words' => '"Let us run with perseverance the race marked out for us"', 'A real track' => '400 meters around the inside lane', 'Real world' => 'The Paralympic Games'],
-  'sections' => [
-    ['The track', HEAVEN_IMAGINE, [
-      'On this track everyone finishes, and the crowd cheers just as loudly for the last runner as for the first.',
-    ]],
-    ['Run the race', HEAVEN_BELIEF, [
-      'Early Christian writers often compared life to a race. The Letter to the Hebrews says: "Let us run with perseverance the race marked out for us" (Hebrews 12:1), and the apostle Paul wrote near the end of his life: "I have finished the race, I have kept the faith" (2 Timothy 4:7).',
-    ]],
-    ['Running for everyone', HEAVEN_REAL, [
-      'A standard running track is 400 meters around the inside lane. The Paralympic Games, held after each Summer and Winter Olympics, bring together athletes with disabilities from around the world. Parkrun, a free weekly 5-kilometer event held in hundreds of parks, welcomes runners and walkers of every speed.',
-    ]],
-    ['Helped to the finish', HEAVEN_REAL, [
-      'At the 1992 Olympic Games in Barcelona, the British runner Derek Redmond tore a muscle in his leg during a 400-meter race. He kept hobbling on, and his father came out of the crowd to help him reach the finish line, while the whole stadium stood and cheered.',
-    ]],
-  ],
-  'art' => 'The illustration shows an oval running track with gold lanes around a green field, with a small marble finish arch.',
-  'look' => ['Find the finish arch.', 'How many lanes can you count?'],
-  'questions' => ['What could it mean to "run the race" in life?', 'Why might cheering for the last runner matter?', 'What helps you keep going when something is hard?'],
-  'words' => ['Perseverance' => 'Keeping going when things are hard.', 'Lane' => 'A strip of a track for one runner.', 'Paralympics' => 'International games for athletes with disabilities.'],
-  'sources' => ['bible-hebrews', 'bible-timothy', 'ipc', 'parkrun', 'brit-olympics'],
-  'related' => ['victors-arena', 'spring-pool', 'lantern-circle'],
-],
-
-'victors-arena' => [
-  'name' => 'Victors\' arena', 'latin' => '1 Corinthians 9:25', 'cat' => 'joy', 'src' => 'art/fitness_3.png',
-  'summary' => 'A white marble stadium crowned with golden laurel wreaths, where every effort is celebrated.',
-  'facts' => ['Inspired by' => '1 Corinthians 9:25', 'The words' => '"A crown that will last forever"', 'Ancient prize' => 'A wreath of olive leaves at Olympia', 'First Olympics' => '776 BC, according to tradition'],
-  'sections' => [
-    ['The arena', HEAVEN_IMAGINE, [
-      'In this arena the prizes never run out, and the cheers are for courage, kindness and fair play as much as for winning.',
-    ]],
-    ['A crown that lasts', HEAVEN_BELIEF, [
-      'The apostle Paul knew the athletic games of Greece. He wrote: "Everyone who competes in the games goes into strict training. They do it to get a crown that will not last, but we do it to get a crown that will last forever" (1 Corinthians 9:25). Christians also speak of the "crown of life" promised to those who stay faithful (James 1:12).',
-    ]],
-    ['Olive wreaths', HEAVEN_REAL, [
-      'At the ancient Olympic Games, which began in 776 BC according to tradition, winners received a simple wreath of olive leaves cut from a sacred tree at Olympia. When the Olympics returned to Athens in 2004, the winners again wore olive wreaths.',
-    ]],
-  ],
-  'art' => 'The illustration shows a white marble stadium with tiers of arches, gold trim, a green field inside and golden laurel wreaths on top.',
-  'look' => ['Find the golden wreaths.', 'How many rows of arches can you see?'],
-  'questions' => ['Why might a simple wreath be worth more than gold?', 'What kind of "prize" could last forever?', 'How can you celebrate effort, not just winning?'],
-  'words' => ['Wreath' => 'A ring of leaves or flowers.', 'Laurel' => 'A tree whose leaves were made into victory wreaths.', 'Apostle' => 'One of the first people sent out to spread Jesus\'s teaching.'],
-  'sources' => ['bible-corinthians', 'bible-james', 'brit-olympics'],
-  'related' => ['golden-track', 'harp-workshop', 'hall-of-treasures'],
-],
-
-// ---------------- Homes ----------------
-'house-of-many-rooms' => [
-  'name' => 'House of many rooms', 'latin' => 'John 14:2', 'cat' => 'homes', 'src' => 'art/family_3.png',
-  'summary' => 'A great white mansion with many wings and gardens. Jesus told his friends that his Father\'s house has many rooms.',
-  'facts' => ['Inspired by' => 'John 14:2', 'The words' => '"My Father\'s house has many rooms"', 'The idea' => 'A home for everyone', 'Real world' => 'Groups that build homes with families'],
-  'sections' => [
-    ['The house', HEAVEN_IMAGINE, [
-      'However many people arrive, there is always another room ready, with a light in the window and a bed made up.',
-    ]],
-    ['Many rooms', HEAVEN_BELIEF, [
-      'On the night before he died, Jesus comforted his friends: "My Father\'s house has many rooms… I am going there to prepare a place for you" (John 14:2). Christians have long read this as a promise that there is room in heaven for all whom God welcomes.',
-    ]],
-    ['Homes for everyone', HEAVEN_REAL, [
-      'A safe home is one of the most basic human needs. Groups such as Habitat for Humanity, founded in 1976, help families build or repair homes, with volunteers working side by side with the families who will live there.',
-    ]],
-    ['Room for one more', HEAVEN_REAL, [
-      'Around the world, more than 100 million people have been forced to leave their homes because of war, persecution or disaster, according to the United Nations refugee agency. Many families, towns and faith groups help them find a safe place to live.',
-    ]],
-  ],
-  'art' => 'The illustration shows a large white marble mansion with many wings, balconies, gold roofs and gardens.',
-  'look' => ['Count the gold roofs.', 'Find the gardens between the wings.'],
-  'questions' => ['What makes a house feel like home?', 'Why might it matter that there is room for everyone?', 'How could a town make sure everyone has a home?'],
-  'words' => ['Mansion' => 'A very large house.', 'Wing' => 'A part of a building that sticks out from the main part.', 'Shelter' => 'A place that protects from weather or danger.'],
-  'sources' => ['bible-john', 'habitat', 'unhcr'],
-  'related' => ['marble-cottage', 'garden-villa', 'welcome-hall'],
-],
-
-'marble-cottage' => [
-  'name' => 'Marble cottage', 'latin' => 'Micah 4:4', 'cat' => 'homes', 'src' => 'art/family_1.png',
-  'summary' => 'A family cottage of white marble with a gold roof, flowering vines and a little garden, where no one is ever afraid.',
-  'facts' => ['Inspired by' => 'Micah 4:3–4', 'The words' => '"Everyone will sit under their own vine and under their own fig tree"', 'The idea' => 'Peace and safety at home', 'Real world' => 'The International Day of Peace, September 21'],
-  'sections' => [
-    ['The cottage', HEAVEN_IMAGINE, [
-      'A small, simple house with a garden, a vine over the door and neighbors who wave as they pass.',
-    ]],
-    ['Under the vine and fig tree', HEAVEN_BELIEF, [
-      'The prophet Micah describes a time when nations "will beat their swords into plowshares" and "everyone will sit under their own vine and under their own fig tree, and no one will make them afraid" (Micah 4:3–4). It is one of the Bible\'s best-loved pictures of peace: not riches, but a safe home, enough to eat and no fear.',
-    ]],
-    ['Good neighbors', HEAVEN_REAL, [
-      'The World Happiness Report, which compares countries each year, finds that people are happier where they can count on others and trust their neighbors. The United Nations marks the International Day of Peace every year on September 21.',
-    ]],
-    ['Swords into plowshares', HEAVEN_REAL, [
-      'In the garden of the United Nations headquarters in New York stands a bronze statue of a man hammering a sword into a plow. Its name, "Let Us Beat Swords into Plowshares", comes from the words of Micah and Isaiah. It was a gift from the Soviet Union in 1959.',
-    ]],
-  ],
-  'art' => 'The illustration shows a white marble family house with a gold roof, a garden and flowering vines.',
-  'look' => ['Find the flowering vines.', 'Where is the garden?'],
-  'questions' => ['What makes you feel safe at home?', 'What does "beat swords into plowshares" mean?', 'How can neighbors look after each other?'],
-  'words' => ['Plowshare' => 'The blade of a plow.', 'Vine' => 'A climbing plant, such as a grapevine.', 'Belonging' => 'Feeling part of a group.'],
-  'sources' => ['bible-micah', 'whr', 'un-peace', 'un-swords'],
-  'related' => ['house-of-many-rooms', 'garden-villa', 'dove-statue'],
-],
-
-'garden-villa' => [
-  'name' => 'Garden villa', 'latin' => 'Isaiah 65:21', 'cat' => 'homes', 'src' => 'art/family_2.png',
-  'summary' => 'A villa built around a courtyard with a fountain: a home where people enjoy the fruit of their own work.',
-  'facts' => ['Inspired by' => 'Isaiah 65:17–21', 'The words' => '"They will build houses and dwell in them"', 'Courtyard homes' => 'Found from Rome to Morocco to China', 'Real example' => 'The riads of Fez, Morocco'],
-  'sections' => [
-    ['The villa', HEAVEN_IMAGINE, [
-      'Every room opens onto a sunny courtyard with a fountain, where the family eats, plays and grows its own fruit.',
-    ]],
-    ['New heavens and a new earth', HEAVEN_BELIEF, [
-      'The prophet Isaiah imagines "new heavens and a new earth" where people "will build houses and dwell in them; they will plant vineyards and eat their fruit" (Isaiah 65:17–21). In this picture, no one loses their home or the fruit of their work.',
-    ]],
-    ['Courtyard homes', HEAVEN_REAL, [
-      'Houses built around a private courtyard are found all over the world, from the Roman domus to the courtyard houses of Beijing and the riads of Fez in Morocco. The courtyard brings light, fresh air and a safe place to play into the middle of the home.',
-    ]],
-    ['Paradise gardens', HEAVEN_REAL, [
-      'The word "paradise" comes from an old Persian word for a walled garden. Persian gardens are often divided into four parts by channels of water, with shady trees and pools. UNESCO protects nine of these gardens in Iran as world heritage.',
-    ]],
-  ],
-  'art' => 'The illustration shows a large white villa built around a courtyard with a fountain, with gold domes and cypress trees.',
-  'look' => ['Find the fountain in the courtyard.', 'How many gold domes can you see?'],
-  'questions' => ['Why might people want to enjoy the fruit of their own work?', 'What would you use a courtyard in the middle of your home for?', 'How do homes near you let in light and air?'],
-  'words' => ['Courtyard' => 'An open space surrounded by buildings or walls.', 'Vineyard' => 'A field where grapes are grown.', 'Riad' => 'A traditional Moroccan house built around a courtyard garden.'],
-  'sources' => ['bible-isaiah', 'un-fez', 'un-persian'],
-  'related' => ['garden-of-light', 'marble-cottage', 'fountain-of-life'],
-],
-
-// ---------------- Building the city ----------------
 'light-crane' => [
-  'name' => 'Light crane', 'latin' => 'Nehemiah 2:18', 'cat' => 'build', 'src' => 'build/crane.png',
-  'summary' => 'A golden crane that lifts marble blocks on a beam of light: the city is always being built.',
-  'facts' => ['Inspired by' => 'Nehemiah 2:18', 'The words' => '"Let us start rebuilding"', 'Real cranes lift with' => 'Steel cables, pulleys and counterweights', 'Real world' => 'Volunteers who rebuild after disasters'],
+  'name' => 'Light crane', 'latin' => 'Matthew 7:24–29', 'cat' => 'teaches', 'src' => 'build/crane.png', 'part' => [17, 'The wise builder'],
+  'summary' => 'A golden crane that lifts marble blocks on a beam of light. Jesus told a story about a wise man who built his house on the rock.',
+  'facts' => ['Read it' => 'Matthew 7:24–29', 'Where' => 'The end of the Sermon on the Mount', 'Key words' => '"A wise man who built his house on the rock"', 'Real world' => 'The Leaning Tower of Pisa'],
   'sections' => [
+    ['The wise builder', HEAVEN_GOSPEL, [
+      'Jesus ended the Sermon on the Mount with a story: "Everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock. The rain fell, the torrents raged, and the winds blew and beat against that house; yet it did not fall, because its foundation was on the rock" (Matthew 7:24–25).',
+      'But someone who hears his words and does not act on them is "like a foolish man who built his house on sand." When the storm came, "it fell—and great was its collapse!" (Matthew 7:26–27). The crowds "were astonished at His teaching, because He taught as one who had authority" (Matthew 7:28–29).',
+    ]],
     ['The crane', HEAVEN_IMAGINE, [
-      'Instead of a rope, a beam of soft light holds each glowing marble block and lowers it gently into place.',
+      'Instead of a rope, a beam of soft light holds each glowing marble block and lowers it gently into place on solid rock.',
     ]],
-    ['Rebuilding together', HEAVEN_BELIEF, [
-      'In the Bible, Nehemiah returns to Jerusalem, finds its walls in ruins and calls to the people: "Let us start rebuilding", and they work together to raise the walls again (Nehemiah 2:18). Many faiths teach that people are called to help build a better world, not only to wait for one.',
-    ]],
-    ['Building after disasters', HEAVEN_REAL, [
-      'After floods, storms and earthquakes, volunteers from charities and faith groups often travel to help rebuild homes and schools. Real cranes lift heavy loads with steel cables and pulleys, balanced by heavy counterweights so they don\'t tip over.',
+    ['A tower on soft ground', HEAVEN_REAL, [
+      'The bell tower of Pisa, in Italy, began to lean while it was still being built in the 1100s, because its foundation was laid in soft ground. It was closed from 1990 to 2001 while engineers worked to stop it falling, partly by removing soil from under its high side.',
     ]],
     ['Raising a barn together', HEAVEN_REAL, [
       'In Amish communities in the United States, neighbors gather for a "barn raising". With many hands working together, they can put up the whole frame of a barn for one family in a single day, and share a big meal afterward.',
@@ -832,53 +512,433 @@ $HEAVEN = [
   ],
   'art' => 'The illustration shows a slim white marble tower with a long gold arm and a beam of light instead of a rope, lifting a glowing marble block.',
   'look' => ['Follow the beam of light to the block.', 'Find the gold arm.'],
-  'questions' => ['Why might working together make a big job easier?', 'How do people help rebuild after a disaster?', 'How does a counterweight stop a crane from tipping over?'],
-  'words' => ['Crane' => 'A machine for lifting heavy things.', 'Counterweight' => 'A weight that balances a load.', 'Disaster' => 'A sudden event that causes great damage.'],
-  'sources' => ['bible-nehemiah', 'brit-crane', 'brit-amish'],
-  'related' => ['building-materials', 'house-of-many-rooms', 'palace-of-light'],
+  'questions' => ['What does it mean to build your life "on the rock"?', 'Why is it not enough just to hear good words?', 'Why does a building need a strong foundation?'],
+  'words' => ['Foundation' => 'The solid base a building stands on.', 'Torrent' => 'A fast, powerful rush of water.', 'Authority' => 'The right and power to lead or decide.'],
+  'sources' => ['bible-matthew', 'brit-pisa', 'brit-amish'],
+  'related' => ['lily-garden', 'building-materials', 'house-of-many-rooms'],
+],
+
+// ---------------- 6. Jesus heals and welcomes ----------------
+'spring-pool' => [
+  'name' => 'Spring pool', 'latin' => 'John 5:1–9', 'cat' => 'helps', 'src' => 'art/fitness_1.png', 'part' => [18, 'Get up and walk'],
+  'summary' => 'A marble pool fed by a waterfall. At the Pool of Bethesda in Jerusalem, Jesus healed a man who had been ill for 38 years.',
+  'facts' => ['Read it' => 'John 5:1–9', 'Where' => 'The Pool of Bethesda, Jerusalem', 'Key words' => '"Get up, pick up your mat, and walk"', 'Real world' => 'The pool, uncovered by archaeologists'],
+  'sections' => [
+    ['Get up and walk', HEAVEN_GOSPEL, [
+      '"Now there is in Jerusalem near the Sheep Gate a pool with five covered colonnades, which in Hebrew is called Bethesda" (John 5:2). Many people who were sick, blind or lame lay beside it. One man there had been ill for thirty-eight years.',
+      'Jesus asked him: "Do you want to get well?" The man said he had no one to help him into the water. Then Jesus told him: "Get up, pick up your mat, and walk." "Immediately the man was made well, and he picked up his mat and began to walk" (John 5:6–9).',
+      'Wherever Jesus went, he healed people who were sick, blind or unable to walk, showing God\'s love and power.',
+    ]],
+    ['Beside quiet waters', HEAVEN_BIBLE, [
+      'A well-loved psalm pictures God as a shepherd: "The LORD is my shepherd; I shall not want. He makes me lie down in green pastures; He leads me beside quiet waters. He restores my soul" (Psalm 23:1–3). Jesus later said: "I am the good shepherd" (John 10:11).',
+    ]],
+    ['The pool, found again', HEAVEN_REAL, [
+      'In the 1800s, archaeologists digging beside the Church of Saint Anne in Jerusalem\'s Old City found two large pools separated by a wall of rock. Many think that colonnades on the four sides and the middle wall made the "five covered colonnades" John described.',
+    ]],
+  ],
+  'art' => 'The illustration shows a marble pool fed by a small waterfall over marble steps, with cypress trees.',
+  'look' => ['Follow the water from the top to the pool.', 'Find the cypress trees.'],
+  'questions' => ['Why do you think Jesus asked the man, "Do you want to get well?"', 'How did the man\'s life change that day?', 'Where do you go to feel calm?'],
+  'words' => ['Colonnade' => 'A row of columns holding up a roof.', 'Heal' => 'To make well again.', 'Shepherd' => 'A person who looks after sheep.'],
+  'sources' => ['bible-john', 'bible-psalms', 'gibson'],
+  'related' => ['fountain-of-life', 'sharing-pavilion', 'marble-cottage'],
+],
+
+'sharing-pavilion' => [
+  'name' => 'Sharing pavilion', 'latin' => 'John 6:1–14', 'cat' => 'helps', 'src' => 'art/business_1.png', 'part' => [19, 'Five loaves and two fish'],
+  'summary' => 'A golden pavilion full of baskets of food. Jesus fed a crowd of five thousand men with one boy\'s five loaves and two fish.',
+  'facts' => ['Read it' => 'John 6:1–14 and 6:35', 'Where' => 'A hillside by the Sea of Galilee', 'Key words' => '"I am the bread of life"', 'Real world' => 'Food banks'],
+  'sections' => [
+    ['Five loaves and two fish', HEAVEN_GOSPEL, [
+      'A huge crowd followed Jesus to a hillside by the Sea of Galilee, and there was nowhere to buy food for so many people. Andrew said: "Here is a boy with five barley loaves and two small fish. But what difference will these make among so many?" (John 6:9).',
+      'Jesus had the people sit down on the grass, about five thousand men. He took the loaves and the fish, gave thanks to God and shared them out. Everyone ate as much as they wanted, and the leftovers filled twelve baskets (John 6:10–13).',
+      'Later Jesus said: "I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst" (John 6:35).',
+    ]],
+    ['The pavilion', HEAVEN_IMAGINE, [
+      'There are no prices here. People bring what they have grown or made and take what they need, and there are always baskets left over.',
+    ]],
+    ['Sharing in our world', HEAVEN_REAL, [
+      'Food banks collect food that would otherwise go to waste and give it to families who need it. In many neighborhoods, small "little free pantries" let anyone leave food or take some, no questions asked.',
+    ]],
+  ],
+  'art' => 'The illustration shows a small open marble pavilion with a gold canopy roof and baskets of fruit and flowers.',
+  'look' => ['Find the baskets of fruit.', 'What else is in the pavilion?'],
+  'questions' => ['What did the boy share, and what did Jesus do with it?', 'What do you think Jesus meant by "I am the bread of life"?', 'What could you share with someone this week?'],
+  'words' => ['Barley' => 'A grain used to make bread.', 'Leftovers' => 'Food that is left after a meal.', 'Food bank' => 'A place that gives free food to people who need it.'],
+  'sources' => ['bible-john', 'feeding-america'],
+  'related' => ['spring-pool', 'marble-cottage', 'banquet-hall'],
+],
+
+'marble-cottage' => [
+  'name' => 'Marble cottage', 'latin' => 'Mark 10:13–16', 'cat' => 'helps', 'src' => 'art/family_1.png', 'part' => [20, 'Let the children come'],
+  'summary' => 'A family cottage with a gold roof and a little garden. When his friends tried to send children away, Jesus said, "Let the little children come to Me."',
+  'facts' => ['Read it' => 'Mark 10:13–16', 'Where' => 'Judea, beyond the Jordan River', 'Key words' => '"Let the little children come to Me"', 'Real world' => 'George Müller\'s orphan houses, Bristol'],
+  'sections' => [
+    ['Let the children come', HEAVEN_GOSPEL, [
+      'People were bringing little children to Jesus so that he would bless them, but the disciples scolded them. Jesus was not pleased. "Let the little children come to Me, and do not hinder them!" he said. "For the kingdom of God belongs to such as these. Truly I tell you, anyone who does not receive the kingdom of God like a little child will never enter it" (Mark 10:14–15).',
+      '"And He took the children in His arms, placed His hands on them, and blessed them" (Mark 10:16). Jesus showed that children matter to God.',
+    ]],
+    ['The cottage', HEAVEN_IMAGINE, [
+      'A small, simple house with a garden, a vine over the door and neighbors who wave as they pass. Here, every child is welcome and safe.',
+    ]],
+    ['A home for thousands', HEAVEN_REAL, [
+      'In 1836, George Müller, a Christian preacher in Bristol, England, opened a home for orphans. He never asked anyone for money, but prayed and trusted God to provide, and in his lifetime more than 10,000 orphans were cared for in his homes.',
+    ]],
+  ],
+  'art' => 'The illustration shows a white marble family house with a gold roof, a garden and flowering vines.',
+  'look' => ['Find the flowering vines.', 'Where is the garden?'],
+  'questions' => ['Why do you think the disciples tried to send the children away?', 'What do you think it means to receive God\'s kingdom "like a little child"?', 'How can you make younger children feel welcome?'],
+  'words' => ['Bless' => 'To ask for God\'s goodness on someone.', 'Hinder' => 'To get in the way or stop.', 'Orphan' => 'A child whose parents have died.'],
+  'sources' => ['bible-mark', 'muller'],
+  'related' => ['sharing-pavilion', 'golden-track', 'school-of-wisdom'],
+],
+
+'golden-track' => [
+  'name' => 'Golden track', 'latin' => 'Luke 15:11–32', 'cat' => 'helps', 'src' => 'art/fitness_2.png', 'part' => [21, 'The father who ran'],
+  'summary' => 'An oval running track with gold lanes. Jesus told a story about a father who ran to welcome home a son who had wandered away.',
+  'facts' => ['Read it' => 'Luke 15', 'Where' => 'A story Jesus told', 'Key words' => '"He was lost and is found!"', 'Real world' => 'Derek Redmond and his father, 1992'],
+  'sections' => [
+    ['The father who ran', HEAVEN_GOSPEL, [
+      'Some people grumbled that Jesus welcomed sinners and even ate with them. So Jesus told stories about things that were lost: a sheep, a coin and a son (Luke 15).',
+      'A younger son took his share of his father\'s money, went far away and wasted it all. Hungry and alone, feeding pigs, he decided to go home and say: "Father, I have sinned against heaven and against you. I am no longer worthy to be called your son" (Luke 15:18–19). "But while he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him" (Luke 15:20).',
+      'The father threw a feast: "For this son of mine was dead and is alive again! He was lost and is found!" (Luke 15:24). Jesus was showing how God welcomes everyone who comes back to him.',
+    ]],
+    ['The track', HEAVEN_IMAGINE, [
+      'On this track everyone finishes, and the crowd cheers just as loudly for the last runner as for the first.',
+    ]],
+    ['Helped to the finish', HEAVEN_REAL, [
+      'At the 1992 Olympic Games in Barcelona, the British runner Derek Redmond tore a muscle in his leg during a 400-meter race. He kept hobbling on, and his father came out of the crowd to help him reach the finish line, while the whole stadium stood and cheered.',
+    ]],
+  ],
+  'art' => 'The illustration shows an oval running track with gold lanes around a green field, with a small marble finish arch.',
+  'look' => ['Find the finish arch.', 'How many lanes can you count?'],
+  'questions' => ['Why do you think the father ran?', 'What does this story show about how God feels when someone comes back to him?', 'How can you welcome someone who has said sorry?'],
+  'words' => ['Compassion' => 'Deep care for someone who is hurting.', 'Parable' => 'A short story Jesus told to teach about God.', 'Sinner' => 'Someone who has done wrong against God.'],
+  'sources' => ['bible-luke', 'ioc-redmond'],
+  'related' => ['marble-cottage', 'hall-of-treasures', 'victors-arena'],
+],
+
+'hall-of-treasures' => [
+  'name' => 'Hall of treasures', 'latin' => 'Luke 19:1–10', 'cat' => 'helps', 'src' => 'art/business_3.png', 'part' => [22, 'Zacchaeus'],
+  'summary' => 'A marble hall overflowing with gold. A rich tax collector named Zacchaeus climbed a tree to see Jesus, and his life was changed.',
+  'facts' => ['Read it' => 'Luke 19:1–10', 'Where' => 'Jericho', 'Key words' => '"To seek and to save the lost"', 'Real world' => 'Jericho, one of the oldest towns in the world'],
+  'sections' => [
+    ['Zacchaeus', HEAVEN_GOSPEL, [
+      'In the city of Jericho lived Zacchaeus, a chief tax collector who was very rich. Tax collectors were disliked, because many took more money than they should. Zacchaeus wanted to see Jesus, but he was short and could not see over the crowd, so he ran ahead and climbed a sycamore tree.',
+      'When Jesus reached the tree, he looked up and said: "Zacchaeus, hurry down, for I must stay at your house today" (Luke 19:5). People grumbled, but Zacchaeus welcomed him joyfully and said: "Look, Lord, half of my possessions I give to the poor, and if I have cheated anyone, I will repay it fourfold" (Luke 19:8).',
+      'Jesus said: "Today salvation has come to this house… For the Son of Man came to seek and to save the lost" (Luke 19:9–10).',
+    ]],
+    ['The hall', HEAVEN_IMAGINE, [
+      'Chests of glowing gold spill out onto the steps of this great hall, but no one guards them, because in this city no one needs to steal, and everyone is glad to give.',
+    ]],
+    ['Jericho', HEAVEN_REAL, [
+      'Jericho, near the Jordan River, is one of the oldest towns in the world: people have lived beside its spring for more than 10,000 years. It lies about 250 meters below sea level, lower than almost any other town on Earth.',
+    ]],
+    ['Giving and happiness', HEAVEN_REAL, [
+      'In a study published in 2008, psychologists gave people a small amount of money in the morning. Some were told to spend it on themselves and others to spend it on someone else. By the evening, the people who had spent the money on others felt happier.',
+    ]],
+  ],
+  'art' => 'The illustration shows a grand marble hall with tall gold doors, gold columns and open chests of glowing gold on the steps.',
+  'look' => ['Find the open chests of gold.', 'Look at the doors. What are they made of?'],
+  'questions' => ['Why do you think Zacchaeus wanted to see Jesus so badly?', 'What changed in Zacchaeus after he met Jesus?', 'What kind of "treasure" could you give that doesn\'t cost money?'],
+  'words' => ['Tax collector' => 'Someone who collects money that people must pay to the government.', 'Salvation' => 'Being saved and made right with God.', 'Fourfold' => 'Four times as much.'],
+  'sources' => ['bible-luke', 'brit-jericho', 'dunn'],
+  'related' => ['golden-track', 'fruit-donkey', 'lily-garden'],
+],
+
+// ---------------- 7. The last week ----------------
+'banquet-hall' => [
+  'name' => 'Banquet hall', 'latin' => 'Luke 22:14–20', 'cat' => 'week', 'src' => 'art/shared_3.png', 'part' => [24, 'The last supper'],
+  'summary' => 'A long golden hall with a table set for a feast. On the night before he died, Jesus shared a last supper with his friends.',
+  'facts' => ['Read it' => 'Luke 22:14–20 and John 13', 'Where' => 'An upstairs room in Jerusalem', 'Key words' => '"Do this in remembrance of Me"', 'Real world' => 'Passover, remembered every spring'],
+  'sections' => [
+    ['The last supper', HEAVEN_GOSPEL, [
+      'At Passover, Jesus shared a meal with his twelve apostles. During supper he got up, wrapped a towel around his waist and washed their dusty feet, the work of a servant. "I have set you an example so that you should do as I have done for you," he said (John 13:15).',
+      'Then "He took the bread, gave thanks and broke it, and gave it to them, saying, \'This is My body, given for you; do this in remembrance of Me.\' In the same way, after supper He took the cup, saying, \'This cup is the new covenant in My blood, which is poured out for you\'" (Luke 22:19–20).',
+      'He gave them a new command: "Love one another. As I have loved you, so you also must love one another" (John 13:34). Jesus knew that one of the twelve, Judas, was about to betray him.',
+    ]],
+    ['The hall', HEAVEN_IMAGINE, [
+      'The table is so long you cannot see the end of it, with a seat for everyone and plenty for all.',
+    ]],
+    ['Passover and the Lord\'s Supper', HEAVEN_REAL, [
+      'Passover is a spring festival that remembers how God freed the Israelites from slavery in Egypt, more than a thousand years before Jesus. Christians remember the last supper by sharing bread and wine or grape juice, called Communion or the Lord\'s Supper. Around 1495 to 1498, Leonardo da Vinci painted a famous picture of the last supper on a wall in Milan, Italy.',
+    ]],
+  ],
+  'art' => 'The illustration shows a long golden hall with open arches and a long table set for a feast inside.',
+  'look' => ['Find the long table.', 'How many arches can you count?'],
+  'questions' => ['Why do you think Jesus washed his friends\' feet?', 'What did Jesus ask his followers to remember?', 'What does it look like to love others the way Jesus loves?'],
+  'words' => ['Apostle' => 'One of the twelve friends Jesus chose and sent out.', 'Communion' => 'Sharing bread and wine to remember Jesus\'s death.', 'Betray' => 'To turn against a friend.'],
+  'sources' => ['bible-luke', 'bible-john', 'brit-passover', 'brit-lastsupper'],
+  'related' => ['fruit-donkey', 'house-of-many-rooms', 'sharing-pavilion'],
+],
+
+'house-of-many-rooms' => [
+  'name' => 'House of many rooms', 'latin' => 'John 14:1–6', 'cat' => 'week', 'src' => 'art/family_3.png', 'part' => [25, 'The way to the Father'],
+  'summary' => 'A great white mansion with many wings. At the last supper, Jesus told his friends that his Father\'s house has many rooms.',
+  'facts' => ['Read it' => 'John 14:1–6', 'Where' => 'At the last supper', 'Key words' => '"I am the way and the truth and the life"', 'Real world' => 'Habitat for Humanity, since 1976'],
+  'sections' => [
+    ['The way to the Father', HEAVEN_GOSPEL, [
+      'Jesus\'s friends were troubled, because he had told them he would soon leave them. He comforted them: "Do not let your hearts be troubled. You believe in God; believe in Me as well. In My Father\'s house are many rooms… I am going there to prepare a place for you… I will come back and welcome you into My presence, so that you also may be where I am" (John 14:1–3).',
+      '"Lord," said Thomas, "we do not know where You are going, so how can we know the way?" Jesus answered: "I am the way and the truth and the life. No one comes to the Father except through Me" (John 14:5–6).',
+    ]],
+    ['The house', HEAVEN_IMAGINE, [
+      'However many people arrive, there is always another room ready, with a light in the window and a bed made up.',
+    ]],
+    ['Homes for everyone', HEAVEN_REAL, [
+      'A safe home is one of the most basic human needs. Habitat for Humanity, a Christian charity founded in 1976, helps families build or repair homes, with volunteers working side by side with the families who will live there.',
+    ]],
+  ],
+  'art' => 'The illustration shows a large white marble mansion with many wings, balconies, gold roofs and gardens.',
+  'look' => ['Count the gold roofs.', 'Find the gardens between the wings.'],
+  'questions' => ['How do you think Jesus\'s words comforted his friends?', 'What do you think Jesus meant when he said, "I am the way"?', 'What makes a house feel like home?'],
+  'words' => ['Mansion' => 'A very large house.', 'Troubled' => 'Worried and upset.', 'Truth' => 'What is real and right.'],
+  'sources' => ['bible-john', 'habitat'],
+  'related' => ['banquet-hall', 'prayer-chapel', 'welcome-hall'],
+],
+
+'prayer-chapel' => [
+  'name' => 'Prayer chapel', 'latin' => 'Mark 14:32–50', 'cat' => 'week', 'src' => 'art/growth_2.png', 'part' => [26, 'In the garden at night'],
+  'summary' => 'A small round chapel, warm with light. In the garden of Gethsemane, Jesus prayed in the night before he was arrested.',
+  'facts' => ['Read it' => 'Mark 14:32–50', 'Where' => 'Gethsemane, on the Mount of Olives', 'Key words' => '"Not what I will, but what You will"', 'Real world' => 'Olive trees in Gethsemane, about 900 years old'],
+  'sections' => [
+    ['In the garden at night', HEAVEN_GOSPEL, [
+      'After supper, Jesus and his disciples went to a garden on the Mount of Olives called Gethsemane. "Sit here while I pray," he told them (Mark 14:32). He was deeply troubled, because he knew he was about to suffer and die. He fell to the ground and prayed: "Abba, Father, all things are possible for You. Take this cup from Me. Yet not what I will, but what You will" (Mark 14:36).',
+      'Three times he came back and found his friends asleep. Then Judas arrived with a crowd armed with swords and clubs. He greeted Jesus with a kiss, the signal for the men to seize him. Jesus did not fight back, and all his disciples ran away (Mark 14:43–50).',
+    ]],
+    ['The chapel', HEAVEN_IMAGINE, [
+      'A small round chapel with columns and a gold dome, where anyone can come in, sit quietly and pray.',
+    ]],
+    ['The olive trees of Gethsemane', HEAVEN_REAL, [
+      'Gethsemane means "oil press". Eight very old olive trees still grow in the garden there, beside the Church of All Nations. In 2012, scientists in Italy tested three of them and found they were about 900 years old. Tests also showed that all eight grew from cuttings of the same parent tree.',
+    ]],
+  ],
+  'art' => 'The illustration shows a small round chapel with columns, a gold dome and warm light shining from inside.',
+  'look' => ['Find the light coming from inside.', 'Count the columns.'],
+  'questions' => ['What did Jesus pray in the garden?', 'Why do you think Jesus did not fight back?', 'When is it hard to say "not what I want, but what you want"?'],
+  'words' => ['Abba' => 'An Aramaic word for "father".', 'Arrest' => 'To take someone prisoner.', 'Olive press' => 'A machine that squeezes oil out of olives.'],
+  'sources' => ['bible-mark', 'brit-gethsemane', 'cnr-olives'],
+  'related' => ['house-of-many-rooms', 'victors-arena', 'school-of-wisdom'],
+],
+
+'victors-arena' => [
+  'name' => 'Victors\' arena', 'latin' => 'John 18:28–19:16', 'cat' => 'week', 'src' => 'art/fitness_3.png', 'part' => [27, 'A crown of thorns'],
+  'summary' => 'A white marble stadium crowned with golden wreaths. Jesus was put on trial before Pilate, and soldiers gave him a crown of thorns.',
+  'facts' => ['Read it' => 'Luke 22:54–62, John 18:28–19:16 and Mark 15:1–20', 'Where' => 'Jerusalem', 'Key words' => '"My kingdom is not of this world"', 'Real world' => 'The Pilate Stone, found in 1961'],
+  'sections' => [
+    ['A crown of thorns', HEAVEN_GOSPEL, [
+      'That night, Peter followed at a distance to the high priest\'s house. Sitting by a fire in the courtyard, he was asked three times if he knew Jesus, and three times he said no. Then the rooster crowed, and Peter remembered Jesus\'s words, "and he went outside and wept bitterly" (Luke 22:62).',
+      'In the morning, Jesus was taken to Pontius Pilate, the Roman governor. "Are You the King of the Jews?" Pilate asked. Jesus answered: "My kingdom is not of this world" (John 18:33–36). Pilate found no crime in him, but the crowd shouted, "Crucify Him!" To please them, Pilate handed Jesus over to be crucified (Mark 15:13–15).',
+      'The soldiers dressed him in a purple robe, "twisted together a crown of thorns, and set it on His head," and mocked him: "Hail, King of the Jews!" (Mark 15:17–18).',
+    ]],
+    ['A crown that lasts', HEAVEN_BIBLE, [
+      'Winners at the ancient games received a crown of leaves. The apostle Paul wrote: "They do it for a crown that is perishable, but we do it for a crown that is imperishable" (1 Corinthians 9:25).',
+    ]],
+    ['The arena', HEAVEN_IMAGINE, [
+      'In this arena the prizes never run out, and the cheers are for courage, kindness and fair play as much as for winning.',
+    ]],
+    ['The Pilate Stone', HEAVEN_REAL, [
+      'In 1961, archaeologists working in the Roman theater at Caesarea, on the coast of Israel, found a stone carved with the name of Pontius Pilate, "Prefect of Judea". It is one of the very few objects from his own time to name him, and it is now in the Israel Museum in Jerusalem.',
+    ]],
+  ],
+  'art' => 'The illustration shows a white marble stadium with tiers of arches, gold trim, a green field inside and golden laurel wreaths on top.',
+  'look' => ['Find the golden wreaths.', 'How many rows of arches can you see?'],
+  'questions' => ['How do you think Peter felt when the rooster crowed?', 'What do you think Jesus meant by "My kingdom is not of this world"?', 'Why do you think Jesus let himself be treated this way?'],
+  'words' => ['Governor' => 'A ruler sent to govern a region.', 'Crucify' => 'To put to death on a wooden cross, a Roman punishment.', 'Mock' => 'To make fun of someone cruelly.'],
+  'sources' => ['bible-luke', 'bible-john', 'bible-mark', 'bible-1cor', 'brit-pilate', 'imj-pilate'],
+  'related' => ['prayer-chapel', 'sky-bridge', 'golden-track'],
+],
+
+// ---------------- 8. The cross and the empty tomb ----------------
+'sky-bridge' => [
+  'name' => 'Sky bridge', 'latin' => 'Luke 23:32–47', 'cat' => 'cross', 'src' => 'art/bridge.png', 'part' => [28, 'The cross'],
+  'summary' => 'A golden bridge across the sky. Jesus died on a cross, and the Bible says his death opened the way between God and people.',
+  'facts' => ['Read it' => 'Luke 23:32–49 and John 19:28–30', 'Where' => 'The Skull, also called Golgotha, near Jerusalem', 'Key words' => '"It is finished"', 'Real world' => 'The Church of the Holy Sepulchre, Jerusalem'],
+  'sections' => [
+    ['The cross', HEAVEN_GOSPEL, [
+      'The soldiers led Jesus to a place called The Skull, and there they crucified him between two criminals. Jesus prayed: "Father, forgive them, for they do not know what they are doing" (Luke 23:34). One of the criminals said, "Jesus, remember me when You come into Your kingdom!" Jesus answered: "Truly I tell you, today you will be with Me in Paradise" (Luke 23:42–43).',
+      'At noon, darkness came over the land for three hours. Then Jesus said, "It is finished" (John 19:30), and gave up his spirit. At that moment the curtain in the temple was torn in two from top to bottom. The Roman officer on guard said: "Truly this was the Son of God" (Matthew 27:51–54).',
+      'The Bible explains why Jesus died: "For Christ also suffered for sins once for all, the righteous for the unrighteous, to bring you to God" (1 Peter 3:18). "God proves His love for us in this: While we were still sinners, Christ died for us" (Romans 5:8).',
+    ]],
+    ['The way is open', HEAVEN_BIBLE, [
+      'Jesus had said: "I am the good shepherd. The good shepherd lays down His life for the sheep" (John 10:11). Long before, Jacob dreamed of a stairway between earth and heaven (Genesis 28:12), and Jesus told his first followers that they would "see heaven open and the angels of God ascending and descending on the Son of Man" (John 1:51). Like a bridge, Jesus joins people to God.',
+    ]],
+    ['The bridge', HEAVEN_IMAGINE, [
+      'White marble arches carry a golden walkway between the floating islands, so no part of the city is ever cut off from another.',
+    ]],
+    ['The Church of the Holy Sepulchre', HEAVEN_REAL, [
+      'In Jerusalem\'s Old City, the Church of the Holy Sepulchre was first built in the 300s over the places where many Christians believe Jesus was crucified and buried. In Jesus\'s time the spot was just outside the city wall, as the Bible describes. Pilgrims from all over the world visit it.',
+    ]],
+  ],
+  'art' => 'The illustration shows one section of a sky bridge: two white marble arches with a walkway on top, gold railings, small gold spires and flowering vines.',
+  'look' => ['Count the arches.', 'Find the flowering vines.'],
+  'questions' => ['What did Jesus pray for the people who hurt him?', 'What did Jesus promise the criminal who asked to be remembered?', 'Why does the Bible say Jesus died?'],
+  'words' => ['Cross' => 'Wooden beams on which the Romans put people to death.', 'Forgive' => 'To let go of a wrong someone has done.', 'Paradise' => 'A word for heaven, the garden of God.'],
+  'sources' => ['bible-luke', 'bible-john', 'bible-matthew', 'bible-1peter', 'bible-romans', 'bible-genesis', 'brit-sepulchre'],
+  'related' => ['victors-arena', 'building-materials', 'tree-of-life'],
 ],
 
 'building-materials' => [
-  'name' => 'Building materials', 'latin' => 'Revelation 21:18–21', 'cat' => 'build', 'src' => 'build/materials.png',
-  'summary' => 'Marble blocks, gold bars, pearls and gold tiles: the materials of the heavenly city.',
-  'facts' => ['Inspired by' => 'Revelation 21:18–21', 'In the vision' => 'A city of pure gold, as clear as glass', 'Why gold stays bright' => 'It does not rust', 'Marble forms from' => 'Limestone, changed by heat and pressure'],
+  'name' => 'Building materials', 'latin' => 'Matthew 27:57–28:8', 'cat' => 'cross', 'src' => 'build/materials.png', 'part' => [29, 'The stone rolled away'],
+  'summary' => 'Marble blocks, gold bars and pearls. Jesus was buried in a tomb closed with a great stone, but on the third day the stone was rolled away.',
+  'facts' => ['Read it' => 'Matthew 27:57–28:8 and John 20:1–8', 'Where' => 'A new tomb cut into the rock', 'Key words' => '"He is not here; He has risen"', 'Real world' => 'Rolling-stone tombs near Jerusalem'],
   'sections' => [
+    ['The stone rolled away', HEAVEN_GOSPEL, [
+      'That evening, a rich follower of Jesus named Joseph of Arimathea laid his body in his own new tomb, cut into the rock. "Then he rolled a great stone across the entrance" (Matthew 27:60). The leaders had the stone sealed and soldiers posted to guard it.',
+      'At dawn on Sunday, the third day, Mary Magdalene and another Mary went to the tomb. Suddenly there was a great earthquake, and an angel of the Lord rolled away the stone and sat on it. The guards shook with fear. The angel said to the women: "Do not be afraid, for I know that you are looking for Jesus, who was crucified. He is not here; He has risen, just as He said! Come, see the place where He lay" (Matthew 28:5–6).',
+      'The women ran to tell the disciples. Peter and another disciple ran to the tomb too, and found only the linen cloths lying there (John 20:3–8).',
+    ]],
     ['The materials', HEAVEN_IMAGINE, [
       'White marble, shining gold and glowing pearls: everything in this city is made to last and made to be beautiful.',
     ]],
-    ['Gold like glass', HEAVEN_BELIEF, [
-      'Revelation describes the heavenly city as "pure gold, as pure as glass", with walls of jasper and foundations decorated with every kind of precious stone (Revelation 21:18–21). The vision uses the most precious things people knew to describe something more precious still.',
+    ['Rolling-stone tombs', HEAVEN_REAL, [
+      'Around Jerusalem, archaeologists have found many family tombs from Jesus\'s time cut into the rock. Most were closed with square stone blocks, but a few, belonging to rich families, had a large round stone that rolled along a groove in front of the doorway, like a giant wheel.',
     ]],
-    ['The real materials', HEAVEN_REAL, [
-      'Gold is one of the few metals that never rusts or tarnishes, which is why ancient gold jewelry still shines today. Marble forms deep underground when limestone is squeezed and heated over millions of years. Pearls grow inside oysters and mussels, layer by layer.',
-    ]],
-    ['Gold from old phones', HEAVEN_REAL, [
-      'Gold can be recycled again and again. According to the US Environmental Protection Agency, recycling a million old cell phones recovers about 34 kilograms of gold, along with silver, copper and other metals that would otherwise have to be mined.',
+    ['Gold that never rusts', HEAVEN_REAL, [
+      'Gold is one of the few metals that never rusts or tarnishes, which is why ancient gold jewelry still shines today. Marble forms deep underground when limestone is squeezed and heated over millions of years.',
     ]],
   ],
   'art' => 'The illustration shows a neat pile of white marble blocks, stacked gold bars, a basket of shining pearls and a few gold roof tiles.',
-  'look' => ['Find the basket of pearls.', 'Which materials shine the most?'],
-  'questions' => ['Why might someone describe heaven with gold and pearls?', 'Why does gold never rust?', 'What are the most precious things to you, and why?'],
-  'words' => ['Marble' => 'A hard, often white stone formed from limestone.', 'Tarnish' => 'To lose shine because a dull coating forms on the surface.', 'Jasper' => 'A colorful, hard stone.'],
-  'sources' => ['bible-rev', 'brit-gold', 'brit-marble', 'brit-pearl', 'epa-ewaste'],
-  'related' => ['light-crane', 'pearl-gate', 'hall-of-treasures'],
+  'look' => ['Find the basket of pearls.', 'Which of these blocks would be hardest to move?'],
+  'questions' => ['Why do you think the leaders wanted the tomb guarded?', 'How do you think the women felt when the angel spoke?', 'What does "He has risen" mean?'],
+  'words' => ['Tomb' => 'A room or cave where a dead body is laid.', 'Seal' => 'A mark or fastening that shows something must not be opened.', 'Linen' => 'Cloth made from the flax plant.'],
+  'sources' => ['bible-matthew', 'bible-john', 'gibson', 'brit-gold', 'brit-marble'],
+  'related' => ['sky-bridge', 'garden-of-light', 'light-crane'],
+],
+
+'garden-of-light' => [
+  'name' => 'Garden of light', 'latin' => 'John 20:11–18', 'cat' => 'cross', 'src' => 'art/growth_1.png', 'part' => [30, 'I have seen the Lord!'],
+  'summary' => 'A walled garden of glowing lilies. In the garden by the empty tomb, Mary Magdalene met Jesus, alive again.',
+  'facts' => ['Read it' => 'John 19:41–20:18 and 1 Corinthians 15:3–6', 'Where' => 'The garden of the tomb, Jerusalem', 'Key words' => '"I have seen the Lord!"', 'Real world' => 'Easter, a different date each year'],
+  'sections' => [
+    ['I have seen the Lord!', HEAVEN_GOSPEL, [
+      'Jesus had been buried in a garden: "Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb" (John 19:41). Mary Magdalene stood outside the empty tomb, crying. She turned and saw a man standing there and, thinking he was the gardener, asked him where the body had been taken.',
+      'Then he said to her, "Mary." She knew his voice at once and cried out, "Rabboni!", which means "Teacher." It was Jesus, alive! She went to the disciples with the news: "I have seen the Lord!" (John 20:16–18).',
+      'This is the heart of the good news. As the apostle Paul later wrote: "Christ died for our sins according to the Scriptures… He was buried… He was raised on the third day according to the Scriptures" (1 Corinthians 15:3–4). Death could not hold him.',
+    ]],
+    ['The garden', HEAVEN_IMAGINE, [
+      'Glowing white lilies line a long pool, and tall cypress trees stand along the walls. The Bible begins in a garden and ends in a garden city, and the best news of all began in a garden too.',
+    ]],
+    ['Easter', HEAVEN_REAL, [
+      'Christians celebrate the resurrection of Jesus at Easter. Its date changes every year: in most churches it is the first Sunday after the first full moon on or after March 21, so it always falls between March 22 and April 25.',
+    ]],
+    ['The Garden Tomb', HEAVEN_REAL, [
+      'Outside the walls of Jerusalem\'s Old City lies the Garden Tomb, a tomb cut into the rock in a quiet garden, found in 1867. The people who look after it say they cannot be sure it is the tomb of Jesus, but it helps visitors picture the story.',
+    ]],
+  ],
+  'art' => 'The illustration shows a walled garden with glowing white lilies, a long pool, cypress trees and a low marble wall.',
+  'look' => ['Find the long pool.', 'Count the cypress trees.'],
+  'questions' => ['How did Mary know it was Jesus?', 'Why is the resurrection such good news?', 'How do people you know celebrate Easter?'],
+  'words' => ['Rabboni' => 'A Hebrew word meaning "my teacher".', 'Resurrection' => 'Rising from death to life again.', 'Easter' => 'The day Christians celebrate Jesus rising from the dead.'],
+  'sources' => ['bible-john', 'bible-1cor', 'brit-easter', 'gardentomb'],
+  'related' => ['building-materials', 'cloud-island', 'tree-of-life'],
+],
+
+// ---------------- 9. The good news spreads ----------------
+'cloud-island' => [
+  'name' => 'Cloud island', 'latin' => 'Acts 1:3–11', 'cat' => 'news', 'src' => 'art/island_1.png', 'part' => [31, 'Up into heaven'],
+  'summary' => 'A little island of marble and cloud floating in the sky. Forty days after rising from the dead, Jesus went up into heaven, and a cloud hid him from sight.',
+  'facts' => ['Read it' => 'John 20:24–29, Matthew 28:18–20 and Acts 1:3–11', 'Where' => 'The Mount of Olives', 'Key words' => '"I am with you always"', 'Real world' => 'A cloud can hold hundreds of tons of water'],
+  'sections' => [
+    ['Up into heaven', HEAVEN_GOSPEL, [
+      'For forty days after he rose, Jesus appeared to his followers and talked with them about the kingdom of God (Acts 1:3). Once he appeared to more than five hundred people at the same time (1 Corinthians 15:6). Thomas, who had doubted, saw his hands and cried, "My Lord and my God!" Jesus told him: "Blessed are those who have not seen and yet have believed" (John 20:28–29).',
+      'Jesus gave his followers a great task: "Go and make disciples of all nations… And surely I am with you always, even to the end of the age" (Matthew 28:19–20). He told them to wait in Jerusalem for the Holy Spirit. "After He had said this, they watched as He was taken up, and a cloud hid Him from their sight" (Acts 1:9).',
+    ]],
+    ['The island', HEAVEN_IMAGINE, [
+      'Islands drift through the sky like boats, each with a little garden, a gazebo and a waterfall falling into the clouds below.',
+    ]],
+    ['Real clouds', HEAVEN_REAL, [
+      'A cloud is made of billions of tiny water droplets or bits of ice. A puffy cumulus cloud can hold hundreds of tons of water, yet it floats, because the droplets are so small and so widely spread that rising warm air holds them up.',
+    ]],
+  ],
+  'art' => 'The illustration shows a small floating island of white marble and cloud with a round gazebo, cypress trees, white flowers and a thin waterfall.',
+  'look' => ['Follow the waterfall. Where does the water go?', 'Find the gazebo with the gold dome.'],
+  'questions' => ['What task did Jesus give his followers?', 'What did Jesus promise when he said, "I am with you always"?', 'How can something as heavy as a cloud float?'],
+  'words' => ['Disciple' => 'A follower and learner of Jesus.', 'Ascension' => 'Jesus going up into heaven.', 'Cumulus' => 'A puffy, white, heaped-up cloud.'],
+  'sources' => ['bible-acts', 'bible-1cor', 'bible-john', 'bible-matthew', 'usgs-clouds'],
+  'related' => ['garden-of-light', 'golden-chariot', 'cloud-carriage'],
+],
+
+'harp-workshop' => [
+  'name' => 'Harp workshop', 'latin' => 'Acts 16:22–34', 'cat' => 'news', 'src' => 'art/nt_workshop.png', 'part' => [33, 'Songs at midnight'],
+  'summary' => 'A marble workshop where golden harps and trumpets are made. In prison at midnight, Paul and Silas sang hymns to God, and a jailer\'s life was changed.',
+  'facts' => ['Read it' => 'Acts 16:22–34', 'Where' => 'Philippi, a Roman city in Greece', 'Key words' => '"Believe in the Lord Jesus and you will be saved"', 'Real world' => 'The oldest Christian hymn with its music, about AD 300'],
+  'sections' => [
+    ['Songs at midnight', HEAVEN_GOSPEL, [
+      'The good news kept spreading. The apostle Paul traveled from city to city, telling people about Jesus. In Philippi, he and his friend Silas were beaten and locked in prison, with their feet fastened in wooden stocks.',
+      '"About midnight Paul and Silas were praying and singing hymns to God, and the other prisoners were listening to them" (Acts 16:25). Suddenly an earthquake shook the prison, the doors flew open and everyone\'s chains came loose. The jailer thought the prisoners had escaped, but Paul called out: "Do not harm yourself! We are all here!"',
+      'Trembling, the jailer asked: "Sirs, what must I do to be saved?" They answered: "Believe in the Lord Jesus and you will be saved, you and your household" (Acts 16:30–31). That same night he and his whole family were baptized, full of joy.',
+    ]],
+    ['The workshop', HEAVEN_IMAGINE, [
+      'Makers here build harps, trumpets and drums, and every instrument is finished by playing a song of praise.',
+    ]],
+    ['Philippi today', HEAVEN_REAL, [
+      'The ruins of Philippi, in northern Greece, include its Roman forum, its theater and some of the earliest churches in Europe. In 2016 they became a UNESCO World Heritage Site.',
+    ]],
+    ['The oldest hymn with music', HEAVEN_REAL, [
+      'The oldest known Christian hymn written down with its music was found on a scrap of papyrus at Oxyrhynchus in Egypt. It was copied around AD 300, and singers can still perform it today.',
+    ]],
+  ],
+  'art' => 'The illustration shows a marble workshop with open arches where golden harps and trumpets are being made.',
+  'look' => ['Find a golden harp.', 'Can you spot a trumpet?'],
+  'questions' => ['Why do you think Paul and Silas sang in prison?', 'What did they tell the jailer he must do to be saved?', 'How does music change the way you feel?'],
+  'words' => ['Hymn' => 'A song of praise to God.', 'Stocks' => 'A wooden frame that held a prisoner\'s feet.', 'Jailer' => 'The person in charge of a prison.'],
+  'sources' => ['bible-acts', 'unesco-philippi', 'oxyrhynchus'],
+  'related' => ['golden-chariot', 'bell-tower', 'cloud-carriage'],
+],
+
+// ---------------- 10. Everything new ----------------
+'pearl-gate' => [
+  'name' => 'Pearl gate', 'latin' => 'Revelation 21–22', 'cat' => 'new', 'src' => 'art/town_1.png', 'part' => [35, 'Everything new'],
+  'summary' => 'A gate made of one giant pearl, open day and night. The Bible ends with God making all things new, and an invitation to everyone: "Come!"',
+  'facts' => ['Read it' => 'Revelation 21:1–5, 21:21–27 and 22:17', 'Where' => 'The new Jerusalem, the city of God', 'Key words' => '"Behold, I make all things new"', 'Real world' => 'Pearls grow inside oysters and mussels'],
+  'sections' => [
+    ['Everything new', HEAVEN_GOSPEL, [
+      'The last book of the Bible tells of a vision given to the apostle John: "Then I saw a new heaven and a new earth… I saw the holy city, the new Jerusalem, coming down out of heaven from God" (Revelation 21:1–2). God will live with his people, and "He will wipe away every tear from their eyes, and there will be no more death or mourning or crying or pain." The One on the throne said: "Behold, I make all things new" (Revelation 21:3–5).',
+      'The city\'s twelve gates are twelve pearls, and "its gates will never be shut" (Revelation 21:21–25). It needs no sun, "because the glory of God illuminates the city, and the Lamb is its lamp" (Revelation 21:23). The Lamb is Jesus.',
+      'The Bible ends with an invitation: "The Spirit and the bride say, \'Come!\'… And let the one who is thirsty come, and the one who desires the water of life drink freely" (Revelation 22:17). As Paul wrote: "If you confess with your mouth, \'Jesus is Lord,\' and believe in your heart that God raised Him from the dead, you will be saved" (Romans 10:9). That is the good news of Jesus.',
+    ]],
+    ['The pearl of great price', HEAVEN_BIBLE, [
+      'Jesus once said: "The kingdom of heaven is like a merchant in search of fine pearls. When he found one very precious pearl, he went away and sold all he had and bought it" (Matthew 13:45–46).',
+    ]],
+    ['The gate', HEAVEN_IMAGINE, [
+      'A giant shining pearl stands in a white marble wall between two golden towers. The gate is open all day and all night, and every visitor is greeted by name.',
+    ]],
+    ['How pearls grow', HEAVEN_REAL, [
+      'A pearl forms inside an oyster or a mussel when something gets in that the animal cannot push out. The animal covers it, layer by layer, with nacre, the same shiny material that lines its shell. A pearl takes years to grow, which is one reason pearls have always been precious.',
+    ]],
+  ],
+  'art' => 'The illustration shows a gate that is one giant shining pearl, set in a white marble wall with golden towers on both sides.',
+  'look' => ['Find the pearl in the middle of the gate.', 'How many towers can you count?'],
+  'questions' => ['What will be gone from the new city, according to Revelation?', 'Who does the Bible invite to "come"?', 'What would a city whose gates are never shut be like?'],
+  'words' => ['Revelation' => 'Something made known; also the name of the Bible\'s last book.', 'Lamb' => 'A young sheep; in Revelation, a name for Jesus.', 'Nacre' => 'The shiny material that makes pearls and lines shells.'],
+  'sources' => ['bible-rev', 'bible-romans', 'bible-matthew', 'brit-pearl'],
+  'related' => ['cloud-carriage', 'tree-of-life', 'fountain-of-life'],
 ],
 ];
 
 $WORLD_DATA['heaven'] = [
-  'title'    => 'Heavenly City: an imagined city of goodness and happiness',
-  'desc'     => 'Explore an imagined heavenly city of gold and light: 31 places, each pairing a picture of heaven from many faiths with something real in our world.',
-  'intro'    => 'An imagined city of goodness and happiness, inspired by how many faiths picture heaven. Each place shows the belief behind it, and something real in our world that brings a little of that goodness here.',
-  'note'     => 'This city is imagined. It is inspired mostly by the Bible\'s pictures of heaven, and by ideas of paradise in other faiths. People picture heaven in many different ways, and some people don\'t believe in it. Each page marks what is imagined, what faiths teach and what is real today.',
-  'aka'      => 'Inspired by',
+  'title'    => 'Heavenly City: the story of Jesus in 35 places',
+  'desc'     => 'Explore an imagined heavenly city of gold and light and follow the story of Jesus, as the Bible tells it, in 35 parts from place to place.',
+  'intro'    => 'An imagined city of gold and light, where the story of Jesus unfolds as you explore. Each of its 35 places tells one part of the Gospel, as the Bible tells it, from the first garden to the city of God.',
+  'note'     => 'The city and its art are imagined, inspired by the Bible\'s picture of the heavenly city in the Book of Revelation. Its story is the Gospel, the good news of Jesus, told in the Bible\'s own words with chapter and verse, so you can read it for yourself.',
+  'aka'      => 'Read it in the Bible',
   'akaLang'  => '',
-  'pageTitle'=> '%s in the Heavenly City: belief and the real world',
+  'pageTitle'=> '%s in the Heavenly City: the story of Jesus',
   'pageTitleShort' => '%s in the Heavenly City',
-  'aside'    => ['How to read these pages', 'Each page has three kinds of section. Imagined sections describe the artist\'s city. Belief sections describe what a faith teaches, in its own words where possible. Real world sections describe people, places and science in our world today, with sources.'],
-  'pageDesc' => ' Explore the imagined place, the beliefs behind it and something real in our world, with questions for discussion.',
-  'pageDescShort' => ' Explore the belief and something real today.',
-  'sourcesIntro' => 'The beliefs and real-world facts on this page are based on these sources:',
-  'about'    => 'Ideas of heaven and paradise in world religions, and kindness in community life',
+  'aside'    => ['How to read these pages', 'Start with part 1 at the Tree of life and follow the links to each next part. Gospel sections tell the story of Jesus as the Bible tells it. Bible sections share more words from Scripture. Imagined sections describe the artist\'s city. Real world sections describe places, history and science today, with sources.'],
+  'pageDesc' => ' Read this part of the story of Jesus, as the Bible tells it, with questions to talk about.',
+  'pageDescShort' => ' A part of the story of Jesus, as the Bible tells it.',
+  'sourcesIntro' => 'Bible quotations are from the Berean Standard Bible, which is in the public domain. The other facts on this page come from these sources:',
+  'about'    => 'The life, death and resurrection of Jesus, as told in the Bible',
+  // The story told across the pages, part by part (see story_page() in build/worldpages.php).
+  'story'    => [
+    'title' => 'The story of Jesus',
+    'pageTitle' => 'The story of Jesus in 35 places: the Heavenly City',
+    'desc' => 'Follow the story of Jesus, as the Bible tells it, through 35 places in an imagined heavenly city: from the garden of Eden to the empty tomb and the city of God.',
+    'lead' => 'Each place in this city tells one part of the story of Jesus, as the Bible tells it. Start with part 1 and follow the links from place to place.',
+    'intro' => 'The Gospel is the good news of Jesus. In this imagined city, each of the 35 places tells one part of his story, in order, in the Bible\'s own words with chapter and verse. Read one part a day, or the whole story at once.',
+    'note' => 'Bible quotations are from the Berean Standard Bible, which is in the public domain. The city and its art are imagined; the story is told as the Bible tells it.',
+  ],
   // Positions on the 6 x 6 map, from the back corner (0) to the front corner (35). Tall pieces stand at the back;
   // 'tree' is a decorative golden tree.
   'map' => [

@@ -62,12 +62,12 @@ foreach (WORLD_ORDER as $w) $peopleLinks .= '<li><a class="world-link world-' . 
 $homePlayCards = play_cards(['/play/city-builder/', '/play/world-sort/', '/play/shadows/', '/play/quiz/', '/play/puzzle/', '/play/passport/']);
 $heroLegend = '';
 foreach (WORLD_ORDER as $w) $heroLegend .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';
-$parade = [['egypt', 'chariot', 'About 3,500 years ago'], ['roman', 'chariot', 'About 2,000 years ago'], ['modern', 'taxi', 'Today'], ['elven', 'flower-cart', 'Imagined'], ['future', 'hover-car', 'Possible future'], ['heaven', 'golden-chariot', 'Inspired by belief']];
+$parade = [['egypt', 'chariot', 'About 3,500 years ago'], ['roman', 'chariot', 'About 2,000 years ago'], ['modern', 'taxi', 'Today'], ['elven', 'flower-cart', 'Imagined'], ['future', 'hover-car', 'Possible future'], ['heaven', 'golden-chariot', 'Inspired by the Bible']];
 
 // World cards: horizon, signature building, a person, and three places to start.
 $starts = [
   'egypt'  => ['pyramid', 'scribe-school', 'village-house'],
-  'heaven' => ['pearl-gate', 'tree-of-life', 'banquet-hall'],
+  'heaven' => ['tree-of-life', 'welcome-hall', 'garden-of-light'],
   'roman'  => ['aqueduct', 'amphitheater', 'public-baths'],
   'modern' => ['water-system', 'public-library', 'streets-crosswalks'],
   'elven'  => ['great-tree-hall', 'flower-meadow', 'tree-library'],
@@ -75,7 +75,7 @@ $starts = [
 ];
 $oneLine = [
   'egypt'  => 'The real civilization on the Nile, from the pyramids to the homes of the tomb builders.',
-  'heaven' => 'An imagined city of goodness: the beliefs behind it, and real kindness today.',
+  'heaven' => 'An imagined city of gold and light that tells the story of Jesus, as the Bible tells it.',
   'roman'  => 'The real city, about 2,000 years ago, with photos of what survives.',
   'modern' => 'A town like yours: why each building is there and who it serves.',
   'elven'  => 'A forest city, and the real nature technology behind each idea.',

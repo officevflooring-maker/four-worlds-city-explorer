@@ -49,9 +49,11 @@ foreach ($WORLD_DATA as $w => $D) {
     if (!is_file($pic)) { fwrite(STDERR, "no picture for $w/$slug\n"); continue; }
     $name = lines($r['name'], 17);
     $size = count($name) > 2 ? 50 : 60;
+    // A long heading (a Heavenly City chapter) is set smaller so it stays clear of the picture.
+    $head = strtoupper($WORLDS[$w]['name'] . ' · ' . $D['cats'][$r['cat']][0]);
     $draw = [
       "drawtext=$font:" . text_file('site', SITE_NAME) . ":fontsize=32:fontcolor=0x23396b:x=62:y=110",
-      "drawtext=$font:" . text_file('world', strtoupper($WORLDS[$w]['name'] . ' · ' . $D['cats'][$r['cat']][0])) . ":fontsize=24:fontcolor=$accent:x=62:y=172",
+      "drawtext=$font:" . text_file('world', $head) . ":fontsize=" . (strlen($head) > 40 ? 20 : 24) . ":fontcolor=$accent:x=62:y=172",
     ];
     foreach ($name as $i => $line) $draw[] = "drawtext=$font:" . text_file("name$i", $line) . ":fontsize=$size:fontcolor=0x17202b:x=60:y=" . (222 + $i * round($size * 1.18));
     $filter = "[1]scale=1200:-1[h];[2]scale=480:480[b];[0][h]overlay=0:H-h+10[t];[t][b]overlay=W-w-40:H-h-30," . implode(',', $draw);

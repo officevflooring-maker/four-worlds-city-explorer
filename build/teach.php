@@ -1,5 +1,5 @@
 <?php
-// Teachers & Schools: 20 guides, lessons and explainers built around the questions teachers,
+// Teachers & Schools: 23 guides, lessons and explainers built around the questions teachers,
 // students and families search for. Each guide has a quick answer, sections, an FAQ (also
 // published as FAQPage structured data), links into the building pages and plain-text sources.
 //
@@ -46,6 +46,13 @@ $TEACH_SOURCES = [
   'oldenburg'     => 'Ray Oldenburg, "The Great Good Place" (1989)',
   'jacobs'        => 'Jane Jacobs, "The Death and Life of Great American Cities" (1961)',
   'ostrom'        => 'Elinor Ostrom, "Governing the Commons" (1990)',
+  'brit-pyramids' => 'Encyclopaedia Britannica, "Pyramids of Giza"',
+  'lehner'        => 'Mark Lehner, "The Complete Pyramids" (1997)',
+  'tallet'        => 'Pierre Tallet and Mark Lehner, "The Red Sea Scrolls" (2021), on the papyri of Merer found at Wadi al-Jarf',
+  'fall-sand'     => 'Fall, Bonn and colleagues, "Sliding Friction on Wet and Dry Sand", Physical Review Letters (2014)',
+  'brit-egypt'    => 'Encyclopaedia Britannica, "Ancient Egypt"',
+  'bm-egypt'      => 'The British Museum, ancient Egypt collection and teaching resources',
+  'bsb'           => 'The Berean Standard Bible (2023), placed in the public domain',
 ];
 
 $TEACH = [
@@ -309,7 +316,7 @@ $TEACH = [
     ['Why is chlorine added to drinking water?', 'Chlorine kills harmful germs and keeps the water safe as it travels through pipes.'],
     ['Does everyone in the world have clean water?', 'No. The WHO and UNICEF report that billions of people still lack safely managed drinking water at home.'],
   ],
-  'links' => ['modern/water-system', 'roman/aqueduct', 'elven/crystal-fountain', 'future/water-recycler'],
+  'links' => ['modern/water-system', 'roman/aqueduct', 'elven/wetland-fountain', 'future/water-recycler'],
   'sources' => ['cdc-water', 'epa-water', 'who-jmp'],
 ],
 
@@ -474,7 +481,7 @@ $TEACH = [
     ['What is biomimicry in simple words?', 'Copying good ideas from plants and animals to solve human problems.'],
     ['What is the most famous example of biomimicry?', 'Velcro is probably the best known. It was inspired by burrs that stuck to a dog\'s fur.'],
   ],
-  'links' => ['elven/building-materials', 'elven/spire-house', 'elven/great-tree-hall', 'elven/mushroom-cottage', 'elven/crystal-tower'],
+  'links' => ['elven/building-materials', 'elven/spire-house', 'elven/great-tree-hall', 'elven/mushroom-cottage', 'elven/firefly-tower'],
   'sources' => ['benyus', 'asknature'],
 ],
 
@@ -506,7 +513,7 @@ $TEACH = [
     ['What does solarpunk mean?', 'A genre and movement that imagines a sustainable, community-focused future powered by clean energy and filled with nature.'],
     ['Is solarpunk real?', 'It is imaginative, but many of its ideas, such as green roofs, solar power and community gardens, already exist today.'],
   ],
-  'links' => ['elven/tree-tower-home', 'elven/canopy-market', 'elven/woodworking-workshop', 'elven/crystal-waterfall', 'elven/elven-palace'],
+  'links' => ['elven/tree-tower-home', 'elven/canopy-market', 'elven/woodworking-workshop', 'elven/waterfall-tower', 'elven/elven-palace'],
   'sources' => ['epa-green', 'benyus'],
 ],
 
@@ -623,7 +630,7 @@ $TEACH = [
   'h1' => 'How to design a fantasy city: a worldbuilding guide',
   'desc' => 'A worldbuilding guide for a believable fantasy city: geography, water, food, government, buildings and culture, with prompts for writing, art and games.',
   'kind' => 'Guide', 'grades' => '6-12', 'time' => '1 to 3 class periods', 'subjects' => 'English, art, game design, geography',
-  'quick' => 'A believable fantasy city starts with real questions: where does the water come from, what do people eat, how do they earn a living, who makes decisions, and what makes this place different? Answer those, then add the magic.',
+  'quick' => 'A believable fantasy city starts with real questions: where does the water come from, what do people eat, how do they earn a living, who makes decisions, and what makes this place different? Answer those, then let your imagination build the rest.',
   'sections' => [
     ['Start with geography', [
       'Real cities grow where there is water, food and trade: on rivers, coasts, crossroads and fertile land. Decide where your city sits and why people settled there. A city on a cliff, in a forest or on a floating island will grow differently.',
@@ -637,18 +644,18 @@ $TEACH = [
       'How do people travel and move goods?',
       'What are buildings made of, and why?',
       'Who is powerful, and who is left out?',
-      'What is the city afraid of: fire, floods, enemies, monsters?',
+      'What is the city afraid of: fire, floods, storms or enemies?',
       'What makes visitors gasp when they first arrive?',
     ]]],
     ['Use the Elven world as a model', [
-      'Every building in this site\'s Elven world answers one of these questions in a fantasy way, and each page shows the real-world idea behind it: seed vaults, living bridges, geothermal heat. Students can borrow the method: start with a real solution, then imagine it with magic.',
+      'Every building in this site\'s Elven world answers one of these questions in a fantasy way, and each page shows the real-world idea behind it: seed vaults, living bridges, geothermal heat. Students can borrow the method: start with a real solution, then imagine how it could look in a world of their own.',
     ]],
     ['Avoiding stereotypes', [
       'Fantasy cultures are invented, so avoid copying real cultures as costumes or making any group simply "good" or "evil". Give every group real needs, skills and disagreements.',
     ]],
   ],
   'faq' => [
-    ['How do you make a fantasy city believable?', 'Base it on how real cities work: water, food, work, government and trade, then add fantasy elements on top.'],
+    ['How do you make a fantasy city believable?', 'Base it on how real cities work: water, food, work, government and trade, then add imagined buildings and places on top.'],
     ['What is worldbuilding?', 'Creating an imaginary world in detail, including its places, history, peoples and rules, for stories, games or art.'],
   ],
   'links' => ['elven/treetop-village', 'elven/council-terrace', 'elven/canopy-market', 'elven/spring-circle', 'elven/elven-palace', 'elven/tree-library'],
@@ -775,5 +782,118 @@ $TEACH = [
   ],
   'links' => ['modern/streets-crosswalks', 'modern/water-system', 'modern/park-pond', 'modern/public-library', 'modern/plaza-fountain'],
   'sources' => ['apa', 'epa-green'],
+],
+
+// ===================== Ancient Egypt =====================
+'how-were-the-pyramids-built' => [
+  'title' => 'How Were the Pyramids Built? An Explainer for Students',
+  'h1' => 'How were the pyramids built?',
+  'desc' => 'How the Egyptians built the pyramids without machines: who the workers were, how giant stones were cut and moved on sledges, boats and ramps, and what is still unknown.',
+  'kind' => 'Explainer', 'grades' => '3-8', 'time' => '20-minute read', 'subjects' => 'History, science, engineering',
+  'quick' => 'Teams of paid workers, not slaves, built the pyramids about 4,500 years ago. They cut limestone and granite with copper tools and stone hammers, moved the blocks on wooden sledges, on boats along the Nile and canals, and up ramps of mud brick and rubble. How exactly the top layers were raised is still argued about.',
+  'sections' => [
+    ['The Great Pyramid', [
+      'The Great Pyramid at Giza was built for King Khufu around 2560 BC. It was about 146 meters tall, the tallest building in the world for almost 4,000 years, and it is made of roughly 2.3 million stone blocks. Most of them are local limestone; the finest white limestone for its smooth outer casing came by boat from quarries across the Nile.',
+    ]],
+    ['Who built it?', [
+      'Near the pyramids, archaeologists have found the town where the builders lived, with bakeries and storehouses, and the tombs of workers buried close to the king they worked for. Their skeletons show hard work but also medical care for injuries. This evidence shows that the builders were organized, fed and paid teams of Egyptians, perhaps joined by farmers when the Nile flood covered their fields.',
+    ]],
+    ['Moving the stones', [], ['list' => [
+      'Sledges: tomb paintings show huge statues pulled on wooden sledges. In 2014, scientists showed that wetting the sand in front of a sledge can halve the force needed to pull it.',
+      'Boats: in 2013, archaeologists found the oldest known papyri, the logbook of an official named Merer, which describes his crew carrying limestone by boat to Giza for Khufu\'s pyramid.',
+      'Ramps: builders raised blocks up ramps of mud brick and rubble. Experts still debate whether the ramps were straight, zigzagged up one face or wrapped around the pyramid.',
+      'Levers: wooden levers may have been used to lift and adjust blocks into their final places.',
+    ]]],
+    ['Try it in class', [], ['list' => [
+      'Sledge test: pull a weighted box across dry sand and then wet sand with a spring scale. Which needs less force?',
+      'Count the blocks: if a team set 20 blocks an hour, how long would 2.3 million blocks take?',
+      'Design a ramp: build a ramp from books and card, and test which slope is easiest for a toy truck.',
+    ]]],
+  ],
+  'faq' => [
+    ['Did slaves build the pyramids?', 'The evidence says no. Archaeologists have found the builders\' town and tombs near the pyramids, which show that paid and well-fed teams of Egyptian workers built them.'],
+    ['How long did it take to build the Great Pyramid?', 'About 20 years is the usual estimate, during the reign of King Khufu, around 2560 BC.'],
+    ['How did the Egyptians lift the stones so high?', 'Mostly with ramps, sledges and levers. Exactly how the highest blocks were raised is still debated.'],
+  ],
+  'links' => ['egypt/pyramid', 'egypt/stone-sledge', 'egypt/building-materials', 'egypt/lifting-lever', 'egypt/sailing-boat', 'egypt/sphinx'],
+  'sources' => ['brit-pyramids', 'lehner', 'tallet', 'fall-sand'],
+],
+
+'daily-life-in-ancient-egypt' => [
+  'title' => 'Daily Life in Ancient Egypt: Homes, Food, Work and Play',
+  'h1' => 'What was daily life like in ancient Egypt?',
+  'desc' => 'Daily life for ordinary people in ancient Egypt: mud-brick homes, bread and beer, farming by the Nile flood, clothes, school for scribes and games, with classroom questions.',
+  'kind' => 'Explainer', 'grades' => '3-8', 'time' => '20-minute read', 'subjects' => 'History, geography',
+  'quick' => 'Most Egyptians were farmers whose year followed the Nile: the river flooded every summer, leaving rich black soil for crops. People lived in mud-brick houses with flat roofs, ate bread, onions and fish, wore simple linen clothes and played board games such as senet. Only a few boys trained as scribes to read and write.',
+  'sections' => [
+    ['The year of the Nile', [
+      'Egypt has almost no rain, so life depended on the Nile. Egyptians divided the year into three seasons: the flood, when the river covered the fields; the growing season, when they planted wheat, barley and flax in the wet black soil; and the harvest. Farmers lifted water to their fields with a bucket on a pole called a shaduf.',
+    ]],
+    ['Homes', [
+      'Most homes were built of mud bricks, made from Nile mud mixed with straw and dried in the sun. Small windows high in the walls kept out the heat, and people often slept and worked on the flat roofs on hot nights.',
+    ]],
+    ['Food and clothes', [
+      'Bread and beer were everyday food, and workers were often paid in grain. People also ate onions, beans, lentils, fish and fruit such as dates and figs. Clothes were made of linen woven from flax: men wore a simple kilt and women a long dress, and many people went barefoot.',
+    ]],
+    ['Work, school and play', [
+      'Most people farmed, but Egypt also needed builders, potters, bakers, boatmen and scribes. Only a few boys, mostly from scribe families, went to school to learn hieroglyphs, copying texts onto pieces of pottery and limestone. Children played with balls, dolls and toy animals, and families played board games such as senet.',
+    ]],
+    ['Questions for students', [], ['list' => [
+      'Why did almost everything in Egypt depend on one river?',
+      'Why might a flat roof be useful in a hot, dry country?',
+      'Compare daily life in ancient Egypt and ancient Rome. What was the same, and what was different?',
+    ]]],
+  ],
+  'faq' => [
+    ['What did ancient Egyptians eat?', 'Mostly bread and beer, with onions, beans, lentils, fish, dates and figs. Meat was a treat for most families.'],
+    ['Did children in ancient Egypt go to school?', 'Most did not. Children helped their families at home and in the fields. A few boys trained as scribes and learned to read and write hieroglyphs.'],
+    ['What were ancient Egyptian houses made of?', 'Most were made of mud bricks dried in the sun, with flat roofs and small windows to keep out the heat.'],
+  ],
+  'links' => ['egypt/mud-brick-house', 'egypt/village-house', 'egypt/scribe-school', 'egypt/family-house', 'egypt/market', 'egypt/lifting-lever'],
+  'sources' => ['brit-egypt', 'bm-egypt', 'lehner'],
+],
+
+// ===================== Heavenly City =====================
+'story-of-jesus-bible-lesson' => [
+  'title' => 'The Story of Jesus for Kids: A Bible Lesson Guide in 35 Parts',
+  'h1' => 'The story of Jesus for kids: a Bible lesson guide',
+  'desc' => 'Teach the story of Jesus in 35 short parts, as the Bible tells it, using the illustrated Heavenly City: Bible references, a six-week plan, questions and activities.',
+  'kind' => 'Lesson', 'grades' => 'K-6', 'time' => '6 weeks, or 35 short sessions', 'subjects' => 'Bible, reading, discussion',
+  'quick' => 'The Heavenly City on this site tells the story of Jesus in 35 short parts, as the Bible tells it: from creation and God\'s promise of a Savior, through his birth, life, teaching, death and resurrection, to his promise to come again. Each part gives the Bible reference, a picture to talk about, questions and three key words.',
+  'sections' => [
+    ['How the story is organized', [
+      'Each of the 35 places in the imagined city tells one part of the Gospel, in order, in ten chapters: the promise, Jesus is born, growing up, Jesus begins his work, Jesus teaches, Jesus heals and welcomes, the last week, the cross and the empty tomb, the good news spreads, and everything new.',
+      'Every part quotes the Berean Standard Bible, which is in the public domain, so the verses can be printed and shared freely. Each page also has a real-world section about the places and history of the Bible, such as Bethlehem, the Sea of Galilee and Jerusalem.',
+    ]],
+    ['A six-week plan', [], ['list' => [
+      'Week 1: parts 1 to 6, the promise and the birth of Jesus.',
+      'Week 2: parts 7 to 13, growing up, baptism, the first sign and the first followers.',
+      'Week 3: parts 14 to 22, Jesus teaches, heals and welcomes.',
+      'Week 4: parts 23 to 27, the last week in Jerusalem.',
+      'Week 5: parts 28 to 31, the cross, the empty tomb and Jesus going up into heaven.',
+      'Week 6: parts 32 to 35, the good news spreads, and everything new.',
+    ]]],
+    ['For each part', [], ['list' => [
+      'Read the Gospel section aloud, then find the same passage in a Bible.',
+      'Look at the picture together and find the details in "Look closer".',
+      'Talk through the "Think about it" questions.',
+      'Learn the three key words.',
+      'Follow the link to the next part.',
+    ]]],
+    ['Activities', [], ['list' => [
+      'Story map: as you go, number the places on a printed map of the city.',
+      'Memory verses: choose one key verse from each chapter, such as John 3:16.',
+      'Act it out: in small groups, act out a story such as the lost son or Zacchaeus.',
+      'Where it happened: find Bethlehem, Nazareth, the Sea of Galilee and Jerusalem on a map.',
+    ]]],
+  ],
+  'faq' => [
+    ['Which Bible translation is quoted?', 'The Berean Standard Bible (BSB), which was placed in the public domain in 2023, so the quotations can be printed and shared freely.'],
+    ['Is the Heavenly City a real place?', 'No. The city and its art are imagined, inspired by the Bible\'s picture of the heavenly city in the Book of Revelation. The story itself is told as the Bible tells it, with chapter and verse.'],
+    ['What ages is it for?', 'The parts are short and written for children from about 5 to 12. Read them aloud with younger children; older children can read the full Bible passages.'],
+    ['Can families use it at home?', 'Yes. Reading one part a day takes 35 days, for example through Lent before Easter.'],
+  ],
+  'links' => ['heaven/tree-of-life', 'heaven/welcome-hall', 'heaven/dove-statue', 'heaven/sharing-pavilion', 'heaven/sky-bridge', 'heaven/garden-of-light'],
+  'sources' => ['bsb'],
 ],
 ];

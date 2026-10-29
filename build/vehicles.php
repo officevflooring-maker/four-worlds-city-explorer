@@ -79,11 +79,8 @@ $VEHICLE_SOURCES = [
     'bonn'         => 'Fall, Bonn and colleagues, "Sliding Friction on Wet and Dry Sand", Physical Review Letters (2014)',
   ],
   'heaven' => [
-    'brit-helios'     => 'Encyclopaedia Britannica, "Helios"',
     'brit-chariot'    => 'Encyclopaedia Britannica, "Chariot"',
     'brit-maglev'     => 'Encyclopaedia Britannica, "Maglev"',
-    'brit-saraswati'  => 'Encyclopaedia Britannica, "Sarasvati"',
-    'boston-swan'     => 'Swan Boats of Boston, "History of the Swan Boats"',
     'brit-donkey'     => 'Encyclopaedia Britannica, "Donkey"',
     'cnn-biblioburro' => 'CNN Heroes, Luis Soriano and the Biblioburro (2010)',
   ],
@@ -555,69 +552,22 @@ $VEHICLES = [
 ],
 ],
 'heaven' => [
-'golden-chariot' => [
-  'name' => 'Golden chariot', 'latin' => '2 Kings 2:11', 'cat' => 'vehicles', 'src' => 'vehicle/car_1.png',
-  'summary' => 'A small golden chariot pulled by a white horse. In the Bible, the prophet Elijah is carried up to heaven in a chariot of fire.',
-  'facts' => ['Inspired by' => '2 Kings 2:11', 'Greek myth' => 'Helios drives the sun across the sky in a chariot', 'Real chariots' => 'First made about 4,000 years ago', 'Pulled by' => 'One white horse'],
-  'sections' => [
-    ['The chariot', HEAVEN_IMAGINE, [
-      'No one in this city is ever in a hurry, so the golden chariot is for slow, happy rides, not races.',
-    ]],
-    ['A chariot of fire', HEAVEN_BELIEF, [
-      'The Second Book of Kings tells how the prophet Elijah was taken up to heaven: "Suddenly a chariot of fire and horses of fire appeared… and Elijah went up to heaven in a whirlwind" (2 Kings 2:11). In Greek myths, the sun god Helios drives a golden chariot across the sky every day.',
-    ]],
-    ['Real chariots', HEAVEN_REAL, [
-      'Light chariots with spoked wheels were first made about 4,000 years ago and spread across Asia, Egypt and Europe. You can find out how Egyptians and Romans used them in the Ancient Egypt and Ancient Rome worlds of this atlas.',
-    ]],
-    ['Why the sun crosses the sky', HEAVEN_REAL, [
-      'Stories of a sun god in a chariot were a way to explain why the sun moves across the sky. Today we know that the sun stays put: Earth spins around once a day, so the sun seems to rise in the east, cross the sky and set in the west.',
-    ]],
-  ],
-  'art' => 'The illustration shows a small golden chariot with blue seats, pulled by a white horse.',
-  'look' => ['Find the white horse.', 'What color are the seats?'],
-  'questions' => ['Why do you think stories show people being carried up to heaven?', 'How did chariots change travel long ago?', 'What would you like to ride in an imagined city?'],
-  'words' => ['Chariot' => 'A light two-wheeled vehicle pulled by horses.', 'Whirlwind' => 'A column of air spinning very fast.', 'Prophet' => 'A person believed to speak for God.'],
-  'sources' => ['bible-kings', 'brit-helios', 'brit-chariot', 'brit-earth'],
-  'related' => ['cloud-carriage', 'victors-arena', 'pearl-gate'],
-],
-'cloud-carriage' => [
-  'name' => 'Cloud carriage', 'latin' => 'Psalm 104:3', 'cat' => 'vehicles', 'src' => 'vehicle/car_2.png',
-  'summary' => 'A little white carriage with gold trim that floats on a puff of cloud instead of wheels.',
-  'facts' => ['Inspired by' => 'Psalm 104:3', 'The words' => '"He makes the clouds his chariot"', 'Real floating trains' => 'Maglev trains, lifted by magnets', 'Fastest maglev' => '603 kilometers an hour, in a test in Japan in 2015'],
-  'sections' => [
-    ['The carriage', HEAVEN_IMAGINE, [
-      'With no wheels, the carriage never bumps or rattles. It glides wherever its passengers want to go.',
-    ]],
-    ['Clouds as chariots', HEAVEN_BELIEF, [
-      'A psalm in the Bible says that God "makes the clouds his chariot and rides on the wings of the wind" (Psalm 104:3). The Book of Acts tells how Jesus was taken up into heaven "and a cloud hid him from their sight" (Acts 1:9).',
-    ]],
-    ['Floating for real', HEAVEN_REAL, [
-      'Maglev trains really do float: powerful magnets lift them about a centimeter above the track and push them along, so there are no wheels to rub. A maglev line has carried passengers in Shanghai since 2004, and in 2015 a test train in Japan reached 603 kilometers an hour.',
-    ]],
-    ['How heavy is a cloud?', HEAVEN_REAL, [
-      'Clouds look light as feathers, but they are made of billions of tiny water droplets. Scientists at the US Geological Survey estimate that one ordinary puffy cloud can hold about 500 tonnes of water, spread through a huge space of air.',
-    ]],
-  ],
-  'art' => 'The illustration shows a little white carriage with gold trim and blue seats, floating on a puff of cloud.',
-  'look' => ['Find the cloud under the carriage.', 'Where would passengers sit?'],
-  'questions' => ['What would be good about a vehicle with no wheels?', 'How can magnets lift a whole train?', 'How do people travel without cars where you live?'],
-  'words' => ['Maglev' => 'Short for magnetic levitation: floating on magnets.', 'Carriage' => 'A vehicle for carrying people.', 'Friction' => 'The force that slows things rubbing together.'],
-  'sources' => ['bible-psalms', 'bible-acts', 'brit-maglev', 'usgs-cloud'],
-  'related' => ['golden-chariot', 'cloud-island', 'sky-bridge'],
-],
+// The four vehicles are parts of the story of Jesus too (see build/worlds/heaven.php), in its chapters.
 'swan-boat' => [
-  'name' => 'Swan boat', 'cat' => 'vehicles', 'src' => 'vehicle/car_3.png',
-  'summary' => 'A swan-shaped golden boat with white wings, gliding just above the ground.',
-  'facts' => ['Imagined as' => 'A boat that glides over land', 'In Hindu tradition' => 'The goddess Saraswati rides a swan', 'Real swan boats' => 'Boston Public Garden, since 1877', 'Real swans' => 'Among the heaviest flying birds'],
+  'name' => 'Swan boat', 'latin' => 'Luke 5:1–11', 'cat' => 'begins', 'src' => 'vehicle/car_3.png', 'part' => [13, 'Fishers of people'],
+  'summary' => 'A swan-shaped golden boat with white wings. From a fishing boat on the Sea of Galilee, Jesus called his first followers.',
+  'facts' => ['Read it' => 'Luke 5:1–11 and Mark 4:35–41', 'Where' => 'The Sea of Galilee', 'Key words' => '"From now on you will catch men"', 'Real world' => 'A fishing boat from Jesus\'s time, found in 1986'],
   'sections' => [
+    ['Fishers of people', HEAVEN_GOSPEL, [
+      'One day, crowds pressed around Jesus on the shore of the Sea of Galilee. He got into a boat belonging to a fisherman named Simon, later called Peter, and taught the people from the water. Then he said: "Put out into deep water and let down your nets for a catch." Simon answered: "Master, we have worked hard all night without catching anything. But because You say so, I will let down the nets" (Luke 5:4–5).',
+      'They caught so many fish that their nets began to tear and two boats began to sink. "Do not be afraid," Jesus told Simon. "From now on you will catch men." So Simon, James and John "left everything and followed Him" (Luke 5:10–11).',
+      'Later, on the same lake, a storm almost swamped their boat while Jesus slept. He got up and told the wind and the waves, "Be still!", and it was perfectly calm. "Who is this," they asked, "that even the wind and the sea obey Him?" (Mark 4:39–41).',
+    ]],
     ['The boat', HEAVEN_IMAGINE, [
       'The swan boat glides just above the streets and gardens, and over the pools, carrying people wherever they want to go.',
     ]],
-    ['The swan of wisdom', HEAVEN_BELIEF, [
-      'In Hindu tradition, Saraswati, the goddess of knowledge, music and the arts, is often shown riding a swan or goose called a hamsa. The hamsa stands for wisdom and grace, because it was said to be able to separate milk from water: to tell what is good from what is not.',
-    ]],
-    ['Real swan boats', HEAVEN_REAL, [
-      'Since 1877, the Swan Boats of Boston\'s Public Garden have carried visitors around a pond on pedal-powered boats decorated with large swans. Real swans are among the heaviest birds that can fly, and they need a long run across the water to take off.',
+    ['A boat from Jesus\'s time', HEAVEN_REAL, [
+      'In 1986, during a drought, two brothers spotted the outline of an old wooden boat in the mud of the Sea of Galilee. Archaeologists dated it to around the time of Jesus. About 8 meters long, it could have carried a crew of fishermen, and it is now shown in a museum on the lake\'s shore.',
     ]],
     ['Swan families', HEAVEN_REAL, [
       'Many swans stay with the same partner for years, often for life, and both parents look after their young, called cygnets. Young cygnets sometimes ride on a parent\'s back, tucked between its wings.',
@@ -625,21 +575,23 @@ $VEHICLES = [
   ],
   'art' => 'The illustration shows a golden boat shaped like a swan, with white wings and a blue seat.',
   'look' => ['Find the swan\'s head.', 'Where is the seat?'],
-  'questions' => ['Why might a swan stand for grace and wisdom?', 'Why do heavy birds need a long run to take off?', 'What would you like to ride on a slow, quiet trip?'],
-  'words' => ['Hamsa' => 'A swan or goose in Hindu tradition, a symbol of wisdom.', 'Grace' => 'Smooth, beautiful movement; also kindness.', 'Pedal' => 'A lever pushed with the foot.'],
-  'sources' => ['brit-saraswati', 'boston-swan', 'brit-swan'],
-  'related' => ['spring-pool', 'cloud-carriage', 'harp-workshop'],
+  'questions' => ['Why do you think the fishermen left everything to follow Jesus?', 'What do you think "you will catch men" means?', 'What did the storm show the disciples about Jesus?'],
+  'words' => ['Fisherman' => 'Someone who catches fish for a living.', 'Net' => 'A mesh of knotted string for catching fish.', 'Cygnet' => 'A young swan.'],
+  'sources' => ['bible-luke', 'bible-mark', 'wachsmann', 'brit-swan'],
+  'related' => ['scroll-library', 'lantern-circle', 'spring-pool'],
 ],
 'fruit-donkey' => [
-  'name' => 'Donkey with fruit', 'latin' => 'Matthew 21:7–9', 'cat' => 'vehicles', 'src' => 'vehicle/car_4.png',
-  'summary' => 'A white donkey carrying baskets of fruit and flowers, led by a smiling boy.',
-  'facts' => ['Inspired by' => 'Matthew 21:7–9 and Zechariah 9:9', 'The story' => 'Jesus rides a donkey into Jerusalem', 'Donkeys tamed' => 'In Africa, about 7,000 years ago', 'Real world' => 'A donkey library in Colombia'],
+  'name' => 'Donkey with fruit', 'latin' => 'Matthew 21:1–11', 'cat' => 'week', 'src' => 'vehicle/car_4.png', 'part' => [23, 'The King on a donkey'],
+  'summary' => 'A white donkey carrying baskets of fruit and flowers. Jesus rode into Jerusalem on a donkey while crowds waved palm branches and shouted for joy.',
+  'facts' => ['Read it' => 'Matthew 21:1–11 and John 12:12–18', 'Where' => 'The road into Jerusalem', 'Key words' => '"Hosanna to the Son of David!"', 'Real world' => 'A donkey library in Colombia'],
   'sections' => [
+    ['The King on a donkey', HEAVEN_GOSPEL, [
+      'News about Jesus had spread everywhere. He had raised his friend Lazarus from the dead, telling Lazarus\'s sister Martha: "I am the resurrection and the life. Whoever believes in Me will live, even though he dies" (John 11:25).',
+      'At Passover time, Jesus came to Jerusalem riding a young donkey, just as the prophet Zechariah had written: "See, your King comes to you, gentle and riding on a donkey" (Matthew 21:5). A huge crowd spread their cloaks on the road, and others cut branches from the trees. They took palm branches and went out to meet him (John 12:13), shouting: "Hosanna to the Son of David! Blessed is He who comes in the name of the Lord! Hosanna in the highest!" (Matthew 21:9).',
+      'Christians remember this day on Palm Sunday, a week before Easter.',
+    ]],
     ['The donkey', HEAVEN_IMAGINE, [
       'The donkey visits every street, and the fruit and flowers in its baskets are free for anyone who wants them.',
-    ]],
-    ['A sign of peace', HEAVEN_BELIEF, [
-      'The Gospels tell how Jesus rode into Jerusalem on a donkey while crowds spread branches on the road and shouted for joy (Matthew 21:7–9). Riding a donkey instead of a war horse was a sign of peace and humility, as the prophet Zechariah had described (Zechariah 9:9). Christians remember the day on Palm Sunday.',
     ]],
     ['Donkeys in our world', HEAVEN_REAL, [
       'Donkeys were tamed in Africa about 7,000 years ago and still carry loads in many countries. In Colombia, a teacher named Luis Soriano has for years carried books to children in faraway villages on two donkeys, Alfa and Beto, as his "Biblioburro", or donkey library.',
@@ -650,10 +602,66 @@ $VEHICLES = [
   ],
   'art' => 'The illustration shows a white donkey carrying baskets of fruit and flowers, led by a smiling boy in a white tunic.',
   'look' => ['Find the baskets of fruit.', 'Who is leading the donkey?'],
-  'questions' => ['Why might riding a donkey be a sign of peace?', 'How could a donkey library help children?', 'What could you bring to people who live far away?'],
-  'words' => ['Humility' => 'Not thinking of yourself as more important than others.', 'Palm Sunday' => 'The Sunday before Easter, remembering Jesus\'s ride into Jerusalem.', 'Library' => 'A collection of books that people can borrow.'],
-  'sources' => ['bible-matthew', 'bible-zechariah', 'brit-donkey', 'cnn-biblioburro', 'iucn-ass'],
-  'related' => ['sharing-pavilion', 'tree-of-life', 'welcome-hall'],
+  'questions' => ['Why do you think Jesus rode a donkey instead of a war horse?', 'Why did the crowd shout "Hosanna"?', 'How could a donkey library help children?'],
+  'words' => ['Hosanna' => 'A Hebrew word meaning "Save us!", shouted as praise.', 'Palm Sunday' => 'The Sunday before Easter, remembering Jesus\'s ride into Jerusalem.', 'Humble' => 'Not proud; not thinking you are better than others.'],
+  'sources' => ['bible-matthew', 'bible-john', 'bible-zechariah', 'brit-donkey', 'cnn-biblioburro', 'iucn-ass'],
+  'related' => ['hall-of-treasures', 'banquet-hall', 'welcome-hall'],
+],
+'golden-chariot' => [
+  'name' => 'Golden chariot', 'latin' => 'Acts 8:26–39', 'cat' => 'news', 'src' => 'vehicle/car_1.png', 'part' => [32, 'Good news on the road'],
+  'summary' => 'A small golden chariot pulled by a white horse. An official from Africa, reading the Bible in his chariot, heard the good news about Jesus.',
+  'facts' => ['Read it' => 'Acts 2 and Acts 8:26–39', 'Where' => 'The desert road from Jerusalem to Gaza', 'Key words' => '"He was led like a sheep to the slaughter"', 'Real world' => 'The ancient kingdom of Kush, south of Egypt'],
+  'sections' => [
+    ['Good news on the road', HEAVEN_GOSPEL, [
+      'Fifty days after Easter, at the feast of Pentecost, the Holy Spirit came on Jesus\'s followers with "a sound like a mighty rushing wind" and what looked like flames of fire resting on each of them (Acts 2:2–3). Peter told the crowds about Jesus: "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins" (Acts 2:38). About three thousand people believed that day.',
+      'Soon the good news spread beyond Jerusalem. An angel sent Philip, one of Jesus\'s followers, to a desert road. There an official of the queen of the Ethiopians was riding home in his chariot, reading the prophet Isaiah: "He was led like a sheep to the slaughter, and as a lamb before the shearer is silent, so He did not open His mouth" (Acts 8:32).',
+      'The official asked who the prophet was talking about. "Then Philip began with this very Scripture and told him the good news about Jesus" (Acts 8:35). When they came to some water, the official was baptized, and he "went on his way rejoicing" (Acts 8:39).',
+    ]],
+    ['Chariots of fire', HEAVEN_BIBLE, [
+      'Long before, the prophet Elijah was taken up to heaven when "a chariot of fire with horses of fire appeared… and Elijah went up into heaven in a whirlwind" (2 Kings 2:11).',
+    ]],
+    ['The chariot', HEAVEN_IMAGINE, [
+      'No one in this city is ever in a hurry, so the golden chariot is for slow, happy rides, with room for a friend to sit beside you and talk.',
+    ]],
+    ['The kingdom of Kush', HEAVEN_REAL, [
+      'The "Ethiopians" of the Bible came from the kingdom of Kush, along the Nile south of Egypt, in what is now Sudan. Kush was often ruled by powerful queens with the title kandake, or Candace. Its city of Meroë is famous for about 200 small, steep pyramids.',
+    ]],
+    ['Real chariots', HEAVEN_REAL, [
+      'Light chariots with spoked wheels were first made about 4,000 years ago and spread across Asia, Egypt and Europe. You can find out how Egyptians and Romans used them in the Ancient Egypt and Ancient Rome worlds of this atlas.',
+    ]],
+  ],
+  'art' => 'The illustration shows a small golden chariot with blue seats, pulled by a white horse.',
+  'look' => ['Find the white horse.', 'Where could a friend sit beside the driver?'],
+  'questions' => ['What was the official reading when Philip met him?', 'Why do you think he wanted to be baptized right away?', 'Who could you tell some good news to?'],
+  'words' => ['Pentecost' => 'A feast fifty days after Passover, when the Holy Spirit came on Jesus\'s followers.', 'Official' => 'A person with an important job in a government.', 'Chariot' => 'A light two-wheeled vehicle pulled by horses.'],
+  'sources' => ['bible-acts', 'bible-kings', 'brit-kush', 'brit-chariot'],
+  'related' => ['cloud-island', 'harp-workshop', 'fruit-donkey'],
+],
+'cloud-carriage' => [
+  'name' => 'Cloud carriage', 'latin' => 'Acts 1:10–11', 'cat' => 'new', 'src' => 'vehicle/car_2.png', 'part' => [34, 'Coming with the clouds'],
+  'summary' => 'A little white carriage that floats on a puff of cloud. The Bible promises that Jesus will come back, coming with the clouds.',
+  'facts' => ['Read it' => 'Acts 1:10–11, 1 Thessalonians 4:16–17 and Revelation 1:7', 'Where' => 'The Mount of Olives, and the whole world', 'Key words' => '"This same Jesus… will come back"', 'Real world' => 'Maglev trains, lifted by magnets'],
+  'sections' => [
+    ['Coming with the clouds', HEAVEN_GOSPEL, [
+      'As Jesus\'s friends stood staring into the sky where he had gone, two men dressed in white stood beside them. "Men of Galilee," they said, "why do you stand here looking into the sky? This same Jesus, who has been taken from you into heaven, will come back in the same way you have seen Him go into heaven" (Acts 1:11).',
+      'The Bible promises: "Behold, He is coming with the clouds, and every eye will see Him" (Revelation 1:7). "The Lord Himself will descend from heaven… with the trumpet of God," and his people will meet him, "and so we will always be with the Lord" (1 Thessalonians 4:16–17). No one knows the day or the hour (Matthew 24:36), so Jesus told his followers to be ready.',
+    ]],
+    ['Clouds as chariots', HEAVEN_BIBLE, [
+      'A psalm praises God for "making the clouds His chariot, walking on the wings of the wind" (Psalm 104:3).',
+    ]],
+    ['The carriage', HEAVEN_IMAGINE, [
+      'With no wheels, the carriage never bumps or rattles. It glides wherever its passengers want to go.',
+    ]],
+    ['Floating for real', HEAVEN_REAL, [
+      'Maglev trains really do float: powerful magnets lift them about a centimeter above the track and push them along, so there are no wheels to rub. A maglev line has carried passengers in Shanghai since 2004, and in 2015 a test train in Japan reached 603 kilometers an hour.',
+    ]],
+  ],
+  'art' => 'The illustration shows a little white carriage with gold trim and blue seats, floating on a puff of cloud.',
+  'look' => ['Find the cloud under the carriage.', 'Where would passengers sit?'],
+  'questions' => ['What did the two men in white promise?', 'Why do you think Jesus told his followers to be ready?', 'How can magnets lift a whole train?'],
+  'words' => ['Maglev' => 'Short for magnetic levitation: floating on magnets.', 'Carriage' => 'A vehicle for carrying people.', 'Promise' => 'Saying you will certainly do something.'],
+  'sources' => ['bible-acts', 'bible-rev', 'bible-1thess', 'bible-matthew', 'bible-psalms', 'brit-maglev'],
+  'related' => ['cloud-island', 'harp-workshop', 'pearl-gate'],
 ],
 ],
 ];

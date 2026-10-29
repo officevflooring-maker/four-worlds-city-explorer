@@ -5,6 +5,8 @@
 // Egypt set (tools/assets.txt); two pictures (the boats) are not on the map but have pages.
 
 $EGYPT_SOURCES = [
+  'bible-genesis' => 'The Bible, Genesis',
+  'bible-exodus'  => 'The Bible, Exodus',
   'brit-egypt'    => 'Encyclopaedia Britannica, "Ancient Egypt"',
   'brit-giza'     => 'Encyclopaedia Britannica, "Pyramids of Giza"',
   'brit-khufu'    => 'Encyclopaedia Britannica, "Khufu"',
@@ -321,7 +323,7 @@ $EGYPT = [
 
 'house-of-life' => [
   'name' => 'House of Life', 'latin' => 'per ankh', 'cat' => 'learn', 'src' => 'art/knowledge_2.png',
-  'summary' => 'A center of learning beside a temple, where priests and scribes copied sacred texts and studied medicine, the stars and the calendar.',
+  'summary' => 'A center of learning where scribes copied books and studied medicine, the stars and the calendar.',
   'facts' => ['Egyptian name' => 'Per ankh, "house of life"', 'First mentioned' => 'About 2000 BC', 'Studied' => 'Writing, medicine, the calendar and temple rituals', 'Newest find' => 'At the Ramesseum, Luxor, announced in 2025'],
   'sections' => [
     ['Where knowledge lived', [
@@ -395,12 +397,15 @@ $EGYPT = [
     ['Counting every sack', [
       'A wooden model found in the tomb of an official named Meketre, made around 1980 BC, shows a granary at work: workers carry sacks up a stair and pour the grain into bins, while scribes sit by the door writing down every sack. The Bible tells a famous story of grain stored in Egypt: Joseph, who rose to be an official, filled the granaries during seven good years so that people could eat through seven years of famine.',
     ]],
+    ['Joseph\'s grain stores', ['tag' => 'bible'], [
+      'The Bible tells how Joseph, a young Hebrew who rose to serve the pharaoh, prepared Egypt for a famine: "During those seven years, Joseph collected all the excess food in the land of Egypt and stored it in the cities" (Genesis 41:48). When the famine came, "every nation came to Joseph in Egypt to buy grain" (Genesis 41:57).',
+    ]],
   ],
   'art' => 'The illustration shows round domed granaries with ladders and sacks stacked in front, much like the granaries in Egyptian models and paintings.',
   'look' => ['Find the ladders. Why are they needed?', 'Count the domed stores.'],
   'questions' => ['Why is it wise to store food from good years?', 'What could spoil stored grain, and how would you stop it?', 'How do towns today make sure there is enough food?'],
   'words' => ['Granary' => 'A building for storing grain.', 'Harvest' => 'The time when crops are gathered.', 'Famine' => 'A time when there is not enough food.'],
-  'sources' => ['met-meketre', 'brit-nile', 'un-thebes', 'shaw'],
+  'sources' => ['met-meketre', 'brit-nile', 'un-thebes', 'shaw', 'bible-genesis'],
   'related' => ['royal-treasury', 'market', 'palm-grove'],
 ],
 
@@ -557,12 +562,15 @@ $EGYPT = [
     ['Across an ocean', [
       'How far could a reed boat go? In 1970 the Norwegian explorer Thor Heyerdahl and his crew sailed Ra II, a boat made of bundles of papyrus, across the Atlantic Ocean from Morocco to Barbados in 57 days. It was built by boatbuilders from Lake Titicaca in South America, where people still make boats of reeds.',
     ]],
+    ['A basket among the reeds', ['tag' => 'bible'], [
+      'In the Bible, when the pharaoh ordered that Hebrew baby boys be thrown into the Nile, the mother of Moses hid her son. "She got him a papyrus basket and coated it with tar and pitch. Then she placed the child in the basket and set it among the reeds along the bank of the Nile" (Exodus 2:3). The pharaoh\'s daughter found him and raised him as her own son.',
+    ]],
   ],
   'art' => 'The illustration shows a reed boat with curled-up ends and a fisherman holding a net, very like the boats in Egyptian tomb paintings.',
   'look' => ['Find the curled-up ends of the boat.', 'What is the fisherman holding?'],
   'questions' => ['Why might reeds float so well?', 'What can people make from plants that grow near water?', 'Where does the paper you use come from?'],
   'words' => ['Papyrus' => 'A tall marsh reed, and the writing material made from it.', 'Marsh' => 'Low, wet land where reeds grow.', 'Net' => 'A mesh of knotted string for catching fish.'],
-  'sources' => ['brit-papyrus', 'bm-nebamun', 'ra2', 'shaw'],
+  'sources' => ['brit-papyrus', 'bm-nebamun', 'ra2', 'shaw', 'bible-exodus'],
   'related' => ['sailing-boat', 'scribe-school', 'lotus-pool'],
 ],
 
@@ -671,12 +679,15 @@ $EGYPT = [
     ['Inside a small house', [
       'Ordinary houses had a few rooms in a row: a front room, a living room, small rooms for sleeping and storage, and a kitchen at the back, often open to the sky. A stair or ladder led to the flat roof. Families had stools, chests, baskets and pots; many people slept on mats.',
     ]],
+    ['Bricks without straw', ['tag' => 'bible'], [
+      'The Book of Exodus says that the Israelites were forced to work as slaves in Egypt, making bricks. When Moses asked the pharaoh to let them go, he made their work even harder: "You shall no longer supply the people with straw for making bricks. They must go and gather their own straw" (Exodus 5:7).',
+    ]],
   ],
   'art' => 'The illustration shows a small whitewashed mud-brick house with a flat roof, a striped awning over the door and clay pots by the wall.',
   'look' => ['Find the clay pots.', 'Look at the roof. Could you walk on it?'],
   'questions' => ['Why is mud brick a good building material in a hot, dry land?', 'What would happen to a mud-brick house in heavy rain?', 'What are the houses near you made of?'],
   'words' => ['Mud brick' => 'A brick made of mud and straw, dried in the sun.', 'Mold' => 'A frame that gives something its shape.', 'Whitewash' => 'A white paint made from lime.'],
-  'sources' => ['rekhmire', 'whe-deir', 'kemp', 'shaw'],
+  'sources' => ['rekhmire', 'whe-deir', 'kemp', 'shaw', 'bible-exodus'],
   'related' => ['village-house', 'building-materials', 'family-house'],
 ],
 

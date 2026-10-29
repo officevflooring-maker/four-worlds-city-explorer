@@ -2,7 +2,7 @@
 // Shared facts about each world, used on the home page cards, navigation and world pages.
 // Each world's building pages live in build/worlds/{world}.php.
 // Ancient Egypt and Rome are historical settings; the modern town, elven world and future are imagined or
-// speculative, and the Heavenly City is imagined, inspired by what many faiths believe about heaven.
+// speculative, and the Heavenly City is imagined, inspired by the Bible, and tells the story of Jesus.
 
 $WORLDS = [
   'egypt' => [
@@ -11,8 +11,8 @@ $WORLDS = [
     'card' => 'pharaohs-palace', 'ground' => 'ground-grass',
   ],
   'heaven' => [
-    'name' => 'Heavenly City', 'short' => 'Heavenly', 'type' => 'Imagined setting, inspired by belief',
-    'lead' => 'An imagined city of goodness and happiness. Each of 31 places pairs a picture of heaven from many faiths with something real.',
+    'name' => 'Heavenly City', 'short' => 'Heavenly', 'type' => 'Imagined setting, inspired by the Bible',
+    'lead' => 'An imagined city of gold and light. Explore its 35 places to follow the story of Jesus, part by part, as the Bible tells it.',
     'card' => 'palace-of-light', 'ground' => 'ground-grass',
   ],
   'roman' => [
@@ -74,7 +74,7 @@ $COMPARE = [
   ]],
   ['nature', 'Room for nature', 'Where do plants, animals and open land fit in the city?', [
     'egypt'  => ['date-palm', 'Date palm', 'Palms gave food, shade, rope and roof beams. Which plant gives your town the most?', 'palm-grove'],
-    'heaven' => ['golden-tree', 'Golden tree', 'Many pictures of paradise are gardens. Why do you think people imagine perfect places full of trees and water?', 'garden-of-light'],
+    'heaven' => ['golden-tree', 'Golden tree', 'The Bible begins in a garden and ends in a city with a river and the tree of life. Why do trees and water make a place feel good?', 'tree-of-life'],
     'roman'  => ['olive-tree', 'Olive tree', 'Olive trees give shade and food. What else could a city tree provide?', 'olive-grove'],
     'modern' => ['community-garden', 'Community garden', 'Gardens take up space that could hold housing. How would you balance the two?'],
     'elven'  => ['flower-meadow', 'Flower meadow', 'Flowers feed pollinators. Could your street have a meadow?'],

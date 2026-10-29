@@ -17,7 +17,7 @@ $NEEDS = [
   'health' => ['Health', ['health', 'fitness'], []],
   'learn'  => ['Learning', ['schools', 'books', 'science'], ['modern/cultural-center']],
   'lead'   => ['Leaders', ['government'], ['roman/forum', 'roman/treasury', 'future/mission-control', 'egypt/pharaohs-palace', 'heaven/palace-of-light']],
-  'meet'   => ['Places to meet', ['squares', 'shows', 'worship'], ['modern/community-center', 'modern/cultural-center', 'elven/great-tree-hall', 'egypt/feast-hall', 'heaven/banquet-hall', 'heaven/welcome-hall', 'heaven/rainbow-pavilion']],
+  'meet'   => ['Places to meet', ['squares', 'shows', 'temples', 'prayer'], ['modern/community-center', 'modern/cultural-center', 'elven/great-tree-hall', 'egypt/feast-hall', 'heaven/banquet-hall', 'heaven/welcome-hall', 'heaven/rainbow-pavilion']],
   'work'   => ['Work and shops', ['shops', 'making', 'storage'], ['modern/office-building', 'modern/skyscraper']],
   'safety' => ['Safety', ['safety'], []],
   'nature' => ['Nature', ['nature'], ['roman/olive-grove', 'elven/flower-meadow', 'modern/community-garden', 'future/greenhouse-dome', 'egypt/palm-grove', 'heaven/tree-of-life', 'heaven/lily-garden']],
@@ -33,7 +33,7 @@ $GROUP_JOBS = [
   'government' => 'are where leaders meet and make decisions', 'books' => 'keep books and records',
   'schools' => 'are where children learn', 'fitness' => 'help people stay fit', 'shops' => 'supply things people need',
   'storage' => 'store goods', 'food' => 'grow plants', 'cranes' => 'lift heavy loads on building sites',
-  'materials' => 'supply materials for building', 'worship' => 'are places of worship', 'palaces' => 'are homes for rulers',
+  'materials' => 'supply materials for building', 'temples' => 'were temples in the ancient world', 'prayer' => 'are places to pray', 'palaces' => 'are homes for rulers',
   'safety' => 'help keep people safe', 'science' => 'help people study the world', 'health' => 'look after people\'s health',
   'nature' => 'make room for nature',
 ];
@@ -78,6 +78,7 @@ foreach (WORLD_ORDER as $w) {
   $W = $WORLDS[$w];
   $SEARCH[] = [$W['name'], "/worlds/$w/", 'World', $w, thumb($w, $W['card']), $W['lead'], $W['short'] . ' ' . $W['type'] . ' map'];
   $SEARCH[] = [$PEOPLE_INTRO[$w][0], "/worlds/$w/people/", 'People', $w, thumb($w, 'people-1'), 'Meet the people who live and work in the city.', 'people jobs who lives'];
+  if (!empty($WORLD_DATA[$w]['story'])) { $S = $WORLD_DATA[$w]['story']; $SEARCH[] = [$S['title'], "/worlds/$w/story/", 'Story', $w, thumb($w, array_key_first($WORLD_DATA[$w]['pages'])), $S['lead'], 'gospel bible jesus story parts']; }
   foreach ($WORLD_DATA[$w]['pages'] as $slug => $r) {
     $kw = $WORLD_DATA[$w]['cats'][$r['cat']][0] . ' ' . ($r['latin'] ?? '') . ' ' . implode(' ', array_keys($r['words']));
     $SEARCH[] = [$r['name'], "/worlds/$w/$slug/", empty($r['vehicle']) ? 'Place' : 'Vehicle', $w, thumb($w, $slug), $r['summary'], $kw];

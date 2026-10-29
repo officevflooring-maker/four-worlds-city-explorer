@@ -4,10 +4,12 @@
 
 const TEACH_GROUPS = [
   ['Projects and lessons', ['design-a-city-project', 'build-a-roman-aqueduct', 'design-a-mars-colony-project', 'roman-engineering-lesson', 'ancient-rome-vs-modern-cities', 'how-local-government-works']],
+  ['Ancient Egypt explained', ['how-were-the-pyramids-built', 'daily-life-in-ancient-egypt']],
   ['Ancient Rome explained', ['daily-life-in-ancient-rome', 'how-did-roman-aqueducts-work']],
   ['Cities today', ['how-do-cities-get-clean-water', 'what-does-a-city-need', 'urban-planning-for-students', 'explore-your-town-scavenger-hunt']],
   ['Sustainability and nature', ['sustainable-city-project-ideas', 'biomimicry-examples-for-students', 'solarpunk-explained']],
   ['Space and the future', ['how-could-humans-live-on-mars', 'life-on-the-space-station']],
+  ['The story of Jesus', ['story-of-jesus-bible-lesson']],
   ['Creative writing and classroom tools', ['fantasy-city-worldbuilding', 'discussion-questions-what-makes-a-good-city', 'free-images-for-classroom']],
 ];
 

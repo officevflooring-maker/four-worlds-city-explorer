@@ -233,9 +233,9 @@
             "desc": "A sample building using mycelium-based bricks at the New York Botanical Garden, September 2024. See en:Mycelium-based materials. According to plaque, the fungal bricks were created by the company en:Ecovative Design."
         }
     ],
-    "crystal-fountain": [
+    "wetland-fountain": [
         {
-            "img": "crystal-fountain-1",
+            "img": "wetland-fountain-1",
             "file": "File:Arcata Marsh.JPG",
             "search": "Arcata Marsh",
             "author": "Monotropa_uniflora (talk) (Uploads)",
@@ -245,7 +245,7 @@
             "desc": "Looking east by southeast across southern end of marsh."
         },
         {
-            "img": "crystal-fountain-2",
+            "img": "wetland-fountain-2",
             "file": "File:Reed bed (subsurface flow constructed wetland) (4206109654).jpg",
             "search": "constructed wetland reed bed",
             "author": "SuSanA Secretariat",
@@ -299,9 +299,9 @@
             "desc": "Water running over rocks inside Spring Creek inside Sharon Woods Metro Park. This photo was taken on a late October evening after being careful to climb down while doing the best not to disturb the environment or hurt myself in the process."
         }
     ],
-    "crystal-waterfall": [
+    "waterfall-tower": [
         {
-            "img": "crystal-waterfall-1",
+            "img": "waterfall-tower-1",
             "file": "File:Karlsruhe, Laufrad einer Pelton-Turbine -- 2013 -- 5251.jpg",
             "search": "Pelton wheel",
             "author": "Dietmar Rabich",
@@ -311,7 +311,7 @@
             "desc": "Runner of a Pelton turbine, Karlsruhe, Baden-Württemberg, Germany"
         },
         {
-            "img": "crystal-waterfall-2",
+            "img": "waterfall-tower-2",
             "file": "File:Roermond, de vistrap bij de ECI-waterkrachtcentrale IMG 3107 2019-12-29 11.09.jpg",
             "search": "fish ladder",
             "author": "Michielverbeek",
@@ -443,9 +443,9 @@
             "desc": "Vertical panorama of the Milky Way during Perseids photographed from Oeschinensee. Here is a step by step guide to do astrophotography. Equipment needed: 1) a tripod (mandatory to avoid camera shake); 2) a good camera; 3) a lense with a low f number such as f/1.4 in order to have as much light as po"
         }
     ],
-    "crystal-tower": [
+    "firefly-tower": [
         {
-            "img": "crystal-tower-1",
+            "img": "firefly-tower-1",
             "file": "File:Mycena nebula 306597.jpg",
             "search": "bioluminescent fungi Mycena",
             "author": "Alan Rockefeller",

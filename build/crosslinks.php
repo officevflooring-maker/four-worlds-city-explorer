@@ -2,7 +2,7 @@
 // Groups of buildings that do the same job in different worlds (all six). Every building page shows the
 // others from its groups under "The same idea in other worlds" (only buildings from other worlds).
 $CROSSLINKS = [
-  'water'      => ['roman/aqueduct', 'roman/public-fountain', 'modern/water-system', 'elven/spring-circle', 'elven/crystal-fountain', 'future/water-recycler', 'future/ice-mine', 'egypt/lotus-pool', 'heaven/fountain-of-life', 'heaven/spring-pool'],
+  'water'      => ['roman/aqueduct', 'roman/public-fountain', 'modern/water-system', 'elven/spring-circle', 'elven/wetland-fountain', 'future/water-recycler', 'future/ice-mine', 'egypt/lotus-pool', 'heaven/fountain-of-life', 'heaven/spring-pool'],
   'flats'      => ['roman/apartment-block', 'modern/apartment-building', 'modern/residential-tower', 'elven/treetop-village', 'future/lunar-base', 'egypt/town-house'],
   'houses'     => ['roman/domus', 'roman/villa', 'modern/single-family-house', 'modern/suburban-house', 'elven/hillside-home', 'elven/timber-house', 'future/inflatable-habitat', 'future/printed-habitat', 'egypt/mud-brick-house', 'egypt/family-house', 'egypt/porch-house', 'egypt/village-house', 'egypt/courtyard-villa', 'egypt/garden-villa', 'egypt/rooftop-house', 'heaven/marble-cottage', 'heaven/garden-villa', 'heaven/house-of-many-rooms'],
   'shows'      => ['roman/amphitheater', 'roman/circus', 'modern/stadium', 'elven/open-air-theater', 'future/centrifuge-arena', 'egypt/chariot-arena', 'heaven/victors-arena'],
@@ -16,17 +16,18 @@ $CROSSLINKS = [
   'food'       => ['roman/farmhouse', 'roman/garden', 'roman/olive-grove', 'modern/community-garden', 'elven/flower-meadow', 'future/indoor-farm', 'future/greenhouse-dome', 'egypt/palm-grove', 'egypt/lotus-garden', 'heaven/lily-garden'],
   'cranes'     => ['roman/crane', 'modern/tower-crane', 'elven/living-crane', 'future/robotic-crane', 'egypt/lifting-lever', 'heaven/light-crane'],
   'materials'  => ['roman/building-materials', 'modern/building-materials', 'elven/building-materials', 'future/building-materials', 'egypt/building-materials', 'heaven/building-materials'],
-  'memory'     => ['roman/triumphal-arch', 'roman/victory-column', 'roman/mausoleum', 'modern/memorial', 'elven/stag-monument', 'future/robot-helpers', 'egypt/pyramid', 'egypt/obelisk', 'egypt/twin-colossi'],
-  'statues'    => ['roman/imperial-statue', 'modern/public-art', 'elven/deer-statue', 'future/telepresence', 'egypt/sphinx', 'egypt/cat-statue', 'heaven/angel-statue', 'heaven/dove-statue'],
-  'worship'    => ['roman/temple', 'roman/pantheon', 'roman/temple-of-vesta', 'modern/place-of-worship', 'egypt/hall-of-columns', 'egypt/temple-gateway', 'egypt/lotus-pavilion', 'heaven/prayer-chapel'],
+  'memory'     => ['roman/triumphal-arch', 'roman/victory-column', 'roman/mausoleum', 'modern/memorial', 'future/robot-helpers', 'egypt/pyramid', 'egypt/obelisk', 'egypt/twin-colossi'],
+  'statues'    => ['roman/imperial-statue', 'modern/public-art', 'future/telepresence', 'egypt/sphinx', 'egypt/cat-statue'],
+  'temples'    => ['roman/temple', 'roman/pantheon', 'roman/temple-of-vesta', 'egypt/hall-of-columns', 'egypt/temple-gateway', 'egypt/lotus-pavilion'],
+  'prayer'     => ['modern/place-of-worship', 'heaven/prayer-chapel'],
   'palaces'    => ['roman/imperial-palace', 'elven/elven-palace', 'egypt/pharaohs-palace', 'heaven/palace-of-light'],
   'safety'     => ['roman/city-walls', 'roman/lighthouse', 'modern/lighthouse', 'modern/fire-lookout', 'future/storm-shelter', 'future/space-weather-station', 'egypt/watchtower', 'heaven/lamp-tower'],
   'travel'     => ['roman/inn', 'modern/streets-crosswalks', 'elven/stag-monument', 'future/rover-track', 'future/launch-pad', 'egypt/sailing-boat', 'egypt/caravan-camp', 'heaven/sky-bridge'],
   'science'    => ['modern/science-center', 'elven/domed-observatory', 'elven/weather-tower', 'future/radio-telescope', 'future/science-lab'],
-  'energy'     => ['elven/crystal-waterfall', 'elven/gathering-circle', 'elven/grand-tree-hall', 'future/power-tower', 'future/oxygen-factory'],
+  'energy'     => ['elven/waterfall-tower', 'elven/gathering-circle', 'elven/grand-tree-hall', 'future/power-tower', 'future/oxygen-factory'],
   'making'     => ['modern/warehouse', 'elven/woodworking-workshop', 'future/fab-shop', 'future/robotics-factory', 'egypt/boat-workshop', 'heaven/harp-workshop'],
   'health'     => ['roman/public-baths', 'modern/health-clinic', 'elven/leafy-cottage', 'future/medical-bay', 'egypt/house-of-life'],
-  'nature'     => ['roman/garden', 'modern/park-pond', 'modern/playground', 'elven/wild-grove', 'elven/canopy-walkway', 'future/tree-pod-habitat', 'egypt/lotus-garden', 'heaven/garden-of-light'],
+  'nature'     => ['roman/garden', 'modern/park-pond', 'modern/playground', 'elven/wild-grove', 'elven/deer-statue', 'elven/canopy-walkway', 'future/tree-pod-habitat', 'egypt/lotus-garden', 'heaven/garden-of-light'],
   'homes-tech' => ['modern/older-home', 'elven/spire-house', 'elven/green-roof-cottage', 'elven/natural-cottage', 'future/habitat-cluster'],
   'time'       => ['modern/clock-tower', 'elven/weather-tower', 'future/comms-relay', 'heaven/bell-tower'],
 ];

@@ -65,6 +65,13 @@ $ELVEN_SOURCES = [
   'fgc-wales'    => 'Future Generations Commissioner for Wales, guidance on the Well-being of Future Generations Act',
   'who-pa'       => 'World Health Organization, "Guidelines on physical activity and sedentary behavior" (2020)',
   'brit-rainforest' => 'Encyclopaedia Britannica, "Tropical rainforest"',
+  'epa-glass'    => 'US Environmental Protection Agency, "Glass: Material-Specific Data"',
+  'bible-genesis' => 'The Bible, Genesis',
+  'bible-psalms' => 'The Bible, Psalms',
+  'bible-matthew' => 'The Bible, Gospel of Matthew',
+  'bible-mark'   => 'The Bible, Gospel of Mark',
+  'bible-john'   => 'The Bible, Gospel of John',
+  'bible-col'    => 'The Bible, Letter to the Colossians',
 ];
 
 $ELVEN_CATEGORIES = [
@@ -76,10 +83,11 @@ $ELVEN_CATEGORIES = [
   'make'    => ['Making and trading', 'Markets, workshops and materials that waste little and borrow ideas from nature.'],
 ];
 
-// Common words for the three kinds of section on these pages.
+// Common words for the kinds of section on these pages. A few pages also have a Bible section about the Creator.
 const ELVEN_IMAGINE = ['tag' => 'imagined'];
 const ELVEN_REAL = ['tag' => 'real'];
 const ELVEN_NEXT = ['tag' => 'speculative'];
+const ELVEN_BIBLE = ['tag' => 'bible'];
 
 $ELVEN = [
 
@@ -95,6 +103,9 @@ $ELVEN = [
     ['Living root bridges', ELVEN_REAL, [
       'In the hills of Meghalaya in north-east India, Khasi and Jaintia communities have for generations guided the aerial roots of rubber fig trees (Ficus elastica) across streams. Over many years the roots thicken and fuse into bridges strong enough to walk on, some with two levels. These "living root bridges" can last for centuries and get stronger as they age. In 2022 they were added to UNESCO\'s tentative list for World Heritage status.',
     ]],
+    ['The Maker of every tree', ELVEN_BIBLE, [
+      'The Bible says that God made the world through his Son, Jesus: "For in Him all things were created, things in heaven and on earth, visible and invisible… All things were created through Him and for Him. He is before all things, and in Him all things hold together" (Colossians 1:16–17).',
+    ]],
     ['Building with trees today', ELVEN_REAL, [
       'Architects and scientists are exploring "Baubotanik", a German word for building with living plants. Young trees are planted in a frame and grafted together so that, as they grow, they become a living structure such as a footbridge or tower. The challenges are time (decades), predicting how trees grow, and keeping them healthy.',
     ]],
@@ -103,7 +114,7 @@ $ELVEN = [
   'look' => ['Find where the building and the tree trunk become one.', 'Notice the roots spreading at the base.'],
   'questions' => ['Would you trust a bridge made of living roots? What would make you feel safe?', 'What are the advantages of a building that grows? What are the problems?', 'Why might it be worth waiting decades for a structure to grow?'],
   'words' => ['Living architecture' => 'Structures made partly from living plants.', 'Grafting' => 'Joining parts of plants so they grow together.', 'Aerial root' => 'A root that grows above the ground.'],
-  'sources' => ['roots', 'ludwig', 'benyus'],
+  'sources' => ['roots', 'ludwig', 'benyus', 'bible-col'],
   'related' => ['grand-tree-hall', 'treetop-village', 'living-crane'],
 ],
 
@@ -128,7 +139,7 @@ $ELVEN = [
   'questions' => ['If a building could breathe like a plant, what would change about cities?', 'Why might scientists copy leaves even though solar panels are more efficient?', 'Would you want algae in the walls of your home?'],
   'words' => ['Photosynthesis' => 'How plants use sunlight to make food from water and carbon dioxide.', 'Algae' => 'Simple plant-like living things that grow in water.', 'Bioreactor' => 'A container where living things are grown to make something useful.'],
   'sources' => ['biq', 'brit-photo', 'nrel'],
-  'related' => ['great-tree-hall', 'crystal-tower', 'leafy-cottage'],
+  'related' => ['great-tree-hall', 'firefly-tower', 'leafy-cottage'],
 ],
 
 'treetop-village' => [
@@ -387,8 +398,8 @@ $ELVEN = [
 ],
 
 // ---------------- Water and energy ----------------
-'crystal-fountain' => [
-  'name' => 'Cleansing fountain', 'latin' => 'constructed wetland', 'cat' => 'water', 'src' => 'art/fountain.png',
+'wetland-fountain' => [
+  'name' => 'Wetland fountain', 'latin' => 'constructed wetland', 'cat' => 'water', 'src' => 'art/fountain.png',
   'summary' => 'An imagined fountain that cleans water as it flows. Real "constructed wetlands" use plants and microbes to purify wastewater.',
   'facts' => ['Imagined as' => 'A fountain that purifies water', 'Real-world idea' => 'Constructed wetlands', 'Real example' => 'Arcata Marsh, California', 'How it works' => 'Plants, microbes, sun and time'],
   'sections' => [
@@ -403,12 +414,12 @@ $ELVEN = [
       'Since the 1980s, the city of Arcata in California has used a series of ponds and marshes to finish cleaning its wastewater. The marshes are also a wildlife sanctuary with walking trails, popular with birdwatchers. Constructed wetlands need more land than a treatment plant, so they suit some places better than others.',
     ]],
   ],
-  'art' => 'This illustration shows a glowing crystal fountain with tiered pools. Here we imagine it as a wetland that cleans water.',
+  'art' => 'This illustration shows a fountain of pale stone with tiered pools, a tall blue glass centerpiece and flowers all around. Here we imagine it as a wetland that cleans water.',
   'look' => ['Follow the water from the top to the pool.', 'Where could reeds and plants grow?'],
   'questions' => ['How could a city make its water system visible, so people value it?', 'Why might a marsh be better than a concrete plant in some places?', 'What lives in a wetland?'],
   'words' => ['Wetland' => 'Land covered with shallow water, like a marsh.', 'Microbe' => 'A living thing too small to see without a microscope.', 'Wastewater' => 'Used water from homes and businesses.'],
   'sources' => ['epa-wetland', 'arcata'],
-  'related' => ['garden-court', 'spring-circle', 'crystal-waterfall'],
+  'related' => ['garden-court', 'spring-circle', 'waterfall-tower'],
 ],
 
 'garden-court' => [
@@ -432,39 +443,42 @@ $ELVEN = [
   'questions' => ['How could gardens collect and clean rainwater?', 'Where does the rain go when it falls on your school?', 'What would a "sponge city" look like?'],
   'words' => ['Rain garden' => 'A planted dip that soaks up rainwater.', 'Permeable' => 'Letting water pass through.', 'Green infrastructure' => 'Using plants and soil to manage water.'],
   'sources' => ['epa-green', 'usgs-imperv'],
-  'related' => ['crystal-fountain', 'green-roof-cottage', 'flower-meadow'],
+  'related' => ['wetland-fountain', 'green-roof-cottage', 'flower-meadow'],
 ],
 
 'spring-circle' => [
   'name' => 'Spring circle', 'latin' => 'watershed protection', 'cat' => 'water', 'src' => 'art/growth_2.png',
-  'summary' => 'An imagined ring of stones guarding a sacred spring. Real cities save billions by protecting the land where their water comes from.',
+  'summary' => 'An imagined ring of tall stones around a clean spring. Real cities save billions by protecting the land where their water comes from.',
   'facts' => ['Imagined as' => 'A protected spring', 'Real-world idea' => 'Protecting watersheds', 'Real example' => 'New York City\'s Catskill and Delaware watersheds', 'Big saving' => 'Avoiding a huge filtration plant'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine a spring guarded by standing stones, where no one may cut trees or dump waste in the hills above, because everyone knows the city\'s water begins here.',
+      'Imagine a spring marked by a ring of tall stones, where no one may cut trees or dump waste in the hills above, because everyone knows the city\'s water begins here.',
     ]],
     ['What is a watershed?', ELVEN_REAL, [
       'A watershed is all the land that drains into a particular river, lake or spring. Rain falling anywhere in a watershed eventually flows to the same place. What happens on that land, such as forests, farms, roads or factories, affects the quality of the water downstream.',
+    ]],
+    ['Springs in the valleys', ELVEN_BIBLE, [
+      'A psalm thanks God for the water that gives life to every creature: "He sends forth springs in the valleys; they flow between the mountains. They give drink to every beast of the field… The birds of the air nest beside the springs" (Psalm 104:10–12).',
     ]],
     ['Paying to protect nature', ELVEN_REAL, [
       'New York City gets most of its drinking water from reservoirs in the Catskill Mountains and Delaware River area, far upstate. Instead of building an enormous filtration plant, the city chose to protect the watershed: buying land, helping farmers prevent pollution, and upgrading local sewage systems. This has let it avoid building a filtration plant that would have cost billions of dollars. Forests and wetlands do much of the cleaning for free.',
     ]],
   ],
-  'art' => 'This illustration shows a ring of tall carved stones around a glowing spring, surrounded by trees and flowers.',
-  'look' => ['Look at the standing stones around the water.', 'What grows around the spring?'],
+  'art' => 'This illustration shows a ring of tall carved stones around a spring, with blue glass lamps, banners, trees and flowers.',
+  'look' => ['Look at the tall stones around the water.', 'What grows around the spring?'],
   'questions' => ['How might a city protect the source of its water?', 'Where does your drinking water come from?', 'Is it cheaper to protect nature or to fix problems later?'],
   'words' => ['Watershed' => 'All the land that drains into one river or lake.', 'Reservoir' => 'A lake used to store water.', 'Source water' => 'Water before it is treated.'],
-  'sources' => ['nyc-water', 'epa-green'],
-  'related' => ['crystal-fountain', 'crystal-waterfall', 'wild-grove'],
+  'sources' => ['nyc-water', 'epa-green', 'bible-psalms'],
+  'related' => ['wetland-fountain', 'waterfall-tower', 'wild-grove'],
 ],
 
-'crystal-waterfall' => [
-  'name' => 'Crystal waterfall', 'latin' => 'micro-hydropower', 'cat' => 'water', 'src' => 'art/growth_3.png',
-  'summary' => 'An imagined glowing waterfall. Real micro-hydro systems turn falling water into electricity for homes and villages.',
+'waterfall-tower' => [
+  'name' => 'Waterfall tower', 'latin' => 'micro-hydropower', 'cat' => 'water', 'src' => 'art/growth_3.png',
+  'summary' => 'An imagined tower with a waterfall pouring down it. Real micro-hydro systems turn falling water into electricity for homes and villages.',
   'facts' => ['Imagined as' => 'A waterfall that lights the city', 'Real-world idea' => 'Small-scale hydropower', 'Needs' => 'Steady flow and a drop in height', 'Works' => 'Day and night, unlike solar'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine a waterfall pouring down a crystal spire, its energy captured to light lanterns all over the elven city, day and night, while the stream below stays healthy for fish.',
+      'Imagine a waterfall pouring down a tall stone tower, its energy captured to light lanterns all over the elven city, day and night, while the stream below stays healthy for fish.',
     ]],
     ['How falling water makes electricity', ELVEN_REAL, [
       'Water falling from a height has energy. In a hydropower system, water is channeled through a pipe to a turbine, a wheel with blades. The rushing water spins the turbine, which turns a generator to make electricity. The more water and the bigger the drop, the more power.',
@@ -474,21 +488,21 @@ $ELVEN = [
       'Large dams can flood valleys and block fish from swimming upstream. Small "run-of-the-river" systems take only part of the stream\'s flow and return it downstream, with less harm. Fish ladders and screens help fish get past. Engineers must leave enough water in the stream for wildlife, especially in dry seasons.',
     ]],
   ],
-  'art' => 'This illustration shows a tall crystal spire with water pouring into a glowing pool. Here we imagine its falling water making power.',
-  'look' => ['Follow the water from the top of the spire to the pool.', 'Where could a turbine be hidden?'],
+  'art' => 'This illustration shows a tall tower of pale stone and blue glass, with water pouring down into a wide pool. Here we imagine its falling water making power.',
+  'look' => ['Follow the water from the top of the tower to the pool.', 'Where could a turbine be hidden?'],
   'questions' => ['What are the good and bad sides of getting energy from rivers?', 'Why might water power work at night when solar does not?', 'How can we share a river between people and fish?'],
   'words' => ['Turbine' => 'A wheel turned by flowing water, wind or steam.', 'Generator' => 'A machine that turns motion into electricity.', 'Run-of-the-river' => 'Hydropower without a big dam.'],
   'sources' => ['doe-hydro', 'brit-hydro'],
-  'related' => ['spring-circle', 'gathering-circle', 'crystal-tower'],
+  'related' => ['spring-circle', 'gathering-circle', 'firefly-tower'],
 ],
 
 'gathering-circle' => [
   'name' => 'Warm gathering circle', 'latin' => 'geothermal energy', 'cat' => 'water', 'src' => 'art/shared_1.png',
-  'summary' => 'An imagined meeting place warmed by a glow from the earth. Real geothermal energy heats most homes in Iceland.',
+  'summary' => 'An imagined meeting place warmed by heat from the earth. Real geothermal energy heats most homes in Iceland.',
   'facts' => ['Imagined as' => 'A circle warmed from below', 'Real-world idea' => 'Geothermal heat', 'Real example' => 'Iceland: about 9 in 10 homes', 'Also' => 'Ground-source heat pumps work almost anywhere'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine a ring of log seats around a glowing heart that never burns wood and never goes out, warmed by heat rising from deep in the earth. On cold nights, the whole village gathers here.',
+      'Imagine a ring of log seats around a warm stone hearth, heated not by burning wood but by hot water piped up from deep in the earth. On cold nights, the whole village gathers here.',
     ]],
     ['Heat from inside the Earth', ELVEN_REAL, [
       'The deep inside of the Earth is very hot, and that heat slowly flows outward. In volcanic places like Iceland, hot water and steam lie close to the surface. Iceland pipes this hot water to homes through district heating networks, and about nine in ten Icelandic homes are heated by geothermal energy. It is also used to warm sidewalks, swimming pools and greenhouses.',
@@ -497,26 +511,29 @@ $ELVEN = [
       'Even where there are no volcanoes, the ground a few meters down stays at a fairly steady temperature all year. A ground-source heat pump circulates fluid through pipes buried in the ground and uses that steady temperature to heat homes in winter and cool them in summer, using much less energy than ordinary heaters.',
     ]],
   ],
-  'art' => 'This illustration shows log benches in a ring around a softly glowing center, surrounded by trees and flowers.',
-  'look' => ['Find the glowing heart of the circle.', 'Count the seats around it.'],
+  'art' => 'This illustration shows log benches in a ring around a lantern in the middle, with lanterns hanging in the trees, fireflies and flowers.',
+  'look' => ['Find the lantern in the middle of the circle.', 'Count the seats around it.'],
   'questions' => ['What makes an outdoor meeting place comfortable for everyone?', 'Why might Iceland be especially good for geothermal energy?', 'Where could your town get clean heat from?'],
   'words' => ['Geothermal' => 'Heat from inside the Earth.', 'District heating' => 'Heating many buildings from one shared source.', 'Heat pump' => 'A machine that moves heat from one place to another.'],
   'sources' => ['iceland', 'brit-geothermal'],
-  'related' => ['hillside-home', 'crystal-waterfall', 'council-terrace'],
+  'related' => ['hillside-home', 'waterfall-tower', 'council-terrace'],
 ],
 
 // ---------------- Wildlife and wild places ----------------
 'flower-meadow' => [
   'name' => 'Pollinator meadow', 'latin' => 'wildflower meadow', 'cat' => 'wild', 'src' => 'art/nt_garden.png',
   'summary' => 'Flowers planted for bees, butterflies and other insects that pollinate the crops we eat.',
-  'facts' => ['Imagined as' => 'A glowing flower garden', 'Real-world idea' => 'Habitat for pollinators', 'Why it matters' => 'Most leading food crops benefit from pollinators', 'Easy to start' => 'Native flowers, no pesticides'],
+  'facts' => ['Imagined as' => 'A flower garden for bees', 'Real-world idea' => 'Habitat for pollinators', 'Why it matters' => 'Most leading food crops benefit from pollinators', 'Easy to start' => 'Native flowers, no pesticides'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine a meadow of glowing flowers that blooms from spring to autumn, humming with bees, where elves gather honey and seeds without ever harming the insects.',
+      'Imagine a meadow of bright flowers that blooms from spring to autumn, humming with bees, where elves gather honey and seeds without ever harming the insects.',
     ]],
     ['Why pollinators matter', ELVEN_REAL, [
       'Many plants need animals, mostly insects, to carry pollen from flower to flower so that they can make fruit and seeds. In 2016, a major international assessment by IPBES found that about three quarters of the world\'s leading kinds of food crops benefit at least partly from animal pollination, including apples, almonds, coffee and chocolate.',
       'Many wild pollinators are declining because of habitat loss, pesticides, disease and climate change.',
+    ]],
+    ['The lilies of the field', ELVEN_BIBLE, [
+      'Jesus pointed to wildflowers to show how God cares for what he has made: "Consider how the lilies of the field grow: They do not labor or spin. Yet I tell you that not even Solomon in all his glory was adorned like one of these" (Matthew 6:28–29).',
     ]],
     ['How to help pollinators', ELVEN_REAL, [], ['list' => [
       'Plant native flowers that bloom at different times of year.',
@@ -526,18 +543,18 @@ $ELVEN = [
       'Link meadows, gardens and verges so insects can move between them.',
     ]]],
   ],
-  'art' => 'This illustration shows a raised bed of large purple and blue flowers with crystal markers.',
+  'art' => 'This illustration shows a raised bed of large purple and blue flowers, with small blue glass markers at the corners.',
   'look' => ['Look at the different flower colors and shapes.', 'Where might a bee land?'],
   'questions' => ['Why might a city plant flowers for pollinators?', 'Could your school or street have a meadow?', 'What foods would we lose without pollinators?'],
   'words' => ['Pollinator' => 'An animal that carries pollen between flowers.', 'Native plant' => 'A plant that grows naturally in an area.', 'Habitat' => 'The home of a living thing.'],
-  'sources' => ['ipbes', 'xerces'],
+  'sources' => ['ipbes', 'xerces', 'bible-matthew'],
   'related' => ['wild-grove', 'garden-court', 'green-roof-cottage'],
 ],
 
 'wild-grove' => [
   'name' => 'Tiny forest', 'latin' => 'urban forest', 'cat' => 'wild', 'src' => 'art/trees.png',
   'summary' => 'A patch of trees left wild in the middle of the city. Real "tiny forests" plant dense native woods in spaces the size of a tennis court.',
-  'facts' => ['Imagined as' => 'A sacred grove in the city', 'Real-world idea' => 'Urban forests and tiny forests', 'Method' => 'The Miyawaki method', 'Benefits' => 'Shade, wildlife, cooler air'],
+  'facts' => ['Imagined as' => 'A wild grove in the city', 'Real-world idea' => 'Urban forests and tiny forests', 'Method' => 'The Miyawaki method', 'Benefits' => 'Shade, wildlife, cooler air'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
       'Imagine a grove of ancient trees and blossoms that no one ever cuts, in the very center of the elven city, where anyone can sit in the shade and listen to birds.',
@@ -561,7 +578,7 @@ $ELVEN = [
 'stag-monument' => [
   'name' => 'Stag crossing', 'latin' => 'wildlife crossing', 'cat' => 'wild', 'src' => 'art/monument.png',
   'summary' => 'An imagined monument to the forest\'s animals. Real wildlife bridges let deer, bears and wolves cross busy roads safely.',
-  'facts' => ['Imagined as' => 'A monument honoring animals', 'Real-world idea' => 'Wildlife crossings', 'Real example' => 'Banff National Park, Canada', 'Result there' => 'Collisions down by more than 80%'],
+  'facts' => ['Imagined as' => 'A monument marking animal paths', 'Real-world idea' => 'Wildlife crossings', 'Real example' => 'Banff National Park, Canada', 'Result there' => 'Collisions down by more than 80%'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
       'Imagine a great stag carved in white stone, marking the paths where animals have always walked. Elven roads would bend around these paths, or pass beneath them, so that animals could always travel freely.',
@@ -573,8 +590,8 @@ $ELVEN = [
       'In Banff National Park, Canada, the Trans-Canada Highway runs through the mountains. Parks Canada built fences along the road and dozens of crossing structures, including tunnels under the road and wide, planted bridges over it. Parks Canada reports that these reduced wildlife collisions by more than 80 percent, and by over 96 percent for elk and deer. Cameras show grizzly bears, wolves, cougars and moose using them, though shy animals can take years to trust a new crossing.',
     ]],
   ],
-  'art' => 'This illustration shows a white stag statue with glowing antlers on a carved pedestal.',
-  'look' => ['Look at the stag\'s glowing antlers.', 'What plants surround the base?'],
+  'art' => 'This illustration shows a white stone stag on a carved pedestal, with vines and small blue glass lamps hanging from its antlers.',
+  'look' => ['Look at the vines on the stag\'s antlers.', 'What plants surround the base?'],
   'questions' => ['Why might building a bridge for animals also help people?', 'Are there places near you where animals try to cross roads?', 'How could towns be designed around animal paths?'],
   'words' => ['Wildlife corridor' => 'A strip of habitat that links wild areas.', 'Overpass' => 'A bridge that crosses over a road.', 'Fragmentation' => 'Breaking habitat into separate pieces.'],
   'sources' => ['parks-ca', 'fhwa-wildlife'],
@@ -582,15 +599,18 @@ $ELVEN = [
 ],
 
 'deer-statue' => [
-  'name' => 'Deer shrine', 'latin' => 'rewilding', 'cat' => 'wild', 'src' => 'art/nt_statue.png',
-  'summary' => 'An imagined shrine to a gentle deer. In the real world, "rewilding" lets nature restore itself on land that was farmed.',
-  'facts' => ['Imagined as' => 'A shrine to wild animals', 'Real-world idea' => 'Rewilding', 'Real example' => 'Knepp Estate, England (since 2001)', 'Key helpers' => 'Grazing animals, beavers, time'],
+  'name' => 'Deer statue', 'latin' => 'rewilding', 'cat' => 'wild', 'src' => 'art/nt_statue.png',
+  'summary' => 'An imagined statue of a gentle deer beside a wild meadow. In the real world, "rewilding" lets nature restore itself on land that was farmed.',
+  'facts' => ['Imagined as' => 'A statue at the edge of the wild', 'Real-world idea' => 'Rewilding', 'Real example' => 'Knepp Estate, England (since 2001)', 'Key helpers' => 'Grazing animals, beavers, time'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine a quiet shrine where elves leave space for the wild: a reminder that some land is not for people, but for deer, birds, insects and plants to shape as they please.',
+      'Imagine a quiet statue at the edge of a wild meadow: a reminder that some land is not for people, but for deer, birds, insects and plants to shape as they please.',
     ]],
     ['What is rewilding?', ELVEN_REAL, [
       'Rewilding means stepping back and letting natural processes restore an area, often with a helping hand at the start, such as removing drains, letting rivers wander or bringing back missing animals. Instead of deciding exactly what should grow, rewilders let nature lead.',
+    ]],
+    ['As the deer', ELVEN_BIBLE, [
+      'A psalm uses a thirsty deer as a picture of longing for God: "As the deer pants for streams of water, so my soul longs after You, O God" (Psalm 42:1).',
     ]],
     ['A farm that went wild', ELVEN_REAL, [
       'From 2001, the owners of the Knepp Estate in southern England stopped intensive farming on their land and let it go wild, with free-roaming cattle, ponies, pigs and deer grazing as wild herds once did. The land became a patchwork of scrub, grassland and woodland, and rare species such as nightingales and purple emperor butterflies increased. In 2020, beavers were reintroduced to the estate.',
@@ -601,17 +621,20 @@ $ELVEN = [
   'look' => ['Look at the deer\'s pose. Is it calm or alert?', 'Find the flowers around the base.'],
   'questions' => ['Should some land be left for nature to manage itself?', 'What might happen if beavers returned to rivers near you?', 'How do we balance land for food with land for wildlife?'],
   'words' => ['Rewilding' => 'Letting nature restore itself, often by bringing back key species.', 'Ecosystem engineer' => 'An animal that changes its habitat in big ways.', 'Biodiversity' => 'The variety of life in a place.'],
-  'sources' => ['knepp', 'nps-beaver'],
+  'sources' => ['knepp', 'nps-beaver', 'bible-psalms'],
   'related' => ['stag-monument', 'wild-grove', 'flower-meadow'],
 ],
 
 'domed-observatory' => [
   'name' => 'Star dome', 'latin' => 'dark-sky observatory', 'cat' => 'wild', 'src' => 'art/knowledge_3.png',
   'summary' => 'An imagined observatory under a sky full of stars. Real dark-sky places reduce light pollution so people and wildlife can see the night.',
-  'facts' => ['Imagined as' => 'A crystal dome for star-gazing', 'Real-world idea' => 'Dark-sky protection', 'First International Dark Sky City' => 'Flagstaff, Arizona (2001)', 'Helps' => 'Stars, wildlife, sleep, energy'],
+  'facts' => ['Imagined as' => 'A glass dome for star-gazing', 'Real-world idea' => 'Dark-sky protection', 'First International Dark Sky City' => 'Flagstaff, Arizona (2001)', 'Helps' => 'Stars, wildlife, sleep, energy'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine a crystal dome at the edge of the forest where elves watch the stars, track the Moon to plan planting and harvest, and teach children the patterns of the night sky.',
+      'Imagine a glass dome at the edge of the forest where elves watch the stars, keep a calendar of the seasons and teach children the patterns of the night sky.',
+    ]],
+    ['The heavens declare', ELVEN_BIBLE, [
+      '"The heavens declare the glory of God; the skies proclaim the work of His hands" (Psalm 19:1). Another psalm says that God "determines the number of the stars; He calls them each by name" (Psalm 147:4).',
     ]],
     ['The lost night sky', ELVEN_REAL, [
       'Bright outdoor lights make the sky glow, hiding all but the brightest stars. Many people living in cities have never seen the Milky Way. This light pollution also confuses wildlife: migrating birds can be drawn to lit buildings, newly hatched sea turtles may head toward lights instead of the sea, and many insects circle lamps until they are exhausted.',
@@ -629,12 +652,12 @@ $ELVEN = [
   'look' => ['Find the glass dome at the top.', 'How might lights inside affect the view of the stars?'],
   'questions' => ['When did you last see the Milky Way?', 'How could your street have less light pollution and still be safe?', 'Why might animals need darkness?'],
   'words' => ['Light pollution' => 'Too much artificial light at night.', 'Shielded light' => 'A lamp covered so that light shines down.', 'Milky Way' => 'Our galaxy, seen as a band of stars.'],
-  'sources' => ['darksky', 'falchi'],
-  'related' => ['weather-tower', 'crystal-tower', 'tree-library'],
+  'sources' => ['darksky', 'falchi', 'bible-psalms'],
+  'related' => ['weather-tower', 'firefly-tower', 'tree-library'],
 ],
 
-'crystal-tower' => [
-  'name' => 'Glowing tower', 'latin' => 'bioluminescence', 'cat' => 'wild', 'src' => 'art/nt_tower.png',
+'firefly-tower' => [
+  'name' => 'Firefly tower', 'latin' => 'bioluminescence', 'cat' => 'wild', 'src' => 'art/nt_tower.png',
   'summary' => 'An imagined tower that glows like a firefly. Real scientists have already made living plants that glow in the dark.',
   'facts' => ['Imagined as' => 'A tower lit by living light', 'Real-world idea' => 'Bioluminescence', 'Real example' => 'Glowing petunia approved for sale in the USA', 'Light source' => 'Genes from a glowing mushroom'],
   'sections' => [
@@ -651,8 +674,8 @@ $ELVEN = [
       'Not yet. Today\'s glowing plants are far too dim to light a street. Scientists would need to make them much brighter, and people would need to think carefully about releasing modified plants outdoors. For now, living light is a beautiful glimpse of what biology might do.',
     ]],
   ],
-  'art' => 'This illustration shows a tall crystal tower with blue glowing panels and vines.',
-  'look' => ['Find the glowing crystal panels.', 'What color is the light?'],
+  'art' => 'This illustration shows a tall stone tower with blue glass windows, climbing vines and a blue glass lantern on top.',
+  'look' => ['Find the blue glass lantern on top.', 'What color is the light?'],
   'questions' => ['Would you want a garden that glows at night?', 'What should we think about before changing the genes of plants?', 'Why do so many deep-sea animals make light?'],
   'words' => ['Bioluminescence' => 'Light made by living things.', 'Gene' => 'Instructions inside a cell that shape how a living thing grows.', 'Enzyme' => 'A molecule that speeds up a chemical reaction.'],
   'sources' => ['lightbio', 'benyus'],
@@ -715,7 +738,7 @@ $ELVEN = [
 'weather-tower' => [
   'name' => 'Seasons tower', 'latin' => 'phenology and weather watching', 'cat' => 'learn', 'src' => 'art/town_2.png',
   'summary' => 'An imagined tower where elves watch the weather and the seasons. Real scientists track when flowers bloom to see how climate is changing.',
-  'facts' => ['Imagined as' => 'A tower for reading nature\'s signs', 'Real-world idea' => 'Phenology', 'Long record' => 'Kyoto cherry blossom dates, centuries old', 'Anyone can help' => 'Citizen science projects'],
+  'facts' => ['Imagined as' => 'A tower for watching the seasons', 'Real-world idea' => 'Phenology', 'Long record' => 'Kyoto cherry blossom dates, centuries old', 'Anyone can help' => 'Citizen science projects'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
       'Imagine a tower where elven watchers note the first blossom of spring, the arrival of swallows and the first frost, and use these signs to know when to plant, harvest and celebrate.',
@@ -728,8 +751,8 @@ $ELVEN = [
       'Projects such as the USA National Phenology Network and the Woodland Trust\'s "Nature\'s Calendar" in the UK invite anyone to record what they see, such as the first frogspawn or the first bluebell. Thousands of observations together help scientists understand how nature is responding to a changing climate.',
     ]],
   ],
-  'art' => 'This illustration shows a tall, slender tower with a purple roof and a glowing orb at the top, wrapped in vines.',
-  'look' => ['Find the glowing orb at the top. What might it measure?', 'Notice the windows facing different directions.'],
+  'art' => 'This illustration shows a tall, slender tower with a purple roof, wrapped in vines, with a golden crescent moon and small lamps at the top.',
+  'look' => ['Find the crescent moon at the top. Why might watchers of the seasons care about the Moon?', 'Notice the windows facing different directions.'],
   'questions' => ['What signs tell you the seasons are changing where you live?', 'Why might a record kept for hundreds of years be so valuable?', 'What could you observe and record each week?'],
   'words' => ['Phenology' => 'The study of when natural events happen.', 'Citizen science' => 'Research that anyone can help with.', 'Migration' => 'Animals traveling between places with the seasons.'],
   'sources' => ['phenology', 'brit-phenology'],
@@ -747,6 +770,9 @@ $ELVEN = [
     ['The tragedy of the commons?', ELVEN_REAL, [
       'A "commons" is something shared by a group, such as grazing land, a fishing ground, a forest or groundwater. For a long time, many economists believed shared resources would always be overused, because each person benefits from taking more while the cost is shared by everyone.',
     ]],
+    ['Caring for the garden', ELVEN_BIBLE, [
+      'In the Bible, God gives people the job of looking after his world: "Then the LORD God took the man and placed him in the Garden of Eden to cultivate and keep it" (Genesis 2:15).',
+    ]],
     ['How communities manage shared resources', ELVEN_REAL, [
       'The political scientist Elinor Ostrom studied communities around the world, from Swiss mountain pastures to Japanese forests and irrigation systems in Spain and Nepal, that had looked after shared resources well, sometimes for centuries. She found they shared certain features:',
     ], ['list' => [
@@ -762,7 +788,7 @@ $ELVEN = [
   'look' => ['Find the seats and the steps.', 'Where would a speaker stand?'],
   'questions' => ['How would decisions be made fairly in a place like this?', 'What "commons" do you share at school or at home?', 'What rules would you make for sharing a forest?'],
   'words' => ['Commons' => 'Resources shared by a group.', 'Monitoring' => 'Checking what is happening over time.', 'Consensus' => 'An agreement reached by a whole group.'],
-  'sources' => ['ostrom', 'hardin'],
+  'sources' => ['ostrom', 'hardin', 'bible-genesis'],
   'related' => ['elven-palace', 'gathering-circle', 'woodworking-workshop'],
 ],
 
@@ -772,7 +798,7 @@ $ELVEN = [
   'facts' => ['Imagined as' => 'A seat of long-term leadership', 'Real-world idea' => 'Laws for future generations', 'Real example' => 'Well-being of Future Generations (Wales) Act 2015', 'Big question' => 'Who speaks for people not yet born?'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine elven leaders who live for centuries and know they will see the results of every choice. In their crystal palace, no decision could be made without asking: what will this mean for the forest, and for our great-grandchildren?',
+      'Imagine elven leaders who plan for centuries. In their white stone palace, no decision could be made without asking: what will this mean for the forest, and for our great-grandchildren?',
     ]],
     ['Short-term thinking', ELVEN_REAL, [
       'Many of the biggest challenges, such as climate change, losing species, building cities and caring for forests, unfold over decades or centuries. But elections, business plans and news often focus on months or a few years. Planting a tree whose shade you will never sit in requires long-term thinking.',
@@ -782,8 +808,8 @@ $ELVEN = [
       'Other places have experimented with similar ideas, from long-term planning councils to giving legal rights to rivers.',
     ]],
   ],
-  'art' => 'This illustration shows a gleaming white palace with crystal spires and terraced gardens.',
-  'look' => ['Count the crystal spires.', 'Find the terraced gardens and stairways.'],
+  'art' => 'This illustration shows a gleaming white palace with tall blue and purple glass spires and terraced gardens.',
+  'look' => ['Count the tall spires.', 'Find the terraced gardens and stairways.'],
   'questions' => ['Who speaks for people not yet born?', 'What decision today will matter most in 100 years?', 'How could your school think about the long-term future?'],
   'words' => ['Future generations' => 'People who will live after us.', 'Long-term' => 'Over a long time, such as decades.', 'Commissioner' => 'A person given a special public duty.'],
   'sources' => ['wales', 'fgc-wales'],
@@ -933,6 +959,9 @@ $ELVEN = [
       'Most of what we buy follows a straight line: take materials, make a product, use it, throw it away. A "circular economy" tries to keep things in use for as long as possible by designing them to last, sharing them, repairing them and recycling the materials at the end.',
       'In 2009 the first Repair Café opened in Amsterdam: a free event where volunteers help people mend clothes, toasters, bikes and toys. There are now thousands of repair cafés around the world. Some countries have also introduced "right to repair" rules that require spare parts and repair information.',
     ]],
+    ['A carpenter from Nazareth', ELVEN_BIBLE, [
+      'The Bible says that all things were made through Jesus (John 1:3), and that he grew up working with his hands: the people of his town called him "the carpenter" (Mark 6:3).',
+    ]],
     ['Wood from healthy forests', ELVEN_REAL, [
       'Wood is renewable only if forests are managed well. The Forest Stewardship Council, founded in 1993, certifies forests that are managed to protect wildlife, workers and local communities. Its label helps shoppers choose responsibly sourced wood and paper.',
     ]],
@@ -941,17 +970,17 @@ $ELVEN = [
   'look' => ['Look for stacked timber and tools.', 'What might be being made or mended?'],
   'questions' => ['How could a city reuse wood instead of cutting new trees?', 'What have you repaired, or could you repair?', 'Why are some products hard to fix?'],
   'words' => ['Circular economy' => 'Keeping materials in use instead of throwing them away.', 'Right to repair' => 'Rules that make it easier to fix things you own.', 'Certified' => 'Checked to meet a standard.'],
-  'sources' => ['repair', 'fsc'],
+  'sources' => ['repair', 'fsc', 'bible-john', 'bible-mark'],
   'related' => ['timber-house', 'market-hall', 'building-materials'],
 ],
 
 'building-materials' => [
   'name' => 'Nature\'s materials', 'latin' => 'biomimicry', 'cat' => 'make', 'src' => 'build/materials.png',
-  'summary' => 'Stone, timber and crystals for elven builders, and the real inventions engineers have copied from nature.',
+  'summary' => 'Stone, timber and glass for elven builders, and the real inventions engineers have copied from nature.',
   'facts' => ['Imagined as' => 'Materials gathered from the forest', 'Real-world idea' => 'Biomimicry', 'Famous copies' => 'Velcro, self-cleaning surfaces, bullet-train nose', 'Key book' => 'Janine Benyus, "Biomimicry" (1997)'],
   'sections' => [
     ['What it could do', ELVEN_IMAGINE, [
-      'Imagine builders who take only what the forest can spare: fallen timber, loose stone and crystals grown slowly in caves, and who ask of every material, "how would nature do this?"',
+      'Imagine builders who take only what the forest can spare: fallen timber, loose stone and glass melted from sand and old bottles, and who ask of every material, "how would nature do this?"',
     ]],
     ['Learning from 3.8 billion years of design', ELVEN_REAL, [
       'Life on Earth has been solving problems for billions of years. Biomimicry is the practice of learning from nature\'s designs to solve human problems. The biologist Janine Benyus made the word popular in her 1997 book.',
@@ -961,15 +990,18 @@ $ELVEN = [
       'The bullet train: Japan\'s Shinkansen engineers reshaped a train\'s nose to be more like a kingfisher\'s beak, making it quieter when leaving tunnels.',
       'Termite-inspired cooling: see the Breathing spire page.',
     ]]],
+    ['Wisdom in creation', ELVEN_BIBLE, [
+      'People who copy nature are learning from the work of its Maker. A psalm says: "How many are Your works, O LORD! In wisdom You have made them all; the earth is full of Your creatures" (Psalm 104:24).',
+    ]],
     ['Low-carbon materials', ELVEN_REAL, [
-      'The materials a building is made from carry hidden "embodied carbon" from mining, making and transport. Timber, straw, earth, reused bricks and recycled steel usually carry much less than new concrete and steel. Choosing them, and designing buildings to be taken apart and reused, can cut a building\'s climate impact.',
+      'The materials a building is made from carry hidden "embodied carbon" from mining, making and transport. Timber, straw, earth, reused bricks and recycled steel usually carry much less than new concrete and steel. Choosing them, and designing buildings to be taken apart and reused, can cut a building\'s climate impact. Glass is made by melting sand, soda ash and limestone, and it can be recycled again and again.',
     ]],
   ],
-  'art' => 'This illustration shows carved white stone, timber logs and a basket of glowing crystals.',
-  'look' => ['Which materials here would grow back, and which would not?', 'Find the basket of crystals.'],
+  'art' => 'This illustration shows carved white stone, timber logs and a basket of blue glass pieces.',
+  'look' => ['Which materials here would grow back, and which would not?', 'Find the basket of glass.'],
   'questions' => ['What problem could you solve by copying a plant or animal?', 'How could builders take only what nature can replace?', 'Why might a material made nearby be better for the planet?'],
   'words' => ['Biomimicry' => 'Learning from nature\'s designs to solve human problems.', 'Embodied carbon' => 'Emissions from making and moving materials.', 'Lotus effect' => 'Self-cleaning caused by water rolling off a bumpy surface.'],
-  'sources' => ['benyus', 'asknature', 'lotus'],
+  'sources' => ['benyus', 'asknature', 'lotus', 'epa-glass', 'bible-psalms'],
   'related' => ['living-crane', 'mushroom-cottage', 'spire-house'],
 ],
 ];
@@ -978,22 +1010,22 @@ $WORLD_DATA['elven'] = [
   'title'    => 'Elven Green World: imagined buildings, real nature technology',
   'desc'     => 'Explore an imagined elven city where each of 35 buildings pairs a fantasy idea with real nature-based technology, from root bridges to seed vaults.',
   'intro'    => 'A fantasy city that grows with the forest. Every building is imagined, but each page shows the real science and nature-based technology that could make parts of it possible.',
-  'note'     => 'This world is imagined and does not describe any real culture. Each page marks what is imagined, what is real today and what is still being researched.',
+  'note'     => 'This world is imagined and does not describe any real culture. Each page marks what is imagined, what is real today and what is still being researched. A few pages also share Bible verses about the Creator: the Bible says that all things were made through Jesus (John 1:3).',
   'aka'      => 'Real-world idea',
   'akaLang'  => '',
   'pageTitle'=> '%s: elven idea, real nature technology',
   'pageTitleShort' => '%s: an elven idea',
-  'aside'    => ['How to read these pages', 'Each page has three kinds of section. Imagined sections describe the fantasy building. Real world sections describe science, places and technology that exist today, with sources. Possible future sections describe ideas still being researched, which may or may not work.'],
+  'aside'    => ['How to read these pages', 'Each page has three kinds of section. Imagined sections describe the fantasy building. Real world sections describe science, places and technology that exist today, with sources. Possible future sections describe ideas still being researched, which may or may not work. Bible sections share verses about the Creator of the natural world.'],
   'pageDesc' => ' Explore the imagined idea, the real science behind it, and questions for discussion.',
   'pageDescShort' => ' Explore the idea and the real science behind it.',
   'sourcesIntro' => 'The real-world facts on this page are based on these sources:',
   'about'    => 'Ecological design, biomimicry and nature-based technology',
   'map' => [
-    'crystal-tower', 'weather-tower', 'living-crane', 'elven-palace', 'crystal-waterfall', 'tree-tower-home',
+    'firefly-tower', 'weather-tower', 'living-crane', 'elven-palace', 'waterfall-tower', 'tree-tower-home',
     'spire-house', 'great-tree-hall', 'grand-tree-hall', 'treetop-village', 'domed-observatory', 'stag-monument',
     'green-roof-cottage', 'timber-house', 'market-hall', 'tree-library', 'treehouse-school', 'deer-statue',
     'open-air-theater', 'council-terrace', 'canopy-walkway', 'woodworking-workshop', 'forest-gym', 'leafy-cottage',
-    'natural-cottage', 'canopy-market', 'spring-circle', 'crystal-fountain', 'mushroom-cottage', 'hillside-home',
+    'natural-cottage', 'canopy-market', 'spring-circle', 'wetland-fountain', 'mushroom-cottage', 'hillside-home',
     'wild-grove', 'garden-court', 'gathering-circle', 'flower-meadow', 'building-materials', 'tree',
   ],
   'tree'     => 'blossom-tree',

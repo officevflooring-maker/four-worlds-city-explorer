@@ -9,7 +9,7 @@ require __DIR__ . '/crosslinks.php';
 require __DIR__ . '/teach.php';
 
 const PUB = __DIR__ . '/../public';
-// Oldest first; the Heavenly City, imagined and inspired by belief, comes last.
+// Oldest first; the Heavenly City, imagined and inspired by the Bible, comes last.
 const WORLD_ORDER = ['egypt', 'roman', 'modern', 'elven', 'future', 'heaven'];
 
 // Full worlds (one page per building): content in build/worlds/{world}.php, photo credits in
@@ -279,7 +279,7 @@ page('/about/', [
     <li><span class="badge badge-art">Imagined</span> ideas that belong to the fantasy world.</li>
     <li><span class="badge badge-spec">Possible future</span> ideas being researched or proposed, which may or may not happen.</li>
   </ul>
-  <p>The <strong>Heavenly City</strong> is imagined too, inspired by pictures of heaven in the Bible and other faiths. Its <span class="badge badge-belief">Belief</span> sections describe what a faith teaches, in its own words where possible.</p>
+  <p>The <strong>Heavenly City</strong> is imagined too, inspired by the Bible's picture of the heavenly city. As you explore it, its <span class="badge badge-belief">Gospel</span> sections tell the story of Jesus in 35 parts, as the Bible tells it, with chapter and verse, and its <span class="badge badge-belief">Bible</span> sections share more words from Scripture. A few elven pages also share Bible verses about God the Creator. Bible quotations are from the Berean Standard Bible, which is in the public domain.</p>
 
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
@@ -453,6 +453,8 @@ page('/credits/', [
 </section>
 HTML,
 ]);
+$nfWorlds = '';
+foreach (WORLD_ORDER as $w) $nfWorlds .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';
 page('/404.html', [
   'title' => 'Page not found',
   'desc' => h('This page could not be found. Explore six illustrated city worlds, free games and guided tours on The Atlas of Cities instead.'),
@@ -462,7 +464,7 @@ page('/404.html', [
   <img class="nf-logo" src="/assets/brand/atlas-emblem-400.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w" sizes="170px" width="400" height="382" alt="">
   <h1>Page not found</h1>
   <p class="lead">That page doesn't exist. Try one of the worlds instead:</p>
-  <ul class="world-links"><li><a class="world-link world-roman" href="/worlds/roman/">Ancient Rome</a></li><li><a class="world-link world-modern" href="/worlds/modern/">Modern Town</a></li><li><a class="world-link world-elven" href="/worlds/elven/">Elven Green World</a></li><li><a class="world-link world-future" href="/worlds/future/">Robotic Future</a></li></ul>
+  <ul class="world-links">{$nfWorlds}</ul>
   <p><a class="btn" href="/search/">Find a page</a> <button type="button" class="btn btn-quiet" data-surprise hidden>Surprise me</button></p>
   <p><a href="/">Go to the home page</a></p>
 </section>
@@ -471,7 +473,11 @@ HTML,
 
 // ---------- Sitemap, robots ----------
 $urls = ['/' => '1.0'];
-foreach (WORLD_ORDER as $w) { $urls["/worlds/$w/"] = '0.9'; $urls["/worlds/$w/people/"] = '0.7'; }
+foreach (WORLD_ORDER as $w) {
+  $urls["/worlds/$w/"] = '0.9';
+  $urls["/worlds/$w/people/"] = '0.7';
+  if (!empty($WORLD_DATA[$w]['story'])) $urls["/worlds/$w/story/"] = '0.8';
+}
 foreach ($WORLD_DATA as $w => $D) foreach (array_keys($D['pages']) as $slug) $urls["/worlds/$w/$slug/"] = '0.8';
 $urls['/compare/'] = '0.8';
 $urls['/tours/'] = '0.8';

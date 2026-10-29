@@ -51,6 +51,7 @@ $MODERN_SOURCES = [
   'percent'     => 'City of Philadelphia, "Percent for Art" program history (1959)',
   'nps-memorial'=> 'National Park Service, Vietnam Veterans Memorial and Washington Monument',
   'pew'         => 'Pew Research Center, studies of religion and community life',
+  'brit-stained' => 'Encyclopaedia Britannica, "Stained glass"',
   'osha'        => 'US Occupational Safety and Health Administration, "Cranes and Derricks in Construction"',
   'chatham'     => 'Chatham House, "Making Concrete Change: Innovation in Low-carbon Cement and Concrete" (2018)',
   'brit-mat'    => 'Encyclopaedia Britannica, "Concrete", "Steel" and "Building construction"',
@@ -719,26 +720,26 @@ $MODERN = [
 ],
 
 'place-of-worship' => [
-  'name' => 'Place of worship', 'latin' => 'church, mosque, synagogue, temple, gurdwara', 'cat' => 'gather', 'src' => 'art/family_3.png',
-  'summary' => 'A building where people of a faith gather to pray and celebrate, and which often serves the wider community too.',
-  'facts' => ['Many kinds' => 'Churches, mosques, synagogues, temples, gurdwaras and more', 'Used for' => 'Worship, ceremonies, gatherings', 'Often offers' => 'Food banks, childcare, shelter', 'Design' => 'Reflects each faith\'s traditions'],
+  'name' => 'Church', 'latin' => 'place of worship', 'cat' => 'gather', 'src' => 'art/family_3.png',
+  'summary' => 'A church with a tall spire, where Christians gather to worship God, and which often serves the whole town too.',
+  'facts' => ['Used for' => 'Worship, weddings, baptisms, funerals', 'Often offers' => 'Food banks, childcare, shelter, meeting rooms', 'Design' => 'Spire, bell, nave, stained glass', 'Usually meets' => 'On Sundays'],
   'sections' => [
-    ['A place for faith and community', [
-      'Most towns have several places of worship, reflecting the beliefs of the people who live there. They are places for prayer, worship and marking important moments in life, such as births, weddings and funerals.',
-      'Many also serve the wider community, whatever people\'s beliefs: running food banks, toddler groups, youth clubs and support for people in difficulty, and lending their halls for local meetings and events.',
+    ['A place to worship together', [
+      'A church is where Christians meet, usually on Sundays, to worship God together: to sing, pray, read the Bible and learn from it. Churches also mark big moments in life, such as baptisms, weddings and funerals.',
+      'Many churches serve the whole town, whatever people believe: running food banks, toddler groups, youth clubs and support for people in difficulty, and lending their halls for local meetings and events.',
     ]],
-    ['Designed around beliefs', [
-      'The shape of each building reflects the traditions of its faith. A church may have a tower or spire and a long nave; a mosque often has a dome, a minaret and a prayer hall facing Mecca; a gurdwara has a kitchen, the langar, that serves free meals to everyone. Light, sound and decoration are carefully planned to support worship.',
+    ['How a church is designed', [
+      'Many churches have a tall tower or spire, often with a bell to call people to services, and a long main hall called the nave, where people sit. Stained-glass windows, made from pieces of colored glass, often show stories from the Bible, so that people who could not read could still learn them.',
     ]],
     ['Part of the town\'s history', [
-      'Old places of worship are often among the oldest buildings in a town, with records of local families going back centuries. Their towers and spires were once landmarks visible for miles.',
+      'Old churches are often among the oldest buildings in a town, with records of local families going back centuries. Their towers and spires were once landmarks visible for miles.',
     ]],
   ],
-  'art' => 'This illustration shows a white wooden church with a tall spire. It is one example of the many kinds of places of worship found in modern towns.',
+  'art' => 'This illustration shows a white wooden church with a tall spire, like many churches in small American towns.',
   'look' => ['Find the spire. Why might it be so tall?', 'Notice the garden and paths around the building.'],
-  'questions' => ['What places of worship are in your area, and what do they look like?', 'How do faith communities help people beyond their own members?', 'How can people of different beliefs learn about each other respectfully?'],
-  'words' => ['Worship' => 'Showing respect and devotion to God or gods.', 'Spire' => 'A tall, pointed top of a tower.', 'Interfaith' => 'Involving people of different religions.'],
-  'sources' => ['pew', 'un-habitat'],
+  'questions' => ['What churches are in your area, and what do they look like?', 'How do churches help people in their town?', 'Why do you think so many church windows tell Bible stories?'],
+  'words' => ['Worship' => 'Praising and honoring God.', 'Spire' => 'A tall, pointed top of a tower.', 'Nave' => 'The long main hall of a church, where people sit.'],
+  'sources' => ['pew', 'brit-stained'],
   'related' => ['cultural-center', 'community-center', 'memorial'],
 ],
 

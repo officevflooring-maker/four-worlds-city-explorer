@@ -5,6 +5,8 @@
 // "art" describes what is the artist's interpretation. Photos come from build/photo-credits.json.
 
 $ROMAN_SOURCES = [
+  'bible-luke'     => 'The Bible, Gospel of Luke',
+  'brit-milan'     => 'Encyclopaedia Britannica, "Edict of Milan"',
   'brit-aqueduct'  => 'Encyclopaedia Britannica, "Aqueduct"',
   'brit-thermae'   => 'Encyclopaedia Britannica, "Thermae" and "Baths of Caracalla"',
   'brit-circus'    => 'Encyclopaedia Britannica, "Circus" and "Chariot racing"',
@@ -541,12 +543,15 @@ $ROMAN = [
     ['Giant statues', [
       'Some statues were enormous. Pieces of a colossal statue of Constantine, including a head more than two meters tall and a giant hand, can be seen in the courtyard of the Capitoline Museums.',
     ]],
+    ['Augustus and the birth of Jesus', [
+      'Jesus was born during the reign of Augustus. The Gospel of Luke begins the story of his birth: "Now in those days a decree went out from Caesar Augustus that a census should be taken of the whole empire" (Luke 2:1). Jesus grew up in a land ruled by Rome and was sentenced by the Roman governor Pontius Pilate. In AD 313, Constantine, the first Christian emperor, allowed Christians across the empire to worship freely.',
+    ]],
   ],
   'art' => 'This golden statue is the artist\'s interpretation of an imperial statue on a decorated base.',
   'look' => ['Notice the pose: the raised arm and the armor.', 'Why might the statue be golden?'],
   'questions' => ['How do leaders today make sure people know what they look like?', 'Why would a statue show a ruler as young and strong?', 'What happens to statues of leaders when opinions about them change?'],
   'words' => ['Portrait' => 'An image of a real person.', 'Gilded' => 'Covered with a thin layer of gold.', 'Propaganda' => 'Images or messages designed to shape what people think.'],
-  'sources' => ['sh-augustus', 'un-rome'],
+  'sources' => ['sh-augustus', 'un-rome', 'bible-luke', 'brit-milan'],
   'related' => ['triumphal-arch', 'victory-column', 'imperial-palace'],
 ],
 

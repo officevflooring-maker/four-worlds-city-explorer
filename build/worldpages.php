@@ -40,14 +40,77 @@ function artwork_name($src) {
   return ['art' => '', 'build' => 'construction-', 'ground' => 'ground-', 'vehicle' => 'vehicle-'][$batch] . $stem;
 }
 
-// Badges that mark a section as real-world fact, imagined, speculative, or what a faith teaches (Heavenly City).
+// Badges that mark a section as real-world fact, imagined, speculative, or from the Bible. A Gospel section
+// tells one part of the story of Jesus (Heavenly City), and its badge shows the part's number instead.
 const SECTION_TAGS = [
   'real'        => ['badge-fact', 'Real world'],
   'imagined'    => ['badge-art', 'Imagined'],
   'speculative' => ['badge-spec', 'Possible future'],
   'history'     => ['badge-fact', 'History'],
-  'belief'      => ['badge-belief', 'Belief'],
+  'gospel'      => ['badge-belief', 'Gospel'],
+  'bible'       => ['badge-belief', 'Bible'],
 ];
+
+// A world that tells one story across its pages (Heavenly City): each page has 'part' => [number, title].
+// Links to the previous and next parts, shown after the page's Gospel section.
+function story_pager($w, $slug, $pages) {
+  $slugs = array_keys($pages);
+  $k = array_search($slug, $slugs);
+  $link = function ($s, $rel) use ($w, $pages) {
+    if ($s === null) return '<span></span>';
+    return '<a href="/worlds/' . $w . '/' . $s . '/" rel="' . $rel . '"><span>Part ' . $pages[$s]['part'][0] . ' · ' . h($pages[$s]['name']) . '</span> ' . h($pages[$s]['part'][1]) . '</a>';
+  };
+  return '<nav class="pager story-pager" aria-label="' . h($GLOBALS['WORLD_DATA'][$w]['story']['title']) . '">' . $link($slugs[$k - 1] ?? null, 'prev')
+    . '<a href="/worlds/' . $w . '/story/" class="pager-all">The whole story</a>' . $link($slugs[$k + 1] ?? null, 'next') . '</nav>';
+}
+
+// The story's contents page, /worlds/{world}/story/: every part in order, chapter by chapter.
+function story_page($w, $pages) {
+  global $WORLDS, $WORLD_DATA;
+  $D = $WORLD_DATA[$w];
+  $S = $D['story'];
+  $label = $WORLDS[$w]['name'];
+  $chapters = '';
+  $list = [];
+  foreach ($D['cats'] as $cat => [$clabel, $blurb]) {
+    $cards = '';
+    foreach ($pages as $slug => $r) {
+      if ($r['cat'] !== $cat) continue;
+      [$n, $title] = $r['part'];
+      $list[] = ['@type' => 'ListItem', 'position' => $n, 'name' => "Part $n: $title", 'url' => url("/worlds/$w/$slug/")];
+      $cards .= '<li class="place place-link world-' . $w . '" data-pp="' . "$w/$slug" . '"><a href="/worlds/' . $w . '/' . $slug . '/">'
+        . '<span class="place-art">' . img($w, $slug, '', '96px', 'loading="lazy"') . '</span>'
+        . '<span class="tag">Part ' . $n . ' · ' . h($r['name']) . '</span><span class="place-name">' . h($title) . '</span><span class="what">Read it: ' . h($r['latin']) . '</span></a></li>';
+    }
+    if ($cards !== '') $chapters .= '<section class="cat" aria-labelledby="ch-' . $cat . '"><h2 id="ch-' . $cat . '">' . h($clabel) . '</h2><p class="what">' . h($blurb) . '</p><ol class="places places-3">' . $cards . '</ol></section>';
+  }
+  $first = array_key_first($pages);
+  $titleH = h($S['title']);
+  $introH = h($S['intro']);
+  $noteH = h($S['note']);
+  $count = count($pages);
+  page("/worlds/$w/story/", [
+    'title' => $S['pageTitle'],
+    'desc' => h($S['desc']),
+    'og' => $w,
+    'class' => "world world-$w story-page",
+    'body' => <<<HTML
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/worlds/{$w}/">{$label}</a></li><li aria-current="page">{$titleH}</li></ol></nav>
+</div>
+<section class="wrap section page-head">
+  <p class="tag">{$label} · {$count} parts</p>
+  <h1>{$titleH}</h1>
+  <p class="lead">{$introH}</p>
+  <p><a class="btn" href="/worlds/{$w}/{$first}/">Start with part 1</a> <a class="btn btn-quiet" href="/worlds/{$w}/">See the city map</a></p>
+  {$chapters}
+  <p class="setting-note">{$noteH}</p>
+</section>
+HTML,
+    'ld' => [crumbs([['Home', '/'], [$label, "/worlds/$w/"], [$S['title'], "/worlds/$w/story/"]]),
+      ['@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => $S['title'], 'numberOfItems' => $count, 'itemListElement' => $list]],
+  ]);
+}
 
 // A world's guided tour (build/tours.php): [slug, tour], or [null, null].
 function world_tour($w) {
@@ -95,6 +158,9 @@ function full_world($w) {
   $W = $WORLDS[$w];
   $D = $WORLD_DATA[$w];
   $pages = $D['pages'];
+  // A world that tells a story lists its pages, and pages through them, in story order.
+  $story = $D['story'] ?? null;
+  if ($story) uasort($pages, fn($a, $b) => $a['part'][0] <=> $b['part'][0]);
   $label = $W['name'];
 
   // Map: buildings on a 6 x 6 grid with streets between them, plus people and vehicles on the streets.
@@ -139,7 +205,7 @@ function full_world($w) {
   foreach ($D['map'] as $slug) if ($slug !== 'tree') $onMap[$pages[$slug]['cat']] = true;
   $filters = '<button type="button" class="chip" data-filter="" aria-pressed="true">Everything</button>';
   foreach ($D['cats'] as $cat => [$clabel]) {
-    if (isset($onMap[$cat]) || $cat === 'vehicles') $filters .= '<button type="button" class="chip" data-filter="' . $cat . '" aria-pressed="false">' . h($clabel) . '</button>';
+    if (isset($onMap[$cat]) || ($cat === 'vehicles' && in_array('vehicles', array_column($pages, 'cat')))) $filters .= '<button type="button" class="chip" data-filter="' . $cat . '" aria-pressed="false">' . h($clabel) . '</button>';
   }
   $filters .= '<button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>';
   // Directory by category
@@ -162,7 +228,9 @@ function full_world($w) {
   $photoCount = array_sum(array_map('count', $PHOTOS[$w] ?? []));
   $glance = '<li><strong>' . ($count - $vehicleCount) . '</strong> places</li><li><strong>' . $vehicleCount . '</strong> vehicles</li><li><strong>' . count($PEOPLE[$w] ?? []) . '</strong> people</li>'
     . ($photoCount ? '<li><strong>' . $photoCount . '</strong> photos of real places</li>' : '')
+    . ($story ? '<li><a href="/worlds/' . $w . '/story/">' . h($story['title']) . ', in ' . $count . ' parts</a></li>' : '')
     . ($tour ? '<li><a href="/tours/' . $tourSlug . '/">Guided tour: ' . h($tour['h1']) . '</a></li>' : '');
+  $storyStart = $story ? '<p class="lead">' . h($story['lead']) . '</p><p><a class="btn" href="/worlds/' . $w . '/' . array_key_first($pages) . '/">Start with part 1</a> <a class="btn btn-quiet" href="/worlds/' . $w . '/story/">See all ' . $count . ' parts</a></p>' : '';
   $tourLink = $tour ? '<a href="/tours/' . $tourSlug . '/">Take the tour</a>' : '<a href="/tours/">Guided tours</a>';
   $groundTex = tex($w, $W['ground']);
   $roadTex = tex($w, 'ground-crossroads');
@@ -223,6 +291,7 @@ function full_world($w) {
 
 <section class="wrap section" aria-labelledby="dir-h">
   <h2 id="dir-h">All {$count} places and vehicles</h2>
+  {$storyStart}
   <nav aria-label="Building groups"><ul class="jump">{$jump}</ul></nav>
   {$dir}
 </section>
@@ -258,9 +327,14 @@ HTML,
       $id = 's' . ($n + 1);
       // A world can give every section a default label (Rome: History); a section can override it.
       $badge = '';
+      $gospel = false;
       if (!empty($D['defaultTag'])) { [$cls, $txt] = SECTION_TAGS[$D['defaultTag']]; $badge = '<span class="badge ' . $cls . '">' . $txt . '</span> '; }
       foreach (array_slice($sec, 1) as $part) {
-        if (isset($part['tag'])) { [$cls, $txt] = SECTION_TAGS[$part['tag']]; $badge = '<span class="badge ' . $cls . '">' . $txt . '</span> '; }
+        if (!isset($part['tag'])) continue;
+        [$cls, $txt] = SECTION_TAGS[$part['tag']];
+        $gospel = $part['tag'] === 'gospel' && isset($r['part']);
+        if ($gospel) $txt = 'Part ' . $r['part'][0] . ' of ' . count($pages);
+        $badge = '<span class="badge ' . $cls . '">' . $txt . '</span> ';
       }
       $toc .= '<li><a href="#' . $id . '">' . h($sec[0]) . '</a></li>';
       $body .= '<section class="read" aria-labelledby="' . $id . '"><h2 id="' . $id . '">' . $badge . h($sec[0]) . '</h2>';
@@ -275,6 +349,7 @@ HTML,
         }
       }
       $body .= '</section>';
+      if ($gospel) $body .= story_pager($w, $slug, $pages);
       if (isset($photos[$pi])) $body .= photo_figure($w, $photos[$pi++]);
     }
     $more = '';
@@ -418,6 +493,7 @@ HTML,
       ],
     ]);
   }
+  if ($story) story_page($w, $pages);
 }
 
 // People of each world: /worlds/{world}/people/ (content in build/people.php).

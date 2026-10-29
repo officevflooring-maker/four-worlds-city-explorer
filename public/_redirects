@@ -1,2 +1,9 @@
 # Cloudflare (Workers or Pages): old Hostinger-style /public/... addresses go to the clean address.
 /public/* /:splat 301
+# Elven pages renamed in October 2026: their old addresses go to the new ones.
+/worlds/elven/crystal-tower /worlds/elven/firefly-tower/ 301
+/worlds/elven/crystal-tower/* /worlds/elven/firefly-tower/ 301
+/worlds/elven/crystal-waterfall /worlds/elven/waterfall-tower/ 301
+/worlds/elven/crystal-waterfall/* /worlds/elven/waterfall-tower/ 301
+/worlds/elven/crystal-fountain /worlds/elven/wetland-fountain/ 301
+/worlds/elven/crystal-fountain/* /worlds/elven/wetland-fountain/ 301

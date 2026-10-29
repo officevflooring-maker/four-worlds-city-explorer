@@ -11,17 +11,17 @@ green-roof-cottage|green roof sedum;Chicago City Hall green roof
 natural-cottage|cob house England;straw bale wall construction;rammed earth wall
 leafy-cottage|living wall vertical garden;green facade climbing plants building
 mushroom-cottage|mycelium brick;Hy-Fi MoMA PS1 mycelium tower;mycelium hyphae
-crystal-fountain|Arcata Marsh;constructed wetland reed bed
+wetland-fountain|Arcata Marsh;constructed wetland reed bed
 garden-court|rain garden downspout;bioswale street
 spring-circle|Ashokan Reservoir;Catskill Mountains forest stream;spring water source rocks
-crystal-waterfall|micro hydro turbine;Pelton wheel;fish ladder
+waterfall-tower|micro hydro turbine;Pelton wheel;fish ladder
 gathering-circle|Hellisheidi geothermal power station;geothermal district heating pipe Iceland;Blue Lagoon geothermal
 flower-meadow|bumblebee on flower;wildflower meadow;bee hotel insect
 wild-grove|Miyawaki forest planting;urban forest street trees canopy
 stag-monument|Banff wildlife overpass;wildlife crossing bridge highway
 deer-statue|Knepp Estate;beaver dam;Exmoor ponies grazing
 domed-observatory|Milky Way dark sky;light pollution city night sky;full cutoff shielded street light
-crystal-tower|bioluminescent fungi Mycena;firefly bioluminescence;Panellus stipticus glowing
+firefly-tower|bioluminescent fungi Mycena;firefly bioluminescence;Panellus stipticus glowing
 tree-library|Svalbard Global Seed Vault;Millennium Seed Bank Wakehurst;seed bank storage jars
 treehouse-school|forest school children woods shelter;outdoor classroom forest
 weather-tower|Kyoto cherry blossom;Stevenson screen weather station;frogspawn
