@@ -95,7 +95,7 @@ foreach (WORLD_ORDER as $w) $head .= '<th scope="col" class="world-' . $w . '">'
 $rows = '';
 $keyRows = '';
 foreach ($COMPARE as [$ckey, $label, $question, $cells]) {
-  $rows .= '<tr><th scope="row">' . h($label) . '<span>' . h($question) . '</span></th>' . str_repeat('<td></td>', 4) . '</tr>';
+  $rows .= '<tr><th scope="row">' . h($label) . '<span>' . h($question) . '</span></th>' . str_repeat('<td></td>', count(WORLD_ORDER)) . '</tr>';
   $keyRows .= '<tr><th scope="row">' . h($label) . '</th>';
   foreach (WORLD_ORDER as $w) $keyRows .= '<td><b>' . h($cells[$w][1]) . '</b> ' . h($cells[$w][2]) . '</td>';
   $keyRows .= '</tr>';
