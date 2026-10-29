@@ -87,6 +87,17 @@ $HEAVEN_SOURCES = [
   'habitat'         => 'Habitat for Humanity, "History of Habitat"',
   'whr'             => 'World Happiness Report (Sustainable Development Solutions Network), chapters on social connection and trust',
   'angel-north'     => 'Gateshead Council, "The Angel of the North"',
+  'rothko'          => 'Rothko Chapel, Houston, "About the Chapel"',
+  'nps-liberty'     => 'National Park Service, Independence National Historical Park, "The Liberty Bell"',
+  'unhcr'           => 'UNHCR, the UN Refugee Agency, "Global Trends" report',
+  'un-swords'       => 'United Nations, "Let Us Beat Swords into Plowshares", sculpture by Evgeny Vuchetich (1959)',
+  'un-persian'      => 'UNESCO World Heritage Centre, "The Persian Garden"',
+  'brit-amish'      => 'Encyclopaedia Britannica, "Amish"',
+  'epa-ewaste'      => 'US Environmental Protection Agency, "Electronics Donation and Recycling"',
+  'usgs-cloud'      => 'US Geological Survey, Water Science School, on how much a cloud weighs',
+  'brit-swan'       => 'Encyclopaedia Britannica, "Swan"',
+  'iucn-ass'        => 'IUCN Red List of Threatened Species, "African Wild Ass" (Equus africanus)',
+  'brit-earth'      => 'Encyclopaedia Britannica, "Earth" (rotation and the day)',
 ];
 
 // category => [label, short description]
@@ -258,12 +269,15 @@ $HEAVEN = [
     ['Quiet places today', HEAVEN_REAL, [
       'Many hospitals, airports and universities have quiet rooms that are open to people of every faith, or of none, where they can pray, meditate or simply sit in silence.',
     ]],
+    ['A chapel for everyone', HEAVEN_REAL, [
+      'The Rothko Chapel in Houston, Texas, opened in 1971, is a quiet, eight-sided room open to people of every faith or none. Its walls hold 14 large, dark paintings by the artist Mark Rothko, and visitors come to sit, think or pray in silence.',
+    ]],
   ],
   'art' => 'The illustration shows a small round chapel with columns, a gold dome and warm light shining from inside.',
   'look' => ['Find the light coming from inside.', 'Count the columns.'],
   'questions' => ['Why might people want a quiet place?', 'How do people you know pray, think or reflect?', 'Where could you find a quiet moment in a busy day?'],
   'words' => ['Chapel' => 'A small place of worship.', 'Prophet' => 'A person believed to speak for God.', 'Meditate' => 'To quiet and focus the mind.'],
-  'sources' => ['bible-isaiah', 'brit-prayer'],
+  'sources' => ['bible-isaiah', 'brit-prayer', 'rothko'],
   'related' => ['palace-of-light', 'bell-tower', 'garden-of-light'],
 ],
 
@@ -281,12 +295,15 @@ $HEAVEN = [
     ['How bells sing', HEAVEN_REAL, [
       'A bell rings when it is struck and its metal shakes, sending out waves of sound. Bell makers tune a bell by shaving metal from the inside. Some towers hold a carillon, a set of at least 23 bells played from a keyboard.',
     ]],
+    ['A bell for freedom', HEAVEN_REAL, [
+      'The Liberty Bell in Philadelphia carries words from the Bible: "Proclaim liberty throughout all the land" (Leviticus 25:10). It cracked and has not been rung regularly since 1846. In the 1830s, people campaigning to end slavery gave it its name and made it a symbol of freedom.',
+    ]],
   ],
   'art' => 'The illustration shows a tall white tower with an open top holding golden bells, and a gold spire.',
   'look' => ['Find the golden bells.', 'Why is the top of the tower open?'],
   'questions' => ['Why might bells be used for celebrations and remembrance?', 'What sounds mean celebration where you live?', 'How does sound travel from a bell to your ears?'],
   'words' => ['Carillon' => 'A set of at least 23 bells played from a keyboard.', 'Vibrate' => 'To shake quickly back and forth.', 'Praise' => 'To speak or sing about how good someone is.'],
-  'sources' => ['bible-psalms', 'brit-bell', 'brit-carillon'],
+  'sources' => ['bible-psalms', 'brit-bell', 'brit-carillon', 'nps-liberty'],
   'related' => ['prayer-chapel', 'harp-workshop', 'angel-statue'],
 ],
 
@@ -491,12 +508,15 @@ $HEAVEN = [
     ['Sharing in our world', HEAVEN_REAL, [
       'Food banks collect food that would otherwise go to waste and give it to families who need it. In many neighborhoods, small "little free pantries" let anyone leave food or take some, no questions asked.',
     ]],
+    ['A kitchen for everyone', HEAVEN_REAL, [
+      'At the Golden Temple in Amritsar, India, the Sikh community kitchen, called the langar, serves free meals to tens of thousands of people every day. Volunteers cook and wash up, anyone may come, and everyone sits on the floor together, as equals.',
+    ]],
   ],
   'art' => 'The illustration shows a small open marble pavilion with a gold canopy roof and baskets of fruit and flowers.',
   'look' => ['Find the baskets of fruit.', 'What else is in the pavilion?'],
   'questions' => ['What would a market with no prices be like?', 'Why do so many faiths ask people to give to others?', 'What could you share with someone this week?'],
   'words' => ['Pavilion' => 'A light, open building, often in a garden or park.', 'Zakat' => 'In Islam, giving a share of one\'s wealth to people in need.', 'Food bank' => 'A place that gives free food to people who need it.'],
-  'sources' => ['bible-acts', 'brit-zakat', 'feeding-america'],
+  'sources' => ['bible-acts', 'brit-zakat', 'feeding-america', 'brit-langar'],
   'related' => ['banquet-hall', 'hall-of-treasures', 'tree-of-life'],
 ],
 
@@ -572,7 +592,7 @@ $HEAVEN = [
 // ---------------- Wisdom and music ----------------
 'hall-of-wisdom' => [
   'name' => 'Hall of wisdom', 'latin' => 'Proverbs 3:13–14', 'cat' => 'learn', 'src' => 'art/knowledge_3.png',
-  'summary' => 'A domed library of light, where learning never ends.',
+  'summary' => 'A domed library of light where learning never ends, inspired by faiths that treasure wisdom and by the great libraries of today.',
   'facts' => ['Inspired by' => 'Proverbs 3:13–14', 'The words' => '"Blessed are those who find wisdom"', 'Largest real library' => 'The Library of Congress, Washington, D.C.', 'Its collection' => 'More than 170 million items'],
   'sections' => [
     ['The hall', HEAVEN_IMAGINE, [
@@ -677,12 +697,15 @@ $HEAVEN = [
     ['Running for everyone', HEAVEN_REAL, [
       'A standard running track is 400 meters around the inside lane. The Paralympic Games, held after each Summer and Winter Olympics, bring together athletes with disabilities from around the world. Parkrun, a free weekly 5-kilometer event held in hundreds of parks, welcomes runners and walkers of every speed.',
     ]],
+    ['Helped to the finish', HEAVEN_REAL, [
+      'At the 1992 Olympic Games in Barcelona, the British runner Derek Redmond tore a muscle in his leg during a 400-meter race. He kept hobbling on, and his father came out of the crowd to help him reach the finish line, while the whole stadium stood and cheered.',
+    ]],
   ],
   'art' => 'The illustration shows an oval running track with gold lanes around a green field, with a small marble finish arch.',
   'look' => ['Find the finish arch.', 'How many lanes can you count?'],
   'questions' => ['What could it mean to "run the race" in life?', 'Why might cheering for the last runner matter?', 'What helps you keep going when something is hard?'],
   'words' => ['Perseverance' => 'Keeping going when things are hard.', 'Lane' => 'A strip of a track for one runner.', 'Paralympics' => 'International games for athletes with disabilities.'],
-  'sources' => ['bible-hebrews', 'bible-timothy', 'ipc', 'parkrun'],
+  'sources' => ['bible-hebrews', 'bible-timothy', 'ipc', 'parkrun', 'brit-olympics'],
   'related' => ['victors-arena', 'spring-pool', 'lantern-circle'],
 ],
 
@@ -724,12 +747,15 @@ $HEAVEN = [
     ['Homes for everyone', HEAVEN_REAL, [
       'A safe home is one of the most basic human needs. Groups such as Habitat for Humanity, founded in 1976, help families build or repair homes, with volunteers working side by side with the families who will live there.',
     ]],
+    ['Room for one more', HEAVEN_REAL, [
+      'Around the world, more than 100 million people have been forced to leave their homes because of war, persecution or disaster, according to the United Nations refugee agency. Many families, towns and faith groups help them find a safe place to live.',
+    ]],
   ],
   'art' => 'The illustration shows a large white marble mansion with many wings, balconies, gold roofs and gardens.',
   'look' => ['Count the gold roofs.', 'Find the gardens between the wings.'],
   'questions' => ['What makes a house feel like home?', 'Why might it matter that there is room for everyone?', 'How could a town make sure everyone has a home?'],
   'words' => ['Mansion' => 'A very large house.', 'Wing' => 'A part of a building that sticks out from the main part.', 'Shelter' => 'A place that protects from weather or danger.'],
-  'sources' => ['bible-john', 'habitat'],
+  'sources' => ['bible-john', 'habitat', 'unhcr'],
   'related' => ['marble-cottage', 'garden-villa', 'welcome-hall'],
 ],
 
@@ -747,12 +773,15 @@ $HEAVEN = [
     ['Good neighbors', HEAVEN_REAL, [
       'The World Happiness Report, which compares countries each year, finds that people are happier where they can count on others and trust their neighbors. The United Nations marks the International Day of Peace every year on September 21.',
     ]],
+    ['Swords into plowshares', HEAVEN_REAL, [
+      'In the garden of the United Nations headquarters in New York stands a bronze statue of a man hammering a sword into a plow. Its name, "Let Us Beat Swords into Plowshares", comes from the words of Micah and Isaiah. It was a gift from the Soviet Union in 1959.',
+    ]],
   ],
   'art' => 'The illustration shows a white marble family house with a gold roof, a garden and flowering vines.',
   'look' => ['Find the flowering vines.', 'Where is the garden?'],
   'questions' => ['What makes you feel safe at home?', 'What does "beat swords into plowshares" mean?', 'How can neighbors look after each other?'],
   'words' => ['Plowshare' => 'The blade of a plow.', 'Vine' => 'A climbing plant, such as a grapevine.', 'Belonging' => 'Feeling part of a group.'],
-  'sources' => ['bible-micah', 'whr', 'un-peace'],
+  'sources' => ['bible-micah', 'whr', 'un-peace', 'un-swords'],
   'related' => ['house-of-many-rooms', 'garden-villa', 'dove-statue'],
 ],
 
@@ -770,12 +799,15 @@ $HEAVEN = [
     ['Courtyard homes', HEAVEN_REAL, [
       'Houses built around a private courtyard are found all over the world, from the Roman domus to the courtyard houses of Beijing and the riads of Fez in Morocco. The courtyard brings light, fresh air and a safe place to play into the middle of the home.',
     ]],
+    ['Paradise gardens', HEAVEN_REAL, [
+      'The word "paradise" comes from an old Persian word for a walled garden. Persian gardens are often divided into four parts by channels of water, with shady trees and pools. UNESCO protects nine of these gardens in Iran as world heritage.',
+    ]],
   ],
   'art' => 'The illustration shows a large white villa built around a courtyard with a fountain, with gold domes and cypress trees.',
   'look' => ['Find the fountain in the courtyard.', 'How many gold domes can you see?'],
   'questions' => ['Why might people want to enjoy the fruit of their own work?', 'What would you use a courtyard in the middle of your home for?', 'How do homes near you let in light and air?'],
   'words' => ['Courtyard' => 'An open space surrounded by buildings or walls.', 'Vineyard' => 'A field where grapes are grown.', 'Riad' => 'A traditional Moroccan house built around a courtyard garden.'],
-  'sources' => ['bible-isaiah', 'un-fez'],
+  'sources' => ['bible-isaiah', 'un-fez', 'un-persian'],
   'related' => ['garden-of-light', 'marble-cottage', 'fountain-of-life'],
 ],
 
@@ -794,12 +826,15 @@ $HEAVEN = [
     ['Building after disasters', HEAVEN_REAL, [
       'After floods, storms and earthquakes, volunteers from charities and faith groups often travel to help rebuild homes and schools. Real cranes lift heavy loads with steel cables and pulleys, balanced by heavy counterweights so they don\'t tip over.',
     ]],
+    ['Raising a barn together', HEAVEN_REAL, [
+      'In Amish communities in the United States, neighbors gather for a "barn raising". With many hands working together, they can put up the whole frame of a barn for one family in a single day, and share a big meal afterward.',
+    ]],
   ],
   'art' => 'The illustration shows a slim white marble tower with a long gold arm and a beam of light instead of a rope, lifting a glowing marble block.',
   'look' => ['Follow the beam of light to the block.', 'Find the gold arm.'],
   'questions' => ['Why might working together make a big job easier?', 'How do people help rebuild after a disaster?', 'How does a counterweight stop a crane from tipping over?'],
   'words' => ['Crane' => 'A machine for lifting heavy things.', 'Counterweight' => 'A weight that balances a load.', 'Disaster' => 'A sudden event that causes great damage.'],
-  'sources' => ['bible-nehemiah', 'brit-crane'],
+  'sources' => ['bible-nehemiah', 'brit-crane', 'brit-amish'],
   'related' => ['building-materials', 'house-of-many-rooms', 'palace-of-light'],
 ],
 
@@ -817,12 +852,15 @@ $HEAVEN = [
     ['The real materials', HEAVEN_REAL, [
       'Gold is one of the few metals that never rusts or tarnishes, which is why ancient gold jewelry still shines today. Marble forms deep underground when limestone is squeezed and heated over millions of years. Pearls grow inside oysters and mussels, layer by layer.',
     ]],
+    ['Gold from old phones', HEAVEN_REAL, [
+      'Gold can be recycled again and again. According to the US Environmental Protection Agency, recycling a million old cell phones recovers about 34 kilograms of gold, along with silver, copper and other metals that would otherwise have to be mined.',
+    ]],
   ],
   'art' => 'The illustration shows a neat pile of white marble blocks, stacked gold bars, a basket of shining pearls and a few gold roof tiles.',
   'look' => ['Find the basket of pearls.', 'Which materials shine the most?'],
   'questions' => ['Why might someone describe heaven with gold and pearls?', 'Why does gold never rust?', 'What are the most precious things to you, and why?'],
   'words' => ['Marble' => 'A hard, often white stone formed from limestone.', 'Tarnish' => 'To lose shine because a dull coating forms on the surface.', 'Jasper' => 'A colorful, hard stone.'],
-  'sources' => ['bible-rev', 'brit-gold', 'brit-marble', 'brit-pearl'],
+  'sources' => ['bible-rev', 'brit-gold', 'brit-marble', 'brit-pearl', 'epa-ewaste'],
   'related' => ['light-crane', 'pearl-gate', 'hall-of-treasures'],
 ],
 ];

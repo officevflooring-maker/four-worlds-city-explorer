@@ -569,12 +569,15 @@ $VEHICLES = [
     ['Real chariots', HEAVEN_REAL, [
       'Light chariots with spoked wheels were first made about 4,000 years ago and spread across Asia, Egypt and Europe. You can find out how Egyptians and Romans used them in the Ancient Egypt and Ancient Rome worlds of this atlas.',
     ]],
+    ['Why the sun crosses the sky', HEAVEN_REAL, [
+      'Stories of a sun god in a chariot were a way to explain why the sun moves across the sky. Today we know that the sun stays put: Earth spins around once a day, so the sun seems to rise in the east, cross the sky and set in the west.',
+    ]],
   ],
   'art' => 'The illustration shows a small golden chariot with blue seats, pulled by a white horse.',
   'look' => ['Find the white horse.', 'What color are the seats?'],
   'questions' => ['Why do you think stories show people being carried up to heaven?', 'How did chariots change travel long ago?', 'What would you like to ride in an imagined city?'],
   'words' => ['Chariot' => 'A light two-wheeled vehicle pulled by horses.', 'Whirlwind' => 'A column of air spinning very fast.', 'Prophet' => 'A person believed to speak for God.'],
-  'sources' => ['bible-kings', 'brit-helios', 'brit-chariot'],
+  'sources' => ['bible-kings', 'brit-helios', 'brit-chariot', 'brit-earth'],
   'related' => ['cloud-carriage', 'victors-arena', 'pearl-gate'],
 ],
 'cloud-carriage' => [
@@ -591,12 +594,15 @@ $VEHICLES = [
     ['Floating for real', HEAVEN_REAL, [
       'Maglev trains really do float: powerful magnets lift them about a centimeter above the track and push them along, so there are no wheels to rub. A maglev line has carried passengers in Shanghai since 2004, and in 2015 a test train in Japan reached 603 kilometers an hour.',
     ]],
+    ['How heavy is a cloud?', HEAVEN_REAL, [
+      'Clouds look light as feathers, but they are made of billions of tiny water droplets. Scientists at the US Geological Survey estimate that one ordinary puffy cloud can hold about 500 tonnes of water, spread through a huge space of air.',
+    ]],
   ],
   'art' => 'The illustration shows a little white carriage with gold trim and blue seats, floating on a puff of cloud.',
   'look' => ['Find the cloud under the carriage.', 'Where would passengers sit?'],
   'questions' => ['What would be good about a vehicle with no wheels?', 'How can magnets lift a whole train?', 'How do people travel without cars where you live?'],
   'words' => ['Maglev' => 'Short for magnetic levitation: floating on magnets.', 'Carriage' => 'A vehicle for carrying people.', 'Friction' => 'The force that slows things rubbing together.'],
-  'sources' => ['bible-psalms', 'bible-acts', 'brit-maglev'],
+  'sources' => ['bible-psalms', 'bible-acts', 'brit-maglev', 'usgs-cloud'],
   'related' => ['golden-chariot', 'cloud-island', 'sky-bridge'],
 ],
 'swan-boat' => [
@@ -613,12 +619,15 @@ $VEHICLES = [
     ['Real swan boats', HEAVEN_REAL, [
       'Since 1877, the Swan Boats of Boston\'s Public Garden have carried visitors around a pond on pedal-powered boats decorated with large swans. Real swans are among the heaviest birds that can fly, and they need a long run across the water to take off.',
     ]],
+    ['Swan families', HEAVEN_REAL, [
+      'Many swans stay with the same partner for years, often for life, and both parents look after their young, called cygnets. Young cygnets sometimes ride on a parent\'s back, tucked between its wings.',
+    ]],
   ],
   'art' => 'The illustration shows a golden boat shaped like a swan, with white wings and a blue seat.',
   'look' => ['Find the swan\'s head.', 'Where is the seat?'],
   'questions' => ['Why might a swan stand for grace and wisdom?', 'Why do heavy birds need a long run to take off?', 'What would you like to ride on a slow, quiet trip?'],
   'words' => ['Hamsa' => 'A swan or goose in Hindu tradition, a symbol of wisdom.', 'Grace' => 'Smooth, beautiful movement; also kindness.', 'Pedal' => 'A lever pushed with the foot.'],
-  'sources' => ['brit-saraswati', 'boston-swan'],
+  'sources' => ['brit-saraswati', 'boston-swan', 'brit-swan'],
   'related' => ['spring-pool', 'cloud-carriage', 'harp-workshop'],
 ],
 'fruit-donkey' => [
@@ -635,12 +644,15 @@ $VEHICLES = [
     ['Donkeys in our world', HEAVEN_REAL, [
       'Donkeys were tamed in Africa about 7,000 years ago and still carry loads in many countries. In Colombia, a teacher named Luis Soriano has for years carried books to children in faraway villages on two donkeys, Alfa and Beto, as his "Biblioburro", or donkey library.',
     ]],
+    ['The wild donkey', HEAVEN_REAL, [
+      'The donkey\'s wild ancestor, the African wild ass, still lives in the rocky deserts of Eritrea and Ethiopia. It is now critically endangered, with only a few hundred at most left in the wild.',
+    ]],
   ],
   'art' => 'The illustration shows a white donkey carrying baskets of fruit and flowers, led by a smiling boy in a white tunic.',
   'look' => ['Find the baskets of fruit.', 'Who is leading the donkey?'],
   'questions' => ['Why might riding a donkey be a sign of peace?', 'How could a donkey library help children?', 'What could you bring to people who live far away?'],
   'words' => ['Humility' => 'Not thinking of yourself as more important than others.', 'Palm Sunday' => 'The Sunday before Easter, remembering Jesus\'s ride into Jerusalem.', 'Library' => 'A collection of books that people can borrow.'],
-  'sources' => ['bible-matthew', 'bible-zechariah', 'brit-donkey', 'cnn-biblioburro'],
+  'sources' => ['bible-matthew', 'bible-zechariah', 'brit-donkey', 'cnn-biblioburro', 'iucn-ass'],
   'related' => ['sharing-pavilion', 'tree-of-life', 'welcome-hall'],
 ],
 ],
