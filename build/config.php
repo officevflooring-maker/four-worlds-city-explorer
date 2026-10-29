@@ -4,7 +4,7 @@
 const SITE_URL  = 'https://atlasofcities.koaa01.workers.dev';   // Cloudflare Workers address (Google can index it). Change when a custom domain is connected (no trailing slash)
 const SITE_NAME = 'The Atlas of Cities';
 const SITE_TAGLINE = 'Past, Present and Imagined';
-const SITE_DESC = 'Explore six illustrated isometric cities - ancient Egypt, ancient Rome, a modern town, a green elven world, a robotic future and an imagined heavenly city - and think about how cities work and what makes a good place to live.';
+const SITE_DESC = 'Explore six illustrated cities, from ancient Egypt and Rome to a modern town, an elven forest, Mars and a heavenly city, and learn how a city works.';
 // Patreon page for donations, shown only on /support/ until the poster set below has its store link.
 const PATREON_URL = 'https://www.patreon.com/cw/SamPetrov/home';
 // Our store (Lemon Squeezy). Every 'buy' link below must be a checkout link from it: in the store, open the product,

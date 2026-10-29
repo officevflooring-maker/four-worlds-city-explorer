@@ -57,6 +57,8 @@ foreach ([
   $heroTiles .= '<li class="tile decor ' . ($car ? 'decor-car' : 'decor-person') . '" style="--u:' . $u . ';--v:' . $v . ';--z:20' . ($car ? vehicle_fit($w, $link, str_starts_with($f, 'rear-')) : person_fit($w)) . '"><a class="tile-btn" href="/worlds/' . $w . '/' . $link . ($car ? '/' : '') . '" aria-label="' . h($WORLDS[$w]['name'] . ($car ? ' vehicle' : ' person')) . '">'
     . img($w, $f, '', $car ? '72px' : '48px', 'draggable="false"') . '</a></li>';
 }
+$peopleLinks = '';
+foreach (WORLD_ORDER as $w) $peopleLinks .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/people/">' . h($WORLDS[$w]['short']) . ' people</a></li>';
 $homePlayCards = play_cards(['/play/city-builder/', '/play/world-sort/', '/play/shadows/', '/play/quiz/', '/play/puzzle/', '/play/passport/']);
 $heroLegend = '';
 foreach (WORLD_ORDER as $w) $heroLegend .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';
@@ -189,7 +191,7 @@ page('/', [
 <section class="wrap section" aria-labelledby="people-h">
   <div class="sec-head"><h2 id="people-h">Meet the people</h2><p>Senators and soldiers, runners and dog walkers, elf gardeners and Mars engineers. Find out who uses each city, and how.</p></div>
   <ul class="crowd">{$crowd}</ul>
-  <ul class="world-links"><li><a class="world-link world-roman" href="/worlds/roman/people/">Roman people</a></li><li><a class="world-link world-modern" href="/worlds/modern/people/">Modern people</a></li><li><a class="world-link world-elven" href="/worlds/elven/people/">Elven people</a></li><li><a class="world-link world-future" href="/worlds/future/people/">Future people</a></li></ul>
+  <ul class="world-links">{$peopleLinks}</ul>
 </section>
 
 <section class="band band-dark" aria-labelledby="tours-h">
