@@ -1,0 +1,41 @@
+# page|Wikimedia Commons search terms, separated by ;  (one photo per search)
+# Only public domain, CC0, CC BY and CC BY-SA images are accepted (see tools/fetch-photos.php).
+pyramid|Pyramid of Khufu;Pyramid of Djoser Saqqara;Giza pyramid complex
+sphinx|Great Sphinx of Giza;Dream Stele Sphinx
+obelisk|Obelisk of Hatshepsut Karnak;Unfinished obelisk Aswan;Luxor Obelisk Place de la Concorde
+cat-statue|Gayer-Anderson cat;Bastet bronze statue
+pharaohs-palace|Malkata palace;Painted pavement Amarna Egyptian Museum
+royal-treasury|Golden mask of Tutankhamun;Amarna letter cuneiform tablet
+temple-gateway|Edfu temple pylon;Karnak first pylon;Luxor Temple pylon
+hall-of-columns|Great Hypostyle Hall Karnak;Karnak hypostyle hall columns
+twin-colossi|Colossi of Memnon
+lotus-pavilion|Kiosk of Trajan Philae;White Chapel of Senusret I in Karnak Open Air Museum 01
+scribe-school|Seated Scribe Louvre;Ostracon Deir el-Medina
+house-of-life|Ramesseum;Ebers Papyrus Leipzig
+great-library|Bibliotheca Alexandrina exterior;Bibliotheca Alexandrina reading room
+market|Niankhkhnum Khnumhotep market scene;Saqqara mastaba relief market
+granary|Meketre granary model;Ramesseum storerooms mud brick vaults
+boat-workshop|Khufu ship;Khufu ship museum Giza
+caravan-camp|Punt expedition relief Deir el-Bahari;Wadi Hammamat inscriptions
+lotus-garden|Nebamun garden pool painting;Temple of Hatshepsut Deir el-Bahari
+palm-grove|Date palms Nile Egypt;Doum palm Egypt
+lotus-pool|Sacred lake Karnak;Nymphaea caerulea
+sailing-boat|Meketre sailing boat model;Felucca Nile Aswan
+papyrus-boat|Nebamun hunting in the marshes;Cyperus papyrus Nile
+archery-range|Amenhotep II shooting arrows copper target;Tutankhamun bow
+rowing-pool|Travelling Boat being Rowed MET;Egyptian model boat with rowers
+chariot-arena|Tutankhamun chariot;Battle of Kadesh relief Abu Simbel
+feast-hall|Nebamun banquet scene;Tomb of Nakht musicians
+mud-brick-house|Rekhmire brick making
+town-house|Soul house Middle Kingdom;Soul house pottery Egypt
+family-house|Senet game board;Ancient Egyptian toy
+porch-house|Ancient Egyptian headrest;Ancient Egyptian chair Egyptian Museum
+village-house|Deir el-Medina workers village houses
+courtyard-villa|Tell el-Amarna ruins
+garden-villa|Meketre garden model;Book of the Dead of Nakht
+watchtower|Buhen;Medinet Habu migdol gate
+lifting-lever|Shaduf Nile
+building-materials|Gebel el-Silsila quarry;Ancient Egyptian copper chisel
+chariot|Chariot of Tutankhamun Egyptian Museum;Ramesses II chariot relief
+camel|Camels Giza pyramids;Dromedary Egypt desert
+ox-cart|Laden Donkeys and Ploughing Tomb of Djar MET

@@ -7,7 +7,7 @@
 $WORLDS = [
   'egypt' => [
     'name' => 'Ancient Egypt', 'short' => 'Egyptian', 'type' => 'Historical setting',
-    'lead' => 'A real civilization on the Nile. Open any of 37 places, from the pyramid to the village of the tomb builders, to learn how it worked.',
+    'lead' => 'A real civilization on the Nile. Open any of 37 places to learn how it worked, with photos of real Egyptian sites.',
     'card' => 'pharaohs-palace', 'ground' => 'ground-grass',
   ],
   'heaven' => [

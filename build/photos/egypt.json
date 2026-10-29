@@ -1,0 +1,791 @@
+{
+    "pyramid": [
+        {
+            "img": "pyramid-1",
+            "file": "File:Pyramid of Cheops - side.jpg",
+            "search": "Pyramid of Khufu",
+            "author": "kallerna",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Pyramid_of_Cheops_-_side.jpg",
+            "desc": "Side of the Pyramid of Cheops."
+        },
+        {
+            "img": "pyramid-2",
+            "file": "File:Saqqara pyramid ver 2.jpg",
+            "search": "Pyramid of Djoser Saqqara",
+            "author": "Charles J. Sharp",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Saqqara_pyramid_ver_2.jpg",
+            "desc": "Saqqara pyramid of Djoser in Egypt"
+        },
+        {
+            "img": "pyramid-3",
+            "file": "File:All Gizah Pyramids.jpg",
+            "search": "Giza pyramid complex",
+            "author": "Ricardo Liberato",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg",
+            "desc": "All Giza Pyramids in one shot."
+        }
+    ],
+    "sphinx": [
+        {
+            "img": "sphinx-1",
+            "file": "File:Great Sphinx (أبو الهول).jpg",
+            "search": "Great Sphinx of Giza",
+            "author": "Petar Milošević",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_(%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84).jpg",
+            "desc": "This is a photo of a natural heritage site in Egypt identified by the ID:"
+        },
+        {
+            "img": "sphinx-2",
+            "file": "File:Great Sphinx with Stelae.jpg",
+            "search": "Dream Stele Sphinx",
+            "author": "Chanel Wheeler",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_with_Stelae.jpg",
+            "desc": "Frontal view of the great Sphinx of Giza with the Dream stela. Frontalansicht der Großen Sphinx von Gizeh mit der Traumstele."
+        }
+    ],
+    "obelisk": [
+        {
+            "img": "obelisk-1",
+            "file": "File:Karnak temple complex 4.jpg",
+            "search": "Obelisk of Hatshepsut Karnak",
+            "author": "Hamerani",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Karnak_temple_complex_4.jpg",
+            "desc": "Karnak temple complex"
+        },
+        {
+            "img": "obelisk-2",
+            "file": "File:Assuan Unvollendeter Obelisk 35.jpg",
+            "search": "Unfinished obelisk Aswan",
+            "author": "Olaf Tausch",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Assuan_Unvollendeter_Obelisk_35.jpg",
+            "desc": "Unvollendeter Obelisk im Steinbruch von Assuan, Ägypten"
+        },
+        {
+            "img": "obelisk-3",
+            "file": "File:Paris - Place de la Concorde - PA00088875 - 002.jpg",
+            "search": "Luxor Obelisk Place de la Concorde",
+            "author": "Thesupermat",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Paris_-_Place_de_la_Concorde_-_PA00088875_-_002.jpg",
+            "desc": "L'obélisque vu de nuit."
+        }
+    ],
+    "cat-statue": [
+        {
+            "img": "cat-statue-1",
+            "file": "File:Gayer-Anderson Cat 01-black.jpg",
+            "search": "Gayer-Anderson cat",
+            "author": "Unknown author",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "page": "https://commons.wikimedia.org/wiki/File:Gayer-Anderson_Cat_01-black.jpg",
+            "desc": "Gayer-Anderson Cat; Made out of bronze, from the Late Period about 664-332 BC. It is a representation of the cat-goddess Bastet. The cat wears jewellery and a protective wedjat amulet. A winged scarab appears on the chest and head. This sculpture is now known as the Gayer-Anderson cat, after its don"
+        },
+        {
+            "img": "cat-statue-2",
+            "file": "File:Statue of the goddess Bastet, bronze - Museo Egizio, Turin S 52 p04.jpg",
+            "search": "Bastet bronze statue",
+            "author": "Unknown author",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Statue_of_the_goddess_Bastet,_bronze_-_Museo_Egizio,_Turin_S_52_p04.jpg",
+            "desc": ""
+        }
+    ],
+    "pharaohs-palace": [
+        {
+            "img": "pharaohs-palace-1",
+            "file": "File:Malkata from the air.jpg",
+            "search": "Malkata palace",
+            "author": "en:User:Markh",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Malkata_from_the_air.jpg",
+            "desc": "Palace of Malkata from the air"
+        },
+        {
+            "img": "pharaohs-palace-2",
+            "file": "File:By ovedc - Egyptian Museum (Cairo) - 152.jpg",
+            "search": "Painted pavement Amarna Egyptian Museum",
+            "author": "Ovedc",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:By_ovedc_-_Egyptian_Museum_(Cairo)_-_152.jpg",
+            "desc": "Remains of a painted plaster pavement from a palace of Akhenaten in Amarna."
+        }
+    ],
+    "royal-treasury": [
+        {
+            "img": "royal-treasury-1",
+            "file": "File:Golden mask of Tutankhamun.jpg",
+            "search": "Golden mask of Tutankhamun",
+            "author": "Thomas Clouet",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Golden_mask_of_Tutankhamun.jpg",
+            "desc": "Death mask of Tutankamun"
+        },
+        {
+            "img": "royal-treasury-2",
+            "file": "File:Amarna letter. Letter from Yapahu (ruler of Gezer) to the Egyptian pharaoh Amenhotep III or son Akhenaten.jpg",
+            "search": "Amarna letter cuneiform tablet",
+            "author": "Osama Shukir Muhammed Amin FRCP(Glasg)",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Amarna_letter._Letter_from_Yapahu_(ruler_of_Gezer)_to_the_Egyptian_pharaoh_Amenhotep_III_or_son_Akhenaten.jpg",
+            "desc": "Amarna letter. Letter from Yapahu (ruler of Gezer) to the Egyptian pharaoh Amenhotep III or son Akhenaten. Yapahu requests help against Hapiru (Biblical Hebrews), a roving band of stateless people, based in the hill country, and conducting raids on cities. These \"alternative Canaanites\" formed the b"
+        }
+    ],
+    "temple-gateway": [
+        {
+            "img": "temple-gateway-1",
+            "file": "File:Edfu Tempel Pylon 07.JPG",
+            "search": "Edfu temple pylon",
+            "author": "Olaf Tausch",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Edfu_Tempel_Pylon_07.JPG",
+            "desc": "Portal im Pylon des Tempels von Edfu, Ägypten"
+        },
+        {
+            "img": "temple-gateway-2",
+            "file": "File:Karnak temple complex 12.jpg",
+            "search": "Karnak first pylon",
+            "author": "Hamerani",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Karnak_temple_complex_12.jpg",
+            "desc": "Karnak temple complex"
+        },
+        {
+            "img": "temple-gateway-3",
+            "file": "File:Luxor Temple R04.jpg",
+            "search": "Luxor Temple pylon",
+            "author": "Marc Ryckaert",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Luxor_Temple_R04.jpg",
+            "desc": "Luxor Temple of (Egypt)"
+        }
+    ],
+    "hall-of-columns": [
+        {
+            "img": "hall-of-columns-1",
+            "file": "File:Templo de Karnak, Luxor, Egipto, 2022-04-03, DD 168.jpg",
+            "search": "Great Hypostyle Hall Karnak",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Templo_de_Karnak,_Luxor,_Egipto,_2022-04-03,_DD_168.jpg",
+            "desc": "Karnak Temple, Luxor, Egypt"
+        },
+        {
+            "img": "hall-of-columns-2",
+            "file": "File:Columns at Hypostyle hall of Karnak Temple in Luxor Egypt.jpg",
+            "search": "Karnak hypostyle hall columns",
+            "author": "Tim Adams",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Columns_at_Hypostyle_hall_of_Karnak_Temple_in_Luxor_Egypt.jpg",
+            "desc": "Columns at Hypostyle hall of Karnak Temple in Luxor Egypt"
+        }
+    ],
+    "twin-colossi": [
+        {
+            "img": "twin-colossi-1",
+            "file": "File:Colosos de Memnón, Luxor, Egipto, 2022-04-03, DD 132.jpg",
+            "search": "Colossi of Memnon",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Colosos_de_Memn%C3%B3n,_Luxor,_Egipto,_2022-04-03,_DD_132.jpg",
+            "desc": "Colossi of Memnon, Luxor, Egypt. The two massive stone statues stand at the front of the ruined Mortuary Temple of Amenhotep III, the largest temple in the Theban Necropolis. They have stood since 1350 BC, and were well known to ancient Greeks and Romans, as well as early modern travelers and Egypto"
+        }
+    ],
+    "lotus-pavilion": [
+        {
+            "img": "lotus-pavilion-1",
+            "file": "File:File, Asuán, Egipto, 2022-04-01, DD 142.jpg",
+            "search": "Kiosk of Trajan Philae",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:File,_Asu%C3%A1n,_Egipto,_2022-04-01,_DD_142.jpg",
+            "desc": "Trajan's Kiosk, Philae, Aswan, Egypt. The unfinished hypaethral temple, currently located on Agilkia Island, is attributed to Trajan, Roman emperor from 98 to 117 AD, due to his depiction as pharaoh seen on some of the interior reliefs. However, the majority of the structure dates to an earlier time"
+        },
+        {
+            "img": "lotus-pavilion-2",
+            "file": "File:White Chapel of Senusret I in Karnak Open Air Museum 01.jpg",
+            "search": "White Chapel of Senusret I in Karnak Open Air Museum 01",
+            "author": "Marsupium",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:White_Chapel_of_Senusret_I_in_Karnak_Open_Air_Museum_01.jpg",
+            "desc": "White Chapel of Senusret I in the Open Air Museum in the precinct of Amun-Ra in Karnak, Egypt"
+        }
+    ],
+    "scribe-school": [
+        {
+            "img": "scribe-school-1",
+            "file": "File:F0829 Louvre Scribe accroupi detail E3023 rwk.jpg",
+            "search": "Seated Scribe Louvre",
+            "author": "Unknown",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:F0829_Louvre_Scribe_accroupi_detail_E3023_rwk.jpg",
+            "desc": "The so-called Seated Scribe. Painted limestone, eyes inlaid with rock crystal in copper, 4th of 5th dynasty of Egypt, 2600–2350 BC (museum) or 2620-2500 BC, late 27th-26th century BC (en:The Seated Scribe article). From Saqqarah."
+        },
+        {
+            "img": "scribe-school-2",
+            "file": "File:Paris - Louvre 7499.jpg",
+            "search": "Ostracon Deir el-Medina",
+            "author": "Phyrexian",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Paris_-_Louvre_7499.jpg",
+            "desc": "The Louvre Museum in Paris, France."
+        }
+    ],
+    "house-of-life": [
+        {
+            "img": "house-of-life-1",
+            "file": "File:Luxor Ramesseum R02.jpg",
+            "search": "Ramesseum",
+            "author": "Marc Ryckaert",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Luxor_Ramesseum_R02.jpg",
+            "desc": "Luxor (Egypt): the Ramesseum"
+        },
+        {
+            "img": "house-of-life-2",
+            "file": "File:Ebers-Kalender – Universitätsbibliothek Leipzig.png",
+            "search": "Ebers Papyrus Leipzig",
+            "author": "ancient Egypt / Scan by Leipzig University",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Ebers-Kalender_%E2%80%93_Universit%C3%A4tsbibliothek_Leipzig.png",
+            "desc": "Verso of Papyrus Ebers, upside down (text upright)"
+        }
+    ],
+    "great-library": [
+        {
+            "img": "great-library-1",
+            "file": "File:Bibliotheca Alexandrina GLAM EGY 05.jpg",
+            "search": "Bibliotheca Alexandrina exterior",
+            "author": "Hassan Hamdy wahidy",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Bibliotheca_Alexandrina_GLAM_EGY_05.jpg",
+            "desc": "Exterior view of the Bibliotheca Alexandrina, showing the building’s distinctive facade and architectural design in Alexandria, Egypt."
+        },
+        {
+            "img": "great-library-2",
+            "file": "File:Reading Room in Bibliotheca Alexandrina.jpg",
+            "search": "Bibliotheca Alexandrina reading room",
+            "author": "D-Stanley",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Reading_Room_in_Bibliotheca_Alexandrina.jpg",
+            "desc": "This is a photo of a monument in Egypt identified by the ID"
+        }
+    ],
+    "market": [
+        {
+            "img": "market-1",
+            "file": "File:Limestone block relief from a wall of the dismantled mastaba tomb-chapel of Tepemankh II. It shows part of a market scene. From Saqqara, Egypt. 5th Dynasty. Petrie Museum.jpg",
+            "search": "Saqqara mastaba relief market",
+            "author": "Osama Shukir Muhammed Amin FRCP(Glasg)",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Limestone_block_relief_from_a_wall_of_the_dismantled_mastaba_tomb-chapel_of_Tepemankh_II._It_shows_part_of_a_market_scene._From_Saqqara,_Egypt._5th_Dynasty._Petrie_Museum.jpg",
+            "desc": "This limestone block relief came from a wall of the dismantled mastaba tomb-chapel of Tepemankh II (Djadjamankh). It shows part of a market scene; men bringing offerings and men trading sandals for grain in the center. From the Tomb of Tepemankh at Saqqara, Egypt. 5th Dynasty. The Petrie Museum of E"
+        }
+    ],
+    "granary": [
+        {
+            "img": "granary-1",
+            "file": "File:Scribe statuettes from a model of a granary from Meketre's tomb MET DT234924.jpg",
+            "search": "Meketre granary model",
+            "author": "Unknown author",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Scribe_statuettes_from_a_model_of_a_granary_from_Meketre%27s_tomb_MET_DT234924.jpg",
+            "desc": "Granary, Meketre"
+        }
+    ],
+    "boat-workshop": [
+        {
+            "img": "boat-workshop-1",
+            "file": "File:Grand Egyptian Museum - Khufu ship.jpg",
+            "search": "Khufu ship",
+            "author": "Alena Belova for Exhibo",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Grand_Egyptian_Museum_-_Khufu_ship.jpg",
+            "desc": "The Khufu ship (solar boat of Khufu) displayed at the Grand Egyptian Museum in Giza."
+        },
+        {
+            "img": "boat-workshop-2",
+            "file": "File:Giza pyramids and Khufu boat pit.jpg",
+            "search": "Khufu ship museum Giza",
+            "author": "kallerna",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Giza_pyramids_and_Khufu_boat_pit.jpg",
+            "desc": "All pyramids of Giza and the boat shaped museum."
+        }
+    ],
+    "caravan-camp": [
+        {
+            "img": "caravan-camp-1",
+            "file": "File:Incense trees transport. Punt relief. Mortuary Temple of Hatshepsut, Deir el-Bahari.jpg",
+            "search": "Punt expedition relief Deir el-Bahari",
+            "author": "Ismoon (talk) 22:02, 2 March 2020 (UTC)",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Incense_trees_transport._Punt_relief._Mortuary_Temple_of_Hatshepsut,_Deir_el-Bahari.jpg",
+            "desc": "Punt relief. Mortuary Temple of Hatshepsut in Deir el-Bahari : Incense trees transportation. Early Eighteenth Dynasty. New Kingdom of Egypt."
+        },
+        {
+            "img": "caravan-camp-2",
+            "file": "File:Demotische Inschriften No. 161-169. Hamamât (Wadi Hammamat). Felsengrotte (NYPL b14291191-44295).jpg",
+            "search": "Wadi Hammamat inscriptions",
+            "author": "Scan by NYPL",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Demotische_Inschriften_No._161-169._Hamam%C3%A2t_(Wadi_Hammamat)._Felsengrotte_(NYPL_b14291191-44295).jpg",
+            "desc": "Demotische Inschriften No. 161-169. Hamamât [Wadi Hammamat]. Felsengrotte."
+        }
+    ],
+    "lotus-garden": [
+        {
+            "img": "lotus-garden-1",
+            "file": "File:Le Jardin de Nébamoun.jpg",
+            "search": "Nebamun garden pool painting",
+            "author": "anonymous ",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Le_Jardin_de_N%C3%A9bamoun.jpg",
+            "desc": "The Garden, fresco from Nebamun tomb, originally in Thebes, Egypt."
+        },
+        {
+            "img": "lotus-garden-2",
+            "file": "File:Templo funerario de Hatshepsut, Valle de las Reyes, Luxor, Egipto, 2022-04-03, DD 118.jpg",
+            "search": "Temple of Hatshepsut Deir el-Bahari",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Templo_funerario_de_Hatshepsut,_Valle_de_las_Reyes,_Luxor,_Egipto,_2022-04-03,_DD_118.jpg",
+            "desc": "Mortuary Temple of Hatshepsut, Luxor, Egypt. The mortuary temple built during the reign of Pharaoh Hatshepsut of the Eighteenth Dynasty of Egypt. The temple is considered to be a masterpiece of ancient architecture. Its three massive terraces rise above the desert floor and into the cliffs of Deir e"
+        }
+    ],
+    "palm-grove": [
+        {
+            "img": "palm-grove-1",
+            "file": "File:Marianne North (1830-1890) - Doum and Date Palms on the Nile above Philae, Egypt - MN360 - Marianne North Gallery.jpg",
+            "search": "Date palms Nile Egypt",
+            "author": "Marianne North",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Marianne_North_(1830-1890)_-_Doum_and_Date_Palms_on_the_Nile_above_Philae,_Egypt_-_MN360_-_Marianne_North_Gallery.jpg",
+            "desc": ""
+        },
+        {
+            "img": "palm-grove-2",
+            "file": "File:Dum palm us.JPG",
+            "search": "Doum palm Egypt",
+            "author": "David Haberlah",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "page": "https://commons.wikimedia.org/wiki/File:Dum_palm_us.JPG",
+            "desc": "Doum Palm (Dum Palm) - Hyphaene thebaica - on Us Island in Dar al-Manasir, Northern Sudan"
+        }
+    ],
+    "lotus-pool": [
+        {
+            "img": "lotus-pool-1",
+            "file": "File:Templo de Karnak, Luxor, Egipto, 2022-04-03, DD 156.jpg",
+            "search": "Sacred lake Karnak",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Templo_de_Karnak,_Luxor,_Egipto,_2022-04-03,_DD_156.jpg",
+            "desc": "Karnak Temple, Luxor, Egypt"
+        },
+        {
+            "img": "lotus-pool-2",
+            "file": "File:Nymphaea caerulea-20091014-RM-115245.jpg",
+            "search": "Nymphaea caerulea",
+            "author": "Ermell",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Nymphaea_caerulea-20091014-RM-115245.jpg",
+            "desc": "Blue Lotus (Nymphaea caerulea) in the Botanical Garden of Hokkaido University in Sapporo"
+        }
+    ],
+    "sailing-boat": [
+        {
+            "img": "sailing-boat-1",
+            "file": "File:Aswan Nile R23.jpg",
+            "search": "Felucca Nile Aswan",
+            "author": "Marc Ryckaert (MJJR)",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Aswan_Nile_R23.jpg",
+            "desc": "The Nile in Aswan, Egypt"
+        }
+    ],
+    "papyrus-boat": [
+        {
+            "img": "papyrus-boat-1",
+            "file": "File:Tomb of Nebamun.jpg",
+            "search": "Nebamun hunting in the marshes",
+            "author": "anonymous ",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Tomb_of_Nebamun.jpg",
+            "desc": "Hunting in the papyrus thicket; excerpt from a mural in the tomb of Nabamun in Thebes-West, today in the British Museum, tempera on plaster, height 81cm, 18. Dynasty, before 1350 BC Chr."
+        },
+        {
+            "img": "papyrus-boat-2",
+            "file": "File:Riserva Fiume Ciane-Saline 2024 h –papyrus.jpg",
+            "search": "Cyperus papyrus Nile",
+            "author": "Cayambe",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Riserva_Fiume_Ciane-Saline_2024_h_%E2%80%93papyrus.jpg",
+            "desc": "Papyrus, Cyperus papyrus, in Fiume Ciane-Saline Nature Reserve in Sicily, province of Syracuse."
+        }
+    ],
+    "archery-range": [
+        {
+            "img": "archery-range-1",
+            "file": "File:Royal bows from the tomb of Tutankhamun - Luxor Museum.jpg",
+            "search": "Tutankhamun bow",
+            "author": "Marsupium ",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Royal_bows_from_the_tomb_of_Tutankhamun_-_Luxor_Museum.jpg",
+            "desc": "royal bows from the tomb of Tutankhamun in the Luxor Museum in Luxor, Egypt "
+        }
+    ],
+    "rowing-pool": [
+        {
+            "img": "rowing-pool-1",
+            "file": "File:Travelling Boat being Rowed MET 20.3.2 EGDP011941.jpg",
+            "search": "Travelling Boat being Rowed MET",
+            "author": "Unknown author",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Travelling_Boat_being_Rowed_MET_20.3.2_EGDP011941.jpg",
+            "desc": "Boat, traveling, Meketre"
+        },
+        {
+            "img": "rowing-pool-2",
+            "file": "File:Model boat with rowers and a baldachin for the sarcophagus, wood - Museo Egizio (Turin) S 1208 p01.jpg",
+            "search": "Egyptian model boat with rowers",
+            "author": "Unknown author",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Model_boat_with_rowers_and_a_baldachin_for_the_sarcophagus,_wood_-_Museo_Egizio_(Turin)_S_1208_p01.jpg",
+            "desc": ""
+        }
+    ],
+    "chariot-arena": [
+        {
+            "img": "chariot-arena-1",
+            "file": "File:The Pharaoh Tutankhamun destroying his enemies.jpg",
+            "search": "Tutankhamun chariot",
+            "author": "Unknown authorUnknown author",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:The_Pharaoh_Tutankhamun_destroying_his_enemies.jpg",
+            "desc": "The Pharaon Tutankhamun destroying his enemies. Painting on wood, length: 43 cm. Egyptian Museum of Cairo."
+        },
+        {
+            "img": "chariot-arena-2",
+            "file": "File:Templo de Ramsés II, Abu Simbel, Egipto, 2022-04-02, DD 74-76 HDR.jpg",
+            "search": "Battle of Kadesh relief Abu Simbel",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Templo_de_Rams%C3%A9s_II,_Abu_Simbel,_Egipto,_2022-04-02,_DD_74-76_HDR.jpg",
+            "desc": "Bas-relief of Ramesses II on his chariot during the Battle of Kadesh against the Hittite Empire under Muwatalli II, south wall in the Hypostyle Hall of the Great Temple of Abu Simbel, Egypt. The Great Temple at Abu Simbel, which took about twenty years to build, was completed around year 24 of the r"
+        }
+    ],
+    "feast-hall": [
+        {
+            "img": "feast-hall-1",
+            "file": "File:Funerary banquet of Nebamun.jpg",
+            "search": "Nebamun banquet scene",
+            "author": "Unknown authorUnknown author",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Funerary_banquet_of_Nebamun.jpg",
+            "desc": "A fragment of the frescoes on the wall of the tomb chapel of Nebamun, depicting guests, servants, musicians, and dancers at a funerary banquet. Other images on Commons show parts of the same scene, but this image was the best I could find online depicting all of this particular fragment."
+        },
+        {
+            "img": "feast-hall-2",
+            "file": "File:Banquet Scene with Musicians, Tomb of Nakht MET LC-15 5 19j-k EGDP028769.jpg",
+            "search": "Tomb of Nakht musicians",
+            "author": "Norman de Garis Davies",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Banquet_Scene_with_Musicians,_Tomb_of_Nakht_MET_LC-15_5_19j-k_EGDP028769.jpg",
+            "desc": "; Facsimile, Nakht (TT 52), banquet, musicians"
+        }
+    ],
+    "mud-brick-house": [
+        {
+            "img": "mud-brick-house-1",
+            "file": "File:Brick-making.png",
+            "search": "Rekhmire brick making",
+            "author": "Chuck Marean",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Brick-making.png",
+            "desc": "History book illustration published in 1890 of ancient Egyption brick-making, colorized for this file."
+        }
+    ],
+    "town-house": [
+        {
+            "img": "town-house-1",
+            "file": "File:Soul Houses in Egyptian Burial , Middle Kingdom.jpg",
+            "search": "Soul house Middle Kingdom",
+            "author": "SpeakingArch",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Soul_Houses_in_Egyptian_Burial_,_Middle_Kingdom.jpg",
+            "desc": "Soul Houses in Egyptian Burial How did ordinary ancient Egyptians prepare for the afterlife?During Egypt’s Middle Kingdom, people who couldn’t afford elaborate tombs used Soul Houses—clay ..."
+        },
+        {
+            "img": "town-house-2",
+            "file": "File:Soul houses.jpg",
+            "search": "Soul house pottery Egypt",
+            "author": "Unknown authorUnknown author",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Soul_houses.jpg",
+            "desc": "Two Egyptian Middle Kingdom soul houses made of clay pottery from Del Rifa. Dated to 1991–1783 BC (Left) and 1991–1550 BC (Right). Housed at the Boston Museum of Fine Arts."
+        }
+    ],
+    "family-house": [
+        {
+            "img": "family-house-1",
+            "file": "File:Senet (47429946982).jpg",
+            "search": "Senet game board",
+            "author": "Enoch Leung",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Senet_(47429946982).jpg",
+            "desc": "A Senet board on display at the Royal Ontario Museum."
+        },
+        {
+            "img": "family-house-2",
+            "file": "File:Ancient Egyptian toy cart.jpg",
+            "search": "Ancient Egyptian toy",
+            "author": "Votpuske",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Ancient_Egyptian_toy_cart.jpg",
+            "desc": "Ancient Egyptian toy cart (three monkeys on a chariot) from Tell el-Amarna (New Kingdom, 18th Dynasty) in the Museum of Egyptian Antiquities. JE 53021. Painted sandstone."
+        }
+    ],
+    "porch-house": [
+        {
+            "img": "porch-house-1",
+            "file": "File:Ancient Egypt Stone Headrest (28265843382).jpg",
+            "search": "Ancient Egyptian headrest",
+            "author": "Gary Todd from Xinzheng, China",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Ancient_Egypt_Stone_Headrest_(28265843382).jpg",
+            "desc": "Ancient Egypt Gallery, Louvre Museum, Paris, France. Complete indexed photo collection at WorldHistoryPics.com."
+        },
+        {
+            "img": "porch-house-2",
+            "file": "File:Gilded Chair, Egyptian Museum, al-Qāhirah, CG, EGY (47856880572).jpg",
+            "search": "Ancient Egyptian chair Egyptian Museum",
+            "author": "Warren LeMay from Cincinnati, OH, United States",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Gilded_Chair,_Egyptian_Museum,_al-Q%C4%81hirah,_CG,_EGY_(47856880572).jpg",
+            "desc": "Gilded chair from the tomb of Yuya and his wife Tjuyu. Cairo (al-Qahira), capital of Egypt"
+        }
+    ],
+    "village-house": [
+        {
+            "img": "village-house-2",
+            "file": "File:Workers' Village (III).jpg",
+            "search": "Deir el-Medina workers village houses",
+            "author": "Institute for the Study of the Ancient World",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Workers%27_Village_(III).jpg",
+            "desc": "This is a photo of a monument in Egypt identified by the ID"
+        }
+    ],
+    "courtyard-villa": [
+        {
+            "img": "courtyard-villa-1",
+            "file": "File:Plan of the ruins of Tell el-Amarna from Histoire de l'art égyptien (1878) by Émile Prisse d'Avennes. Original from The New York Public Library. Digitally enhanced by rawpixel. (50623605491).jpg",
+            "search": "Tell el-Amarna ruins",
+            "author": "Rawpixel Ltd",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Plan_of_the_ruins_of_Tell_el-Amarna_from_Histoire_de_l%27art_%C3%A9gyptien_(1878)_by_%C3%89mile_Prisse_d%27Avennes._Original_from_The_New_York_Public_Library._Digitally_enhanced_by_rawpixel._(50623605491).jpg",
+            "desc": "Plan of the ruins of Tell el-Amarna from Histoire de l'art égyptien (1878) by Émile Prisse d'Avennes"
+        }
+    ],
+    "garden-villa": [
+        {
+            "img": "garden-villa-1",
+            "file": "File:Model of a Porch and Garden MET DP350592.jpg",
+            "search": "Meketre garden model",
+            "author": "Unknown author",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Model_of_a_Porch_and_Garden_MET_DP350592.jpg",
+            "desc": "Garden, Meketre"
+        },
+        {
+            "img": "garden-villa-2",
+            "file": "File:Book of the Dead of Nakht; sheet 21; offering-vignette (fragment).jpg",
+            "search": "Book of the Dead of Nakht",
+            "author": "Unknown authorUnknown author",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Book_of_the_Dead_of_Nakht;_sheet_21;_offering-vignette_(fragment).jpg",
+            "desc": "Книга мёртвых Нахта, лист 21, фрагмент"
+        }
+    ],
+    "watchtower": [
+        {
+            "img": "watchtower-1",
+            "file": "File:Archaeological excavations, Buhen - UNESCO - PHOTO0000003421 0001.tiff",
+            "search": "Buhen",
+            "author": "Rex Keating",
+            "license": "CC BY-SA 3.0 igo",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Archaeological_excavations,_Buhen_-_UNESCO_-_PHOTO0000003421_0001.tiff",
+            "desc": "Photo prise sur une colinne, on voit les mur d'une forteresse, notamment les remparts. Le fossé est rempli de sable. Derrière, de la végétation et le fleuve."
+        },
+        {
+            "img": "watchtower-2",
+            "file": "File:Medinet Habu Temple R02.jpg",
+            "search": "Medinet Habu migdol gate",
+            "author": "Marc Ryckaert",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Medinet_Habu_Temple_R02.jpg",
+            "desc": "Medinet Habu Temple (Egypt): entrance of the royal pavilion of Ramses III and fortified main gate (migdol) of the whole temple complex"
+        }
+    ],
+    "lifting-lever": [
+        {
+            "img": "lifting-lever-1",
+            "file": "File:AFR V1 D107 Banks of the Nile-the Shaduf.jpg",
+            "search": "Shaduf Nile",
+            "author": "Unknown authorUnknown author",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:AFR_V1_D107_Banks_of_the_Nile-the_Shaduf.jpg",
+            "desc": "Banks of the Nile-the Shaduf"
+        }
+    ],
+    "building-materials": [
+        {
+            "img": "building-materials-1",
+            "file": "File:27255- Gebel el-Silsila quarries.jpg",
+            "search": "Gebel el-Silsila quarry",
+            "author": "Panegyrics of Granovetter",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:27255-_Gebel_el-Silsila_quarries.jpg",
+            "desc": "Gebel el-Silsila"
+        },
+        {
+            "img": "building-materials-2",
+            "file": "File:Model chisel MET 01.4.37 EGDP011642.jpg",
+            "search": "Ancient Egyptian copper chisel",
+            "author": "Unknown author",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Model_chisel_MET_01.4.37_EGDP011642.jpg",
+            "desc": "Model chisel"
+        }
+    ],
+    "chariot": [
+        {
+            "img": "chariot-1",
+            "file": "File:Chariot of Tutankhamun.jpg",
+            "search": "Chariot of Tutankhamun Egyptian Museum",
+            "author": "Heidi Kontkanen",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Chariot_of_Tutankhamun.jpg",
+            "desc": "Chariot of Tutankhamun; Two Neck saddles; cheek Rowel. Displayed here is one of six dismantled chariots found in Tutankhamun´s tomb. It was most likely , since it is light and open and has very sturdy wheels, used for hunting and training. The body is made of bent wood, bound with rawhide; the floo"
+        },
+        {
+            "img": "chariot-2",
+            "file": "File:Ramses III (Ramesses II) lanciato col suo carro, e seguito da tre figli ugualmente sul carro, assale una fortezza piantata sopra una rupe, saettandone gli atterriti difensori (NYPL b14291206-425635).jpg",
+            "search": "Ramesses II chariot relief",
+            "author": "Scan by NYPL",
+            "license": "Public domain",
+            "licenseUrl": "",
+            "page": "https://commons.wikimedia.org/wiki/File:Ramses_III_(Ramesses_II)_lanciato_col_suo_carro,_e_seguito_da_tre_figli_ugualmente_sul_carro,_assale_una_fortezza_piantata_sopra_una_rupe,_saettandone_gli_atterriti_difensori_(NYPL_b14291206-425635).jpg",
+            "desc": "* For Ramses III read Ramsès II / L'Égypte antique illustrée de Champollion et Rosellini. (Paris 1933, p. 97)."
+        }
+    ],
+    "camel": [
+        {
+            "img": "camel-1",
+            "file": "File:Camel and the pyramids.jpg",
+            "search": "Camels Giza pyramids",
+            "author": "kallerna",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "page": "https://commons.wikimedia.org/wiki/File:Camel_and_the_pyramids.jpg",
+            "desc": "Tourists riding a dromedary or Arabian camel (Camelus dromedarius) in front of Pyramid of Khafre. The pyramid of Menkaure is on background."
+        },
+        {
+            "img": "camel-2",
+            "file": "File:A proud camel in the desert of Sinai Peninsula.jpg",
+            "search": "Dromedary Egypt desert",
+            "author": "Spielvogel",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:A_proud_camel_in_the_desert_of_Sinai_Peninsula.jpg",
+            "desc": "live stock of the local Bedouin who live in the desert of the Sinai Peninsula near Saint Catherine's Monastery"
+        }
+    ],
+    "ox-cart": [
+        {
+            "img": "ox-cart-1",
+            "file": "File:Laden Donkeys and Ploughing, Tomb of Djar MET 31.6.2 EGDP013009.jpg",
+            "search": "Laden Donkeys and Ploughing Tomb of Djar MET",
+            "author": "Nina M. Davies",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "page": "https://commons.wikimedia.org/wiki/File:Laden_Donkeys_and_Ploughing,_Tomb_of_Djar_MET_31.6.2_EGDP013009.jpg",
+            "desc": "Facsimile, Djari (TT 366, MMA 820), plowing, donkeys"
+        }
+    ],
+    "stone-sledge": []
+}

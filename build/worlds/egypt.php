@@ -844,7 +844,7 @@ $EGYPT = [
 
 $WORLD_DATA['egypt'] = [
   'title'    => 'Ancient Egypt: 37 places and how they worked',
-  'desc'     => 'Explore an illustrated city of ancient Egypt on the Nile. Open any of 37 places, from the pyramid and the Sphinx to a scribe school and the village of the tomb builders, to learn how it worked.',
+  'desc'     => 'Explore an illustrated city of ancient Egypt on the Nile. Open any of 37 places, from the pyramid and the Sphinx to a scribe school and the village of the tomb builders, to learn how it worked, with photos of real Egyptian sites.',
   'intro'    => 'Ancient Egypt grew up along the Nile and lasted about 3,000 years. Explore 37 of its places: what each one was for, how it worked and where you can still see real examples today.',
   'note'     => 'The buildings are illustrations, not exact reconstructions. Each page separates what history tells us from what the artist imagined, and lists its sources.',
   'aka'      => 'Ancient Egyptian',
