@@ -7,7 +7,7 @@
   if (!startBtn) return;
   var map = shell.querySelector('.city'), bar = shell.querySelector('.hunt-bar'), info = shell.querySelector('.map-info');
   var labels = document.getElementById('show-labels');
-  var world = (document.body.className.match(/\bworld-(egypt|roman|modern|elven|future|heaven)\b/) || [])[1];
+  var world = (document.body.className.match(/\bworld-(egypt|roman|modern|green|future|heaven)\b/) || [])[1];
   var KEY = 'atlas.hunt', ROUND = 8;
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },

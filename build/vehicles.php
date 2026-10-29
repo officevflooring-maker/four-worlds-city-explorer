@@ -14,8 +14,8 @@ const VEHICLE_FIT = [
   'roman/donkey-cart'        => [6.0, .90, .88], 'roman/litter'           => [6.0, .94, .96],
   'modern/family-car'        => [5.2, .85, .87], 'modern/taxi'            => [5.6, .83, .82],
   'modern/pickup-truck'      => [5.9, .87, .85], 'modern/delivery-van'    => [6.0, .88, .87],
-  'elven/deer-sleigh'        => [5.8, .91, .91], 'elven/flower-cart'      => [5.8, .90, .91],
-  'elven/mushroom-carriage'  => [5.9, .96, .91], 'elven/beetle-rider'     => [5.4, .97, .97],
+  'green/deer-sleigh'        => [5.8, .91, .91], 'green/flower-cart'      => [5.8, .90, .91],
+  'green/mushroom-carriage'  => [5.9, .96, .91],
   'future/hover-car'         => [5.6, .78, .79], 'future/pressurized-rover' => [5.8, .89, .89],
   'future/cargo-pod'         => [6.0, .84, .83], 'future/drone-taxi'      => [6.0, .84, .85],
   'egypt/chariot'            => [7.0, .88, .87], 'egypt/camel'            => [6.4, .94, .95],
@@ -49,7 +49,7 @@ $VEHICLE_SOURCES = [
     'cpuc'         => 'California Public Utilities Commission, approval of paid driverless taxi service in San Francisco (2023)',
     'ups'          => 'UPS, ORION route planning and the avoidance of left turns',
   ],
-  'elven' => [
+  'green' => [
     'brit-sami'    => 'Encyclopaedia Britannica, "Sami" and "Reindeer"',
     'horse-log'    => 'Forestry England and the British Horse Loggers, guidance on working horses in woodland',
     'henryford'    => 'The Henry Ford museum, "Soybean Car" (1941)',
@@ -273,20 +273,20 @@ $VEHICLES = [
 ],
 ],
 
-'elven' => [
+'green' => [
 'deer-sleigh' => [
   'name' => 'Deer sleigh', 'latin' => 'reindeer sleds', 'src' => 'vehicle/car_1.png',
   'summary' => 'An imagined sleigh drawn by deer. In the real Arctic, reindeer have pulled sleds for centuries.',
   'facts' => ['Imagined' => 'A flower-trimmed sleigh pulled by deer', 'Real' => 'Reindeer sleds in the Arctic', 'Why sleds' => 'Runners glide over snow', 'Reindeer' => 'The only widely domesticated deer'],
   'sections' => [
-    ['The imagined sleigh', ELVEN_IMAGINE, [
-      'In the elven world, deer pull a padded sleigh along forest paths, trimmed with flowers and lanterns. It needs no road, no fuel and no engine: just trained animals and a light vehicle.',
+    ['The imagined sleigh', GREEN_IMAGINE, [
+      'In the Green World, deer pull a padded sleigh along forest paths, trimmed with flowers and lanterns. It needs no road, no fuel and no engine: just trained animals and a light vehicle.',
     ]],
-    ['Real reindeer sleds', ELVEN_REAL, [
+    ['Real reindeer sleds', GREEN_REAL, [
       'Reindeer are the only deer that have been widely domesticated. For centuries, Arctic peoples such as the Sámi of northern Norway, Sweden, Finland and Russia have herded reindeer for meat, milk and hides, and trained them to pull sleds over snow.',
       'Sleds work because their smooth runners slide easily over snow and ice, so even a heavy load can be pulled with little effort. On soft snow, a sled goes where a wheeled cart would sink.',
     ]],
-    ['Animal power today', ELVEN_NEXT, [
+    ['Animal power today', GREEN_NEXT, [
       'Snowmobiles have replaced many reindeer sleds, but they are noisy and burn fuel. Some herders and tourism businesses still use reindeer, and people are testing electric snowmobiles for quieter travel in the wild.',
     ]],
   ],
@@ -302,13 +302,13 @@ $VEHICLES = [
   'summary' => 'An imagined pony cart full of flowers. Real horses still work in some forests, where they do less damage than machines.',
   'facts' => ['Imagined' => 'A pony cart carrying flowers to market', 'Real' => 'Horse logging in woodland', 'Why horses' => 'Lighter on soil than big machines', 'Clean city version' => 'Cargo bikes'],
   'sections' => [
-    ['The imagined cart', ELVEN_IMAGINE, [
-      'A white pony pulls a cart overflowing with lavender and wildflowers to the elven market. The cart is light, with big wheels for soft paths.',
+    ['The imagined cart', GREEN_IMAGINE, [
+      'A white pony pulls a cart overflowing with lavender and wildflowers to the market. The cart is light, with big wheels for soft paths.',
     ]],
-    ['Real working horses', ELVEN_REAL, [
+    ['Real working horses', GREEN_REAL, [
       'In some woodlands, horses are still used to drag felled trees out of the forest. This is called horse logging. Heavy machines can squash the soil and damage roots and young trees, while a horse can pick its way between trees on narrow paths. Forestry organizations in Britain and elsewhere use horses in sensitive woods.',
     ]],
-    ['Light vehicles in towns', ELVEN_NEXT, [
+    ['Light vehicles in towns', GREEN_NEXT, [
       'In cities, the closest thing to a pony cart today may be the cargo bike: a bicycle, often electric, with a box for children, shopping or deliveries. They take up little space and make no exhaust.',
     ]],
   ],
@@ -324,17 +324,17 @@ $VEHICLES = [
   'summary' => 'An imagined toadstool carriage. Real carmakers already use plant fibers, and in 1941 Ford showed a car with plant-based body panels.',
   'facts' => ['Imagined' => 'A carriage shaped like a toadstool', 'Real (1941)' => 'Ford\'s "soybean car"', 'Real today' => 'Flax, hemp and kenaf in car parts', 'Being researched' => 'Mycelium materials'],
   'sections' => [
-    ['The imagined carriage', ELVEN_IMAGINE, [
-      'A small deer pulls a carriage with a red-and-white toadstool roof and glowing windows. Elves imagine growing vehicles rather than building them.',
+    ['The imagined carriage', GREEN_IMAGINE, [
+      'A small deer pulls a carriage with a red-and-white toadstool roof and glowing windows. Here we imagine growing vehicles rather than building them.',
     ]],
-    ['Real cars made from plants', ELVEN_REAL, [
+    ['Real cars made from plants', GREEN_REAL, [
       'In 1941 Henry Ford showed a car whose body panels were made from a plastic that used soybeans and other plant fibers. It never went into production, but the idea lasted.',
       'Today many cars contain natural fibers such as flax, hemp and kenaf inside door panels and other parts. They are light, which saves energy, and they come from plants that can be grown again.',
     ]],
-    ['Grown materials', ELVEN_NEXT, [
+    ['Grown materials', GREEN_NEXT, [
       'Researchers are testing materials grown from mycelium, the root-like threads of fungi, for packaging, insulation and leather-like fabrics. Growing whole vehicles is still science fiction.',
     ]],
-    ['A giant underground', ELVEN_REAL, [
+    ['A giant underground', GREEN_REAL, [
       'Fungi can grow to an amazing size. In Oregon\'s Malheur National Forest, a single honey fungus, nicknamed the "humongous fungus", spreads its threads underground across about 965 hectares, the size of more than 1,300 soccer fields. It may be one of the largest living things on Earth.',
     ]],
   ],
@@ -344,29 +344,6 @@ $VEHICLES = [
   'words' => ['Natural fiber' => 'A fiber from a plant or animal, such as flax or wool.', 'Composite' => 'A material made of two or more materials combined.', 'Mycelium' => 'The root-like threads of fungi.'],
   'sources' => ['henryford', 'natfiber', 'mycelium', 'usfs-fungus'],
   'related' => ['mushroom-cottage', 'building-materials', 'woodworking-workshop'],
-],
-'beetle-rider' => [
-  'name' => 'Beetle rider', 'latin' => 'insect-inspired machines', 'src' => 'vehicle/car_4.png',
-  'summary' => 'An imagined giant beetle carrying a rider. Real beetles inspire scientists who build walking robots.',
-  'facts' => ['Imagined' => 'A giant beetle as a mount', 'Real' => 'Beetles that steer by the stars', 'Real today' => 'Legged robots', 'Why legs' => 'They go where wheels can\'t'],
-  'sections' => [
-    ['The imagined beetle', ELVEN_IMAGINE, [
-      'An elf rides a beetle the size of a pony, with shining green wings. It walks over roots and rocks where no cart could go, and leaves no road behind.',
-    ]],
-    ['Real beetle skills', ELVEN_REAL, [
-      'Beetles are amazing engineers. In 2013, scientists showed that dung beetles roll their balls in straight lines at night by using the glow of the Milky Way to steer.',
-      'Real insects could never grow to the size of a pony: their way of breathing and their outer skeleton only work at a small size. But their designs inspire engineers.',
-    ]],
-    ['Walking machines', ELVEN_NEXT, [
-      'Engineers build robots with four or six legs that can climb stairs, cross rubble and walk over rough ground. Such robots are already used to inspect industrial sites. In the future, walking machines might work in forests or on other planets without needing roads.',
-    ]],
-  ],
-  'art' => 'This illustration shows an elf riding a large beetle with shining green-blue wing cases. It is completely imagined.',
-  'look' => ['Count the beetle\'s legs.', 'Find the leaves woven into the saddle.'],
-  'questions' => ['Why can\'t real insects grow as big as a pony?', 'Where would a walking machine be more useful than a wheeled one?', 'What other animals could inspire a new kind of vehicle?'],
-  'words' => ['Exoskeleton' => 'A hard outer skeleton, like a beetle\'s.', 'Biomimicry' => 'Design that copies ideas from nature.', 'Legged robot' => 'A robot that walks instead of rolling.'],
-  'sources' => ['dacke', 'legged', 'asknature'],
-  'related' => ['flower-meadow', 'wild-grove', 'deer-sleigh'],
 ],
 ],
 

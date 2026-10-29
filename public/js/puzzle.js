@@ -11,7 +11,7 @@
   // Sky behind each world's picture, top and bottom.
   var SKY = {
     egypt: ['#f3dcae', '#fbf1dd'], roman: ['#efdcc4', '#fbf5ec'], modern: ['#c4dcf2', '#eef5fb'],
-    elven: ['#d2eacb', '#f2f9ee'], future: ['#e6d1c5', '#f7eee8'], heaven: ['#fdeab0', '#fffaf0']
+    green: ['#d2eacb', '#f2f9ee'], future: ['#e6d1c5', '#f7eee8'], heaven: ['#fdeab0', '#fffaf0']
   };
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -68,10 +68,8 @@
       // A wide building may lose a little of its sides, so it still reaches up the picture.
       var f = Math.min(S * 1.12 / sw, S * .92 / sh), dw = sw * f, dh = sh * f;
       g.drawImage(bd, sx, sy, sw, sh, (S - dw) / 2, S * .97 - dh, dw, dh);
-      return new Promise(function (ok) {
-        if (c.toBlob) c.toBlob(function (b) { ok(URL.createObjectURL(b)); }, 'image/jpeg', .9);
-        else ok(c.toDataURL('image/jpeg', .9));
-      });
+      // A data: address: the site's security policy allows those for pictures, but blocks blob: ones.
+      return c.toDataURL('image/jpeg', .9);
     });
   };
 

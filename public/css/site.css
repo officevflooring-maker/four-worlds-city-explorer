@@ -12,7 +12,7 @@
   --cream-line: #f0dcae;
   --roman: #b3431d;
   --modern: #2459c4;
-  --elven: #2f7d34;
+  --green: #2f7d34;
   --future: #00798c;
   --egypt: #95650f;
   --heaven: #6a4fb3;
@@ -25,7 +25,7 @@
 }
 .world-roman  { --accent: var(--roman); }
 .world-modern { --accent: var(--modern); }
-.world-elven  { --accent: var(--elven); }
+.world-green  { --accent: var(--green); }
 .world-future { --accent: var(--future); }
 .world-egypt  { --accent: var(--egypt); }
 .world-heaven { --accent: var(--heaven); }
@@ -71,7 +71,7 @@ main:focus { outline: none; }
 .site-header nav a[aria-current="true"] { background: #e2e8f4; }
 .nav-roman { box-shadow: inset 0 -3px 0 var(--roman); }
 .nav-modern { box-shadow: inset 0 -3px 0 var(--modern); }
-.nav-elven { box-shadow: inset 0 -3px 0 var(--elven); }
+.nav-green { box-shadow: inset 0 -3px 0 var(--green); }
 .nav-future { box-shadow: inset 0 -3px 0 var(--future); }
 .nav-egypt { box-shadow: inset 0 -3px 0 var(--egypt); }
 .nav-heaven { box-shadow: inset 0 -3px 0 var(--heaven); }
@@ -146,7 +146,7 @@ main:focus { outline: none; }
 .city-6 { max-width: 1180px; }
 .map-view .city { width: calc(min(100%, 1280px) * var(--zoom, 1)); max-width: none; margin: .5rem auto 0; aspect-ratio: 100 / 62; }
 .world-modern .city { --road: #6b6e73; --curb: #d9d6cf; }
-.world-elven .city { --road: #b8996a; --curb: #8fb36a; }
+.world-green .city { --road: #b8996a; --curb: #8fb36a; }
 .world-future .city { --road: #3d4a57; --curb: #6fe0f0; }
 .world-egypt .city { --road: #cfae74; --curb: #f1dfb0; }
 .world-heaven .city { --road: #d9b24c; --curb: #f6f0e1; }
@@ -532,7 +532,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .hero-brand { display: flex; align-items: center; gap: .5rem 1.1rem; margin-bottom: .9rem; }
 .hero-title { margin: 0; font-size: clamp(1.75rem, 1rem + 1.6vw, 2.4rem); line-height: 1.08; color: var(--brand); text-wrap: balance; }
 .hero-q { font-size: clamp(2.5rem, 1.4rem + 4.2vw, 4.4rem); line-height: 1; margin-bottom: .35em; }
-.hero-q span { background: linear-gradient(90deg, var(--egypt), var(--roman) 20%, var(--modern) 40%, var(--elven) 60%, var(--future) 80%, var(--heaven)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-q span { background: linear-gradient(90deg, var(--egypt), var(--roman) 20%, var(--modern) 40%, var(--green) 60%, var(--future) 80%, var(--heaven)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero3 .lead { font-size: 1.2rem; }
 .hero-logo { flex: none; display: block; width: clamp(120px, 11vw, 170px); height: auto; margin-left: -.3rem; filter: drop-shadow(0 6px 12px rgb(20 32 57 / .16)); }
 .hero3-map .city { margin: 0 -4% 0 0; width: 108%; max-width: none; aspect-ratio: 100 / 61; --s: .8; }
@@ -540,7 +540,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .hq { position: absolute; width: 50%; height: 50%; --cell: calc(70.71cqw / var(--n)); --rw: calc(var(--cell) * .32); background: var(--tex) 0 0 / var(--cell) var(--cell); }
 .hq.world-roman { --road: #cdbb9b; --curb: #f4ead6; }
 .hq.world-modern { --road: #6b6e73; --curb: #d9d6cf; }
-.hq.world-elven { --road: #b8996a; --curb: #8fb36a; }
+.hq.world-green { --road: #b8996a; --curb: #8fb36a; }
 .hq.world-future { --road: #3d4a57; --curb: #6fe0f0; }
 .hq.world-egypt { --road: #cfae74; --curb: #f1dfb0; }
 .hq.world-heaven { --road: #d9b24c; --curb: #f6f0e1; }
@@ -792,7 +792,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .q-top { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-weight: 700; }
 .q-top p { margin: 0; }
 .q-bar { height: 8px; margin: .5rem 0 1rem; overflow: hidden; border-radius: 999px; background: #ece6da; }
-.q-bar span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--egypt), var(--roman), var(--modern), var(--elven), var(--future), var(--heaven)); transition: width .3s; }
+.q-bar span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--egypt), var(--roman), var(--modern), var(--green), var(--future), var(--heaven)); transition: width .3s; }
 .q-ask { font-size: clamp(1.3rem, 1.1rem + 1vw, 1.75rem); }
 .q-ask:focus, .q-result:focus { outline: none; }
 .q-pic figure { max-width: 360px; margin: 0 auto 1rem; padding: 1rem; border-radius: 18px; background: radial-gradient(circle at 50% 55%, #fff, #efe9dd 72%); }
@@ -912,7 +912,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .try-it a { font-weight: 700; }
 
 /* ---------- Play cards: map hunt, memory, word search, world cards for the hunt ---------- */
-.pa-hunt { background: #dfe9d6 url(/assets/worlds/elven/ground-grass.webp) 0 0 / 90px 90px; }
+.pa-hunt { background: #dfe9d6 url(/assets/worlds/green/ground-grass.webp) 0 0 / 90px 90px; }
 .pa-lens { position: absolute; left: 50%; top: 46%; display: grid; place-items: center; width: 132px; height: 132px; overflow: hidden; border: 9px solid #23396b; border-radius: 50%; background: radial-gradient(circle, #fff 45%, #eef3f8); transform: translate(-50%, -50%); box-shadow: 0 10px 22px rgb(0 0 0 / .3), inset 0 0 0 3px #fff; }
 .pa-lens img { width: 112px; height: auto; transform: scale(1.18); transition: transform .3s; }
 .play-card a:hover .pa-lens img { transform: scale(1.32); }
@@ -1169,6 +1169,14 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .shop-worlds li { margin: 0; }
 .shop-worlds img { display: block; width: 100%; height: auto; border-radius: 12px; border: 3px solid var(--accent); }
 .shop-worlds span { display: block; margin-top: .45rem; text-align: center; font-weight: 700; color: var(--accent); }
+.lrpg-heroes { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: .3rem; align-items: end; }
+.lrpg-heroes li { margin: 0; }
+.lrpg-heroes img { display: block; width: 100%; height: auto; }
+.lrpg-outfits-h { margin: 2.2rem 0 1rem; text-align: center; }
+.lrpg-outfits { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: end; gap: 1rem 1.8rem; }
+.lrpg-outfits li { margin: 0; text-align: center; }
+.lrpg-outfits img { display: block; width: auto; max-width: none; height: 210px; margin: 0 auto; }
+.lrpg-outfits span { display: block; margin-top: .45rem; font-weight: 700; color: var(--accent); }
 .shop-faq details { border-bottom: 1px solid var(--line); padding: .85rem 0; }
 .shop-faq summary { cursor: pointer; font-weight: 700; font-size: 1.05rem; }
 .shop-faq p { margin: .5rem 0 0; color: #2f3a48; }
@@ -1191,6 +1199,9 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .shop-steps { grid-template-columns: 1fr; }
   .shop-worlds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shop-phone { width: min(240px, 66%) !important; }
+  .lrpg-heroes { grid-template-columns: repeat(6, minmax(0, 1fr)); row-gap: 1rem; }
+  .lrpg-outfits { gap: 1rem 1.2rem; }
+  .lrpg-outfits img { height: 150px; }
 }
 
 /* ---------- Shop: buying facts, who it is for, page by page, shelves ---------- */

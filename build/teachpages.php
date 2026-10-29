@@ -184,7 +184,7 @@ const TEACH_PLAY = [
   'what-does-a-city-need' => ['/play/city-builder/', 'Build your own city', 'Students build a city and tick off all ten needs as they go.'],
   'sustainable-city-project-ideas' => ['/play/city-builder/', 'Build your own city', 'Mix nature, homes and work, then check what the city still needs.'],
   'design-a-mars-colony-project' => ['/play/city-builder/', 'Build your own city', 'Build a Moon or Mars settlement from the Robotic Future buildings.'],
-  'fantasy-city-worldbuilding' => ['/play/city-builder/', 'Build your own city', 'Lay out an elven city, or mix all six worlds into a new one.'],
+  'fantasy-city-worldbuilding' => ['/play/city-builder/', 'Build your own city', 'Lay out a green city, or mix all six worlds into a new one.'],
   'ancient-rome-vs-modern-cities' => ['/play/quiz/', 'City quiz', 'The "Same job, different world" quiz matches Roman buildings with modern ones.'],
   'discussion-questions-what-makes-a-good-city' => ['/play/city-builder/', 'Build your own city', 'Build a city first, then use these questions to talk about it.'],
 ];

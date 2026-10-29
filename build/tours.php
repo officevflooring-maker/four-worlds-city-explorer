@@ -68,24 +68,24 @@ $TOURS = [
   'teach' => 'explore-your-town-scavenger-hunt',
 ],
 'ecological-design' => [
-  'world' => 'elven', 'guide' => 'people-5',
+  'world' => 'green', 'guide' => 'flower-cart', 'guideRole' => 'Pulled by a white pony',
   'title' => 'Ecological design tour: water, plants and shared land',
   'h1' => 'Ecological design',
-  'desc' => 'A guided tour of the imagined elven city and the real nature-based ideas behind it: clean water, wetlands, green roofs, meadows, compost and the commons.',
+  'desc' => 'A guided tour of the imagined green city and the real nature-based ideas behind it: clean water, wetlands, green roofs, meadows, compost and the commons.',
   'theme' => 'Imaginative ideas about water, plants and shared land',
-  'intro' => 'I water the gardens of the elven city. Our city is imagined, but every stop on this walk shows a real idea that people are using today.',
+  'intro' => 'Hop on! Every morning I carry flowers to the market. This city is imagined, but every stop on this ride shows a real idea that people are using today.',
   'time' => '20 to 30 minutes', 'grades' => '3-9',
   'stops' => [
-    ['elven/spring-circle', 'Our water starts at a protected spring. Real cities, like New York, protect the forests around their reservoirs to keep water clean.', 'What could harm a water source near you?'],
-    ['elven/wetland-fountain', 'Water from homes flows through reed beds, where plants and microbes clean it. Real towns build wetlands like this.', 'How can plants clean water?'],
-    ['elven/green-roof-cottage', 'A roof of living plants keeps the house cool, soaks up rain and feeds insects.', 'Which roofs near you could be green?'],
-    ['elven/flower-meadow', 'Meadows feed bees, butterflies and other pollinators, which help grow much of our food.', 'Could your school grow a small meadow?'],
-    ['elven/great-tree-hall', 'Some real bridges are grown from living tree roots, guided by people over many years.', 'What would you grow if you could wait 50 years?'],
-    ['elven/flower-cart', 'We carry goods by pony and cart. In real forests, horses still haul logs where machines would harm the soil.', 'When is slow transport the better choice?'],
-    ['elven/market-hall', 'Nothing is wasted: food scraps become compost that feeds next year\'s gardens.', 'What happens to food waste at your home or school?'],
-    ['elven/council-terrace', 'Everyone shares the forest, so everyone helps make the rules. Real communities manage shared land this way.', 'How should a group decide how to share something everyone needs?'],
+    ['green/spring-circle', 'Our water starts at a protected spring. Real cities, like New York, protect the forests around their reservoirs to keep water clean.', 'What could harm a water source near you?'],
+    ['green/wetland-fountain', 'Water from homes flows through reed beds, where plants and microbes clean it. Real towns build wetlands like this.', 'How can plants clean water?'],
+    ['green/green-roof-cottage', 'A roof of living plants keeps the house cool, soaks up rain and feeds insects.', 'Which roofs near you could be green?'],
+    ['green/flower-meadow', 'Meadows feed bees, butterflies and other pollinators, which help grow much of our food.', 'Could your school grow a small meadow?'],
+    ['green/great-tree-hall', 'Some real bridges are grown from living tree roots, guided by people over many years.', 'What would you grow if you could wait 50 years?'],
+    ['green/flower-cart', 'We carry goods by pony and cart. In real forests, horses still haul logs where machines would harm the soil.', 'When is slow transport the better choice?'],
+    ['green/market-hall', 'Nothing is wasted: food scraps become compost that feeds next year\'s gardens.', 'What happens to food waste at your home or school?'],
+    ['green/council-terrace', 'Everyone shares the forest, so everyone helps make the rules. Real communities manage shared land this way.', 'How should a group decide how to share something everyone needs?'],
   ],
-  'think' => ['Which real idea from this tour could work in your town?', 'Which idea sounds good but might be hard to do? Why?', 'Design one imagined elven building based on a real natural process.'],
+  'think' => ['Which real idea from this tour could work in your town?', 'Which idea sounds good but might be hard to do? Why?', 'Design one imagined green building based on a real natural process.'],
   'teach' => 'biomimicry-examples-for-students',
 ],
 'robotic-cities' => [
@@ -137,11 +137,20 @@ function person_img($w, $file, $sizes = '120px', $alt = '') {
   return img($w, $file, $alt, $sizes, 'loading="lazy"');
 }
 
+// A tour's guide: [name, role]. Usually a person of its world; the Green World has no people, so its tour is
+// guided by one of its vehicles (with its own 'guideRole').
+function tour_guide($t) {
+  global $PEOPLE, $WORLD_DATA;
+  $w = $t['world'];
+  if (isset($PEOPLE[$w][$t['guide']])) return array_slice($PEOPLE[$w][$t['guide']], 0, 2);
+  return [$WORLD_DATA[$w]['pages'][$t['guide']]['name'], $t['guideRole'] ?? ''];
+}
+
 function tour_card($slug) {
   global $TOURS, $PEOPLE, $WORLDS;
   $t = $TOURS[$slug];
   $w = $t['world'];
-  [$gname] = $PEOPLE[$w][$t['guide']];
+  [$gname] = tour_guide($t);
   return '<li class="tour-card world-' . $w . '"><a href="/tours/' . $slug . '/">'
     . '<span class="tour-guide">' . person_img($w, $t['guide'], '120px') . '</span>'
     . '<span class="tour-text"><span class="tag">' . h($WORLDS[$w]['name']) . ' · ' . count($t['stops']) . ' stops</span>'
@@ -179,7 +188,7 @@ page('/guided/', [
 // ---------- One page per tour ----------
 foreach ($TOURS as $slug => $t) {
   $w = $t['world'];
-  [$gname, $grole] = $PEOPLE[$w][$t['guide']];
+  [$gname, $grole] = tour_guide($t);
   $stops = '';
   $nav = '';
   $stopList = [];

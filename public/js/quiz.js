@@ -9,7 +9,7 @@
   if (!root || !dataEl) return;
   var data = JSON.parse(dataEl.textContent);
   var items = data.items, worlds = data.worlds, jobs = data.jobs || {};
-  var ORDER = ['egypt', 'roman', 'modern', 'elven', 'future', 'heaven'];
+  var ORDER = ['egypt', 'roman', 'modern', 'green', 'future', 'heaven'];
   var ROUND = 10;
   var KEY = root.getAttribute('data-key') || 'atlas.quiz', DONE = root.getAttribute('data-done') || 'quiz', NEED = +root.getAttribute('data-need') || 0;
   var ZOOM_TIME = 12;   // seconds a close-up takes to zoom all the way out

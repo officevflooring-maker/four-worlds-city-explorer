@@ -10,7 +10,7 @@ require __DIR__ . '/teach.php';
 
 const PUB = __DIR__ . '/../public';
 // Oldest first; the Heavenly City, imagined and inspired by the Bible, comes last.
-const WORLD_ORDER = ['egypt', 'roman', 'modern', 'elven', 'future', 'heaven'];
+const WORLD_ORDER = ['egypt', 'roman', 'modern', 'green', 'future', 'heaven'];
 
 // Full worlds (one page per building): content in build/worlds/{world}.php, photo credits in
 // build/photos/{world}.json and captions in build/photos/{world}-captions.php.
@@ -198,7 +198,8 @@ require __DIR__ . '/shop.php';          // before the pages that point to the sh
 require __DIR__ . '/teachpages.php';
 require __DIR__ . '/tours.php';
 // The world maps and their pages, after the tours they point to.
-foreach (WORLD_ORDER as $w) { full_world($w); people_page($w); }
+// The Green World has no people, so no people page.
+foreach (WORLD_ORDER as $w) { full_world($w); if (!empty($PEOPLE[$w])) people_page($w); }
 require __DIR__ . '/play.php';
 require __DIR__ . '/classroom.php';
 require __DIR__ . '/home.php';
@@ -225,7 +226,7 @@ $jump = '';
 foreach ($COMPARE as [$key, $label]) $jump .= '<li><a href="#' . $key . '">' . h($label) . '</a></li>';
 page('/compare/', [
   'title' => 'Compare the Worlds: water, gathering, travel, goods and nature',
-  'desc' => h('One city question, six worlds: compare how ancient Egypt, Rome, a modern town, an elven forest, Mars and a heavenly city provide water, travel and more.'),
+  'desc' => h('One city question, six worlds: compare how ancient Egypt, Rome, a modern town, a green forest city, Mars and a heavenly city provide water, travel and more.'),
   'class' => 'compare',
   'body' => <<<HTML
 <section class="wrap section page-head">
@@ -275,13 +276,13 @@ page('/about/', [
   <h2>What is real and what is imagined</h2>
   <p><strong>Ancient Egypt</strong> and <strong>ancient Rome</strong> are historical settings. Each of their building pages keeps history separate from the artist's interpretation and lists the sources it is based on. The illustrations are not exact reconstructions; photos of real sites show what survives today.</p>
   <p>The <strong>modern town</strong> is imagined, but its pages explain real buildings, vehicles and systems: why towns need them, how they are built and who they serve.</p>
-  <p>The <strong>green elven world</strong> and <strong>robotic future</strong> are imagined and speculative. They don't describe real places, real cultures or predictions. Each page uses labels so you always know what you are reading:</p>
+  <p>The <strong>Green World</strong> and <strong>robotic future</strong> are imagined and speculative. They don't describe real places, real cultures or predictions. Each page uses labels so you always know what you are reading:</p>
   <ul>
     <li><span class="badge badge-fact">History</span> and <span class="badge badge-fact">Real world</span> facts about the past and about real places, technology and research, with sources.</li>
     <li><span class="badge badge-art">Imagined</span> ideas that belong to the fantasy world.</li>
     <li><span class="badge badge-spec">Possible future</span> ideas being researched or proposed, which may or may not happen.</li>
   </ul>
-  <p>The <strong>Heavenly City</strong> is imagined too, inspired by the Bible's picture of the heavenly city. As you explore it, its <span class="badge badge-belief">Gospel</span> sections tell the story of Jesus in 35 parts, as the Bible tells it, with chapter and verse, and its <span class="badge badge-belief">Bible</span> sections share more words from Scripture. A few elven pages also share Bible verses about God the Creator. Bible quotations are from the Berean Standard Bible, which is in the public domain.</p>
+  <p>The <strong>Heavenly City</strong> is imagined too, inspired by the Bible's picture of the heavenly city. As you explore it, its <span class="badge badge-belief">Gospel</span> sections tell the story of Jesus in 35 parts, as the Bible tells it, with chapter and verse, and its <span class="badge badge-belief">Bible</span> sections share more words from Scripture. A few Green World pages also share Bible verses about God the Creator. Bible quotations are from the Berean Standard Bible, which is in the public domain.</p>
 
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
@@ -410,7 +411,7 @@ foreach (WORLD_ORDER as $w) {
 }
 page('/artwork/', [
   'title' => 'Artwork: every illustration from the six city worlds',
-  'desc' => h("View, save and print all $artTotal illustrations from The Atlas of Cities: ancient Roman, modern, elven and futuristic buildings, cranes, trees and landscapes."),
+  'desc' => h("View, save and print all $artTotal illustrations from The Atlas of Cities: ancient, modern, green, futuristic and heavenly buildings, cranes, trees and landscapes."),
   'class' => 'artwork',
   'lightbox' => true,
   'body' => <<<HTML
@@ -477,7 +478,7 @@ HTML,
 $urls = ['/' => '1.0'];
 foreach (WORLD_ORDER as $w) {
   $urls["/worlds/$w/"] = '0.9';
-  $urls["/worlds/$w/people/"] = '0.7';
+  if (!empty($PEOPLE[$w])) $urls["/worlds/$w/people/"] = '0.7';
   if (!empty($WORLD_DATA[$w]['story'])) $urls["/worlds/$w/story/"] = '0.8';
 }
 foreach ($WORLD_DATA as $w => $D) foreach (array_keys($D['pages']) as $slug) $urls["/worlds/$w/$slug/"] = '0.8';

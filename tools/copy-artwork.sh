@@ -10,10 +10,11 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SRC="${ART_SOURCE:-/c/Users/ax707/Documents/Codex/2026-10-25/referenced-chatgpt-conversation-this-is-an/outputs}"
 LRPG="${LRPG_ART:-/c/Users/ax707/OneDrive/Desktop/Stuff/Life Game/life-rpg/art}"
 declare -A PREFIX=([life-rpg-art-batch-01/art/inbox]="" [life-rpg-ground-batch-01/raw/art/inbox]="ground-" [life-rpg-construction-batch-01/art/inbox]="construction-")
-for world in roman modern elven future; do
+for world in roman modern green future; do
   mkdir -p "$ROOT/public/assets/artwork/$world"
   for batch in "${!PREFIX[@]}"; do
-    for f in "$SRC/$batch/$world/"*.png; do
+    src="$world"; [ "$world" = green ] && src=elven   # the Green World's source folders are named "elven"
+    for f in "$SRC/$batch/$src/"*.png; do
       stem=$(basename "$f" .png); name="${PREFIX[$batch]}${stem//_/-}"
       out="$ROOT/public/assets/artwork/$world/$name"
       [ -f "$out.webp" ] && continue

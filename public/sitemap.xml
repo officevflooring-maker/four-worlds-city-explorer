@@ -7,8 +7,7 @@
   <url><loc>https://atlasofcities.org/worlds/roman/people/</loc><lastmod>2026-10-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/people/</loc><lastmod>2026-10-29</lastmod><priority>0.7</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/people/</loc><lastmod>2026-10-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
   <url><loc>https://atlasofcities.org/worlds/future/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
   <url><loc>https://atlasofcities.org/worlds/future/people/</loc><lastmod>2026-10-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://atlasofcities.org/worlds/heaven/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
@@ -134,45 +133,44 @@
   <url><loc>https://atlasofcities.org/worlds/modern/taxi/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/pickup-truck/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/delivery-van/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/great-tree-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/grand-tree-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/treetop-village/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/tree-tower-home/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/living-crane/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/hillside-home/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/timber-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/spire-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/green-roof-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/natural-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/leafy-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/mushroom-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/wetland-fountain/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/garden-court/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/spring-circle/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/waterfall-tower/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/gathering-circle/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/flower-meadow/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/wild-grove/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/stag-monument/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/deer-statue/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/domed-observatory/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/firefly-tower/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/tree-library/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/treehouse-school/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/weather-tower/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/council-terrace/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/elven-palace/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/forest-gym/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/canopy-walkway/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/open-air-theater/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/canopy-market/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/market-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/woodworking-workshop/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/building-materials/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/deer-sleigh/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/flower-cart/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/mushroom-carriage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/worlds/elven/beetle-rider/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/great-tree-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/grand-tree-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/treetop-village/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/tree-tower-home/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/living-crane/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/hillside-home/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/timber-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/spire-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/green-roof-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/natural-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/leafy-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/mushroom-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/wetland-fountain/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/garden-court/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/spring-circle/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/waterfall-tower/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/gathering-circle/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/flower-meadow/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/wild-grove/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/stag-monument/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/deer-statue/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/domed-observatory/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/firefly-tower/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/tree-library/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/treehouse-school/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/weather-tower/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/council-terrace/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/forest-palace/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/forest-gym/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/canopy-walkway/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/open-air-theater/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/canopy-market/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/market-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/woodworking-workshop/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/building-materials/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/deer-sleigh/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/flower-cart/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/green/mushroom-carriage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/future/inflatable-habitat/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/future/lunar-base/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/future/habitat-cluster/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
@@ -298,8 +296,8 @@
   <url><loc>https://atlasofcities.org/teachers/worksheets/roman-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/modern-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/modern-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/teachers/worksheets/elven-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://atlasofcities.org/teachers/worksheets/elven-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/teachers/worksheets/green-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/teachers/worksheets/green-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/future-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/future-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/heaven-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>

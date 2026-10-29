@@ -102,7 +102,7 @@ $TEACH = [
     ['Can students do this project digitally?', 'Yes. Teams can use a shared slide deck, a drawing app or even a city-building game, but paper maps make it easier to discuss and change ideas together.'],
     ['What standards does it support?', 'It supports geography, civics and economics inquiry in the C3 Framework, and engineering design practices in the Next Generation Science Standards (MS-ETS1), when students define criteria and test their designs.'],
   ],
-  'links' => ['modern/streets-crosswalks', 'modern/water-system', 'modern/park-pond', 'roman/forum', 'elven/garden-court', 'future/habitat-cluster'],
+  'links' => ['modern/streets-crosswalks', 'modern/water-system', 'modern/park-pond', 'roman/forum', 'green/garden-court', 'future/habitat-cluster'],
   'sources' => ['uli', 'pbs-e2', 'apa', 'c3', 'ngss'],
 ],
 
@@ -148,7 +148,7 @@ $TEACH = [
     ['What is a good gradient for a model aqueduct?', 'Start with a drop of about 1 centimeter for every 30 centimeters of channel and adjust. Students will discover that a gentle slope gives a steadier flow than a steep one.'],
     ['Which real aqueduct can students study?', 'The Pont du Gard in France and the aqueduct of Segovia in Spain are famous survivors. See the Aqueduct page on this site for photos.'],
   ],
-  'links' => ['roman/aqueduct', 'roman/public-fountain', 'roman/building-materials', 'modern/water-system', 'elven/spring-circle', 'future/water-recycler'],
+  'links' => ['roman/aqueduct', 'roman/public-fountain', 'roman/building-materials', 'modern/water-system', 'green/spring-circle', 'future/water-recycler'],
   'sources' => ['teachengineering', 'brit-aqueduct', 'frontinus', 'ngss'],
 ],
 
@@ -316,7 +316,7 @@ $TEACH = [
     ['Why is chlorine added to drinking water?', 'Chlorine kills harmful germs and keeps the water safe as it travels through pipes.'],
     ['Does everyone in the world have clean water?', 'No. The WHO and UNICEF report that billions of people still lack safely managed drinking water at home.'],
   ],
-  'links' => ['modern/water-system', 'roman/aqueduct', 'elven/wetland-fountain', 'future/water-recycler'],
+  'links' => ['modern/water-system', 'roman/aqueduct', 'green/wetland-fountain', 'future/water-recycler'],
   'sources' => ['cdc-water', 'epa-water', 'who-jmp'],
 ],
 
@@ -417,7 +417,7 @@ $TEACH = [
     ['What does a city council do?', 'A city council passes local laws, approves the budget and makes decisions about local services such as streets, parks, libraries and zoning.'],
     ['Can students speak at a city council meeting?', 'In most places, yes. Many councils have a public comment period open to any resident, including young people.'],
   ],
-  'links' => ['modern/town-hall', 'modern/capitol', 'roman/curia', 'elven/council-terrace', 'future/civic-dome'],
+  'links' => ['modern/town-hall', 'modern/capitol', 'roman/curia', 'green/council-terrace', 'future/civic-dome'],
   'sources' => ['nlc', 'c3', 'ostrom'],
 ],
 
@@ -451,7 +451,7 @@ $TEACH = [
     ['What is a sustainable city?', 'A city that meets people\'s needs today without making it harder for future generations to meet theirs, by using less energy and water, cutting waste and pollution, and protecting nature.'],
     ['What is an easy sustainable project for middle school?', 'Comparing temperatures of a plain and a planted model roof, or mapping hot spots around school, needs simple materials and gives clear results.'],
   ],
-  'links' => ['elven/garden-court', 'elven/green-roof-cottage', 'elven/wild-grove', 'elven/flower-meadow', 'elven/stag-monument', 'modern/park-pond'],
+  'links' => ['green/garden-court', 'green/green-roof-cottage', 'green/wild-grove', 'green/flower-meadow', 'green/stag-monument', 'modern/park-pond'],
   'sources' => ['epa-green', 'epa-heat', 'asknature'],
 ],
 
@@ -481,7 +481,7 @@ $TEACH = [
     ['What is biomimicry in simple words?', 'Copying good ideas from plants and animals to solve human problems.'],
     ['What is the most famous example of biomimicry?', 'Velcro is probably the best known. It was inspired by burrs that stuck to a dog\'s fur.'],
   ],
-  'links' => ['elven/building-materials', 'elven/spire-house', 'elven/great-tree-hall', 'elven/mushroom-cottage', 'elven/firefly-tower'],
+  'links' => ['green/building-materials', 'green/spire-house', 'green/great-tree-hall', 'green/mushroom-cottage', 'green/firefly-tower'],
   'sources' => ['benyus', 'asknature'],
 ],
 
@@ -505,7 +505,7 @@ $TEACH = [
     ['Creative prompts for class', [], ['list' => [
       'Write a day in the life of a teenager in your town in 2075, solarpunk style.',
       'Redesign one street near school as a solarpunk street. Label every feature.',
-      'Pick one building from the Elven world on this site and write how it could work in a real city.',
+      'Pick one building from the Green World on this site and write how it could work in a real city.',
       'Debate: is solarpunk realistic, or just a nice dream? What would it take?',
     ]]],
   ],
@@ -513,7 +513,7 @@ $TEACH = [
     ['What does solarpunk mean?', 'A genre and movement that imagines a sustainable, community-focused future powered by clean energy and filled with nature.'],
     ['Is solarpunk real?', 'It is imaginative, but many of its ideas, such as green roofs, solar power and community gardens, already exist today.'],
   ],
-  'links' => ['elven/tree-tower-home', 'elven/canopy-market', 'elven/woodworking-workshop', 'elven/waterfall-tower', 'elven/elven-palace'],
+  'links' => ['green/tree-tower-home', 'green/canopy-market', 'green/woodworking-workshop', 'green/waterfall-tower', 'green/forest-palace'],
   'sources' => ['epa-green', 'benyus'],
 ],
 
@@ -647,8 +647,8 @@ $TEACH = [
       'What is the city afraid of: fire, floods, storms or enemies?',
       'What makes visitors gasp when they first arrive?',
     ]]],
-    ['Use the Elven world as a model', [
-      'Every building in this site\'s Elven world answers one of these questions in a fantasy way, and each page shows the real-world idea behind it: seed vaults, living bridges, geothermal heat. Students can borrow the method: start with a real solution, then imagine how it could look in a world of their own.',
+    ['Use the Green World as a model', [
+      'Every building in this site\'s Green World answers one of these questions in a fantasy way, and each page shows the real-world idea behind it: seed vaults, living bridges, geothermal heat. Students can borrow the method: start with a real solution, then imagine how it could look in a world of their own.',
     ]],
     ['Avoiding stereotypes', [
       'Fantasy cultures are invented, so avoid copying real cultures as costumes or making any group simply "good" or "evil". Give every group real needs, skills and disagreements.',
@@ -658,7 +658,7 @@ $TEACH = [
     ['How do you make a fantasy city believable?', 'Base it on how real cities work: water, food, work, government and trade, then add imagined buildings and places on top.'],
     ['What is worldbuilding?', 'Creating an imaginary world in detail, including its places, history, peoples and rules, for stories, games or art.'],
   ],
-  'links' => ['elven/treetop-village', 'elven/council-terrace', 'elven/canopy-market', 'elven/spring-circle', 'elven/elven-palace', 'elven/tree-library'],
+  'links' => ['green/treetop-village', 'green/council-terrace', 'green/canopy-market', 'green/spring-circle', 'green/forest-palace', 'green/tree-library'],
   'sources' => ['ostrom', 'jacobs'],
 ],
 
@@ -708,7 +708,7 @@ $TEACH = [
   'faq' => [
     ['How do you run a Socratic seminar on cities?', 'Choose 3 to 5 questions, give students a building page or the Compare page to read as evidence, sit in a circle, and let students lead while the teacher only steps in to keep it fair.'],
   ],
-  'links' => ['modern/community-center', 'modern/public-library', 'roman/forum', 'elven/wild-grove', 'future/civic-dome', 'modern/stadium'],
+  'links' => ['modern/community-center', 'modern/public-library', 'roman/forum', 'green/wild-grove', 'future/civic-dome', 'modern/stadium'],
   'sources' => ['oldenburg', 'jacobs', 'c3'],
 ],
 
@@ -741,7 +741,7 @@ $TEACH = [
     ['Can teachers use images from the internet in class?', 'Only if the license allows it or an exception such as fair use applies. The safest choice is openly licensed images, such as Creative Commons or public domain, credited correctly.'],
     ['How do you credit a Creative Commons image?', 'Give the title, author, source and license (TASL). For example: "Aqueduct" by The Atlas of Cities, CC BY 4.0.'],
   ],
-  'links' => ['roman/aqueduct', 'modern/public-library', 'elven/treetop-village', 'future/greenhouse-dome'],
+  'links' => ['roman/aqueduct', 'modern/public-library', 'green/treetop-village', 'future/greenhouse-dome'],
   'sources' => ['cc'],
 ],
 
@@ -774,7 +774,7 @@ $TEACH = [
       'Who maintains each thing you found?',
       'What did you expect to find but did not?',
       'What one change would make the walk safer or nicer?',
-      'Compare: what would a Roman, elven or Martian version of your street look like?',
+      'Compare: what would a Roman, green or Martian version of your street look like?',
     ]]],
   ],
   'faq' => [

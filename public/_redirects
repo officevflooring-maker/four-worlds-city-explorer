@@ -1,9 +1,20 @@
 # Cloudflare (Workers or Pages): old Hostinger-style /public/... addresses go to the clean address.
 /public/* /:splat 301
-# Elven pages renamed in October 2026: their old addresses go to the new ones.
-/worlds/elven/crystal-tower /worlds/elven/firefly-tower/ 301
-/worlds/elven/crystal-tower/* /worlds/elven/firefly-tower/ 301
-/worlds/elven/crystal-waterfall /worlds/elven/waterfall-tower/ 301
-/worlds/elven/crystal-waterfall/* /worlds/elven/waterfall-tower/ 301
-/worlds/elven/crystal-fountain /worlds/elven/wetland-fountain/ 301
-/worlds/elven/crystal-fountain/* /worlds/elven/wetland-fountain/ 301
+# The Elven Green World became the Green World (October 2026): every old address goes to its new one.
+# Specific pages first: renamed pages, and the people and beetle rider, which are gone.
+/worlds/elven/crystal-tower/* /worlds/green/firefly-tower/ 301
+/worlds/elven/crystal-tower /worlds/green/firefly-tower/ 301
+/worlds/elven/crystal-waterfall/* /worlds/green/waterfall-tower/ 301
+/worlds/elven/crystal-waterfall /worlds/green/waterfall-tower/ 301
+/worlds/elven/crystal-fountain/* /worlds/green/wetland-fountain/ 301
+/worlds/elven/crystal-fountain /worlds/green/wetland-fountain/ 301
+/worlds/elven/elven-palace/* /worlds/green/forest-palace/ 301
+/worlds/elven/elven-palace /worlds/green/forest-palace/ 301
+/worlds/elven/people/* /worlds/green/ 301
+/worlds/elven/people /worlds/green/ 301
+/worlds/elven/beetle-rider/* /worlds/green/ 301
+/worlds/elven/beetle-rider /worlds/green/ 301
+/teachers/worksheets/elven-vocabulary/* /teachers/worksheets/green-vocabulary/ 301
+/teachers/worksheets/elven-word-search/* /teachers/worksheets/green-word-search/ 301
+/worlds/elven /worlds/green/ 301
+/worlds/elven/* /worlds/green/:splat 301

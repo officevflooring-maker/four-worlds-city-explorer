@@ -27,7 +27,7 @@ $ART_TITLES = [
     'town-1' => 'Town hall', 'town-2' => 'Clock tower', 'town-3' => 'Capitol building',
     'tree-1' => 'Oak tree', 'tree-2' => 'Red maple', 'tree-3' => 'Fir tree', 'tree-4' => 'Round leafy tree',
   ],
-  'elven' => [
+  'green' => [
     'business-1' => 'Canopy market', 'business-2' => 'Market hall', 'business-3' => 'Great tree hall',
     'family-1' => 'Hillside home', 'family-2' => 'Timber family house', 'family-3' => 'Tree tower home',
     'fitness-1' => 'Archery grove', 'fitness-2' => 'Climbing course', 'fitness-3' => 'Open-air arena',

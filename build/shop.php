@@ -149,10 +149,26 @@ $lrpgShots = shop_gallery([
   ['/assets/life-rpg/today.webp', 520, 1123, 'The Today screen: level 7, an 18-day streak and three quests for the day, one of them done.', "Today's quests"],
   ['/assets/life-rpg/city-roman.webp', 520, 1123, 'A Roman city of temples, homes and an aqueduct, built by finishing quests.', 'Your city grows'],
   ['/assets/life-rpg/hero.webp', 520, 1123, 'The Hero screen: a block character, the next unlock and progress in seven skills.', 'Skills and badges'],
-  ['/assets/life-rpg/city-elven.webp', 520, 1123, 'An elven city in the forest.', 'An elven city'],
+  ['/assets/life-rpg/city-green.webp', 520, 1123, 'A green city in the forest.', 'A green city'],
 ]);
+// The heroes (tools/copy-heroes.sh): all twelve in everyday clothes, then hero 4 dressed for five of the worlds.
+$heroPic = function ($file, $alt) {
+  [$w, $h] = getimagesize(PUB . "/assets/life-rpg/heroes/$file.webp");
+  return '<img src="/assets/life-rpg/heroes/' . $file . '.webp" width="' . $w . '" height="' . $h . '" alt="' . h($alt) . '" loading="lazy" decoding="async">';
+};
+$lrpgHeroes = '';
+foreach (['Boy in a blue hoodie', 'Girl in a yellow T-shirt', 'Boy in a green T-shirt', 'Girl in a red jacket', 'Teen boy in a gray hoodie',
+  'Teen girl with a red ponytail', 'Teen boy with round glasses', 'Teen girl with long braids', 'Dad in a flannel shirt',
+  'Mom in a coral blouse', 'Man in a navy polo shirt', 'Grandma in a green cardigan'] as $n => $alt) {
+  $lrpgHeroes .= '<li>' . $heroPic(sprintf('h%02d_casual', $n + 1), $alt) . '</li>';
+}
+$lrpgOutfits = '';
+foreach (['modern' => ['casual', 'In everyday clothes'], 'roman' => ['toga', 'In a tunic and toga'], 'egypt' => ['egypt', 'In a linen dress and a wide collar'],
+  'future' => ['space', 'In a space suit'], 'heaven' => ['heaven', 'In a white robe']] as $w => [$o, $alt]) {
+  $lrpgOutfits .= "<li class=\"world-$w\">" . $heroPic("h04_$o", $alt) . '<span>' . h($WORLDS[$w]['name']) . '</span></li>';
+}
 $lrpgWorlds = '';
-foreach (['roman', 'modern', 'elven', 'future'] as $w) {   // the four worlds in the Life RPG edition for sale
+foreach (['roman', 'modern', 'green', 'future'] as $w) {   // the four worlds in the Life RPG edition for sale
   $lrpgWorlds .= "<li class=\"world-$w\"><img src=\"/assets/life-rpg/city-$w-wide.webp\" width=\"520\" height=\"300\" alt=\"A " . h($WORLDS[$w]['short']) . ' city in Life RPG" loading="lazy" decoding="async"><span>' . h($WORLDS[$w]['name']) . '</span></li>';
 }
 $lrpgOpen = shop_open('life-rpg');
@@ -184,6 +200,8 @@ shop_page('life-rpg', [
       ['👨‍👩‍👧', 'Family scoreboard', 'Several players can share one device, with weekly leaderboards.'],
       ['💾', 'Yours to keep', 'Save a backup file whenever you like, and move it to a new device.'],
     ]) . '</div></section>'
+    . '<section class="wrap section" aria-labelledby="heroes-h"><div class="sec-head"><h2 id="heroes-h">Pick your hero</h2><p>Twelve painted heroes, from kids to grandparents. Gear you earn, like a cape or a crown, shows on your hero.</p></div>'
+    . "<ul class=\"lrpg-heroes\">$lrpgHeroes</ul><h3 class=\"lrpg-outfits-h\">Dressed for each world</h3><ul class=\"lrpg-outfits\">$lrpgOutfits</ul></section>"
     . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of four worlds</h2><p>Four of the worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
@@ -317,14 +335,14 @@ shop_page('posters', [
       ['🏺', 'Ancient Egypt', 'The pyramid, the Great Sphinx, a Nile sailing boat and nine more.'],
       ['🏛️', 'Ancient Rome', 'The aqueduct, the Pantheon, a chariot and nine more.'],
       ['🏙️', 'Modern Town', 'A skyscraper, a stadium, a taxi and nine more.'],
-      ['🌳', 'Elven World', 'A great tree hall, a mushroom cottage and ten more.'],
+      ['🌳', 'Green World', 'A great tree hall, a mushroom cottage and ten more.'],
       ['🚀', 'Robotic Future', 'A spaceport, a launch pad, a hover car and nine more.'],
       ['✨', 'Heavenly City', 'A pearl gate, a tree of life, a swan boat and nine more.'],
       ['💧', 'Ten things every city needs', 'A chart with an example of each need from every world.'],
     ]) . '</div></section>'
     . shop_pages([
       ['1', 'The Six Worlds: a landmark from each world'],
-      ['2 to 7', 'Twelve places from each world: Ancient Egypt, Ancient Rome, Modern Town, Elven World, Robotic Future and the Heavenly City'],
+      ['2 to 7', 'Twelve places from each world: Ancient Egypt, Ancient Rome, Modern Town, Green World, Robotic Future and the Heavenly City'],
       ['8', 'Ten things every city needs: a chart with an example from every world'],
     ], 'A PDF of 8 posters, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([

@@ -19,7 +19,8 @@ grep -v '^#' "$ROOT/tools/assets.txt" | while IFS='|' read -r world batch file n
   case "$batch" in
     lrpg)    in="$LRPG/inbox/done/$world/$file" ;;
     lrpgweb) in="$LRPG/$world/$file" ;;
-    *)       in="$SRC/${BATCH[$batch]}/$world/$file" ;;
+    *)       src="$world"; [ "$world" = green ] && src=elven   # the Green World's source folders are named "elven"
+             in="$SRC/${BATCH[$batch]}/$src/$file" ;;
   esac
   out="$ROOT/public/assets/worlds/$world/$name"
   case "$kind" in

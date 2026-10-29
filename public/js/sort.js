@@ -7,12 +7,12 @@
   var dataEl = document.getElementById('sort-data');
   if (!root || !dataEl) return;
   var data = JSON.parse(dataEl.textContent);
-  var ORDER = ['egypt', 'roman', 'modern', 'elven', 'future', 'heaven'];
+  var ORDER = ['egypt', 'roman', 'modern', 'green', 'future', 'heaven'];
   var TIME = 60, KEY = 'atlas.sort', NEED = 15;   // seconds in a game; right answers that earn the badge
   // The buttons for each game: [label, the worlds it takes, class for its color].
   var BINS = {
     world: ORDER.map(function (w) { return [data.worlds[w][0], [w], 'world-' + w]; }),
-    time: [['Long ago', ['egypt', 'roman'], 'bin-past'], ['Today', ['modern'], 'bin-today'], ['Possible future', ['future'], 'bin-future'], ['Imagined', ['elven', 'heaven'], 'bin-imagined']]
+    time: [['Long ago', ['egypt', 'roman'], 'bin-past'], ['Today', ['modern'], 'bin-today'], ['Possible future', ['future'], 'bin-future'], ['Imagined', ['green', 'heaven'], 'bin-imagined']]
   };
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var store = {

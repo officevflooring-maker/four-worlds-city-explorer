@@ -47,14 +47,14 @@ shop_page('trivia', [
     ]) . '</div></section>'
     . shop_pages([
       ['1', 'Rules, the three levels, and ways to play'],
-      ['2 to 7', '54 question cards, nine to a page: Ancient Egypt, Ancient Rome, Modern Town, Elven World, Robotic Future and the Heavenly City'],
+      ['2 to 7', '54 question cards, nine to a page: Ancient Egypt, Ancient Rome, Modern Town, Green World, Robotic Future and the Heavenly City'],
       ['8', 'Card backs, for printing on both sides'],
       ['9', 'Four passports'],
     ], 'A PDF of 9 pages, in US Letter and A4.')
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['Can young children really play?', 'Yes. Level 1 only asks them to name the place in a picture, and the name is often something they will have seen on this site. A grown-up reads the card.'],
-      ['Are the questions about real places?', 'Each question is about a place on The Atlas of Cities: real ones from Egypt, Rome and today, and imagined ones from the elven, future and heavenly worlds. Every answer is explained on the site.'],
+      ['Are the questions about real places?', 'Each question is about a place on The Atlas of Cities: real ones from Egypt, Rome and today, and imagined ones from the green, future and heavenly worlds. Every answer is explained on the site.'],
       ['What do I need?', 'Scissors, a pencil, and thick paper if you have it. Cards last longer on card stock or in sleeves.'],
       ['Can I print more copies?', 'Yes, for your own home or classroom. Please don\'t share the file online.'],
     ]) . '</section>',

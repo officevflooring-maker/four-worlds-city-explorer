@@ -5,7 +5,7 @@
 # folders are not touched. Usage: bash tools/make-thumbs.sh   (needs ffmpeg with libwebp; skips existing files)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-for world in roman modern elven future egypt heaven; do
+for world in roman modern green future egypt heaven; do
   IN="$ROOT/public/assets/worlds/$world"; OUT="$ROOT/public/assets/thumbs/$world"
   mkdir -p "$OUT"
   for f in "$IN"/*-960.webp "$IN"/*-512.webp; do

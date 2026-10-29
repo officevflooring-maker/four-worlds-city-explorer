@@ -207,7 +207,7 @@ function full_world($w) {
   foreach ($D['cats'] as $cat => [$clabel]) {
     if (isset($onMap[$cat]) || ($cat === 'vehicles' && in_array('vehicles', array_column($pages, 'cat')))) $filters .= '<button type="button" class="chip" data-filter="' . $cat . '" aria-pressed="false">' . h($clabel) . '</button>';
   }
-  $filters .= '<button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>';
+  if (!empty($PEOPLE[$w])) $filters .= '<button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>';
   // Directory by category
   $dir = '';
   $jump = '';
@@ -226,11 +226,12 @@ function full_world($w) {
   [$tourSlug, $tour] = world_tour($w);
   $vehicleCount = count(array_filter($pages, fn($r) => !empty($r['vehicle'])));
   $photoCount = array_sum(array_map('count', $PHOTOS[$w] ?? []));
-  $glance = '<li><strong>' . ($count - $vehicleCount) . '</strong> places</li><li><strong>' . $vehicleCount . '</strong> vehicles</li><li><strong>' . count($PEOPLE[$w] ?? []) . '</strong> people</li>'
+  $glance = '<li><strong>' . ($count - $vehicleCount) . '</strong> places</li><li><strong>' . $vehicleCount . '</strong> vehicles</li>' . (empty($PEOPLE[$w]) ? '' : '<li><strong>' . count($PEOPLE[$w]) . '</strong> people</li>')
     . ($photoCount ? '<li><strong>' . $photoCount . '</strong> photos of real places</li>' : '')
     . ($story ? '<li><a href="/worlds/' . $w . '/story/">' . h($story['title']) . ', in ' . $count . ' parts</a></li>' : '')
     . ($tour ? '<li><a href="/tours/' . $tourSlug . '/">Guided tour: ' . h($tour['h1']) . '</a></li>' : '');
   $storyStart = $story ? '<p class="lead">' . h($story['lead']) . '</p><p><a class="btn" href="/worlds/' . $w . '/' . array_key_first($pages) . '/">Start with part 1</a> <a class="btn btn-quiet" href="/worlds/' . $w . '/story/">See all ' . $count . ' parts</a></p>' : '';
+  $peopleLink = empty($PEOPLE[$w]) ? '' : '<a href="/worlds/' . $w . '/people/">Meet the people</a> · ';
   $tourLink = $tour ? '<a href="/tours/' . $tourSlug . '/">Take the tour</a>' : '<a href="/tours/">Guided tours</a>';
   $groundTex = tex($w, $W['ground']);
   $roadTex = tex($w, 'ground-crossroads');
@@ -262,7 +263,7 @@ function full_world($w) {
       <h2 id="map-h">Look around the city</h2>
       <p class="hint">Select any building, person or vehicle to open its page. Everything is also listed below.</p>
     </div>
-    <p class="map-links"><a href="/worlds/{$w}/people/">Meet the people</a> · {$tourLink}</p>
+    <p class="map-links">{$peopleLink}{$tourLink}</p>
   </div>
   <div class="map-shell" data-map>
     <div class="wrap map-tools">
@@ -523,7 +524,7 @@ function people_page($w) {
   }
   $tourBtn = $tour ? '<a class="btn btn-quiet" href="/tours/' . $tourSlug . '/">Take the tour: ' . h($tour['h1']) . '</a>' : '<a class="btn btn-quiet" href="/tours/">Take a guided tour</a>';
   $others = '';
-  foreach (WORLD_ORDER as $o) if ($o !== $w) $others .= '<li><a class="world-link world-' . $o . '" href="/worlds/' . $o . '/people/">' . h($WORLDS[$o]['short']) . ' people</a></li>';
+  foreach (WORLD_ORDER as $o) if ($o !== $w && !empty($PEOPLE[$o])) $others .= '<li><a class="world-link world-' . $o . '" href="/worlds/' . $o . '/people/">' . h($WORLDS[$o]['short']) . ' people</a></li>';
   $titleH = h($title); $introH = h($intro);
   page("/worlds/$w/people/", [
     'title' => $title . ': who lives in the city',

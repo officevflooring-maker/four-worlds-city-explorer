@@ -20,16 +20,19 @@ webp() { # in, out, filter, quality
 declare -A CARS=(
   [roman]="ox-cart chariot donkey-cart litter"
   [modern]="family-car taxi pickup-truck delivery-van"
-  [elven]="deer-sleigh flower-cart mushroom-carriage beetle-rider"
+  [green]="deer-sleigh flower-cart mushroom-carriage"
   [future]="hover-car pressurized-rover cargo-pod drone-taxi"
   [egypt]="chariot camel ox-cart stone-sledge"
   [heaven]="golden-chariot cloud-carriage swan-boat fruit-donkey"
 )
-for world in roman modern elven future egypt heaven; do
+for world in roman modern green future egypt heaven; do
   W="$ROOT/public/assets/worlds/$world"; A="$ROOT/public/assets/artwork/$world"
   mkdir -p "$W" "$A"
   if [ "$world" = egypt ] || [ "$world" = heaven ]; then
     strips=("$LRPG/inbox/done/$world/"people_[0-9].png "$LRPG/inbox/done/$world/"worker_[0-9].png); cars="$LRPG/inbox/done/$world"
+  elif [ "$world" = green ]; then
+    # the Green World (source folders still named "elven") has no people, and its fourth vehicle is left out
+    strips=(); cars="$SRC/vehicle-batch-01/art/inbox/elven"
   else
     strips=("$SRC/people-batch-03/art/inbox/$world/"*.png); cars="$SRC/vehicle-batch-01/art/inbox/$world"
   fi

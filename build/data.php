@@ -1,7 +1,7 @@
 <?php
 // Shared facts about each world, used on the home page cards, navigation and world pages.
 // Each world's building pages live in build/worlds/{world}.php.
-// Ancient Egypt and Rome are historical settings; the modern town, elven world and future are imagined or
+// Ancient Egypt and Rome are historical settings; the modern town, Green World and future are imagined or
 // speculative, and the Heavenly City is imagined, inspired by the Bible, and tells the story of Jesus.
 
 $WORLDS = [
@@ -25,9 +25,10 @@ $WORLDS = [
     'lead' => 'An imagined town of real buildings. Open any of 36 to learn why towns need it, how it is built and who it serves.',
     'card' => 'mixed-use-building', 'ground' => 'ground-plaza',
   ],
-  'elven' => [
-    'name' => 'Elven Green World', 'short' => 'Elven', 'type' => 'Imaginative design setting',
-    'lead' => 'A fantasy city that grows with the forest. Each of 35 buildings is paired with real nature-based technology.',
+  'green' => [
+    'name' => 'Green World', 'short' => 'Green', 'type' => 'Imaginative design setting',
+    'face' => 'flower-cart',   // no people live here: this picture stands for the world
+    'lead' => 'An imagined city that grows with the forest. Each of 35 buildings is paired with real nature-based technology.',
     'card' => 'treetop-village', 'ground' => 'ground-meadow',
   ],
   'future' => [
@@ -45,7 +46,7 @@ $COMPARE = [
     'heaven' => ['fountain-of-life', 'Fountain of life', 'Here the water never runs out and never makes anyone sick. What would it take to make that true everywhere?'],
     'roman'  => ['aqueduct', 'Aqueduct', 'Water travels downhill along a channel. What happens if the slope is wrong?'],
     'modern' => ['plaza-fountain', 'Plaza fountain', 'Most of a modern water system is hidden. What pipes, pumps or treatment might be out of sight?', 'water-system'],
-    'elven'  => ['spring-circle', 'Spring circle', 'The spring is protected by stones. What could harm a water source?'],
+    'green'  => ['spring-circle', 'Spring circle', 'The spring is protected by stones. What could harm a water source?'],
     'future' => ['indoor-farm', 'Indoor farm', 'Indoor farms could reuse water. Is that worth the energy they need?'],
   ]],
   ['gather', 'Places to gather', 'Where do people meet, celebrate and make decisions together?', [
@@ -53,7 +54,7 @@ $COMPARE = [
     'heaven' => ['banquet-hall', 'Banquet hall', 'A table with a seat for everyone. Who might be missing from the table in your town?'],
     'roman'  => ['amphitheater', 'Amphitheater', 'Thousands watched together, seated by rank. Who was welcome, and where?'],
     'modern' => ['community-center', 'Community center', 'What would make everyone in the neighborhood feel welcome here?'],
-    'elven'  => ['gathering-circle', 'Warm gathering circle', 'Imagined as warmed by heat from deep in the ground. Where could your town find clean warmth?'],
+    'green'  => ['gathering-circle', 'Warm gathering circle', 'Imagined as warmed by heat from deep in the ground. Where could your town find clean warmth?'],
     'future' => ['public-plaza', 'Public plaza', 'If more life happens online, does a city still need squares like this?'],
   ]],
   ['travel', 'Safe travel', 'How do people cross the city safely, on foot and on wheels?', [
@@ -61,7 +62,7 @@ $COMPARE = [
     'heaven' => ['ground-crossroads', 'Golden crossroads', 'Streets of gold with crossings of pearl. What makes a street feel safe and welcoming?'],
     'roman'  => ['ground-crossroads', 'Stone crossroads', 'Look at the stone stripes crossing the road. What might they be for?'],
     'modern' => ['ground-crossroads', 'Crosswalks', 'Painted crosswalks mark where to cross. What else helps people cross safely?', 'streets-crosswalks'],
-    'elven'  => ['ground-crossroads', 'Garden paths', 'There are no cars here. How would people carry heavy things?'],
+    'green'  => ['ground-crossroads', 'Garden paths', 'There are no cars here. How would people carry heavy things?'],
     'future' => ['ground-crossroads', 'Lit roadway', 'Glowing crossings light the way. Who might these lights help, and who might they not?'],
   ]],
   ['goods', 'Moving goods', 'How do food, parcels and supplies reach the people who need them?', [
@@ -69,7 +70,7 @@ $COMPARE = [
     'heaven' => ['fruit-donkey', 'Donkey with fruit', 'Everything here is free to share. How could your town share more of what it has?'],
     'roman'  => ['donkey-cart', 'Donkey cart', 'Carts were banned from Rome\'s streets by day. When would you allow deliveries?'],
     'modern' => ['delivery-van', 'Delivery van', 'Online shopping brings vans to every street. How could deliveries cause less traffic?'],
-    'elven'  => ['flower-cart', 'Flower cart', 'A pony pulls the cart to market. When is slow transport the better choice?'],
+    'green'  => ['flower-cart', 'Flower cart', 'A pony pulls the cart to market. When is slow transport the better choice?'],
     'future' => ['cargo-pod', 'Cargo pod', 'No driver at all. Which jobs should robots do, and which should people keep?'],
   ]],
   ['nature', 'Room for nature', 'Where do plants, animals and open land fit in the city?', [
@@ -77,7 +78,7 @@ $COMPARE = [
     'heaven' => ['golden-tree', 'Golden tree', 'The Bible begins in a garden and ends in a city with a river and the tree of life. Why do trees and water make a place feel good?', 'tree-of-life'],
     'roman'  => ['olive-tree', 'Olive tree', 'Olive trees give shade and food. What else could a city tree provide?', 'olive-grove'],
     'modern' => ['community-garden', 'Community garden', 'Gardens take up space that could hold housing. How would you balance the two?'],
-    'elven'  => ['flower-meadow', 'Flower meadow', 'Flowers feed pollinators. Could your street have a meadow?'],
+    'green'  => ['flower-meadow', 'Flower meadow', 'Flowers feed pollinators. Could your street have a meadow?'],
     'future' => ['tree-pod-habitat', 'Tree pod habitat', 'Homes are built around the tree. Is that sharing space, or taking it over?'],
   ]],
 ];

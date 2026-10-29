@@ -7,8 +7,8 @@
   if (!root) return;
 
   var N = 6, Y0 = 12, KEY = 'atlas.city';
-  var LETTER = { g: 'egypt', r: 'roman', m: 'modern', e: 'elven', f: 'future', h: 'heaven' };
-  var WORLD = { egypt: 'Ancient Egypt', roman: 'Ancient Rome', modern: 'the Modern Town', elven: 'the Elven Green World', future: 'the Robotic Future', heaven: 'the Heavenly City' };
+  var LETTER = { g: 'egypt', r: 'roman', m: 'modern', e: 'green', f: 'future', h: 'heaven' };
+  var WORLD = { egypt: 'Ancient Egypt', roman: 'Ancient Rome', modern: 'the Modern Town', green: 'the Green World', future: 'the Robotic Future', heaven: 'the Heavenly City' };
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }

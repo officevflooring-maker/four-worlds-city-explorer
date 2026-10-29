@@ -7,7 +7,7 @@
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   };
-  var NAMES = { egypt: 'Ancient Egypt', roman: 'Ancient Rome', modern: 'the Modern Town', elven: 'the Elven Green World', future: 'the Robotic Future', heaven: 'the Heavenly City' };
+  var NAMES = { egypt: 'Ancient Egypt', roman: 'Ancient Rome', modern: 'the Modern Town', green: 'the Green World', future: 'the Robotic Future', heaven: 'the Heavenly City' };
   var norm = function (s) { return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); };
   var make = function (tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
 
@@ -165,11 +165,26 @@
   var PP = 'atlas.passport';
   var stamps = store.get(PP, {});
   if (!stamps || typeof stamps !== 'object') stamps = {};
+  // The Elven Green World became the Green World: carry old stamps, badges and scores over to the new names.
+  if (Object.keys(stamps).some(function (k) { return k.indexOf('elven/') === 0; })) {
+    var renamed = { 'crystal-tower': 'firefly-tower', 'crystal-waterfall': 'waterfall-tower', 'crystal-fountain': 'wetland-fountain', 'elven-palace': 'forest-palace' };
+    Object.keys(stamps).forEach(function (k) {
+      if (k.indexOf('elven/') !== 0) return;
+      var s = k.slice(6);
+      if (s !== 'beetle-rider') stamps['green/' + (renamed[s] || s)] = stamps[k];
+      delete stamps[k];
+    });
+    store.set(PP, stamps);
+    ['atlas.badges', 'atlas.hunt'].forEach(function (k) {
+      var o = store.get(k, null);
+      if (o && o.elven !== undefined) { o.green = o.elven; delete o.elven; store.set(k, o); }
+    });
+  }
   var totals = {};
   (document.documentElement.getAttribute('data-pp-totals') || '').split(' ').forEach(function (p) { var kv = p.split(':'); if (kv[1]) totals[kv[0]] = Number(kv[1]); });
   var visited = function (w) { var n = 0; for (var k in stamps) if (k.indexOf(w + '/') === 0) n++; return Math.min(n, totals[w] || n); };
   var bar = function (n, t) { var b = make('span', 'pp-mini'), f = make('span'); f.style.width = Math.round(n / t * 100) + '%'; b.appendChild(f); return b; };
-  var here = location.pathname.match(/^\/worlds\/(egypt|roman|modern|elven|future|heaven)\/([a-z0-9-]+)\/$/);
+  var here = location.pathname.match(/^\/worlds\/(egypt|roman|modern|green|future|heaven)\/([a-z0-9-]+)\/$/);
   if (here && document.body.classList.contains('building')) {
     var hw = here[1], key = hw + '/' + here[2], isNew = !stamps[key];
     stamps[key] = Date.now();
@@ -191,7 +206,7 @@
     var a = el.querySelector('a');
     if (a) a.appendChild(make('span', 'sr-only', ' (visited)'));
   });
-  var worldHere = location.pathname.match(/^\/worlds\/(egypt|roman|modern|elven|future|heaven)\/$/);
+  var worldHere = location.pathname.match(/^\/worlds\/(egypt|roman|modern|green|future|heaven)\/$/);
   var dirH = document.getElementById('dir-h');
   if (worldHere && dirH && visited(worldHere[1])) {
     var ww = worldHere[1], p = make('p', 'pp-progress');
@@ -235,19 +250,19 @@
     ['egypt', 'Nile explorer', 'Visit every place in Ancient Egypt.', 'egypt/pyramid'],
     ['roman', 'Rome explorer', 'Visit every place in Ancient Rome.', 'roman/amphitheater'],
     ['modern', 'Town explorer', 'Visit every place in the Modern Town.', 'modern/mixed-use-building'],
-    ['elven', 'Forest explorer', 'Visit every place in the Elven Green World.', 'elven/treetop-village'],
+    ['green', 'Forest explorer', 'Visit every place in the Green World.', 'green/treetop-village'],
     ['future', 'Space explorer', 'Visit every place in the Robotic Future.', 'future/greenhouse-dome'],
     ['heaven', 'Cloud explorer', 'Visit every place in the Heavenly City.', 'heaven/pearl-gate'],
     ['planner', 'City planner', 'Build a city that meets all ten needs.', 'modern/tower-crane'],
     ['challenge', 'Challenge champion', 'Finish a city builder challenge.', 'roman/triumphal-arch'],
     ['quiz', 'Quiz whiz', 'Score 10 out of 10 in any quiz.', 'roman/library'],
-    ['hunt', 'Map hunter', 'Finish a map hunt.', 'elven/canopy-walkway'],
-    ['memory', 'Memory master', 'Find all the pairs in memory match.', 'elven/tree-library'],
+    ['hunt', 'Map hunter', 'Finish a map hunt.', 'green/canopy-walkway'],
+    ['memory', 'Memory master', 'Find all the pairs in memory match.', 'green/tree-library'],
     ['words', 'Word finder', 'Find every word in a word search.', 'modern/public-library'],
     ['sort', 'Speedy sorter', 'Sort 15 pictures in one game of World sort.', 'future/hover-car'],
     ['shadows', 'Shadow spotter', 'Score 8 or more in Shadow match.', 'egypt/sphinx'],
-    ['zoom', 'Sharp eyes', 'Score 20 points or more in Zoom detective.', 'elven/domed-observatory'],
-    ['odd', 'Odd one finder', 'Get all ten right in Odd one out.', 'elven/mushroom-cottage'],
+    ['zoom', 'Sharp eyes', 'Score 20 points or more in Zoom detective.', 'green/domed-observatory'],
+    ['odd', 'Odd one finder', 'Get all ten right in Odd one out.', 'green/mushroom-cottage'],
     ['puzzle', 'Puzzle master', 'Finish a picture puzzle.', 'roman/pantheon']
   ];
   var earned = function () {
