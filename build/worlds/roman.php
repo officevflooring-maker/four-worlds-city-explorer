@@ -56,6 +56,11 @@ $ROMAN_SOURCES = [
   'brit-edu'       => 'Encyclopaedia Britannica, "Education": the Roman world',
   'brit-tombs'     => 'Encyclopaedia Britannica, "Mausoleum of Augustus" and "Castel Sant\'Angelo"',
   'anc-strabo'     => 'Strabo, Geography, Book 5',
+  'carnuntum'      => 'Ludwig Boltzmann Institute for Archaeological Prospection and Virtual Archaeology, the gladiator school of Carnuntum, Austria (2011)',
+  'un-split'       => 'UNESCO World Heritage Centre, "Historical Complex of Split with the Palace of Diocletian"',
+  'vindolanda'     => 'Vindolanda writing tablets 118 and 452 (lines of Virgil copied as writing practice), Roman Inscriptions of Britain',
+  'pk-boscoreale'  => 'Parco Archeologico di Pompei, "Villa Regina in Boscoreale"',
+  'un-bath'        => 'UNESCO World Heritage Centre, "City of Bath"',
 ];
 
 // category => [label, short description]
@@ -129,7 +134,7 @@ $ROMAN = [
   'art' => 'This fountain is grander than the plain street basins found in Pompeii. Its design is the artist\'s own.',
   'look' => ['Find where the water pours in and where it overflows.', 'Look at the carved stone around the spout.'],
   'questions' => ['Who would use a public fountain, and how often?', 'How would daily life change if your home had no running water?', 'Why did Romans let the water run all the time instead of turning it off?'],
-  'words' => ['Lacus' => 'Latin for a public water basin.', 'Overflow' => 'Extra water that spills over the edge.'],
+  'words' => ['Lacus' => 'Latin for a public water basin.', 'Overflow' => 'Extra water that spills over the edge.', 'Spout' => 'A short pipe or opening that water pours out of.'],
   'sources' => ['anc-frontinus', 'brit-aqueduct', 'un-pompeii'],
   'related' => ['aqueduct', 'apartment-block', 'public-baths'],
 ],
@@ -160,12 +165,15 @@ $ROMAN = [
     ['Noisy neighbors', [
       'The Roman writer Seneca once lived above a bathhouse and complained in a letter about the noise: people grunting as they lifted weights, splashing into the pool, and sellers calling out to sell snacks. His letter shows that the baths were busy, lively social places.',
     ]],
+    ['Places you can still see', [
+      'The towering walls of the Baths of Caracalla still stand in Rome, and operas are staged in its ruins in summer. Part of the Baths of Diocletian became a church designed by Michelangelo. In the English city of Bath, hot spring water still flows into the great Roman bath.',
+    ]],
   ],
   'art' => 'The layout and decoration here are imagined. Real imperial baths were far larger, with vaulted halls and many separate rooms.',
   'look' => ['Notice the steam rising from the pool.', 'Find where water flows into the building.'],
   'questions' => ['Romans went to the baths to wash and to meet people. What places today do both jobs?', 'What would it take to heat so much water without electricity or gas?', 'Why do you think entry was kept cheap?'],
   'words' => ['Hypocaust' => 'An underfloor heating system using hot air.', 'Strigil' => 'A curved tool for scraping oil and dirt off skin.', 'Caldarium' => 'The hot room.', 'Frigidarium' => 'The cold room.'],
-  'sources' => ['brit-thermae', 'sh-caracalla', 'anc-seneca', 'anc-vitruvius'],
+  'sources' => ['brit-thermae', 'sh-caracalla', 'anc-seneca', 'anc-vitruvius', 'un-bath'],
   'related' => ['aqueduct', 'public-fountain', 'gladiator-school'],
 ],
 
@@ -227,7 +235,7 @@ $ROMAN = [
   'look' => ['Find the central barrier down the middle of the track.', 'Look for the starting gates at one end.'],
   'questions' => ['Why might a long, narrow shape suit chariot racing?', 'Why do you think fans felt so loyal to a team color?', 'What makes a sport popular enough to fill a stadium?'],
   'words' => ['Spina' => 'The central barrier the chariots raced around.', 'Carceres' => 'The starting gates.', 'Faction' => 'A racing team.'],
-  'sources' => ['brit-circus'],
+  'sources' => ['brit-circus', 'brit-appia', 'un-rome'],
   'related' => ['amphitheater', 'gladiator-school', 'victory-column'],
 ],
 
@@ -247,12 +255,15 @@ $ROMAN = [
     ['A hard life', [
       'Gladiators were expensive to train and feed, so their owners did not want them killed carelessly, but the life was dangerous and most gladiators had no choice about it. A gladiator who survived many fights might be awarded a wooden sword, the rudis, as a sign of release from fighting.',
     ]],
+    ['Found by radar', [
+      'In 2011, archaeologists in Austria found a gladiator school without digging at all. Using ground-penetrating radar at Carnuntum, a Roman town near Vienna, they mapped its training arena, the gladiators\' small rooms and a bath house. It was the first gladiator school found outside Italy.',
+    ]],
   ],
   'art' => 'This building is an artistic illustration of a training school with its own small arena, inspired by the Ludus Magnus.',
   'look' => ['Find the small sandy arena in the middle.', 'Notice the seats around it. Who might have watched?'],
   'questions' => ['Most gladiators had no choice about fighting. How does that change how you see the games?', 'Why might an emperor build training schools right next to the Colosseum?', 'Why would audiences watch practice sessions?'],
   'words' => ['Ludus' => 'A gladiator training school (also the Latin word for game).', 'Rudis' => 'A wooden practice sword.', 'Lanista' => 'The owner or manager of a troupe of gladiators.'],
-  'sources' => ['pk-colosseo', 'brit-colosseum', 'sh-colosseum'],
+  'sources' => ['pk-colosseo', 'brit-colosseum', 'sh-colosseum', 'carnuntum'],
   'related' => ['amphitheater', 'circus', 'public-baths'],
 ],
 
@@ -555,12 +566,15 @@ $ROMAN = [
     ['The Golden House', [
       'After a great fire burned much of Rome in AD 64, the emperor Nero built an enormous new palace called the Domus Aurea, or Golden House, with gardens and an artificial lake. Later emperors filled it in and built over it; the Colosseum stands where its lake once was. Its painted underground rooms can still be visited.',
     ]],
+    ['A palace that became a town', [
+      'Around AD 300, the emperor Diocletian built a huge palace by the sea at Split, in what is now Croatia, to live in after he retired. Centuries later, people moved inside its strong walls and built homes and shops there. Today the palace is the old town of Split, and about 3,000 people still live within its walls.',
+    ]],
   ],
   'art' => 'The golden dome and purple banners are the artist\'s interpretation of imperial luxury, not a copy of a real palace.',
   'look' => ['Find the golden dome and the purple banners.', 'Count the staircases and terraces.'],
   'questions' => ['Why might rulers build such huge homes?', 'What is the difference between a home and a palace?', 'How do leaders today mix home and office?'],
   'words' => ['Palatine' => 'One of Rome\'s seven hills.', 'Domus Aurea' => 'Nero\'s "Golden House".', 'Purple' => 'An expensive dye linked with emperors.'],
-  'sources' => ['sh-domusaurea', 'anc-suetonius', 'un-rome'],
+  'sources' => ['sh-domusaurea', 'anc-suetonius', 'un-rome', 'un-split'],
   'related' => ['domus', 'villa', 'imperial-statue'],
 ],
 
@@ -664,12 +678,15 @@ $ROMAN = [
     ['Feeding the city', [
       'A big city like Rome could not grow enough food for itself. Grain came from farms across Italy and from overseas, especially Egypt and North Africa, while wine and oil came from farms all around the Mediterranean.',
     ]],
+    ['Places you can still see', [
+      'Near Pompeii, at Boscoreale, you can visit Villa Regina, a small working farm buried by the eruption of Vesuvius in AD 79. Its courtyard still holds 18 large dolia, sunk into the ground to keep about 10,000 liters of wine cool, and a museum nearby shows how farms around the volcano worked.',
+    ]],
   ],
   'art' => 'This small, cozy farmhouse is the artist\'s interpretation. Real villa rustica farms usually had several buildings and work yards.',
   'look' => ['Find the olive tree and storage jars.', 'Notice the covered porch with columns.'],
   'questions' => ['Where does the food in your kitchen come from?', 'Why might farmers store oil and wine underground?', 'How did food get from farms to the city?'],
   'words' => ['Dolium' => 'A very large clay storage jar (plural dolia).', 'Estate' => 'A large area of land owned by one person or family.', 'Harvest' => 'Gathering ripe crops.'],
-  'sources' => ['anc-cato'],
+  'sources' => ['anc-cato', 'pk-boscoreale', 'un-pompeii'],
   'related' => ['olive-grove', 'warehouse', 'villa'],
 ],
 
@@ -717,7 +734,7 @@ $ROMAN = [
   'art' => 'This illustration shows a shop with a home above. Real snack bars had a stone counter with jars set into it.',
   'look' => ['Find the counter and the storage jars.', 'Where might the family who runs it live?'],
   'questions' => ['Why might people in apartment blocks rely on street food?', 'What street food is popular where you live?', 'What can food remains tell archaeologists?'],
-  'words' => ['Thermopolium' => 'A modern name for a Roman snack bar (from Greek for "hot drink shop").', 'Archaeologist' => 'Someone who studies the past by digging up objects and places.'],
+  'words' => ['Thermopolium' => 'A modern name for a Roman snack bar (from Greek for "hot drink shop").', 'Dolium' => 'A large clay jar; snack bars set them into their counters (plural dolia).', 'Archaeologist' => 'Someone who studies the past by digging up objects and places.'],
   'sources' => ['pk-pompeii', 'un-pompeii'],
   'related' => ['shop', 'apartment-block', 'inn'],
 ],
@@ -788,12 +805,15 @@ $ROMAN = [
       'Classes were often held in a rented shop or a covered space open to the street, sometimes just behind a curtain. Pupils wrote on wooden tablets coated with wax, using a pointed stylus; the flat end could smooth the wax to start again. Ink and papyrus were used for more permanent writing. Counting might be done on fingers, with pebbles or on a counting board.',
       'In the 1st century AD, the teacher Quintilian wrote a long book on education. He argued that teachers should be patient, that pupils learn better when encouraged than when punished, and that learning should start early.',
     ]],
+    ['Writing that survives', [
+      'At Vindolanda, a Roman fort near Hadrian\'s Wall in Britain, archaeologists have found hundreds of thin wooden tablets written in ink. Two of them have lines from Virgil\'s famous poem, the Aeneid, copied out as writing practice, perhaps by children learning to write, just as pupils copy sentences today.',
+    ]],
   ],
   'art' => 'This open hall with shelves of scrolls is the artist\'s interpretation of a place of learning.',
   'look' => ['Find the shelves of scrolls.', 'Notice the open arches. Could people passing by hear the lessons?'],
   'questions' => ['Who was left out of Roman education, and why does that matter?', 'How is your school different from a Roman one?', 'Do you agree with Quintilian that encouragement works better than punishment?'],
   'words' => ['Stylus' => 'A pointed tool for writing on wax.', 'Grammaticus' => 'A teacher of literature and language.', 'Rhetoric' => 'The art of persuasive speaking.'],
-  'sources' => ['brit-edu', 'anc-quintilian'],
+  'sources' => ['brit-edu', 'anc-quintilian', 'vindolanda'],
   'related' => ['library', 'records-office', 'domus'],
 ],
 

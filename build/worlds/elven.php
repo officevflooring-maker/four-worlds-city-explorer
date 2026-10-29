@@ -53,6 +53,18 @@ $ELVEN_SOURCES = [
   'isa'        => 'International Society of Arboriculture, tree care guidance',
   'lotus'      => 'Wilhelm Barthlott and Christoph Neinhuis, "Purity of the sacred lotus" (1997), on the lotus effect',
   'nps-beaver' => 'US National Park Service, "Beavers" and their role as ecosystem engineers',
+  'brit-bamboo'  => 'Encyclopaedia Britannica, "Bamboo"',
+  'usgs-imperv'  => 'US Geological Survey, Water Science School, "Impervious Surfaces and Flooding"',
+  'brit-hydro'   => 'Encyclopaedia Britannica, "Hydroelectric power"',
+  'brit-geothermal' => 'Encyclopaedia Britannica, "Geothermal energy"',
+  'fhwa-wildlife' => 'US Federal Highway Administration, "Wildlife Crossing Structure Handbook" (2011)',
+  'falchi'       => 'Fabio Falchi and colleagues, "The new world atlas of artificial night sky brightness", Science Advances (2016)',
+  'obrien'       => 'Liz O\'Brien and Richard Murray, "Forest School and its impacts on young children", Urban Forestry and Urban Greening (2007)',
+  'brit-phenology' => 'Encyclopaedia Britannica, "Phenology"',
+  'hardin'       => 'Garrett Hardin, "The Tragedy of the Commons", Science (1968)',
+  'fgc-wales'    => 'Future Generations Commissioner for Wales, guidance on the Well-being of Future Generations Act',
+  'who-pa'       => 'World Health Organization, "Guidelines on physical activity and sedentary behavior" (2020)',
+  'brit-rainforest' => 'Encyclopaedia Britannica, "Tropical rainforest"',
 ];
 
 $ELVEN_CATEGORIES = [
@@ -191,7 +203,7 @@ $ELVEN = [
   'look' => ['Follow the vine from the arm to the stone block.', 'Find the lanterns hanging from the crane.'],
   'questions' => ['What would it take to build with materials that grow back?', 'Why might bamboo be a good material in some places but not others?', 'What happens to a crane, or a building, at the end of its life?'],
   'words' => ['Bamboo' => 'A fast-growing giant grass with strong, hollow stems.', 'Scaffolding' => 'A temporary frame that builders stand on.', 'Renewable' => 'Able to grow back or be replaced naturally.'],
-  'sources' => ['inbar'],
+  'sources' => ['inbar', 'brit-bamboo'],
   'related' => ['building-materials', 'woodworking-workshop', 'great-tree-hall'],
 ],
 
@@ -419,7 +431,7 @@ $ELVEN = [
   'look' => ['Find the pool in the middle of the garden.', 'Which way would rain flow into it?'],
   'questions' => ['How could gardens collect and clean rainwater?', 'Where does the rain go when it falls on your school?', 'What would a "sponge city" look like?'],
   'words' => ['Rain garden' => 'A planted dip that soaks up rainwater.', 'Permeable' => 'Letting water pass through.', 'Green infrastructure' => 'Using plants and soil to manage water.'],
-  'sources' => ['epa-green'],
+  'sources' => ['epa-green', 'usgs-imperv'],
   'related' => ['crystal-fountain', 'green-roof-cottage', 'flower-meadow'],
 ],
 
@@ -466,7 +478,7 @@ $ELVEN = [
   'look' => ['Follow the water from the top of the spire to the pool.', 'Where could a turbine be hidden?'],
   'questions' => ['What are the good and bad sides of getting energy from rivers?', 'Why might water power work at night when solar does not?', 'How can we share a river between people and fish?'],
   'words' => ['Turbine' => 'A wheel turned by flowing water, wind or steam.', 'Generator' => 'A machine that turns motion into electricity.', 'Run-of-the-river' => 'Hydropower without a big dam.'],
-  'sources' => ['doe-hydro'],
+  'sources' => ['doe-hydro', 'brit-hydro'],
   'related' => ['spring-circle', 'gathering-circle', 'crystal-tower'],
 ],
 
@@ -489,7 +501,7 @@ $ELVEN = [
   'look' => ['Find the glowing heart of the circle.', 'Count the seats around it.'],
   'questions' => ['What makes an outdoor meeting place comfortable for everyone?', 'Why might Iceland be especially good for geothermal energy?', 'Where could your town get clean heat from?'],
   'words' => ['Geothermal' => 'Heat from inside the Earth.', 'District heating' => 'Heating many buildings from one shared source.', 'Heat pump' => 'A machine that moves heat from one place to another.'],
-  'sources' => ['iceland'],
+  'sources' => ['iceland', 'brit-geothermal'],
   'related' => ['hillside-home', 'crystal-waterfall', 'council-terrace'],
 ],
 
@@ -565,7 +577,7 @@ $ELVEN = [
   'look' => ['Look at the stag\'s glowing antlers.', 'What plants surround the base?'],
   'questions' => ['Why might building a bridge for animals also help people?', 'Are there places near you where animals try to cross roads?', 'How could towns be designed around animal paths?'],
   'words' => ['Wildlife corridor' => 'A strip of habitat that links wild areas.', 'Overpass' => 'A bridge that crosses over a road.', 'Fragmentation' => 'Breaking habitat into separate pieces.'],
-  'sources' => ['parks-ca'],
+  'sources' => ['parks-ca', 'fhwa-wildlife'],
   'related' => ['deer-statue', 'wild-grove', 'canopy-walkway'],
 ],
 
@@ -617,7 +629,7 @@ $ELVEN = [
   'look' => ['Find the glass dome at the top.', 'How might lights inside affect the view of the stars?'],
   'questions' => ['When did you last see the Milky Way?', 'How could your street have less light pollution and still be safe?', 'Why might animals need darkness?'],
   'words' => ['Light pollution' => 'Too much artificial light at night.', 'Shielded light' => 'A lamp covered so that light shines down.', 'Milky Way' => 'Our galaxy, seen as a band of stars.'],
-  'sources' => ['darksky'],
+  'sources' => ['darksky', 'falchi'],
   'related' => ['weather-tower', 'crystal-tower', 'tree-library'],
 ],
 
@@ -696,7 +708,7 @@ $ELVEN = [
   'look' => ['Find the stairs and the platforms.', 'Where could a class meet outdoors?'],
   'questions' => ['What would learning outdoors offer? What would it need in bad weather?', 'What could you learn in a wood that you cannot learn indoors?', 'How could a forest school include children who use wheelchairs?'],
   'words' => ['Outdoor learning' => 'Lessons that happen outside.', 'Risky play' => 'Play that is exciting and a little challenging, managed safely.', 'Den' => 'A simple shelter.'],
-  'sources' => ['forest-sch'],
+  'sources' => ['forest-sch', 'obrien'],
   'related' => ['tree-library', 'canopy-walkway', 'forest-gym'],
 ],
 
@@ -720,7 +732,7 @@ $ELVEN = [
   'look' => ['Find the glowing orb at the top. What might it measure?', 'Notice the windows facing different directions.'],
   'questions' => ['What signs tell you the seasons are changing where you live?', 'Why might a record kept for hundreds of years be so valuable?', 'What could you observe and record each week?'],
   'words' => ['Phenology' => 'The study of when natural events happen.', 'Citizen science' => 'Research that anyone can help with.', 'Migration' => 'Animals traveling between places with the seasons.'],
-  'sources' => ['phenology'],
+  'sources' => ['phenology', 'brit-phenology'],
   'related' => ['domed-observatory', 'tree-library', 'spire-house'],
 ],
 
@@ -750,7 +762,7 @@ $ELVEN = [
   'look' => ['Find the seats and the steps.', 'Where would a speaker stand?'],
   'questions' => ['How would decisions be made fairly in a place like this?', 'What "commons" do you share at school or at home?', 'What rules would you make for sharing a forest?'],
   'words' => ['Commons' => 'Resources shared by a group.', 'Monitoring' => 'Checking what is happening over time.', 'Consensus' => 'An agreement reached by a whole group.'],
-  'sources' => ['ostrom'],
+  'sources' => ['ostrom', 'hardin'],
   'related' => ['elven-palace', 'gathering-circle', 'woodworking-workshop'],
 ],
 
@@ -774,7 +786,7 @@ $ELVEN = [
   'look' => ['Count the crystal spires.', 'Find the terraced gardens and stairways.'],
   'questions' => ['Who speaks for people not yet born?', 'What decision today will matter most in 100 years?', 'How could your school think about the long-term future?'],
   'words' => ['Future generations' => 'People who will live after us.', 'Long-term' => 'Over a long time, such as decades.', 'Commissioner' => 'A person given a special public duty.'],
-  'sources' => ['wales'],
+  'sources' => ['wales', 'fgc-wales'],
   'related' => ['council-terrace', 'tree-library', 'wild-grove'],
 ],
 
@@ -798,7 +810,7 @@ $ELVEN = [
   'look' => ['Find the archery targets.', 'Where could someone rest after training?'],
   'questions' => ['How do you feel after spending time outdoors?', 'Why might scientists want large studies before making health claims?', 'What outdoor place near you could be used for exercise?'],
   'words' => ['Shinrin-yoku' => 'Japanese for "forest bathing".', 'Green exercise' => 'Physical activity in natural places.', 'Stress' => 'The body\'s response to pressure or worry.'],
-  'sources' => ['shinrin'],
+  'sources' => ['shinrin', 'who-pa'],
   'related' => ['canopy-walkway', 'open-air-theater', 'leafy-cottage'],
 ],
 
@@ -827,7 +839,7 @@ $ELVEN = [
   'look' => ['Find the rope bridges and ladders.', 'What would you see from the highest platform?'],
   'questions' => ['What creatures might live in the treetops above your local park?', 'Why might the canopy be hard to study?', 'Would you walk on a rope bridge 30 meters up?'],
   'words' => ['Canopy' => 'The upper layer of a forest.', 'Epiphyte' => 'A plant that grows on another plant, such as an orchid on a branch.', 'Walkway' => 'A raised path or bridge.'],
-  'sources' => ['stri'],
+  'sources' => ['stri', 'brit-rainforest'],
   'related' => ['treetop-village', 'forest-gym', 'treehouse-school'],
 ],
 

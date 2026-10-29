@@ -58,6 +58,10 @@ $MODERN_SOURCES = [
   'levittown'   => 'Encyclopaedia Britannica, "Levittown" and US suburban history',
   'brit-stadium'=> 'Encyclopaedia Britannica, "Stadium"',
   'vision-zero' => 'Swedish Transport Administration, "Vision Zero" road safety policy (1997)',
+  'brit-vvm'     => 'Encyclopaedia Britannica, "Vietnam Veterans Memorial" and "Washington Monument"',
+  'afta'         => 'Americans for the Arts, Public Art Network: public art programs in the United States',
+  'nrpa'         => 'National Recreation and Park Association, research on park and recreation services',
+  'whyte'        => 'William H. Whyte, "The Social Life of Small Urban Spaces" (1980) and the Street Life Project',
 ];
 
 $MODERN_CATEGORIES = [
@@ -702,12 +706,15 @@ $MODERN = [
     ['How a fountain works', [
       'Most modern fountains reuse the same water. A pump pushes water up through nozzles, it falls into the basin, is filtered and treated to keep it clean, and then pumped round again. The sound of splashing water can soften traffic noise and help people relax.',
     ]],
+    ['Watching people', [
+      'In the 1970s, the writer William H. Whyte and his team filmed New York City\'s plazas to find out why some were busy and others empty. The busiest had plenty of places to sit, especially chairs that people could move, and sat close to the street. He also noticed that people are drawn to places where other people already are.',
+    ]],
   ],
   'art' => 'This illustration shows a round fountain with flower beds and benches.',
   'look' => ['Find the places to sit.', 'Where would you stand to feel the cool spray?'],
   'questions' => ['What makes a public square feel welcoming: seating, shade, water, quiet?', 'What events would you hold in a town square?', 'Why might some people avoid a square, and how could that change?'],
   'words' => ['Plaza' => 'An open public square.', 'Public space' => 'A place open to everyone.', 'Recirculating' => 'Water that is pumped round and reused.'],
-  'sources' => ['un-habitat', 'jacobs', 'epa-heat'],
+  'sources' => ['un-habitat', 'jacobs', 'epa-heat', 'whyte'],
   'related' => ['public-art', 'gathering-circle', 'water-system'],
 ],
 
@@ -781,7 +788,7 @@ $MODERN = [
   'look' => ['Find the obelisk shape. Where else have you seen one?', 'Where could people stand or sit to remember?'],
   'questions' => ['What would you want your town to remember, and how?', 'Why might people disagree about a monument?', 'Is a tall monument or a quiet one more powerful? Why?'],
   'words' => ['Obelisk' => 'A tall, four-sided stone pillar with a pointed top.', 'Memorial' => 'Something built to remember people or events.', 'Remembrance' => 'The act of remembering, often together.'],
-  'sources' => ['nps-memorial'],
+  'sources' => ['nps-memorial', 'brit-vvm'],
   'related' => ['public-art', 'capitol', 'plaza-fountain'],
 ],
 
@@ -804,7 +811,7 @@ $MODERN = [
   'look' => ['Look at the statue\'s pose. What do you think it means?', 'Where could people sit and look?'],
   'questions' => ['What artwork would you create for your town, and where would you put it?', 'Who should choose public art: experts, leaders or residents?', 'Can art make a place feel safer or friendlier?'],
   'words' => ['Plinth' => 'A base that a statue stands on.', 'Mural' => 'A large painting on a wall.', 'Bronze' => 'A tough metal often used for statues.'],
-  'sources' => ['percent'],
+  'sources' => ['percent', 'afta'],
   'related' => ['memorial', 'plaza-fountain', 'cultural-center'],
 ],
 
@@ -934,7 +941,7 @@ $MODERN = [
   'look' => ['Look through the windows. What equipment can you see?', 'Find the bike rack outside.'],
   'questions' => ['What makes it easier or harder for people to exercise regularly?', 'Should public gyms be free? Who would pay?', 'How could a gym welcome people who feel nervous about exercise?'],
   'words' => ['Moderate activity' => 'Exercise that makes you breathe faster but still able to talk.', 'Cardio' => 'Exercise that works the heart and lungs.', 'Strength training' => 'Exercise that builds muscle.'],
-  'sources' => ['who-pa'],
+  'sources' => ['who-pa', 'nrpa'],
   'related' => ['sports-field', 'stadium', 'health-clinic'],
 ],
 
@@ -968,7 +975,7 @@ $MODERN = [
 // ---------------- Building the town ----------------
 'tower-crane' => [
   'name' => 'Tower crane', 'latin' => 'construction crane', 'cat' => 'build', 'src' => 'build/crane.png',
-  'summary' => 'A tall crane that elevators steel, concrete and glass to the upper floors of new buildings.',
+  'summary' => 'A tall crane that lifts steel, concrete and glass to the upper floors of new buildings.',
   'facts' => ['Elevators' => 'Steel, concrete buckets, panels', 'Balance' => 'Counterweights on the short arm', 'Grows with the building' => 'Climbing cranes add sections', 'Controlled by' => 'An operator in the cab, guided by signalers'],
   'sections' => [
     ['Why cranes are needed', [
@@ -981,7 +988,7 @@ $MODERN = [
       'The whole top slews (turns) on a ring.',
       'The operator sits in a cab at the top; a signaler on the ground guides them by radio.',
     ]], [
-      'Many tower cranes "climb" as the building rises: the crane elevators a new mast section, slides it into place, and raises itself onto it.',
+      'Many tower cranes "climb" as the building rises: the crane lifts a new mast section, slides it into place, and raises itself onto it.',
     ]],
     ['Safety', [
       'Cranes are dangerous if overloaded or used in high wind. Each crane has a load chart showing how much it can lift at each distance from the mast, and computers warn the operator if a lift is too heavy. Workers are trained and certified, and areas under the load are kept clear.',
@@ -991,7 +998,7 @@ $MODERN = [
   'look' => ['Find the counterweight on the short arm.', 'Follow the cable from the trolley to the hook.'],
   'questions' => ['Building sites can block sidewalks. How can a town keep people safe and moving while it builds?', 'Why does a crane need a counterweight?', 'How might a crane get to the top of a tall building, and back down?'],
   'words' => ['Jib' => 'The long horizontal arm of a crane.', 'Counterweight' => 'A heavy weight that balances a load.', 'Load chart' => 'A table of how much a crane can safely lift.'],
-  'sources' => ['osha'],
+  'sources' => ['osha', 'brit-mat'],
   'related' => ['building-materials', 'skyscraper', 'residential-tower'],
 ],
 

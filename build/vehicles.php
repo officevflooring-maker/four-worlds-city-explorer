@@ -46,6 +46,8 @@ $VEHICLE_SOURCES = [
     'iihs'         => 'Insurance Institute for Highway Safety, research on vehicle height, front-end design and pedestrian safety',
     'wef-lastmile' => 'World Economic Forum, "The Future of the Last-Mile Ecosystem" (2020)',
     'usps-ngdv'    => 'United States Postal Service, Next Generation Delivery Vehicle program',
+    'cpuc'         => 'California Public Utilities Commission, approval of paid driverless taxi service in San Francisco (2023)',
+    'ups'          => 'UPS, ORION route planning and the avoidance of left turns',
   ],
   'elven' => [
     'brit-sami'    => 'Encyclopaedia Britannica, "Sami" and "Reindeer"',
@@ -54,6 +56,9 @@ $VEHICLE_SOURCES = [
     'natfiber'     => 'Research reviews on natural-fiber composites (flax, hemp and kenaf) in car parts',
     'dacke'        => 'Dacke and colleagues, "Dung beetles use the Milky Way for orientation", Current Biology (2013)',
     'legged'       => 'Research on legged and insect-inspired robots, including the Biomimicry Institute\'s AskNature database',
+    'icrh'         => 'International Centre for Reindeer Husbandry, Kautokeino, Norway',
+    'brit-horse'   => 'Encyclopaedia Britannica, "Horse"',
+    'usfs-fungus'  => 'US Forest Service and the Oregon Encyclopedia, "Humongous fungus" (Armillaria ostoyae), Malheur National Forest',
   ],
   'future' => [
     'maglev'       => 'Central Japan Railway Company, SCMaglev (603 km/h test run, 2015), and Shanghai Maglev Transportation, line opened 2004',
@@ -64,6 +69,7 @@ $VEHICLE_SOURCES = [
     'nasa-clps'    => 'NASA, Commercial Lunar Payload Services (CLPS) robotic Moon deliveries',
     'ingenuity'    => 'NASA Jet Propulsion Laboratory, Ingenuity Mars Helicopter (first flight April 19, 2021; 72 flights)',
     'dragonfly'    => 'NASA and Johns Hopkins Applied Physics Laboratory, Dragonfly rotorcraft mission to Titan',
+    'nasa-lrv'     => 'NASA, "The Lunar Roving Vehicle" (Apollo 15, 16 and 17)',
   ],
   'egypt' => [
     'brit-chariot' => 'Encyclopaedia Britannica, "Chariot"',
@@ -212,12 +218,15 @@ $VEHICLES = [
     ['Taxis for everyone', [
       'Taxis matter most to people who can\'t drive: children with a carer, older people, people with disabilities and visitors. Cities now require some taxis to carry wheelchairs, with ramps and space inside. Ride-hailing apps changed the business, letting people book and pay from a phone.',
     ]],
+    ['Taxis with no driver', [
+      'In a few cities, such as Phoenix and San Francisco, people can now ride in taxis with no driver at all, steered by computers, cameras and sensors. In 2023, California allowed paid driverless rides across San Francisco. People still debate how safe they are, and what they mean for the people who drive taxis for a living.',
+    ]],
   ],
   'art' => 'This illustration shows a classic yellow taxi with a roof sign and a checkered stripe.',
   'look' => ['Find the sign on the roof. What is it for?', 'Look for the checkered stripe.'],
   'questions' => ['Who in your town most needs taxis?', 'Should taxis be required to carry wheelchairs?', 'How did apps change the way people book a ride?'],
   'words' => ['Fare' => 'The price of a trip.', 'Taximeter' => 'A device that calculates the fare.', 'Ride-hailing' => 'Booking a car ride with an app.'],
-  'sources' => ['brit-taxi', 'nyc-tlc'],
+  'sources' => ['brit-taxi', 'nyc-tlc', 'cpuc'],
   'related' => ['streets-crosswalks', 'family-car', 'office-building'],
 ],
 'pickup-truck' => [
@@ -232,12 +241,15 @@ $VEHICLES = [
       'In North America, pickup trucks are among the best-selling vehicles, and many people drive them as family cars. Over the years they have grown taller and heavier.',
       'Road safety researchers have found that vehicles with tall, flat fronts are more dangerous to people walking, and can make it hard for the driver to see a small child in front of the vehicle.',
     ]],
+    ['Electric pickups', [
+      'The first electric pickup trucks went on sale in 2021 and 2022. With no engine at the front, some have an extra storage space there, nicknamed a "frunk", and with the right equipment, some can even power a house during a power outage.',
+    ]],
   ],
   'art' => 'This illustration shows a blue four-door pickup. The back view shows the open cargo bed and the tailgate.',
   'look' => ['Find the cargo bed in the back view.', 'Compare the height of the hood with the taxi.'],
   'questions' => ['What jobs really need a pickup truck?', 'Should streets have rules about vehicle size?', 'How could a vehicle be designed to protect people walking?'],
   'words' => ['Payload' => 'How much weight a vehicle can carry.', 'Tailgate' => 'The door at the back of the cargo bed.', 'Blind zone' => 'An area around a vehicle the driver can\'t see.'],
-  'sources' => ['iihs'],
+  'sources' => ['iihs', 'brit-auto', 'iea-ev'],
   'related' => ['building-materials', 'tower-crane', 'delivery-van'],
 ],
 'delivery-van' => [
@@ -251,12 +263,15 @@ $VEHICLES = [
     ['Making delivery cleaner', [
       'The World Economic Forum has warned that without changes, growing online shopping will mean many more delivery vans, more traffic and more emissions in city centers. Solutions include electric vans, cargo bikes, parcel lockers where people collect deliveries, and loading zones so vans don\'t block lanes. The US Postal Service is replacing its old mail trucks with a new design, including many electric ones.',
     ]],
+    ['No left turns', [
+      'A delivery driver may stop more than a hundred times a day, so computers plan the routes. The delivery company UPS plans routes that avoid unnecessary left turns across oncoming traffic. Waiting to turn left wastes time and fuel, and it is when many crashes happen.',
+    ]],
   ],
   'art' => 'This illustration shows a plain white van. The back view shows the large rear doors for loading.',
   'look' => ['Find the back doors. Why are they so big?', 'Why might so many vans be plain white?'],
   'questions' => ['How many deliveries come to your street in a week?', 'Would you walk to a parcel locker to reduce traffic?', 'Where can a van stop on your street without blocking anyone?'],
   'words' => ['Last mile' => 'The final step of a delivery, to the door.', 'Depot' => 'A place where parcels are sorted and vans are based.', 'Cargo bike' => 'A bicycle built to carry loads.'],
-  'sources' => ['wef-lastmile', 'usps-ngdv'],
+  'sources' => ['wef-lastmile', 'usps-ngdv', 'ups'],
   'related' => ['warehouse', 'corner-store', 'streets-crosswalks'],
 ],
 ],
@@ -282,7 +297,7 @@ $VEHICLES = [
   'look' => ['Find the lantern on the sleigh.', 'Compare the sleigh with the cart. What is different about how they touch the ground?'],
   'questions' => ['When is a sled better than a wheel?', 'What would it take to care for working animals well?', 'Which is better for a quiet forest: animals or electric vehicles?'],
   'words' => ['Runner' => 'The smooth strip a sled slides on.', 'Domesticated' => 'Tamed and bred by people over many generations.', 'Herder' => 'A person who looks after a herd of animals.'],
-  'sources' => ['brit-sami'],
+  'sources' => ['brit-sami', 'icrh'],
   'related' => ['stag-monument', 'wild-grove', 'flower-cart'],
 ],
 'flower-cart' => [
@@ -304,7 +319,7 @@ $VEHICLES = [
   'look' => ['Find the purple flowers in the cart.', 'Look at the size of the wheels.'],
   'questions' => ['Why might a horse be better than a machine in a forest?', 'Could cargo bikes replace some vans in your town?', 'What does a working animal need to be healthy and safe?'],
   'words' => ['Horse logging' => 'Using horses to move felled trees.', 'Soil compaction' => 'Squashing soil so roots and water can\'t get through.', 'Cargo bike' => 'A bicycle built to carry loads.'],
-  'sources' => ['horse-log'],
+  'sources' => ['horse-log', 'brit-horse'],
   'related' => ['market-hall', 'flower-meadow', 'canopy-market'],
 ],
 'mushroom-carriage' => [
@@ -322,12 +337,15 @@ $VEHICLES = [
     ['Grown materials', ELVEN_NEXT, [
       'Researchers are testing materials grown from mycelium, the root-like threads of fungi, for packaging, insulation and leather-like fabrics. Growing whole vehicles is still science fiction.',
     ]],
+    ['A giant underground', ELVEN_REAL, [
+      'Fungi can grow to an amazing size. In Oregon\'s Malheur National Forest, a single honey fungus, nicknamed the "humongous fungus", spreads its threads underground across about 965 hectares, the size of more than 1,300 soccer fields. It may be one of the largest living things on Earth.',
+    ]],
   ],
   'art' => 'This illustration shows a carriage shaped like a toadstool with a red, spotted roof, pulled by a small deer.',
   'look' => ['Find the spots on the roof.', 'Look for the glowing windows.'],
   'questions' => ['Which parts of a car could be made from plants?', 'What would happen to a plant-based car at the end of its life?', 'Is a lighter car always better?'],
   'words' => ['Natural fiber' => 'A fiber from a plant or animal, such as flax or wool.', 'Composite' => 'A material made of two or more materials combined.', 'Mycelium' => 'The root-like threads of fungi.'],
-  'sources' => ['henryford', 'natfiber', 'mycelium'],
+  'sources' => ['henryford', 'natfiber', 'mycelium', 'usfs-fungus'],
   'related' => ['mushroom-cottage', 'building-materials', 'woodworking-workshop'],
 ],
 'beetle-rider' => [
@@ -411,12 +429,15 @@ $VEHICLES = [
     ['Robot haulers off Earth', FUT_WOULD, [
       'On the Moon or Mars, robot cargo pods could carry ice from mines, oxygen tanks, spare parts and building materials between the landing pad and the base, day and night, without putting people at risk. Crews would step in only when something went wrong.',
     ]],
+    ['The first Moon buggy', FUT_REAL, [
+      'Astronauts on Apollo 15, 16 and 17, in 1971 and 1972, drove an electric Lunar Roving Vehicle across the Moon. It folded up to fit inside the lander, carried two astronauts and their tools, and let them explore much farther from their spacecraft than on foot.',
+    ]],
   ],
   'art' => 'This illustration shows a boxy white and red cargo vehicle with glowing blue pads underneath.',
   'look' => ['Is there a driver\'s seat?', 'Find the cargo doors in the back view.'],
   'questions' => ['Which jobs should robot vehicles do, and which should people do?', 'Who is responsible if a self-driving vehicle crashes?', 'Why are mines a good place to test self-driving trucks?'],
   'words' => ['Autonomous' => 'Able to work without a person in control.', 'Haul truck' => 'A huge truck for moving rock in a mine.', 'Payload' => 'The cargo a vehicle carries.'],
-  'sources' => ['autohaul', 'nasa-clps', 'nasa-isru'],
+  'sources' => ['autohaul', 'nasa-clps', 'nasa-isru', 'nasa-lrv'],
   'related' => ['ice-mine', 'robot-helpers', 'operations-center'],
 ],
 'drone-taxi' => [

@@ -38,6 +38,14 @@ $FUTURE_SOURCES = [
   'elevator'     => 'Research and review articles on the space elevator concept and the strength of carbon nanotube materials',
   'artgrav'      => 'NASA and research reviews on artificial gravity and rotating spacecraft',
   'falcon'       => 'SpaceX, first landing of an orbital-class rocket booster (December 2015) and reuse of boosters',
+  'brit-lifesupport' => 'Encyclopaedia Britannica, "Life-support system"',
+  'brit-hydroponics' => 'Encyclopaedia Britannica, "Hydroponics"',
+  'brit-reactor' => 'Encyclopaedia Britannica, "Nuclear reactor"',
+  'brit-3d'      => 'Encyclopaedia Britannica, "3D printing"',
+  'brit-light'   => 'Encyclopaedia Britannica, "Speed of light"',
+  'nasa-sw'      => 'NASA, "Space Weather" (Heliophysics Division)',
+  'edwards'      => 'Bradley C. Edwards, "The Space Elevator", report for the NASA Institute for Advanced Concepts (2000)',
+  'nasa-apollo13' => 'NASA, "Apollo 13" mission history',
 ];
 
 $FUTURE_CATEGORIES = [
@@ -230,7 +238,7 @@ $FUTURE = [
   'look' => ['Find the glowing column of water.', 'Where could the cleaned water flow next?'],
   'questions' => ['Would you drink recycled water if you knew it was cleaner than tap water?', 'How much water do you use in a day?', 'What could cities on Earth learn from space water recycling?'],
   'words' => ['Closed loop' => 'A system that reuses its materials over and over.', 'Distillation' => 'Boiling a liquid and collecting the vapor to purify it.', 'Brine' => 'Very salty leftover water.'],
-  'sources' => ['nasa-eclss'],
+  'sources' => ['nasa-eclss', 'brit-lifesupport'],
   'related' => ['habitat-cluster', 'ice-mine', 'indoor-farm'],
 ],
 
@@ -277,7 +285,7 @@ $FUTURE = [
   'look' => ['Notice the lights above the plants.', 'Find the tanks that might hold water and nutrients.'],
   'questions' => ['Should food be grown inside cities? What would it need?', 'Why might astronauts value fresh food more than people on Earth?', 'Which foods would be hardest to grow indoors?'],
   'words' => ['Hydroponics' => 'Growing plants in water and nutrients without soil.', 'LED' => 'A light-emitting diode, an efficient kind of light.', 'Vertical farm' => 'An indoor farm with crops in stacked layers.'],
-  'sources' => ['nasa-veggie'],
+  'sources' => ['nasa-veggie', 'brit-hydroponics'],
   'related' => ['greenhouse-dome', 'water-recycler', 'tree-pod-habitat'],
 ],
 
@@ -379,7 +387,7 @@ $FUTURE = [
   'look' => ['Follow the cables from the tower.', 'Find the coils at the top.'],
   'questions' => ['Where should a city\'s energy come from, and who decides?', 'What are the risks and benefits of nuclear power in space?', 'Why does a settlement need power every single minute?'],
   'words' => ['Fission' => 'Splitting atoms to release energy.', 'Kilowatt' => 'A unit of power: 1,000 watts.', 'Radiator' => 'A panel that gets rid of heat.'],
-  'sources' => ['nasa-fsp'],
+  'sources' => ['nasa-fsp', 'brit-reactor'],
   'related' => ['oxygen-factory', 'robotics-factory', 'storm-shelter'],
 ],
 
@@ -429,7 +437,7 @@ $FUTURE = [
   'look' => ['Find the glowing screen.', 'What might be made in this shop?'],
   'questions' => ['What would you print if you had a 3D printer at home?', 'Why might it be safer to carry printers than spare parts?', 'How could printing help reduce waste on Earth?'],
   'words' => ['3D printer' => 'A machine that builds objects layer by layer.', 'Filament' => 'The plastic thread a 3D printer melts.', 'On demand' => 'Made when needed.'],
-  'sources' => ['iss-3dp'],
+  'sources' => ['iss-3dp', 'brit-3d'],
   'related' => ['robotics-factory', 'building-materials', 'science-lab'],
 ],
 
@@ -676,7 +684,7 @@ $FUTURE = [
   'look' => ['Count the antennas and dishes.', 'Why might the tower be tall?'],
   'questions' => ['How would you chat with a friend on Mars if each message took 20 minutes?', 'What would happen to a settlement if communications failed?', 'Why does NASA need antennas on three continents?'],
   'words' => ['Relay' => 'Passing a message along.', 'Signal delay' => 'The time it takes for a message to arrive.', 'Bandwidth' => 'How much data can be sent at once.'],
-  'sources' => ['nasa-dsn'],
+  'sources' => ['nasa-dsn', 'brit-light'],
   'related' => ['telepresence', 'mission-control', 'radio-telescope'],
 ],
 
@@ -700,7 +708,7 @@ $FUTURE = [
   'look' => ['Count the sensors and dishes on the tower.', 'Find the warning lights.'],
   'questions' => ['What would happen to a settlement if communications failed during a solar storm?', 'How could space weather affect your life on Earth?', 'Why are auroras linked to the Sun?'],
   'words' => ['Solar flare' => 'A sudden burst of energy from the Sun.', 'Coronal mass ejection' => 'A huge cloud of charged gas thrown out by the Sun.', 'Aurora' => 'Glowing lights in the sky near the poles.'],
-  'sources' => ['noaa-swpc'],
+  'sources' => ['noaa-swpc', 'nasa-sw'],
   'related' => ['storm-shelter', 'comms-relay', 'radio-telescope'],
 ],
 
@@ -823,7 +831,7 @@ $FUTURE = [
   'look' => ['Find the glowing rings near the top.', 'Where would the cable start?'],
   'questions' => ['Why might a space elevator be easier to build on the Moon than on Earth?', 'What would change if getting to space were as easy as a lift ride?', 'What other "impossible" ideas later became real?'],
   'words' => ['Tether' => 'A long, strong cable.', 'Carbon nanotube' => 'A tiny tube of carbon atoms that is extremely strong.', 'Counterweight' => 'A weight that balances another.'],
-  'sources' => ['elevator'],
+  'sources' => ['elevator', 'edwards'],
   'related' => ['spaceport', 'launch-pad', 'centrifuge-arena'],
 ],
 
@@ -871,7 +879,7 @@ $FUTURE = [
   'look' => ['Find the glowing globe display.', 'How many floors of consoles might there be?'],
   'questions' => ['What makes a team work well under pressure?', 'Why do flight controllers practice emergencies so often?', 'How should decisions be shared between a crew and Mission Control?'],
   'words' => ['Flight director' => 'The leader of a mission control team.', 'Console' => 'A workstation with screens and controls.', 'Simulation' => 'A practice exercise that imitates a real situation.'],
-  'sources' => ['nasa-mcc'],
+  'sources' => ['nasa-mcc', 'nasa-apollo13'],
   'related' => ['operations-center', 'comms-relay', 'launch-pad'],
 ],
 
