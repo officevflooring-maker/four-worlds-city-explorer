@@ -42,13 +42,14 @@ function shop_card($slug) {
   global $SHOP_INFO;
   [$name, $url, $kind, $line, $img, $w, $hh] = $SHOP_INFO[$slug];
   $state = shop_open($slug) ? ucfirst(shop_terms($slug)) : 'Coming soon';
-  return "<li class=\"shop-card\"><a href=\"$url\"><span class=\"shop-card-pic\"><img src=\"$img\" width=\"$w\" height=\"$hh\" alt=\"\" loading=\"lazy\" decoding=\"async\"></span>"
+  return "<li class=\"shop-card shop-card-$slug\"><a href=\"$url\"><span class=\"shop-card-pic\"><img src=\"$img\" width=\"$w\" height=\"$hh\" alt=\"\" loading=\"lazy\" decoding=\"async\"></span>"
     . '<span class="shop-card-text"><span class="shop-kind">' . h($kind) . '</span><span class="shop-name">' . h($name) . '</span>'
     . '<span class="shop-line">' . h($line) . "</span><span class=\"shop-state\">$state</span></span></a></li>";
 }
-function shop_cards($except = '') {
+function shop_cards($except = '', $only = null) {
   global $SHOP_INFO;
-  return '<ul class="shop-cards">' . implode('', array_map('shop_card', array_filter(array_keys($SHOP_INFO), fn($s) => $s !== $except))) . '</ul>';
+  $slugs = $only ?? array_keys($SHOP_INFO);
+  return '<ul class="shop-cards">' . implode('', array_map('shop_card', array_filter($slugs, fn($s) => $s !== $except))) . '</ul>';
 }
 
 function shop_steps($steps) {
@@ -66,6 +67,28 @@ function shop_faq($faq) {
   foreach ($faq as [$q, $a]) $out .= '<details><summary>' . h($q) . '</summary><p>' . $a . '</p></details>';
   return "<div class=\"shop-faq\">$out</div>";
 }
+// What is on which pages, so buyers know exactly what they get: [pages, what is there]
+function shop_pages($rows, $total) {
+  $out = '';
+  foreach ($rows as [$p, $what]) $out .= '<li><span class="shop-pg">' . h($p) . '</span><span>' . $what . '</span></li>';
+  return '<section class="wrap section narrow" aria-labelledby="pages-h"><h2 id="pages-h">Page by page</h2><p class="muted">' . h($total) . '</p><ol class="shop-pagelist">' . $out . '</ol></section>';
+}
+function shop_trust($slug) {
+  $points = $slug === 'life-rpg'
+    ? ['One payment, no subscription', 'Works offline', 'Up to 10 devices']
+    : ['Instant download', 'US Letter and A4', 'Print as often as you need', 'One payment'];
+  return '<ul class="shop-trust">' . implode('', array_map(fn($p) => '<li>' . h($p) . '</li>', $points)) . '</ul>';
+}
+// Structured data for search engines: the product, with its price once it is on sale.
+function shop_ld($slug, $desc) {
+  global $SHOP_INFO;
+  [$name, $url] = $SHOP_INFO[$slug];
+  $ld = ['@context' => 'https://schema.org', '@type' => 'Product', 'name' => $name, 'description' => $desc, 'url' => url($url),
+    'image' => url('/assets/og/' . $slug . '.jpg'), 'brand' => ['@type' => 'Brand', 'name' => SITE_NAME]];
+  if (shop_open($slug)) $ld['offers'] = ['@type' => 'Offer', 'price' => ltrim(SHOP[$slug]['price'], '$'), 'priceCurrency' => 'USD',
+    'availability' => 'https://schema.org/InStock', 'url' => SHOP[$slug]['buy']];
+  return $ld;
+}
 function shop_gallery($pics) {
   $out = '';
   foreach ($pics as [$src, $w, $hh, $alt, $cap]) $out .= "<li><figure><img src=\"$src\" width=\"$w\" height=\"$hh\" alt=\"" . h($alt) . '" loading="lazy" decoding="async"><figcaption>' . h($cap) . '</figcaption></figure></li>';
@@ -78,6 +101,8 @@ function shop_page($slug, $o) {
   [$name, $url] = $SHOP_INFO[$slug];
   $facts = implode('', array_map(fn($f) => '<li>' . h($f) . '</li>', $o['facts']));
   $buy = shop_buy($slug);
+  $trust = shop_trust($slug);
+  $perfect = empty($o['perfect']) ? '' : '<p class="shop-perfect">Perfect for ' . h(implode(', ', array_slice($o['perfect'], 0, -1)) . ' and ' . end($o['perfect'])) . '</p>';
   $top = $o['dark'] ?? false ? 'band band-dark shop-top shop-top-dark' : 'band shop-top';
   $more = shop_cards($slug);
   page($url, [
@@ -93,7 +118,8 @@ function shop_page($slug, $o) {
       <h1>{$name}</h1>
       <p class="lead">{$o['lead']}</p>
       {$buy}
-      <ul class="shop-facts">{$facts}</ul>
+      {$trust}
+      <ul class="shop-facts">{$facts}</ul>{$perfect}
     </div>
     <div class="shop-top-pic">{$o['pic']}</div>
   </div>
@@ -110,12 +136,13 @@ function shop_page($slug, $o) {
   {$more}
 </section>
 HTML,
-    'ld' => [crumbs([['Home', '/'], ['Shop', '/shop/'], [$name, $url]])],
+    'ld' => [crumbs([['Home', '/'], ['Shop', '/shop/'], [$name, $url]]), shop_ld($slug, $o['desc'])],
   ]);
 }
 
 // the print-and-play games: their entries go in $SHOP_INFO before any product page lists the others
 require __DIR__ . '/games.php';
+require __DIR__ . '/printables.php';
 
 /* ---------- Life RPG ---------- */
 $lrpgShots = shop_gallery([
@@ -135,6 +162,7 @@ shop_page('life-rpg', [
   'tag' => 'For grown-ups and teens',
   'lead' => 'Turn real-life goals into quests. Finish them to earn XP, level up and grow your own city.',
   'facts' => ['No subscription', 'No ads', 'No account', 'Works offline'],
+  'perfect' => ['building habits', 'family goals', 'teens with big plans'],
   'dark' => true,
   'pic' => '<img class="shop-phone" src="/assets/life-rpg/today.webp" width="520" height="1123" alt="Life RPG on a phone: today\'s quests, level 7 and an 18-day streak.">',
   'again' => $lrpgOpen ? 'Start your first quest today' : 'Life RPG is coming soon',
@@ -156,7 +184,7 @@ shop_page('life-rpg', [
       ['👨‍👩‍👧', 'Family scoreboard', 'Several players can share one device, with weekly leaderboards.'],
       ['💾', 'Yours to keep', 'Save a backup file whenever you like, and move it to a new device.'],
     ]) . '</div></section>'
-    . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of four worlds</h2><p>The same worlds as this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
+    . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of four worlds</h2><p>Four of the worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['Is it a subscription?', 'No. You pay ' . shop_price('life-rpg') . ' once, and it\'s yours. There are no ads and nothing else to buy.'],
@@ -176,6 +204,7 @@ shop_page('city-builders', [
   'tag' => 'Print at home · For families and classrooms',
   'lead' => 'Collect buildings from six worlds, from ancient Egypt to a city in the clouds, and be the first to build a city with water, homes, food and the seven other things people need.',
   'facts' => ['2 to 4 players', 'Ages 8 and up', 'About 20 minutes', 'PDF in Letter and A4'],
+  'perfect' => ['family game night', 'classrooms', 'learning what cities need'],
   'pic' => '<img src="/assets/shop/city-builders-fan.webp" width="1100" height="513" alt="Five City Builders cards: an aqueduct, a treetop village, a challenge card, a public library and a greenhouse dome.">',
   'again' => shop_open('city-builders') ? 'Print it tonight, play it tomorrow' : 'City Builders is coming soon',
   'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
@@ -198,7 +227,12 @@ shop_page('city-builders', [
       ['💬', 'Talk about it', 'Questions for after the game: which need was hardest to meet, and why?'],
       ['🖨️', 'Print as often as you like', 'For your home or your classroom.'],
     ]) . '</div></section>'
-    . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+    . shop_pages([
+      ['1 and 2', 'Rules: setup, turns, scoring, other ways to play and questions to talk about'],
+      ['3 to 20', '155 building cards, nine to a page, world by world, and 2 helper cards'],
+      ['21', '9 challenge cards'],
+      ['22', 'Card backs, for printing on both sides'],
+    ], 'A PDF of 22 pages, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['What do I get?', 'A PDF of 22 pages to download right away: rules, 19 pages of cards and a page of card backs, in both US Letter and A4.'],
       ['Do I need special paper?', 'No. Card stock makes sturdier cards, but plain paper works too. Card sleeves from any game shop make them last even longer.'],
@@ -215,6 +249,7 @@ shop_page('classroom-pack', [
   'tag' => 'Print at home · For teachers and homeschool',
   'lead' => 'Everything for teaching how cities work, in one file: fact cards for every place, the worksheets with their answer keys, and questions that get a class talking.',
   'facts' => ['83 pages', 'Grades 2 to 9', 'PDF in Letter and A4'],
+  'perfect' => ['teachers', 'homeschool', 'substitute plans', 'grades 2 to 9'],
   'pic' => '<img src="/assets/shop/classroom-pack-pages.webp" width="1100" height="697" alt="Three pages of the Classroom Pack: the cover, the ten needs of a city and a page of fact cards.">',
   'again' => shop_open('classroom-pack') ? 'Everything for your next unit, in one file' : 'The Classroom Pack is coming soon',
   'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
@@ -239,7 +274,13 @@ shop_page('classroom-pack', [
       ['💡', 'Ideas for using it', 'Stations, sorting, a design-a-city project and a question of the day.'],
       ['🖨️', 'Ready to print', 'Each section starts on its own page, with page numbers and a contents page.'],
     ]) . '</div></section>'
-    . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+    . shop_pages([
+      ['1 and 2', 'Cover, contents and ideas for using the pack'],
+      ['3 and 4', 'Ten things every city needs, compared across the six worlds'],
+      ['5 to 43', '230 fact cards, six to a page'],
+      ['44 to 74', '16 worksheets, each followed by its answer key'],
+      ['75 to 83', '90 discussion cards, ten to a page'],
+    ], 'A PDF of 83 pages, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['Aren\'t the worksheets free on this site?', 'Yes, and they stay free. The pack puts them in one file with the fact cards, the ten needs pages and the discussion cards, so a whole unit is ready to print.'],
       ['What grades is it for?', 'Grades 2 to 9. The fact cards and discussion cards work across those grades; each worksheet notes its grades on <a href="/teachers/worksheets/">the worksheets page</a>.'],
@@ -255,6 +296,7 @@ shop_page('posters', [
   'tag' => 'Print at home · Supports this site',
   'lead' => 'Eight posters for a classroom or bedroom wall. You choose the price, and it helps keep The Atlas of Cities free.',
   'facts' => ['8 posters', 'PDF in Letter and A4'],
+  'perfect' => ['classroom walls', 'bedrooms', 'supporting this site'],
   'pic' => '<img src="/assets/shop/posters-fan.webp" width="1100" height="697" alt="Three posters: Ancient Egypt, the six worlds and the Heavenly City.">',
   'again' => shop_open('posters') ? 'Put every world on your wall' : 'The Poster Set is coming soon',
   'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
@@ -280,7 +322,11 @@ shop_page('posters', [
       ['✨', 'Heavenly City', 'A pearl gate, a tree of life, a swan boat and nine more.'],
       ['💧', 'Ten things every city needs', 'A chart with an example of each need from every world.'],
     ]) . '</div></section>'
-    . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+    . shop_pages([
+      ['1', 'The Six Worlds: a landmark from each world'],
+      ['2 to 7', 'Twelve places from each world: Ancient Egypt, Ancient Rome, Modern Town, Elven World, Robotic Future and the Heavenly City'],
+      ['8', 'Ten things every city needs: a chart with an example from every world'],
+    ], 'A PDF of 8 posters, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['What do I get?', 'A PDF of 8 posters to download right away, in both US Letter and A4.'],
       ['Where does the money go?', 'Into keeping The Atlas of Cities free, with no ads: hosting, new worlds and fact-checking.'],
@@ -289,26 +335,52 @@ shop_page('posters', [
     ]) . '</section>',
 ]);
 
-/* ---------- the shop page ---------- */
-$shopCards = shop_cards();
+/* ---------- the shop page: products on shelves by who they are for ---------- */
+// [heading, line, products]; a product not on a shelf is left off the shop page, so add new ones here
+$SHOP_SHELVES = [
+  ['Games to print', 'Board, card and party games for families and classrooms. Print them tonight, play them tomorrow.', ['journey', 'city-builders', 'trivia', 'bingo', 'planners']],
+  ['For young builders', 'Hands-on fun for ages 4 to 10: build a city on the table, or puzzle through six worlds.', ['playset', 'activity']],
+  ['For the classroom', 'Everything for a unit on how cities work, ready to print and copy.', ['classroom-pack', 'wordwall']],
+  ['For your wall', 'Posters and a calendar from the six worlds. The posters are how you can support this site.', ['posters', 'calendar']],
+  ['For grown-ups and teens', 'An app that turns real-life goals into quests.', ['life-rpg']],
+];
+$shelves = $jump = '';
+foreach ($SHOP_SHELVES as $i => [$head, $line, $slugs]) {
+  $slugs = array_values(array_filter($slugs, fn($s) => isset($SHOP_INFO[$s])));
+  if (!$slugs) continue;
+  $id = 'shelf-' . ($i + 1);
+  $jump .= '<li><a href="#' . $id . '">' . h($head) . '</a></li>';
+  $shelves .= '<section class="wrap section shop-shelf" aria-labelledby="' . $id . '"><div class="sec-head"><h2 id="' . $id . '">' . h($head) . '</h2><p>' . h($line) . '</p></div>' . shop_cards('', $slugs) . '</section>';
+}
+$nProducts = count($SHOP_INFO);
 page('/shop/', [
-  'title' => 'Shop: games, posters and classroom packs',
-  'desc' => h('Board games, card games, posters and classroom packs made from the worlds of The Atlas of Cities, and Life RPG, an app for real-life goals. The rest of the site stays free.'),
+  'title' => 'Shop: board games, activity books, classroom packs and posters',
+  'desc' => h('Printable board games, an activity book, a play set, classroom packs, posters and a calendar, all made from the six worlds of The Atlas of Cities, and Life RPG. One payment each; the rest of the site stays free.'),
   'class' => 'shop shop-home-page',
   'body' => <<<HTML
 <section class="wrap section page-head">
   <p class="tag">Shop · For grown-ups</p>
-  <h1>Games, posters and classroom packs</h1>
-  <p class="lead">Made from the worlds of this site. You get a download or a key right after paying, and the rest of The Atlas of Cities stays free.</p>
+  <h1>Games, activities and classroom packs</h1>
+  <p class="lead">{$nProducts} things to print and play, all made from the worlds of this site. You get your files right after paying, and the rest of The Atlas of Cities stays free.</p>
+  <ul class="shop-jump">{$jump}</ul>
 </section>
-<section class="wrap section shop-list" aria-label="Products">
-  {$shopCards}
+{$shelves}
+<section class="band shop-how" aria-labelledby="how-buy-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="how-buy-h">How it works</h2></div>
+    <ol class="shop-steps">
+      <li><span class="shop-step-n" aria-hidden="true">1</span><b>Choose.</b> Every page shows exactly what is inside, page by page.</li>
+      <li><span class="shop-step-n" aria-hidden="true">2</span><b>Pay once.</b> On our store's checkout. No account, no subscription.</li>
+      <li><span class="shop-step-n" aria-hidden="true">3</span><b>Download and print.</b> PDFs in US Letter and A4, to print at home as often as you need.</li>
+    </ol>
+  </div>
 </section>
 <section class="wrap section narrow" aria-labelledby="know-h">
   <h2 id="know-h">Good to know</h2>
   <ul class="plain-points">
     <li>Everything is a single payment. No subscriptions and no ads.</li>
     <li>Payment happens on our store's website, under its own privacy policy. This site never sees payment details.</li>
+    <li>Your receipt email has your download links, so you can download again later.</li>
     <li>A grown-up buys. Under 18? Ask a parent first.</li>
   </ul>
 </section>

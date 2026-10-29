@@ -187,11 +187,11 @@ $GLOBALS['siteNameH'] = h(SITE_NAME);
 $GLOBALS['ppTotals'] = implode(' ', array_map(fn($w) => "$w:" . count($WORLD_DATA[$w]['pages']), WORLD_ORDER));
 
 require __DIR__ . '/worldpages.php';
+require __DIR__ . '/shop.php';          // before the pages that point to the shop
 require __DIR__ . '/teachpages.php';
 require __DIR__ . '/tours.php';
 require __DIR__ . '/play.php';
 require __DIR__ . '/classroom.php';
-require __DIR__ . '/shop.php';
 require __DIR__ . '/home.php';
 
 // ---------- Compare ----------
@@ -490,7 +490,7 @@ $urls['/life-rpg/'] = '0.5';
 $urls['/city-builders/'] = '0.5';
 $urls['/classroom-pack/'] = '0.5';
 $urls['/posters/'] = '0.5';
-foreach (['/journey/', '/bingo/', '/planners/'] as $u) $urls[$u] = '0.5';
+foreach (['/journey/', '/bingo/', '/planners/', '/trivia/', '/wordwall/', '/calendar/', '/playset/', '/activity/'] as $u) $urls[$u] = '0.5';
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . LASTMOD . "</lastmod><priority>$pr</priority></url>\n";
 $xml .= "</urlset>\n";

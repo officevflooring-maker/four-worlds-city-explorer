@@ -22,6 +22,11 @@ const SHOP = [
   'journey'        => ['price' => '$4', 'buy' => ''],
   'bingo'          => ['price' => '$4', 'buy' => ''],
   'planners'       => ['price' => '$3', 'buy' => ''],
+  'trivia'         => ['price' => '$4', 'buy' => ''],
+  'wordwall'       => ['price' => '$4', 'buy' => ''],
+  'calendar'       => ['price' => '$3', 'buy' => ''],
+  'playset'        => ['price' => '$5', 'buy' => ''],
+  'activity'       => ['price' => '$4', 'buy' => ''],
 ];
 // Google Search Console verification code (meta tag on the home page).
 const GOOGLE_VERIFY = 'hyYqg7CSEBBH3g2PZXng4J2Cx3ihW_7mYysjgOQfAfI';

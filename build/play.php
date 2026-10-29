@@ -115,6 +115,11 @@ foreach ([
   ['Journey Through the Worlds', '/journey/', 'Shop', 'A board game to print: race through every world.', 'board game race dice print play family classroom buy'],
   ['City Bingo', '/bingo/', 'Shop', 'Picture bingo with 30 different cards, for a whole class.', 'bingo game classroom party print play pictures buy'],
   ['City Planners', '/planners/', 'Shop', 'A drawing game: plan a city where homes have what they need.', 'flip and write drawing game planning map print play classroom buy'],
+  ['Atlas Trivia', '/trivia/', 'Shop', 'A family quiz game: 162 questions at three levels.', 'trivia quiz questions game family party classroom print buy'],
+  ['Atlas Word Wall', '/wordwall/', 'Shop', '144 vocabulary cards and a glossary for the classroom.', 'word wall vocabulary words cards glossary classroom teacher print buy'],
+  ['2027 Calendar', '/calendar/', 'Shop', 'A wall calendar with a landmark from a different world every month.', 'calendar 2027 wall months year gift print buy'],
+  ['Build-a-City Play Set', '/playset/', 'Shop', 'A play mat and 96 stand-up buildings, people and vehicles.', 'play set mat toy stand up paper buildings kids build city print buy'],
+  ['Activity Book', '/activity/', 'Shop', 'Crosswords, mazes, word scrambles and puzzles from six worlds.', 'activity book puzzles crossword maze word scramble kids print buy'],
 ] as [$n, $u, $y, $d, $k]) $SEARCH[] = [$n, $u, $y, '', null, $d, $k];
 
 $json = [];
@@ -198,6 +203,7 @@ function play_cards() {
 
 // ---------- Play hub ----------
 $playCards = play_cards();
+$promo = shop_cards('', ['journey', 'trivia', 'activity', 'playset']);
 page('/play/', [
   'title' => 'Play and create: city games for students',
   'desc' => h('Free city games for students: build your own city, take five quizzes, hunt for places on a map, play memory match and word search, and collect passport stamps and badges. No sign-up.'),
@@ -212,6 +218,7 @@ page('/play/', [
   <h2 id="more-h">More ways to explore</h2>
   <p><a class="btn" href="/tours/">Take a guided tour</a> <a class="btn btn-quiet" href="/compare/">Compare the worlds</a> <button type="button" class="btn btn-quiet" data-surprise hidden>Surprise me</button></p>
 </section>
+<section class="band shop-promo" aria-labelledby="promo-h"><div class="wrap"><div class="sec-head"><p class="tag">From the shop</p><h2 id="promo-h">Games to play away from the screen</h2><p>The games here are free. These ones you print at home and play around the table:</p></div>{$promo}<p class="shop-home-more"><a class="btn btn-quiet" href="/shop/">See everything in the shop</a></p></div></section>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/']])],
 ]);

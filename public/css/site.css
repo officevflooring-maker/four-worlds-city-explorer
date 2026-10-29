@@ -1153,7 +1153,6 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .shop-card a:hover .shop-name { text-decoration: underline; }
 .shop-card-pic { aspect-ratio: 16 / 9; background: var(--cream); display: grid; place-items: center; overflow: hidden; }
 .shop-card-pic img { width: 100%; height: 100%; object-fit: contain; }
-.shop-card:first-child .shop-card-pic img { object-fit: cover; }
 .shop-card-text { display: flex; flex-direction: column; gap: .2rem; padding: 1rem 1.1rem 1.1rem; flex: 1; }
 .shop-kind { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .shop-name { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; }
@@ -1167,3 +1166,22 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .shop-worlds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shop-phone { width: min(240px, 66%) !important; }
 }
+
+/* ---------- Shop: buying facts, who it is for, page by page, shelves ---------- */
+.shop-trust { list-style: none; padding: 0; margin: .6rem 0 0; display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .9rem; font-weight: 600; color: #2f3a48; }
+.shop-trust li::before { content: "¹3"; color: #1f7a4d; font-weight: 800; margin-right: .35rem; }
+.shop-top-dark .shop-trust { color: #d6dcea; }
+.shop-top-dark .shop-trust li::before { color: #9fe0b8; }
+.shop-perfect { margin: .9rem 0 0; font-size: .95rem; color: var(--muted); }
+.shop-top-dark .shop-perfect { color: #c8d2e3; }
+.shop-pagelist { list-style: none; padding: 0; margin: 1rem 0 0; border-top: 1px solid var(--line); }
+.shop-pagelist li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--line); }
+.shop-pg { font-weight: 700; color: var(--brand); }
+.shop-jump { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.shop-jump a { display: inline-block; padding: .4rem .9rem; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); font-weight: 600; text-decoration: none; color: var(--ink); }
+.shop-jump a:hover { border-color: var(--brand); color: var(--brand); }
+.shop-shelf { padding-top: 1.2rem; }
+.shop-how { background: var(--cream); }
+.shop-card-life-rpg .shop-card-pic img { object-fit: cover; }
+@media (max-width: 560px) { .shop-pagelist li { grid-template-columns: 1fr; gap: .2rem; } }.shop-promo { background: var(--cream); }
+.shop-promo .tag { color: var(--brand); }

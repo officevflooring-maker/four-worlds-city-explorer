@@ -4,6 +4,27 @@
 // Each stop: [world/slug, what the guide says, a question to think about].
 
 $TOURS = [
+'life-on-the-nile' => [
+  'world' => 'egypt', 'guide' => 'people-2',
+  'title' => 'Ancient Egypt tour: life on the Nile',
+  'h1' => 'Life on the Nile',
+  'desc' => 'A guided walk through an Egyptian city with a scribe: the river, fields and granaries, markets without money, schools for scribes, temples and the pyramids, with questions at every stop.',
+  'theme' => 'The river, food, writing and great monuments',
+  'intro' => 'I am a scribe. I write down every sack of grain and every jar of oil, so I know how this city works. Everything here depends on one thing: the river Nile.',
+  'time' => '20 to 30 minutes', 'grades' => '3-9',
+  'stops' => [
+    ['egypt/sailing-boat', 'The Nile is our highway. Boats sail south with the wind and float north with the current, carrying grain, stone and people.', 'Why might a river be easier to travel on than a road?'],
+    ['egypt/palm-grove', 'Channels carry the river\'s water to fields and palm groves. Date palms give us fruit, shade, rope, baskets and roof beams.', 'How many different things can one plant give a city?'],
+    ['egypt/granary', 'After the harvest, grain goes into domed granaries. Full granaries mean bread and beer all year, even after a poor flood.', 'Why would a city store food for a bad year?'],
+    ['egypt/market', 'There are no coins here. At the market people swap goods: sandals for grain, a basket for fish.', 'What would be hard about trading without money?'],
+    ['egypt/scribe-school', 'This is where I learned to write, after years of copying signs. Scribes keep the records that keep the city fair.', 'Why do cities need people who can read and write?'],
+    ['egypt/hall-of-columns', 'In the temple, giant painted columns hold up the roof, like the Great Hypostyle Hall at Karnak, which has 134 of them.', 'How do you think builders raised such heavy columns?'],
+    ['egypt/obelisk', 'Each obelisk was cut from a single piece of granite and set up in pairs at the temple gates.', 'How might people have moved a stone this big without engines?'],
+    ['egypt/pyramid', 'The Great Pyramid at Giza, a tomb for a pharaoh, was the tallest building on Earth for about 3,800 years.', 'Why do you think rulers wanted such huge tombs?'],
+  ],
+  'think' => ['What would happen to this city if the Nile flood failed?', 'Which job would you choose: farmer, scribe, builder or boat captain? Why?', 'Which Egyptian idea do we still use today?'],
+  'teach' => 'what-does-a-city-need',
+],
 'roman-engineering' => [
   'world' => 'roman', 'guide' => 'worker-1',
   'title' => 'Roman engineering tour: water, roads and concrete',
@@ -87,6 +108,27 @@ $TOURS = [
   'think' => ['Would you want to live in this settlement? Why or why not?', 'What should robots never be allowed to do?', 'Who should decide how new technology is used: experts, companies or everyone?'],
   'teach' => 'design-a-mars-colony-project',
 ],
+'city-of-goodness' => [
+  'world' => 'heaven', 'guide' => 'people-5',
+  'title' => 'Heavenly City tour: what makes a good place to live',
+  'h1' => 'A city of goodness',
+  'desc' => 'A guided walk through the imagined Heavenly City with an elder: welcome, clean water, homes, sharing, learning and peace. At every stop, the belief behind it and a question about our own towns.',
+  'theme' => 'Welcome, sharing, learning and peace',
+  'intro' => 'I have walked a long way in my life. This city is imagined, inspired by how many faiths picture heaven, and people describe heaven in different ways. Walk with me and ask what each place could teach our own towns.',
+  'time' => '20 to 30 minutes', 'grades' => '3-9',
+  'stops' => [
+    ['heaven/pearl-gate', 'We start at a gate made of one giant pearl. In the Bible\'s Book of Revelation, the heavenly city has twelve gates, each made of a single pearl.', 'What makes a place feel open to everyone?'],
+    ['heaven/welcome-hall', 'Every newcomer is welcomed here. Many faiths teach that welcoming strangers is one of the best things a person can do.', 'How could your school or town welcome someone new?'],
+    ['heaven/fountain-of-life', 'Many pictures of paradise have a river or spring of pure, living water at their heart. Here it is free for everyone.', 'Who in our world still has no clean water nearby? What could change that?'],
+    ['heaven/house-of-many-rooms', 'Jesus told his friends that his Father\'s house has many rooms. In this city there is room for everyone.', 'What would it take for everyone in your town to have a home?'],
+    ['heaven/banquet-hall', 'Many faiths picture heaven as a great meal where everyone is invited. No one is left out of the table.', 'Who might be missing from the table in your town?'],
+    ['heaven/sharing-pavilion', 'Everything here is free to take and free to give. In our world, food banks and libraries share in the same spirit.', 'What could your family or class share with others?'],
+    ['heaven/hall-of-wisdom', 'A library of light, where learning never ends.', 'What would you like to keep learning about all your life?'],
+    ['heaven/rainbow-pavilion', 'We end under a rainbow, a sign of promise and peace. In the Bible, the rainbow is the sign of God\'s promise to Noah.', 'What promise could you make to help your town be a kinder place?'],
+  ],
+  'think' => ['Which stop showed an idea your town could use right now?', 'People of many faiths, and people of none, share many of these hopes. Which ones?', 'What would make your neighborhood a place of goodness and happiness?'],
+  'teach' => 'discussion-questions-what-makes-a-good-city',
+],
 ];
 
 function person_img($w, $file, $sizes = '120px', $alt = '') {
@@ -110,7 +152,7 @@ $tourCards = '';
 foreach (array_keys($TOURS) as $slug) $tourCards .= tour_card($slug);
 page('/tours/', [
   'title' => 'Guided tours of the city worlds',
-  'desc' => h('Four short guided tours: Roman engineering, modern neighborhoods, ecological design and human choices in a robotic future. Each stop links to a full illustrated page.'),
+  'desc' => h('Six short guided tours: life on the Nile, Roman engineering, modern neighborhoods, ecological design, human choices in a robotic future and a city of goodness. Each stop links to a full illustrated page.'),
   'class' => 'tours',
   'body' => <<<HTML
 <section class="wrap section page-head">
@@ -156,6 +198,7 @@ foreach ($TOURS as $slug => $t) {
   $teach = isset($TEACH[$t['teach']]) ? '<p>For a full lesson, see <a href="/teachers/' . $t['teach'] . '/">' . h($TEACH[$t['teach']]['h1']) . '</a>.</p>' : '';
   $h1 = h($t['h1']); $intro = h($t['intro']); $theme = h($t['theme']);
   $gnameH = h($gname); $groleH = h($grole); $wname = h($WORLDS[$w]['name']);
+  $wcity = str_ends_with($WORLDS[$w]['name'], 'City') ? $wname : $wname . ' city';   // "Heavenly City", not "Heavenly City city"
   $count = count($t['stops']);
   page("/tours/$slug/", [
     'title' => $t['title'],
@@ -183,7 +226,7 @@ foreach ($TOURS as $slug => $t) {
       <h2 id="think-h">Think it over</h2>
       <ol class="questions">{$think}</ol>
       {$teach}
-      <p><a class="btn" href="/worlds/{$w}/">Explore the whole {$wname} city</a></p>
+      <p><a class="btn" href="/worlds/{$w}/">Explore the whole {$wcity}</a></p>
     </section>
   </div>
 </div>

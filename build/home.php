@@ -128,7 +128,9 @@ foreach ([['egypt', 'town-3'], ['roman', 'fitness-3'], ['elven', 'shared-2'], ['
 }
 
 // The shop's products, for grown-ups (build/shop.php)
-$shopCards = shop_cards();
+// four to show here; the shop has the rest
+$shopCards = shop_cards('', ['journey', 'activity', 'playset', 'classroom-pack']);
+$shopCount = count($SHOP_INFO);
 
 page('/', [
   'title' => SITE_NAME . ': how cities work, past, present and imagined',
@@ -162,7 +164,7 @@ page('/', [
 </section>
 
 <section class="wrap section" id="worlds" aria-labelledby="worlds-h">
-  <div class="sec-head"><h2 id="worlds-h">Choose a world</h2><p>Rome is real history. The other three are imagined settings built around real ideas, and every page shows which is which.</p></div>
+  <div class="sec-head"><h2 id="worlds-h">Choose a world</h2><p>Egypt and Rome are real history. The other four are imagined settings built around real ideas, and every page shows which is which.</p></div>
   <ul class="wcards">{$cards}</ul>
 </section>
 
@@ -223,9 +225,9 @@ page('/', [
 
 <section class="band band-dark shop-home" aria-labelledby="shop-h">
   <div class="wrap">
-    <div class="sec-head"><p class="tag">For grown-ups</p><h2 id="shop-h">From the shop</h2><p>Board games, a card game, a classroom pack, posters and a game for real-life goals, all made from these worlds.</p></div>
+    <div class="sec-head"><p class="tag">For grown-ups</p><h2 id="shop-h">From the shop</h2><p>Board games, an activity book, a play set, classroom packs and posters, all made from these worlds. Print them at home.</p></div>
     {$shopCards}
-    <p class="shop-home-more"><a class="btn" href="/shop/">Visit the shop</a></p>
+    <p class="shop-home-more"><a class="btn" href="/shop/">See all {$shopCount} in the shop</a></p>
   </div>
 </section>
 

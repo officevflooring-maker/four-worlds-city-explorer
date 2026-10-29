@@ -46,6 +46,7 @@ foreach ([
 ] as [$href, $tag, $title, $text]) $tools .= '<li class="guide-card tool-card"><a href="' . $href . '"><span class="tag">' . h($tag) . '</span><span class="guide-title">' . h($title) . '</span><span class="what">' . h($text) . '</span></a></li>';
 $hubList = [];
 foreach (array_keys($TEACH) as $k => $slug) $hubList[] = ['@type' => 'ListItem', 'position' => $k + 1, 'name' => $TEACH[$slug]['h1'], 'url' => url("/teachers/$slug/")];
+$promo = shop_cards('', ['classroom-pack', 'wordwall', 'bingo', 'planners']);
 page('/teachers/', [
   'title' => 'Free City Lessons for Teachers: Rome, Urban Planning, Mars',
   'desc' => h("$teachCount free lessons, projects and explainers for teachers and students: design a city, build a Roman aqueduct, how cities get water, urban planning, biomimicry, living on Mars and more."),
@@ -68,6 +69,7 @@ page('/teachers/', [
   <ul class="guide-grid">{$tools}</ul>
 </section>
 <div class="wrap">{$hubBody}</div>
+<section class="band shop-promo" aria-labelledby="promo-h"><div class="wrap"><div class="sec-head"><p class="tag">From the shop</p><h2 id="promo-h">Ready to print for your class</h2><p>Everything on this site stays free. For a whole unit in one file, or a game for Friday afternoon:</p></div>{$promo}<p class="shop-home-more"><a class="btn btn-quiet" href="/shop/">See everything in the shop</a></p></div></section>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Teachers & Schools', '/teachers/']]),
     ['@context' => 'https://schema.org', '@type' => 'CollectionPage', 'name' => 'Teachers & Schools', 'url' => url('/teachers/'), 'inLanguage' => 'en',
