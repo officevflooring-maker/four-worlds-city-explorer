@@ -57,6 +57,7 @@ foreach ([
   $heroTiles .= '<li class="tile decor ' . ($car ? 'decor-car' : 'decor-person') . '" style="--u:' . $u . ';--v:' . $v . ';--z:20' . ($car ? vehicle_fit($w, $link, str_starts_with($f, 'rear-')) : person_fit($w)) . '"><a class="tile-btn" href="/worlds/' . $w . '/' . $link . ($car ? '/' : '') . '" aria-label="' . h($WORLDS[$w]['name'] . ($car ? ' vehicle' : ' person')) . '">'
     . img($w, $f, '', $car ? '72px' : '48px', 'draggable="false"') . '</a></li>';
 }
+$homePlayCards = play_cards(['/play/city-builder/', '/play/world-sort/', '/play/shadows/', '/play/quiz/', '/play/puzzle/', '/play/passport/']);
 $heroLegend = '';
 foreach (WORLD_ORDER as $w) $heroLegend .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';
 $parade = [['egypt', 'chariot', 'About 3,500 years ago'], ['roman', 'chariot', 'About 2,000 years ago'], ['modern', 'taxi', 'Today'], ['elven', 'flower-cart', 'Imagined'], ['future', 'hover-car', 'Possible future'], ['heaven', 'golden-chariot', 'Inspired by belief']];
@@ -171,8 +172,9 @@ page('/', [
 
 <section class="band band-play" aria-labelledby="play-h">
   <div class="wrap">
-    <div class="sec-head"><h2 id="play-h">Play and create</h2><p>Build your own city, take the quiz and collect a stamp for every place you visit.</p></div>
-    <ul class="play-cards">{$playCards}</ul>
+    <div class="sec-head"><h2 id="play-h">Play and create</h2><p>Build your own city, race to sort the worlds, match shadows and collect a stamp for every place you visit.</p></div>
+    <ul class="play-cards">{$homePlayCards}</ul>
+    <p class="play-more"><a class="btn btn-quiet" href="/play/">See all {$gameCount} games</a></p>
   </div>
 </section>
 

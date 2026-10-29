@@ -478,6 +478,7 @@ $urls['/play/passport/'] = '0.5';
 $urls['/play/map-hunt/'] = '0.8';
 $urls['/play/memory/'] = '0.8';
 $urls['/play/word-search/'] = '0.8';
+foreach (['/play/world-sort/', '/play/shadows/', '/play/zoom/', '/play/odd-one-out/', '/play/puzzle/'] as $u) $urls[$u] = '0.8';
 $urls['/teachers/worksheets/'] = '0.9';
 foreach ($SHEETS as [$slug]) $urls["/teachers/worksheets/$slug/"] = '0.8';
 $urls['/teachers/glossary/'] = '0.8';

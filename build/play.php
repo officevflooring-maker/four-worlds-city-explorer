@@ -97,9 +97,17 @@ foreach ($COMPARE as [$key, $label, $question, $cells]) {
   $SEARCH[] = ["Compare: $label", "/compare/#$key", 'Compare', '', thumb('roman', $cells['roman'][0]) ?? thumb('modern', $cells['modern'][3] ?? ''), $question, 'compare six worlds'];
 }
 foreach ([
-  ['Play and create', '/play/', 'Activity', 'Build a city, take the quiz and collect passport stamps.', 'games play fun'],
+  ['Play and create', '/play/', 'Activity', 'Free games: build a city, sort pictures, match shadows, solve puzzles, quizzes and more.', 'games play fun kids'],
   ['Build your own city', '/play/city-builder/', 'Activity', 'Mix buildings from all six worlds and give your city everything it needs.', 'city builder game make design'],
   ['City quiz', '/play/quiz/', 'Activity', 'Ten picture questions about the six worlds.', 'quiz test game questions'],
+  ['World sort', '/play/world-sort/', 'Activity', 'A race against the clock: send each picture home to its world.', 'sort sorting speed race timer game worlds'],
+  ['Shadow match', '/play/shadows/', 'Activity', 'Whose shadow is it? Match shadows to buildings, people and vehicles.', 'shadow shadows silhouette shapes match game'],
+  ['Zoom detective', '/play/zoom/', 'Activity', 'Name the building from a close-up as it slowly zooms out.', 'zoom close up detective guess picture game'],
+  ['Odd one out', '/play/odd-one-out/', 'Activity', 'Four pictures: spot the one that does not belong.', 'odd one out puzzle thinking game'],
+  ['Picture puzzle', '/play/puzzle/', 'Activity', 'Swap the mixed-up pieces until the picture is whole again.', 'jigsaw puzzle picture pieces game'],
+  ['Memory match', '/play/memory/', 'Activity', 'Turn over cards and match buildings that do the same job.', 'memory cards pairs match game'],
+  ['Word search', '/play/word-search/', 'Activity', 'Find ten hidden city words, then learn what they mean.', 'word search letters vocabulary puzzle game'],
+  ['Map hunt', '/play/map-hunt/', 'Activity', 'Read a clue, then find the place on a city map.', 'map hunt clues find game'],
   ['Your city passport', '/play/passport/', 'Activity', 'Collect a stamp for every place you open.', 'passport stamps visited progress'],
   ['Compare the worlds', '/compare/', 'Page', 'One question, six answers: water, gathering, travel, goods and nature.', 'compare'],
   ['Guided tours', '/tours/', 'Page', 'Short walks with a guide and a question at every stop.', 'tours'],
@@ -170,8 +178,8 @@ HTML,
   'ld' => [crumbs([['Home', '/'], ['Find a page', '/search/']])],
 ]);
 
-// ---------- Cards for the activities (play hub and home page) ----------
-function play_cards() {
+// ---------- Cards for the activities (play hub, and a few on the home page) ----------
+function play_cards($only = null) {
   global $WORLD_DATA;
   $total = 0;
   foreach ($WORLD_DATA as $D) $total += count($D['pages']);
@@ -186,8 +194,20 @@ function play_cards() {
   foreach (['KDOMEP', 'WATERS', 'LBRIGT', 'ARCHVN', 'NSQUAY'] as $r => $row) {
     foreach (str_split($row) as $c => $ch) $letters .= '<span' . ($r === 1 && $c < 5 ? ' class="on"' : '') . '>' . $ch . '</span>';
   }
+  $odd = '';
+  foreach ([['roman', 'forum'], ['roman', 'pantheon'], ['future', 'spaceport'], ['roman', 'amphitheater']] as $k => [$w, $s]) $odd .= '<span' . ($w === 'future' ? ' class="odd"' : '') . '>' . thumb_img(thumb($w, $s)) . '</span>';
+  $bins = '';
+  foreach (WORLD_ORDER as $w) $bins .= '<span class="world-' . $w . '"></span>';
+  $pz = '';
+  $pzSrc = thumb('elven', 'treetop-village')[0] ?? '';
+  for ($k = 0; $k < 9; $k++) $pz .= '<span' . ($k === 5 ? ' class="out"' : '') . ' style="background-image:url(' . $pzSrc . ');background-position:' . ($k % 3) * 50 . '% ' . intdiv($k, 3) * 50 . '%"></span>';
   $cards = [
     ['/play/city-builder/', 'Build your own city', 'Mix buildings from all six worlds, then try the nine challenges.', 'Start building', '<span class="pa pa-build" aria-hidden="true"><span class="pa-ground"></span>' . $b . '</span>'],
+    ['/play/world-sort/', 'World sort', 'A race against the clock: send each picture home to its world.', 'Start sorting', '<span class="pa pa-sort" aria-hidden="true"><span class="pa-sortcard">' . thumb_img(thumb('egypt', 'camel')) . '</span><span class="pa-bins">' . $bins . '</span></span>'],
+    ['/play/shadows/', 'Shadow match', 'Whose shadow is it? Find the building, person or vehicle that fits.', 'Match shadows', '<span class="pa pa-shadow" aria-hidden="true"><span class="pa-sil">' . thumb_img(thumb('elven', 'deer-statue')) . '</span><span class="pa-col">' . thumb_img(thumb('elven', 'deer-statue')) . '</span></span>'],
+    ['/play/zoom/', 'Zoom detective', 'A close-up slowly zooms out. Name it early to score more.', 'Start zooming', '<span class="pa pa-zoom" aria-hidden="true"><span class="pa-zf">' . thumb_img(thumb('roman', 'pantheon')) . '</span></span>'],
+    ['/play/odd-one-out/', 'Odd one out', 'Four pictures, and one does not belong. Can you spot it?', 'Spot it', '<span class="pa pa-odd" aria-hidden="true"><span class="pa-oddgrid">' . $odd . '</span></span>'],
+    ['/play/puzzle/', 'Picture puzzle', 'Swap the mixed-up pieces until the picture is whole again.', 'Solve a puzzle', '<span class="pa pa-puzzle" aria-hidden="true"><span class="pa-pz">' . $pz . '</span></span>'],
     ['/play/quiz/', 'City quiz', 'Five quizzes: buildings, worlds, jobs, key words and people.', 'Take the quiz', '<span class="pa pa-quiz" aria-hidden="true">' . thumb_img(thumb('roman', 'aqueduct')) . '<span class="pa-q">?</span><span class="pa-opts"><span></span><span></span><span></span></span></span>'],
     ['/play/map-hunt/', 'Map hunt', 'Read a clue, then find the place on a city map.', 'Start hunting', '<span class="pa pa-hunt" aria-hidden="true"><span class="pa-lens">' . thumb_img(thumb('elven', 'treetop-village')) . '</span><span class="pa-handle"></span></span>'],
     ['/play/memory/', 'Memory match', 'Turn over two cards at a time and find the pairs that go together.', 'Play memory', '<span class="pa pa-mem" aria-hidden="true"><span class="pa-card pa-card-back"><img src="/favicon.svg" width="44" height="44" alt=""></span><span class="pa-card">' . thumb_img(thumb('roman', 'aqueduct')) . '</span><span class="pa-card">' . thumb_img(thumb('future', 'water-recycler')) . '</span></span>'],
@@ -196,6 +216,7 @@ function play_cards() {
   ];
   $out = '';
   foreach ($cards as [$href, $title, $text, $go, $art]) {
+    if ($only && !in_array($href, $only)) continue;
     $out .= '<li class="play-card"><a href="' . $href . '">' . $art . '<span class="play-text"><span class="play-title">' . h($title) . '</span><span class="what">' . h($text) . '</span><span class="play-go">' . h($go) . ' <span aria-hidden="true">&rarr;</span></span></span></a></li>';
   }
   return $out;
@@ -203,15 +224,18 @@ function play_cards() {
 
 // ---------- Play hub ----------
 $playCards = play_cards();
+// Every card but the passport is a game.
+$gameCount = substr_count($playCards, 'class="play-card"') - 1;
+$gameWord = ['Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'][$gameCount - 6] ?? (string)$gameCount;
 $promo = shop_cards('', ['journey', 'trivia', 'activity', 'playset']);
 page('/play/', [
-  'title' => 'Play and create: city games for students',
-  'desc' => h('Free city games for students: build your own city, take five quizzes, hunt for places on a map, play memory match and word search, and collect passport stamps and badges. No sign-up.'),
+  'title' => 'Play and create: free city games for kids',
+  'desc' => h("$gameWord free city games for kids: build a city, race to sort pictures, match shadows, zoom in, spot the odd one out, solve puzzles, quizzes and map hunts. No sign-up."),
   'class' => 'play',
   'body' => <<<HTML
 <section class="wrap section page-head">
   <h1>Play and create</h1>
-  <p class="lead">Six free games about how cities work. No sign-up, and nothing leaves your device.</p>
+  <p class="lead">{$gameWord} free games about how cities work, and a passport to collect stamps. No sign-up, and nothing leaves your device.</p>
   <ul class="play-cards">{$playCards}</ul>
 </section>
 <section class="wrap section next" aria-labelledby="more-h">
@@ -368,33 +392,32 @@ $quizPeople = [];
 foreach ($PEOPLE as $w => $list) foreach ($list as $file => [$pname, $role, $text, $places]) {
   $quizPeople[] = ['w' => $w, 'n' => $pname, 'r' => $role, 'x' => $text, 'i' => "/assets/worlds/$w/$file-256.webp", 't' => thumb($w, $file)[0] ?? '', 'u' => "/worlds/$w/people/#$file", 'pl' => $places];
 }
-$quizData = json_encode(['worlds' => array_map(fn($W) => [$W['name'], $W['short']], $WORLDS), 'jobs' => $GROUP_JOBS, 'items' => $quizItems, 'words' => $quizWords, 'people' => $quizPeople],
-  JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
-$modes = '';
-foreach ([
-  ['name', 'Name that building', 'Look at the picture and pick its name.', [['roman', 'pantheon'], ['modern', 'public-library']]],
-  ['world', 'Which world?', 'Is it from Egypt, Rome, the modern town, the elven world, the future or the heavenly city?', [['elven', 'treehouse-school'], ['future', 'radio-telescope']]],
-  ['job', 'Same job, different world', 'Find the building that does the same job in another world.', [['roman', 'aqueduct'], ['future', 'water-recycler']]],
-  ['words', 'Key words', 'Read the meaning and pick the right word.', [['roman', 'library'], ['elven', 'tree-library']]],
-  ['people', 'Who works here?', 'Meet a person and find the place where they work or live.', [['modern', 'worker-1'], ['future', 'people-2']]],
-] as [$m, $title, $text, $pics]) {
-  $art = '';
-  foreach ($pics as [$w, $s]) $art .= '<span class="world-' . $w . '">' . thumb_img(thumb($w, $s), '', '') . '</span>';
-  $modes .= '<li><button type="button" class="qmode" data-mode="' . $m . '"><span class="qmode-art" aria-hidden="true">' . $art . '</span><span class="qmode-title">' . h($title) . '</span><span class="what">' . h($text) . '</span><span class="qbest" data-best="' . $m . '"></span></button></li>';
-}
-page('/play/quiz/', [
-  'title' => 'City quiz: picture questions about six city worlds',
-  'desc' => h('A free picture quiz for students in five parts: name the building, guess its world, match buildings that do the same job, learn key words and find where people work, in ancient Egypt, ancient Rome, a modern town, an elven world, on Mars and in a heavenly city.'),
-  'class' => 'play quiz-page',
-  'js' => ['quiz'],
-  'body' => <<<HTML
+$worldNames = array_map(fn($W) => [$W['name'], $W['short']], $WORLDS);
+$pick = fn($list, $keys) => array_map(fn($it) => array_intersect_key($it, array_flip($keys)), $list);
+
+// A picture game that runs on public/js/quiz.js: ten questions of one kind, picked on its first screen.
+// $g: path, title, desc, h1 (also the breadcrumb), lead, modes ([mode, title, text, two pictures]), data (for
+// #quiz-data), key (where best scores are kept), done (the badge it earns), need (the score that earns it; every
+// answer right if none), learn ([summary, subject] for search engines) and art (an extra class for the pictures).
+function quiz_game($g) {
+  $modes = game_modes($g['modes'], $g['art'] ?? '');
+  $data = json_encode($g['data'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
+  $h1 = h($g['h1']);
+  $lead = h($g['lead']);
+  $attrs = ' data-key="' . $g['key'] . '" data-done="' . $g['done'] . '"' . (empty($g['need']) ? '' : ' data-need="' . $g['need'] . '"');
+  page($g['path'], [
+    'title' => $g['title'],
+    'desc' => h($g['desc']),
+    'class' => 'play quiz-page',
+    'js' => ['quiz'],
+    'body' => <<<HTML
 <div class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/play/">Play</a></li><li aria-current="page">City quiz</li></ol></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/play/">Play</a></li><li aria-current="page">{$h1}</li></ol></nav>
 </div>
-<section class="wrap section quiz" data-quiz aria-labelledby="quiz-h">
-  <h1 id="quiz-h">City quiz</h1>
+<section class="wrap section quiz" data-quiz{$attrs} aria-labelledby="quiz-h">
+  <h1 id="quiz-h">{$h1}</h1>
   <div class="quiz-start">
-    <p class="lead">Ten questions each. Choose a quiz:</p>
+    <p class="lead">{$lead}</p>
     <ul class="qmodes">{$modes}</ul>
   </div>
   <div class="quiz-play" hidden>
@@ -413,12 +436,181 @@ page('/play/quiz/', [
     <h3>Read about them</h3>
     <ul class="q-review"></ul>
   </div>
-  <noscript><p class="setting-note">The quiz needs JavaScript. You can still explore every building from the <a href="/">home page</a>.</p></noscript>
+  <noscript><p class="setting-note">{$h1} needs JavaScript. You can still explore every building from the <a href="/">home page</a>.</p></noscript>
 </section>
-<script type="application/json" id="quiz-data">{$quizData}</script>
+<script type="application/json" id="quiz-data">{$data}</script>
 HTML,
-  'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['City quiz', '/play/quiz/']]),
-    learning('City quiz', 'Picture questions about buildings in six illustrated city worlds.', '/play/quiz/', 'Cities, buildings and what they are for')],
+    'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], [$g['h1'], $g['path']]]), learning($g['h1'], $g['learn'][0], $g['path'], $g['learn'][1])],
+  ]);
+}
+
+quiz_game([
+  'path' => '/play/quiz/', 'h1' => 'City quiz',
+  'title' => 'City quiz: picture questions about six city worlds',
+  'desc' => 'A free picture quiz for students in five parts: name the building, guess its world, match buildings that do the same job, learn key words and find where people work, in ancient Egypt, ancient Rome, a modern town, an elven world, on Mars and in a heavenly city.',
+  'lead' => 'Ten questions each. Choose a quiz:',
+  'modes' => [
+    ['name', 'Name that building', 'Look at the picture and pick its name.', [['roman', 'pantheon'], ['modern', 'public-library']]],
+    ['world', 'Which world?', 'Is it from Egypt, Rome, the modern town, the elven world, the future or the heavenly city?', [['elven', 'treehouse-school'], ['future', 'radio-telescope']]],
+    ['job', 'Same job, different world', 'Find the building that does the same job in another world.', [['roman', 'aqueduct'], ['future', 'water-recycler']]],
+    ['words', 'Key words', 'Read the meaning and pick the right word.', [['roman', 'library'], ['elven', 'tree-library']]],
+    ['people', 'Who works here?', 'Meet a person and find the place where they work or live.', [['modern', 'worker-1'], ['future', 'people-2']]],
+  ],
+  'data' => ['worlds' => $worldNames, 'jobs' => $GROUP_JOBS, 'items' => $quizItems, 'words' => $quizWords, 'people' => $quizPeople],
+  'key' => 'atlas.quiz', 'done' => 'quiz',
+  'learn' => ['Picture questions about buildings in six illustrated city worlds.', 'Cities, buildings and what they are for'],
+]);
+
+// ---------- Shadow match, Zoom detective and Odd one out (picture games on quiz.js) ----------
+quiz_game([
+  'path' => '/play/shadows/', 'h1' => 'Shadow match',
+  'title' => 'Shadow match: whose shadow is it?',
+  'desc' => 'A free picture game for kids: look at a black shadow and find the building, person or vehicle it belongs to, from ancient Egypt and Rome to a modern town, an elven forest, Mars and a heavenly city.',
+  'lead' => 'Every building, person and vehicle has its own shape. Look closely at the shadow, then find whose it is. Ten shadows a game:',
+  'modes' => [
+    ['shadow', 'Easy shadows', 'Four buildings from four different worlds.', [['egypt', 'sphinx'], ['egypt', 'sphinx']]],
+    ['shadow-hard', 'Tricky shadows', 'All four buildings come from the same world.', [['heaven', 'bell-tower'], ['heaven', 'bell-tower']]],
+    ['shadow-pv', 'People and vehicles', 'Find the person or vehicle that fits the shadow.', [['egypt', 'camel'], ['egypt', 'camel']]],
+  ],
+  'data' => ['worlds' => $worldNames, 'items' => $pick($quizItems, ['k', 'w', 'n', 'u', 'i', 't', 'c', 'd']), 'people' => $pick($quizPeople, ['w', 'n', 'r', 'x', 'i', 't', 'u'])],
+  'key' => 'atlas.shadows', 'done' => 'shadows', 'need' => 8,
+  'learn' => ['Match black shadows to the buildings, people and vehicles of six illustrated city worlds.', 'Shapes, observation and city buildings'],
+  'art' => ' qmode-shadow',
+]);
+quiz_game([
+  'path' => '/play/zoom/', 'h1' => 'Zoom detective',
+  'title' => 'Zoom detective: name the building from a close-up',
+  'desc' => 'A free picture game for kids: a close-up slowly zooms out, and the sooner you name the building, the more points you score. Places from ancient Egypt and Rome, a modern town, an elven forest, Mars and a heavenly city.',
+  'lead' => 'Each picture starts as a close-up and slowly zooms out. Name it early for 3 points, a little later for 2, or at the end for 1. Choose a game:',
+  'modes' => [
+    ['zoom', 'Easy zoom', 'The four answers come from four different worlds.', [['roman', 'pantheon'], ['roman', 'pantheon']]],
+    ['zoom-hard', 'Tricky zoom', 'All four answers come from the same world.', [['future', 'radio-telescope'], ['future', 'radio-telescope']]],
+  ],
+  'data' => ['worlds' => $worldNames, 'items' => $pick($quizItems, ['k', 'w', 'n', 'u', 'i', 't', 'c', 'd'])],
+  'key' => 'atlas.zoom', 'done' => 'zoom', 'need' => 20,
+  'learn' => ['Name buildings from six illustrated city worlds as close-up pictures zoom out.', 'Observation and city buildings'],
+  'art' => ' qmode-zoom',
+]);
+quiz_game([
+  'path' => '/play/odd-one-out/', 'h1' => 'Odd one out',
+  'title' => 'Odd one out: which picture does not belong?',
+  'desc' => 'A free thinking game for kids: four pictures, and one does not belong. Spot the place from a different world, or the building that does a different job, in ancient Egypt, ancient Rome, a modern town, an elven forest, on Mars and in a heavenly city.',
+  'lead' => 'Four pictures, and one of them does not belong. Can you spot it? Ten puzzles a game:',
+  'modes' => [
+    ['odd-world', 'Odd world out', 'Three come from the same world. Which one is from somewhere else?', [['roman', 'forum'], ['future', 'spaceport']]],
+    ['odd-job', 'Odd job out', 'Three do the same job in different worlds. Which one does something else?', [['roman', 'aqueduct'], ['modern', 'stadium']]],
+  ],
+  'data' => ['worlds' => $worldNames, 'jobs' => $GROUP_JOBS, 'items' => $pick($quizItems, ['k', 'w', 'n', 'u', 't', 'g', 'nd'])],
+  'key' => 'atlas.odd', 'done' => 'odd',
+  'learn' => ['Spot the picture that does not belong: a place from another world, or a building with a different job.', 'Comparing cities and what buildings are for'],
+]);
+
+// The first screen of a game: a button for each way to play, with two pictures. The game's script reads data-mode.
+function game_modes($modes, $art = '') {
+  $out = '';
+  foreach ($modes as [$m, $title, $text, $pics]) {
+    $a = '';
+    foreach ($pics as [$w, $s]) $a .= '<span class="world-' . $w . '">' . thumb_img(thumb($w, $s), '', '') . '</span>';
+    $out .= '<li><button type="button" class="qmode" data-mode="' . $m . '"><span class="qmode-art' . $art . '" aria-hidden="true">' . $a . '</span><span class="qmode-title">' . h($title) . '</span><span class="what">' . h($text) . '</span><span class="qbest" data-best="' . $m . '"></span></button></li>';
+  }
+  return $out;
+}
+
+// ---------- World sort: send pictures to their worlds before the minute is up (public/js/sort.js) ----------
+$sortItems = [];
+foreach ($quizItems as $it) if ($it['t']) $sortItems[] = ['w' => $it['w'], 'n' => $it['n'], 't' => $it['t'], 'u' => $it['u']];
+foreach ($quizPeople as $p) if ($p['t']) $sortItems[] = ['w' => $p['w'], 'n' => $p['n'], 't' => $p['t'], 'u' => $p['u']];
+$sortData = json_encode(['worlds' => $worldNames, 'items' => $sortItems], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
+$sortModes = game_modes([
+  ['world', 'Which world?', 'Six worlds, one minute. Send each picture home to its world.', [['egypt', 'pyramid'], ['future', 'hover-car']]],
+  ['time', 'Long ago, today or imagined?', 'Is it from long ago, from today, from a possible future, or from an imagined world?', [['roman', 'chariot'], ['elven', 'mushroom-cottage']]],
+]);
+page('/play/world-sort/', [
+  'title' => 'World sort: a speed game about six city worlds',
+  'desc' => h('A free speed game for kids: sort buildings, people and vehicles into the right world before the minute is up, from ancient Egypt and Rome to a modern town, an elven forest, Mars and a heavenly city.'),
+  'class' => 'play sort-page',
+  'js' => ['sort'],
+  'body' => <<<HTML
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/play/">Play</a></li><li aria-current="page">World sort</li></ol></nav>
+</div>
+<section class="wrap section quiz sorter" data-sort aria-labelledby="sort-h">
+  <h1 id="sort-h">World sort</h1>
+  <div class="sort-start">
+    <p class="lead">Pictures pop up one at a time. Tap where each one belongs, as fast as you can, before the minute is up. Choose a game:</p>
+    <ul class="qmodes">{$sortModes}</ul>
+  </div>
+  <div class="sort-play quiz-play" hidden>
+    <div class="q-top"><p class="sort-time"></p><p class="sort-score"></p></div>
+    <div class="q-bar sort-bar" aria-hidden="true"><span></span></div>
+    <div class="sort-stage"><figure class="sort-card"></figure><p class="sort-streak" aria-hidden="true"></p></div>
+    <p class="sort-say sr-only" aria-live="polite"></p>
+    <div class="sort-bins" role="group" aria-label="Where does it belong?"></div>
+    <p class="sort-tip">On a keyboard, press the number on a button.</p>
+  </div>
+  <div class="sort-end quiz-end" hidden>
+    <h2 class="q-result" tabindex="-1"></h2>
+    <p class="q-msg"></p>
+    <p><button type="button" class="btn sort-again">Play again</button> <button type="button" class="btn btn-quiet sort-other">Choose another game</button></p>
+    <div class="sort-missed-box"><h3>Take another look</h3><ul class="q-review sort-missed"></ul></div>
+  </div>
+  <noscript><p class="setting-note">World sort needs JavaScript. You can still explore every building from the <a href="/">home page</a>.</p></noscript>
+</section>
+<script type="application/json" id="sort-data">{$sortData}</script>
+HTML,
+  'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['World sort', '/play/world-sort/']]),
+    learning('World sort', 'A speed game: sort buildings, people and vehicles into six illustrated city worlds, or into long ago, today, a possible future and imagined worlds.', '/play/world-sort/', 'Telling history, today, the future and imagined worlds apart')],
+]);
+
+// ---------- Picture puzzle: put a mixed-up picture back together (public/js/puzzle.js) ----------
+// Two pictures from every world. The script paints each one over its world's horizon.
+const PUZZLE_PICTURES = [['egypt', 'pyramid'], ['egypt', 'pharaohs-palace'], ['roman', 'amphitheater'], ['roman', 'pantheon'],
+  ['modern', 'public-library'], ['modern', 'stadium'], ['elven', 'treetop-village'], ['elven', 'mushroom-cottage'],
+  ['future', 'greenhouse-dome'], ['future', 'spaceport'], ['heaven', 'palace-of-light'], ['heaven', 'tree-of-life']];
+$puzData = [];
+$puzPicks = '';
+foreach (PUZZLE_PICTURES as [$w, $s]) {
+  $r = $WORLD_DATA[$w]['pages'][$s] ?? null;
+  if (!$r) { fwrite(STDERR, "puzzle: unknown page $w/$s\n"); continue; }
+  $puzPicks .= '<li><button type="button" class="pz-pick world-' . $w . '" data-pic="' . count($puzData) . '">' . thumb_img(thumb($w, $s)) . '<span class="pz-pick-name">' . h($r['name']) . '</span><span class="what">' . h($WORLDS[$w]['name']) . '</span><span class="qbest" data-best="' . "$w/$s" . '"></span></button></li>';
+  $puzData[] = ['k' => "$w/$s", 'w' => $w, 'n' => $r['name'], 'u' => "/worlds/$w/$s/", 'b' => "/assets/worlds/$w/$s-960.webp", 'h' => "/assets/worlds/$w/horizon-1600.webp"];
+}
+$puzJson = json_encode($puzData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
+page('/play/puzzle/', [
+  'title' => 'Picture puzzle: put a city picture back together',
+  'desc' => h('A free picture puzzle for kids: choose a building from ancient Egypt, ancient Rome, a modern town, an elven forest, Mars or a heavenly city, then swap the mixed-up pieces until the picture is whole. Three sizes, from 9 to 25 pieces.'),
+  'class' => 'play puzzle-page',
+  'js' => ['puzzle'],
+  'body' => <<<HTML
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/play/">Play</a></li><li aria-current="page">Picture puzzle</li></ol></nav>
+</div>
+<section class="wrap section quiz puzzle" data-puzzle aria-labelledby="pz-h">
+  <h1 id="pz-h">Picture puzzle</h1>
+  <div class="pz-start">
+    <p class="lead">Choose how many pieces, then a picture. The pieces get mixed up: tap two pieces to swap them, or drag one onto another, until the picture is whole again.</p>
+    <div class="chips pz-sizes" role="group" aria-label="How many pieces"><button type="button" class="chip" data-size="3" aria-pressed="true">Easy: 9 pieces</button><button type="button" class="chip" data-size="4" aria-pressed="false">Medium: 16 pieces</button><button type="button" class="chip" data-size="5" aria-pressed="false">Hard: 25 pieces</button></div>
+    <ul class="pz-picks">{$puzPicks}</ul>
+  </div>
+  <div class="pz-play quiz-play" hidden>
+    <div class="q-top"><p class="pz-name"></p><p class="pz-moves"></p></div>
+    <div class="pz-stage">
+      <div class="pz-board" role="group" aria-label="Puzzle pieces. Use the arrow keys to move between pieces, and Enter to pick one up or swap it."></div>
+      <div class="pz-peek" hidden></div>
+    </div>
+    <p class="pz-say" aria-live="polite"></p>
+    <p class="pz-actions"><button type="button" class="btn btn-quiet pz-peek-btn" aria-pressed="false">Peek at the picture</button> <button type="button" class="btn btn-quiet pz-other">Choose another picture</button></p>
+    <div class="pz-won" hidden>
+      <p class="pz-won-msg"></p>
+      <p><button type="button" class="btn pz-again">Mix it up again</button> <a class="btn btn-quiet pz-read" href="/">Read about it</a></p>
+    </div>
+  </div>
+  <noscript><p class="setting-note">The picture puzzle needs JavaScript. You can still explore every building from the <a href="/">home page</a>.</p></noscript>
+</section>
+<script type="application/json" id="puzzle-data">{$puzJson}</script>
+HTML,
+  'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Picture puzzle', '/play/puzzle/']]),
+    learning('Picture puzzle', 'A picture puzzle: swap the pieces to rebuild a building from one of six illustrated city worlds.', '/play/puzzle/', 'Visual reasoning and city buildings')],
 ]);
 
 // ---------- Passport ----------
@@ -545,15 +737,10 @@ HTML,
 // ---------- Memory match ----------
 $memItems = array_map(fn($it) => ['k' => $it['k'], 'w' => $it['w'], 'n' => $it['n'], 't' => $it['t'], 'g' => $it['g']], $quizItems);
 $memData = json_encode(['worlds' => array_map(fn($W) => $W['name'], $WORLDS), 'jobs' => $GROUP_JOBS, 'items' => $memItems], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
-$memModes = '';
-foreach ([
+$memModes = game_modes([
   ['job', 'Same job, two worlds', 'Match buildings that do the same job in different worlds.', [['roman', 'aqueduct'], ['future', 'water-recycler']]],
   ['name', 'Picture and name', 'Match each picture with its name.', [['elven', 'treetop-village'], ['modern', 'stadium']]],
-] as [$m, $title, $text, $pics]) {
-  $art = '';
-  foreach ($pics as [$w, $s]) $art .= '<span class="world-' . $w . '">' . thumb_img(thumb($w, $s), '', '') . '</span>';
-  $memModes .= '<li><button type="button" class="qmode" data-mode="' . $m . '"><span class="qmode-art" aria-hidden="true">' . $art . '</span><span class="qmode-title">' . h($title) . '</span><span class="what">' . h($text) . '</span><span class="qbest" data-best="' . $m . '"></span></button></li>';
-}
+]);
 page('/play/memory/', [
   'title' => 'Memory match: city buildings from six worlds',
   'desc' => h('A free memory card game for students: turn over cards to match buildings that do the same job in ancient Egypt, ancient Rome, a modern town, an elven world, on Mars and in a heavenly city, or match pictures with names.'),

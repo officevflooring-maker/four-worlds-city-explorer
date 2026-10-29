@@ -323,7 +323,7 @@ $EGYPT = [
       'In 2025, Egyptian archaeologists announced that they had found a House of Life at the Ramesseum, the memorial temple of Ramesses II at Luxor. Among the finds were students\' drawings and pieces of school equipment, showing that teaching went on right next to the temple.',
     ]],
   ],
-  'art' => 'The illustration shows a two-storey sandstone hall with columns, a rooftop terrace and shelves of scrolls. Real Houses of Life stood inside temple grounds and were mostly built of mud brick.',
+  'art' => 'The illustration shows a two-story sandstone hall with columns, a rooftop terrace and shelves of scrolls. Real Houses of Life stood inside temple grounds and were mostly built of mud brick.',
   'look' => ['Find the shelves of scrolls.', 'Where could people study in the fresh air?'],
   'questions' => ['Why might a temple want a place for books and learning?', 'How was knowledge kept before printing?', 'Where is knowledge kept in your town?'],
   'words' => ['Scroll' => 'A long roll of papyrus with writing on it.', 'Remedy' => 'A medicine or treatment.', 'Ritual' => 'A ceremony done in a set way.'],
@@ -650,7 +650,7 @@ $EGYPT = [
       'We know much more about Egyptian tombs and temples than about town houses. Tombs and temples were built of stone in the dry desert, but towns stood on the river banks, were built of mud brick and often lie under modern towns today.',
     ]],
   ],
-  'art' => 'The illustration shows a three-storey house of mud brick and sandstone with small windows, a painted blue band and a canopy on the roof.',
+  'art' => 'The illustration shows a three-story house of mud brick and sandstone with small windows, a painted blue band and a canopy on the roof.',
   'look' => ['Count the floors.', 'Find the canopy on the roof.'],
   'questions' => ['Why do people build upward in crowded places?', 'Why do houses last less well than temples?', 'How many floors do the homes near you have?'],
   'words' => ['Storey' => 'One floor of a building.', 'Soul house' => 'A clay model of a house placed in a tomb.', 'Terrace' => 'A flat outdoor space, often on a roof.'],
@@ -681,7 +681,7 @@ $EGYPT = [
 
 'porch-house' => [
   'name' => 'House with a porch', 'cat' => 'homes', 'src' => 'art/home_b.png',
-  'summary' => 'A two-storey house with a columned porch, the kind of home a scribe or an official might have had.',
+  'summary' => 'A two-story house with a columned porch, the kind of home a scribe or an official might have had.',
   'facts' => ['Owners' => 'Scribes, priests and officials', 'Columns' => 'Wood, often painted', 'Windows' => 'Small and high, to keep out heat and dust', 'Pillows' => 'Headrests of wood or stone'],
   'sections' => [
     ['A comfortable home', [
@@ -691,7 +691,7 @@ $EGYPT = [
       'Thick walls kept out the heat, and windows were small and set high up to let out hot air and keep out dust and glare. Porches gave shade, and houses were often built to catch the cool breeze that blows from the north.',
     ]],
   ],
-  'art' => 'The illustration shows a two-storey whitewashed house with a columned porch, an awning on the roof and pots of flowers.',
+  'art' => 'The illustration shows a two-story whitewashed house with a columned porch, an awning on the roof and pots of flowers.',
   'look' => ['Find the columns of the porch.', 'Look for the flower pots.'],
   'questions' => ['How did Egyptian houses stay cool without air conditioning?', 'What would it be like to sleep on a headrest?', 'How are homes near you kept cool or warm?'],
   'words' => ['Porch' => 'A covered area at the entrance of a house.', 'Headrest' => 'A curved stand for the head, used instead of a pillow.', 'Official' => 'A person who works for the government.'],
@@ -772,7 +772,7 @@ $EGYPT = [
       'The cooler wind in Egypt usually blows from the north, off the Mediterranean Sea. Houses were often built to catch it, with openings facing north, and shady canopies made the roof a pleasant place to sit in the evening.',
     ]],
   ],
-  'art' => 'The illustration shows a two-storey family house with a big rooftop canopy, beds and cushions on the roof, and palm trees.',
+  'art' => 'The illustration shows a two-story family house with a big rooftop canopy, beds and cushions on the roof, and palm trees.',
   'look' => ['Find the beds on the roof.', 'What gives the roof shade?'],
   'questions' => ['Why would people sleep on the roof?', 'What could a roof be used for where you live?', 'How do the people near you cope with very hot weather?'],
   'words' => ['Canopy' => 'A cloth or reed cover that gives shade.', 'Fodder' => 'Food for farm animals.', 'Breeze' => 'A gentle wind.'],

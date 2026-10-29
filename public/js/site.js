@@ -219,7 +219,7 @@
     });
     document.querySelector('.pp-total strong').textContent = sum;
     var clear = document.querySelector('.pp-clear');
-    var saved = ['atlas.passport', 'atlas.badges', 'atlas.done', 'atlas.quiz', 'atlas.hunt', 'atlas.memory', 'atlas.challenges', 'atlas.challenge', 'atlas.city'];
+    var saved = ['atlas.passport', 'atlas.badges', 'atlas.done', 'atlas.quiz', 'atlas.hunt', 'atlas.memory', 'atlas.challenges', 'atlas.challenge', 'atlas.city', 'atlas.sort', 'atlas.shadows', 'atlas.zoom', 'atlas.odd', 'atlas.puzzle'];
     clear.hidden = !saved.some(function (k) { return store.get(k, null) !== null; });
     clear.addEventListener('click', function () {
       if (!window.confirm('Clear your stamps, badges, scores and saved city on this device? This cannot be undone.')) return;
@@ -243,7 +243,12 @@
     ['quiz', 'Quiz whiz', 'Score 10 out of 10 in any quiz.', 'roman/library'],
     ['hunt', 'Map hunter', 'Finish a map hunt.', 'elven/canopy-walkway'],
     ['memory', 'Memory master', 'Find all the pairs in memory match.', 'elven/tree-library'],
-    ['words', 'Word finder', 'Find every word in a word search.', 'modern/public-library']
+    ['words', 'Word finder', 'Find every word in a word search.', 'modern/public-library'],
+    ['sort', 'Speedy sorter', 'Sort 15 pictures in one game of World sort.', 'future/hover-car'],
+    ['shadows', 'Shadow spotter', 'Score 8 or more in Shadow match.', 'egypt/sphinx'],
+    ['zoom', 'Sharp eyes', 'Score 20 points or more in Zoom detective.', 'elven/domed-observatory'],
+    ['odd', 'Odd one finder', 'Get all ten right in Odd one out.', 'elven/mushroom-cottage'],
+    ['puzzle', 'Puzzle master', 'Finish a picture puzzle.', 'roman/pantheon']
   ];
   var earned = function () {
     var done = store.get('atlas.done', {}) || {}, got = {}, worldsSeen = 0;
@@ -254,7 +259,7 @@
     });
     if (Object.keys(stamps).length) got.first = 1;
     if (worldsSeen === Object.keys(NAMES).length) got.traveler = 1;
-    ['planner', 'challenge', 'quiz', 'hunt', 'memory', 'words'].forEach(function (k) { if (done[k]) got[k] = 1; });
+    ['planner', 'challenge', 'quiz', 'hunt', 'memory', 'words', 'sort', 'shadows', 'zoom', 'odd', 'puzzle'].forEach(function (k) { if (done[k]) got[k] = 1; });
     return got;
   };
   var drawBadges = function (got) {
