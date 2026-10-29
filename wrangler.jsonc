@@ -8,5 +8,12 @@
     "directory": "./public",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // The site's own domain (registered with Cloudflare): each deploy keeps both names attached to this Worker,
+  // with their DNS records and certificates. The workers.dev address keeps working too, for old links.
+  "routes": [
+    { "pattern": "atlasofcities.org", "custom_domain": true },
+    { "pattern": "www.atlasofcities.org", "custom_domain": true }
+  ],
+  "workers_dev": true
 }

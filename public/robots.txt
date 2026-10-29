@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://atlasofcities.koaa01.workers.dev/sitemap.xml
+Sitemap: https://atlasofcities.org/sitemap.xml
