@@ -8,7 +8,7 @@ $TOURS = [
   'world' => 'egypt', 'guide' => 'people-2',
   'title' => 'Ancient Egypt tour: life on the Nile',
   'h1' => 'Life on the Nile',
-  'desc' => 'A guided walk through an Egyptian city with a scribe: the river, fields and granaries, markets without money, schools for scribes, temples and the pyramids, with questions at every stop.',
+  'desc' => 'A guided walk through an Egyptian city with a scribe: the river and granaries, markets without money, a scribe school, temples and the pyramids.',
   'theme' => 'The river, food, writing and great monuments',
   'intro' => 'I am a scribe. I write down every sack of grain and every jar of oil, so I know how this city works. Everything here depends on one thing: the river Nile.',
   'time' => '20 to 30 minutes', 'grades' => '3-9',
@@ -92,7 +92,7 @@ $TOURS = [
   'world' => 'future', 'guide' => 'people-2',
   'title' => 'Robotic future tour: technology, energy and who decides',
   'h1' => 'Human choices in robotic cities',
-  'desc' => 'A guided tour of an imagined Moon and Mars settlement: power, robots, self-driving vehicles, recycling and who makes the decisions, with real space technology at every stop.',
+  'desc' => 'A guided tour of an imagined Moon and Mars settlement: power, robots, self-driving vehicles, recycling and who makes the decisions.',
   'theme' => 'Technology, energy and who decides',
   'intro' => 'I\'m an engineer at the settlement. Robots do a lot of the work here, but people still make the choices. Let\'s see who decides what.',
   'time' => '20 to 30 minutes', 'grades' => '5-12',
@@ -112,7 +112,7 @@ $TOURS = [
   'world' => 'heaven', 'guide' => 'people-5',
   'title' => 'Heavenly City tour: what makes a good place to live',
   'h1' => 'A city of goodness',
-  'desc' => 'A guided walk through the imagined Heavenly City with an elder: welcome, clean water, homes, sharing, learning and peace. At every stop, the belief behind it and a question about our own towns.',
+  'desc' => 'A guided walk through the imagined Heavenly City with an elder: welcome, clean water, homes, sharing, learning and peace, and what they mean for us.',
   'theme' => 'Welcome, sharing, learning and peace',
   'intro' => 'I have walked a long way in my life. This city is imagined, inspired by how many faiths picture heaven, and people describe heaven in different ways. Walk with me and ask what each place could teach our own towns.',
   'time' => '20 to 30 minutes', 'grades' => '3-9',
@@ -152,7 +152,7 @@ $tourCards = '';
 foreach (array_keys($TOURS) as $slug) $tourCards .= tour_card($slug);
 page('/tours/', [
   'title' => 'Guided tours of the city worlds',
-  'desc' => h('Six short guided tours: life on the Nile, Roman engineering, modern neighborhoods, ecological design, human choices in a robotic future and a city of goodness. Each stop links to a full illustrated page.'),
+  'desc' => h('Six short guided tours, one through each world, led by one of its people, with a question at every stop. For families and classrooms.'),
   'class' => 'tours',
   'body' => <<<HTML
 <section class="wrap section page-head">
@@ -162,7 +162,9 @@ page('/tours/', [
   <ul class="tour-grid">{$tourCards}</ul>
 </section>
 HTML,
-  'ld' => [crumbs([['Home', '/'], ['Guided tours', '/tours/']])],
+  'ld' => [crumbs([['Home', '/'], ['Guided tours', '/tours/']]),
+    ['@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => 'Guided tours', 'numberOfItems' => count($TOURS),
+      'itemListElement' => array_map(fn($k, $slug) => ['@type' => 'ListItem', 'position' => $k + 1, 'name' => $TOURS[$slug]['h1'], 'url' => url("/tours/$slug/")], array_keys(array_keys($TOURS)), array_keys($TOURS))]],
 ]);
 // The old "coming later" address now points to the tours.
 page('/guided/', [
@@ -178,6 +180,7 @@ foreach ($TOURS as $slug => $t) {
   [$gname, $grole] = $PEOPLE[$w][$t['guide']];
   $stops = '';
   $nav = '';
+  $stopList = [];
   foreach ($t['stops'] as $n => [$key, $say, $ask]) {
     [$sw, $ss] = explode('/', $key);
     $r = $WORLD_DATA[$sw]['pages'][$ss] ?? null;
@@ -187,7 +190,9 @@ foreach ($TOURS as $slug => $t) {
       . img($sw, $ss, '', '(min-width: 900px) 280px, 70vw', 'loading="lazy"') . '</a></div>'
       . '<div class="stop-text"><p class="stop-num">Stop ' . $num . '</p><h2>' . h($r['name']) . '</h2>'
       . '<p class="stop-say">' . h($say) . '</p><p class="ask">' . h($ask) . '</p>'
-      . '<p><a href="/worlds/' . $sw . '/' . $ss . '/">Read the full page about the ' . h(preg_replace('/^the /', '', strtolower($r['name']))) . '</a></p></div></li>';
+      . '<p><a href="/worlds/' . $sw . '/' . $ss . '/">Read the full page about the ' . h(preg_replace('/^the /', '', strtolower($r['name']))) . '</a>'
+      . (in_array($ss, $WORLD_DATA[$sw]['map']) || !empty($r['vehicle']) ? ' · <a href="/worlds/' . $sw . '/#find-' . $ss . '">Find it on the map</a>' : '') . '</p></div></li>';
+    $stopList[] = ['@type' => 'ListItem', 'position' => $num, 'name' => $r['name'], 'url' => url("/worlds/$sw/$ss/")];
     $nav .= '<li><a href="#stop-' . $num . '">' . $num . '. ' . h($r['name']) . '</a></li>';
   }
   $think = '';
@@ -219,7 +224,7 @@ foreach ($TOURS as $slug => $t) {
   <figure class="guide-bubble"><div class="guide-pic">{$guideImg}</div><figcaption><strong>Your guide: {$gnameH}</strong> <span class="what">{$groleH}</span><span class="bubble">{$intro}</span></figcaption></figure>
 </section>
 <div class="wrap b-layout">
-  <aside class="b-toc" aria-label="Tour stops"><p class="toc-h">Tour stops</p><ol class="plain-ol">{$nav}<li><a href="#think">Think it over</a></li></ol><p><button type="button" class="btn btn-quiet js-print">Print this tour</button></p></aside>
+  <aside class="b-toc" aria-label="Tour stops"><p class="toc-h">Tour stops</p><ol class="plain-ol">{$nav}<li><a href="#think">Think it over</a></li></ol><p><button type="button" class="btn btn-quiet btn-sm" data-listen=".tour-head h1, .bubble, .stop h2, .stop-say, .ask, #think h2, #think li" hidden aria-pressed="false">Listen to the tour</button> <button type="button" class="btn btn-quiet btn-sm js-print">Print this tour</button></p></aside>
   <div>
     <ol class="stops">{$stops}</ol>
     <section class="read panel" id="think" aria-labelledby="think-h">
@@ -236,6 +241,7 @@ foreach ($TOURS as $slug => $t) {
 </section>
 HTML,
     'ld' => [crumbs([['Home', '/'], ['Guided tours', '/tours/'], [$t['h1'], "/tours/$slug/"]]),
-      learning($t['title'], $t['desc'], "/tours/$slug/", $t['theme'])],
+      learning($t['title'], $t['desc'], "/tours/$slug/", $t['theme']),
+      ['@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => $t['h1'] . ': tour stops', 'numberOfItems' => count($stopList), 'itemListElement' => $stopList]],
   ]);
 }

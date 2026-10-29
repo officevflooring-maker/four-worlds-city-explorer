@@ -492,21 +492,26 @@
     var offer = function () { if (voice()) listen.hidden = false; };
     offer();
     synth.addEventListener && synth.addEventListener('voiceschanged', offer);
-    var reading = null;
+    var reading = null, label = listen.textContent;
     var stop = function () {
       reading = null;
       synth.cancel();
       document.querySelectorAll('.reading').forEach(function (e) { e.classList.remove('reading'); });
-      listen.textContent = 'Listen';
+      listen.textContent = label;
       listen.setAttribute('aria-pressed', 'false');
     };
     listen.addEventListener('click', function () {
       if (reading) { stop(); return; }
-      // The title, the summary, then each part of the page (not the sources or the lesson links).
-      var parts = [document.querySelector('h1'), document.querySelector('.b-intro .lead')];
-      document.querySelectorAll('.b-body > .read:not(.sources-box):not(.teach-box)').forEach(function (sec) {
-        sec.querySelectorAll('h2, h3, p, li, dt, dd').forEach(function (e) { parts.push(e); });
-      });
+      // What to read: the button can say (a tour reads its stops); otherwise the title, the summary, then each part
+      // of the page (not the sources or the lesson links).
+      var sel = listen.getAttribute('data-listen'), parts = [];
+      if (sel) parts = Array.prototype.slice.call(document.querySelectorAll(sel));
+      else {
+        parts = [document.querySelector('h1'), document.querySelector('.b-intro .lead')];
+        document.querySelectorAll('.b-body > .read:not(.sources-box):not(.teach-box)').forEach(function (sec) {
+          sec.querySelectorAll('h2, h3, p, li, dt, dd').forEach(function (e) { parts.push(e); });
+        });
+      }
       var run = reading = {};
       var next = function (i) {
         if (reading !== run) return;
