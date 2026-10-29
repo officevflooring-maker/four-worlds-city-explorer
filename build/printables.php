@@ -7,7 +7,7 @@
 
 $SHOP_INFO += [
   'trivia' => ['Atlas Trivia', '/trivia/', 'A family quiz game to print', '162 questions at three levels, so children and grown-ups play together.', '/assets/shop/trivia-fan.webp', 1100, 697],
-  'wordwall' => ['Atlas Word Wall', '/wordwall/', 'Classroom vocabulary to print', '144 big word cards, a banner for every world and a glossary of 661 words.', '/assets/shop/wordwall-fan.webp', 1100, 697],
+  'wordwall' => ['Atlas Word Wall', '/wordwall/', 'Classroom vocabulary to print', '144 big word cards, a banner for every world and a glossary of 662 words.', '/assets/shop/wordwall-fan.webp', 1100, 697],
   'calendar' => ['2027 Calendar', '/calendar/', 'A wall calendar to print', 'A landmark from a different world every month, with room to write.', '/assets/shop/calendar-fan.webp', 1100, 697],
   'playset' => ['Build-a-City Play Set', '/playset/', 'A play set to print', 'A big play mat and 89 stand-up buildings, people and vehicles.', '/assets/shop/playset-fan.webp', 1100, 697],
   'activity' => ['Activity Book', '/activity/', 'An activity book to print', 'A crossword, a maze, a word scramble and a puzzle for every world.', '/assets/shop/activity-fan.webp', 1100, 697],
@@ -63,10 +63,10 @@ shop_page('trivia', [
 /* ---------- Atlas Word Wall ---------- */
 shop_page('wordwall', [
   'title' => 'Atlas Word Wall: vocabulary cards for how cities work',
-  'desc' => 'A printable word wall for grades 2 to 8: 144 big vocabulary cards with simple meanings and pictures, a banner for each world and a 661-word glossary.',
+  'desc' => 'A printable word wall for grades 2 to 8: 144 big vocabulary cards with simple meanings and pictures, a banner for each world and a 662-word glossary.',
   'tag' => 'Print at home · For teachers and homeschool',
   'lead' => 'Big, clear word cards that students can read from across the room, each with a definition written for children and a picture of the place the word belongs to.',
-  'facts' => ['Grades 2 to 8', '144 word cards', '6 world banners', '661-word glossary'],
+  'facts' => ['Grades 2 to 8', '144 word cards', '6 world banners', '662-word glossary'],
   'perfect' => ['classroom word walls', 'vocabulary centers', 'homeschool units', 'test review'],
   'pic' => '<img src="/assets/shop/wordwall-fan.webp" width="1100" height="697" alt="Atlas Word Wall: the teacher\'s guide, a page of word cards such as Pharaoh and Sphinx, and the world banners.">',
   'again' => shop_open('wordwall') ? 'A word wall your class will actually read' : 'The Atlas Word Wall is coming soon',
@@ -80,7 +80,7 @@ shop_page('wordwall', [
     . shop_gallery([
       ['/assets/shop/wordwall-p5.webp', 520, 673, 'Four word cards from Ancient Egypt: Pharaoh, Sphinx, Obelisk and Bastet, each with a definition and a picture.', 'Four big cards to a page'],
       ['/assets/shop/wordwall-p2.webp', 520, 673, 'Two world banners, Ancient Egypt and Ancient Rome, with a landmark picture.', 'A banner for every world'],
-      ['/assets/shop/wordwall-p41.webp', 520, 673, 'The first glossary page: every word, its meaning and the place it comes from, A to Z.', 'A glossary of 661 words'],
+      ['/assets/shop/wordwall-p41.webp', 520, 673, 'The first glossary page: every word, its meaning and the place it comes from, A to Z.', 'A glossary of 662 words'],
       ['/assets/shop/wordwall-p1.webp', 520, 673, 'The teacher\'s guide: how to make the wall and ways to use it.', 'Ideas for using it'],
     ]) . '</section>'
     . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
@@ -88,7 +88,7 @@ shop_page('wordwall', [
       ['🔤', '144 word cards', '24 for each world, from pharaoh and hypocaust to hydroponics.'],
       ['🖼️', 'A picture on every card', 'The place where the word belongs, so students remember it.'],
       ['🏷️', '6 world banners', 'In each world\'s color, to head its part of the wall.'],
-      ['📖', 'A 661-word glossary', 'Every word on The Atlas of Cities, by world and A to Z: your answer list.'],
+      ['📖', 'A 662-word glossary', 'Every word on The Atlas of Cities, by world and A to Z: your answer list.'],
       ['💡', 'Ideas for using it', 'Word of the day, sorting by world or need, and matching games.'],
       ['🔗', 'Linked to the site', 'Every word comes from a page students can visit for pictures and more facts.'],
     ]) . '</div></section>'
@@ -96,7 +96,7 @@ shop_page('wordwall', [
       ['1', 'Teacher\'s guide: making the wall and ways to use it'],
       ['2 to 4', 'Six world banners, two to a page'],
       ['5 to 40', '144 word cards, four to a page, six pages for each world'],
-      ['41 to 49', 'The glossary: all 661 words by world, A to Z, with the place each comes from'],
+      ['41 to 49', 'The glossary: all 662 words by world, A to Z, with the place each comes from'],
     ], 'A PDF of 49 pages in US Letter, or 48 in A4.')
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
