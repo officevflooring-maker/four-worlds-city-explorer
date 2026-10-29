@@ -982,6 +982,7 @@ $WORLD_DATA['elven'] = [
   'aka'      => 'Real-world idea',
   'akaLang'  => '',
   'pageTitle'=> '%s: elven idea, real nature technology',
+  'pageTitleShort' => '%s: an elven idea',
   'aside'    => ['How to read these pages', 'Each page has three kinds of section. Imagined sections describe the fantasy building. Real world sections describe science, places and technology that exist today, with sources. Possible future sections describe ideas still being researched, which may or may not work.'],
   'pageDesc' => ' Explore the imagined idea, the real science behind it, and questions for discussion.',
   'pageDescShort' => ' Explore the idea and the real science behind it.',

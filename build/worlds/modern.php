@@ -1037,6 +1037,7 @@ $WORLD_DATA['modern'] = [
   'aside'    => ['Look around your own town', 'Which of these buildings and systems can you find where you live? Which are missing, and who might miss them most? Try making a map of the places you use in a normal week.'],
   'akaLang'  => '',
   'pageTitle'=> '%s: why towns need it and how it works',
+  'pageTitleShort' => '%s in a modern town',
   'pageDesc' => ' Learn why towns need it, how it is built and how it serves people, with photos and questions for discussion.',
   'pageDescShort' => ' Learn why towns need it and how it works.',
   'sourcesIntro' => 'The facts on this page are based on these sources:',

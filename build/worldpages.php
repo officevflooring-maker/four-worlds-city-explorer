@@ -337,6 +337,9 @@ HTML,
     // Search results show about 160 characters: the page's extra line goes on only where it fits, or a
     // shorter one.
     $desc = $r['summary'];
+    // A long name gets the world's shorter title pattern, so the title fits in a search result.
+    $pageTitle = sprintf($D['pageTitle'], $r['name']);
+    if (strlen($pageTitle) > 60 && !empty($D['pageTitleShort'])) $pageTitle = sprintf($D['pageTitleShort'], $r['name']);
     foreach ([$D['pageDesc'], $D['pageDescShort'] ?? ''] as $more) {
       if ($more !== '' && strlen($r['summary'] . $more) <= 160) { $desc = $r['summary'] . $more; break; }
     }
@@ -344,7 +347,7 @@ HTML,
     $onMap = in_array($slug, $D['map']) || !empty($r['vehicle']);
     $findH = $onMap ? '<a class="btn btn-quiet btn-sm" href="/worlds/' . $w . '/#find-' . $slug . '">Find it on the map</a> ' : '';
     page("/worlds/$w/$slug/", [
-      'title' => sprintf($D['pageTitle'], $r['name']),
+      'title' => $pageTitle,
       'desc' => h($desc),
       'og' => is_file(PUB . "/assets/og/$w/$slug.jpg") ? "$w/$slug" : $w,
       'ogType' => 'article',
@@ -406,7 +409,7 @@ HTML,
 HTML,
       'ld' => [
         crumbs([['Home', '/'], [$label, "/worlds/$w/"], [$r['name'], "/worlds/$w/$slug/"]]),
-        ['@context' => 'https://schema.org', '@type' => 'Article', 'headline' => sprintf($D['pageTitle'], $r['name']), 'description' => $r['summary'],
+        ['@context' => 'https://schema.org', '@type' => 'Article', 'headline' => $pageTitle, 'description' => $r['summary'],
           'image' => $images, 'inLanguage' => 'en', 'dateModified' => LASTMOD, 'url' => url("/worlds/$w/$slug/"), 'mainEntityOfPage' => url("/worlds/$w/$slug/"),
           'about' => ['@type' => 'Thing', 'name' => $r['name']], 'keywords' => implode(', ', array_merge([$r['name'], $label], array_keys($r['words']))),
           'isPartOf' => ['@type' => 'CollectionPage', 'name' => $D['title'], 'url' => url("/worlds/$w/")],

@@ -200,7 +200,7 @@ shop_page('life-rpg', [
 /* ---------- City Builders ---------- */
 shop_page('city-builders', [
   'title' => 'City Builders: a card game about what every city needs',
-  'desc' => 'City Builders is a print-and-play card game for 2 to 4 players, ages 8 and up: collect buildings from ancient Egypt to a city in the clouds and give your city all ten things it needs.',
+  'desc' => 'A print-and-play card game for 2 to 4 players, ages 8 and up: collect buildings from ancient Egypt to a city in the clouds, and give your city all it needs.',
   'tag' => 'Print at home · For families and classrooms',
   'lead' => 'Collect buildings from six worlds, from ancient Egypt to a city in the clouds, and be the first to build a city with water, homes, food and the seven other things people need.',
   'facts' => ['2 to 4 players', 'Ages 8 and up', 'About 20 minutes', 'PDF in Letter and A4'],
@@ -355,7 +355,7 @@ foreach ($SHOP_SHELVES as $i => [$head, $line, $slugs]) {
 $nProducts = count($SHOP_INFO);
 page('/shop/', [
   'title' => 'Shop: board games, activity books, classroom packs and posters',
-  'desc' => h('Printable board games, an activity book, a play set, classroom packs, posters and a calendar, all made from the six worlds of The Atlas of Cities, and Life RPG. One payment each; the rest of the site stays free.'),
+  'desc' => h('Printable board games, an activity book, a play set, classroom packs, posters and a calendar from six worlds, and Life RPG. The rest of the site stays free.'),
   'class' => 'shop shop-home-page',
   'body' => <<<HTML
 <section class="wrap section page-head">

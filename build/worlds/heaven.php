@@ -873,6 +873,7 @@ $WORLD_DATA['heaven'] = [
   'aka'      => 'Inspired by',
   'akaLang'  => '',
   'pageTitle'=> '%s in the Heavenly City: belief and the real world',
+  'pageTitleShort' => '%s in the Heavenly City',
   'aside'    => ['How to read these pages', 'Each page has three kinds of section. Imagined sections describe the artist\'s city. Belief sections describe what a faith teaches, in its own words where possible. Real world sections describe people, places and science in our world today, with sources.'],
   'pageDesc' => ' Explore the imagined place, the beliefs behind it and something real in our world, with questions for discussion.',
   'pageDescShort' => ' Explore the belief and something real today.',

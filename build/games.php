@@ -13,7 +13,7 @@ $SHOP_INFO += [
 /* ---------- Journey Through the Worlds ---------- */
 shop_page('journey', [
   'title' => 'Journey Through the Worlds: a board game to print',
-  'desc' => 'A print-and-play race game for 2 to 4 players, ages 5 and up: travel through every world of The Atlas of Cities, ride shortcuts and answer questions about the places you pass.',
+  'desc' => 'A print-and-play race game for 2 to 4 players, ages 5 and up: travel through every world, ride shortcuts and answer questions about the places you pass.',
   'tag' => 'Print at home · For families and classrooms',
   'lead' => 'A race through every world of the Atlas. Ride shortcuts, dodge road works and answer questions about the places you pass.',
   'facts' => ['2 to 4 players', 'Ages 5 and up', 'About 20 minutes', 'PDF in Letter and A4'],
@@ -60,7 +60,7 @@ shop_page('journey', [
 /* ---------- City Bingo ---------- */
 shop_page('bingo', [
   'title' => 'City Bingo: picture bingo for a whole class',
-  'desc' => 'Printable picture bingo about the places of The Atlas of Cities: 30 different bingo cards, calling cards with a clue for each place and a caller\'s checklist. For 3 to 30 players, ages 5 and up.',
+  'desc' => 'Printable picture bingo for 3 to 30 players, ages 5 and up: 30 different cards, calling cards with a clue for each place and a caller\'s checklist.',
   'tag' => 'Print at home · For classrooms and parties',
   'lead' => 'Read a clue, find the place, cover it. There are 30 different cards, so a whole class can play at once.',
   'facts' => ['3 to 30 players', 'Ages 5 and up', '15 to 30 minutes', 'PDF in Letter and A4'],

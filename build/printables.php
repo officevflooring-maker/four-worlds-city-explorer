@@ -16,7 +16,7 @@ $SHOP_INFO += [
 /* ---------- Atlas Trivia ---------- */
 shop_page('trivia', [
   'title' => 'Atlas Trivia: a family quiz game to print',
-  'desc' => 'A printable quiz game for 2 to 6 players or teams, ages 7 and up: 162 questions about six worlds on 54 cards, with an easy, a medium and a hard question on every card.',
+  'desc' => 'A printable quiz game for 2 to 6 players or teams, ages 7 and up: 162 questions about six worlds, with an easy, a medium and a hard one on every card.',
   'tag' => 'Print at home · For families, classrooms and quiz nights',
   'lead' => 'Every card has an easy, a medium and a hard question, so a seven-year-old and a grandparent can play the same game. Answer right to keep the card; collect all six worlds to win.',
   'facts' => ['2 to 6 players or teams', 'Ages 7 and up', '20 to 40 minutes', '162 questions'],
@@ -63,7 +63,7 @@ shop_page('trivia', [
 /* ---------- Atlas Word Wall ---------- */
 shop_page('wordwall', [
   'title' => 'Atlas Word Wall: vocabulary cards for how cities work',
-  'desc' => 'A printable word wall for grades 2 to 8: 144 big vocabulary cards with child-friendly definitions and pictures, a banner for each of six worlds, and a glossary of 661 words.',
+  'desc' => 'A printable word wall for grades 2 to 8: 144 big vocabulary cards with simple meanings and pictures, a banner for each world and a 661-word glossary.',
   'tag' => 'Print at home · For teachers and homeschool',
   'lead' => 'Big, clear word cards that students can read from across the room, each with a definition written for children and a picture of the place the word belongs to.',
   'facts' => ['Grades 2 to 8', '144 word cards', '6 world banners', '661-word glossary'],
@@ -198,7 +198,7 @@ shop_page('playset', [
 /* ---------- Activity Book ---------- */
 shop_page('activity', [
   'title' => 'The Atlas of Cities Activity Book: 24 puzzles to print',
-  'desc' => 'A printable 30-page activity book for ages 6 to 10: a crossword, a maze, a word scramble and a "which one doesn\'t belong?" puzzle for each of six worlds, two drawing pages and all the answers.',
+  'desc' => 'A printable 30-page activity book for ages 6 to 10: a crossword, a maze, a word scramble and an odd-one-out for each of six worlds, with the answers.',
   'tag' => 'Print at home · For ages 6 to 10',
   'lead' => 'Rainy day, long trip, quiet hour: hand over 30 pages of puzzles that teach a little about six cities as children solve them, with all the answers at the back.',
   'facts' => ['Ages 6 to 10', '30 pages', '24 puzzles', 'Answers included'],

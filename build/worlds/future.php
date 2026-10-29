@@ -920,6 +920,7 @@ $WORLD_DATA['future'] = [
   'aside'    => ['Why the Moon and Mars?', 'The Moon is about 384,000 kilometers away, a trip of about three days. Mars is much further: between about 55 and 400 million kilometers, depending on where the two planets are, and a trip takes around six to nine months. Good launch windows to Mars come only about every 26 months, so a Mars settlement would need to look after itself for a long time.'],
   'akaLang'  => '',
   'pageTitle'=> '%s: how it could work on the Moon and Mars',
+  'pageTitleShort' => '%s on the Moon and Mars',
   'pageDesc' => ' Learn how it could work beyond Earth, the real technology behind it, and how it would be powered, built and maintained.',
   'pageDescShort' => ' Learn the real space technology behind it.',
   'sourcesIntro' => 'The real-world facts on this page are based on these sources:',

@@ -10,7 +10,8 @@ const PEOPLE_SCALE = ['egypt' => 1.125, 'heaven' => 1.125];
 
 $PEOPLE_INTRO = [
   'roman'  => ['People of Ancient Rome', 'Who lived and worked in a Roman city? At its height Rome may have had around a million people, from senators to enslaved workers. Their clothes often showed who they were.', 'history'],
-  'modern' => ['People of the Modern Town', 'A town has to work for everyone: children walking to school, runners, older people, dog walkers and workers. Each person uses the same streets in a different way.', 'real'],
+  'modern' => ['People of the Modern Town', 'A town has to work for everyone: children walking to school, runners, older people, dog walkers and workers. Each person uses the same streets in a different way.', 'real',
+    'Meet the people of the Modern Town: children, runners, older neighbors, dog walkers and builders, and how each of them uses the same streets.'],
   'elven'  => ['People of the Elven World', 'The elves are imagined. Their roles, though, are real ones every community needs: elders, gardeners, makers, keepers of knowledge and protectors.', 'imagined'],
   'future' => ['People and robots of the Future', 'An imagined Moon and Mars settlement. Every person has an important job, and robots do the dull, dirty and dangerous work. The jobs are based on real space careers.', 'speculative'],
   'egypt'  => ['People of Ancient Egypt', 'Who lived and worked along the Nile? Most Egyptians were farmers, but the country also needed scribes, builders, soldiers, priests and traders. In the heat, most people wore simple white linen; jewelry and wigs showed who was rich.', 'history'],

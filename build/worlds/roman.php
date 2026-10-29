@@ -1025,6 +1025,7 @@ $WORLD_DATA['roman'] = [
   'aka'      => 'Latin',
   'akaLang'  => 'la',
   'pageTitle'=> '%s in Ancient Rome: how it worked',
+  'pageTitleShort' => '%s in Ancient Rome',
   'defaultTag' => 'history',
   'aside'    => ['About dates', 'Dates marked BC count backwards from the traditional year of the birth of Jesus, so 312 BC came before 100 BC. Dates marked AD count forwards, so AD 80 came before AD 216. Many historians write BCE and CE instead; they mean the same years.'],
   'pageDesc' => ' Learn how it worked, see photos of real Roman examples, and explore questions for discussion.',

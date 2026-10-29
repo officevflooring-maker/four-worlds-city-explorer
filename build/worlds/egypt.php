@@ -916,6 +916,7 @@ $WORLD_DATA['egypt'] = [
   'aka'      => 'Ancient Egyptian',
   'akaLang'  => 'egy',
   'pageTitle'=> '%s in Ancient Egypt: how it worked',
+  'pageTitleShort' => '%s in Ancient Egypt',
   'defaultTag' => 'history',
   'aside'    => ['About dates', 'Ancient Egypt lasted about 3,000 years, from around 3100 BC until 30 BC, when it became part of the Roman Empire. Dates marked BC count backwards, so 2560 BC came long before 1350 BC. Many dates are only approximate.'],
   'pageDesc' => ' Learn how it worked, what history tells us and what the artist imagined, with questions for discussion.',
