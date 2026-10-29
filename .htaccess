@@ -1,11 +1,15 @@
 # Used when Hostinger deploys the whole repository (main branch) into public_html.
-# Serves the website from public/ at the normal addresses (/, /compare/, ...)
-# and keeps build files (README, build/, tools/) out of reach: they become 404s.
+# The site lives at https://atlasofcities.org (served by Cloudflare), so every visit to this server's own address
+# moves there for good, to the same page. Otherwise it serves the website from public/ at the normal addresses
+# (/, /compare/, ...) and keeps build files (README, build/, tools/) out of reach: they become 404s.
 Options -Indexes
 ErrorDocument 404 /public/404.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  # an old /public/... address goes to the clean one on the domain
+  RewriteCond %{HTTP_HOST} !^atlasofcities\.org$ [NC]
+  RewriteRule ^(?:public/)?(.*)$ https://atlasofcities.org/$1 [R=301,L]
   RewriteCond %{REQUEST_URI} !^/public/
   RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>

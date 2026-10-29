@@ -79,7 +79,7 @@ Not used yet: the remaining building variants (`*_2`, `*_3`, `floor_*` etc.), mo
 
 ## Placeholders and open items
 
-- `SITE_URL` is the site's domain, `https://atlasofcities.org`, served by the Cloudflare Worker (`wrangler.jsonc` attaches the domain and `www` on every deploy). The older addresses keep working and point search engines to the domain: `atlasofcities.koaa01.workers.dev` and the Hostinger copy (`yellowgreen-crab-278867.hostingersite.com`).
+- `SITE_URL` is the site's domain, `https://atlasofcities.org`, served by the Cloudflare Worker (`wrangler.jsonc` attaches the domain and `www` on every deploy). The temporary `atlasofcities.koaa01.workers.dev` address is turned off, and the Hostinger copy (`yellowgreen-crab-278867.hostingersite.com`) sends every visit to the same page on the domain with a permanent redirect (the repo-root `.htaccess`).
 - Icons (`favicon.svg`, PNG icons) are a simple four-diamond mark made for this site; replace them with a real logo when one exists.
 - Social share images (`public/assets/og/*.jpg`) are composed from the supplied artwork.
 - The Roman "Library" and "Building materials" have no historical notes yet. They're marked as the artist's interpretation.
@@ -87,7 +87,7 @@ Not used yet: the remaining building variants (`*_2`, `*_3`, `floor_*` etc.), mo
 ## Deploying to Hostinger with Git
 
 Hostinger is connected to this repo (hPanel: **Websites → Manage → Advanced → Git**, branch `main`, directory empty).
-The repo-root `.htaccess` serves the site from `public/` at the normal addresses and hides the build files.
+The repo-root `.htaccess` sends every visit to Hostinger's own address on to the same page at https://atlasofcities.org with a permanent redirect. For any other address it serves the site from `public/` at the normal addresses and hides the build files.
 
 After each change: run `php build/build.php`, commit and push to `main`, Hostinger auto-deploys it (or click **Redeploy** in hPanel).
 

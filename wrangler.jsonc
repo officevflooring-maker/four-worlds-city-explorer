@@ -10,10 +10,11 @@
     "html_handling": "auto-trailing-slash"
   },
   // The site's own domain (registered with Cloudflare): each deploy keeps both names attached to this Worker,
-  // with their DNS records and certificates. The workers.dev address keeps working too, for old links.
+  // with their DNS records and certificates. The temporary atlasofcities.koaa01.workers.dev address is turned off.
   "routes": [
     { "pattern": "atlasofcities.org", "custom_domain": true },
     { "pattern": "www.atlasofcities.org", "custom_domain": true }
   ],
-  "workers_dev": true
+  "workers_dev": false,
+  "preview_urls": false
 }
