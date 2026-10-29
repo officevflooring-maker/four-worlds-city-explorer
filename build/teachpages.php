@@ -49,7 +49,7 @@ foreach (array_keys($TEACH) as $k => $slug) $hubList[] = ['@type' => 'ListItem',
 $promo = shop_cards('', ['classroom-pack', 'wordwall', 'bingo', 'planners']);
 page('/teachers/', [
   'title' => 'Free City Lessons for Teachers: Rome, Urban Planning, Mars',
-  'desc' => h("$teachCount free lessons, projects and explainers for teachers and students: design a city, build a Roman aqueduct, how cities get water, urban planning, biomimicry, living on Mars and more."),
+  'desc' => h("$teachCount free lessons, projects and explainers: design a city, build a Roman aqueduct, clean water, urban planning, biomimicry, living on Mars and more."),
   'class' => 'teachers',
   'body' => <<<HTML
 <section class="wrap section page-head">
@@ -77,6 +77,14 @@ HTML,
 ]);
 
 // ---------- One page per guide ----------
+// The time a guide takes, for search engines, as an ISO 8601 duration: the shortest time it says (a class period
+// counted as 45 minutes). Times it cannot read are left out.
+function iso_time($t) {
+  if (preg_match('/^(\d+)-minute read$/', $t, $m)) return 'PT' . $m[1] . 'M';
+  if (preg_match('/^(\d+)(?: to \d+)? class periods?$/', $t, $m)) { $min = 45 * $m[1]; return 'PT' . ($min >= 60 ? intdiv($min, 60) . 'H' . ($min % 60 ? $min % 60 . 'M' : '') : $min . 'M'); }
+  if (preg_match('/^(\d+)(?: to \d+)? weeks?$/', $t, $m)) return 'P' . $m[1] . 'W';
+  return null;
+}
 // Online activities that go with a guide: [link, name, one line].
 const TEACH_PLAY = [
   'design-a-city-project' => ['/play/city-builder/', 'Build your own city', 'Students can sketch their city online first and check that it meets every need.'],
@@ -125,7 +133,7 @@ foreach ($slugsT as $k => $slug) {
     if (!isset($TEACH_SOURCES[$s])) { fwrite(STDERR, "unknown teacher source $slug: $s\n"); continue; }
     $srcs .= '<li>' . h($TEACH_SOURCES[$s]) . '</li>';
   }
-  // Related guides: the others in the same hub group, then neighbours in the list.
+  // Related guides: the others in the same hub group, then neighbors in the list.
   $related = [];
   foreach (TEACH_GROUPS as [, $g]) if (in_array($slug, $g)) foreach ($g as $o) if ($o !== $slug) $related[] = $o;
   foreach ([$slugsT[($k + 1) % count($slugsT)], $slugsT[($k + 2) % count($slugsT)]] as $o) if ($o !== $slug && !in_array($o, $related)) $related[] = $o;
@@ -154,7 +162,7 @@ foreach ($slugsT as $k => $slug) {
   {$try}
 </section>
 <div class="wrap b-layout">
-  <aside class="b-toc" aria-label="On this page"><p class="toc-h">On this page</p><ol>{$toc}</ol><p><button type="button" class="btn btn-quiet js-print">Print this page</button></p></aside>
+  <aside class="b-toc" aria-label="On this page"><p class="toc-h">On this page</p><ol>{$toc}</ol><p><button type="button" class="btn btn-quiet btn-sm" data-listen="h1, #answer p, .b-body > .read:not(#pages):not(.sources-box) h2, .b-body > .read:not(#pages):not(.sources-box) h3, .b-body > .read:not(#pages):not(.sources-box) p, .b-body > .read:not(#pages):not(.sources-box) li" hidden aria-pressed="false">Listen</button> <button type="button" class="btn btn-quiet btn-sm js-print">Print this page</button></p></aside>
   <article class="b-body">
     {$body}
     <section class="read" id="faq" aria-labelledby="faq-h"><h2 id="faq-h">Questions students and teachers ask</h2>{$faq}</section>
@@ -171,10 +179,10 @@ HTML,
     'ld' => [
       crumbs([['Home', '/'], ['Teachers & Schools', '/teachers/'], [$t['h1'], "/teachers/$slug/"]]),
       ['@context' => 'https://schema.org', '@type' => 'LearningResource', 'name' => $t['h1'], 'description' => $t['desc'], 'url' => url("/teachers/$slug/"),
-        'inLanguage' => 'en', 'learningResourceType' => $t['kind'], 'educationalLevel' => 'Grades ' . $t['grades'], 'timeRequired' => $t['time'],
+        'inLanguage' => 'en', 'learningResourceType' => $t['kind'], 'educationalLevel' => 'Grades ' . $t['grades'],
         'about' => $t['subjects'], 'isAccessibleForFree' => true, 'dateModified' => LASTMOD,
         'audience' => ['@type' => 'EducationalAudience', 'educationalRole' => 'teacher, student'],
-        'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'url' => url('/')]],
+        'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'url' => url('/')]] + (iso_time($t['time']) ? ['timeRequired' => iso_time($t['time'])] : []),
       ['@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => $faqLd],
     ],
   ]);

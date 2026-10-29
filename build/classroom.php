@@ -57,7 +57,7 @@ foreach (WORLD_ORDER as $w) {
   foreach ($order as $pos => $n) $right .= '<li><b>' . SHEET_LETTERS[$pos] . '.</b> ' . h($pick[$n]['d']) . '</li>';
   foreach ($pick as $n => $e) $key .= '<li><b>' . SHEET_LETTERS[array_search($n, $order)] . '</b> ' . h($e['t']) . ': ' . h($e['d']) . ' <span class="key-from">(' . h($e['n']) . ')</span></li>';
   $SHEETS[] = ["$w-vocabulary", 'Vocabulary', $W['name'] . ' vocabulary', $W['name'] . ' vocabulary worksheet with answer key',
-    "A free printable vocabulary worksheet: match ten key words from {$cityOf} to their meanings. With an answer key and links to the illustrated building pages.",
+    "A free printable vocabulary worksheet: match ten key words from {$cityOf} to their meanings, with an answer key.",
     '3-8', '15 minutes',
     $nameLine . '<h2>' . h($W['name']) . ': key words</h2><p class="sheet-do">Write the letter of the right meaning next to each word.</p>'
       . '<div class="vocab"><div><h3>Words</h3><ol class="vocab-words">' . $left . '</ol></div><div><h3>Meanings</h3><ul class="vocab-means">' . $right . '</ul></div></div>',
@@ -101,7 +101,7 @@ foreach ($COMPARE as [$ckey, $label, $question, $cells]) {
   $keyRows .= '</tr>';
 }
 $SHEETS[] = ['compare-four-cities-chart', 'Compare', 'Compare six cities', 'Compare six cities: printable chart with answer key',
-  'A free printable chart for comparing how ancient Egypt, ancient Rome, a modern town, an elven world, a Mars settlement and a heavenly city provide water, places to gather, safe travel, goods and room for nature.',
+  'A free printable chart comparing how six city worlds, from ancient Egypt to Mars, provide water, places to gather, safe travel, goods and nature.',
   '4-9', '30 to 40 minutes',
   $nameLine . '<h2>How does each city meet its needs?</h2><p class="sheet-do">Use the <b>Compare the worlds</b> page. In each box, write how that world meets the need.</p><table class="chart"><thead><tr>' . $head . '</tr></thead><tbody>' . $rows . '</tbody></table>'
     . '<p class="sheet-do">Which world meets the needs best, in your opinion? Why?</p><div class="lines"></div>',
@@ -132,7 +132,7 @@ $planGrid = str_repeat('<tr>' . str_repeat('<td></td>', 6) . '</tr>', 6);
 $planNeeds = '';
 foreach ($NEEDS as [$label]) $planNeeds .= '<tr><th scope="row">' . h($label) . '</th><td></td><td></td></tr>';
 $SHEETS[] = ['plan-a-city', 'Planning', 'Plan a city', 'Plan a city: printable city planning worksheet',
-  'A free printable city planning worksheet: draw a city on a 6 by 6 grid and plan a building for each of the ten things every city needs. Works with the online city builder.',
+  'A free printable city planning worksheet: draw a city on a 6 by 6 grid with a building for each of the ten things every city needs.',
   '3-9', '45 minutes',
   $nameLine . '<h2>Plan your city</h2><p class="sheet-do">Draw your city on the grid. Streets run between the squares. Then fill in the table.</p>'
     . '<table class="plan-grid" aria-label="Empty 6 by 6 city grid">' . $planGrid . '</table>'
@@ -220,7 +220,7 @@ foreach ($gloss as $letter => $list) {
 }
 page('/teachers/glossary/', [
   'title' => "City glossary: $glossCount key words with meanings",
-  'desc' => h("A free glossary of $glossCount key words about cities, buildings, engineering, nature and space, from ancient Rome to Mars, each with a simple meaning and a link to an illustrated page."),
+  'desc' => h("A free glossary of $glossCount key words about cities, buildings, engineering, nature and space, each with a simple meaning and an illustrated page."),
   'class' => 'teachers glossary',
   'body' => <<<HTML
 <div class="wrap">
@@ -269,7 +269,7 @@ $fqH = h($fq);
 $fnH = h($fn);
 page('/teachers/question-bank/', [
   'title' => "Question bank: $qbCount discussion questions about cities",
-  'desc' => h("$qbCount free discussion questions about how cities work, from ancient Rome to a Mars base, for warm-ups, class discussions and writing prompts, with a question of the day."),
+  'desc' => h("$qbCount free discussion questions about how cities work, from ancient Egypt to a Mars base, for warm-ups and writing, with a question of the day."),
   'class' => 'teachers question-bank',
   'body' => <<<HTML
 <div class="wrap">

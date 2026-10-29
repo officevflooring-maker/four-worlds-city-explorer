@@ -7,6 +7,9 @@
 // 'grades': suggested US grade range;  'time': classroom time;  'subjects': subject areas
 // 'links' : building pages this guide uses, as 'world/slug'
 
+// Illustrations on the Artwork page, for the free images guide.
+$ART_COUNT = count(glob(__DIR__ . '/../public/assets/artwork/*/*-thumb.webp'));
+
 $TEACH_SOURCES = [
   'brit-aqueduct' => 'Encyclopaedia Britannica, "Aqueduct"',
   'frontinus'     => 'Frontinus, The Aqueducts of Rome (about AD 97)',
@@ -51,7 +54,7 @@ $TEACH = [
 'design-a-city-project' => [
   'title' => 'Design a City Project for Middle School: A Step-by-Step Guide',
   'h1' => 'Design a city: a project-based unit for grades 5 to 9',
-  'desc' => 'A free, step-by-step design a city project for middle school. Students plan a city that meets real needs, with roles, a timeline, a rubric and discussion prompts, using six illustrated city worlds.',
+  'desc' => 'A free, step-by-step design a city project for middle school: students plan a city that meets real needs, with roles, a timeline and a rubric.',
   'kind' => 'Project', 'grades' => '5-9', 'time' => '5 to 8 class periods', 'subjects' => 'Social studies, geography, math, civics',
   'quick' => 'Students work in teams to plan a city that provides water, homes, jobs, transportation, public spaces and room for nature. They study six example cities on this site, choose a site, draw a map, justify their choices and present to a "city council" of classmates.',
   'sections' => [
@@ -99,7 +102,7 @@ $TEACH = [
 'build-a-roman-aqueduct' => [
   'title' => 'Build a Model Roman Aqueduct: STEM Activity for Students',
   'h1' => 'Build a model Roman aqueduct: a hands-on STEM activity',
-  'desc' => 'How to build a working model Roman aqueduct in class with simple materials. Includes the challenge, materials list, steps, the science of gradient and gravity, and discussion questions.',
+  'desc' => 'How to build a working model Roman aqueduct in class with simple materials: the challenge, materials, steps, the science of slope and gravity, and questions.',
   'kind' => 'Project', 'grades' => '4-8', 'time' => '2 to 3 class periods', 'subjects' => 'Science, engineering, history, math',
   'quick' => 'Teams build a channel from cardboard, tape and plastic that carries water from a high "spring" to a cup in the "city" using only gravity. The challenge is to keep a gentle, steady slope across a gap, just as Roman engineers did.',
   'sections' => [
@@ -145,7 +148,7 @@ $TEACH = [
 'roman-engineering-lesson' => [
   'title' => 'Roman Engineering Lesson: Arches, Concrete, Roads and Domes',
   'h1' => 'Roman engineering: arches, concrete, roads and domes',
-  'desc' => 'A ready-to-teach lesson on Roman engineering: how arches, Roman concrete, roads, domes and cranes worked, with activities, discussion questions and links to illustrated building pages.',
+  'desc' => 'A ready-to-teach lesson on Roman engineering: how arches, concrete, roads, domes and cranes worked, with activities and discussion questions.',
   'kind' => 'Lesson', 'grades' => '6-10', 'time' => '1 to 2 class periods', 'subjects' => 'History, engineering, physics',
   'quick' => 'Roman engineers combined the arch, a strong concrete made with volcanic ash, careful surveying and human-powered cranes to build aqueducts, roads, domes and amphitheaters, many of which still stand nearly 2,000 years later.',
   'sections' => [
@@ -181,7 +184,7 @@ $TEACH = [
 'daily-life-in-ancient-rome' => [
   'title' => 'Daily Life in Ancient Rome: Homes, Food, Water and Baths',
   'h1' => 'What was daily life like in ancient Rome?',
-  'desc' => 'What daily life was like for ordinary people in ancient Rome: apartment homes, food from street counters, water from fountains, public toilets and baths. With classroom questions.',
+  'desc' => 'Daily life for ordinary people in ancient Rome: apartment homes, street food, water from fountains, public toilets and baths, with classroom questions.',
   'kind' => 'Explainer', 'grades' => '5-12', 'time' => '20-minute read', 'subjects' => 'History',
   'quick' => 'Most people in the city of Rome rented rooms in crowded apartment blocks called insulae. They fetched water from street fountains, bought ready-made food from snack bars, used shared public toilets, and went to the public baths to wash and meet friends.',
   'sections' => [
@@ -215,7 +218,7 @@ $TEACH = [
 'how-did-roman-aqueducts-work' => [
   'title' => 'How Did Roman Aqueducts Work? Explained for Students',
   'h1' => 'How did Roman aqueducts work?',
-  'desc' => 'How Roman aqueducts carried water for kilometers using only gravity: the gentle slope, underground channels, arches across valleys, settling tanks and distribution in the city.',
+  'desc' => 'How Roman aqueducts carried water for kilometers using only gravity: the gentle slope, underground channels, arches, settling tanks and city pipes.',
   'kind' => 'Explainer', 'grades' => '4-12', 'time' => '10-minute read', 'subjects' => 'History, science',
   'quick' => 'Roman aqueducts used gravity. Engineers built a channel that sloped very gently downhill from a spring or river in the hills to the city. Most of it ran underground; arches carried it across valleys. In the city, the water was split into pipes for fountains, baths and some homes.',
   'sections' => [
@@ -246,7 +249,7 @@ $TEACH = [
 'ancient-rome-vs-modern-cities' => [
   'title' => 'Ancient Rome vs Modern Cities: A Compare and Contrast Lesson',
   'h1' => 'Ancient Rome vs modern cities: compare and contrast',
-  'desc' => 'A compare and contrast lesson on ancient Rome and modern cities: water, housing, transportation, government and entertainment, with a ready-made comparison chart and discussion questions.',
+  'desc' => 'A compare and contrast lesson on ancient Rome and modern cities: water, homes, transport, government and fun, with a comparison chart and questions.',
   'kind' => 'Lesson', 'grades' => '6-12', 'time' => '1 class period', 'subjects' => 'History, civics, geography',
   'quick' => 'Ancient Rome and modern cities solve many of the same problems: bringing in water, housing crowds, moving people and goods, governing and entertaining. Comparing them shows what has changed, mostly technology, and what has not: people\'s basic needs.',
   'sections' => [
@@ -281,7 +284,7 @@ $TEACH = [
 'how-do-cities-get-clean-water' => [
   'title' => 'How Do Cities Get Clean Water? Water Treatment Explained',
   'h1' => 'How do cities get clean water?',
-  'desc' => 'How a city turns river or groundwater into safe tap water: coagulation, settling, filtration and disinfection, plus water towers, pipes and what happens after the drain. For students and teachers.',
+  'desc' => 'How a city turns river or groundwater into safe tap water: coagulation, settling, filtration and disinfection, then water towers, pipes and drains.',
   'kind' => 'Explainer', 'grades' => '4-12', 'time' => '10-minute read', 'subjects' => 'Science, health, geography',
   'quick' => 'Cities take water from rivers, lakes, reservoirs or underground aquifers, clean it in a treatment plant (coagulation, settling, filtering and disinfecting), store it in tanks and water towers, and push it through pipes under the streets to every tap.',
   'sections' => [
@@ -313,7 +316,7 @@ $TEACH = [
 'what-does-a-city-need' => [
   'title' => 'What Does a City Need? Infrastructure Explained for Students',
   'h1' => 'What does a city need to work?',
-  'desc' => 'The essential systems every city needs, explained simply: water, sanitation, energy, transportation, housing, food, health care, schools, government and public space. With a classroom sorting activity.',
+  'desc' => 'The essential systems every city needs, explained simply: water, energy, transport, housing, food, health, schools, government and public space.',
   'kind' => 'Explainer', 'grades' => '3-9', 'time' => '1 class period', 'subjects' => 'Social studies, science',
   'quick' => 'Every city needs clean water and sewers, energy, ways to move people and goods, homes, food, health care, schools, safety services, a way to make decisions, and public spaces. Most of these systems, called infrastructure, are hidden until they stop working.',
   'sections' => [
@@ -346,7 +349,7 @@ $TEACH = [
 'urban-planning-for-students' => [
   'title' => 'Urban Planning for Students: What Planners Do and How to Start',
   'h1' => 'Urban planning for students',
-  'desc' => 'What urban planning is, what city planners do, the big ideas behind good neighborhoods, and how students can explore planning as a career. Includes free classroom resources.',
+  'desc' => 'What urban planning is, what city planners do, the big ideas behind good neighborhoods, and planning as a career, with free classroom resources.',
   'kind' => 'Guide', 'grades' => '7-12', 'time' => '15-minute read', 'subjects' => 'Geography, civics, careers',
   'quick' => 'Urban planners help communities decide how land is used: where homes, shops, parks, roads and transit should go, and how to grow fairly and safely. They gather data, listen to residents and write plans that elected leaders vote on.',
   'sections' => [
@@ -381,7 +384,7 @@ $TEACH = [
 'how-local-government-works' => [
   'title' => 'How Local Government Works: A Civics Lesson for Students',
   'h1' => 'How does local government work?',
-  'desc' => 'A civics lesson on how city and town government works: mayors, councils and city managers, what local government decides, how a local decision is made, and how students can take part.',
+  'desc' => 'A civics lesson on how local government works: mayors, councils and city managers, what they decide, and how students can take part.',
   'kind' => 'Lesson', 'grades' => '5-12', 'time' => '1 class period', 'subjects' => 'Civics, government',
   'quick' => 'Most towns are run by an elected council, often with a mayor. Councils pass local laws and budgets for things like parks, libraries, streets, trash collection and planning. Meetings are usually public, and residents can speak.',
   'sections' => [
@@ -415,7 +418,7 @@ $TEACH = [
 'sustainable-city-project-ideas' => [
   'title' => 'Sustainable City Project Ideas for Students (Grades 5-12)',
   'h1' => 'Sustainable city project ideas for students',
-  'desc' => '12 sustainable city project ideas for students, from rain gardens and green roofs to heat maps and tiny forests, with the real science behind each and ways to present them.',
+  'desc' => '12 sustainable city project ideas for students, from rain gardens and green roofs to heat maps and tiny forests, with the real science behind each.',
   'kind' => 'Project', 'grades' => '5-12', 'time' => '1 to 4 weeks', 'subjects' => 'Environmental science, geography, engineering',
   'quick' => 'Strong sustainable city projects pick one real local problem, such as heat, flooding, waste or traffic, research how nature or design could help, then build a model, map or proposal and test or present it.',
   'sections' => [
@@ -448,7 +451,7 @@ $TEACH = [
 'biomimicry-examples-for-students' => [
   'title' => 'Biomimicry Examples for Students: Inventions Copied from Nature',
   'h1' => 'Biomimicry examples for students',
-  'desc' => 'Clear biomimicry examples for students: Velcro, the lotus effect, the kingfisher bullet train, termite-inspired cooling and more, plus a classroom biomimicry design challenge.',
+  'desc' => 'Biomimicry examples for students: Velcro, the lotus effect, the kingfisher bullet train, termite-inspired cooling and more, plus a design challenge.',
   'kind' => 'Explainer', 'grades' => '4-12', 'time' => '1 class period', 'subjects' => 'Science, engineering, design',
   'quick' => 'Biomimicry means solving human problems by learning from nature. Famous examples include Velcro (copied from burrs), self-cleaning surfaces (from lotus leaves), Japan\'s quieter bullet train (from a kingfisher\'s beak) and naturally ventilated buildings (inspired by termite mounds).',
   'sections' => [
@@ -478,7 +481,7 @@ $TEACH = [
 'solarpunk-explained' => [
   'title' => 'What Is Solarpunk? A Hopeful Future City Explained for Teens',
   'h1' => 'What is solarpunk?',
-  'desc' => 'Solarpunk explained: the hopeful art and writing movement that imagines green, fair, community-run future cities, with the real technologies behind it and creative prompts for students.',
+  'desc' => 'Solarpunk explained: the hopeful movement that imagines green, fair future cities, with the real technologies behind it and creative prompts.',
   'kind' => 'Explainer', 'grades' => '7-12', 'time' => '10-minute read', 'subjects' => 'English, art, environmental science',
   'quick' => 'Solarpunk is an art, writing and design movement that imagines a hopeful future where cities run on clean energy, are full of plants and are shaped by their communities. It mixes real green technology with imagination and asks: what future do we want to build?',
   'sections' => [
@@ -511,7 +514,7 @@ $TEACH = [
 'how-could-humans-live-on-mars' => [
   'title' => 'How Could Humans Live on Mars? Air, Water, Food and Shelter',
   'h1' => 'How could humans live on Mars?',
-  'desc' => 'How humans could survive on Mars: making oxygen from the air, finding water ice, growing food, shielding from radiation and building homes, explained with real NASA technology.',
+  'desc' => 'How humans could survive on Mars: making oxygen, finding water ice, growing food, shielding from radiation and building homes, with real NASA technology.',
   'kind' => 'Explainer', 'grades' => '5-12', 'time' => '15-minute read', 'subjects' => 'Science, engineering',
   'quick' => 'To live on Mars, people would need sealed, pressurized homes shielded from radiation, oxygen made from the carbon dioxide air or from water, water mined from ice, food grown indoors under lights, and reliable power. NASA has already made oxygen on Mars with an experiment called MOXIE.',
   'sections' => [
@@ -618,7 +621,7 @@ $TEACH = [
 'fantasy-city-worldbuilding' => [
   'title' => 'How to Design a Fantasy City: Worldbuilding Guide for Students',
   'h1' => 'How to design a fantasy city: a worldbuilding guide',
-  'desc' => 'A worldbuilding guide for designing a believable fantasy city: geography, water, food, government, buildings and culture, with prompts for creative writing, art and game design classes.',
+  'desc' => 'A worldbuilding guide for a believable fantasy city: geography, water, food, government, buildings and culture, with prompts for writing, art and games.',
   'kind' => 'Guide', 'grades' => '6-12', 'time' => '1 to 3 class periods', 'subjects' => 'English, art, game design, geography',
   'quick' => 'A believable fantasy city starts with real questions: where does the water come from, what do people eat, how do they earn a living, who makes decisions, and what makes this place different? Answer those, then add the magic.',
   'sections' => [
@@ -655,7 +658,7 @@ $TEACH = [
 'discussion-questions-what-makes-a-good-city' => [
   'title' => 'What Makes a Good Place to Live? Discussion Questions for Class',
   'h1' => 'What makes a good place to live? Discussion questions',
-  'desc' => '30 classroom discussion questions about cities and communities: fairness, nature, technology, history and the future. Ready for Socratic seminars, journals and debates.',
+  'desc' => '30 discussion questions about cities and communities: fairness, nature, technology, history and the future, for seminars, journals and debates.',
   'kind' => 'Lesson', 'grades' => '5-12', 'time' => '1 class period', 'subjects' => 'Social studies, English, civics',
   'quick' => 'Use these open-ended questions to run a Socratic seminar, journal prompts or a debate about what makes a good city. Pair them with the Compare page and any building page for evidence.',
   'sections' => [
@@ -705,9 +708,9 @@ $TEACH = [
 'free-images-for-classroom' => [
   'title' => 'Free Images for the Classroom: How to Use and Credit CC BY Art',
   'h1' => 'Free images for the classroom: how to use and credit them',
-  'desc' => 'How teachers and students can use free, openly licensed images in slides, worksheets and projects, how to credit them correctly (TASL), and where to find 186 free illustrations of cities.',
+  'desc' => 'How to use free, openly licensed images in slides, worksheets and projects, how to credit them (TASL), and ' . $ART_COUNT . ' free city illustrations.',
   'kind' => 'Guide', 'grades' => 'Teachers, 6-12', 'time' => '5-minute read', 'subjects' => 'All subjects, digital citizenship',
-  'quick' => 'Images with a Creative Commons license can be reused if you follow its terms. For CC BY images, such as the 186 illustrations on this site, you can use, change and share them for any purpose as long as you give credit: title, author, source and license (TASL).',
+  'quick' => 'Images with a Creative Commons license can be reused if you follow its terms. For CC BY images, such as the ' . $ART_COUNT . ' illustrations on this site, you can use, change and share them for any purpose as long as you give credit: title, author, source and license (TASL).',
   'sections' => [
     ['What CC BY means', [
       'CC BY 4.0 (Creative Commons Attribution) lets anyone copy, share, change and use a work, even commercially, as long as they credit the creator. All illustrations on this site are shared under CC BY 4.0.',
@@ -738,7 +741,7 @@ $TEACH = [
 'explore-your-town-scavenger-hunt' => [
   'title' => 'Explore Your Town: Neighborhood Walk and Scavenger Hunt',
   'h1' => 'Explore your town: a neighborhood walk and scavenger hunt',
-  'desc' => 'A printable neighborhood walk and city scavenger hunt for classes and families: spot infrastructure, public spaces and nature, then reflect on what your town needs.',
+  'desc' => 'A printable neighborhood walk and scavenger hunt for classes and families: spot infrastructure, public spaces and nature, then talk about your town.',
   'kind' => 'Lesson', 'grades' => 'K-8', 'time' => '1 walk plus 1 class period', 'subjects' => 'Social studies, science, geography',
   'quick' => 'Take a walk around your school or neighborhood and find the hidden systems that make a town work: fire hydrants, storm drains, crosswalks, curb ramps, street trees and public spaces. Then discuss what is missing.',
   'sections' => [
