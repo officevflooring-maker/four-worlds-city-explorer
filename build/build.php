@@ -55,7 +55,9 @@ function page($path, $o) {
   $title = h($o['title']);
   // Search results show about 60 characters of a title, so the site's name goes on the end only where it fits.
   $fullTitle = $path === '/' || strlen($o['title'] . ' | ' . SITE_NAME) > 65 ? $title : "$title | " . SITE_NAME;
-  $ogImage = url('/assets/og/' . ($o['og'] ?? 'home') . '.jpg');
+  // The picture's own version in its address, so a remade picture is fetched fresh, not from a 30-day cache.
+  $ogFile = '/assets/og/' . ($o['og'] ?? 'home') . '.jpg';
+  $ogImage = url($ogFile) . '?v=' . asset_v($ogFile);
   $ogType = $o['ogType'] ?? 'website';
   $ogAlt = h($o['ogAlt'] ?? $o['title']);
   $robots = !empty($o['noindex']) ? 'noindex, follow' : 'index, follow, max-image-preview:large';

@@ -918,7 +918,7 @@ $HEAVEN = [
 
 $WORLD_DATA['heaven'] = [
   'title'    => 'Heavenly City: the story of Jesus in 35 places',
-  'desc'     => 'Explore an imagined heavenly city of gold and light and follow the story of Jesus, as the Bible tells it, in 35 parts from place to place.',
+  'desc'     => 'Explore an imagined heavenly city of gold and light and follow the story of Jesus, as the Bible tells it, in 35 parts, with photos of the real places.',
   'intro'    => 'An imagined city of gold and light, where the story of Jesus unfolds as you explore. Each of its 35 places tells one part of the Gospel, as the Bible tells it, from the first garden to the city of God.',
   'note'     => 'The city and its art are imagined, inspired by the Bible\'s picture of the heavenly city in the Book of Revelation. Its story is the Gospel, the good news of Jesus, told in the Bible\'s own words with chapter and verse, so you can read it for yourself.',
   'aka'      => 'Read it in the Bible',

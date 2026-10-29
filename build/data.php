@@ -12,7 +12,7 @@ $WORLDS = [
   ],
   'heaven' => [
     'name' => 'Heavenly City', 'short' => 'Heavenly', 'type' => 'Imagined setting, inspired by the Bible',
-    'lead' => 'An imagined city of gold and light. Explore its 35 places to follow the story of Jesus, part by part, as the Bible tells it.',
+    'lead' => 'An imagined city of gold and light. Explore its 35 places to follow the story of Jesus, as the Bible tells it, with photos of the real places.',
     'card' => 'palace-of-light', 'ground' => 'ground-grass',
   ],
   'roman' => [

@@ -1,0 +1,37 @@
+# page|Wikimedia Commons search terms, separated by ;  (one photo per search)
+# Only public domain, CC0, CC BY and CC BY-SA images are accepted (see tools/fetch-photos.php).
+# The Heavenly City tells the story of Jesus: these are the real places and things its pages mention.
+tree-of-life|Great Basin bristlecone pine
+rainbow-pavilion|Double rainbow
+angel-statue|Basilica of the Annunciation Nazareth facade;Angel of the North
+welcome-hall|Church of the Nativity Bethlehem;Door of Humility Church of the Nativity
+bell-tower|Shepherds Field Beit Sahour;Liberty Bell Philadelphia
+palace-of-light|Herodium aerial
+hall-of-wisdom|Jerusalem Model Israel Museum Second Temple
+dove-statue|Al-Maghtas baptism site Jordan River
+garden-villa|Cana wedding church Kafr Kanna
+lamp-tower|Citadel of Qaitbay Alexandria
+fountain-of-life|Jacob's Well Nablus
+scroll-library|Isaiah Scroll Dead Sea Scrolls detail
+swan-boat|Ancient Galilee Boat Ginosar;Sea of Galilee view Tiberias
+lantern-circle|Church of the Beatitudes
+school-of-wisdom|Church of the Pater Noster cloister
+lily-garden|Anemone coronaria Israel field
+light-crane|Leaning Tower of Pisa
+spring-pool|Pool of Bethesda Jerusalem
+sharing-pavilion|Tabgha mosaic loaves and fishes
+marble-cottage|Ashley Down orphan houses Bristol
+golden-track|Estadi Olimpic Lluis Companys
+hall-of-treasures|Tel Jericho;Sycamore of Zacchaeus Jericho
+fruit-donkey|African wild ass Equus africanus
+banquet-hall|Leonardo da Vinci The Last Supper high resolution;Room of the Last Supper Mount Zion
+prayer-chapel|Church of All Nations Jerusalem;Garden of Gethsemane
+victors-arena|Pilate stone;Caesarea Maritima theater
+sky-bridge|Church of the Holy Sepulchre facade
+building-materials|Rolling stone tomb Jerusalem
+garden-of-light|Garden Tomb Jerusalem tomb entrance
+cloud-island|Cumulus clouds
+golden-chariot|Meroe pyramids
+harp-workshop|Philippi archaeological site;Oxyrhynchus hymn papyrus
+cloud-carriage|Shanghai maglev train
+pearl-gate|Pearl oyster
