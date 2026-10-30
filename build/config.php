@@ -13,7 +13,7 @@ const STORE_URL = 'https://theatlasofcities.lemonsqueezy.com';
 // Each 'price' is what the store charges for that product. 'from' means pay what you want, from that price.
 // The Support page sends visitors to the shop.
 const SHOP = [
-  'life-rpg'       => ['price' => '$5', 'buy' => '', 'open' => 'https://life-rpg.koaa01.workers.dev/'],
+  'life-rpg'       => ['price' => '$5', 'buy' => '', 'open' => 'https://life-rpg.atlasofcities.org/'],
   'city-builders'  => ['price' => '$3.99', 'buy' => ''],
   'classroom-pack' => ['price' => '$5.99', 'buy' => ''],
   'posters'        => ['price' => '$2', 'buy' => '', 'from' => true],
