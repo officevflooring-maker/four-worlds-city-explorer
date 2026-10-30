@@ -1,11 +1,16 @@
 <?php
 // Checks every generated page in public/: internal links and images resolve to real files,
 // images have alt text, each page has one h1, a title and a description, and no page except
-// /credits/ and /support/ links to other websites. The same checks as the first version of
-// check-site.sh, in one PHP process, so it runs in seconds. Usage: php tools/check-site.php
+// /credits/ and /support/ links to other websites (the shop's Buy links to the store's checkout and
+// Life RPG's own address are fine). The same checks as the first version of check-site.sh, in one
+// PHP process, so it runs in seconds. Usage: php tools/check-site.php
 $pub = realpath(__DIR__ . '/../public');
-preg_match("~const SITE_URL *= *'([^']+)~", file_get_contents(__DIR__ . '/../build/config.php'), $m);
+$config = file_get_contents(__DIR__ . '/../build/config.php');
+preg_match("~const SITE_URL *= *'([^']+)~", $config, $m);
 $site = $m[1];
+preg_match("~const STORE_URL *= *'([^']+)~", $config, $m);
+$linksOut = [$site, $m[1] . '/checkout/buy/', 'creativecommons.org/licenses/by/4.0'];
+if (preg_match("~'open' *=> *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
 $fail = 0; $n = 0; $pages = 0;
 $exists = [];
 $ok = function ($r) use ($pub, &$exists) {
@@ -36,7 +41,7 @@ foreach ($files as $p) {
   if (!preg_match('~<meta name="description" content="[^"]~', $h)) { echo "NO DESC $p\n"; $fail = 1; }
   if ($p !== '/credits/index.html' && $p !== '/support/index.html') {
     preg_match_all('~href="(https?://[^"]+)~', $h, $a);
-    $ext = count(array_filter($a[1], fn($u) => strpos($u, 'creativecommons.org/licenses/by/4.0') === false && strpos($u, $site) === false));
+    $ext = count(array_filter($a[1], fn($u) => !array_filter($linksOut, fn($ok) => strpos($u, $ok) !== false)));
     if ($ext) { echo "OUTLINK $p ($ext)\n"; $fail = 1; }
   }
 }
