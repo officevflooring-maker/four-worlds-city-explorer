@@ -10,20 +10,21 @@ const SITE_DESC = 'Explore six illustrated cities, from ancient Egypt and Rome t
 const STORE_URL = 'https://theatlasofcities.lemonsqueezy.com';
 // The shop (build/shop.php): things for grown-ups to buy, each with its own page. While a product's 'buy' link is
 // empty its page says "Coming soon". At launch, paste in the store's checkout link. 'open' is where Life RPG lives.
-// 'from' means pay what you want, from that price. The Support page sends visitors to the shop.
+// Each 'price' is what the store charges for that product. 'from' means pay what you want, from that price.
+// The Support page sends visitors to the shop.
 const SHOP = [
   'life-rpg'       => ['price' => '$5', 'buy' => '', 'open' => 'https://life-rpg.koaa01.workers.dev/'],
-  'city-builders'  => ['price' => '$3', 'buy' => ''],
-  'classroom-pack' => ['price' => '$5', 'buy' => ''],
+  'city-builders'  => ['price' => '$3.99', 'buy' => ''],
+  'classroom-pack' => ['price' => '$5.99', 'buy' => ''],
   'posters'        => ['price' => '$2', 'buy' => '', 'from' => true],
-  'journey'        => ['price' => '$4', 'buy' => ''],
-  'bingo'          => ['price' => '$4', 'buy' => ''],
-  'planners'       => ['price' => '$3', 'buy' => ''],
-  'trivia'         => ['price' => '$4', 'buy' => ''],
-  'wordwall'       => ['price' => '$4', 'buy' => ''],
-  'calendar'       => ['price' => '$3', 'buy' => ''],
-  'playset'        => ['price' => '$5', 'buy' => ''],
-  'activity'       => ['price' => '$4', 'buy' => ''],
+  'journey'        => ['price' => '$4.99', 'buy' => ''],
+  'bingo'          => ['price' => '$4.99', 'buy' => ''],
+  'planners'       => ['price' => '$3.99', 'buy' => ''],
+  'trivia'         => ['price' => '$4.99', 'buy' => ''],
+  'wordwall'       => ['price' => '$4.99', 'buy' => ''],
+  'calendar'       => ['price' => '$3.99', 'buy' => ''],
+  'playset'        => ['price' => '$5.99', 'buy' => ''],
+  'activity'       => ['price' => '$4.99', 'buy' => ''],
 ];
 // Google Search Console verification code (meta tag on the home page). Empty: the domain is verified as a Domain
 // property by a TXT record in Cloudflare's DNS, which needs no tag.
