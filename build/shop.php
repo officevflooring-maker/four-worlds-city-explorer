@@ -80,13 +80,23 @@ function shop_trust($slug) {
   return '<ul class="shop-trust">' . implode('', array_map(fn($p) => '<li>' . h($p) . '</li>', $points)) . '</ul>';
 }
 // Structured data for search engines: the product, with its price once it is on sale.
+// Everything is a download, so delivery is free and instant; the refund policy is the shop page's (#refunds).
 function shop_ld($slug, $desc) {
   global $SHOP_INFO;
   [$name, $url] = $SHOP_INFO[$slug];
   $ld = ['@context' => 'https://schema.org', '@type' => 'Product', 'name' => $name, 'description' => $desc, 'url' => url($url),
     'image' => url('/assets/og/' . $slug . '.jpg'), 'brand' => ['@type' => 'Brand', 'name' => SITE_NAME]];
+  $days = fn($n) => ['@type' => 'QuantitativeValue', 'minValue' => $n, 'maxValue' => $n, 'unitCode' => 'DAY'];
   if (shop_open($slug)) $ld['offers'] = ['@type' => 'Offer', 'price' => ltrim(SHOP[$slug]['price'], '$'), 'priceCurrency' => 'USD',
-    'availability' => 'https://schema.org/InStock', 'url' => SHOP[$slug]['buy']];
+    'availability' => 'https://schema.org/InStock', 'url' => SHOP[$slug]['buy'],
+    'shippingDetails' => ['@type' => 'OfferShippingDetails',
+      'shippingRate' => ['@type' => 'MonetaryAmount', 'value' => 0, 'currency' => 'USD'],
+      'shippingDestination' => ['@type' => 'DefinedRegion', 'addressCountry' => 'US'],
+      'deliveryTime' => ['@type' => 'ShippingDeliveryTime', 'handlingTime' => $days(0), 'transitTime' => $days(0)]],
+    'hasMerchantReturnPolicy' => ['@type' => 'MerchantReturnPolicy', 'applicableCountry' => 'US',
+      'returnPolicyCategory' => 'https://schema.org/MerchantReturnFiniteReturnWindow', 'merchantReturnDays' => 30,
+      'returnFees' => 'https://schema.org/FreeReturn', 'refundType' => 'https://schema.org/FullRefund',
+      'merchantReturnLink' => url('/shop/#refunds')]];
   return $ld;
 }
 function shop_gallery($pics) {
@@ -410,6 +420,7 @@ page('/shop/', [
     <li>Everything is a single payment. No subscriptions and no ads.</li>
     <li>Payment happens on our store's website, under its own privacy policy. This site never sees payment details.</li>
     <li>Your receipt email has your download links, so you can download again later.</li>
+    <li id="refunds">If something doesn't work, you get a full refund within 30 days. Write to us from your receipt email.</li>
     <li>A grown-up buys. Under 18? Ask a parent first.</li>
   </ul>
 </section>
