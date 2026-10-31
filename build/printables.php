@@ -177,15 +177,15 @@ shop_page('playset', [
     . shop_feats([
       ['🗺️', 'A big play mat', 'Four pages, about 16 by 21 inches together, with six districts and their streets.'],
       ['🏛️', '36 buildings', 'Six from every world, each with its name, from homes to the grandest landmarks.'],
-      ['🧍', '36 people', 'Six from every world, ready to walk your streets.'],
-      ['🚗', '24 vehicles', 'Chariots, taxis, hover cars, swan boats and more: four from every world.'],
+      ['🧍', '30 people', 'Six from every world except the Green World, ready to walk your streets.'],
+      ['🚗', '23 vehicles', 'Chariots, taxis, hover cars, swan boats and more: four from most worlds, three from the Green World.'],
       ['✅', 'A city checklist', 'Does your city have water, homes, food and the other things people need?'],
       ['🖨️', 'Print as often as you like', 'Make a whole city of copies, or a new set when the old one is loved to pieces.'],
     ]) . '</div></section>'
     . shop_pages([
       ['1', 'The guide: making the set, ways to play, and the ten needs checklist'],
       ['2 to 5', 'The play mat, in four parts to tape together'],
-      ['6 to 17', 'Stand-ups, two pages for each world: six buildings, then six people and four vehicles'],
+      ['6 to 17', 'Stand-ups, two pages for each world: six buildings, then its people and vehicles'],
     ], 'A PDF of 17 pages, in US Letter and A4.')
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
