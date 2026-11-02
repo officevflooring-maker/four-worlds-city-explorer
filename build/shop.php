@@ -162,8 +162,8 @@ $lrpgShots = shop_gallery(array_map(function ($s) {
 }, [
   ['today', 'The Today screen: level 7, an 18-day streak and three quests for the day.', "Today's quests"],
   ['hero', 'The Hero screen: a painted hero in a Roman toga, the next unlock and progress in seven skills.', 'Your hero and skills'],
+  ['chests', 'The Chests screen: 42 keys, a common, a gold and an emerald chest to open, and 5 of 22 treasures found.', 'Keys and chests'],
   ['wins', 'The Wins screen: records like quests done and the best streak, quest levels and badges.', 'Records and badges'],
-  ['trees', 'A skill tree: steps unlocked by real progress, like Focus Mode and Streak Keeper.', 'Skill trees'],
   ['bosses', 'Boss battles: big tasks you have been putting off, each with a large XP reward.', 'Boss battles'],
   ['rewards', 'Rewards bought with XP: a movie night, new headphones and a weekend trip.', 'Your own rewards'],
 ]));
@@ -214,6 +214,7 @@ shop_page('life-rpg', [
     . shop_feats([
       ['⚔️', 'Daily quests', 'Pick three to five a day. A daily chest rewards coming back.'],
       ['⭐', 'Levels and XP', 'Quests level up the more you do them, and pay more.'],
+      ['🗝️', 'Keys and chests', 'Every quest earns a key. Open chests for bonus XP and treasures to collect.'],
       ['👹', 'Boss battles', 'One hard thing you\'ve been putting off, with a big reward.'],
       ['🌳', 'Seven skill trees', 'Skills, badges and titles, unlocked only by real progress.'],
       ['🧭', 'Plan my day', 'Suggestions for what to do next, from your own 90-day priorities.'],
