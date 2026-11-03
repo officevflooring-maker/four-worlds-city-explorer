@@ -1,6 +1,6 @@
 <?php
-// Guided tours (/tours/ and /tours/{slug}/): a short walk through one world, led by one of the
-// people from build/people.php, stopping at building pages. Included from build.php after worldpages.php.
+// Guided tours (/tours/ and /tours/{slug}/): a short walk through one world, led by a guide from the Life RPG game
+// (tools/copy-bonus-art.sh) or one of the people from build/people.php, stopping at building pages. Included from build.php after worldpages.php.
 // Each stop: [world/slug, what the guide says, a question to think about].
 
 $TOURS = [
@@ -26,12 +26,12 @@ $TOURS = [
   'teach' => 'what-does-a-city-need',
 ],
 'roman-engineering' => [
-  'world' => 'roman', 'guide' => 'worker-1',
+  'world' => 'roman', 'guide' => 'guide', 'guideName' => 'Young engineer', 'guideRole' => 'Measures and plans buildings',
   'title' => 'Roman engineering tour: water, roads and concrete',
   'h1' => 'Roman engineering',
   'desc' => 'A guided tour of how Roman engineers built aqueducts, roads, baths, cranes and the Pantheon\'s concrete dome, with questions at every stop.',
   'theme' => 'Water, roads and building methods',
-  'intro' => 'I carry stone for a living, so I know how hard building is. Walk with me and see how Roman engineers moved water, stone and people with simple machines and clever materials.',
+  'intro' => 'I\'m learning to be an engineer, so I always carry my measuring rod. Walk with me and see how Roman builders moved water, stone and people with simple machines and clever materials.',
   'time' => '20 to 30 minutes', 'grades' => '4-10',
   'stops' => [
     ['roman/building-materials', 'Start with the materials. Romans built with stone, brick, timber and concrete made with volcanic ash. Their concrete could even set underwater.', 'Why might volcanic ash make concrete stronger?'],
@@ -47,7 +47,7 @@ $TOURS = [
   'teach' => 'build-a-roman-aqueduct',
 ],
 'modern-neighborhoods' => [
-  'world' => 'modern', 'guide' => 'people-3',
+  'world' => 'modern', 'guide' => 'guide', 'guideName' => 'Young explorer', 'guideRole' => 'Finds the way with a map',
   'title' => 'Modern neighborhood tour: getting around and public spaces',
   'h1' => 'Modern neighborhoods',
   'desc' => 'A guided walk through a modern town: streets, cars, deliveries, libraries, parks and access for everyone, with questions at every stop.',
@@ -68,7 +68,7 @@ $TOURS = [
   'teach' => 'explore-your-town-scavenger-hunt',
 ],
 'ecological-design' => [
-  'world' => 'green', 'guide' => 'gardener', 'guideName' => 'Gardener', 'guideRole' => 'Looks after the gardens and meadows',
+  'world' => 'green', 'guide' => 'guide', 'guideName' => 'Gardener', 'guideRole' => 'Looks after the gardens and meadows',
   'title' => 'Ecological design tour: water, plants and shared land',
   'h1' => 'Ecological design',
   'desc' => 'A guided tour of the imagined green city and the real nature-based ideas behind it: clean water, wetlands, green roofs, meadows, compost and the commons.',
@@ -89,12 +89,12 @@ $TOURS = [
   'teach' => 'biomimicry-examples-for-students',
 ],
 'robotic-cities' => [
-  'world' => 'future', 'guide' => 'people-2',
+  'world' => 'future', 'guide' => 'guide', 'guideName' => 'Helper robot', 'guideRole' => 'Carries supplies around the settlement',
   'title' => 'Robotic future tour: technology, energy and who decides',
   'h1' => 'Human choices in robotic cities',
   'desc' => 'A guided tour of an imagined Moon and Mars settlement: power, robots, self-driving vehicles, recycling and who makes the decisions.',
   'theme' => 'Technology, energy and who decides',
-  'intro' => 'I\'m an engineer at the settlement. Robots do a lot of the work here, but people still make the choices. Let\'s see who decides what.',
+  'intro' => 'Hello! I\'m a helper robot. Robots like me do a lot of the work here, but people make the choices. Let\'s see who decides what.',
   'time' => '20 to 30 minutes', 'grades' => '5-12',
   'stops' => [
     ['future/power-tower', 'Everything here needs power, all the time. Solar works by day; small nuclear reactors could work through the long lunar night.', 'What is the most important thing to keep powered in an emergency?'],
@@ -109,12 +109,12 @@ $TOURS = [
   'teach' => 'design-a-mars-colony-project',
 ],
 'city-of-goodness' => [
-  'world' => 'heaven', 'guide' => 'people-5',
+  'world' => 'heaven', 'guide' => 'guide', 'guideName' => 'Lantern carrier', 'guideRole' => 'Lights the way through the city',
   'title' => 'Heavenly City tour: the story of Jesus in ten stops',
   'h1' => 'The story of Jesus',
-  'desc' => 'A guided walk through the imagined Heavenly City with an elder, telling the story of Jesus as the Bible tells it, from the first garden to the empty tomb.',
+  'desc' => 'A guided walk through the imagined Heavenly City with a young guide, telling the story of Jesus as the Bible tells it, from the first garden to the empty tomb.',
   'theme' => 'The good news of Jesus, from beginning to end',
-  'intro' => 'I have walked a long way in my life, and this is the best story I know. Walk with me through the city, and I will tell you the story of Jesus, as the Bible tells it.',
+  'intro' => 'Welcome! I carry this lantern to light the way. This is the best story I know. Walk with me through the city, and I will tell you the story of Jesus, as the Bible tells it.',
   'time' => '20 to 30 minutes', 'grades' => '2-8',
   'stops' => [
     ['heaven/tree-of-life', 'We start where the Bible starts. God made a good world, but people turned away from him, and they lost the tree of life.', 'Why do you think God did not give up on the people he made?'],
@@ -137,8 +137,8 @@ function person_img($w, $file, $sizes = '120px', $alt = '') {
   return img($w, $file, $alt, $sizes, 'loading="lazy"');
 }
 
-// A tour's guide: [name, role]. Usually a person of its world; the Green World's tour is guided by the gardener from
-// the Life RPG game's guides instead (its own 'guideName' and 'guideRole', copied by tools/copy-bonus-art.sh).
+// A tour's guide: [name, role]: a person of its world, or a guide from the Life RPG game with its own 'guideName' and
+// 'guideRole' (pictures copied by tools/copy-bonus-art.sh).
 function tour_guide($t) {
   global $PEOPLE;
   if (isset($PEOPLE[$t['world']][$t['guide']])) return array_slice($PEOPLE[$t['world']][$t['guide']], 0, 2);
@@ -178,7 +178,7 @@ $tourCards = '';
 foreach (array_keys($TOURS) as $slug) $tourCards .= tour_card($slug);
 page('/tours/', [
   'title' => 'Guided tours of the city worlds',
-  'desc' => h('Six short guided tours, one through each world, led by one of its people, with a question at every stop. For families and classrooms.'),
+  'desc' => h('Six short guided tours, one through each world, each with a friendly guide and a question at every stop. For families and classrooms.'),
   'class' => 'tours',
   'body' => <<<HTML
 <div class="wrap">
@@ -187,7 +187,7 @@ page('/tours/', [
 <section class="wrap section page-head">
   <p class="tag">Guided tours</p>
   <h1>Take a guided tour</h1>
-  <p class="lead">Short walks through each world, led by one of its people. Every stop has a picture, a short explanation and a question to talk about. Use them on your own, as a family or with a class.</p>
+  <p class="lead">Short walks through each world, each with a friendly guide. Every stop has a picture, a short explanation and a question to talk about. Use them on your own, as a family or with a class.</p>
   <ul class="tour-grid">{$tourCards}</ul>
 </section>
 HTML,

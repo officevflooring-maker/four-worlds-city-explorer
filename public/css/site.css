@@ -613,7 +613,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .tour-card a { position: relative; display: flex; flex-direction: column; height: 100%; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; color: var(--ink); text-decoration: none; transition: box-shadow .2s, transform .2s; }
 .tour-card a:hover { box-shadow: 0 12px 28px rgb(0 0 0 / .18); transform: translateY(-3px); }
 .tour-guide { display: grid; place-items: center; height: 150px; background: radial-gradient(circle at 50% 70%, color-mix(in srgb, var(--accent) 30%, #fff), color-mix(in srgb, var(--accent) 12%, #fff) 70%); border-bottom: 5px solid var(--accent); }
-.tour-guide img { width: 130px; }
+.tour-guide img { width: auto; height: 130px; }
 .tour-text { display: flex; flex-direction: column; gap: .2rem; padding: .9rem 1.1rem 1.1rem; flex: 1; }
 .tour-text .tag { margin: 0; }
 .tour-title { font: 700 1.25rem/1.2 var(--serif); color: var(--accent); }
@@ -1382,7 +1382,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .play-line { margin: .8rem 0 0; }
 /* Egypt and Heaven people pictures leave more room above the head (PEOPLE_SCALE in build/people.php), so they are
    drawn a little bigger wherever people stand side by side with the other worlds'. */
-.crowd .world-egypt img, .crowd .world-heaven img, .tour-card.world-egypt .tour-guide img, .tour-card.world-heaven .tour-guide img,
+.crowd .world-egypt img, .crowd .world-heaven img, .tour-card.world-egypt .tour-guide img,
 .person.world-egypt .person-art img, .person.world-heaven .person-art img { transform: scale(1.12); transform-origin: 50% 100%; }
 .crowd .world-egypt a:hover img, .crowd .world-heaven a:hover img { transform: translateY(-6%) scale(1.12); }
 

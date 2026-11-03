@@ -78,7 +78,7 @@ page('/teachers/', [
 </section>
 <section class="wrap section" aria-labelledby="tours-h">
   <h2 id="tours-h">Guided tours</h2>
-  <p>{$tourCount} short walks, one through each world, led by one of its people, with a question at every stop. Use them on your own, as a family or with a class. <a href="/tours/">All guided tours</a></p>
+  <p>{$tourCount} short walks, one through each world, each with a friendly guide and a question at every stop. Use them on your own, as a family or with a class. <a href="/tours/">All guided tours</a></p>
   <ul class="tour-grid">{$teachTours}</ul>
 </section>
 <div class="wrap">{$hubBody}</div>

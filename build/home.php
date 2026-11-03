@@ -197,7 +197,7 @@ page('/', [
 
 <section class="band band-dark" aria-labelledby="tours-h">
   <div class="wrap">
-    <div class="sec-head"><h2 id="tours-h">Take a guided tour</h2><p>Short walks led by someone who lives there, with a question at every stop.</p></div>
+    <div class="sec-head"><h2 id="tours-h">Take a guided tour</h2><p>Short walks with a friendly guide and a question at every stop.</p></div>
     <ul class="tour-grid">{$tourCards}</ul>
   </div>
 </section>
