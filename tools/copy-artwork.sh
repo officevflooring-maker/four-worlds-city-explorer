@@ -23,6 +23,15 @@ for world in roman modern green future; do
       echo "ok $world/$name"
     done
   done
+  # the New Town house and shop came later, straight to the Life RPG game's inbox
+  for f in "$LRPG/inbox/done/$src/"nt_{house,shop}.png; do
+    [ -f "$f" ] || continue
+    stem=$(basename "$f" .png); out="$ROOT/public/assets/artwork/$world/${stem//_/-}"
+    [ -f "$out.webp" ] && continue
+    ffmpeg -nostdin -loglevel error -y -i "$f" -c:v libwebp -quality 88 -compression_level 4 "$out.webp"
+    ffmpeg -nostdin -loglevel error -y -i "$f" -vf "scale=480:-2:flags=lanczos" -c:v libwebp -quality 80 -compression_level 4 "$out-thumb.webp"
+    echo "ok $world/${stem//_/-}"
+  done
 done
 # Ancient Egypt and the Heavenly City: every picture in one folder of the Life RPG game (its full-size originals),
 # named the same way. The horizon comes from the game's own cut-out, since the original still has its magenta sky.

@@ -23,6 +23,7 @@ $ART_TITLES = [
     'knowledge-1' => 'Public library', 'knowledge-2' => 'School', 'knowledge-3' => 'Science center and observatory',
     'monument' => 'Obelisk monument', 'nt-garden' => 'Community garden', 'nt-statue' => 'Statue on a plinth',
     'nt-tower' => 'Lookout tower', 'nt-workshop' => 'Workshop and warehouse',
+    'nt-house' => 'Cottage with a swing set', 'nt-shop' => 'Fruit and flower stand',
     'shared-1' => 'Fire pit gathering place', 'shared-2' => 'Treehouse', 'shared-3' => 'Community center',
     'town-1' => 'Town hall', 'town-2' => 'Clock tower', 'town-3' => 'Capitol building',
     'tree-1' => 'Oak tree', 'tree-2' => 'Red maple', 'tree-3' => 'Fir tree', 'tree-4' => 'Round leafy tree',
@@ -37,6 +38,7 @@ $ART_TITLES = [
     'knowledge-1' => 'Tree library', 'knowledge-2' => 'Treehouse school', 'knowledge-3' => 'Domed observatory',
     'monument' => 'Stag monument', 'nt-garden' => 'Flower meadow', 'nt-statue' => 'Deer statue',
     'nt-tower' => 'Firefly tower', 'nt-workshop' => 'Woodworking workshop',
+    'nt-house' => 'Tree house with a spiral stair', 'nt-shop' => 'Mushroom market stall',
     'shared-1' => 'Gathering circle', 'shared-2' => 'Treetop village', 'shared-3' => 'Grand tree hall',
     'town-1' => 'Council terrace', 'town-2' => 'Seasons tower', 'town-3' => 'Palace', 'trees' => 'Wild grove',
     'tree-1' => 'Great oak', 'tree-2' => 'Blossom tree', 'tree-3' => 'Willow tree', 'tree-4' => 'Lantern tree',
@@ -51,13 +53,14 @@ $ART_TITLES = [
     'knowledge-1' => 'Research lab', 'knowledge-2' => 'Glass lab', 'knowledge-3' => 'Radio telescope',
     'monument' => 'Robot monument', 'nt-garden' => 'Indoor farm', 'nt-statue' => 'Hologram statue',
     'nt-tower' => 'Communication tower', 'nt-workshop' => 'Robotics factory',
+    'nt-house' => 'Capsule home with solar panels', 'nt-shop' => 'Glass-front store',
     'shared-1' => 'Public plaza', 'shared-2' => 'Tree pod habitat', 'shared-3' => 'Civic dome',
     'town-1' => 'Command center', 'town-2' => 'Launch pad', 'town-3' => 'Spaceport',
     'tree-1' => 'Pine tree', 'tree-2' => 'Planter cypress', 'tree-3' => 'Ringed tree', 'tree-4' => 'Light tree',
   ],
   // pictures with no page of their own (the other Egypt and Heaven pictures are titled by their pages)
   'egypt' => [
-    'floor-l' => 'Tower house',
+    'floor-l' => 'Tower house', 'nt-house' => 'House with a roof terrace', 'nt-shop' => 'Pottery stall',
     'tree-1' => 'Date palm', 'tree-2' => 'Doum palm', 'tree-3' => 'Sycamore fig', 'tree-4' => 'Papyrus reeds',
     'horizon' => 'Desert horizon with pyramids', 'tex-grass' => 'Ground: sand and grass', 'tex-far' => 'Ground: desert dunes',
     'tex-water' => 'Ground: the Nile', 'tex-plaza' => 'Ground: painted sandstone paving', 'tex-road' => 'Ground: sandstone road',
@@ -65,12 +68,14 @@ $ART_TITLES = [
   'heaven' => [
     'floor-s' => 'Little domed house', 'floor-m' => 'Marble house with balconies', 'floor-l' => 'Spire tower',
     'home-a' => 'Round domed house', 'home-b' => 'Villa with a gold roof', 'island-2' => 'Floating tower island',
+    'nt-house' => 'House with a golden dome', 'nt-shop' => 'Fruit pavilion',
     'tree-1' => 'Cypress tree', 'tree-2' => 'White blossom tree', 'tree-3' => 'Golden tree', 'tree-4' => 'Tree of flowering vines',
     'horizon' => 'Horizon: a sea of clouds', 'tex-grass' => 'Ground: clouds', 'tex-far' => 'Ground: a sea of clouds',
     'tex-water' => 'Ground: clear water', 'tex-plaza' => 'Ground: marble with gold stars', 'tex-road' => 'Ground: golden street',
     'tex-cross' => 'Ground: golden crossroads', 'tex-lot' => 'Ground: marble building lot',
   ],
   'roman' => [
+    'nt-house' => 'Villa with a columned porch', 'nt-shop' => 'Bakery with a striped awning',
     'tree-1' => 'Cypress tree', 'tree-2' => 'Umbrella pine', 'tree-3' => 'Olive tree', 'tree-4' => 'Fig tree',
   ],
 ];
