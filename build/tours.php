@@ -5,7 +5,7 @@
 
 $TOURS = [
 'life-on-the-nile' => [
-  'world' => 'egypt', 'guide' => 'people-2',
+  'world' => 'egypt', 'guide' => 'guide', 'guideName' => 'Young scribe', 'guideRole' => 'Keeps the city\'s records',
   'title' => 'Ancient Egypt tour: life on the Nile',
   'h1' => 'Life on the Nile',
   'desc' => 'A guided walk through an Egyptian city with a scribe: the river and granaries, markets without money, a scribe school, temples and the pyramids.',

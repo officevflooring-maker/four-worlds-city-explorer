@@ -2,8 +2,8 @@
 # Copies the Life RPG game's "bonus" art used on the site. Source folders are only read, never changed.
 #   guide_{world}: the guide who leads each world's tour (cut to the figure)
 #     -> public/assets/worlds/{world}/guide-{256,512}.webp
-#     Ancient Egypt's guide is left out: the first one has elf ears and the redraw a falcon crest, so its tour is
-#     led by its scribe until a plain redraw arrives.
+#     Ancient Egypt's guide is the redraw without elf ears (the game took it in at 15:06 on 2026-11-03); the files
+#     below skip the older picture with elf ears.
 #   cert_{world}: the certificate frames, and seal: the gold seal, for the tour certificates
 #     -> public/assets/certificates/{world}-{768,1536}.webp and seal-{160,320}.webp
 # Usage: bash tools/copy-bonus-art.sh   (needs ffmpeg with libwebp; skips files that already exist)
@@ -17,9 +17,10 @@ webp() { # in, out, filter, quality
 C="$ROOT/public/assets/certificates"
 mkdir -p "$C"
 # Where each figure sits in its 1024 x 1024 picture (w:h:x:y). The Green World's source files are named "elven".
-declare -A FIG=([roman]=778:1016:98:4 [modern]=886:1014:46:6 [green]=874:983:93:31 [future]=902:994:87:13 [heaven]=908:1012:51:0)
+declare -A FIG=([roman]=778:1016:98:4 [modern]=886:1014:46:6 [green]=874:983:93:31 [future]=902:994:87:13 [heaven]=908:1012:51:0 [egypt]=872:1019:51:5)
 for world in "${!FIG[@]}"; do
   src="$world"; [ "$world" = green ] && src=elven
+  [ "$world" = egypt ] && [ -z "$(find "$B/guide_egypt.png" -newermt '2026-11-03 15:00')" ] && { echo "skip egypt: the guide with elf ears"; continue; }
   fig="crop=${FIG[$world]},format=rgba"
   webp "$B/guide_$src.png" "$ROOT/public/assets/worlds/$world/guide-256.webp" "$fig,scale=256:-2:flags=lanczos" 82
   webp "$B/guide_$src.png" "$ROOT/public/assets/worlds/$world/guide-512.webp" "$fig,scale=512:-2:flags=lanczos" 85

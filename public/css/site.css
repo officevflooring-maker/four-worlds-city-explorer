@@ -1382,7 +1382,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .play-line { margin: .8rem 0 0; }
 /* Egypt and Heaven people pictures leave more room above the head (PEOPLE_SCALE in build/people.php), so they are
    drawn a little bigger wherever people stand side by side with the other worlds'. */
-.crowd .world-egypt img, .crowd .world-heaven img, .tour-card.world-egypt .tour-guide img,
+.crowd .world-egypt img, .crowd .world-heaven img,
 .person.world-egypt .person-art img, .person.world-heaven .person-art img { transform: scale(1.12); transform-origin: 50% 100%; }
 .crowd .world-egypt a:hover img, .crowd .world-heaven a:hover img { transform: translateY(-6%) scale(1.12); }
 
