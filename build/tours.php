@@ -137,8 +137,8 @@ function person_img($w, $file, $sizes = '120px', $alt = '') {
   return img($w, $file, $alt, $sizes, 'loading="lazy"');
 }
 
-// A tour's guide: [name, role]. Usually a person of its world; the Green World has no people yet, so its tour is
-// guided by the gardener from the Life RPG game (its own 'guideName' and 'guideRole', copied by tools/copy-bonus-art.sh).
+// A tour's guide: [name, role]. Usually a person of its world; the Green World's tour is guided by the gardener from
+// the Life RPG game's guides instead (its own 'guideName' and 'guideRole', copied by tools/copy-bonus-art.sh).
 function tour_guide($t) {
   global $PEOPLE;
   if (isset($PEOPLE[$t['world']][$t['guide']])) return array_slice($PEOPLE[$t['world']][$t['guide']], 0, 2);

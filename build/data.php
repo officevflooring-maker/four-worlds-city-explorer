@@ -27,7 +27,6 @@ $WORLDS = [
   ],
   'green' => [
     'name' => 'Green World', 'short' => 'Green', 'type' => 'Imaginative design setting',
-    'face' => 'flower-cart',   // no people live here: this picture stands for the world
     'lead' => 'An imagined city that grows with the forest. Each of 35 buildings is paired with real nature-based technology.',
     'card' => 'treetop-village', 'ground' => 'ground-meadow',
   ],

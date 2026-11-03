@@ -104,9 +104,9 @@ foreach ($parade as [$w, $v, $era]) {
     . img($w, $v, '', '(min-width: 900px) 240px, 40vw', 'loading="lazy"') . '<span class="veh-name">' . h($WORLD_DATA[$w]['pages'][$v]['name']) . '</span><span class="what">' . h($WORLDS[$w]['name']) . '</span></a></li>';
 }
 
-// People strip: two from each world (the Green World has no people).
+// People strip: two from each world.
 $crowd = '';
-foreach ([['egypt', 'people-2'], ['egypt', 'people-6'], ['roman', 'people-1'], ['roman', 'people-6'], ['modern', 'people-5'], ['modern', 'worker-1'], ['future', 'people-5'], ['future', 'people-6'], ['heaven', 'people-2'], ['heaven', 'people-3']] as [$w, $f]) {
+foreach ([['egypt', 'people-2'], ['egypt', 'people-6'], ['roman', 'people-1'], ['roman', 'people-6'], ['modern', 'people-5'], ['modern', 'worker-1'], ['green', 'people-3'], ['green', 'worker-2'], ['future', 'people-5'], ['future', 'people-6'], ['heaven', 'people-2'], ['heaven', 'people-3']] as [$w, $f]) {
   $crowd .= '<li class="world-' . $w . '"><a href="/worlds/' . $w . '/people/#' . $f . '">' . img($w, $f, '', '(min-width: 900px) 140px, 22vw', 'loading="lazy"')
     . '<span class="p-name">' . h($PEOPLE[$w][$f][0]) . '</span><span class="what">' . h($WORLDS[$w]['short']) . '</span></a></li>';
 }

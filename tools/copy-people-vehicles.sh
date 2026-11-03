@@ -4,8 +4,8 @@
 #     -> public/assets/worlds/{world}/{people-1..6,worker-1..2}-{256,512}.webp   (site use)
 #     -> public/assets/artwork/{world}/{name}.webp and {name}-thumb.webp      (Artwork page)
 #   Vehicles: vehicle-batch-01 car_N (front view) and car_N_back (back view)
-#   Ancient Egypt and the Heavenly City: the same pictures from the Life RPG game's full-size originals
-#     (art/inbox/done/{world}/people_N, worker_N and car_N[_back])
+#   Ancient Egypt, the Heavenly City and the Green World's people: the same pictures from the Life RPG game's
+#     full-size originals (art/inbox/done/{world}/people_N, worker_N and car_N[_back])
 #     -> public/assets/worlds/{world}/{slug}-{480,960}.webp and rear-{slug}-{480,960}.webp
 #     -> public/assets/artwork/{world}/vehicle-car-N[-back].webp and -thumb.webp
 # Usage: bash tools/copy-people-vehicles.sh   (needs ffmpeg with libwebp; skips files that already exist)
@@ -31,14 +31,24 @@ for world in roman modern green future egypt heaven; do
   if [ "$world" = egypt ] || [ "$world" = heaven ]; then
     strips=("$LRPG/inbox/done/$world/"people_[0-9].png "$LRPG/inbox/done/$world/"worker_[0-9].png); cars="$LRPG/inbox/done/$world"
   elif [ "$world" = green ]; then
-    # the Green World (source folders still named "elven") has no people, and its fourth vehicle is left out
-    strips=(); cars="$SRC/vehicle-batch-01/art/inbox/elven"
+    # The Green World (source folders still named "elven"): the walkers redrawn as ordinary people on 2026-11-03,
+    # from the game's inbox or, once the game has imported them, its done folder. The older elf walkers in the done
+    # folder are left out, and so is the fourth vehicle.
+    strips=()
+    for n in people_1 people_2 people_3 people_4 people_5 people_6 worker_1 worker_2; do
+      f=$(find "$LRPG/inbox/elven" "$LRPG/inbox/done/elven" -maxdepth 1 -name "$n.png" -newermt 2026-11-03 2>/dev/null | head -n 1)
+      [ -n "$f" ] && strips+=("$f")
+    done
+    cars="$SRC/vehicle-batch-01/art/inbox/elven"
   else
     strips=("$SRC/people-batch-03/art/inbox/$world/"*.png); cars="$SRC/vehicle-batch-01/art/inbox/$world"
   fi
   for f in "${strips[@]}"; do
     name=$(basename "$f" .png); name="${name//_/-}"
     pose="crop=512:512:0:0,format=rgba"
+    # The Green World's flower-crown child came with a soft white glow around the figure: drop its light, partly
+    # see-through pixels.
+    [ "$world/$name" = green/people-3 ] && pose="$pose,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='if(gt(min(min(r(X,Y),g(X,Y)),b(X,Y)),170)*lt(alpha(X,Y),240),0,alpha(X,Y))'"
     webp "$f" "$W/$name-256.webp" "$pose,scale=256:-1:flags=lanczos" 82
     webp "$f" "$W/$name-512.webp" "$pose" 85
     webp "$f" "$A/$name.webp" "$pose" 90

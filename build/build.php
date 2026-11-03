@@ -216,7 +216,6 @@ require __DIR__ . '/shop.php';          // before the pages that point to the sh
 require __DIR__ . '/tours.php';         // before the Teachers page, which lists the tours
 require __DIR__ . '/teachpages.php';
 // The world maps and their pages, after the tours they point to.
-// The Green World has no people, so no people page.
 foreach (WORLD_ORDER as $w) { full_world($w); if (!empty($PEOPLE[$w])) people_page($w); }
 require __DIR__ . '/play.php';
 require __DIR__ . '/classroom.php';
