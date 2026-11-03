@@ -561,6 +561,26 @@
     else { img.onload = go; img.src = src; }
   }
   window.addEventListener('afterprint', function () { document.body.classList.remove('print-one'); });
+
+  // Tour certificate: print a copy of it alone, with the full-size frame.
+  document.querySelectorAll('.js-print-cert').forEach(function (b) {
+    b.hidden = false;
+    b.addEventListener('click', function () {
+      var old = document.querySelector('.cert-print');
+      if (old) old.remove();
+      var box = document.createElement('div');
+      box.className = 'cert-print';
+      box.appendChild(document.querySelector('.cert').cloneNode(true));
+      var frame = box.querySelector('.cert-frame');
+      box.querySelectorAll('img').forEach(function (i) { i.removeAttribute('loading'); });
+      frame.removeAttribute('srcset');
+      frame.src = frame.src.replace(/-768\.webp/, '-1536.webp');
+      document.body.appendChild(box);
+      document.body.classList.add('print-cert');
+      if (frame.complete) window.print(); else frame.onload = frame.onerror = function () { window.print(); };
+    });
+  });
+  window.addEventListener('afterprint', function () { document.body.classList.remove('print-cert'); });
   document.querySelectorAll('.js-print-art').forEach(function (b) {
     b.addEventListener('click', function () { printImage(b.dataset.full, b.dataset.title); });
   });

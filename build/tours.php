@@ -68,12 +68,12 @@ $TOURS = [
   'teach' => 'explore-your-town-scavenger-hunt',
 ],
 'ecological-design' => [
-  'world' => 'green', 'guide' => 'flower-cart', 'guideRole' => 'Pulled by a white pony',
+  'world' => 'green', 'guide' => 'gardener', 'guideName' => 'Gardener', 'guideRole' => 'Looks after the gardens and meadows',
   'title' => 'Ecological design tour: water, plants and shared land',
   'h1' => 'Ecological design',
   'desc' => 'A guided tour of the imagined green city and the real nature-based ideas behind it: clean water, wetlands, green roofs, meadows, compost and the commons.',
   'theme' => 'Imaginative ideas about water, plants and shared land',
-  'intro' => 'Hop on! Every morning I carry flowers to the market. This city is imagined, but every stop on this ride shows a real idea that people are using today.',
+  'intro' => 'Hello! I look after the gardens, meadows and streams here. This city is imagined, but every stop on this walk shows a real idea that people are using today.',
   'time' => '20 to 30 minutes', 'grades' => '3-9',
   'stops' => [
     ['green/spring-circle', 'Our water starts at a protected spring. Real cities, like New York, protect the forests around their reservoirs to keep water clean.', 'What could harm a water source near you?'],
@@ -137,13 +137,28 @@ function person_img($w, $file, $sizes = '120px', $alt = '') {
   return img($w, $file, $alt, $sizes, 'loading="lazy"');
 }
 
-// A tour's guide: [name, role]. Usually a person of its world; the Green World has no people, so its tour is
-// guided by one of its vehicles (with its own 'guideRole').
+// A tour's guide: [name, role]. Usually a person of its world; the Green World has no people yet, so its tour is
+// guided by the gardener from the Life RPG game (its own 'guideName' and 'guideRole', copied by tools/copy-bonus-art.sh).
 function tour_guide($t) {
-  global $PEOPLE, $WORLD_DATA;
+  global $PEOPLE;
+  if (isset($PEOPLE[$t['world']][$t['guide']])) return array_slice($PEOPLE[$t['world']][$t['guide']], 0, 2);
+  return [$t['guideName'], $t['guideRole'] ?? ''];
+}
+
+// The certificate at the end of a tour: the world's frame with the tour's name, a line to write a name on, and the
+// gold seal. "Print the certificate" prints it alone, on a landscape page. Frames and seal: tools/copy-bonus-art.sh.
+function tour_certificate($t, $gname) {
+  global $WORLDS;
   $w = $t['world'];
-  if (isset($PEOPLE[$w][$t['guide']])) return array_slice($PEOPLE[$w][$t['guide']], 0, 2);
-  return [$WORLD_DATA[$w]['pages'][$t['guide']]['name'], $t['guideRole'] ?? ''];
+  $f = fn($n) => "/assets/certificates/$w-$n.webp";
+  return '<section class="cert-box" id="certificate" aria-labelledby="cert-h"><h2 id="cert-h">Tour certificate</h2>'
+    . '<p>Finished the tour? Print this certificate and write your name on it.</p>'
+    . '<div class="cert world-' . $w . '"><img class="cert-frame" src="' . $f(768) . '" srcset="' . $f(768) . ' 768w, ' . $f(1536) . ' 1536w" sizes="(min-width: 900px) 760px, 100vw" width="768" height="512" alt="" loading="lazy" decoding="async">'
+    . '<div class="cert-text"><p class="cert-kicker">Atlas of Cities</p><p class="cert-title">Certificate of Exploration</p>'
+    . '<p>This certifies that</p><p class="cert-line"><span class="sr-only">(space for your name)</span></p><p>took the guided tour</p>'
+    . '<p class="cert-tour">' . h($t['h1']) . '</p><p class="cert-world">' . h($WORLDS[$w]['name']) . ' · ' . count($t['stops']) . ' stops</p>'
+    . '<div class="cert-foot"><span>Date</span><img class="cert-seal" src="/assets/certificates/seal-160.webp" srcset="/assets/certificates/seal-160.webp 160w, /assets/certificates/seal-320.webp 320w" sizes="80px" width="160" height="222" alt="Gold seal" loading="lazy" decoding="async"><span>Guide: ' . h(strtolower($gname)) . '</span></div></div></div>'
+    . '<p><button type="button" class="btn js-print-cert" hidden>Print the certificate</button></p></section>';
 }
 
 function tour_card($slug) {
@@ -219,6 +234,7 @@ foreach ($TOURS as $slug => $t) {
   $gnameH = h($gname); $groleH = h($grole); $wname = h($WORLDS[$w]['name']);
   $wcity = str_ends_with($WORLDS[$w]['name'], 'City') ? $wname : $wname . ' city';   // "Heavenly City", not "Heavenly City city"
   $count = count($t['stops']);
+  $cert = tour_certificate($t, $gname);
   page("/tours/$slug/", [
     'title' => $t['title'],
     'desc' => h($t['desc']),
@@ -238,7 +254,7 @@ foreach ($TOURS as $slug => $t) {
   <figure class="guide-bubble"><div class="guide-pic">{$guideImg}</div><figcaption><strong>Your guide: {$gnameH}</strong> <span class="what">{$groleH}</span><span class="bubble">{$intro}</span></figcaption></figure>
 </section>
 <div class="wrap b-layout">
-  <aside class="b-toc" aria-label="Tour stops"><p class="toc-h">Tour stops</p><ol class="plain-ol">{$nav}<li><a href="#think">Think it over</a></li></ol><p><button type="button" class="btn btn-quiet btn-sm" data-listen=".tour-head h1, .bubble, .stop h2, .stop-say, .ask, #think h2, #think li" hidden aria-pressed="false">Listen to the tour</button> <button type="button" class="btn btn-quiet btn-sm js-print">Print this tour</button></p></aside>
+  <aside class="b-toc" aria-label="Tour stops"><p class="toc-h">Tour stops</p><ol class="plain-ol">{$nav}<li><a href="#think">Think it over</a></li><li><a href="#certificate">Certificate</a></li></ol><p><button type="button" class="btn btn-quiet btn-sm" data-listen=".tour-head h1, .bubble, .stop h2, .stop-say, .ask, #think h2, #think li" hidden aria-pressed="false">Listen to the tour</button> <button type="button" class="btn btn-quiet btn-sm js-print">Print this tour</button></p></aside>
   <div>
     <ol class="stops">{$stops}</ol>
     <section class="read panel" id="think" aria-labelledby="think-h">
@@ -247,6 +263,7 @@ foreach ($TOURS as $slug => $t) {
       {$teach}
       <p><a class="btn" href="/worlds/{$w}/">Explore the whole {$wcity}</a></p>
     </section>
+    {$cert}
   </div>
 </div>
 <section class="wrap section" aria-labelledby="more-tours">
