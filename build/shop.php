@@ -187,6 +187,17 @@ foreach (['modern' => ['casual', 'In everyday clothes'], 'roman' => ['toga', 'In
   'future' => ['space', 'In a space suit'], 'heaven' => ['heaven', 'In a white robe']] as $w => [$o, $alt]) {
   $lrpgOutfits .= "<li class=\"world-$w\">" . $heroPic("h04_$o", $alt) . '<span>' . h($WORLDS[$w]['name']) . '</span></li>';
 }
+// The pets (tools/copy-pets.sh): a puppy growing up, then all six grown.
+$petPic = function ($k, $age, $alt) {
+  [$w, $h] = getimagesize(PUB . "/assets/pets/$k-$age-256.webp");
+  return '<img src="/assets/pets/' . $k . '-' . $age . '-256.webp" width="' . $w . '" height="' . $h . '" alt="' . h($alt) . '" loading="lazy" decoding="async">';
+};
+$lrpgGrow = '';
+foreach (['baby' => 'Baby', 'young' => 'Young', 'grown' => 'Grown'] as $age => $label) {
+  $lrpgGrow .= '<li>' . $petPic('dog', $age, "$label puppy") . '<span>' . $label . '</span></li>';
+}
+$lrpgPets = '';
+foreach (PETS as $k => $name) $lrpgPets .= '<li>' . $petPic($k, 'grown', "Grown $name") . '<span>' . h($name) . '</span></li>';
 $lrpgWorlds = '';
 foreach (WORLD_ORDER as $w) {   // all six worlds are in the game
   $lrpgWorlds .= "<li class=\"world-$w\"><img src=\"/assets/life-rpg/city-$w-wide.webp\" width=\"520\" height=\"300\" alt=\"" . h($WORLDS[$w]['name']) . ' in Life RPG" loading="lazy" decoding="async"><span>' . h($WORLDS[$w]['name']) . '</span></li>';
@@ -224,6 +235,8 @@ shop_page('life-rpg', [
     ]) . '</div></section>'
     . '<section class="wrap section" aria-labelledby="heroes-h"><div class="sec-head"><h2 id="heroes-h">Pick your hero</h2><p>Twelve painted heroes, from kids to grandparents. Gear you earn, like a cape or a crown, shows on your hero.</p></div>'
     . "<ul class=\"lrpg-heroes\">$lrpgHeroes</ul><h3 class=\"lrpg-outfits-h\">Dressed for each world</h3><ul class=\"lrpg-outfits\">$lrpgOutfits</ul></section>"
+    . '<section class="wrap section" aria-labelledby="pets-h"><div class="sec-head"><h2 id="pets-h">Adopt a pet</h2><p>A puppy, kitten, lamb, pony, robo pup or desert fox. It starts as a baby, grows up as you finish quests and lives in your city. It never gets sick or sad: after two quiet days it just naps until your next quest.</p></div>'
+    . "<ul class=\"lrpg-grow\">$lrpgGrow</ul><h3 class=\"lrpg-outfits-h\">All six, grown up</h3><ul class=\"lrpg-pets\">$lrpgPets</ul></section>"
     . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of six worlds</h2><p>The six worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([

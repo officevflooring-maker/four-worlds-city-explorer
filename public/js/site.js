@@ -184,6 +184,7 @@
   (document.documentElement.getAttribute('data-pp-totals') || '').split(' ').forEach(function (p) { var kv = p.split(':'); if (kv[1]) totals[kv[0]] = Number(kv[1]); });
   var visited = function (w) { var n = 0; for (var k in stamps) if (k.indexOf(w + '/') === 0) n++; return Math.min(n, totals[w] || n); };
   var bar = function (n, t) { var b = make('span', 'pp-mini'), f = make('span'); f.style.width = Math.round(n / t * 100) + '%'; b.appendChild(f); return b; };
+  var ppNote = null, ppNew = false;   // the stamp note on a place page, for the passport pet below
   var here = location.pathname.match(/^\/worlds\/(egypt|roman|modern|green|future|heaven)\/([a-z0-9-]+)\/$/);
   if (here && document.body.classList.contains('building')) {
     var hw = here[1], key = hw + '/' + here[2], isNew = !stamps[key];
@@ -198,6 +199,7 @@
     note.append(check, msg, ppLink);
     var facts = document.querySelector('.b-intro .facts');
     if (facts) facts.after(note);
+    ppNote = note; ppNew = isNew;
   }
   // Mark visited places on cards, then show progress where it helps.
   document.querySelectorAll('[data-pp]').forEach(function (el) {
@@ -234,13 +236,51 @@
     });
     document.querySelector('.pp-total strong').textContent = sum;
     var clear = document.querySelector('.pp-clear');
-    var saved = ['atlas.passport', 'atlas.badges', 'atlas.done', 'atlas.quiz', 'atlas.hunt', 'atlas.memory', 'atlas.challenges', 'atlas.challenge', 'atlas.city', 'atlas.sort', 'atlas.shadows', 'atlas.zoom', 'atlas.odd', 'atlas.puzzle', 'atlas.cardmemory'];
+    var saved = ['atlas.passport', 'atlas.badges', 'atlas.done', 'atlas.quiz', 'atlas.hunt', 'atlas.memory', 'atlas.challenges', 'atlas.challenge', 'atlas.city', 'atlas.sort', 'atlas.shadows', 'atlas.zoom', 'atlas.odd', 'atlas.puzzle', 'atlas.cardmemory', 'atlas.pet'];
     clear.hidden = !saved.some(function (k) { return store.get(k, null) !== null; });
     clear.addEventListener('click', function () {
       if (!window.confirm('Clear your stamps, badges, scores and saved city on this device? This cannot be undone.')) return;
       saved.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} });
       location.reload();
     });
+  }
+
+  // ---------- Passport pet: one of the Life RPG game's pets, picked on the passport page ----------
+  // It's a baby until 20 stamps, young until 60, then grown. A tap gives a happy hop. Kept in this browser only.
+  var PETS = { dog: 'puppy', cat: 'kitten', lamb: 'lamb', horse: 'pony', robodog: 'robo pup', fox: 'desert fox' };
+  var GROW = [['baby', 'Baby', 0], ['young', 'Young', 20], ['grown', 'Grown', 60]];
+  var pet = store.get('atlas.pet', null);
+  if (pet && !PETS[pet.kind]) pet = null;
+  var petAge = function (n) { var a = 0; GROW.forEach(function (g, i) { if (n >= g[2]) a = i; }); return a; };
+  var petSrc = function (kind, a, size) { return '/assets/pets/' + kind + '-' + GROW[a][0] + '-' + size + '.webp'; };
+  var stampCount = function () { var n = 0; Object.keys(NAMES).forEach(function (w) { n += visited(w); }); return n; };   // as the passport counts them
+  if (pet && ppNote) {
+    var n = stampCount(), a = petAge(n), pi = make('img', 'pp-pet-pic');
+    pi.src = petSrc(pet.kind, a, 256); pi.alt = '';
+    ppNote.prepend(pi);
+    ppNote.classList.add('has-pet');
+    if (ppNew && a && n === GROW[a][2]) ppNote.insertBefore(document.createTextNode('Your ' + PETS[pet.kind] + ' grew up! It is ' + GROW[a][1].toLowerCase() + ' now. '), ppNote.lastChild);
+  }
+  var petBox = document.querySelector('.pp-pet');
+  if (petBox) {
+    petBox.hidden = false;
+    var pick = petBox.querySelector('.pet-pick'), home = petBox.querySelector('.pet-home'), pic = petBox.querySelector('.pet-pic');
+    var drawPet = function () {
+      pick.hidden = !!pet; home.hidden = !pet;
+      if (!pet) return;
+      var n = stampCount(), a = petAge(n), next = GROW[a + 1], img = pic.querySelector('img');
+      img.src = petSrc(pet.kind, a, 512);
+      pic.setAttribute('aria-label', 'Pat your ' + PETS[pet.kind]);
+      petBox.querySelector('.pet-name').textContent = GROW[a][1] + ' ' + PETS[pet.kind];
+      petBox.querySelector('.pet-next').textContent = next ? (next[2] - n) + (next[2] - n === 1 ? ' more stamp' : ' more stamps') + ' until it is ' + next[1].toLowerCase() + '.' : 'All grown up! Thank you for exploring.';
+      petBox.querySelector('.pp-bar span').style.width = (next ? (n - GROW[a][2]) / (next[2] - GROW[a][2]) * 100 : 100) + '%';
+    };
+    petBox.querySelectorAll('.pet-opt').forEach(function (b) {
+      b.addEventListener('click', function () { pet = { kind: b.getAttribute('data-pet') }; store.set('atlas.pet', pet); drawPet(); pic.focus(); });
+    });
+    pic.addEventListener('click', function () { pic.classList.remove('happy'); void pic.offsetWidth; pic.classList.add('happy'); });
+    petBox.querySelector('.pet-change').addEventListener('click', function () { pet = null; drawPet(); petBox.querySelector('.pet-opt').focus(); });
+    drawPet();
   }
 
   // ---------- Badges: earned by exploring and playing (passport page), with a note when one is new ----------

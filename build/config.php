@@ -32,3 +32,7 @@ const SHOP = [
 // property by a TXT record in Cloudflare's DNS, which needs no tag.
 const GOOGLE_VERIFY = '';
 const LASTMOD   = '2026-10-29';
+
+// The Life RPG game's six pets (tools/copy-pets.sh), in its order: the passport pet (/play/passport/) and the
+// Life RPG page. The names are the game's; public/js/site.js has the same list.
+const PETS = ['dog' => 'Puppy', 'cat' => 'Kitten', 'lamb' => 'Lamb', 'horse' => 'Pony', 'robodog' => 'Robo pup', 'fox' => 'Desert fox'];

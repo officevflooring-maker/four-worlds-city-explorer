@@ -698,6 +698,13 @@ foreach (WORLD_ORDER as $w) {
     . '<div><h2 id="pp-' . $w . '"><a href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></h2><p class="pp-line"><span class="pp-count">0</span> of ' . $n . ' places visited</p><div class="pp-bar" aria-hidden="true"><span></span></div></div></div>'
     . '<ul class="pp-grid">' . $li . '</ul></section>';
 }
+// The passport pet: the Life RPG game's six pets (tools/copy-pets.sh). One is picked here, and it grows from a baby
+// to young to grown as stamps are collected (public/js/site.js). Hidden until the script shows it.
+$ppPets = '';
+foreach (PETS as $k => $name) {
+  $ppPets .= '<li><button type="button" class="pet-opt" data-pet="' . $k . '"><img src="/assets/pets/' . $k . '-baby-256.webp" width="256" height="'
+    . getimagesize(PUB . "/assets/pets/$k-baby-256.webp")[1] . '" alt="" loading="lazy" decoding="async"><span>' . h($name) . '</span></button></li>';
+}
 $ppExtras = game_extras('', 'Every place or vehicle page you open adds a stamp to your passport. Badges come from exploring every world and from playing the games.',
   'Nothing is sent anywhere: your stamps and badges are kept only in this browser, on this device.', 'How it works', 'Private by design');
 page('/play/passport/', [
@@ -712,6 +719,22 @@ page('/play/passport/', [
   <h1>Your city passport</h1>
   <p class="lead">Every place you open gets a stamp. Gray ones are still waiting for you.</p>
   <p class="pp-total"><strong>0</strong> of {$ppTotal} stamps collected</p>
+</section>
+<section class="wrap pp-pet" aria-labelledby="pet-h" hidden>
+  <h2 id="pet-h">Your passport pet</h2>
+  <div class="pet-pick">
+    <p class="pp-line">Choose a pet. It starts as a baby and grows up as you collect stamps.</p>
+    <ul class="pet-opts">{$ppPets}</ul>
+  </div>
+  <div class="pet-home" hidden>
+    <button type="button" class="pet-pic" aria-label="Pat your pet"><img src="" alt="" width="256" height="256"></button>
+    <div class="pet-about">
+      <p class="pet-name"></p>
+      <p class="pet-next"></p>
+      <div class="pp-bar" aria-hidden="true"><span></span></div>
+      <p><button type="button" class="btn btn-quiet pet-change">Choose a different pet</button></p>
+    </div>
+  </div>
 </section>
 <section class="wrap pp-badges" aria-labelledby="badges-h">
   <h2 id="badges-h">Badges</h2>
