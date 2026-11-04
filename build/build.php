@@ -217,7 +217,9 @@ require __DIR__ . '/tours.php';         // before the Teachers page, which lists
 require __DIR__ . '/teachpages.php';
 // The world maps and their pages, after the tours they point to.
 foreach (WORLD_ORDER as $w) { full_world($w); if (!empty($PEOPLE[$w])) people_page($w); }
+require __DIR__ . '/herocards.php';    // the cards, for the Play page's picture of them
 require __DIR__ . '/play.php';
+hc_page();                             // after play.php, whose game_extras() it uses
 require __DIR__ . '/classroom.php';
 require __DIR__ . '/home.php';
 
@@ -504,7 +506,7 @@ $urls['/play/passport/'] = '0.5';
 $urls['/play/map-hunt/'] = '0.8';
 $urls['/play/memory/'] = '0.8';
 $urls['/play/word-search/'] = '0.8';
-foreach (['/play/world-sort/', '/play/shadows/', '/play/zoom/', '/play/odd-one-out/', '/play/puzzle/', '/play/card-memory/'] as $u) $urls[$u] = '0.8';
+foreach (['/play/world-sort/', '/play/shadows/', '/play/zoom/', '/play/odd-one-out/', '/play/puzzle/', '/play/card-memory/', '/play/hero-cards/'] as $u) $urls[$u] = '0.8';
 $urls['/teachers/worksheets/'] = '0.9';
 foreach ($SHEETS as [$slug]) $urls["/teachers/worksheets/$slug/"] = '0.8';
 $urls['/teachers/glossary/'] = '0.8';

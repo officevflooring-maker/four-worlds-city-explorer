@@ -109,6 +109,7 @@ foreach ([
   ['Odd one out', '/play/odd-one-out/', 'Activity', 'Four pictures: spot the one that does not belong.', 'odd one out puzzle thinking game'],
   ['Picture puzzle', '/play/puzzle/', 'Activity', 'Swap the mixed-up pieces until the picture is whole again.', 'jigsaw puzzle picture pieces game'],
   ['Memory match', '/play/memory/', 'Activity', 'Turn over cards and match buildings that do the same job.', 'memory cards pairs match game'],
+  ['Hero Cards', '/play/hero-cards/', 'Activity', 'Duel the computer with painted cards from six worlds, and collect them in an album.', 'hero cards trading card duel collect album game'],
   ['Card memory', '/play/card-memory/', 'Activity', 'Turn over painted trading cards and match the six worlds.', 'memory trading cards pairs match game worlds'],
   ['Word search', '/play/word-search/', 'Activity', 'Find ten hidden city words, then learn what they mean.', 'word search letters vocabulary puzzle game'],
   ['Map hunt', '/play/map-hunt/', 'Activity', 'Read a clue, then find the place on a city map.', 'map hunt clues find game'],
@@ -216,6 +217,7 @@ function play_cards($only = null) {
     ['/play/map-hunt/', 'Map hunt', 'Read a clue, then find the place on a city map.', 'Start hunting', '<span class="pa pa-hunt" aria-hidden="true"><span class="pa-lens">' . thumb_img(thumb('green', 'treetop-village')) . '</span><span class="pa-handle"></span></span>'],
     ['/play/memory/', 'Memory match', 'Turn over two cards at a time and find the pairs that go together.', 'Play memory', '<span class="pa pa-mem" aria-hidden="true"><span class="pa-card pa-card-back"><img src="/favicon.svg" width="44" height="44" alt=""></span><span class="pa-card">' . thumb_img(thumb('roman', 'aqueduct')) . '</span><span class="pa-card">' . thumb_img(thumb('future', 'water-recycler')) . '</span></span>'],
     ['/play/card-memory/', 'Card memory', 'Turn over painted trading cards and match the six city worlds.', 'Flip the cards', '<span class="pa pa-cm" aria-hidden="true">' . cm_mini() . cm_mini('egypt') . cm_mini('heaven') . '</span>'],
+    ['/play/hero-cards/', 'Hero Cards', 'Duel the computer with painted cards from six worlds, then collect them in an album.', 'Play a duel', '<span class="pa pa-hc" aria-hidden="true">' . hc_card_html(hc_by_id('modern_heli')) . hc_card_html(hc_by_id('egypt_great_pyramid')) . hc_card_html(hc_by_id('green_fox')) . '</span>'],
     ['/play/word-search/', 'Word search', 'Find ten hidden city words, then learn what they mean.', 'Find words', '<span class="pa pa-words" aria-hidden="true"><span class="pa-letters">' . $letters . '</span></span>'],
     ['/play/passport/', 'Your city passport', "Collect stamps and badges. Can you visit all $total places?", 'See your stamps', '<span class="pa pa-pass" aria-hidden="true">' . $stamps . '</span>'],
   ];
@@ -560,6 +562,7 @@ function game_extras($self, $how, $learn, $howTitle = 'How to play', $learnTitle
     '/play/quiz/' => ['City quiz', 'Five quizzes with pictures.'],
     '/play/map-hunt/' => ['Map hunt', 'Find places on a map from clues.'],
     '/play/memory/' => ['Memory match', 'Turn over cards and find the pairs.'],
+    '/play/hero-cards/' => ['Hero Cards', 'Duel the computer and collect cards.'],
     '/play/card-memory/' => ['Card memory', 'Match the painted city cards.'],
     '/play/word-search/' => ['Word search', 'Ten hidden city words.'],
   ];
