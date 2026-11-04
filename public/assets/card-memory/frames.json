@@ -1,0 +1,66 @@
+{
+    "frame-egypt": {
+        "w": 640,
+        "h": 949,
+        "top": 18.76,
+        "right": 7.97,
+        "bottom": 14.54,
+        "left": 8.13
+    },
+    "frame-green": {
+        "w": 640,
+        "h": 954,
+        "top": 18.66,
+        "right": 7.66,
+        "bottom": 14.36,
+        "left": 7.81
+    },
+    "frame-future": {
+        "w": 640,
+        "h": 955,
+        "top": 18.64,
+        "right": 7.66,
+        "bottom": 14.66,
+        "left": 7.81
+    },
+    "frame-heaven": {
+        "w": 640,
+        "h": 956,
+        "top": 18.62,
+        "right": 7.66,
+        "bottom": 14.54,
+        "left": 7.81
+    },
+    "frame-modern": {
+        "w": 640,
+        "h": 956,
+        "top": 18.62,
+        "right": 7.66,
+        "bottom": 14.54,
+        "left": 7.81
+    },
+    "frame-roman": {
+        "w": 640,
+        "h": 955,
+        "top": 18.64,
+        "right": 7.66,
+        "bottom": 14.45,
+        "left": 7.81
+    },
+    "frame_emerald": {
+        "w": 640,
+        "h": 945,
+        "top": 18.84,
+        "right": 8.28,
+        "bottom": 14.6,
+        "left": 8.13
+    },
+    "frame-gold": {
+        "w": 640,
+        "h": 953,
+        "top": 18.68,
+        "right": 7.97,
+        "bottom": 14.48,
+        "left": 8.13
+    }
+}

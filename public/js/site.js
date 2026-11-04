@@ -234,7 +234,7 @@
     });
     document.querySelector('.pp-total strong').textContent = sum;
     var clear = document.querySelector('.pp-clear');
-    var saved = ['atlas.passport', 'atlas.badges', 'atlas.done', 'atlas.quiz', 'atlas.hunt', 'atlas.memory', 'atlas.challenges', 'atlas.challenge', 'atlas.city', 'atlas.sort', 'atlas.shadows', 'atlas.zoom', 'atlas.odd', 'atlas.puzzle'];
+    var saved = ['atlas.passport', 'atlas.badges', 'atlas.done', 'atlas.quiz', 'atlas.hunt', 'atlas.memory', 'atlas.challenges', 'atlas.challenge', 'atlas.city', 'atlas.sort', 'atlas.shadows', 'atlas.zoom', 'atlas.odd', 'atlas.puzzle', 'atlas.cardmemory'];
     clear.hidden = !saved.some(function (k) { return store.get(k, null) !== null; });
     clear.addEventListener('click', function () {
       if (!window.confirm('Clear your stamps, badges, scores and saved city on this device? This cannot be undone.')) return;

@@ -1003,6 +1003,36 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .mem-status { min-height: 1.6em; font-weight: 600; }
 .mem-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
 
+/* ---------- Card memory: painted trading cards (the frame's window in %, from frames.json) ---------- */
+.cm > * { max-width: 960px; }
+.cm-grid { list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .8rem; margin: .8rem 0; padding: 0; }
+.cm-card { display: block; width: 100%; aspect-ratio: 640 / 953; padding: 0; border: 0; background: none; font: inherit; cursor: pointer; perspective: 900px; }
+.cm-inner { position: relative; display: block; width: 100%; height: 100%; transition: transform .5s; transform-style: preserve-3d; }
+.cm-card.open .cm-inner, .cm-card.done .cm-inner { transform: rotateY(180deg); }
+.cm-face { position: absolute; inset: 0; display: block; container-type: inline-size; -webkit-backface-visibility: hidden; backface-visibility: hidden; filter: drop-shadow(0 6px 8px rgb(0 0 0 / .25)); }
+.cm-front { transform: rotateY(180deg); }
+.cm-win { position: absolute; top: var(--ft); right: var(--fr); bottom: var(--fb); left: var(--fl); overflow: hidden; border-radius: 4%; }
+.cm-win .cm-art { width: 100%; height: 100%; object-fit: cover; }
+.cm-frame { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.cm-logo { display: grid; place-items: center; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, #3a5799, var(--night)); }
+.cm-logo img { width: 46%; height: auto; }
+.cm-card:hover .cm-logo { background: radial-gradient(circle at 50% 40%, #4a69b0, var(--night)); }
+.cm-top, .cm-bot { position: absolute; left: 13%; right: 13%; display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--sans); font-weight: 800; line-height: 1.05; text-align: center; text-shadow: 0 1px 2px #000, 0 0 5px rgb(0 0 0 / .85); }
+.cm-top { top: calc(var(--ft) * .28); height: calc(var(--ft) * .72); font-size: 9.5cqw; }
+.cm-bot { bottom: calc(var(--fb) * .34); height: calc(var(--fb) * .66); font-size: 7cqw; }
+.cm-card.done .cm-face { filter: drop-shadow(0 0 6px #ffe27a) drop-shadow(0 6px 8px rgb(0 0 0 / .2)); }
+.cm-card:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 6px; }
+.cm-status { min-height: 1.6em; font-weight: 600; }
+.pa-cm { display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, #1e2d55, #3a5799); }
+.pa-cmcard { position: relative; display: block; width: 84px; margin: 0 -8px; filter: drop-shadow(0 6px 8px rgb(0 0 0 / .35)); transform: rotate(-8deg); }
+.pa-cmcard:nth-child(2) { z-index: 1; transform: translateY(-8px); }
+.pa-cmcard:nth-child(3) { transform: rotate(8deg); }
+.pa-cmcard .cm-frame { position: relative; display: block; height: auto; }
+.pa-cmcard .cm-logo img { width: 46%; }
+.cm .q-top { flex-wrap: wrap; justify-content: flex-start; column-gap: 1.6rem; }
+@media (max-width: 900px) { .cm-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 640px; } }
+@media (max-width: 560px) { .cm-grid { gap: .4rem; } .cm-top { font-size: 10.5cqw; } }
+
 /* ---------- Word search ---------- */
 .ws-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .6rem 1rem; margin: .4rem 0 1rem; }
 .ws-actions { display: flex; gap: .4rem; margin: 0; }
@@ -1138,7 +1168,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .hunt-bar { padding: .7rem .9rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mem-inner { transition: none; }
+  .mem-inner, .cm-inner { transition: none; }
   .toast { animation: none; }
   .city .tile.hunt-no img { animation: none; }
   .play-card a:hover .pa-lens img { transform: scale(1.18); }
