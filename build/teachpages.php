@@ -4,9 +4,10 @@
 // Content lives in build/teach.php. Included from build.php after the world pages.
 
 const TEACH_GROUPS = [
-  ['Projects and lessons', ['design-a-city-project', 'build-a-roman-aqueduct', 'design-a-mars-colony-project', 'roman-engineering-lesson', 'ancient-rome-vs-modern-cities', 'how-local-government-works']],
+  ['Projects and lessons', ['design-a-city-project', 'build-a-roman-aqueduct', 'design-a-mars-colony-project', 'roman-engineering-lesson', 'ancient-rome-vs-modern-cities', 'medieval-market-day-lesson', 'how-local-government-works']],
   ['Ancient Egypt explained', ['how-were-the-pyramids-built', 'daily-life-in-ancient-egypt']],
   ['Ancient Rome explained', ['daily-life-in-ancient-rome', 'how-did-roman-aqueducts-work']],
+  ['The Middle Ages explained', ['how-did-castles-work', 'daily-life-in-a-medieval-town']],
   ['Cities today', ['how-do-cities-get-clean-water', 'what-does-a-city-need', 'urban-planning-for-students', 'explore-your-town-scavenger-hunt']],
   ['Sustainability and nature', ['sustainable-city-project-ideas', 'biomimicry-examples-for-students', 'solarpunk-explained']],
   ['Space and the future', ['how-could-humans-live-on-mars', 'life-on-the-space-station']],
@@ -56,13 +57,13 @@ foreach (array_keys($TOURS) as $slug) $teachTours .= tour_card($slug);
 $tourCount = count($TOURS);
 page('/teachers/', [
   'title' => 'Free Lessons for Teachers and Homeschool: Rome, Cities, Mars',
-  'desc' => h("$teachCount free lessons for public school, private school and homeschool: design a city, the pyramids, Roman aqueducts, the story of Jesus, Mars and more."),
+  'desc' => h("$teachCount free lessons for public school, private school and homeschool: design a city, the pyramids, Roman aqueducts, castles, the story of Jesus, Mars and more."),
   'class' => 'teachers',
   'body' => <<<HTML
 <section class="wrap section page-head">
   <p class="tag">Teachers &amp; Homeschool</p>
   <h1>Free lessons for school and homeschool</h1>
-  <p class="lead">{$teachCount} ready-to-use guides for public and private school classrooms and homeschool families, built around the questions students ask most: how cities work, ancient Egypt and Rome, the story of Jesus, nature and living in space. Each one links to illustrated building pages with photos and sources.</p>
+  <p class="lead">{$teachCount} ready-to-use guides for public and private school classrooms and homeschool families, built around the questions students ask most: how cities work, ancient Egypt and Rome, castles and the Middle Ages, the story of Jesus, nature and living in space. Each one links to illustrated building pages with photos and sources.</p>
   <ul class="plain-points">
     <li>Free, with no sign-up, ads or tracking.</li>
     <li>Grade ranges, time needed and subject areas for every guide.</li>
@@ -93,7 +94,7 @@ HTML,
 // Free homeschool resources (/teachers/homeschool/): a week with one city, the guides by subject, printables and
 // games, and the questions homeschool parents ask. It uses the hub's guide cards and classroom tools.
 const HOMESCHOOL_SUBJECTS = [
-  ['History', ['how-were-the-pyramids-built', 'daily-life-in-ancient-egypt', 'daily-life-in-ancient-rome', 'how-did-roman-aqueducts-work']],
+  ['History', ['how-were-the-pyramids-built', 'daily-life-in-ancient-egypt', 'daily-life-in-ancient-rome', 'how-did-roman-aqueducts-work', 'how-did-castles-work', 'daily-life-in-a-medieval-town']],
   ['Bible', ['story-of-jesus-bible-lesson']],
   ['Science and engineering', ['build-a-roman-aqueduct', 'how-do-cities-get-clean-water', 'how-could-humans-live-on-mars', 'biomimicry-examples-for-students']],
   ['Civics and community', ['what-does-a-city-need', 'how-local-government-works', 'explore-your-town-scavenger-hunt', 'design-a-city-project']],
@@ -194,6 +195,8 @@ const TEACH_PLAY = [
   'sustainable-city-project-ideas' => ['/play/city-builder/', 'Build your own city', 'Mix nature, homes and work, then check what the city still needs.'],
   'design-a-mars-colony-project' => ['/play/city-builder/', 'Build your own city', 'Build a Moon or Mars settlement from the Robotic Future buildings.'],
   'fantasy-city-worldbuilding' => ['/play/city-builder/', 'Build your own city', 'Lay out a green city, or mix all seven worlds into a new one.'],
+  'how-did-castles-work' => ['/play/city-builder/', 'Build your own city', 'Try the castle town challenge: a town of Medieval Kingdom buildings that meets all ten needs.'],
+  'medieval-market-day-lesson' => ['/tours/medieval-market-town/', 'A medieval market town', 'A guided tour of the town, with a question at every stop, to start the lesson.'],
   'ancient-rome-vs-modern-cities' => ['/play/quiz/', 'City quiz', 'The "Same job, different world" quiz matches Roman buildings with modern ones.'],
   'discussion-questions-what-makes-a-good-city' => ['/play/city-builder/', 'Build your own city', 'Build a city first, then use these questions to talk about it.'],
 ];

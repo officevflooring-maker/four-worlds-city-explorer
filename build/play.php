@@ -13,14 +13,14 @@ const NOT_PIECES = ['modern/water-system', 'modern/streets-crosswalks'];
 $NEEDS = [
   'water'  => ['Water', ['water'], []],
   'homes'  => ['Homes', ['houses', 'flats', 'homes-tech', 'palaces'], ['green/tree-tower-home', 'green/mushroom-cottage', 'green/leafy-cottage', 'modern/mixed-use-building', 'future/tree-pod-habitat']],
-  'food'   => ['Food', ['food'], ['roman/street-food', 'modern/corner-store', 'green/canopy-market', 'green/market-hall', 'egypt/market', 'egypt/granary', 'heaven/banquet-hall', 'heaven/sharing-pavilion', 'heaven/tree-of-life']],
+  'food'   => ['Food', ['food'], ['roman/street-food', 'modern/corner-store', 'green/canopy-market', 'green/market-hall', 'egypt/market', 'egypt/granary', 'medieval/bakery', 'medieval/market-hall', 'heaven/banquet-hall', 'heaven/sharing-pavilion', 'heaven/tree-of-life']],
   'health' => ['Health', ['health', 'fitness'], []],
   'learn'  => ['Learning', ['schools', 'books', 'science'], ['modern/cultural-center']],
-  'lead'   => ['Leaders', ['government'], ['roman/forum', 'roman/treasury', 'future/mission-control', 'egypt/pharaohs-palace', 'heaven/palace-of-light']],
+  'lead'   => ['Leaders', ['government'], ['roman/forum', 'roman/treasury', 'future/mission-control', 'egypt/pharaohs-palace', 'medieval/royal-castle', 'heaven/palace-of-light']],
   'meet'   => ['Places to meet', ['squares', 'shows', 'temples', 'prayer'], ['modern/community-center', 'modern/cultural-center', 'green/great-tree-hall', 'egypt/feast-hall', 'medieval/feast-hall', 'heaven/banquet-hall', 'heaven/welcome-hall', 'heaven/rainbow-pavilion']],
   'work'   => ['Work and shops', ['shops', 'making', 'storage'], ['modern/office-building', 'modern/skyscraper']],
-  'safety' => ['Safety', ['safety'], []],
-  'nature' => ['Nature', ['nature'], ['roman/olive-grove', 'green/flower-meadow', 'modern/community-garden', 'future/greenhouse-dome', 'egypt/palm-grove', 'heaven/tree-of-life', 'heaven/lily-garden']],
+  'safety' => ['Safety', ['safety'], ['medieval/bell-tower']],
+  'nature' => ['Nature', ['nature'], ['roman/olive-grove', 'green/flower-meadow', 'modern/community-garden', 'future/greenhouse-dome', 'egypt/palm-grove', 'medieval/herb-garden', 'heaven/tree-of-life', 'heaven/lily-garden']],
 ];
 // Ground squares in the builder: [label, need it meets].
 const GROUND_PIECES = ['water' => ['Water', 'water'], 'grass' => ['Grass', 'nature'], 'plaza' => ['Paved square', 'meet']];
@@ -210,14 +210,14 @@ function play_cards($only = null) {
     ['/play/city-builder/', 'Build your own city', 'Mix buildings from all seven worlds, then try the ten challenges.', 'Start building', '<span class="pa pa-build" aria-hidden="true"><span class="pa-ground"></span>' . $b . '</span>'],
     ['/play/world-sort/', 'World sort', 'A race against the clock: send each picture home to its world.', 'Start sorting', '<span class="pa pa-sort" aria-hidden="true"><span class="pa-sortcard">' . thumb_img(thumb('egypt', 'camel')) . '</span><span class="pa-bins">' . $bins . '</span></span>'],
     ['/play/shadows/', 'Shadow match', 'Whose shadow is it? Find the building, person or vehicle that fits.', 'Match shadows', '<span class="pa pa-shadow" aria-hidden="true"><span class="pa-sil">' . thumb_img(thumb('green', 'deer-statue')) . '</span><span class="pa-col">' . thumb_img(thumb('green', 'deer-statue')) . '</span></span>'],
-    ['/play/zoom/', 'Zoom detective', 'A close-up slowly zooms out. Name it early to score more.', 'Start zooming', '<span class="pa pa-zoom" aria-hidden="true"><span class="pa-zf">' . thumb_img(thumb('roman', 'pantheon')) . '</span></span>'],
+    ['/play/zoom/', 'Zoom detective', 'A close-up slowly zooms out. Name it early to score more.', 'Start zooming', '<span class="pa pa-zoom" aria-hidden="true"><span class="pa-zf">' . thumb_img(thumb('medieval', 'windmill')) . '</span></span>'],
     ['/play/odd-one-out/', 'Odd one out', 'Four pictures, and one does not belong. Can you spot it?', 'Spot it', '<span class="pa pa-odd" aria-hidden="true"><span class="pa-oddgrid">' . $odd . '</span></span>'],
     ['/play/puzzle/', 'Picture puzzle', 'Swap the mixed-up pieces until the picture is whole again.', 'Solve a puzzle', '<span class="pa pa-puzzle" aria-hidden="true"><span class="pa-pz">' . $pz . '</span></span>'],
     ['/play/quiz/', 'City quiz', 'Five quizzes: buildings, worlds, jobs, key words and people.', 'Take the quiz', '<span class="pa pa-quiz" aria-hidden="true">' . thumb_img(thumb('roman', 'aqueduct')) . '<span class="pa-q">?</span><span class="pa-opts"><span></span><span></span><span></span></span></span>'],
     ['/play/map-hunt/', 'Map hunt', 'Read a clue, then find the place on a city map.', 'Start hunting', '<span class="pa pa-hunt" aria-hidden="true"><span class="pa-lens">' . thumb_img(thumb('green', 'treetop-village')) . '</span><span class="pa-handle"></span></span>'],
     ['/play/memory/', 'Memory match', 'Turn over two cards at a time and find the pairs that go together.', 'Play memory', '<span class="pa pa-mem" aria-hidden="true"><span class="pa-card pa-card-back"><img src="/favicon.svg" width="44" height="44" alt=""></span><span class="pa-card">' . thumb_img(thumb('roman', 'aqueduct')) . '</span><span class="pa-card">' . thumb_img(thumb('future', 'water-recycler')) . '</span></span>'],
-    ['/play/card-memory/', 'Card memory', 'Turn over painted trading cards and match the seven city worlds.', 'Flip the cards', '<span class="pa pa-cm" aria-hidden="true">' . cm_mini() . cm_mini('egypt') . cm_mini('heaven') . '</span>'],
-    ['/play/hero-cards/', 'Hero Cards', 'Duel the computer with painted cards from seven worlds, then collect them in an album.', 'Play a duel', '<span class="pa pa-hc" aria-hidden="true">' . hc_card_html(hc_by_id('modern_heli')) . hc_card_html(hc_by_id('egypt_great_pyramid')) . hc_card_html(hc_by_id('green_fox')) . '</span>'],
+    ['/play/card-memory/', 'Card memory', 'Turn over painted trading cards and match the seven city worlds.', 'Flip the cards', '<span class="pa pa-cm" aria-hidden="true">' . cm_mini() . cm_mini('medieval') . cm_mini('heaven') . '</span>'],
+    ['/play/hero-cards/', 'Hero Cards', 'Duel the computer with painted cards from seven worlds, then collect them in an album.', 'Play a duel', '<span class="pa pa-hc" aria-hidden="true">' . hc_card_html(hc_by_id('modern_heli')) . hc_card_html(hc_by_id('medieval_knight')) . hc_card_html(hc_by_id('green_fox')) . '</span>'],
     ['/play/word-search/', 'Word search', 'Find ten hidden city words, then learn what they mean.', 'Find words', '<span class="pa pa-words" aria-hidden="true"><span class="pa-letters">' . $letters . '</span></span>'],
     ['/play/passport/', 'Your city passport', "Collect stamps and badges. Can you visit all $total places?", 'See your stamps', '<span class="pa pa-pass" aria-hidden="true">' . $stamps . '</span>'],
   ];
@@ -480,7 +480,7 @@ quiz_game([
   'lead' => 'Ten questions each. Choose a quiz:',
   'modes' => [
     ['name', 'Name that building', 'Look at the picture and pick its name.', [['roman', 'pantheon'], ['modern', 'public-library']]],
-    ['world', 'Which world?', 'Is it from Egypt, Rome, the modern town, the Green World, the future or the heavenly city?', [['green', 'treehouse-school'], ['future', 'radio-telescope']]],
+    ['world', 'Which world?', 'Is it from Egypt, Rome, the medieval kingdom, the modern town, the Green World, the future or the heavenly city?', [['medieval', 'royal-castle'], ['future', 'radio-telescope']]],
     ['job', 'Same job, different world', 'Find the building that does the same job in another world.', [['roman', 'aqueduct'], ['future', 'water-recycler']]],
     ['words', 'Key words', 'Read the meaning and pick the right word.', [['roman', 'library'], ['green', 'tree-library']]],
     ['people', 'Who works here?', 'Meet a person and find the place where they work or live.', [['modern', 'worker-1'], ['future', 'people-2']]],
@@ -501,7 +501,7 @@ quiz_game([
   'modes' => [
     ['shadow', 'Easy shadows', 'Four buildings from four different worlds.', [['egypt', 'sphinx'], ['egypt', 'sphinx']]],
     ['shadow-hard', 'Tricky shadows', 'All four buildings come from the same world.', [['heaven', 'bell-tower'], ['heaven', 'bell-tower']]],
-    ['shadow-pv', 'People and vehicles', 'Find the person or vehicle that fits the shadow.', [['egypt', 'camel'], ['egypt', 'camel']]],
+    ['shadow-pv', 'People and vehicles', 'Find the person or vehicle that fits the shadow.', [['medieval', 'horse-and-rider'], ['medieval', 'horse-and-rider']]],
   ],
   'data' => ['worlds' => $worldNames, 'items' => $pick($quizItems, ['k', 'w', 'n', 'u', 'i', 't', 'c', 'd']), 'people' => $pick($quizPeople, ['w', 'n', 'r', 'x', 'i', 't', 'u'])],
   'key' => 'atlas.shadows', 'done' => 'shadows', 'need' => 8,
@@ -532,7 +532,7 @@ quiz_game([
     'Comparing and grouping: telling which world a place comes from, and what job a building does for its city.'],
   'lead' => 'Four pictures, and one of them does not belong. Can you spot it? Ten puzzles a game:',
   'modes' => [
-    ['odd-world', 'Odd world out', 'Three come from the same world. Which one is from somewhere else?', [['roman', 'forum'], ['future', 'spaceport']]],
+    ['odd-world', 'Odd world out', 'Three come from the same world. Which one is from somewhere else?', [['medieval', 'abbey'], ['future', 'spaceport']]],
     ['odd-job', 'Odd job out', 'Three do the same job in different worlds. Which one does something else?', [['roman', 'aqueduct'], ['modern', 'stadium']]],
   ],
   'data' => ['worlds' => $worldNames, 'jobs' => $GROUP_JOBS, 'items' => $pick($quizItems, ['k', 'w', 'n', 'u', 't', 'g', 'nd'])],
@@ -840,7 +840,7 @@ $memItems = array_map(fn($it) => ['k' => $it['k'], 'w' => $it['w'], 'n' => $it['
 $memData = json_encode(['worlds' => array_map(fn($W) => $W['name'], $WORLDS), 'jobs' => $GROUP_JOBS, 'items' => $memItems], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
 $memModes = game_modes([
   ['job', 'Same job, two worlds', 'Match buildings that do the same job in different worlds.', [['roman', 'aqueduct'], ['future', 'water-recycler']]],
-  ['name', 'Picture and name', 'Match each picture with its name.', [['green', 'treetop-village'], ['modern', 'stadium']]],
+  ['name', 'Picture and name', 'Match each picture with its name.', [['medieval', 'windmill'], ['modern', 'stadium']]],
 ]);
 $memExtras = game_extras('/play/memory/', 'Turn over two cards at a time. If they make a pair, they stay face up; if not, they turn back. Find all six pairs in as few moves as you can.',
   'Buildings that do the same job in different worlds, and the names of the places in each city.');

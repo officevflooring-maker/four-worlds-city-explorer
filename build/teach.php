@@ -1,5 +1,5 @@
 <?php
-// Teachers & Schools: 23 guides, lessons and explainers built around the questions teachers,
+// Teachers & Schools: 26 guides, lessons and explainers built around the questions teachers,
 // students and families search for. Each guide has a quick answer, sections, an FAQ (also
 // published as FAQPage structured data), links into the building pages and plain-text sources.
 //
@@ -53,6 +53,15 @@ $TEACH_SOURCES = [
   'brit-egypt'    => 'Encyclopaedia Britannica, "Ancient Egypt"',
   'bm-egypt'      => 'The British Museum, ancient Egypt collection and teaching resources',
   'bsb'           => 'The Berean Standard Bible (2023), placed in the public domain',
+  'brit-castle'   => 'Encyclopaedia Britannica, "Castle" and "Motte-and-bailey"',
+  'brit-middle'   => 'Encyclopaedia Britannica, "Middle Ages"',
+  'brit-manor'    => 'Encyclopaedia Britannica, "Manorialism" and "Serfdom"',
+  'brit-guild'    => 'Encyclopaedia Britannica, "Guild" and "Apprenticeship"',
+  'brit-fair'     => 'Encyclopaedia Britannica, "Fair" and "Market"',
+  'un-gwynedd'    => 'UNESCO World Heritage Centre, "Castles and Town Walls of King Edward in Gwynedd"',
+  'nt-bodiam'     => 'National Trust, "History of Bodiam Castle"',
+  'eh-wharram'    => 'English Heritage, "History of Wharram Percy Deserted Medieval Village"',
+  'assize-bread'  => 'The Assize of Bread and Ale (England, about 1266)',
 ];
 
 $TEACH = [
@@ -851,6 +860,134 @@ $TEACH = [
   ],
   'links' => ['egypt/mud-brick-house', 'egypt/village-house', 'egypt/scribe-school', 'egypt/family-house', 'egypt/market', 'egypt/lifting-lever'],
   'sources' => ['brit-egypt', 'bm-egypt', 'lehner'],
+],
+
+// ===================== The Middle Ages =====================
+'how-did-castles-work' => [
+  'title' => 'How Did Castles Work? The Parts of a Medieval Castle Explained',
+  'h1' => 'How did medieval castles work?',
+  'desc' => 'How medieval castles worked: earth mounds and stone keeps, moats, curtain walls, gatehouses and portcullises, who lived inside, and why castles stopped being built, with questions.',
+  'kind' => 'Explainer', 'grades' => '3-8', 'time' => '20-minute read', 'subjects' => 'History, engineering',
+  'quick' => 'A castle was a fortress and a home at the same time. A king or lord lived there with his household and soldiers, and ruled the land around it. Castles were built in rings of defense: a ditch or moat, a high wall with towers, a strong gatehouse and, in the middle, the keep, the strongest tower of all. Most were built in Europe between about 900 and 1500.',
+  'sections' => [
+    ['From earth mounds to stone walls', [
+      'The first castles were quick to build. After the Normans conquered England in 1066, they put up hundreds of motte-and-bailey castles: a wooden tower on a tall earth mound (the motte) above a yard closed in by a fence (the bailey). Over the next two centuries, many were rebuilt in stone, which could not be set on fire.',
+    ]],
+    ['Rings of defense', ['An attacker had to get through one defense after another.'], ['list' => [
+      'A ditch or a moat full of water kept attackers and their ladders away from the walls.',
+      'A high curtain wall ran all the way around, with towers sticking out so defenders could shoot along the wall. Round towers were harder to knock down than square corners.',
+      'Battlements on top had gaps to shoot through and solid parts to hide behind, and narrow slits let archers shoot out while staying safe.',
+      'The gate was the weakest spot, so it became a fortress of its own: a gatehouse with a drawbridge, a heavy grille called a portcullis, and thick wooden doors.',
+      'In the middle stood the keep, the strongest tower, where people could hold out to the end.',
+    ]]],
+    ['Who lived in a castle', [
+      'A castle was busy. Besides the lord and lady and their children, it could hold a steward who ran the estate, cooks, grooms for the horses, a blacksmith, a priest, guards and many servants. Everyone ate together in the great hall, where the lord also held court and settled arguments.',
+      'A castle needed its own water, so most had a well inside the walls, as well as storerooms, a kitchen and a chapel.',
+    ]],
+    ['Why castles stopped being built', [
+      'By the 1500s, gunpowder cannons could break even thick stone walls. Strong kings also did not want lords to have private fortresses. Builders made low, thick forts for guns instead, and rich families moved into comfortable houses with big windows.',
+    ]],
+    ['Try it in class', [], ['list' => [
+      'Draw a castle plan from above, with every ring of defense labeled.',
+      'Build a cardboard gatehouse with a portcullis that goes up and down on a string.',
+      'Find the defenses in the pictures of the Royal castle, Gatehouse and Watchtower pages.',
+      'Look at the treadwheel crane, then work out how builders lifted stone without engines.',
+    ]]],
+    ['Questions for students', [], ['list' => [
+      'Why would a lord want his home to be a fortress?',
+      'Why was the gate the weakest part of a castle, and how did builders fix that?',
+      'Is there a building in your town that people go to for safety? How is it like a castle?',
+    ]]],
+  ],
+  'faq' => [
+    ['What was the strongest part of a castle?', 'The keep, a great tower in the middle. If attackers got past the walls, defenders could hold out there.'],
+    ['Why did castles have moats?', 'A ditch or moat kept attackers, ladders and siege machines away from the walls, and made it hard to dig tunnels under them.'],
+    ['How long did it take to build a castle?', 'A wooden motte-and-bailey castle could go up in weeks. A big stone castle took years: work on Caernarfon Castle in Wales began in 1283 and went on for about 50 years, and it was never fully finished.'],
+  ],
+  'links' => ['medieval/royal-castle', 'medieval/gatehouse', 'medieval/watchtower', 'medieval/great-hall', 'medieval/crane', 'medieval/building-materials'],
+  'sources' => ['brit-castle', 'un-gwynedd', 'nt-bodiam'],
+],
+
+'daily-life-in-a-medieval-town' => [
+  'title' => 'Daily Life in the Middle Ages: Homes, Food, Work and School',
+  'h1' => 'What was daily life like in the Middle Ages?',
+  'desc' => 'Daily life for ordinary people in the Middle Ages: village farms and town trades, timber and thatch homes, bread and pottage, guilds and apprentices, school and play, with questions.',
+  'kind' => 'Explainer', 'grades' => '3-8', 'time' => '20-minute read', 'subjects' => 'History, social studies',
+  'quick' => 'Most people in medieval Europe were farmers who lived in villages and worked strips of land in big open fields. Others lived in growing market towns as bakers, smiths, weavers and traders. Homes were made of timber, clay and thatch, bread was eaten at every meal, and church bells marked the hours of the day. Most children worked from a young age, and only a few went to school.',
+  'sections' => [
+    ['Village and manor', [
+      'The Middle Ages lasted about a thousand years, from around AD 500 to 1500. For most of that time, nine people in ten lived in the countryside. The land around a village belonged to a lord, and many peasants, called serfs, owed him work on his fields and could not leave without his permission.',
+      'Village fields were divided into long strips, and each family farmed strips scattered across them. Crops took turns, and one field rested each year so the soil could recover. The lord often owned the mill and the oven, and villagers paid to use them.',
+    ]],
+    ['Homes', [
+      'Country cottages had a timber frame filled with wattle and daub, woven sticks covered in clay, under a roof of thatch. Many had one or two rooms, with a fire on a hearth in the middle of the floor and smoke drifting up through the roof.',
+      'In towns, houses were tall and narrow, with upper floors that jutted out over the street. A craftsman often had his workshop or shop on the ground floor and his family upstairs.',
+    ]],
+    ['Food', [
+      'Bread was the main food, white for the rich and darker rye or barley bread for everyone else. Most families also ate pottage, a thick stew of grain, peas, beans and vegetables from the garden, and drank ale. Meat was a treat for most people. On Fridays and in Lent, the church asked people not to eat meat, so fish was eaten instead.',
+    ]],
+    ['Work in town', [
+      'Towns held a market every week, and some held a big fair once a year. People in the same trade joined a guild, which set prices and standards and decided who could work in the town. A young person learned a trade as an apprentice, often for seven years, then worked for wages as a journeyman, and could become a master with a workshop of their own.',
+    ]],
+    ['School, church and play', [
+      'Most children never went to school; they learned at home, in the fields or as apprentices. Some boys went to grammar schools to learn Latin, the language of books and the church. Church bells rang the hours, and Sundays and holy days were days of rest. The word "holiday" comes from "holy day". Children played with balls, spinning tops, dolls and toy horses, and towns enjoyed fairs and plays.',
+    ]],
+    ['Questions for students', [], ['list' => [
+      'Why did most people in the Middle Ages live in the countryside?',
+      'Why might a town make rules about the weight and price of bread?',
+      'Compare a medieval child\'s day with yours. What would you miss, and what might you enjoy?',
+    ]]],
+  ],
+  'faq' => [
+    ['What did people eat in the Middle Ages?', 'Mostly bread and pottage, a thick stew of grain, peas, beans and vegetables, with ale to drink. Meat was a treat for most families, and fish was eaten on fast days.'],
+    ['Did children go to school in the Middle Ages?', 'Most did not. Children helped at home and in the fields, or learned a trade as apprentices. Some boys went to grammar schools to learn Latin, often taught by a priest.'],
+    ['What were medieval houses made of?', 'Most were timber frames filled with wattle and daub, woven sticks covered in clay, with thatched roofs. Castles, churches and rich people\'s houses were built of stone.'],
+  ],
+  'links' => ['medieval/peasant-cottage', 'medieval/town-house', 'medieval/farmstead', 'medieval/bakery', 'medieval/guild-hall', 'medieval/village-school'],
+  'sources' => ['brit-middle', 'brit-manor', 'brit-guild', 'eh-wharram'],
+],
+
+'medieval-market-day-lesson' => [
+  'title' => 'Medieval Market Day: A Classroom Lesson on Guilds and Trade',
+  'h1' => 'Medieval market day: a lesson on guilds and trade',
+  'desc' => 'A role-play lesson for grades 3 to 7: students form guilds, agree on rules for quality and fair prices, pay a toll at the town gate and trade at a medieval market.',
+  'kind' => 'Lesson', 'grades' => '3-7', 'time' => '1 to 2 class periods', 'subjects' => 'History, economics, math',
+  'quick' => 'Students form guilds of bakers, weavers, smiths and other trades, write rules for quality and fair prices, then trade at a class market day with paper pennies. Along the way they find out how medieval towns worked: markets and fairs, guilds and apprentices, tolls at the town gate and honest weights. Then they compare it with the shops and rules around them today.',
+  'sections' => [
+    ['You will need', [], ['list' => [
+      'Paper pennies: 10 for each student.',
+      'Index cards for goods: each guild draws or writes its goods, one card per item.',
+      'A sign for the market cross, and a table or two desks for each guild\'s stall.',
+      'A few "short weight" cards for the market inspector to hand out.',
+    ]]],
+    ['Steps', [], ['list' => [
+      'Explore (10 minutes). In pairs, students read the Market hall, Guild hall and Bakery pages and note one rule a medieval town had about trade.',
+      'Form guilds (10 minutes). Groups of four or five choose a trade, such as bakers, weavers, smiths, potters or candle makers, and write three rules: one about quality, one about price, and one about who may join.',
+      'Make goods (10 minutes). Each guild makes its goods cards and sets a fair price for each.',
+      'Through the gate. Every trader pays one penny toll at the town gate to bring goods to market.',
+      'Market day (15 minutes). Students take turns as traders and shoppers. A market inspector checks stalls and hands a "short weight" card to any trader who breaks a guild rule.',
+      'Talk it over (10 minutes). Use the discussion questions below.',
+    ]]],
+    ['What students learn', [], ['list' => [
+      'Why medieval towns had markets, fairs and gates with tolls.',
+      'How guilds set prices and standards, and trained apprentices.',
+      'Adding and subtracting with money, and what makes a price fair.',
+      'How rules that protect shoppers today grew from old ideas like honest weights.',
+    ]]],
+    ['Questions for discussion', [], ['list' => [
+      'Why did guilds set prices and check the quality of work?',
+      'Whom did the guild rules help? Could they keep anyone out?',
+      'Why did towns charge a toll at the gate? What did the money pay for?',
+      'What rules protect shoppers today, and who checks them?',
+    ]]],
+  ],
+  'faq' => [
+    ['What grades is this lesson for?', 'Grades 3 to 7. Younger classes can skip the written rules and just trade; older classes can add a second round in which prices change after a poor harvest.'],
+    ['Does it work for homeschool?', 'Yes. With a small group, each child runs two trades, and a parent plays the market inspector and the gatekeeper.'],
+    ['Do I need to print anything?', 'No. Paper pennies and goods cards can be cut from scrap paper, and the building pages can be read on screen.'],
+  ],
+  'links' => ['medieval/market-hall', 'medieval/guild-hall', 'medieval/bakery', 'medieval/blacksmith', 'medieval/market-cross', 'medieval/gatehouse'],
+  'sources' => ['brit-guild', 'brit-fair', 'assize-bread'],
 ],
 
 // ===================== Heavenly City =====================
