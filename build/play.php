@@ -90,6 +90,9 @@ foreach (WORLD_ORDER as $w) {
 foreach ($TOURS as $slug => $t) {
   $SEARCH[] = [$t['h1'] . ' tour', "/tours/$slug/", 'Tour', $t['world'], thumb($t['world'], $t['guide']), $t['theme'], 'guided tour walk ' . $t['desc']];
 }
+foreach ($STORIES as $w => [$slead]) {
+  $SEARCH[] = [$WORLDS[$w]['name'] . ' story', "/stories/$w/", 'Story', $w, thumb($w, $WORLDS[$w]['card']), $slead, 'picture book story read aloud kids ' . story_title($w)];
+}
 foreach ($TEACH as $slug => $g) {
   [$lw, $ls] = explode('/', $g['links'][0] ?? 'roman/aqueduct');
   $SEARCH[] = [$g['h1'], "/teachers/$slug/", 'Teacher guide', '', thumb($lw, $ls), $g['kind'] . ', grades ' . $g['grades'], $g['subjects'] . ' lesson teacher class homeschool ' . $g['desc']];
@@ -116,6 +119,7 @@ foreach ([
   ['Your city passport', '/play/passport/', 'Activity', 'Collect a stamp for every place you open.', 'passport stamps visited progress'],
   ['Compare the worlds', '/compare/', 'Page', 'One question, seven answers: water, gathering, travel, goods and nature.', 'compare'],
   ['Guided tours', '/tours/', 'Page', 'Short walks with a guide and a question at every stop.', 'tours'],
+  ['Picture-book stories', '/stories/', 'Page', 'A painted story in three chapters for every world.', 'stories picture book read aloud bedtime kids'],
   ['Teachers and families', '/teachers/', 'Page', 'Free lessons, projects and explainers for every grade.', 'teachers lessons school class'],
   ['Artwork', '/artwork/', 'Page', 'View, save and print every illustration, free under CC BY 4.0.', 'art pictures images download print free'],
   ['About this project', '/about/', 'Page', 'What is real and what is imagined, privacy, accessibility and sources.', 'about privacy sources accessibility'],
@@ -219,6 +223,7 @@ function play_cards($only = null) {
     ['/play/card-memory/', 'Card memory', 'Turn over painted trading cards and match the seven city worlds.', 'Flip the cards', '<span class="pa pa-cm" aria-hidden="true">' . cm_mini() . cm_mini('medieval') . cm_mini('heaven') . '</span>'],
     ['/play/hero-cards/', 'Hero Cards', 'Duel the computer with painted cards from seven worlds, then collect them in an album.', 'Play a duel', '<span class="pa pa-hc" aria-hidden="true">' . hc_card_html(hc_by_id('modern_heli')) . hc_card_html(hc_by_id('medieval_knight')) . hc_card_html(hc_by_id('green_fox')) . '</span>'],
     ['/play/word-search/', 'Word search', 'Find ten hidden city words, then learn what they mean.', 'Find words', '<span class="pa pa-words" aria-hidden="true"><span class="pa-letters">' . $letters . '</span></span>'],
+    ['/stories/', 'Picture-book stories', 'A painted story in three chapters for every world. Read it, print it or listen.', 'Read a story', '<span class="pa pa-story" aria-hidden="true">' . story_img('medieval', 1, 3, '', '(min-width: 900px) 360px, 90vw') . '</span>'],
     ['/play/passport/', 'Your city passport', "Collect stamps and badges. Can you visit all $total places?", 'See your stamps', '<span class="pa pa-pass" aria-hidden="true">' . $stamps . '</span>'],
   ];
   $out = '';

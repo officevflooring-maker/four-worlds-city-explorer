@@ -229,7 +229,8 @@ function full_world($w) {
   $glance = '<li><strong>' . ($count - $vehicleCount) . '</strong> places</li><li><strong>' . $vehicleCount . '</strong> vehicles</li>' . (empty($PEOPLE[$w]) ? '' : '<li><strong>' . count($PEOPLE[$w]) . '</strong> people</li>')
     . ($photoCount ? '<li><strong>' . $photoCount . '</strong> photos of real places</li>' : '')
     . ($story ? '<li><a href="/worlds/' . $w . '/story/">' . h($story['title']) . ', in ' . $count . ' parts</a></li>' : '')
-    . ($tour ? '<li><a href="/tours/' . $tourSlug . '/">Guided tour: ' . h($tour['h1']) . '</a></li>' : '');
+    . ($tour ? '<li><a href="/tours/' . $tourSlug . '/">Guided tour: ' . h($tour['h1']) . '</a></li>' : '')
+    . (is_file(PUB . "/assets/stories/$w/1-1-600.webp") ? '<li><a href="/stories/' . $w . '/">Picture-book story</a></li>' : '');
   $storyStart = $story ? '<p class="lead">' . h($story['lead']) . '</p><p><a class="btn" href="/worlds/' . $w . '/' . array_key_first($pages) . '/">Start with part 1</a> <a class="btn btn-quiet" href="/worlds/' . $w . '/story/">See all ' . $count . ' parts</a></p>' : '';
   $peopleLink = empty($PEOPLE[$w]) ? '' : '<a href="/worlds/' . $w . '/people/">Meet the people</a> · ';
   $tourLink = $tour ? '<a href="/tours/' . $tourSlug . '/">Take the tour</a>' : '<a href="/tours/">Guided tours</a>';

@@ -214,6 +214,7 @@ $GLOBALS['ppTotals'] = implode(' ', array_map(fn($w) => "$w:" . count($WORLD_DAT
 require __DIR__ . '/worldpages.php';
 require __DIR__ . '/shop.php';          // before the pages that point to the shop
 require __DIR__ . '/tours.php';         // before the Teachers page, which lists the tours
+require __DIR__ . '/stories.php';       // picture-book stories (uses world_tour() from worldpages.php)
 require __DIR__ . '/teachpages.php';
 // The world maps and their pages, after the tours they point to.
 foreach (WORLD_ORDER as $w) { full_world($w); if (!empty($PEOPLE[$w])) people_page($w); }
@@ -496,6 +497,8 @@ foreach ($WORLD_DATA as $w => $D) foreach (array_keys($D['pages']) as $slug) $ur
 $urls['/compare/'] = '0.8';
 $urls['/tours/'] = '0.8';
 foreach (array_keys($TOURS) as $slug) $urls["/tours/$slug/"] = '0.8';
+$urls['/stories/'] = '0.8';
+foreach (array_keys($STORIES) as $w) $urls["/stories/$w/"] = '0.7';
 $urls['/teachers/'] = '0.9';
 $urls['/teachers/homeschool/'] = '0.9';
 foreach (array_keys($TEACH) as $slug) $urls["/teachers/$slug/"] = '0.8';
