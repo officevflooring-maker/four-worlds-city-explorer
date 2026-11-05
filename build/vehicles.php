@@ -22,6 +22,8 @@ const VEHICLE_FIT = [
   'egypt/ox-cart'            => [8.4, .72, .71], 'egypt/stone-sledge'     => [8.6, .72, .74],
   'heaven/golden-chariot'    => [6.2, .95, .91], 'heaven/cloud-carriage'  => [5.8, .87, .91],
   'heaven/swan-boat'         => [6.2, .93, .87], 'heaven/fruit-donkey'    => [5.8, .91, .93],
+  'medieval/covered-wagon'   => [6.4, .91, .92], 'medieval/horse-and-rider' => [5.6, .95, .97],
+  'medieval/hay-cart'        => [6.2, .89, .88], 'medieval/donkey-cart'   => [6.0, .85, .86],
 ];
 
 $VEHICLE_SOURCES = [
@@ -83,6 +85,11 @@ $VEHICLE_SOURCES = [
     'brit-maglev'     => 'Encyclopaedia Britannica, "Maglev"',
     'brit-donkey'     => 'Encyclopaedia Britannica, "Donkey"',
     'cnn-biblioburro' => 'CNN Heroes, Luis Soriano and the Biblioburro (2010)',
+  ],
+  'medieval' => [
+    'brit-transport'   => 'Encyclopaedia Britannica, "Wagon" and the history of land transportation',
+    'brit-horsecollar' => 'Encyclopaedia Britannica, "Horse collar"',
+    'brit-cooperage'   => 'Encyclopaedia Britannica, "Cooperage"',
   ],
 ];
 
@@ -639,6 +646,87 @@ $VEHICLES = [
   'words' => ['Maglev' => 'Short for magnetic levitation: floating on magnets.', 'Carriage' => 'A vehicle for carrying people.', 'Promise' => 'Saying you will certainly do something.'],
   'sources' => ['bible-acts', 'bible-rev', 'bible-1thess', 'bible-matthew', 'bible-psalms', 'brit-maglev'],
   'related' => ['cloud-island', 'harp-workshop', 'pearl-gate'],
+],
+],
+'medieval' => [
+'covered-wagon' => [
+  'name' => 'Covered wagon', 'latin' => 'carrier\'s wagon', 'src' => 'vehicle/car_1.png',
+  'summary' => 'A four-wheeled wagon with a cloth cover, pulled by horses, that carried goods and travelers between towns.',
+  'facts' => ['Pulled by' => 'Horses or oxen', 'Speed' => 'About walking pace', 'Carried' => 'Goods to market, and sometimes passengers', 'Roads' => 'Mostly earth tracks, muddy in winter'],
+  'sections' => [
+    ['On the road', [
+      'Medieval roads were mostly earth tracks. In winter the mud could make them almost impossible to use. Carriers ran wagons between towns on regular days, bringing goods, letters and sometimes passengers.',
+      'A cloth cover stretched over hoops kept rain off the load. Heavy goods often went by river or by sea instead, because boats could carry far more for less money.',
+    ]],
+    ['Horses take over', [
+      'For heavy farm work, oxen were used for centuries. During the Middle Ages, the padded horse collar spread across Europe. It let horses pull hard without choking, so more farmers and carters began to use horses, which were faster than oxen.',
+    ]],
+  ],
+  'art' => 'The illustration shows a wooden wagon with a green cloth cover, a lantern and a basket of apples, pulled by two ponies.',
+  'look' => ['Count the wheels.', 'What do you think is under the cover?'],
+  'questions' => ['Why might traders send heavy goods by boat instead of by road?', 'How would winter change a journey?', 'How do goods reach the shops in your town today?'],
+  'words' => ['Carrier' => 'A person who carries goods for others, for a fee.', 'Horse collar' => 'A padded collar that lets a horse pull heavy loads.', 'Wagon' => 'A vehicle with four wheels; a cart has two.'],
+  'sources' => ['brit-transport', 'brit-horsecollar'],
+  'related' => ['merchants-house', 'market-hall', 'gatehouse'],
+],
+'horse-and-rider' => [
+  'name' => 'Horse and rider', 'latin' => 'palfrey and destrier', 'src' => 'vehicle/car_2.png',
+  'summary' => 'A rider on horseback: the fastest way to travel in medieval Europe, for knights, messengers and nobles.',
+  'facts' => ['War horse' => 'The destrier, strong and costly', 'Riding horse' => 'The palfrey, with a smooth gait for long trips', 'Gear' => 'Saddle, stirrups and horseshoes', 'Cared for by' => 'Grooms, squires and blacksmiths'],
+  'sections' => [
+    ['Horses for every job', [
+      'Medieval people named horses by their work. The destrier was the knight\'s great war horse, strong enough to carry a rider in armor, and very expensive. The palfrey had a smooth walking gait, comfortable for long journeys. Sturdy packhorses carried loads.',
+    ]],
+    ['Stirrups and shoes', [
+      'Stirrups, which reached Europe in the early Middle Ages, gave riders a steady seat, so a knight could charge with a lance. Iron horseshoes, nailed on by a blacksmith, protected hooves on hard and stony roads.',
+    ]],
+  ],
+  'art' => 'The illustration shows a brown horse in a red cloth with gold lilies, ridden by a young man in a blue tunic and red cape. The lily, or fleur-de-lis, was a common design in medieval heraldry.',
+  'look' => ['Find the stirrups.', 'Find the lily shapes on the horse\'s cloth.'],
+  'questions' => ['Why would a knight need a different horse from a traveler?', 'How did stirrups help riders?', 'Who looks after animals in your community?'],
+  'words' => ['Destrier' => 'A strong war horse ridden by a knight.', 'Palfrey' => 'A riding horse with a smooth, easy gait.', 'Stirrup' => 'A loop hanging from a saddle to hold the rider\'s foot.'],
+  'sources' => ['brit-knight', 'brit-transport'],
+  'related' => ['blacksmith', 'tournament-field', 'knight-statue'],
+],
+'hay-cart' => [
+  'name' => 'Hay cart', 'latin' => 'haymaking', 'src' => 'vehicle/car_3.png',
+  'summary' => 'An ox cart piled high with hay, cut in summer to feed the animals through the winter.',
+  'facts' => ['Pulled by' => 'An ox or a horse', 'Haymaking' => 'Early summer, around June', 'Tools' => 'Scythes, rakes and pitchforks', 'Hay fed' => 'Horses, oxen and cows in winter'],
+  'sections' => [
+    ['Food for the winter', [
+      'Grass stops growing in winter, so farmers cut it in summer, left it to dry in the sun, and stored it as hay. Without enough hay, animals went hungry, so haymaking was one of the busiest times of the farming year. Whole villages worked together with scythes, rakes and pitchforks.',
+      'Meadows where the best hay grew were valuable, and they were often shared out in strips like the fields.',
+    ]],
+    ['The labors of the months', [
+      'Many medieval prayer books and church carvings show a calendar of the "labors of the months": plowing, sowing, haymaking, harvesting and feasting at Christmas. Haymaking usually belongs to June or July.',
+    ]],
+  ],
+  'art' => 'The illustration shows a wooden cart with a big golden load of hay tied with rope, pulled by an ox.',
+  'look' => ['Find the rope that holds the hay on.', 'How high is the hay piled?'],
+  'questions' => ['Why did farmers need to store food for their animals?', 'What would happen if it rained all through haymaking?', 'What jobs in your area depend on the seasons?'],
+  'words' => ['Hay' => 'Grass that is cut and dried to feed animals.', 'Scythe' => 'A tool with a long curved blade for cutting grass.', 'Meadow' => 'A field of grass, often cut for hay.'],
+  'sources' => ['brit-openfield', 'bl-luttrell'],
+  'related' => ['farmstead', 'windmill', 'shepherds-cottage'],
+],
+'donkey-cart' => [
+  'name' => 'Donkey cart', 'latin' => 'cooper\'s barrels', 'src' => 'vehicle/car_4.png',
+  'summary' => 'A small cart pulled by a donkey, loaded with wooden barrels of ale, wine or salted fish.',
+  'facts' => ['Pulled by' => 'A donkey or a pony', 'Barrels held' => 'Ale, wine, salted fish, flour and nails', 'Barrels made by' => 'Coopers', 'Why barrels' => 'Strong, and easy to roll'],
+  'sections' => [
+    ['Barrels for everything', [
+      'Medieval people stored and shipped many goods in wooden barrels: ale, wine, salted herring, butter, flour, even nails. A barrel is strong, keeps things dry, and can be rolled by one person, even when it is heavy.',
+      'Barrels were made by coopers. They shaped wooden staves, bent them into a curve and held them tight with hoops of wood or iron. A good barrel did not leak a drop.',
+    ]],
+    ['Small carts', [
+      'Donkeys and ponies pulled small carts through narrow town streets and lanes where big wagons could not fit. Donkeys are patient, strong for their size and need less food than horses.',
+    ]],
+  ],
+  'art' => 'The illustration shows a grey donkey pulling a little wooden cart loaded with barrels.',
+  'look' => ['Count the barrels.', 'Find the hoops on each barrel.'],
+  'questions' => ['Why is a barrel easier to move than a box of the same weight?', 'What do we pack goods in today?', 'Why would a donkey suit narrow streets?'],
+  'words' => ['Cooper' => 'A person who makes barrels.', 'Stave' => 'One of the curved wooden boards of a barrel.', 'Hoop' => 'A ring that holds a barrel together.'],
+  'sources' => ['brit-cooperage', 'brit-transport'],
+  'related' => ['bakery', 'market-hall', 'feast-hall'],
 ],
 ],
 ];

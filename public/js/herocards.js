@@ -1,4 +1,4 @@
-// Hero Cards (/play/hero-cards/): a five-round card duel against the computer, with the Life RPG game's 48 Founders
+// Hero Cards (/play/hero-cards/): a five-round card duel against the computer, with the Life RPG game's 56
 // cards from #hc-data. Each round names a stat and a home world (+2 for its cards); the higher number wins the round.
 // Win the duel and keep one of the computer's cards. The album is kept in this browser only (localStorage).
 (function () {
@@ -113,7 +113,7 @@
     var lv = root.querySelector('input[name="hc-level"]:checked');
     saved.level = lv ? lv.value : 'easy';
     var you = deal(HAND, []), cpu = deal(HAND, you.map(function (c) { return c.i; }));
-    // Every stat comes up at least once; the home world is any of the six.
+    // Every stat comes up at least once; the home world is any of the seven.
     var stats = shuffle(STATS.slice()).concat([pick(STATS), pick(STATS)]);
     G = {
       you: you, cpu: cpu, shiny: cpu.map(function () { return Math.random() < SHINY; }), all: cpu.slice(),

@@ -5,6 +5,8 @@
   <url><loc>https://atlasofcities.org/worlds/egypt/people/</loc><lastmod>2026-10-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://atlasofcities.org/worlds/roman/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
   <url><loc>https://atlasofcities.org/worlds/roman/people/</loc><lastmod>2026-10-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/people/</loc><lastmod>2026-10-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/people/</loc><lastmod>2026-10-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://atlasofcities.org/worlds/green/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
@@ -94,6 +96,44 @@
   <url><loc>https://atlasofcities.org/worlds/roman/chariot/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/roman/donkey-cart/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/roman/litter/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/royal-castle/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/gatehouse/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/watchtower/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/great-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/knight-statue/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/abbey/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/chapel/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/bell-tower/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/market-cross/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/village-school/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/scriptorium/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/university/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/market-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/bakery/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/guild-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/blacksmith/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/merchants-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/windmill/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/farmstead/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/shepherds-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/orchard/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/herb-garden/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/peasant-cottage/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/town-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/tower-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/manor-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/feast-hall/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/kitchen/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/village-well/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/tournament-field/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/archery-butts/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/training-yard/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/crane/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/building-materials/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/covered-wagon/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/horse-and-rider/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/hay-cart/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/worlds/medieval/donkey-cart/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/single-family-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/suburban-house/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/worlds/modern/older-home/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
@@ -253,6 +293,7 @@
   <url><loc>https://atlasofcities.org/tours/ecological-design/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/tours/robotic-cities/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/tours/city-of-goodness/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/tours/medieval-market-town/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
   <url><loc>https://atlasofcities.org/teachers/homeschool/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
   <url><loc>https://atlasofcities.org/teachers/design-a-city-project/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
@@ -297,6 +338,8 @@
   <url><loc>https://atlasofcities.org/teachers/worksheets/egypt-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/roman-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/roman-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/teachers/worksheets/medieval-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://atlasofcities.org/teachers/worksheets/medieval-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/modern-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/modern-word-search/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://atlasofcities.org/teachers/worksheets/green-vocabulary/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>

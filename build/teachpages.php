@@ -136,7 +136,7 @@ $faqHtml = implode('', array_map(fn($f) => '<div class="faq-item"><h3>' . h($f[0
 $hsFaqLd = array_map(fn($f) => ['@type' => 'Question', 'name' => $f[0], 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $f[1]]], $hsFaq);
 page('/teachers/homeschool/', [
   'title' => 'Free Homeschool Resources: History, Science and the Bible',
-  'desc' => h('Free homeschool resources with no sign-up: six illustrated cities, lesson guides, printable worksheets, games and the story of Jesus, for ages 5 to 14.'),
+  'desc' => h('Free homeschool resources with no sign-up: seven illustrated cities, lesson guides, printable worksheets, games and the story of Jesus, for ages 5 to 14.'),
   'class' => 'teachers',
   'body' => <<<HTML
 <div class="wrap">
@@ -145,7 +145,7 @@ page('/teachers/homeschool/', [
 <section class="wrap section page-head">
   <p class="tag">Homeschool</p>
   <h1>Free homeschool resources</h1>
-  <p class="lead">Six illustrated cities to explore, from ancient Egypt and Rome to a modern town and a settlement on Mars, with lesson guides, printables and games. All free for homeschool families and co-ops, with no sign-up, ads or tracking.</p>
+  <p class="lead">Seven illustrated cities to explore, from ancient Egypt, Rome and a medieval castle town to a modern town and a settlement on Mars, with lesson guides, printables and games. All free for homeschool families and co-ops, with no sign-up, ads or tracking.</p>
   <ul class="plain-points">
     <li>Most of it suits ages 8 to 14, and the Bible lesson starts at kindergarten.</li>
     <li>Free to print and share, for one family or a whole co-op.</li>
@@ -193,7 +193,7 @@ const TEACH_PLAY = [
   'what-does-a-city-need' => ['/play/city-builder/', 'Build your own city', 'Students build a city and tick off all ten needs as they go.'],
   'sustainable-city-project-ideas' => ['/play/city-builder/', 'Build your own city', 'Mix nature, homes and work, then check what the city still needs.'],
   'design-a-mars-colony-project' => ['/play/city-builder/', 'Build your own city', 'Build a Moon or Mars settlement from the Robotic Future buildings.'],
-  'fantasy-city-worldbuilding' => ['/play/city-builder/', 'Build your own city', 'Lay out a green city, or mix all six worlds into a new one.'],
+  'fantasy-city-worldbuilding' => ['/play/city-builder/', 'Build your own city', 'Lay out a green city, or mix all seven worlds into a new one.'],
   'ancient-rome-vs-modern-cities' => ['/play/quiz/', 'City quiz', 'The "Same job, different world" quiz matches Roman buildings with modern ones.'],
   'discussion-questions-what-makes-a-good-city' => ['/play/city-builder/', 'Build your own city', 'Build a city first, then use these questions to talk about it.'],
 ];

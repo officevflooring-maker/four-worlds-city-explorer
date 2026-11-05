@@ -58,12 +58,19 @@ $ART_TITLES = [
     'town-1' => 'Command center', 'town-2' => 'Launch pad', 'town-3' => 'Spaceport',
     'tree-1' => 'Pine tree', 'tree-2' => 'Planter cypress', 'tree-3' => 'Ringed tree', 'tree-4' => 'Light tree',
   ],
-  // pictures with no page of their own (the other Egypt and Heaven pictures are titled by their pages)
+  // pictures with no page of their own (the other Egypt, Heaven and Medieval pictures are titled by their pages)
   'egypt' => [
     'floor-l' => 'Tower house', 'nt-house' => 'House with a roof terrace', 'nt-shop' => 'Pottery stall',
     'tree-1' => 'Date palm', 'tree-2' => 'Doum palm', 'tree-3' => 'Sycamore fig', 'tree-4' => 'Papyrus reeds',
     'horizon' => 'Desert horizon with pyramids', 'tex-grass' => 'Ground: sand and grass', 'tex-far' => 'Ground: desert dunes',
     'tex-water' => 'Ground: the Nile', 'tex-plaza' => 'Ground: painted sandstone paving', 'tex-road' => 'Ground: sandstone road',
+  ],
+  'medieval' => [
+    'nt-house' => 'Thatched cottage with a red door', 'shared-2' => 'Long timber-framed house',
+    'tree-1' => 'Apple tree', 'tree-2' => 'Fir tree', 'tree-3' => 'Oak tree', 'tree-4' => 'Birch tree',
+    'horizon' => 'Horizon: green hills and a castle', 'tex-far' => 'Ground: fields and hedges', 'tex-lot' => 'Ground: bare earth building lot',
+    'tex-road' => 'Ground: cobbled road', 'tex-water' => 'Ground: river', 'tex-plaza' => 'Ground: cobbled square',
+    'tex-cross' => 'Ground: cobbled crossroads with flower beds',
   ],
   'heaven' => [
     'floor-s' => 'Little domed house', 'floor-m' => 'Marble house with balconies', 'floor-l' => 'Spire tower',

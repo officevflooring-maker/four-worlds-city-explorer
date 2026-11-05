@@ -4,7 +4,7 @@
 // tour pages, because it uses their data, and before home.php. Everything runs in the browser, and
 // anything a visitor makes or collects is kept only in their own browser.
 
-const WORLD_LETTER = ['roman' => 'r', 'modern' => 'm', 'green' => 'e', 'future' => 'f', 'egypt' => 'g', 'heaven' => 'h'];
+const WORLD_LETTER = ['medieval' => 'k', 'roman' => 'r', 'modern' => 'm', 'green' => 'e', 'future' => 'f', 'egypt' => 'g', 'heaven' => 'h'];
 // Pages whose picture is a ground texture, not a building, so they are not builder or quiz pieces.
 const NOT_PIECES = ['modern/water-system', 'modern/streets-crosswalks'];
 
@@ -17,7 +17,7 @@ $NEEDS = [
   'health' => ['Health', ['health', 'fitness'], []],
   'learn'  => ['Learning', ['schools', 'books', 'science'], ['modern/cultural-center']],
   'lead'   => ['Leaders', ['government'], ['roman/forum', 'roman/treasury', 'future/mission-control', 'egypt/pharaohs-palace', 'heaven/palace-of-light']],
-  'meet'   => ['Places to meet', ['squares', 'shows', 'temples', 'prayer'], ['modern/community-center', 'modern/cultural-center', 'green/great-tree-hall', 'egypt/feast-hall', 'heaven/banquet-hall', 'heaven/welcome-hall', 'heaven/rainbow-pavilion']],
+  'meet'   => ['Places to meet', ['squares', 'shows', 'temples', 'prayer'], ['modern/community-center', 'modern/cultural-center', 'green/great-tree-hall', 'egypt/feast-hall', 'medieval/feast-hall', 'heaven/banquet-hall', 'heaven/welcome-hall', 'heaven/rainbow-pavilion']],
   'work'   => ['Work and shops', ['shops', 'making', 'storage'], ['modern/office-building', 'modern/skyscraper']],
   'safety' => ['Safety', ['safety'], []],
   'nature' => ['Nature', ['nature'], ['roman/olive-grove', 'green/flower-meadow', 'modern/community-garden', 'future/greenhouse-dome', 'egypt/palm-grove', 'heaven/tree-of-life', 'heaven/lily-garden']],
@@ -97,24 +97,24 @@ foreach ($TEACH as $slug => $g) {
 $SEARCH[] = ['Free homeschool resources', '/teachers/homeschool/', 'Teacher guide', '', thumb('egypt', 'pyramid'), 'A week with one city, lessons by subject, printables and games',
   'homeschool home school homeschooling free resources curriculum co-op parents bible lessons'];
 foreach ($COMPARE as [$key, $label, $question, $cells]) {
-  $SEARCH[] = ["Compare: $label", "/compare/#$key", 'Compare', '', thumb('roman', $cells['roman'][0]) ?? thumb('modern', $cells['modern'][3] ?? ''), $question, 'compare six worlds'];
+  $SEARCH[] = ["Compare: $label", "/compare/#$key", 'Compare', '', thumb('roman', $cells['roman'][0]) ?? thumb('modern', $cells['modern'][3] ?? ''), $question, 'compare seven worlds'];
 }
 foreach ([
   ['Play and create', '/play/', 'Activity', 'Free games: build a city, sort pictures, match shadows, solve puzzles, quizzes and more.', 'games play fun kids'],
-  ['Build your own city', '/play/city-builder/', 'Activity', 'Mix buildings from all six worlds and give your city everything it needs.', 'city builder game make design'],
-  ['City quiz', '/play/quiz/', 'Activity', 'Ten picture questions about the six worlds.', 'quiz test game questions'],
+  ['Build your own city', '/play/city-builder/', 'Activity', 'Mix buildings from all seven worlds and give your city everything it needs.', 'city builder game make design'],
+  ['City quiz', '/play/quiz/', 'Activity', 'Ten picture questions about the seven worlds.', 'quiz test game questions'],
   ['World sort', '/play/world-sort/', 'Activity', 'A race against the clock: send each picture home to its world.', 'sort sorting speed race timer game worlds'],
   ['Shadow match', '/play/shadows/', 'Activity', 'Whose shadow is it? Match shadows to buildings, people and vehicles.', 'shadow shadows silhouette shapes match game'],
   ['Zoom detective', '/play/zoom/', 'Activity', 'Name the building from a close-up as it slowly zooms out.', 'zoom close up detective guess picture game'],
   ['Odd one out', '/play/odd-one-out/', 'Activity', 'Four pictures: spot the one that does not belong.', 'odd one out puzzle thinking game'],
   ['Picture puzzle', '/play/puzzle/', 'Activity', 'Swap the mixed-up pieces until the picture is whole again.', 'jigsaw puzzle picture pieces game'],
   ['Memory match', '/play/memory/', 'Activity', 'Turn over cards and match buildings that do the same job.', 'memory cards pairs match game'],
-  ['Hero Cards', '/play/hero-cards/', 'Activity', 'Duel the computer with painted cards from six worlds, and collect them in an album.', 'hero cards trading card duel collect album game'],
-  ['Card memory', '/play/card-memory/', 'Activity', 'Turn over painted trading cards and match the six worlds.', 'memory trading cards pairs match game worlds'],
+  ['Hero Cards', '/play/hero-cards/', 'Activity', 'Duel the computer with painted cards from seven worlds, and collect them in an album.', 'hero cards trading card duel collect album game'],
+  ['Card memory', '/play/card-memory/', 'Activity', 'Turn over painted trading cards and match the seven worlds.', 'memory trading cards pairs match game worlds'],
   ['Word search', '/play/word-search/', 'Activity', 'Find ten hidden city words, then learn what they mean.', 'word search letters vocabulary puzzle game'],
   ['Map hunt', '/play/map-hunt/', 'Activity', 'Read a clue, then find the place on a city map.', 'map hunt clues find game'],
   ['Your city passport', '/play/passport/', 'Activity', 'Collect a stamp for every place you open.', 'passport stamps visited progress'],
-  ['Compare the worlds', '/compare/', 'Page', 'One question, six answers: water, gathering, travel, goods and nature.', 'compare'],
+  ['Compare the worlds', '/compare/', 'Page', 'One question, seven answers: water, gathering, travel, goods and nature.', 'compare'],
   ['Guided tours', '/tours/', 'Page', 'Short walks with a guide and a question at every stop.', 'tours'],
   ['Teachers and families', '/teachers/', 'Page', 'Free lessons, projects and explainers for every grade.', 'teachers lessons school class'],
   ['Artwork', '/artwork/', 'Page', 'View, save and print every illustration, free under CC BY 4.0.', 'art pictures images download print free'],
@@ -164,7 +164,7 @@ foreach ($az as $letter => $list) {
 $searchCount = count($SEARCH);
 page('/search/', [
   'title' => 'Find a page: every building, vehicle, person and tour, A to Z',
-  'desc' => h("Search all $searchCount pages of The Atlas of Cities: buildings and vehicles in six worlds, their people, guided tours, teacher guides and games."),
+  'desc' => h("Search all $searchCount pages of The Atlas of Cities: buildings and vehicles in seven worlds, their people, guided tours, teacher guides and games."),
   'class' => 'search-page',
   'body' => <<<HTML
 <section class="wrap section page-head">
@@ -207,7 +207,7 @@ function play_cards($only = null) {
   $pzSrc = thumb('green', 'treetop-village')[0] ?? '';
   for ($k = 0; $k < 9; $k++) $pz .= '<span' . ($k === 5 ? ' class="out"' : '') . ' style="background-image:url(' . $pzSrc . ');background-position:' . ($k % 3) * 50 . '% ' . intdiv($k, 3) * 50 . '%"></span>';
   $cards = [
-    ['/play/city-builder/', 'Build your own city', 'Mix buildings from all six worlds, then try the nine challenges.', 'Start building', '<span class="pa pa-build" aria-hidden="true"><span class="pa-ground"></span>' . $b . '</span>'],
+    ['/play/city-builder/', 'Build your own city', 'Mix buildings from all seven worlds, then try the ten challenges.', 'Start building', '<span class="pa pa-build" aria-hidden="true"><span class="pa-ground"></span>' . $b . '</span>'],
     ['/play/world-sort/', 'World sort', 'A race against the clock: send each picture home to its world.', 'Start sorting', '<span class="pa pa-sort" aria-hidden="true"><span class="pa-sortcard">' . thumb_img(thumb('egypt', 'camel')) . '</span><span class="pa-bins">' . $bins . '</span></span>'],
     ['/play/shadows/', 'Shadow match', 'Whose shadow is it? Find the building, person or vehicle that fits.', 'Match shadows', '<span class="pa pa-shadow" aria-hidden="true"><span class="pa-sil">' . thumb_img(thumb('green', 'deer-statue')) . '</span><span class="pa-col">' . thumb_img(thumb('green', 'deer-statue')) . '</span></span>'],
     ['/play/zoom/', 'Zoom detective', 'A close-up slowly zooms out. Name it early to score more.', 'Start zooming', '<span class="pa pa-zoom" aria-hidden="true"><span class="pa-zf">' . thumb_img(thumb('roman', 'pantheon')) . '</span></span>'],
@@ -216,8 +216,8 @@ function play_cards($only = null) {
     ['/play/quiz/', 'City quiz', 'Five quizzes: buildings, worlds, jobs, key words and people.', 'Take the quiz', '<span class="pa pa-quiz" aria-hidden="true">' . thumb_img(thumb('roman', 'aqueduct')) . '<span class="pa-q">?</span><span class="pa-opts"><span></span><span></span><span></span></span></span>'],
     ['/play/map-hunt/', 'Map hunt', 'Read a clue, then find the place on a city map.', 'Start hunting', '<span class="pa pa-hunt" aria-hidden="true"><span class="pa-lens">' . thumb_img(thumb('green', 'treetop-village')) . '</span><span class="pa-handle"></span></span>'],
     ['/play/memory/', 'Memory match', 'Turn over two cards at a time and find the pairs that go together.', 'Play memory', '<span class="pa pa-mem" aria-hidden="true"><span class="pa-card pa-card-back"><img src="/favicon.svg" width="44" height="44" alt=""></span><span class="pa-card">' . thumb_img(thumb('roman', 'aqueduct')) . '</span><span class="pa-card">' . thumb_img(thumb('future', 'water-recycler')) . '</span></span>'],
-    ['/play/card-memory/', 'Card memory', 'Turn over painted trading cards and match the six city worlds.', 'Flip the cards', '<span class="pa pa-cm" aria-hidden="true">' . cm_mini() . cm_mini('egypt') . cm_mini('heaven') . '</span>'],
-    ['/play/hero-cards/', 'Hero Cards', 'Duel the computer with painted cards from six worlds, then collect them in an album.', 'Play a duel', '<span class="pa pa-hc" aria-hidden="true">' . hc_card_html(hc_by_id('modern_heli')) . hc_card_html(hc_by_id('egypt_great_pyramid')) . hc_card_html(hc_by_id('green_fox')) . '</span>'],
+    ['/play/card-memory/', 'Card memory', 'Turn over painted trading cards and match the seven city worlds.', 'Flip the cards', '<span class="pa pa-cm" aria-hidden="true">' . cm_mini() . cm_mini('egypt') . cm_mini('heaven') . '</span>'],
+    ['/play/hero-cards/', 'Hero Cards', 'Duel the computer with painted cards from seven worlds, then collect them in an album.', 'Play a duel', '<span class="pa pa-hc" aria-hidden="true">' . hc_card_html(hc_by_id('modern_heli')) . hc_card_html(hc_by_id('egypt_great_pyramid')) . hc_card_html(hc_by_id('green_fox')) . '</span>'],
     ['/play/word-search/', 'Word search', 'Find ten hidden city words, then learn what they mean.', 'Find words', '<span class="pa pa-words" aria-hidden="true"><span class="pa-letters">' . $letters . '</span></span>'],
     ['/play/passport/', 'Your city passport', "Collect stamps and badges. Can you visit all $total places?", 'See your stamps', '<span class="pa pa-pass" aria-hidden="true">' . $stamps . '</span>'],
   ];
@@ -235,11 +235,11 @@ require __DIR__ . '/cardmemory.php';   // Card memory: its small cards are on th
 $playCards = play_cards();
 // Every card but the passport is a game.
 $gameCount = substr_count($playCards, 'class="play-card"') - 1;
-// Compare the worlds is part of Play: the same need in all six worlds (not a game, so it is not counted).
+// Compare the worlds is part of Play: the same need in all seven worlds (not a game, so it is not counted).
 $cmpArt = '';
 foreach ([['roman', 'aqueduct'], ['egypt', 'lotus-pool'], ['future', 'water-recycler'], ['heaven', 'fountain-of-life']] as [$w, $s]) $cmpArt .= '<span>' . thumb_img(thumb($w, $s)) . '</span>';
 $compareCard = '<li class="play-card"><a href="/compare/"><span class="pa pa-odd" aria-hidden="true"><span class="pa-oddgrid">' . $cmpArt . '</span></span>'
-  . '<span class="play-text"><span class="play-title">Compare the worlds</span><span class="what">One need, six worlds: see how each city brings water, travel and more.</span>'
+  . '<span class="play-text"><span class="play-title">Compare the worlds</span><span class="what">One need, seven worlds: see how each city brings water, travel and more.</span>'
   . '<span class="play-go">Compare them <span aria-hidden="true">&rarr;</span></span></span></a></li>';
 $gameWord = ['Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'][$gameCount - 6] ?? (string)$gameCount;
 $promo = shop_cards('', ['journey', 'trivia', 'activity', 'playset']);
@@ -310,6 +310,7 @@ const CHALLENGES = [
   'roman-town'   => ['A Roman town', 'Use only pieces from Ancient Rome and meet all ten needs.', [['only', 'roman'], ['needs', 10]]],
   'mars-base'    => ['A base on Mars', 'Use only Robotic Future pieces and meet all ten needs.', [['only', 'future'], ['needs', 10]]],
   'nile-town'    => ['A town on the Nile', 'Use only Ancient Egypt pieces and meet all ten needs.', [['only', 'egypt'], ['needs', 10]]],
+  'castle-town'  => ['A castle town', 'Use only Medieval Kingdom pieces and meet all ten needs.', [['only', 'medieval'], ['needs', 10]]],
   'heaven-city'  => ['A heavenly city', 'Use only Heavenly City pieces and meet all ten needs.', [['only', 'heaven'], ['needs', 10]]],
   'small-village'=> ['A small village', 'Meet all ten needs with eight buildings or fewer. Trees and ground do not count.', [['needs', 10], ['max', 8]]],
   'green-city'   => ['A green city', 'Meet all ten needs and give nature at least ten squares.', [['needs', 10], ['nature', 10]]],
@@ -327,7 +328,7 @@ $cbExtras = game_extras('/play/city-builder/', 'Pick a building from any world, 
   'What every city needs, from water and homes to safety and nature, and how different places meet those needs.', 'How it works', 'What you learn');
 page('/play/city-builder/', [
   'title' => 'Build your own city: a free city builder for students',
-  'desc' => h("A free online city builder for kids: place buildings from six illustrated worlds, from ancient Egypt to Mars, and give your city all $needCount things it needs."),
+  'desc' => h("A free online city builder for kids: place buildings from seven illustrated worlds, from ancient Egypt to Mars, and give your city all $needCount things it needs."),
   'class' => 'play builder-page',
   'js' => ['builder'],
   'body' => <<<HTML
@@ -336,7 +337,7 @@ page('/play/city-builder/', [
 </div>
 <section class="wrap builder-head">
   <h1>Build your own city</h1>
-  <p class="lead">Pick a building, then tap a square. Mix all six worlds, meet every need, then try the challenges.</p>
+  <p class="lead">Pick a building, then tap a square. Mix all seven worlds, meet every need, then try the challenges.</p>
 </section>
 <div class="wrap builder" data-builder>
   <div class="b-main">
@@ -394,7 +395,7 @@ page('/play/city-builder/', [
 {$cbExtras}
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['City builder', '/play/city-builder/']]),
-    learning('Build your own city', 'An online city builder: place buildings from six illustrated worlds and check that the city meets every need.', '/play/city-builder/', 'City planning and what a city needs')],
+    learning('Build your own city', 'An online city builder: place buildings from seven illustrated worlds and check that the city meets every need.', '/play/city-builder/', 'City planning and what a city needs')],
 ]);
 
 // ---------- Quiz ----------
@@ -472,10 +473,10 @@ HTML,
 
 quiz_game([
   'path' => '/play/quiz/', 'h1' => 'City quiz',
-  'title' => 'City quiz: picture questions about six city worlds',
-  'desc' => 'A free picture quiz in five parts: name the building, guess its world, match jobs, learn key words and find where people work, in six city worlds.',
+  'title' => 'City quiz: picture questions about seven city worlds',
+  'desc' => 'A free picture quiz in five parts: name the building, guess its world, match jobs, learn key words and find where people work, in seven city worlds.',
   'howto' => ['Choose one of the five quizzes. Each has ten questions with pictures: pick an answer to see whether you are right, and why. Your best score is kept on this device.',
-    'The names, worlds and jobs of buildings from six cities, the key words that describe them, and who works where.'],
+    'The names, worlds and jobs of buildings from seven cities, the key words that describe them, and who works where.'],
   'lead' => 'Ten questions each. Choose a quiz:',
   'modes' => [
     ['name', 'Name that building', 'Look at the picture and pick its name.', [['roman', 'pantheon'], ['modern', 'public-library']]],
@@ -486,7 +487,7 @@ quiz_game([
   ],
   'data' => ['worlds' => $worldNames, 'jobs' => $GROUP_JOBS, 'items' => $quizItems, 'words' => $quizWords, 'people' => $quizPeople],
   'key' => 'atlas.quiz', 'done' => 'quiz',
-  'learn' => ['Picture questions about buildings in six illustrated city worlds.', 'Cities, buildings and what they are for'],
+  'learn' => ['Picture questions about buildings in seven illustrated city worlds.', 'Cities, buildings and what they are for'],
 ]);
 
 // ---------- Shadow match, Zoom detective and Odd one out (picture games on quiz.js) ----------
@@ -495,7 +496,7 @@ quiz_game([
   'title' => 'Shadow match: whose shadow is it?',
   'desc' => 'A free picture game for kids: find the building, person or vehicle that casts each black shadow, from ancient Egypt to Mars and a heavenly city.',
   'howto' => ['Look closely at the black shape, then pick the picture it belongs to. When you answer, the shadow lights up in full color. Ten shadows make a game.',
-    'Looking carefully at shapes and outlines, a skill that artists, architects and scientists use every day, and the buildings, people and vehicles of six worlds.'],
+    'Looking carefully at shapes and outlines, a skill that artists, architects and scientists use every day, and the buildings, people and vehicles of seven worlds.'],
   'lead' => 'Every building, person and vehicle has its own shape. Look closely at the shadow, then find whose it is. Ten shadows a game:',
   'modes' => [
     ['shadow', 'Easy shadows', 'Four buildings from four different worlds.', [['egypt', 'sphinx'], ['egypt', 'sphinx']]],
@@ -504,13 +505,13 @@ quiz_game([
   ],
   'data' => ['worlds' => $worldNames, 'items' => $pick($quizItems, ['k', 'w', 'n', 'u', 'i', 't', 'c', 'd']), 'people' => $pick($quizPeople, ['w', 'n', 'r', 'x', 'i', 't', 'u'])],
   'key' => 'atlas.shadows', 'done' => 'shadows', 'need' => 8,
-  'learn' => ['Match black shadows to the buildings, people and vehicles of six illustrated city worlds.', 'Shapes, observation and city buildings'],
+  'learn' => ['Match black shadows to the buildings, people and vehicles of seven illustrated city worlds.', 'Shapes, observation and city buildings'],
   'art' => ' qmode-shadow',
 ]);
 quiz_game([
   'path' => '/play/zoom/', 'h1' => 'Zoom detective',
   'title' => 'Zoom detective: name the building from a close-up',
-  'desc' => 'A free picture game: a close-up slowly zooms out, and the sooner you name the building, the more points you score. Places from six city worlds.',
+  'desc' => 'A free picture game: a close-up slowly zooms out, and the sooner you name the building, the more points you score. Places from seven city worlds.',
   'howto' => ['A close-up picture slowly zooms out. Pick the building\'s name as soon as you know it: early answers score 3 points, later ones 2, and answers at the end 1.',
     'Noticing details, such as roofs, columns, windows and colors, that tell one building from another.'],
   'lead' => 'Each picture starts as a close-up and slowly zooms out. Name it early for 3 points, a little later for 2, or at the end for 1. Choose a game:',
@@ -520,7 +521,7 @@ quiz_game([
   ],
   'data' => ['worlds' => $worldNames, 'items' => $pick($quizItems, ['k', 'w', 'n', 'u', 'i', 't', 'c', 'd'])],
   'key' => 'atlas.zoom', 'done' => 'zoom', 'need' => 20,
-  'learn' => ['Name buildings from six illustrated city worlds as close-up pictures zoom out.', 'Observation and city buildings'],
+  'learn' => ['Name buildings from seven illustrated city worlds as close-up pictures zoom out.', 'Observation and city buildings'],
   'art' => ' qmode-zoom',
 ]);
 quiz_game([
@@ -553,7 +554,7 @@ function game_modes($modes, $art = '') {
 // Below every game: how to play it, what it teaches, and three other games (different ones on each page).
 function game_extras($self, $how, $learn, $howTitle = 'How to play', $learnTitle = 'What you learn') {
   $games = [
-    '/play/city-builder/' => ['Build your own city', 'Mix buildings from six worlds.'],
+    '/play/city-builder/' => ['Build your own city', 'Mix buildings from seven worlds.'],
     '/play/world-sort/' => ['World sort', 'Send each picture home, against the clock.'],
     '/play/shadows/' => ['Shadow match', 'Whose shadow is it?'],
     '/play/zoom/' => ['Zoom detective', 'Name it from a close-up.'],
@@ -586,13 +587,13 @@ foreach ($quizItems as $it) if ($it['t']) $sortItems[] = ['w' => $it['w'], 'n' =
 foreach ($quizPeople as $p) if ($p['t']) $sortItems[] = ['w' => $p['w'], 'n' => $p['n'], 't' => $p['t'], 'u' => $p['u']];
 $sortData = json_encode(['worlds' => $worldNames, 'items' => $sortItems], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
 $sortModes = game_modes([
-  ['world', 'Which world?', 'Six worlds, one minute. Send each picture home to its world.', [['egypt', 'pyramid'], ['future', 'hover-car']]],
+  ['world', 'Which world?', 'Seven worlds, one minute. Send each picture home to its world.', [['egypt', 'pyramid'], ['future', 'hover-car']]],
   ['time', 'Long ago, today or imagined?', 'Is it from long ago, from today, from a possible future, or from an imagined world?', [['roman', 'chariot'], ['green', 'mushroom-cottage']]],
 ]);
 $sortExtras = game_extras('/play/world-sort/', 'A picture pops up: tap the world it belongs to, or in the second game, whether it is from long ago, today, a possible future or an imagined world. Sort as many as you can in one minute. On a keyboard, the number keys work too.',
   'Telling history, today, the future and imagined worlds apart, by looking closely at buildings, people and vehicles.');
 page('/play/world-sort/', [
-  'title' => 'World sort: a speed game about six city worlds',
+  'title' => 'World sort: a speed game about seven city worlds',
   'desc' => h('A free speed game for kids: sort buildings, people and vehicles into the right world, or into long ago, today and imagined, before time runs out.'),
   'class' => 'play sort-page',
   'js' => ['sort'],
@@ -626,12 +627,13 @@ page('/play/world-sort/', [
 <script type="application/json" id="sort-data">{$sortData}</script>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['World sort', '/play/world-sort/']]),
-    learning('World sort', 'A speed game: sort buildings, people and vehicles into six illustrated city worlds, or into long ago, today, a possible future and imagined worlds.', '/play/world-sort/', 'Telling history, today, the future and imagined worlds apart')],
+    learning('World sort', 'A speed game: sort buildings, people and vehicles into seven illustrated city worlds, or into long ago, today, a possible future and imagined worlds.', '/play/world-sort/', 'Telling history, today, the future and imagined worlds apart')],
 ]);
 
 // ---------- Picture puzzle: put a mixed-up picture back together (public/js/puzzle.js) ----------
 // Two pictures from every world. The script paints each one over its world's horizon.
 const PUZZLE_PICTURES = [['egypt', 'pyramid'], ['egypt', 'pharaohs-palace'], ['roman', 'amphitheater'], ['roman', 'pantheon'],
+  ['medieval', 'royal-castle'], ['medieval', 'windmill'],
   ['modern', 'public-library'], ['modern', 'stadium'], ['green', 'treetop-village'], ['green', 'mushroom-cottage'],
   ['future', 'greenhouse-dome'], ['future', 'spaceport'], ['heaven', 'palace-of-light'], ['heaven', 'tree-of-life']];
 $puzData = [];
@@ -680,7 +682,7 @@ page('/play/puzzle/', [
 <script type="application/json" id="puzzle-data">{$puzJson}</script>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Picture puzzle', '/play/puzzle/']]),
-    learning('Picture puzzle', 'A picture puzzle: swap the pieces to rebuild a building from one of six illustrated city worlds.', '/play/puzzle/', 'Visual reasoning and city buildings')],
+    learning('Picture puzzle', 'A picture puzzle: swap the pieces to rebuild a building from one of seven illustrated city worlds.', '/play/puzzle/', 'Visual reasoning and city buildings')],
 ]);
 
 // ---------- Passport ----------
@@ -709,7 +711,7 @@ $ppExtras = game_extras('', 'Every place or vehicle page you open adds a stamp t
   'Nothing is sent anywhere: your stamps and badges are kept only in this browser, on this device.', 'How it works', 'Private by design');
 page('/play/passport/', [
   'title' => 'Your city passport: collect a stamp for every place',
-  'desc' => h("Collect a stamp for each of the $ppTotal places and vehicles you visit in six city worlds, and earn badges. Stamps stay on your own device."),
+  'desc' => h("Collect a stamp for each of the $ppTotal places and vehicles you visit in seven city worlds, and earn badges. Stamps stay on your own device."),
   'class' => 'play passport-page',
   'body' => <<<HTML
 <div class="wrap">
@@ -727,7 +729,7 @@ page('/play/passport/', [
     <ul class="pet-opts">{$ppPets}</ul>
   </div>
   <div class="pet-home" hidden>
-    <button type="button" class="pet-pic" aria-label="Pat your pet"><img src="" alt="" width="256" height="256"></button>
+    <button type="button" class="pet-pic" aria-label="Pat your pet"><img alt="" width="256" height="256"></button>
     <div class="pet-about">
       <p class="pet-name"></p>
       <p class="pet-next"></p>
@@ -800,10 +802,10 @@ foreach (array_merge(WORLD_ORDER, ['all']) as $n => $key) {
   $wsChips .= '<button type="button" class="chip' . ($key === 'all' ? '' : ' world-' . $key) . '" data-set="' . $key . '" aria-pressed="' . ($n ? 'false' : 'true') . '">' . ($key === 'all' ? 'All worlds' : h($WORLDS[$key]['short'])) . '</button>';
 }
 $wsExtras = game_extras('/play/word-search/', 'Find the ten hidden words. They read across, down or diagonally, never backwards. Tap the first letter of a word, then the last, or drag across it. Each word you find shows what it means.',
-  'The key words of city life in six worlds, with a short meaning for every one.');
+  'The key words of city life in seven worlds, with a short meaning for every one.');
 page('/play/word-search/', [
-  'title' => 'City word search: find hidden words from six city worlds',
-  'desc' => h('Free city word searches: find ten hidden words about the buildings and life of six city worlds, then learn what each one means. Print them too.'),
+  'title' => 'City word search: find hidden words from seven city worlds',
+  'desc' => h('Free city word searches: find ten hidden words about the buildings and life of seven city worlds, then learn what each one means. Print them too.'),
   'class' => 'play wsearch-page',
   'js' => ['wordsearch'],
   'body' => <<<HTML
@@ -830,7 +832,7 @@ page('/play/word-search/', [
 {$wsExtras}
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Word search', '/play/word-search/']]),
-    learning('City word search', 'Word searches with key words about buildings and city systems in six worlds.', '/play/word-search/', 'City vocabulary')],
+    learning('City word search', 'Word searches with key words about buildings and city systems in seven worlds.', '/play/word-search/', 'City vocabulary')],
 ]);
 
 // ---------- Memory match ----------
@@ -843,7 +845,7 @@ $memModes = game_modes([
 $memExtras = game_extras('/play/memory/', 'Turn over two cards at a time. If they make a pair, they stay face up; if not, they turn back. Find all six pairs in as few moves as you can.',
   'Buildings that do the same job in different worlds, and the names of the places in each city.');
 page('/play/memory/', [
-  'title' => 'Memory match: city buildings from six worlds',
+  'title' => 'Memory match: city buildings from seven worlds',
   'desc' => h('A free memory game: turn over cards to match buildings that do the same job in different worlds, or match each picture with its name.'),
   'class' => 'play memory-page',
   'js' => ['memory'],
@@ -869,7 +871,7 @@ page('/play/memory/', [
 {$memExtras}
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Memory match', '/play/memory/']]),
-    learning('Memory match', 'A card game: match buildings that do the same job in six city worlds.', '/play/memory/', 'Comparing cities')],
+    learning('Memory match', 'A card game: match buildings that do the same job in seven city worlds.', '/play/memory/', 'Comparing cities')],
 ]);
 
 // ---------- Map hunt (the game runs on each world's map: /worlds/{world}/#hunt) ----------
@@ -883,7 +885,7 @@ foreach (WORLD_ORDER as $w) {
 $huntExtras = game_extras('/play/map-hunt/', 'Pick a city. Above its map, press Map hunt, then read each clue and tap the place it describes. Eight clues make a round.',
   'Reading a map, and what each building is for.');
 page('/play/map-hunt/', [
-  'title' => 'Map hunt: find places on six illustrated city maps',
+  'title' => 'Map hunt: find places on seven illustrated city maps',
   'desc' => h('A free map game: read a clue about a building, then find it on an illustrated city map of ancient Egypt, Rome, a modern town and more.'),
   'class' => 'play',
   'body' => <<<HTML

@@ -10,7 +10,7 @@ require __DIR__ . '/teach.php';
 
 const PUB = __DIR__ . '/../public';
 // Oldest first; the Heavenly City, imagined and inspired by the Bible, comes last.
-const WORLD_ORDER = ['egypt', 'roman', 'modern', 'green', 'future', 'heaven'];
+const WORLD_ORDER = ['egypt', 'roman', 'medieval', 'modern', 'green', 'future', 'heaven'];
 
 // Full worlds (one page per building): content in build/worlds/{world}.php, photo credits in
 // build/photos/{world}.json and captions in build/photos/{world}-captions.php.
@@ -245,7 +245,7 @@ $jump = '';
 foreach ($COMPARE as [$key, $label]) $jump .= '<li><a href="#' . $key . '">' . h($label) . '</a></li>';
 page('/compare/', [
   'title' => 'Compare the Worlds: water, gathering, travel, goods and nature',
-  'desc' => h('One city question, six worlds: compare how ancient Egypt, Rome, a modern town, a green forest city, Mars and a heavenly city provide water, travel and more.'),
+  'desc' => h('One city question, seven worlds: compare how ancient Egypt, Rome, a medieval town, a modern town, a green forest city, Mars and a heavenly city provide water, travel and more.'),
   'class' => 'compare',
   'body' => <<<HTML
 <div class="wrap">
@@ -254,7 +254,7 @@ page('/compare/', [
 <section class="wrap section page-head">
   <h1>Compare the worlds</h1>
   <p class="big-q">How could a city provide water, places to gather, safe travel, goods and room for nature?</p>
-  <p class="lead">Look at the same need in all six worlds. Egypt and Rome are historical; the others are imagined, so treat them as ideas to test, not facts.</p>
+  <p class="lead">Look at the same need in all seven worlds. Egypt, Rome and the Medieval Kingdom are historical; the others are imagined, so treat them as ideas to test, not facts.</p>
   <nav aria-label="Themes on this page"><ul class="jump">{$jump}</ul></nav>
 </section>
 <div class="wrap">{$rows}</div>
@@ -269,7 +269,7 @@ page('/compare/', [
 </section>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Compare the worlds', '/compare/']]),
-    learning('Compare the Worlds', 'Compare how six city settings provide water, gathering places, safe travel and room for nature.', '/compare/', 'City design and infrastructure')],
+    learning('Compare the Worlds', 'Compare how seven city settings provide water, gathering places, safe travel and room for nature.', '/compare/', 'City design and infrastructure')],
 ]);
 
 // ---------- About ----------
@@ -309,7 +309,7 @@ page('/about/', [
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
 
   <h2 id="artwork">Artwork and reuse</h2>
-  <p>All illustrations of the six worlds are free for everyone to use, under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 (CC BY 4.0)</a> license. You can copy, print, change, share and use them for any purpose, including in lessons, books, websites and commercial projects. The only condition is to credit them, for example: "Illustration: The Atlas of Cities".</p>
+  <p>All illustrations of the seven worlds are free for everyone to use, under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 (CC BY 4.0)</a> license. You can copy, print, change, share and use them for any purpose, including in lessons, books, websites and commercial projects. The only condition is to credit them, for example: "Illustration: The Atlas of Cities".</p>
   <p>Save or print any of them from the <a href="/artwork/">Artwork</a> page.</p>
   <p>The <a href="/teachers/">teacher guides</a>, worksheets, glossary and question bank are free to print and share for teaching. Please credit The Atlas of Cities.</p>
   <p>Photos of real places come from Wikimedia Commons and are public domain or shared under Creative Commons licenses. Each photo is credited where it appears, and all licenses are listed on the <a href="/credits/">photo credits</a> page.</p>
@@ -421,14 +421,14 @@ foreach (WORLD_ORDER as $w) {
   $artJump .= '<li><a class="world-link world-' . $w . '" href="#' . $w . '">' . h($WORLDS[$w]['name']) . '</a></li>';
 }
 page('/artwork/', [
-  'title' => 'Artwork: every illustration from the six city worlds',
+  'title' => 'Artwork: every illustration from the seven city worlds',
   'desc' => h("View, save and print all $artTotal illustrations from The Atlas of Cities: ancient, modern, green, futuristic and heavenly buildings, cranes, trees and landscapes."),
   'class' => 'artwork',
   'lightbox' => true,
   'body' => <<<HTML
 <section class="wrap section page-head">
   <h1>Artwork</h1>
-  <p class="lead">All {$artTotal} illustrations from the six worlds. Select any picture to see it full size, open it full screen, save it or print it.</p>
+  <p class="lead">All {$artTotal} illustrations from the seven worlds. Select any picture to see it full size, open it full screen, save it or print it.</p>
   <nav aria-label="Worlds"><ul class="world-links">{$artJump}</ul></nav>
   <p class="small">Free for everyone to use for any purpose under CC BY 4.0. Just credit "Illustration: The Atlas of Cities". <a href="/about/#artwork">More about reuse</a>. Files are full-size WebP images, which open in all modern browsers and most photo apps.</p>
 </section>
@@ -462,7 +462,7 @@ page('/credits/', [
 <section class="wrap section page-head narrow">
   <h1>Photo credits</h1>
   <p class="lead">Photos of real places and technology come from Wikimedia Commons. They are public domain or shared under Creative Commons licenses, and we thank the photographers and organizations who shared them.</p>
-  <p>Photos have been resized and converted to WebP for this website. Under their licenses you may reuse them by following the license linked beside each one. The illustrations of the six worlds are shared separately under CC BY 4.0; see <a href="/about/#artwork">Artwork and reuse</a>.</p>
+  <p>Photos have been resized and converted to WebP for this website. Under their licenses you may reuse them by following the license linked beside each one. The illustrations of the seven worlds are shared separately under CC BY 4.0; see <a href="/about/#artwork">Artwork and reuse</a>.</p>
   {$rows}
 </section>
 HTML,
@@ -471,7 +471,7 @@ $nfWorlds = '';
 foreach (WORLD_ORDER as $w) $nfWorlds .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';
 page('/404.html', [
   'title' => 'Page not found',
-  'desc' => h('This page could not be found. Explore six illustrated city worlds, free games and guided tours on The Atlas of Cities instead.'),
+  'desc' => h('This page could not be found. Explore seven illustrated city worlds, free games and guided tours on The Atlas of Cities instead.'),
   'noindex' => true,
   'body' => <<<HTML
 <section class="wrap section page-head narrow">

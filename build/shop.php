@@ -199,7 +199,7 @@ foreach (['baby' => 'Baby', 'young' => 'Young', 'grown' => 'Grown'] as $age => $
 $lrpgPets = '';
 foreach (PETS as $k => $name) $lrpgPets .= '<li>' . $petPic($k, 'grown', "Grown $name") . '<span>' . h($name) . '</span></li>';
 $lrpgWorlds = '';
-foreach (WORLD_ORDER as $w) {   // all six worlds are in the game
+foreach (array_diff(WORLD_ORDER, ['medieval']) as $w) {   // the six worlds in the game sold in the shop (the Medieval Kingdom is not in it yet)
   $lrpgWorlds .= "<li class=\"world-$w\"><img src=\"/assets/life-rpg/city-$w-wide.webp\" width=\"520\" height=\"300\" alt=\"" . h($WORLDS[$w]['name']) . ' in Life RPG" loading="lazy" decoding="async"><span>' . h($WORLDS[$w]['name']) . '</span></li>';
 }
 $lrpgOpen = shop_open('life-rpg');
@@ -237,7 +237,7 @@ shop_page('life-rpg', [
     . "<ul class=\"lrpg-heroes\">$lrpgHeroes</ul><h3 class=\"lrpg-outfits-h\">Dressed for each world</h3><ul class=\"lrpg-outfits\">$lrpgOutfits</ul></section>"
     . '<section class="wrap section" aria-labelledby="pets-h"><div class="sec-head"><h2 id="pets-h">Adopt a pet</h2><p>A puppy, kitten, lamb, pony, robo pup or desert fox. It starts as a baby, grows up as you finish quests and lives in your city. It never gets sick or sad: after two quiet days it just naps until your next quest.</p></div>'
     . "<ul class=\"lrpg-grow\">$lrpgGrow</ul><h3 class=\"lrpg-outfits-h\">All six, grown up</h3><ul class=\"lrpg-pets\">$lrpgPets</ul></section>"
-    . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of six worlds</h2><p>The six worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
+    . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of six worlds</h2><p>Six of the worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['Is it a subscription?', 'No. You pay ' . shop_price('life-rpg') . ' once, and it\'s yours. There are no ads and nothing else to buy.'],

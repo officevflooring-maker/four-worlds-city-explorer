@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Copies the Life RPG game's Hero Cards art used by /play/hero-cards/. Source folders are only read, never changed.
-#   card_{world}_{id}: the 48 card pictures (cut-outs, 512 px wide in the game) -> public/assets/cards/{world}-{id}.webp
+#   card_{world}_{id}: the 56 card pictures (cut-outs, 512 px wide in the game) -> public/assets/cards/{world}-{id}.webp
 #   frame_common_{world}, frame_gold, frame_emerald: the painted frames, with their windows already see-through
 #     -> public/assets/cards/frame-{world|gold|emerald}.webp, and frames.json (each frame's window, in %)
 # The Green World's source files are named "elven". The game's own web pictures in art/cards are used (not
@@ -20,7 +20,7 @@ for f in "$C"/card_*.webp; do
   name="$(basename "$f" .webp)"; rest="${name#card_}"; world="${rest%%_*}"; id="${rest#*_}"
   webp "$f" "$OUT/$(site "$world")-$id.webp" "format=rgba,scale=384:-2:flags=lanczos" 82
 done
-for world in egypt roman modern elven future heaven; do
+for world in egypt roman medieval modern elven future heaven; do
   webp "$C/frame_common_$world.webp" "$OUT/frame-$(site "$world").webp" "format=rgba,scale=480:-2:flags=lanczos" 86
 done
 for r in gold emerald; do webp "$C/frame_$r.webp" "$OUT/frame-$r.webp" "format=rgba,scale=480:-2:flags=lanczos" 86; done

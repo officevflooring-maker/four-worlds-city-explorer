@@ -1,4 +1,4 @@
-// Card memory (/play/card-memory/): twelve painted trading cards, two of each world, turned over two at a time.
+// Card memory (/play/card-memory/): fourteen painted trading cards, two of each world, turned over two at a time.
 // The cards come from the page data in #cardmemory-data; the best score (fewest moves) is kept in this browser only.
 (function () {
   'use strict';
@@ -25,7 +25,7 @@
     var win = make('span', 'cm-win');
     win.appendChild(inner);
     f.append(win, pic(ART + 'frame-' + frame + '.webp', 'cm-frame'));
-    if (top) f.appendChild(make('span', 'cm-top', top));
+    if (top) f.appendChild(make('span', 'cm-top' + (top.length > 15 ? ' cm-long' : ''), top));   // "Medieval Kingdom" needs a smaller size to fit
     if (bottom) f.appendChild(make('span', 'cm-bot', bottom));
     return f;
   };
@@ -91,7 +91,7 @@
   var finish = function (line) {
     var prev = store.get(KEY, null);
     if (!prev || moves < prev) store.set(KEY, moves);
-    say(line + ' You found all six pairs in ' + moves + ' moves!' + (prev && moves < prev ? ' That is your best yet.' : ''));
+    say(line + ' You found all seven pairs in ' + moves + ' moves!' + (prev && moves < prev ? ' That is your best yet.' : ''));
     counts();
     $('.cm-again').focus({ preventScroll: true });
   };

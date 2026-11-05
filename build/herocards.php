@@ -1,6 +1,6 @@
 <?php
-// Hero Cards (/play/hero-cards/): a card duel against the computer with the Life RPG game's Founders set, 48 cards,
-// 8 from each world. Winning a duel lets you keep one of the computer's cards for an album saved in this browser only
+// Hero Cards (/play/hero-cards/): a card duel against the computer with the Life RPG game's cards, 56 cards,
+// 8 from each world: the Founders set, then the Medieval set the game added later. Winning a duel lets you keep one of the computer's cards for an album saved in this browser only
 // (public/js/herocards.js). The pictures and painted frames come from the game (tools/copy-card-art.sh).
 //
 // Names, numbers and stats match the game's cards.js, so a card here is the same card as in the game's album.
@@ -12,7 +12,7 @@ const HC_KINDS = ['hero' => ['Hero', 'str'], 'builder' => ['Builder', 'str'], 'v
   'treasure' => ['Treasure', 'hrt'], 'landmark' => ['Landmark', 'wis'], 'gear' => ['Gear', 'wis']];
 const HC_STATS = ['str' => 'Strength', 'wis' => 'Wisdom', 'hrt' => 'Heart'];
 const HC_RARITY = ['common' => ['Common', [2, 5]], 'gold' => ['Gold', [4, 7]], 'emerald' => ['Emerald', [6, 9]]];
-// In the game's order, which gives the numbers 001 to 048. Keys are the game's world ids ("elven" is the Green World).
+// In the game's order, which gives the numbers 001 to 056. Keys are the game's world ids ("elven" is the Green World).
 // [id, name, kind, rarity, line, page on this site ('' if none), Bible reference]
 const HC_LIST = [
   'modern' => [
@@ -69,6 +69,15 @@ const HC_LIST = [
     ['scribe', 'Royal Scribe', 'hero', 'gold', 'Writes down what matters.', 'scribe-school'],
     ['granary', 'Joseph\'s Granary', 'landmark', 'gold', 'Saved in the good years for the hard ones.', 'granary'],
     ['great_pyramid', 'Great Pyramid', 'landmark', 'emerald', 'Still standing after 4,500 years.', 'pyramid']],
+  'medieval' => [
+    ['squire', 'Young Squire', 'hero', 'common', 'Polishes the armor and learns every day.', ''],
+    ['stonemason', 'Stonemason', 'builder', 'common', 'Every castle starts with one stone.', ''],
+    ['warhorse', 'Loyal Horse', 'creature', 'common', 'Strong, steady and always ready.', 'horse-and-rider'],
+    ['hay_cart', 'Hay Cart', 'vehicle', 'common', 'Brings the harvest in before the rain.', 'hay-cart'],
+    ['windmill', 'Windmill', 'landmark', 'common', 'Turns the wind into bread.', 'windmill'],
+    ['knight', 'Gentle Knight', 'hero', 'gold', 'Brave, and kind to everyone.', ''],
+    ['cathedral', 'Great Cathedral', 'landmark', 'gold', 'Built over a hundred years by many hands.', ''],
+    ['crown', 'Royal Crown', 'treasure', 'emerald', 'Kept safe in the castle tower.', '']],
 ];
 
 // The game's fixed roll (FNV-1a on the text, 0 to 1), so the stats come out the same as in the game.
@@ -136,8 +145,8 @@ foreach (HC_STATS as $s => $label) $hcStatIcons .= '<li class="st-' . $s . '"><s
 $hcExtras = game_extras('/play/hero-cards/', 'You and the computer each get five cards. Every round names a stat (Strength, Wisdom or Heart) and a home world. Pick a card: the higher number wins the round, and a card from the home world gets 2 extra. Win more of the five rounds, then keep one of the computer\'s cards for your album.',
   'Which world each person, animal, vehicle and landmark belongs to, and how to plan ahead: a strong card used now is gone for the next round.');
 page('/play/hero-cards/', [
-  'title' => 'Hero Cards: a card duel with six city worlds',
-  'desc' => h('A free card game for kids: duel the computer with 48 painted cards from ancient Egypt, Rome, a modern town and more, and collect them in an album.'),
+  'title' => 'Hero Cards: a card duel with seven city worlds',
+  'desc' => h('A free card game for kids: duel the computer with 56 painted cards from ancient Egypt, Rome, a medieval town and more, and collect them in an album.'),
   'class' => 'play hc-page',
   'js' => ['herocards'],
   'body' => <<<HTML
@@ -149,7 +158,7 @@ page('/play/hero-cards/', [
   <div class="hcg-start">
     <div class="hcg-fan" aria-hidden="true">{$hcFan}</div>
     <div class="hcg-intro">
-      <p class="lead">Duel the computer with cards from six worlds. Win, and keep one of its cards for your album.</p>
+      <p class="lead">Duel the computer with cards from seven worlds. Win, and keep one of its cards for your album.</p>
       <ul class="hcg-stat-key" aria-label="The three stats">{$hcStatIcons}</ul>
       <fieldset class="hcg-level"><legend>Computer player</legend>{$hcLevels}</fieldset>
       <p class="hcg-welcome" hidden></p>
@@ -199,6 +208,6 @@ page('/play/hero-cards/', [
 {$hcExtras}
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Hero Cards', '/play/hero-cards/']]),
-    learning('Hero Cards', 'A card duel with 48 cards of people, animals, vehicles and landmarks from six illustrated city worlds.', '/play/hero-cards/', 'Comparing cities and planning ahead')],
+    learning('Hero Cards', 'A card duel with 56 cards of people, animals, vehicles and landmarks from seven illustrated city worlds.', '/play/hero-cards/', 'Comparing cities and planning ahead')],
 ]);
 }

@@ -299,7 +299,7 @@ function full_world($w) {
 
 <section class="wrap section next" aria-labelledby="next-h">
   <h2 id="next-h">Keep exploring</h2>
-  <p><a class="btn" href="/compare/">Compare all six worlds</a> <a class="btn btn-quiet" href="/artwork/#{$w}">See all {$label} artwork</a></p>
+  <p><a class="btn" href="/compare/">Compare all seven worlds</a> <a class="btn btn-quiet" href="/artwork/#{$w}">See all {$label} artwork</a></p>
   <p class="play-line">Games with this world: <a href="#hunt">Map hunt</a> · <a href="/play/world-sort/">World sort</a> · <a href="/play/shadows/">Shadow match</a> · <a href="/play/puzzle/">Picture puzzle</a></p>
   <ul class="world-links">{$others}</ul>
 </section>

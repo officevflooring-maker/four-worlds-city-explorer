@@ -100,8 +100,8 @@ foreach ($COMPARE as [$ckey, $label, $question, $cells]) {
   foreach (WORLD_ORDER as $w) $keyRows .= '<td><b>' . h($cells[$w][1]) . '</b> ' . h($cells[$w][2]) . '</td>';
   $keyRows .= '</tr>';
 }
-$SHEETS[] = ['compare-four-cities-chart', 'Compare', 'Compare six cities', 'Compare six cities: printable chart with answer key',
-  'A free printable chart comparing how six city worlds, from ancient Egypt to Mars, provide water, places to gather, safe travel, goods and nature.',
+$SHEETS[] = ['compare-four-cities-chart', 'Compare', 'Compare seven cities', 'Compare seven cities: printable chart with answer key',
+  'A free printable chart comparing how seven city worlds, from ancient Egypt to Mars, provide water, places to gather, safe travel, goods and nature.',
   '4-9', '30 to 40 minutes',
   $nameLine . '<h2>How does each city meet its needs?</h2><p class="sheet-do">Use the <b>Compare the worlds</b> page. In each box, write how that world meets the need.</p><table class="chart"><thead><tr>' . $head . '</tr></thead><tbody>' . $rows . '</tbody></table>'
     . '<p class="sheet-do">Which world meets the needs best, in your opinion? Why?</p><div class="lines"></div>',
@@ -156,7 +156,7 @@ page('/teachers/worksheets/', [
 </div>
 <section class="wrap section page-head">
   <h1>Printable worksheets</h1>
-  <p class="lead">{$sheetCount} free worksheets that go with the six city worlds, each with an answer key. Open one, then print it. They're free to print and share for teaching.</p>
+  <p class="lead">{$sheetCount} free worksheets that go with the seven city worlds, each with an answer key. Open one, then print it. They're free to print and share for teaching.</p>
   <div>{$sheetCards}</div>
 </section>
 HTML,

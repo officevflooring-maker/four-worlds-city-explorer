@@ -7,7 +7,7 @@
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   };
-  var NAMES = { egypt: 'Ancient Egypt', roman: 'Ancient Rome', modern: 'the Modern Town', green: 'the Green World', future: 'the Robotic Future', heaven: 'the Heavenly City' };
+  var NAMES = { egypt: 'Ancient Egypt', roman: 'Ancient Rome', medieval: 'the Medieval Kingdom', modern: 'the Modern Town', green: 'the Green World', future: 'the Robotic Future', heaven: 'the Heavenly City' };
   var norm = function (s) { return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); };
   var make = function (tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
 
@@ -185,7 +185,7 @@
   var visited = function (w) { var n = 0; for (var k in stamps) if (k.indexOf(w + '/') === 0) n++; return Math.min(n, totals[w] || n); };
   var bar = function (n, t) { var b = make('span', 'pp-mini'), f = make('span'); f.style.width = Math.round(n / t * 100) + '%'; b.appendChild(f); return b; };
   var ppNote = null, ppNew = false;   // the stamp note on a place page, for the passport pet below
-  var here = location.pathname.match(/^\/worlds\/(egypt|roman|modern|green|future|heaven)\/([a-z0-9-]+)\/$/);
+  var here = location.pathname.match(/^\/worlds\/(egypt|roman|medieval|modern|green|future|heaven)\/([a-z0-9-]+)\/$/);
   if (here && document.body.classList.contains('building')) {
     var hw = here[1], key = hw + '/' + here[2], isNew = !stamps[key];
     stamps[key] = Date.now();
@@ -208,7 +208,7 @@
     var a = el.querySelector('a');
     if (a) a.appendChild(make('span', 'sr-only', ' (visited)'));
   });
-  var worldHere = location.pathname.match(/^\/worlds\/(egypt|roman|modern|green|future|heaven)\/$/);
+  var worldHere = location.pathname.match(/^\/worlds\/(egypt|roman|medieval|modern|green|future|heaven)\/$/);
   var dirH = document.getElementById('dir-h');
   if (worldHere && dirH && visited(worldHere[1])) {
     var ww = worldHere[1], p = make('p', 'pp-progress');
@@ -286,9 +286,10 @@
   // ---------- Badges: earned by exploring and playing (passport page), with a note when one is new ----------
   var BADGES = [
     ['first', 'First stamp', 'Open any place page.', 'modern/people-3'],
-    ['traveler', 'World traveler', 'Visit a place in all six worlds.', 'roman/chariot'],
+    ['traveler', 'World traveler', 'Visit a place in all seven worlds.', 'roman/chariot'],
     ['egypt', 'Nile explorer', 'Visit every place in Ancient Egypt.', 'egypt/pyramid'],
     ['roman', 'Rome explorer', 'Visit every place in Ancient Rome.', 'roman/amphitheater'],
+    ['medieval', 'Castle explorer', 'Visit every place in the Medieval Kingdom.', 'medieval/royal-castle'],
     ['modern', 'Town explorer', 'Visit every place in the Modern Town.', 'modern/mixed-use-building'],
     ['green', 'Forest explorer', 'Visit every place in the Green World.', 'green/treetop-village'],
     ['future', 'Space explorer', 'Visit every place in the Robotic Future.', 'future/greenhouse-dome'],

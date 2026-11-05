@@ -4,7 +4,7 @@
 const SITE_URL  = 'https://atlasofcities.org';   // the site's domain, served by the Cloudflare Worker (wrangler.jsonc); no trailing slash
 const SITE_NAME = 'The Atlas of Cities';
 const SITE_TAGLINE = 'Past, Present and Imagined';
-const SITE_DESC = 'Explore six illustrated cities, from ancient Egypt and Rome to a modern town, a green forest city, Mars and a heavenly city, and learn how a city works.';
+const SITE_DESC = 'Explore seven illustrated cities, from ancient Egypt, Rome and a medieval town to a modern town, a green forest city, Mars and a heavenly city, and learn how a city works.';
 // Our store (Lemon Squeezy). Every 'buy' link below must be a checkout link from it: in the store, open the product,
 // click Share and copy the link. The build stops on any other link.
 const STORE_URL = 'https://theatlasofcities.lemonsqueezy.com';

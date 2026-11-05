@@ -1,0 +1,40 @@
+# page|Wikimedia Commons search terms, separated by ;  (one photo per search)
+# Only public domain, CC0, CC BY and CC BY-SA images are accepted (see tools/fetch-photos.php).
+royal-castle|Caernarfon Castle;Windsor Castle Round Tower;Carcassonne Cité walls
+gatehouse|Bodiam Castle gatehouse;Holstentor Lübeck;Porte Narbonnaise Carcassonne
+watchtower|Conwy town walls towers;York city walls Bootham Bar
+great-hall|Westminster Hall hammerbeam roof;Great Hall Winchester Castle
+knight-statue|Royal Armouries Leeds armour;Effigy knight Temple Church London
+abbey|Fountains Abbey;Rievaulx Abbey;Mont-Saint-Michel abbey
+chapel|St Martin's Church, Canterbury;Kilpeck church Herefordshire
+bell-tower|Belfry of Bruges;Belfry of Ghent
+market-cross|Chichester Cross;Poultry Cross Salisbury
+village-school|Winchester College Chamber Court;Winchester College
+scriptorium|Lindisfarne Gospels;Book of Kells folio;Eadwine Psalter scribe
+university|Merton College Mob Quad;Collegium Maius Kraków;Bologna Archiginnasio
+market-hall|Sukiennice Kraków;Thaxted Guildhall
+bakery|Medieval bread oven;Bakehouse Weald and Downland
+guild-hall|Merchant Adventurers' Hall, York;Great Hall Merchant Adventurers York
+blacksmith|Blacksmith medieval manuscript;Forge open-air museum blacksmith
+merchants-house|Bryggen Bergen;Tudor Merchant's House Tenby
+windmill|Post mill;Bourn Windmill
+farmstead|Luttrell Psalter ploughing;Ridge and furrow;Laxton open field
+shepherds-cottage|Lavenham Guildhall;Woolsack House of Lords;Lavenham church
+orchard|Medieval orchard illumination;Old apple orchard England
+herb-garden|Plan of Saint Gall;Medieval herb garden;Hildegard of Bingen Scivias
+peasant-cottage|Cruck frame cottage;Wattle and daub wall;Wharram Percy
+town-house|Shambles, York;Rothenburg ob der Tauber Plönlein
+tower-house|San Gimignano towers;Two Towers Bologna
+manor-house|Stokesay Castle;Ightham Mote
+feast-hall|Très Riches Heures January feast;Penshurst Place Barons Hall
+kitchen|Abbot's Kitchen Glastonbury;Medieval kitchen Durham Cathedral
+village-well|Village well with roof and windlass;Eadwine Psalter waterworks plan Canterbury
+tournament-field|Codex Manesse joust;Medieval jousting tournament reenactment
+archery-butts|Luttrell Psalter archery;English longbow Mary Rose
+training-yard|Royal Armouries MS I.33;Offham quintain
+crane|Gdańsk Crane Żuraw;Treadwheel crane Guédelon
+building-materials|Guédelon Castle construction;Cologne Cathedral;Mason's mark
+covered-wagon|Luttrell Psalter ladies carriage;Medieval wagon reconstruction
+horse-and-rider|Luttrell Psalter Geoffrey Luttrell mounted;Codex Manesse horseman
+hay-cart|Haymaking Très Riches Heures June;Haywain medieval
+donkey-cart|Cooper barrel making;Medieval barrels cellar

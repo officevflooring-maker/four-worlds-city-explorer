@@ -23,9 +23,13 @@ grep -v '^#' "$ROOT/tools/assets.txt" | while IFS='|' read -r world batch file n
              in="$SRC/${BATCH[$batch]}/$src/$file" ;;
   esac
   out="$ROOT/public/assets/worlds/$world/$name"
+  # two Medieval pictures keep a faint glow around their edges: drop the nearly see-through pixels
+  pre=format=rgba
+  case "$world/$name" in medieval/village-well|medieval/building-materials)
+    pre="format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='if(lt(alpha(X,Y),200),0,alpha(X,Y))'" ;; esac
   case "$kind" in
-    tile|tree) webp "$in" "$out-480.webp" "format=rgba,scale=480:-1:flags=lanczos"
-               webp "$in" "$out-960.webp" "format=rgba,scale=960:-1:flags=lanczos" ;;
+    tile|tree) webp "$in" "$out-480.webp" "$pre,scale=480:-1:flags=lanczos"
+               webp "$in" "$out-960.webp" "$pre,scale=960:-1:flags=lanczos" ;;
     tall)      webp "$in" "$out-480.webp" "format=rgba,scale=320:-1:flags=lanczos"
                webp "$in" "$out-960.webp" "format=rgba,scale=640:-1:flags=lanczos" ;;
     wide)      webp "$in" "$out-960.webp" "format=rgba,scale=960:-1:flags=lanczos"

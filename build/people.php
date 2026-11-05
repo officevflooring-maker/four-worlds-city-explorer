@@ -18,6 +18,8 @@ $PEOPLE_INTRO = [
   'egypt'  => ['People of Ancient Egypt', 'Who lived and worked along the Nile? Most Egyptians were farmers, but the country also needed scribes, builders, soldiers, priests and traders. In the heat, most people wore simple white linen; jewelry and wigs showed who was rich.', 'history'],
   'heaven' => ['People of the Heavenly City', 'The people of this city are imagined. The Bible pictures a great crowd "from every nation and tribe and people and tongue" in heaven (Revelation 7:9), where no one is sick, hungry or sad. The pictures show residents, musicians, builders and angels.', 'imagined',
     'Meet the imagined people of the Heavenly City: residents, musicians, builders and angels, the Bible verses behind them, and where they appear in the story of Jesus.'],
+  'medieval' => ['People of the Medieval Kingdom', 'Who lived in a medieval town? Most people in the Middle Ages were farmers, but towns were full of bakers, masons, carpenters, merchants, monks and nuns, and children who helped with the work. Clothes were made of wool and linen, and bright dyes cost more.', 'history',
+    'Meet the people of a medieval town: a baker\'s girl, a squire, a child with a toy horse, a lady with a prayer book, a stonemason and a carpenter.'],
 ];
 
 $PEOPLE = [
@@ -80,5 +82,13 @@ $PEOPLE = [
   'people-6' => ['Woman with golden fruit', 'Sharing the harvest', 'Fruit appears all through the Bible, from the trees of the garden of Eden (Genesis 2:9) to the tree of life with its twelve kinds of fruit (Revelation 22:2). The Bible says that "the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control" (Galatians 5:22–23).', ['tree-of-life', 'sharing-pavilion', 'banquet-hall']],
   'worker-1' => ['Angel builder', 'Carrying a gold brick', 'In this imagined city, even angels help build. Jesus told his friends that he was going to "prepare a place" for them (John 14:2). Building homes with and for other people is one of the most practical kinds of kindness.', ['light-crane', 'building-materials', 'house-of-many-rooms']],
   'worker-2' => ['Pearl carrier', 'Bringing a pearl for the gates', 'In Revelation, each of the city\'s twelve gates is made of a single pearl (Revelation 21:21). Real pearls grow inside oysters and mussels, layer by layer, around a tiny piece of grit or tissue that got inside.', ['pearl-gate', 'building-materials', 'hall-of-treasures']],
+],
+'medieval' => [
+  'people-1' => ['Baker\'s daughter', 'Carrying fresh loaves', 'Children often worked in the family trade. A baker\'s family rose before dawn to light the oven, and children carried loaves to customers and to market. Bread was so important that its weight and price were set by law.', ['bakery', 'market-hall', 'windmill']],
+  'people-2' => ['Squire', 'A knight in training', 'A squire was a teenager training to become a knight. He looked after a knight\'s horse and armor, practiced with sword, shield and lance, and followed his knight to tournaments and to war.', ['training-yard', 'tournament-field', 'knight-statue']],
+  'people-3' => ['Child with a toy horse', 'Playing in the street', 'Medieval children played with balls, spinning tops, dolls, marbles and little toy knights and horses. Archaeologists have found toys made of wood, clay and even metal in the mud of old towns like London.', ['peasant-cottage', 'village-well', 'orchard']],
+  'people-6' => ['Lady with a prayer book', 'Walking to church at dusk', 'Wealthy families owned books of hours: small, beautifully painted prayer books with prayers for each part of the day. They were often the first books children learned to read from. A lantern with a candle lit the way home after dark.', ['scriptorium', 'chapel', 'manor-house']],
+  'worker-1' => ['Stonemason', 'Carrying a cut stone', 'Masons cut and laid the stones of castles, churches and bridges. Master masons also designed buildings, much like architects today. Many masons cut their own small mark into the stones they shaped.', ['building-materials', 'crane', 'abbey']],
+  'worker-2' => ['Carpenter', 'Carrying oak beams', 'Carpenters built the timber frames of houses and halls, roofs, floors, carts and the scaffolding builders stood on. They joined beams with wooden pegs instead of nails, using joints that could last for centuries.', ['town-house', 'great-hall', 'building-materials']],
 ],
 ];

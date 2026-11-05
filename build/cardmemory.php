@@ -1,5 +1,5 @@
 <?php
-// Card memory (/play/card-memory/): twelve trading cards, two of each world, turned over two at a time
+// Card memory (/play/card-memory/): fourteen trading cards, two of each world, turned over two at a time
 // (public/js/cardmemory.js). The cards are the Life RPG game's painted world scenes in its painted card frames, with
 // a gold card for the back (tools/copy-world-art.sh). Included from play.php, which has game_extras().
 
@@ -7,6 +7,7 @@
 $cmCards = [
   'egypt' => ['Ancient Egypt', 'Ancient Egypt: a city on the river Nile, with temples and pyramids.'],
   'roman' => ['Ancient Rome', 'Ancient Rome: stone arches, an aqueduct and a great amphitheater.'],
+  'medieval' => ['Medieval Kingdom', 'Medieval Kingdom: a castle on the hill, a market square and a mill by the river.'],
   'modern' => ['Modern Town', 'Modern Town: a town hall, a fountain, parks and tall buildings.'],
   'green' => ['Green World', 'Green World: a city that grows with the forest.'],
   'future' => ['Robotic Future', 'Robotic Future: glass domes, helper robots and a rocket.'],
@@ -31,14 +32,14 @@ function cm_mini($w = null) {
 $cmData = [];
 $n = 0;
 foreach (WORLD_ORDER as $w) {
-  $cmData[] = ['w' => $w, 'name' => $cmCards[$w][0], 'line' => $cmCards[$w][1], 'no' => sprintf('%02d/06', ++$n), 'style' => cm_frame($w)];
+  $cmData[] = ['w' => $w, 'name' => $cmCards[$w][0], 'line' => $cmCards[$w][1], 'no' => sprintf('%02d/%02d', ++$n, count(WORLD_ORDER)), 'style' => cm_frame($w)];
 }
 $cmJson = json_encode(['cards' => $cmData, 'back' => cm_frame('gold')], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
-$cmExtras = game_extras('/play/card-memory/', 'Turn over two cards at a time. If they show the same world, they stay face up; if not, they turn back. Find all six pairs in as few moves as you can.',
-  'The six city worlds of this site, and a better memory: try to remember where each card was.');
+$cmExtras = game_extras('/play/card-memory/', 'Turn over two cards at a time. If they show the same world, they stay face up; if not, they turn back. Find all seven pairs in as few moves as you can.',
+  'The seven city worlds of this site, and a better memory: try to remember where each card was.');
 page('/play/card-memory/', [
   'title' => 'Card memory: match the painted city cards',
-  'desc' => h('A free memory game with painted trading cards: turn them over two at a time and match the six city worlds, from ancient Egypt to the Heavenly City.'),
+  'desc' => h('A free memory game with painted trading cards: turn them over two at a time and match the seven city worlds, from ancient Egypt to the Heavenly City.'),
   'class' => 'play card-memory-page',
   'js' => ['cardmemory'],
   'body' => <<<HTML
@@ -47,16 +48,16 @@ page('/play/card-memory/', [
 </div>
 <section class="wrap section cm" data-cardmemory aria-labelledby="cm-h">
   <h1 id="cm-h">Card memory</h1>
-  <p class="lead">Turn over two cards at a time and find the six pairs of city cards.</p>
+  <p class="lead">Turn over two cards at a time and find the seven pairs of city cards.</p>
   <div class="q-top"><p class="cm-pairs"></p><p class="cm-moves"></p><p class="cm-best"></p></div>
   <ul class="cm-grid"></ul>
   <p class="cm-status" aria-live="polite"></p>
   <p class="cm-actions"><button type="button" class="btn cm-again">Shuffle and play again</button></p>
-  <noscript><p class="setting-note">Card memory needs JavaScript. You can still explore all six worlds from the <a href="/">home page</a>.</p></noscript>
+  <noscript><p class="setting-note">Card memory needs JavaScript. You can still explore all seven worlds from the <a href="/">home page</a>.</p></noscript>
 </section>
 <script type="application/json" id="cardmemory-data">{$cmJson}</script>
 {$cmExtras}
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['Card memory', '/play/card-memory/']]),
-    learning('Card memory', 'A memory game with painted trading cards of six city worlds.', '/play/card-memory/', 'Memory and the six city worlds')],
+    learning('Card memory', 'A memory game with painted trading cards of seven city worlds.', '/play/card-memory/', 'Memory and the seven city worlds')],
 ]);

@@ -131,6 +131,27 @@ $TOURS = [
   'think' => ['Which part of the story of Jesus would you like to read again?', 'Why do you think this story is called "good news"?', 'Read the whole story, part by part, starting at the Tree of life.'],
   'teach' => 'story-of-jesus-bible-lesson',
 ],
+'medieval-market-town' => [
+  'world' => 'medieval', 'guide' => 'guide', 'guideName' => 'Young mapmaker', 'guideRole' => 'Draws maps of the town',
+  'title' => 'Medieval town tour: castle, market and abbey',
+  'h1' => 'A medieval market town',
+  'desc' => 'A guided walk through a medieval town with a young mapmaker: the town gate, market day, guilds and crafts, the windmill, the abbey and the castle.',
+  'theme' => 'Trade, crafts, food, learning and defense',
+  'intro' => 'I am learning to draw maps, so I know every street of this town. Come with me through the gate. On market day the whole town is busy, and every building has a job to do.',
+  'time' => '20 to 30 minutes', 'grades' => '3-9',
+  'stops' => [
+    ['medieval/gatehouse', 'Everyone comes in through the gatehouse. Guards watch the road, carts pay a toll, and at night the gates are shut and the portcullis comes down.', 'Why would a town want to know who comes in and out?'],
+    ['medieval/market-hall', 'Today is market day. Farmers sell eggs, cheese and grain, and officials check that every weight and measure is honest.', 'Why does a market need rules?'],
+    ['medieval/guild-hall', 'Each trade has its own guild. An apprentice learns for years, then works as a journeyman, and may one day become a master.', 'What skill would you like to master, and how long might it take?'],
+    ['medieval/blacksmith', 'Listen for the hammer. The smith heats iron until it glows and shapes it into nails, tools and horseshoes for the whole town.', 'Which iron things would a town need most?'],
+    ['medieval/windmill', 'Outside the walls, the windmill\'s sails turn heavy millstones that grind grain into flour for the bakers.', 'What other work could wind or water power do?'],
+    ['medieval/abbey', 'At the abbey, monks and nuns pray, farm, teach, look after the sick and give food to the poor.', 'Which jobs of the abbey are done by other places in your town today?'],
+    ['medieval/scriptorium', 'Here books are copied by hand on parchment, letter by letter. One book can take months, so books are rare and precious.', 'How did printing change who could own a book?'],
+    ['medieval/royal-castle', 'Last, the castle: home of the lord, with thick walls, round towers and a strong gate. From here the lord rules the land around the town.', 'How is a castle like a home, and how is it like a fort?'],
+  ],
+  'think' => ['Which job in this town would you choose? Why?', 'What does this town have in common with your own town?', 'What would you add to my map of the town?'],
+  'teach' => 'what-does-a-city-need',
+],
 ];
 
 function person_img($w, $file, $sizes = '120px', $alt = '') {
@@ -178,7 +199,7 @@ $tourCards = '';
 foreach (array_keys($TOURS) as $slug) $tourCards .= tour_card($slug);
 page('/tours/', [
   'title' => 'Guided tours of the city worlds',
-  'desc' => h('Six short guided tours, one through each world, each with a friendly guide and a question at every stop. For families and classrooms.'),
+  'desc' => h('Seven short guided tours, one through each world, each with a friendly guide and a question at every stop. For families and classrooms.'),
   'class' => 'tours',
   'body' => <<<HTML
 <div class="wrap">

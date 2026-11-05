@@ -63,7 +63,7 @@ $TEACH = [
   'h1' => 'Design a city: a project-based unit for grades 5 to 9',
   'desc' => 'A free, step-by-step design a city project for middle school: students plan a city that meets real needs, with roles, a timeline and a rubric.',
   'kind' => 'Project', 'grades' => '5-9', 'time' => '5 to 8 class periods', 'subjects' => 'Social studies, geography, math, civics',
-  'quick' => 'Students work in teams to plan a city that provides water, homes, jobs, transportation, public spaces and room for nature. They study six example cities on this site, choose a site, draw a map, justify their choices and present to a "city council" of classmates.',
+  'quick' => 'Students work in teams to plan a city that provides water, homes, jobs, transportation, public spaces and room for nature. They study seven example cities on this site, choose a site, draw a map, justify their choices and present to a "city council" of classmates.',
   'sections' => [
     ['Why this project works', [
       'A design a city project lets students apply geography, math, civics and science to one big question: what does a place need so that people can live well there? There is no single right answer, so students must explain trade-offs, which is where the deepest learning happens.',
@@ -73,7 +73,7 @@ $TEACH = [
       'Form teams of three or four and give each student a role: planner, engineer, environmental officer, community advocate.',
       'Give each team a large sheet of paper or a shared digital map, rulers and colored pencils.',
       'Decide the constraints: a river, a hill, a fixed budget of "building points", or a population target.',
-      'Show students this site\'s six worlds as examples of very different answers to the same needs.',
+      'Show students this site\'s seven worlds as examples of very different answers to the same needs.',
     ]]],
     ['Day-by-day plan', [], ['list' => [
       'Day 1 - What does a city need? Brainstorm, then explore the Compare page: water, gathering places, safe travel and nature.',

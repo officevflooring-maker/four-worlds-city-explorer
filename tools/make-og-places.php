@@ -8,7 +8,7 @@ require 'config.php';
 require 'data.php';
 const PUB = __DIR__ . '/../public';
 $WORLD_DATA = [];
-foreach (['egypt', 'roman', 'modern', 'green', 'future', 'heaven'] as $w) require "worlds/$w.php";
+foreach (['egypt', 'roman', 'medieval', 'modern', 'green', 'future', 'heaven'] as $w) require "worlds/$w.php";
 require 'vehicles.php';
 
 $only = $argv[1] ?? '';
@@ -17,6 +17,7 @@ $font = "fontfile='C\\:/Windows/Fonts/georgiab.ttf'";
 $look = [
   'roman' => ['0xf3e2d6', '0xb3431d'], 'modern' => ['0xdde6f3', '0x2459c4'], 'green' => ['0xdfecd9', '0x2f7d34'],
   'future' => ['0xd7e9ec', '0x00798c'], 'egypt' => ['0xf1e3c8', '0x95650f'], 'heaven' => ['0xe9e5f5', '0x6a4fb3'],
+  'medieval' => ['0xf3e1e4', '0x9b1c3c'],
 ];
 $tmp = sys_get_temp_dir() . '/og-text';
 @mkdir($tmp);

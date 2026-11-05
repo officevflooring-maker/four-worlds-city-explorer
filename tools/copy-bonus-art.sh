@@ -17,7 +17,7 @@ webp() { # in, out, filter, quality
 C="$ROOT/public/assets/certificates"
 mkdir -p "$C"
 # Where each figure sits in its 1024 x 1024 picture (w:h:x:y). The Green World's source files are named "elven".
-declare -A FIG=([roman]=778:1016:98:4 [modern]=886:1014:46:6 [green]=874:983:93:31 [future]=902:994:87:13 [heaven]=908:1012:51:0 [egypt]=872:1019:51:5)
+declare -A FIG=([roman]=778:1016:98:4 [modern]=886:1014:46:6 [green]=874:983:93:31 [future]=902:994:87:13 [heaven]=908:1012:51:0 [egypt]=872:1019:51:5 [medieval]=904:1018:45:6)
 for world in "${!FIG[@]}"; do
   src="$world"; [ "$world" = green ] && src=elven
   [ "$world" = egypt ] && [ -z "$(find "$B/guide_egypt.png" -newermt '2026-11-03 15:00')" ] && { echo "skip egypt: the guide with elf ears"; continue; }
@@ -25,7 +25,7 @@ for world in "${!FIG[@]}"; do
   webp "$B/guide_$src.png" "$ROOT/public/assets/worlds/$world/guide-256.webp" "$fig,scale=256:-2:flags=lanczos" 82
   webp "$B/guide_$src.png" "$ROOT/public/assets/worlds/$world/guide-512.webp" "$fig,scale=512:-2:flags=lanczos" 85
 done
-for world in roman modern green future egypt heaven; do
+for world in roman modern green future egypt heaven medieval; do
   src="$world"; [ "$world" = green ] && src=elven
   webp "$B/cert_$src.png" "$C/$world-768.webp" "format=rgba,scale=768:-2:flags=lanczos" 85
   webp "$B/cert_$src.png" "$C/$world-1536.webp" "format=rgba" 88

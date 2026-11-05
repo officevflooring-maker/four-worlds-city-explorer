@@ -10,7 +10,7 @@
   var KEY = 'atlas.puzzle', SIZE = 900;
   // Sky behind each world's picture, top and bottom.
   var SKY = {
-    egypt: ['#f3dcae', '#fbf1dd'], roman: ['#efdcc4', '#fbf5ec'], modern: ['#c4dcf2', '#eef5fb'],
+    egypt: ['#f3dcae', '#fbf1dd'], roman: ['#efdcc4', '#fbf5ec'], medieval: ['#cfdcec', '#f3f6fa'], modern: ['#c4dcf2', '#eef5fb'],
     green: ['#d2eacb', '#f2f9ee'], future: ['#e6d1c5', '#f7eee8'], heaven: ['#fdeab0', '#fffaf0']
   };
   var store = {

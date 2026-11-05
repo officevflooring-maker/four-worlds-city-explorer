@@ -24,11 +24,12 @@ declare -A CARS=(
   [future]="hover-car pressurized-rover cargo-pod drone-taxi"
   [egypt]="chariot camel ox-cart stone-sledge"
   [heaven]="golden-chariot cloud-carriage swan-boat fruit-donkey"
+  [medieval]="covered-wagon horse-and-rider hay-cart donkey-cart"
 )
-for world in roman modern green future egypt heaven; do
+for world in roman modern green future egypt heaven medieval; do
   W="$ROOT/public/assets/worlds/$world"; A="$ROOT/public/assets/artwork/$world"
   mkdir -p "$W" "$A"
-  if [ "$world" = egypt ] || [ "$world" = heaven ]; then
+  if [ "$world" = egypt ] || [ "$world" = heaven ] || [ "$world" = medieval ]; then
     strips=("$LRPG/inbox/done/$world/"people_[0-9].png "$LRPG/inbox/done/$world/"worker_[0-9].png); cars="$LRPG/inbox/done/$world"
   elif [ "$world" = green ]; then
     # The Green World (source folders still named "elven"): the walkers redrawn as ordinary people on 2026-11-03,
@@ -45,9 +46,14 @@ for world in roman modern green future egypt heaven; do
   fi
   for f in "${strips[@]}"; do
     name=$(basename "$f" .png); name="${name//_/-}"
+    # The Medieval Kingdom's guard and farmer (people_4 and people_5) still have a grey background: left out.
+    [ "$world/$name" = medieval/people-4 ] || [ "$world/$name" = medieval/people-5 ] && continue
     pose="crop=512:512:0:0,format=rgba"
     # The Green World's flower-crown child came with a soft white glow around the figure: drop its light, partly
     # see-through pixels.
+    # The Medieval Kingdom's walkers came with a faint glow and colored fringes around the figure, all nearly
+    # see-through: drop every pixel under half opacity.
+    [ "$world" = medieval ] && pose="$pose,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='if(lt(alpha(X,Y),128),0,alpha(X,Y))'"
     [ "$world/$name" = green/people-3 ] && pose="$pose,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='if(gt(min(min(r(X,Y),g(X,Y)),b(X,Y)),170)*lt(alpha(X,Y),240),0,alpha(X,Y))'"
     webp "$f" "$W/$name-256.webp" "$pose,scale=256:-1:flags=lanczos" 82
     webp "$f" "$W/$name-512.webp" "$pose" 85

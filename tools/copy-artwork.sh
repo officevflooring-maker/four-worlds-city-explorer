@@ -33,14 +33,14 @@ for world in roman modern green future; do
     echo "ok $world/${stem//_/-}"
   done
 done
-# Ancient Egypt and the Heavenly City: every picture in one folder of the Life RPG game (its full-size originals),
+# Ancient Egypt, the Heavenly City and the Medieval Kingdom: every picture in one folder of the Life RPG game (its full-size originals),
 # named the same way. The horizon comes from the game's own cut-out, since the original still has its magenta sky.
 # People and vehicles are copied by tools/copy-people-vehicles.sh.
-for world in egypt heaven; do
+for world in egypt heaven medieval; do
   mkdir -p "$ROOT/public/assets/artwork/$world"
   for f in "$LRPG/inbox/done/$world/"*.png; do
     stem=$(basename "$f" .png)
-    case "$stem" in *.src|people_*|worker_*|car_*|horizon) continue ;; tex_*|tree_*) pre=ground- ;; crane|materials) pre=construction- ;; *) pre= ;; esac
+    case "$stem" in *.src|people_*|worker_*|car_*|horizon|horizon_night) continue ;; tex_*|tree_*) pre=ground- ;; crane|materials) pre=construction- ;; *) pre= ;; esac
     out="$ROOT/public/assets/artwork/$world/$pre${stem//_/-}"
     [ -f "$out.webp" ] && continue
     ffmpeg -nostdin -loglevel error -y -i "$f" -c:v libwebp -quality 88 -compression_level 4 "$out.webp"

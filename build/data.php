@@ -1,7 +1,7 @@
 <?php
 // Shared facts about each world, used on the home page cards, navigation and world pages.
 // Each world's building pages live in build/worlds/{world}.php.
-// Ancient Egypt and Rome are historical settings; the modern town, Green World and future are imagined or
+// Ancient Egypt, Rome and the Medieval Kingdom are historical settings; the modern town, Green World and future are imagined or
 // speculative, and the Heavenly City is imagined, inspired by the Bible, and tells the story of Jesus.
 
 $WORLDS = [
@@ -19,6 +19,11 @@ $WORLDS = [
     'name' => 'Ancient Rome', 'short' => 'Roman', 'type' => 'Historical setting',
     'lead' => 'A real city. Open any of 35 buildings to learn how it worked, with photos of real Roman sites.',
     'card' => 'amphitheater', 'ground' => 'ground-plaza',
+  ],
+  'medieval' => [
+    'name' => 'Medieval Kingdom', 'short' => 'Medieval', 'type' => 'Historical setting',
+    'lead' => 'A market town of medieval Europe. Open any of 38 places, from the castle to the windmill, with photos of real medieval sites.',
+    'card' => 'royal-castle', 'ground' => 'ground-grass',
   ],
   'modern' => [
     'name' => 'Modern Town', 'short' => 'Modern', 'type' => 'Imaginative design setting',
@@ -44,6 +49,7 @@ $COMPARE = [
     'egypt'  => ['lotus-pool', 'Lotus pool', 'Almost all water came from the Nile, carried by hand or lifted with a shaduf. What happens to a land that depends on one river?'],
     'heaven' => ['fountain-of-life', 'Fountain of life', 'Here the water never runs out and never makes anyone sick. What would it take to make that true everywhere?'],
     'roman'  => ['aqueduct', 'Aqueduct', 'Water travels downhill along a channel. What happens if the slope is wrong?'],
+    'medieval' => ['village-well', 'Village well', 'Every bucket was wound up by hand. Who do you think fetched the water, and how often?'],
     'modern' => ['plaza-fountain', 'Plaza fountain', 'Most of a modern water system is hidden. What pipes, pumps or treatment might be out of sight?', 'water-system'],
     'green'  => ['spring-circle', 'Spring circle', 'The spring is protected by stones. What could harm a water source?'],
     'future' => ['indoor-farm', 'Indoor farm', 'Indoor farms could reuse water. Is that worth the energy they need?'],
@@ -52,6 +58,7 @@ $COMPARE = [
     'egypt'  => ['feast-hall', 'Feast hall', 'Banquets had music, dancing and plenty of food. Who was invited, and who did the work?'],
     'heaven' => ['banquet-hall', 'Banquet hall', 'A table with a seat for everyone. Who might be missing from the table in your town?'],
     'roman'  => ['amphitheater', 'Amphitheater', 'Thousands watched together, seated by rank. Who was welcome, and where?'],
+    'medieval' => ['feast-hall', 'Feast hall', 'The lord sat at the high table, everyone else down the hall. What does a seating plan tell you about people?'],
     'modern' => ['community-center', 'Community center', 'What would make everyone in the neighborhood feel welcome here?'],
     'green'  => ['gathering-circle', 'Warm gathering circle', 'Imagined as warmed by heat from deep in the ground. Where could your town find clean warmth?'],
     'future' => ['public-plaza', 'Public plaza', 'If more life happens online, does a city still need squares like this?'],
@@ -60,6 +67,7 @@ $COMPARE = [
     'egypt'  => ['ground-crossroads', 'Sandstone crossroads', 'Most Egyptians traveled by boat on the Nile. Why might a river be easier than a road?', 'sailing-boat'],
     'heaven' => ['ground-crossroads', 'Golden crossroads', 'Streets of gold with crossings of pearl. What makes a street feel safe and welcoming?'],
     'roman'  => ['ground-crossroads', 'Stone crossroads', 'Look at the stone stripes crossing the road. What might they be for?'],
+    'medieval' => ['ground-crossroads', 'Cobbled crossroads', 'Most roads outside town were dirt tracks. Why would a town pave its streets with stones?', 'covered-wagon'],
     'modern' => ['ground-crossroads', 'Crosswalks', 'Painted crosswalks mark where to cross. What else helps people cross safely?', 'streets-crosswalks'],
     'green'  => ['ground-crossroads', 'Garden paths', 'There are no cars here. How would people carry heavy things?'],
     'future' => ['ground-crossroads', 'Lit roadway', 'Glowing crossings light the way. Who might these lights help, and who might they not?'],
@@ -68,6 +76,7 @@ $COMPARE = [
     'egypt'  => ['stone-sledge', 'Stone sledge', 'Giant stones moved on sledges, boats and ramps. How would you move a load as heavy as a truck without engines?'],
     'heaven' => ['fruit-donkey', 'Donkey with fruit', 'Everything here is free to share. How could your town share more of what it has?'],
     'roman'  => ['donkey-cart', 'Donkey cart', 'Carts were banned from Rome\'s streets by day. When would you allow deliveries?'],
+    'medieval' => ['donkey-cart', 'Donkey cart', 'Ale, fish and flour traveled in barrels. Why is a barrel easy to move?'],
     'modern' => ['delivery-van', 'Delivery van', 'Online shopping brings vans to every street. How could deliveries cause less traffic?'],
     'green'  => ['flower-cart', 'Flower cart', 'A pony pulls the cart to market. When is slow transport the better choice?'],
     'future' => ['cargo-pod', 'Cargo pod', 'No driver at all. Which jobs should robots do, and which should people keep?'],
@@ -76,6 +85,7 @@ $COMPARE = [
     'egypt'  => ['date-palm', 'Date palm', 'Palms gave food, shade, rope and roof beams. Which plant gives your town the most?', 'palm-grove'],
     'heaven' => ['golden-tree', 'Golden tree', 'The Bible begins in a garden and ends in a city with a river and the tree of life. Why do trees and water make a place feel good?', 'tree-of-life'],
     'roman'  => ['olive-tree', 'Olive tree', 'Olive trees give shade and food. What else could a city tree provide?', 'olive-grove'],
+    'medieval' => ['oak-tree', 'Oak tree', 'Oak gave timber for houses, ships and roofs. How long does it take an oak to grow?', 'building-materials'],
     'modern' => ['community-garden', 'Community garden', 'Gardens take up space that could hold housing. How would you balance the two?'],
     'green'  => ['flower-meadow', 'Flower meadow', 'Flowers feed pollinators. Could your street have a meadow?'],
     'future' => ['tree-pod-habitat', 'Tree pod habitat', 'Homes are built around the tree. Is that sharing space, or taking it over?'],
