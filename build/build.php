@@ -68,6 +68,19 @@ function page($path, $o) {
   // Search results show about 60 characters of a title, so the site's name goes on the end only where it fits.
   $fullTitle = $path === '/' || strlen($o['title'] . ' | ' . SITE_NAME) > 65 ? $title : "$title | " . SITE_NAME;
   // The picture's own version in its address, so a remade picture is fetched fresh, not from a 30-day cache.
+  // A page with no share picture of its own takes the one of the first building it shows. Google treats a picture
+  // that many pages share as decoration and shows no thumbnail for them in its results, so only the home page uses home.jpg.
+  // Pages with no building picture get one that fits their subject; the worksheets get their world's picture.
+  static $ogFor = ['/artwork/' => 'egypt/sphinx', '/credits/' => 'egypt/pyramid', '/guided/' => 'roman/forum', '/tours/' => 'roman/aqueduct',
+    '/library/' => 'modern/public-library', '/play/card-memory/' => 'egypt/obelisk', '/play/hero-cards/' => 'roman/gladiator-school',
+    '/play/word-search/' => 'egypt/scribe-school', '/shop/' => 'roman/shop', '/support/' => 'egypt/market', '/teachers/' => 'modern/school',
+    '/teachers/glossary/' => 'egypt/great-library', '/teachers/homeschool/' => 'modern/single-family-house', '/teachers/question-bank/' => 'roman/school',
+    '/teachers/worksheets/' => 'roman/records-office', '/teachers/worksheets/plan-a-city/' => 'modern/town-hall'];
+  if (!isset($o['og']) && isset($ogFor[$path]) && is_file(PUB . "/assets/og/$ogFor[$path].jpg")) $o['og'] = $ogFor[$path];
+  if (!isset($o['og']) && preg_match('~^/teachers/worksheets/([a-z]+)-(?:vocabulary|word-search)/$~', $path, $wm) && is_file(PUB . "/assets/og/$wm[1].jpg")) $o['og'] = $wm[1];
+  if (!isset($o['og']) && $path !== '/' && preg_match_all('~/assets/(?:worlds|thumbs)/([a-z]+)/([a-z0-9-]+?)(?:-(?:240|480|960|1600))?\.webp~', $o['body'] ?? '', $m, PREG_SET_ORDER)) {
+    foreach ($m as $hit) if (is_file(PUB . "/assets/og/$hit[1]/$hit[2].jpg")) { $o['og'] = "$hit[1]/$hit[2]"; break; }
+  }
   $ogFile = '/assets/og/' . ($o['og'] ?? 'home') . '.jpg';
   $ogImage = url($ogFile) . '?v=' . asset_v($ogFile);
   $ogType = $o['ogType'] ?? 'website';
@@ -83,7 +96,9 @@ function page($path, $o) {
   foreach ($o['js'] ?? [] as $name) $moreJs .= "<script src=\"/js/$name.js?v=" . asset_v("/js/$name.js") . "\" defer></script>\n";
   $ld = '';
   foreach ($o['ld'] ?? [] as $block) {
-    $ld .= '<script type="application/ld+json">' . json_encode($block, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "</script>\n";
+    // The page's main block names its picture too, which Google may use as the thumbnail in its results.
+    if (!isset($block['image']) && in_array($block['@type'] ?? '', ['LearningResource', 'Article', 'WebPage', 'CollectionPage', 'AboutPage', 'ItemPage', 'CreativeWork', 'Game', 'VideoGame', 'SoftwareApplication', 'Book'], true)) $block['image'] = $ogImage;
+    $ld .='<script type="application/ld+json">' . json_encode($block, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "</script>\n";
   }
   // The worlds sit in the middle of the header, the other pages beside Search (site.css).
   $nav = $navMore = '';
