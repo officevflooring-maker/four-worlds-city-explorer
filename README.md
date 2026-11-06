@@ -81,6 +81,7 @@ Not used yet: the remaining building variants (`*_2`, `*_3`, `floor_*` etc.), mo
 
 - `SITE_URL` is the site's domain, `https://atlasofcities.org`, served by the Cloudflare Worker (`wrangler.jsonc` attaches the domain and `www` on every deploy). The temporary `atlasofcities.koaa01.workers.dev` address is turned off, and the Hostinger copy (`yellowgreen-crab-278867.hostingersite.com`) sends every visit to the same page on the domain with a permanent redirect (the repo-root `.htaccess`).
 - Google Search Console: add `atlasofcities.org` as a Domain property, verified by a TXT record in Cloudflare's DNS, and submit `https://atlasofcities.org/sitemap.xml`. That needs no tag on the site, so `GOOGLE_VERIFY` in `build/config.php` is empty.
+- Pinterest: the site is claimed by the Atlas's Pinterest business account, with a tag on the home page (`PINTEREST_VERIFY` in `build/config.php`).
 - Icons (`favicon.svg`, PNG icons) are a simple four-diamond mark made for this site; replace them with a real logo when one exists.
 - Social share images (`public/assets/og/*.jpg`) are composed from the supplied artwork.
 - The Roman "Library" and "Building materials" have no historical notes yet. They're marked as the artist's interpretation.

@@ -87,8 +87,10 @@ function page($path, $o) {
   $ogAlt = h($o['ogAlt'] ?? $o['title']);
   $robots = !empty($o['noindex']) ? 'noindex, follow' : 'index, follow, max-image-preview:large';
   $bodyClass = $o['class'] ?? '';
-  $verify = $path === '/' && GOOGLE_VERIFY ? '<meta name="google-site-verification" content="' . h(GOOGLE_VERIFY) . '">' . "
-" : '';
+  // The home page carries the tags that prove the site is ours to Google Search Console and Pinterest (build/config.php)
+  $verify = '';
+  if ($path === '/') foreach (['google-site-verification' => GOOGLE_VERIFY, 'p:domain_verify' => PINTEREST_VERIFY] as $name => $code)
+    if ($code) $verify .= '<meta name="' . $name . '" content="' . h($code) . '">' . "\n";
   $cssV = asset_v('/css/site.css');
   $jsV = asset_v('/js/site.js');
   // Page-only scripts (city builder, quiz), from public/js/{name}.js.

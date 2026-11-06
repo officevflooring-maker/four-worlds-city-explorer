@@ -31,6 +31,9 @@ const SHOP = [
 // Google Search Console verification code (meta tag on the home page). Empty: the domain is verified as a Domain
 // property by a TXT record in Cloudflare's DNS, which needs no tag.
 const GOOGLE_VERIFY = '';
+// Pinterest's code for claiming the site (a meta tag on the home page), from the Pinterest business account's
+// Settings > Link to Pinterest > Websites. Claiming credits the site's pins to that account and turns on its analytics.
+const PINTEREST_VERIFY = '9b19873d3a12602c933062df973abefb';
 const LASTMOD   = '2026-10-29';
 
 // The Life RPG game's six pets (tools/copy-pets.sh), in its order: the passport pet (/play/passport/) and the
