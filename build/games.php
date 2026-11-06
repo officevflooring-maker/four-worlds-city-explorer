@@ -35,7 +35,7 @@ shop_page('journey', [
     . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
     . shop_feats([
       ['🗺️', 'A big board', 'Four pages make a board about 16 by 21 inches, with a row for every world.'],
-      ['❓', '36 question cards', 'Which world is this from? What does it give its city? The answer is on every card.'],
+      ['❓', '35 question cards', 'Which world is this from? What does it give its city? The answer is on every card.'],
       ['🚀', 'Shortcuts and setbacks', 'Ride each world\'s own vehicles ahead, and watch out for road works.'],
       ['🧍', 'Paper pawns', 'A traveler from every world, and a paper die if you need one.'],
       ['👶', 'For younger players', 'Skip the questions, or just name the place on the card.'],
@@ -44,13 +44,13 @@ shop_page('journey', [
     . shop_pages([
       ['1', 'Rules, how to put the board together, and ways to play'],
       ['2 to 5', 'The board, in four parts to tape together: a row for every world, with shortcuts and setbacks'],
-      ['6 to 9', '36 question cards, nine to a page'],
+      ['6 to 9', '35 question cards, nine to a page'],
       ['10', 'Card backs, for printing on both sides'],
       ['11', 'Pawns, a traveler from every world, and a paper die'],
     ], 'A PDF of 11 pages, in US Letter and A4.')
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
-      ['What do I get?', 'A PDF of 11 pages to download right away: the rules, a board on four pages, 36 cards, card backs, and pawns with a paper die, in both US Letter and A4.'],
+      ['What do I get?', 'A PDF of 11 pages to download right away: the rules, a board on four pages, 35 cards, card backs, and pawns with a paper die, in both US Letter and A4.'],
       ['Do I need a big printer?', 'No. The board prints on four ordinary pages that you tape together from the back.'],
       ['Is it educational?', 'Yes. Every question card is about a place on this site: which world it comes from, or which need it meets.'],
       ['Can I print more copies?', 'Yes, for your own home or classroom. Please don\'t share the file online.'],
@@ -81,8 +81,8 @@ shop_page('bingo', [
     ]) . '</section>'
     . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
     . shop_feats([
-      ['🎱', '30 different cards', '24 places on each, the same number from every world, with a free square in the middle.'],
-      ['🗣️', '48 calling cards', 'Each with a picture and a clue about what the place does.'],
+      ['🎱', '30 different cards', '24 places on each, from all seven worlds, with a free square in the middle.'],
+      ['🗣️', '42 calling cards', 'Each with a picture and a clue about what the place does.'],
       ['✅', 'A caller\'s checklist', 'Tick places off, and check a "Bingo!" in seconds.'],
       ['🌍', 'Five ways to play', 'Picture bingo, guess first, world bingo, needs bingo and full house.'],
       ['🧒', 'For children who don\'t read yet', 'Show the picture and say the name instead of reading the clue.'],
@@ -90,7 +90,7 @@ shop_page('bingo', [
     ]) . '</div></section>'
     . shop_pages([
       ['1', 'Rules and five ways to play'],
-      ['2 to 5', '48 calling cards with clues, twelve to a page'],
+      ['2 to 5', '42 calling cards with clues, twelve to a page'],
       ['6', 'The caller\'s checklist'],
       ['7 to 36', '30 different bingo cards, one to a page'],
     ], 'A PDF of 36 pages, in US Letter and A4.')

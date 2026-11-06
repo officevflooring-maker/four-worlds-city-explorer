@@ -128,15 +128,15 @@ foreach ([
   ['Life RPG', '/life-rpg/', 'Shop', 'An app for grown-ups and teens: real-life goals become quests.', 'life rpg game app habits goals quests grown-ups parents teens buy'],
   ['City Builders card game', '/city-builders/', 'Shop', 'A card game to print at home about what every city needs.', 'card game print play printable family classroom needs buy'],
   ['Classroom Pack', '/classroom-pack/', 'Shop', 'Fact cards, worksheets and discussion cards in one file to print.', 'classroom pack teachers printable fact cards worksheets discussion buy'],
-  ['Poster Set', '/posters/', 'Shop', 'Eight posters to print: every world and the ten things every city needs.', 'posters print wall classroom support donate pay what you want buy'],
+  ['Poster Set', '/posters/', 'Shop', 'Nine posters to print: every world and the ten things every city needs.', 'posters print wall classroom support donate pay what you want buy'],
   ['Journey Through the Worlds', '/journey/', 'Shop', 'A board game to print: race through every world.', 'board game race dice print play family classroom buy'],
   ['City Bingo', '/bingo/', 'Shop', 'Picture bingo with 30 different cards, for a whole class.', 'bingo game classroom party print play pictures buy'],
   ['City Planners', '/planners/', 'Shop', 'A drawing game: plan a city where homes have what they need.', 'flip and write drawing game planning map print play classroom buy'],
-  ['Atlas Trivia', '/trivia/', 'Shop', 'A family quiz game: 162 questions at three levels.', 'trivia quiz questions game family party classroom print buy'],
-  ['Atlas Word Wall', '/wordwall/', 'Shop', '144 vocabulary cards and a glossary for the classroom.', 'word wall vocabulary words cards glossary classroom teacher print buy'],
+  ['Atlas Trivia', '/trivia/', 'Shop', 'A family quiz game: 189 questions at three levels.', 'trivia quiz questions game family party classroom print buy'],
+  ['Atlas Word Wall', '/wordwall/', 'Shop', '168 vocabulary cards and a glossary for the classroom.', 'word wall vocabulary words cards glossary classroom teacher print buy'],
   ['2027 Calendar', '/calendar/', 'Shop', 'A wall calendar with a landmark from a different world every month.', 'calendar 2027 wall months year gift print buy'],
-  ['Build-a-City Play Set', '/playset/', 'Shop', 'A play mat and 89 stand-up buildings, people and vehicles.', 'play set mat toy stand up paper buildings kids build city print buy'],
-  ['Activity Book', '/activity/', 'Shop', 'Crosswords, mazes, word scrambles and puzzles from six worlds.', 'activity book puzzles crossword maze word scramble kids print buy'],
+  ['Build-a-City Play Set', '/playset/', 'Shop', 'A play mat and 109 stand-up buildings, people and vehicles.', 'play set mat toy stand up paper buildings kids build city print buy'],
+  ['Activity Book', '/activity/', 'Shop', 'Crosswords, mazes, word scrambles and puzzles from seven worlds.', 'activity book puzzles crossword maze word scramble kids print buy'],
 ] as [$n, $u, $y, $d, $k]) $SEARCH[] = [$n, $u, $y, '', null, $d, $k];
 
 $json = [];

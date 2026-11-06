@@ -255,7 +255,7 @@ shop_page('city-builders', [
   'title' => 'City Builders: a card game about what every city needs',
   'desc' => 'A print-and-play card game for 2 to 4 players, ages 8 and up: collect buildings from ancient Egypt to a city in the clouds, and give your city all it needs.',
   'tag' => 'Print at home · For families and classrooms',
-  'lead' => 'Collect buildings from six worlds, from ancient Egypt to a city in the clouds, and be the first to build a city with water, homes, food and the seven other things people need.',
+  'lead' => 'Collect buildings from seven worlds, from ancient Egypt to a city in the clouds, and be the first to build a city with water, homes, food and the seven other things people need.',
   'facts' => ['2 to 4 players', 'Ages 8 and up', 'About 20 minutes', 'PDF in Letter and A4'],
   'perfect' => ['family game night', 'classrooms', 'learning what cities need'],
   'pic' => '<img src="/assets/shop/city-builders-fan.webp" width="1100" height="513" alt="Five City Builders cards: an aqueduct, a treetop village, a challenge card, a public library and a greenhouse dome.">',
@@ -273,7 +273,7 @@ shop_page('city-builders', [
     ]) . '</section>'
     . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
     . shop_feats([
-      ['🏛️', '156 building cards', 'From all six worlds. Each shows the needs it meets and what it does.'],
+      ['🏛️', '187 building cards', 'From all seven worlds. Each shows the needs it meets and what it does.'],
       ['🎯', '9 challenge cards', 'Secret goals for bonus points, like a Roman town or a Mars base.'],
       ['🃏', 'Helper cards and card backs', 'A turn summary, the ten needs, and backs for two-sided printing.'],
       ['👶', 'Ways to play', 'An open-hand game for younger players, a short game, and a class version for teams.'],
@@ -282,12 +282,12 @@ shop_page('city-builders', [
     ]) . '</div></section>'
     . shop_pages([
       ['1 and 2', 'Rules: setup, turns, scoring, other ways to play and questions to talk about'],
-      ['3 to 20', '156 building cards, nine to a page, world by world, and 2 helper cards'],
-      ['21', '9 challenge cards'],
-      ['22', 'Card backs, for printing on both sides'],
-    ], 'A PDF of 22 pages, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+      ['3 to 23', '187 building cards, nine to a page, world by world, and 2 helper cards'],
+      ['24', '9 challenge cards'],
+      ['25', 'Card backs, for printing on both sides'],
+    ], 'A PDF of 25 pages, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
-      ['What do I get?', 'A PDF of 22 pages to download right away: rules, 19 pages of cards and a page of card backs, in both US Letter and A4.'],
+      ['What do I get?', 'A PDF of 25 pages to download right away: rules, 22 pages of cards and a page of card backs, in both US Letter and A4.'],
       ['Do I need special paper?', 'No. Card stock makes sturdier cards, but plain paper works too. Card sleeves from any game shop make them last even longer.'],
       ['Is it educational?', 'Yes. Every card says which need a building meets and what it does, and the game is built around the big idea of this site: every city has to give its people the same ten things.'],
       ['Can I print more copies?', 'Yes, for your own home or classroom. Please don\'t share the file online.'],
@@ -298,10 +298,10 @@ shop_page('city-builders', [
 /* ---------- Classroom Pack ---------- */
 shop_page('classroom-pack', [
   'title' => 'Classroom Pack: how cities work, ready to print',
-  'desc' => 'A print-ready teaching pack from The Atlas of Cities: fact cards for 229 places, 16 worksheets with answer keys, the ten needs of a city and 90 discussion cards.',
+  'desc' => 'A print-ready teaching pack from The Atlas of Cities: fact cards for 267 places, 18 worksheets with answer keys, the ten needs of a city and 105 discussion cards.',
   'tag' => 'Print at home · For teachers and homeschool',
   'lead' => 'Everything for teaching how cities work, in one file: fact cards for every place, the worksheets with their answer keys, and questions that get a class talking.',
-  'facts' => ['83 pages', 'Grades 2 to 9', 'PDF in Letter and A4'],
+  'facts' => ['95 pages', 'Grades 2 to 9', 'PDF in Letter and A4'],
   'perfect' => ['teachers', 'homeschool', 'substitute plans', 'grades 2 to 9'],
   'pic' => '<img src="/assets/shop/classroom-pack-pages.webp" width="1100" height="697" alt="Three pages of the Classroom Pack: the cover, the ten needs of a city and a page of fact cards.">',
   'again' => shop_open('classroom-pack') ? 'Everything for your next unit, in one file' : 'The Classroom Pack is coming soon',
@@ -315,42 +315,42 @@ shop_page('classroom-pack', [
     . shop_gallery([
       ['/assets/shop/classroom-pack-p3.webp', 520, 673, 'The ten needs of a city, with an example from each world.', 'The ten needs'],
       ['/assets/shop/classroom-pack-p5.webp', 520, 673, 'A page of six fact cards, each with a picture, what the place does and a question.', 'Fact cards'],
-      ['/assets/shop/classroom-pack-p68.webp', 520, 673, 'A worksheet comparing how the six cities meet their needs.', 'Worksheets and keys'],
-      ['/assets/shop/classroom-pack-p75.webp', 520, 673, 'A page of ten discussion cards.', 'Discussion cards'],
+      ['/assets/shop/classroom-pack-p78.webp', 520, 673, 'A worksheet comparing how the seven cities meet their needs.', 'Worksheets and keys'],
+      ['/assets/shop/classroom-pack-p85.webp', 520, 673, 'A page of ten discussion cards.', 'Discussion cards'],
     ]) . '</section>'
     . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
     . shop_feats([
-      ['🗂️', '229 fact cards', 'Every place, vehicle and green space: a picture, what it does, the needs it meets and a question.'],
-      ['📝', '16 worksheets', 'Vocabulary and a word search for every world, matching, a comparison chart and a city plan, each followed by its answer key.'],
+      ['🗂️', '267 fact cards', 'Every place, vehicle and green space: a picture, what it does, the needs it meets and a question.'],
+      ['📝', '18 worksheets', 'Vocabulary and a word search for every world, matching, a comparison chart and a city plan, each followed by its answer key.'],
       ['🏙️', 'The ten needs', 'Two pages that compare how each world gives its people water, homes, food and more.'],
-      ['💬', '90 discussion cards', 'Questions for warm-ups, exit tickets and journals, 15 from each world.'],
+      ['💬', '105 discussion cards', 'Questions for warm-ups, exit tickets and journals, 15 from each world.'],
       ['💡', 'Ideas for using it', 'Stations, sorting, a design-a-city project and a question of the day.'],
       ['🖨️', 'Ready to print', 'Each section starts on its own page, with page numbers and a contents page.'],
     ]) . '</div></section>'
     . shop_pages([
       ['1 and 2', 'Cover, contents and ideas for using the pack'],
-      ['3 and 4', 'Ten things every city needs, compared across the six worlds'],
-      ['5 to 43', '229 fact cards, six to a page'],
-      ['44 to 74', '16 worksheets, each followed by its answer key'],
-      ['75 to 83', '90 discussion cards, ten to a page'],
-    ], 'A PDF of 83 pages, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+      ['3 and 4', 'Ten things every city needs, compared across the seven worlds'],
+      ['5 to 49', '267 fact cards, six to a page'],
+      ['50 to 84', '18 worksheets, each followed by its answer key'],
+      ['85 to 95', '105 discussion cards, ten to a page'],
+    ], 'A PDF of 95 pages, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['Aren\'t the worksheets free on this site?', 'Yes, and they stay free. The pack puts them in one file with the fact cards, the ten needs pages and the discussion cards, so a whole unit is ready to print.'],
       ['What grades is it for?', 'Grades 2 to 9. The fact cards and discussion cards work across those grades; each worksheet notes its grades on <a href="/teachers/worksheets/">the worksheets page</a>.'],
       ['Can I copy it for my students?', 'Yes, as many copies as your class needs. One purchase is for one teacher\'s classroom or one home; please don\'t share the file online.'],
-      ['What do I get?', 'A PDF of 83 pages to download right away, in both US Letter and A4.'],
+      ['What do I get?', 'A PDF of 95 pages to download right away, in both US Letter and A4.'],
     ]) . '</section>',
 ]);
 
 /* ---------- Poster Set (pay what you want: also the Support page's button) ---------- */
 shop_page('posters', [
   'title' => 'Poster Set: every world for your wall',
-  'desc' => 'Eight posters to print from The Atlas of Cities: all six worlds together, twelve places from each, and the ten things every city needs. Pay what you want, from ' . SHOP['posters']['price'] . '.',
+  'desc' => 'Nine posters to print from The Atlas of Cities: all seven worlds together, twelve places from each, and the ten things every city needs. Pay what you want, from ' . SHOP['posters']['price'] . '.',
   'tag' => 'Print at home · Supports this site',
-  'lead' => 'Eight posters for a classroom or bedroom wall. You choose the price, and it helps keep The Atlas of Cities free.',
-  'facts' => ['8 posters', 'PDF in Letter and A4'],
+  'lead' => 'Nine posters for a classroom or bedroom wall. You choose the price, and it helps keep The Atlas of Cities free.',
+  'facts' => ['9 posters', 'PDF in Letter and A4'],
   'perfect' => ['classroom walls', 'bedrooms', 'supporting this site'],
-  'pic' => '<img src="/assets/shop/posters-fan.webp" width="1100" height="697" alt="Three posters: Ancient Egypt, the six worlds and the Heavenly City.">',
+  'pic' => '<img src="/assets/shop/posters-fan.webp" width="1100" height="697" alt="Three posters: Ancient Egypt, the seven worlds and the Heavenly City.">',
   'again' => shop_open('posters') ? 'Put every world on your wall' : 'The Poster Set is coming soon',
   'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
     . shop_steps([
@@ -361,14 +361,15 @@ shop_page('posters', [
     . '<section class="wrap section" aria-label="Posters in the set">'
     . shop_gallery([
       ['/assets/shop/posters-p2.webp', 520, 673, 'A poster of twelve places in Ancient Egypt, from the pyramid to a Nile sailing boat, above a desert landscape.', 'Twelve places from each world'],
-      ['/assets/shop/posters-p8.webp', 520, 673, 'A chart of the ten things every city needs, with an example from each world.', 'Ten things every city needs'],
-      ['/assets/shop/posters-p1.webp', 520, 673, 'A poster of the six worlds, with a landmark from each: a pyramid, an amphitheater, a skyscraper, a great tree hall, a spaceport and a palace of light.', 'The six worlds'],
+      ['/assets/shop/posters-p9.webp', 520, 673, 'A chart of the ten things every city needs, with an example from each world.', 'Ten things every city needs'],
+      ['/assets/shop/posters-p1.webp', 520, 673, 'A poster of the seven worlds, with a landmark from each: a pyramid, an amphitheater, a royal castle, a skyscraper, a great tree hall, a spaceport and a palace of light.', 'The seven worlds'],
     ]) . '</section>'
     . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
     . shop_feats([
-      ['🗺️', 'The Six Worlds', 'One landmark from each world, from long, long ago to maybe one day.'],
+      ['🗺️', 'The Seven Worlds', 'One landmark from each world, from long, long ago to maybe one day.'],
       ['🏺', 'Ancient Egypt', 'The pyramid, the Great Sphinx, a Nile sailing boat and nine more.'],
       ['🏛️', 'Ancient Rome', 'The aqueduct, the Pantheon, a chariot and nine more.'],
+      ['🏰', 'Medieval Kingdom', 'A royal castle, a windmill, a covered wagon and nine more.'],
       ['🏙️', 'Modern Town', 'A skyscraper, a stadium, a taxi and nine more.'],
       ['🌳', 'Green World', 'A great tree hall, a mushroom cottage and ten more.'],
       ['🚀', 'Robotic Future', 'A spaceport, a launch pad, a hover car and nine more.'],
@@ -376,12 +377,12 @@ shop_page('posters', [
       ['💧', 'Ten things every city needs', 'A chart with an example of each need from every world.'],
     ]) . '</div></section>'
     . shop_pages([
-      ['1', 'The Six Worlds: a landmark from each world'],
-      ['2 to 7', 'Twelve places from each world: Ancient Egypt, Ancient Rome, Modern Town, Green World, Robotic Future and the Heavenly City'],
-      ['8', 'Ten things every city needs: a chart with an example from every world'],
-    ], 'A PDF of 8 posters, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+      ['1', 'The Seven Worlds: a landmark from each world'],
+      ['2 to 8', 'Twelve places from each world: Ancient Egypt, Ancient Rome, Medieval Kingdom, Modern Town, Green World, Robotic Future and the Heavenly City'],
+      ['9', 'Ten things every city needs: a chart with an example from every world'],
+    ], 'A PDF of 9 posters, in US Letter and A4.') . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
-      ['What do I get?', 'A PDF of 8 posters to download right away, in both US Letter and A4.'],
+      ['What do I get?', 'A PDF of 9 posters to download right away, in both US Letter and A4.'],
       ['Where does the money go?', 'Into keeping The Atlas of Cities free, with no ads: hosting, new worlds and fact-checking.'],
       ['Can I print them bigger?', 'Yes. Print the A4 file on A3 paper, or choose "Fit to page" to print on 11 x 17.'],
       ['Can I print more copies?', 'Yes, for your own home or classroom. Please don\'t share the file online.'],
@@ -392,9 +393,9 @@ shop_page('posters', [
 // [heading, line, products]; a product not on a shelf is left off the shop page, so add new ones here
 $SHOP_SHELVES = [
   ['Games to print', 'Board, card and party games for families and classrooms. Print them tonight, play them tomorrow.', ['journey', 'city-builders', 'trivia', 'bingo', 'planners']],
-  ['For young builders', 'Hands-on fun for ages 4 to 10: build a city on the table, or puzzle through six worlds.', ['playset', 'activity']],
+  ['For young builders', 'Hands-on fun for ages 4 to 10: build a city on the table, or puzzle through seven worlds.', ['playset', 'activity']],
   ['For the classroom', 'Everything for a unit on how cities work, ready to print and copy.', ['classroom-pack', 'wordwall']],
-  ['For your wall', 'Posters and a calendar from the six worlds. The posters are how you can support this site.', ['posters', 'calendar']],
+  ['For your wall', 'Posters and a calendar from the seven worlds. The posters are how you can support this site.', ['posters', 'calendar']],
   ['For grown-ups and teens', 'An app that turns real-life goals into quests.', ['life-rpg']],
 ];
 $shelves = $jump = '';
@@ -408,7 +409,7 @@ foreach ($SHOP_SHELVES as $i => [$head, $line, $slugs]) {
 $nProducts = count($SHOP_INFO);
 page('/shop/', [
   'title' => 'Shop: board games, activity books, classroom packs and posters',
-  'desc' => h('Printable board games, an activity book, a play set, classroom packs, posters and a calendar from six worlds, and Life RPG. The rest of the site stays free.'),
+  'desc' => h('Printable board games, an activity book, a play set, classroom packs, posters and a calendar from seven worlds, and Life RPG. The rest of the site stays free.'),
   'class' => 'shop shop-home-page',
   'body' => <<<HTML
 <section class="wrap section page-head">
