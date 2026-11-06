@@ -1,9 +1,9 @@
 <?php
-// ---------- Five more things to print (build/shop.php has the shop itself) ----------
+// ---------- More things to print (build/shop.php has the shop itself) ----------
 // /trivia/ (a family quiz game), /wordwall/ (classroom vocabulary), /calendar/ (a 2027 wall calendar), /playset/ (a play
-// mat with stand-up buildings) and /activity/ (an activity book). Each is a PDF made in the atlas-products project
-// from this site's own places and words, so they cover every world on the site. Prices and checkout links are in
-// config.php (SHOP).
+// mat with stand-up buildings), /activity/ (an activity book), /storybook/ (the stories of /stories/ as a picture book)
+// and /story-starters/ (writing prompts). Each is a PDF made in the atlas-products project from this site's own
+// places, words and stories, so they cover every world on the site. Prices and checkout links are in config.php (SHOP).
 
 $SHOP_INFO += [
   'trivia' => ['Atlas Trivia', '/trivia/', 'A family quiz game to print', '189 questions at three levels, so children and grown-ups play together.', '/assets/shop/trivia-fan.webp', 1100, 697],
@@ -11,6 +11,8 @@ $SHOP_INFO += [
   'calendar' => ['2027 Calendar', '/calendar/', 'A wall calendar to print', 'A landmark from a different world every month, with room to write.', '/assets/shop/calendar-fan.webp', 1100, 697],
   'playset' => ['Build-a-City Play Set', '/playset/', 'A play set to print', 'A big play mat and 109 stand-up buildings, people and vehicles.', '/assets/shop/playset-fan.webp', 1100, 697],
   'activity' => ['Activity Book', '/activity/', 'An activity book to print', 'A crossword, a maze, a word scramble and a puzzle for every world.', '/assets/shop/activity-fan.webp', 1100, 697],
+  'storybook' => ['Storybook', '/storybook/', 'A picture book to print', 'Seven stories, one from every world, with 63 full-page paintings to read aloud.', '/assets/shop/storybook-fan.webp', 1100, 697],
+  'story-starters' => ['Story Starters', '/story-starters/', 'Writing prompts to print', '70 picture cards that start a story, a poem or a news report, ten from every world.', '/assets/shop/story-starters-fan.webp', 1100, 697],
 ];
 
 /* ---------- Atlas Trivia ---------- */
@@ -241,5 +243,102 @@ shop_page('activity', [
       ['What age is it for?', 'Ages 6 to 10. Younger children enjoy the mazes and drawing pages with a little help; the crosswords suit confident readers.'],
       ['Do children need to know the website?', 'No. Every puzzle works on its own, with pictures and clues. The site is there if they want to know more.'],
       ['Can I print more copies?', 'Yes, as often as you like for your own home or classroom. Please don\'t share the file online.'],
+    ]) . '</section>',
+]);
+
+/* ---------- Storybook ---------- */
+shop_page('storybook', [
+  'title' => 'The Atlas of Cities Storybook: seven picture-book stories to print',
+  'desc' => 'A printable 73-page picture book for ages 4 to 9: seven short stories, one from every world, with 63 full-page paintings and a true note after every chapter.',
+  'tag' => 'Print at home · For reading aloud',
+  'lead' => 'Seven stories, one from every world. In each one, your child is the young builder with the satchel and the toolbox, lending a hand in a village on the Nile, a Roman town, a castle town, a new town by a river, a forest village, a colony on Mars and the holy city the Bible describes.',
+  'facts' => ['Ages 4 to 9', '73 pages', '63 full-page paintings', 'PDF in Letter and A4'],
+  'perfect' => ['bedtime', 'reading aloud', 'early readers', 'homeschool history'],
+  'pic' => '<img src="/assets/shop/storybook-fan.webp" width="1100" height="697" alt="The Storybook: its cover, with a painting from every story, between the first page of the Ancient Egypt story and a page of planting by the Nile.">',
+  'again' => shop_open('storybook') ? 'Seven worlds, seven stories to read together' : 'The Storybook is coming soon',
+  'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
+    . shop_steps([
+      ['Download.', 'You get the PDF right after paying, in US Letter and A4 sizes.'],
+      ['Print a story, or the whole book.', 'Each story starts on a new page, so you can print one at a time and staple it.'],
+      ['Read together.', 'One chapter makes a good bedtime story. After each one, a short note tells what was true in real life.'],
+    ]) . '</section>'
+    . '<section class="wrap section" aria-label="Pages from the book">'
+    . shop_gallery([
+      ['/assets/shop/storybook-p3.webp', 520, 673, 'The first page of the Ancient Egypt story, in a painted frame, with pictures of its three chapters.', 'A story from every world'],
+      ['/assets/shop/storybook-p4.webp', 520, 673, 'A page from chapter 1, The Flood: the young builder and a dog look over flooded fields, with one line of the story in large type.', 'A painting on every page'],
+      ['/assets/shop/storybook-p6.webp', 520, 673, 'The last page of the chapter: planting on the dark soil, a note on what was true in real life and three places to look up.', 'What was true, after every chapter'],
+    ]) . '</section>'
+    . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
+    . shop_feats([
+      ['📖', 'Seven stories', 'Ancient Egypt, Ancient Rome, the Medieval Kingdom, a modern town, the Green World, Mars and the Heavenly City.'],
+      ['🎨', '63 full-page paintings', 'From Life RPG, the game behind The Atlas of Cities.'],
+      ['🔤', 'Large type', 'A line or two on every page, easy to read aloud and good for early readers.'],
+      ['🌙', 'Bedtime-sized chapters', 'Three short chapters in every story, three pages each.'],
+      ['💡', 'What was true', 'After each chapter, a short note on real life, with three places to look up on this site. In the Heavenly City, the notes show where the Bible describes it.'],
+      ['✏️', 'Your own story', 'A last page to draw and write a story of your own.'],
+    ]) . '</div></section>'
+    . shop_pages([
+      ['1', 'The cover, with a line for the owner\'s name'],
+      ['2', 'Before you read: the seven stories and tips for reading together'],
+      ['3 to 12', 'Ancient Egypt: The Flood, The Scribe\'s Lesson and The Great Stone'],
+      ['13 to 22', 'Ancient Rome: The Road to the Hill, Water for the City and The Harvest Feast'],
+      ['23 to 32', 'Medieval Kingdom: The Old Castle, The Harvest Fair and The Tournament'],
+      ['33 to 42', 'Modern Town: A Fresh Start, The Bridge and Lights On'],
+      ['43 to 52', 'Green World: The Seed, Rope Bridges and The Song Hall'],
+      ['53 to 62', 'Robotic Future: Power Up, The Lost Rover and First Class'],
+      ['63 to 72', 'Heavenly City: The Open Gate, The River and The Song'],
+      ['73', 'Your own story: a page to draw and write'],
+    ], 'A PDF of 73 pages, in US Letter and A4. Each story has a first page and nine paintings.')
+    . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+    . shop_faq([
+      ['Are these the stories on this site?', 'Yes. The <a href="/stories/">stories</a> are free to read here. The Storybook puts all seven in one book to print, with every painting on its own page, a contents page and a page for your own story.'],
+      ['What age is it for?', 'Ages 4 to 9 for reading aloud. Confident readers can read it by themselves.'],
+      ['Do I need a color printer?', 'It looks best in color, since every page is a painting. Print the stories one at a time if you like.'],
+      ['Can I print more copies?', 'Yes, for your own home or classroom. Please don\'t share the file online.'],
+    ]) . '</section>',
+]);
+
+/* ---------- Story Starters ---------- */
+shop_page('story-starters', [
+  'title' => 'Story Starters: 70 picture writing prompts to print',
+  'desc' => 'Printable writing prompts for grades 2 to 6: 70 picture cards, ten from each of seven worlds, in eleven kinds of writing, with a story planner and a writing page.',
+  'tag' => 'Print at home · For teachers and homeschool',
+  'lead' => 'Stuck for something to write about? Pick a card. Each shows a place, a few lines about it and a prompt: a news report on the day the Great Pyramid got its last stone, a diary from a home on the Moon, or a poem by a Roman lighthouse keeper on a stormy night.',
+  'facts' => ['Grades 2 to 6', '70 prompt cards', '11 kinds of writing', 'PDF in Letter and A4'],
+  'perfect' => ['writing centers', 'journals', 'homeschool', 'early finishers'],
+  'pic' => '<img src="/assets/shop/story-starters-fan.webp" width="1100" height="697" alt="Story Starters: a page of prompt cards from Ancient Egypt between the story planner and the guide.">',
+  'again' => shop_open('story-starters') ? 'Seventy ways to start writing' : 'Story Starters is coming soon',
+  'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
+    . shop_steps([
+      ['Print and cut.', 'Ten cards to a page, one page for each world.'],
+      ['Pick a card.', 'Draw one at random, or choose a world your class is studying.'],
+      ['Plan and write.', 'Fill in the story planner, then write and draw on the writing page.'],
+    ]) . '</section>'
+    . '<section class="wrap section" aria-label="Pages from the cards">'
+    . shop_gallery([
+      ['/assets/shop/story-starters-p2.webp', 520, 673, 'Ten prompt cards from Ancient Egypt, each with a picture, a kind of writing, a few lines about the place and a prompt.', 'Ten cards for every world'],
+      ['/assets/shop/story-starters-p9.webp', 520, 673, 'The story planner: who is in it, where and when, the problem, the beginning, middle and end, and good words to use.', 'A story planner'],
+      ['/assets/shop/story-starters-p1.webp', 520, 673, 'The guide: how to use the cards, tips for grown-ups and the eleven kinds of writing.', 'A guide for grown-ups'],
+    ]) . '</section>'
+    . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
+    . shop_feats([
+      ['🗂️', '70 prompt cards', 'Ten for each world, from the pyramids to a city in the clouds.'],
+      ['✍️', '11 kinds of writing', 'Story, retelling, diary, letter, poem, description, explanation, opinion, news report, conversation and invention.'],
+      ['💡', 'Something to start from', 'A few lines about the place on every card, and a page for every place on this site.'],
+      ['🗺️', 'A story planner', 'Who, where and when, the problem, the beginning, middle and end, and good words to use.'],
+      ['📝', 'A writing page', 'Lines to write on and a box to draw in. Copy it as often as you need.'],
+      ['📜', 'Bible stories', 'The Heavenly City\'s cards retell Bible stories, like the boy who shared his five loaves and two fish.'],
+    ]) . '</div></section>'
+    . shop_pages([
+      ['1', 'The guide: ways to use the cards, tips for grown-ups and the kinds of writing'],
+      ['2 to 8', '70 prompt cards, a page for each world: Ancient Egypt, Ancient Rome, Medieval Kingdom, Modern Town, Green World, Robotic Future and the Heavenly City'],
+      ['9', 'The story planner'],
+      ['10', 'A writing page with a box to draw in'],
+    ], 'A PDF of 10 pages, in US Letter and A4.')
+    . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+    . shop_faq([
+      ['What grades is it for?', 'Grades 2 to 6. Younger writers can draw first and write a sentence or two; older ones can turn a card into a whole story or report.'],
+      ['Does it go with the Classroom Pack?', 'Yes. Every place on the cards has a fact card in the <a href="/classroom-pack/">Classroom Pack</a>, so students can look things up as they write.'],
+      ['Can I copy it for my students?', 'Yes, as many copies as your class needs. One purchase is for one teacher\'s classroom or one home; please don\'t share the file online.'],
     ]) . '</section>',
 ]);

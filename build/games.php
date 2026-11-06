@@ -1,13 +1,16 @@
 <?php
 // ---------- The shop's print-and-play games (build/shop.php has the shop itself) ----------
-// /journey/ (a race board game), /bingo/ (picture bingo for a class) and /planners/ (a flip-and-write city-planning
-// game). Each is a PDF made in the atlas-products project from this site's own places, so the games cover every
-// world on the site. Prices and checkout links are in config.php (SHOP).
+// /journey/ (a race board game), /bingo/ (picture bingo for a class), /planners/ (a flip-and-write city-planning
+// game), /memory/ (a memory game; the free one online is /play/memory/) and /dominoes/ (picture dominoes). Each is a
+// PDF made in the atlas-products project from this site's own places, so the games cover every world on the site.
+// Prices and checkout links are in config.php (SHOP).
 
 $SHOP_INFO += [
   'journey' => ['Journey Through the Worlds', '/journey/', 'A board game to print', 'Race through every world, ride shortcuts and answer questions about the places you pass.', '/assets/shop/journey-fan.webp', 1100, 697],
   'bingo' => ['City Bingo', '/bingo/', 'Picture bingo for a class', 'Read a clue, find the place, cover it. 30 different cards, so a whole class can play.', '/assets/shop/bingo-fan.webp', 1100, 697],
   'planners' => ['City Planners', '/planners/', 'A drawing game to print', 'Draw a city where every home is close to what people need.', '/assets/shop/planners-fan.webp', 1100, 697],
+  'memory' => ['City Memory Match', '/memory/', 'A memory game to print', 'Turn over two cards and find the pair: 84 picture cards of places from seven worlds.', '/assets/shop/memory-fan.webp', 1100, 697],
+  'dominoes' => ['City Dominoes', '/dominoes/', 'Dominoes to print', 'Two sets of picture dominoes in which the seven worlds take the place of the dots.', '/assets/shop/dominoes-fan.webp', 1100, 697],
 ];
 
 /* ---------- Journey Through the Worlds ---------- */
@@ -145,6 +148,97 @@ shop_page('planners', [
       ['What do I get?', 'A PDF of 10 pages to download right away: the rules, 54 cards, card backs and two maps, in both US Letter and A4.'],
       ['How many maps do I need?', 'One for each player in each game. Copy them as often as you need.'],
       ['What is a 15-minute city?', 'An idea from city planning: homes close to shops, schools, parks and doctors, so people can walk or bike to what they need.'],
+      ['Can I print more copies?', 'Yes, for your own home or classroom. Please don\'t share the file online.'],
+    ]) . '</section>',
+]);
+
+/* ---------- City Memory Match ---------- */
+shop_page('memory', [
+  'title' => 'City Memory Match: a memory game to print',
+  'desc' => 'A printable memory game for 1 to 6 players, ages 3 and up: 84 picture cards of 42 places from seven worlds, 42 name cards and four ways to play.',
+  'tag' => 'Print at home · For families and young children',
+  'lead' => 'Turn over two cards and find the pair. Every world has a place for each of six things a city needs, so older players can pair a home in ancient Rome with a home on the Moon.',
+  'facts' => ['1 to 6 players', 'Ages 3 and up', '10 to 20 minutes', 'PDF in Letter and A4'],
+  'perfect' => ['young children', 'family game night', 'classroom centers'],
+  'pic' => '<img src="/assets/shop/memory-fan.webp" width="1100" height="697" alt="City Memory Match: a page of picture cards from the Medieval Kingdom between the key to all 42 places and a page of name cards.">',
+  'again' => shop_open('memory') ? 'Find the pairs, from Egypt to the clouds' : 'City Memory Match is coming soon',
+  'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
+    . shop_steps([
+      ['Print and cut.', 'Card stock is best, so the pictures don\'t show through. Print the backs on the other side if you like.'],
+      ['Lay the cards face down.', 'Start with one world for young players, and add more as they grow.'],
+      ['Find the pairs.', 'Turn over two cards. A pair? Keep it and go again. The most pairs wins.'],
+    ]) . '</section>'
+    . '<section class="wrap section" aria-label="Pages from the game">'
+    . shop_gallery([
+      ['/assets/shop/memory-p5.webp', 520, 673, 'Twelve picture cards from the Medieval Kingdom: six places, each twice, with a sign in the corner for the need it meets.', 'Picture cards for every world'],
+      ['/assets/shop/memory-p10.webp', 520, 673, 'Name cards for places from Ancient Egypt and Ancient Rome, such as the granary and the amphitheater.', 'Name cards for early readers'],
+      ['/assets/shop/memory-p1.webp', 520, 673, 'The rules: getting ready, the six signs and four ways to play.', 'Four ways to play'],
+    ]) . '</section>'
+    . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
+    . shop_feats([
+      ['🃏', '84 picture cards', 'Two of each of 42 places, six from every world.'],
+      ['🔤', '42 name cards', 'Match each picture with its name, a first step in reading.'],
+      ['🏠', 'Same job, two worlds', 'Homes, food, learning, leaders, places to meet, and work and shops: every world has one of each.'],
+      ['🎯', 'Four ways to play', 'Classic memory from age 3, Picture and name and World collector from 5, and Same job from 6.'],
+      ['✏️', '6 blank cards', 'Draw places of your own and add them to the game.'],
+      ['🗝️', 'A key to every card', 'All 42 places on one page, by world and by need.'],
+    ]) . '</div></section>'
+    . shop_pages([
+      ['1', 'Rules and four ways to play'],
+      ['2', 'The key: all 42 places, by world and by need'],
+      ['3 to 9', '84 picture cards, a page for each world: Ancient Egypt, Ancient Rome, Medieval Kingdom, Modern Town, Green World, Robotic Future and the Heavenly City'],
+      ['10 to 13', '42 name cards and 6 blank cards'],
+      ['14', 'Card backs, for printing on both sides'],
+    ], 'A PDF of 14 pages, in US Letter and A4.')
+    . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+    . shop_faq([
+      ['Is it like the memory game on this site?', 'The <a href="/play/memory/">Memory match</a> game on this site is free to play online, six pairs at a time. The printed game is played at the table, with 42 places and four ways to play.'],
+      ['What age is it for?', 'Ages 3 and up. Start toddlers with one world of picture cards; readers can match pictures with names.'],
+      ['Can I print more copies?', 'Yes, for your own home or classroom. Lost a card? Print the page again. Please don\'t share the file online.'],
+    ]) . '</section>',
+]);
+
+/* ---------- City Dominoes ---------- */
+shop_page('dominoes', [
+  'title' => 'City Dominoes: picture dominoes to print',
+  'desc' => 'Two sets of printable picture dominoes for 1 to 4 players, ages 3 and up, in which the seven worlds of The Atlas of Cities take the place of the dots: 28 tiles in each set.',
+  'tag' => 'Print at home · For families and young children',
+  'lead' => 'A classic set of dominoes with seven worlds in place of the dots. Match the ends and build a line from ancient Egypt to a city in the clouds.',
+  'facts' => ['1 to 4 players', 'Ages 3 and up', '10 to 20 minutes', 'PDF in Letter and A4'],
+  'perfect' => ['young children', 'family game night', 'quiet play'],
+  'pic' => '<img src="/assets/shop/dominoes-fan.webp" width="1100" height="697" alt="City Dominoes: a page of World dominoes between the rules and a page of Picture dominoes.">',
+  'again' => shop_open('dominoes') ? 'Match the worlds, end to end' : 'City Dominoes is coming soon',
+  'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
+    . shop_steps([
+      ['Print and cut.', 'Card stock is best. Keep each set in its own envelope.'],
+      ['Pick a set.', 'Picture dominoes for the youngest players, World dominoes for ages 5 and up.'],
+      ['Match the ends.', 'Play a tile that matches an open end. The first to play all their tiles wins.'],
+    ]) . '</section>'
+    . '<section class="wrap section" aria-label="Pages from the game">'
+    . shop_gallery([
+      ['/assets/shop/dominoes-p2.webp', 520, 673, 'Ten Picture dominoes: each end shows a world\'s landmark, such as the Great Sphinx, the royal castle or the skyscraper.', 'Picture dominoes, ages 3 and up'],
+      ['/assets/shop/dominoes-p5.webp', 520, 673, 'Ten World dominoes: every end shows a different place, in its world\'s color.', 'World dominoes, ages 5 and up'],
+      ['/assets/shop/dominoes-p1.webp', 520, 673, 'The rules, with a key to the seven worlds and more ways to play.', 'One page of rules'],
+    ]) . '</section>'
+    . '<section class="band" aria-labelledby="inc-h"><div class="wrap"><div class="sec-head"><h2 id="inc-h">What\'s inside</h2></div>'
+    . shop_feats([
+      ['🖼️', 'Picture dominoes', 'Every end shows its world\'s landmark, so matching ends look the same.'],
+      ['🌍', 'World dominoes', 'All 56 ends show different places. Ends match when they come from the same world.'],
+      ['🔢', 'Two full sets', '28 tiles in each, like a classic double-six set.'],
+      ['🎨', 'A color for every world', 'Each end shows its world\'s color and name, a help for young players.'],
+      ['🧩', 'More ways to play', 'Lay a whole set out alone in one line, or name each place you match.'],
+      ['🖨️', 'Print as often as you like', 'For your home or your classroom.'],
+    ]) . '</div></section>'
+    . shop_pages([
+      ['1', 'Rules, ways to play and a key to the seven worlds'],
+      ['2 to 4', 'Picture dominoes: 28 tiles'],
+      ['5 to 7', 'World dominoes: 28 tiles'],
+      ['8', 'Tile backs, for printing on both sides'],
+    ], 'A PDF of 8 pages, in US Letter and A4.')
+    . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
+    . shop_faq([
+      ['How can worlds be dots?', 'A classic set of dominoes has seven numbers, from blank to six. Here each number is a world, so there are 28 tiles, and every two worlds meet on exactly one tile.'],
+      ['What age is it for?', 'Ages 3 and up for Picture dominoes, where matching ends show the same picture. World dominoes suit ages 5 and up.'],
       ['Can I print more copies?', 'Yes, for your own home or classroom. Please don\'t share the file online.'],
     ]) . '</section>',
 ]);

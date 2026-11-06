@@ -393,8 +393,8 @@ shop_page('posters', [
 // [heading, line, products]; a product not on a shelf is left off the shop page, so add new ones here
 $SHOP_SHELVES = [
   ['Games to print', 'Board, card and party games for families and classrooms. Print them tonight, play them tomorrow.', ['journey', 'city-builders', 'trivia', 'bingo', 'planners']],
-  ['For young builders', 'Hands-on fun for ages 4 to 10: build a city on the table, or puzzle through seven worlds.', ['playset', 'activity']],
-  ['For the classroom', 'Everything for a unit on how cities work, ready to print and copy.', ['classroom-pack', 'wordwall']],
+  ['For young builders', 'For ages 3 to 10: build a city on the table, match pictures, read a story or puzzle through seven worlds.', ['playset', 'activity', 'storybook', 'memory', 'dominoes']],
+  ['For the classroom', 'Everything for a unit on how cities work, ready to print and copy.', ['classroom-pack', 'wordwall', 'story-starters']],
   ['For your wall', 'Posters and a calendar from the seven worlds. The posters are how you can support this site.', ['posters', 'calendar']],
   ['For grown-ups and teens', 'An app that turns real-life goals into quests.', ['life-rpg']],
 ];
@@ -409,7 +409,7 @@ foreach ($SHOP_SHELVES as $i => [$head, $line, $slugs]) {
 $nProducts = count($SHOP_INFO);
 page('/shop/', [
   'title' => 'Shop: board games, activity books, classroom packs and posters',
-  'desc' => h('Printable board games, an activity book, a play set, classroom packs, posters and a calendar from seven worlds, and Life RPG. The rest of the site stays free.'),
+  'desc' => h('Printable games, a storybook, an activity book, a play set, classroom packs, posters and a calendar from seven worlds, and Life RPG. The rest of the site stays free.'),
   'class' => 'shop shop-home-page',
   'body' => <<<HTML
 <section class="wrap section page-head">

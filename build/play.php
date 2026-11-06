@@ -137,6 +137,10 @@ foreach ([
   ['2027 Calendar', '/calendar/', 'Shop', 'A wall calendar with a landmark from a different world every month.', 'calendar 2027 wall months year gift print buy'],
   ['Build-a-City Play Set', '/playset/', 'Shop', 'A play mat and 109 stand-up buildings, people and vehicles.', 'play set mat toy stand up paper buildings kids build city print buy'],
   ['Activity Book', '/activity/', 'Shop', 'Crosswords, mazes, word scrambles and puzzles from seven worlds.', 'activity book puzzles crossword maze word scramble kids print buy'],
+  ['Storybook', '/storybook/', 'Shop', 'Seven picture-book stories to print, one from every world.', 'storybook picture book stories read aloud bedtime kids print book buy'],
+  ['City Memory Match', '/memory/', 'Shop', 'A memory game to print: 84 picture cards from seven worlds.', 'memory game matching pairs cards preschool toddler kids print play buy'],
+  ['City Dominoes', '/dominoes/', 'Shop', 'Picture dominoes to print, with seven worlds in place of the dots.', 'dominoes tiles matching game preschool toddler kids print play buy'],
+  ['Story Starters', '/story-starters/', 'Shop', '70 writing prompts to print, ten from every world.', 'writing prompts story starters creative writing cards journal classroom teacher print buy'],
 ] as [$n, $u, $y, $d, $k]) $SEARCH[] = [$n, $u, $y, '', null, $d, $k];
 
 $json = [];
