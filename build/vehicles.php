@@ -1,5 +1,6 @@
 <?php
-// Vehicles: four per world, from the supplied vehicle art (vehicle-batch-01, car_1..car_4 with back views).
+// Vehicles: four per world (three in the Green World), each with a back view: from vehicle-batch-01 (car_1..car_4), or for
+// Egypt, the Medieval Kingdom and the Heavenly City from the Life RPG game's art.
 // Each vehicle becomes a normal page of its world in a new "Vehicles and getting around" group.
 // Image files: public/assets/worlds/{world}/{slug}-*.webp (front) and rear-{slug}-*.webp (back),
 // copied by tools/copy-people-vehicles.sh. Included from build.php after the world files.

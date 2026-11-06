@@ -1,4 +1,4 @@
-// City builder (/play/city-builder/): place buildings from all six worlds on a 6 x 6 city, see which
+// City builder (/play/city-builder/): place buildings from all seven worlds on a 6 x 6 city, see which
 // needs the city meets, then save a picture, copy a link or print it. The city is kept in the page
 // address (#city=...) and in this browser only; nothing is sent anywhere.
 (function () {

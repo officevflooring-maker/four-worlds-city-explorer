@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SRC="${ART_SOURCE:-/c/Users/ax707/Documents/Codex/2026-10-25/referenced-chatgpt-conversation-this-is-an/outputs}"
 declare -A BATCH=([art]="life-rpg-art-batch-01/art/inbox" [ground]="life-rpg-ground-batch-01/raw/art/inbox" [build]="life-rpg-construction-batch-01/art/inbox")
-# Ancient Egypt and the Heavenly City come from the Life RPG game's art folder: the full-size originals the game keeps
+# Ancient Egypt, the Medieval Kingdom and the Heavenly City come from the Life RPG game's art folder: the full-size originals the game keeps
 # in art/inbox/done/{world}/ (lrpg), and for the horizons the game's own cut-outs in art/{world}/ (lrpgweb), since the
 # originals still have their flat magenta sky.
 LRPG="${LRPG_ART:-/c/Users/ax707/OneDrive/Desktop/Stuff/Life Game/life-rpg/art}"

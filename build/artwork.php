@@ -1,7 +1,7 @@
 <?php
 // Titles for every supplied artwork shown on the Artwork page, keyed by world then by file name
 // in public/assets/artwork/{world}/ (without .webp). Titles were chosen by looking at each image.
-// Roman building titles come from build/roman.php so they match the building pages.
+// Building titles come from each world's pages in build/worlds/{world}.php, so they match the building pages.
 
 $ART_GROUPS = [
   'buildings'    => 'Buildings',

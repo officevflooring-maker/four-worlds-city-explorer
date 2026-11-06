@@ -2,7 +2,7 @@
 // Ancient Rome: one page per building (see the shared page format at the end of this file).
 // Facts are kept to well-established points from the
 // sources listed in $ROMAN_SOURCES (shown on each page as plain text, not links).
-// "art" describes what is the artist's interpretation. Photos come from build/photo-credits.json.
+// "art" describes what is the artist's interpretation. Photos come from build/photos/roman.json.
 
 $ROMAN_SOURCES = [
   'bible-luke'     => 'The Bible, Gospel of Luke',
