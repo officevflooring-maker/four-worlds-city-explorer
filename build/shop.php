@@ -198,14 +198,17 @@ foreach (['baby' => 'Baby', 'young' => 'Young', 'grown' => 'Grown'] as $age => $
 }
 $lrpgPets = '';
 foreach (PETS as $k => $name) $lrpgPets .= '<li>' . $petPic($k, 'grown', "Grown $name") . '<span>' . h($name) . '</span></li>';
+// The ultra rare pets, won from the rare chest (not in PETS, which the passport pet uses too).
+$lrpgRare = '';
+foreach (['eagle' => 'Golden eagle', 'leopard' => 'Snow leopard', 'peacock' => 'Peacock'] as $k => $name) $lrpgRare .= '<li>' . $petPic($k, 'grown', "Grown $name") . '<span>' . h($name) . '</span></li>';
 $lrpgWorlds = '';
-foreach (array_diff(WORLD_ORDER, ['medieval']) as $w) {   // the six worlds in the game sold in the shop (the Medieval Kingdom is not in it yet)
+foreach (WORLD_ORDER as $w) {
   $lrpgWorlds .= "<li class=\"world-$w\"><img src=\"/assets/life-rpg/city-$w-wide.webp\" width=\"520\" height=\"300\" alt=\"" . h($WORLDS[$w]['name']) . ' in Life RPG" loading="lazy" decoding="async"><span>' . h($WORLDS[$w]['name']) . '</span></li>';
 }
 $lrpgOpen = shop_open('life-rpg');
 shop_page('life-rpg', [
   'title' => 'Life RPG: turn real-life goals into quests',
-  'desc' => 'Life RPG is a game for grown-ups and teens: finish real-life quests to earn XP, level up and grow your own city in one of six worlds. One payment, no subscription.',
+  'desc' => 'Life RPG is a game for grown-ups and teens: finish real-life quests to earn XP, level up and grow your own city in one of seven worlds. One payment, no subscription.',
   'tag' => 'For grown-ups and teens',
   'lead' => 'Turn real-life goals into quests. Finish them to earn XP, level up and grow your own city.',
   'facts' => ['No subscription', 'No ads', 'No account', 'Works offline'],
@@ -235,9 +238,9 @@ shop_page('life-rpg', [
     ]) . '</div></section>'
     . '<section class="wrap section" aria-labelledby="heroes-h"><div class="sec-head"><h2 id="heroes-h">Pick your hero</h2><p>Twelve painted heroes, from kids to grandparents. Gear you earn, like a cape or a crown, shows on your hero.</p></div>'
     . "<ul class=\"lrpg-heroes\">$lrpgHeroes</ul><h3 class=\"lrpg-outfits-h\">Dressed for each world</h3><ul class=\"lrpg-outfits\">$lrpgOutfits</ul></section>"
-    . '<section class="wrap section" aria-labelledby="pets-h"><div class="sec-head"><h2 id="pets-h">Adopt a pet</h2><p>A puppy, kitten, lamb, pony, robo pup or desert fox. It starts as a baby, grows up as you finish quests and lives in your city. It never gets sick or sad: after two quiet days it just naps until your next quest.</p></div>'
-    . "<ul class=\"lrpg-grow\">$lrpgGrow</ul><h3 class=\"lrpg-outfits-h\">All six, grown up</h3><ul class=\"lrpg-pets\">$lrpgPets</ul></section>"
-    . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of six worlds</h2><p>Six of the worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
+    . '<section class="wrap section" aria-labelledby="pets-h"><div class="sec-head"><h2 id="pets-h">Adopt a pet</h2><p>A puppy, kitten, lamb, pony, robo pup or desert fox. It starts as a baby, grows up as you finish quests and lives in your city. It never gets sick or sad: after two quiet days it just naps until your next quest. With luck, the rare chest brings one of three ultra rare pets: a golden eagle, a snow leopard or a peacock.</p></div>'
+    . "<ul class=\"lrpg-grow\">$lrpgGrow</ul><h3 class=\"lrpg-outfits-h\">All six, grown up</h3><ul class=\"lrpg-pets\">$lrpgPets</ul><h3 class=\"lrpg-outfits-h\">Ultra rare, from the rare chest</h3><ul class=\"lrpg-pets lrpg-rare\">$lrpgRare</ul></section>"
+    . "<section class=\"wrap section\" aria-labelledby=\"worlds-h\"><div class=\"sec-head\"><h2 id=\"worlds-h\">Build in one of seven worlds</h2><p>All seven worlds on this site. Switch any time without losing progress.</p></div><ul class=\"shop-worlds\">$lrpgWorlds</ul></section>"
     . '<section class="wrap section narrow" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>'
     . shop_faq([
       ['Is it a subscription?', 'No. You pay ' . shop_price('life-rpg') . ' once, and it\'s yours. There are no ads and nothing else to buy.'],

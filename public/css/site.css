@@ -1251,8 +1251,9 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .shop-feat-icon { grid-row: span 2; font-size: 1.6rem; line-height: 1.2; }
 .shop-feats b { font-family: var(--serif); font-size: 1.05rem; }
 .shop-feats span:last-child { color: var(--muted); font-size: .95rem; }
-.shop-worlds { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.shop-worlds li { margin: 0; }
+/* Seven worlds: four to a row, the last row centered (two to a row on phones) */
+.shop-worlds { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.shop-worlds li { margin: 0; flex: 0 1 calc((100% - 3rem) / 4); }
 .shop-worlds img { display: block; width: 100%; height: auto; border-radius: 12px; border: 3px solid var(--accent); }
 .shop-worlds span { display: block; margin-top: .45rem; text-align: center; font-weight: 700; color: var(--accent); }
 .lrpg-heroes { list-style: none; padding: 0; margin: 0; display: flex; gap: .3rem; align-items: flex-end; }
@@ -1272,6 +1273,8 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .lrpg-grow li:nth-child(2) img { height: 150px; }
 .lrpg-grow li:nth-child(3) img { height: 190px; }
 .lrpg-pets img { height: 140px; }
+.lrpg-rare li { padding: .5rem .3rem; border-radius: 18px; background: radial-gradient(closest-side, rgb(240 180 0 / .22), transparent); }
+.lrpg-rare span { color: #8a5a00; }
 .lrpg-grow span, .lrpg-pets span { display: block; margin-top: .45rem; font-weight: 700; }
 @media (max-width: 560px) {
   .lrpg-grow { gap: .6rem 1rem; }
@@ -1301,7 +1304,7 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 @media (max-width: 760px) {
   .shop-top-inner { grid-template-columns: 1fr; }
   .shop-steps { grid-template-columns: 1fr; }
-  .shop-worlds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shop-worlds li { flex-basis: calc((100% - 1rem) / 2); }
   .lrpg-heroes { flex-wrap: wrap; row-gap: 1rem; }
   .lrpg-heroes .break { display: block; flex: 0 0 100%; height: 0; }
   .lrpg-outfits { gap: 1rem 1.2rem; }

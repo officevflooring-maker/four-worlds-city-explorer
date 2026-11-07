@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copies the Life RPG game's pets: six kinds at three ages (pet_{kind}_{baby|young|grown}, 1024 x 1024, see-through).
+# Copies the Life RPG game's pets: nine kinds (the last three ultra rare) at three ages (pet_{kind}_{baby|young|grown}, 1024 x 1024, see-through).
 # Source folders are only read, never changed. Each picture is cut to the animal (w:h:x:y below, measured where the
 # picture is clearly not see-through, plus a small margin).
 #   -> public/assets/pets/{kind}-{age}-{256,512}.webp   (256 and 512 px wide)
@@ -7,7 +7,7 @@
 # Usage: bash tools/copy-pets.sh   (needs ffmpeg with libwebp; skips files that already exist)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LRPG="${LRPG_ART:-/c/Users/ax707/OneDrive/Desktop/Stuff/Life Game/life-rpg/art}"
+LRPG="${LRPG_ART:-/c/Users/ax707/Projects/life-game/life-rpg/art}"
 P="$LRPG/inbox/done/pets"
 OUT="$ROOT/public/assets/pets"
 webp() { # in, out, filter, quality
@@ -21,6 +21,9 @@ declare -A FIG=(
   [horse_baby]=654:918:140:40 [horse_young]=628:826:176:98 [horse_grown]=690:932:126:45
   [robodog_baby]=700:760:166:139 [robodog_young]=818:832:93:79 [robodog_grown]=808:822:98:99
   [fox_baby]=772:810:102:66 [fox_young]=774:814:106:66 [fox_grown]=820:896:79:47
+  [eagle_baby]=744:818:118:82 [eagle_young]=822:760:72:58 [eagle_grown]=746:842:104:70
+  [leopard_baby]=870:884:46:48 [leopard_young]=870:848:46:38 [leopard_grown]=868:876:44:48
+  [peacock_baby]=668:694:170:150 [peacock_young]=712:706:138:150 [peacock_grown]=884:616:40:220
 )
 for pet in "${!FIG[@]}"; do
   kind="${pet%_*}"; age="${pet#*_}"
