@@ -1,8 +1,8 @@
 <?php
 // Shared facts about each world, used on the home page cards, navigation and world pages.
 // Each world's building pages live in build/worlds/{world}.php.
-// Ancient Egypt, Rome and the Medieval Kingdom are historical settings; the modern town, Green World and future are imagined or
-// speculative, and the Heavenly City is imagined, inspired by the Bible, and tells the story of Jesus.
+// Ancient Egypt, Rome and the Medieval Kingdom are historical settings; the modern town and future are imagined or
+// speculative, the Green World is drawn from real nature, and the Heavenly City is the awaited city the Bible promises, and tells the story of Jesus.
 
 $WORLDS = [
   'egypt' => [
@@ -11,8 +11,8 @@ $WORLDS = [
     'card' => 'pharaohs-palace', 'ground' => 'ground-grass',
   ],
   'heaven' => [
-    'name' => 'Heavenly City', 'short' => 'Heavenly', 'type' => 'Imagined setting, inspired by the Bible',
-    'lead' => 'An imagined city of gold and light. Explore its 35 places to follow the story of Jesus, as the Bible tells it, with photos of the real places.',
+    'name' => 'Heavenly City', 'short' => 'Heavenly', 'type' => 'Awaited city, promised in the Bible',
+    'lead' => 'The awaited city of gold and light, painted from the Bible\'s words. Explore its 35 places to follow the story of Jesus, as the Bible tells it, with photos of the real places.',
     'card' => 'palace-of-light', 'ground' => 'ground-grass',
   ],
   'roman' => [
@@ -31,8 +31,8 @@ $WORLDS = [
     'card' => 'mixed-use-building', 'ground' => 'ground-plaza',
   ],
   'green' => [
-    'name' => 'Green World', 'short' => 'Green', 'type' => 'Imaginative design setting',
-    'lead' => 'An imagined city that grows with the forest. Each of 35 buildings is paired with real nature-based technology.',
+    'name' => 'Green World', 'short' => 'Green', 'type' => 'Nature-inspired setting',
+    'lead' => 'A city that grows with the forest. Each of 35 buildings is paired with real nature-based technology.',
     'card' => 'treetop-village', 'ground' => 'ground-meadow',
   ],
   'future' => [
@@ -60,7 +60,7 @@ $COMPARE = [
     'roman'  => ['amphitheater', 'Amphitheater', 'Thousands watched together, seated by rank. Who was welcome, and where?'],
     'medieval' => ['feast-hall', 'Feast hall', 'The lord sat at the high table, everyone else down the hall. What does a seating plan tell you about people?'],
     'modern' => ['community-center', 'Community center', 'What would make everyone in the neighborhood feel welcome here?'],
-    'green'  => ['gathering-circle', 'Warm gathering circle', 'Imagined as warmed by heat from deep in the ground. Where could your town find clean warmth?'],
+    'green'  => ['gathering-circle', 'Warm gathering circle', 'Pictured as warmed by heat from deep in the ground. Where could your town find clean warmth?'],
     'future' => ['public-plaza', 'Public plaza', 'If more life happens online, does a city still need squares like this?'],
   ]],
   ['travel', 'Safe travel', 'How do people cross the city safely, on foot and on wheels?', [

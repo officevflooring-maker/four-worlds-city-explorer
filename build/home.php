@@ -63,7 +63,7 @@ foreach (WORLD_ORDER as $w) if (!empty($PEOPLE[$w])) $peopleLinks .= '<li><a cla
 $homePlayCards = play_cards(['/play/city-builder/', '/play/world-sort/', '/play/shadows/', '/play/quiz/', '/play/puzzle/', '/play/passport/']);
 $heroLegend = '';
 foreach (WORLD_ORDER as $w) $heroLegend .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/">' . h($WORLDS[$w]['name']) . '</a></li>';
-$parade = [['egypt', 'chariot', 'About 3,500 years ago'], ['roman', 'chariot', 'About 2,000 years ago'], ['medieval', 'horse-and-rider', 'About 700 years ago'], ['modern', 'taxi', 'Today'], ['green', 'flower-cart', 'Imagined'], ['future', 'hover-car', 'Possible future'], ['heaven', 'golden-chariot', 'Inspired by the Bible']];
+$parade = [['egypt', 'chariot', 'About 3,500 years ago'], ['roman', 'chariot', 'About 2,000 years ago'], ['medieval', 'horse-and-rider', 'About 700 years ago'], ['modern', 'taxi', 'Today'], ['green', 'flower-cart', 'Inspired by nature'], ['future', 'hover-car', 'Possible future'], ['heaven', 'golden-chariot', 'Promised in the Bible']];
 
 // World cards: horizon, signature building, a person, and three places to start.
 $starts = [
@@ -77,7 +77,7 @@ $starts = [
 ];
 $oneLine = [
   'egypt'  => 'The real civilization on the Nile, from the pyramids to the homes of the tomb builders.',
-  'heaven' => 'An imagined city of gold and light that tells the story of Jesus, as the Bible tells it.',
+  'heaven' => 'The awaited city of gold and light that tells the story of Jesus, as the Bible tells it.',
   'roman'  => 'The real city, about 2,000 years ago, with photos of what survives.',
   'medieval' => 'A market town of castles, abbeys and guilds, with photos of real medieval places.',
   'modern' => 'A town like yours: why each building is there and who it serves.',
@@ -171,7 +171,7 @@ page('/', [
 </section>
 
 <section class="wrap section" id="worlds" aria-labelledby="worlds-h">
-  <div class="sec-head"><h2 id="worlds-h">Choose a world</h2><p>Egypt, Rome and the Medieval Kingdom are real history. The other four are imagined settings built around real ideas, and every page shows which is which.</p></div>
+  <div class="sec-head"><h2 id="worlds-h">Choose a world</h2><p>Egypt, Rome and the Medieval Kingdom are real history. The Modern Town and the Robotic Future are imagined settings built around real ideas, the Green World is drawn from real nature, and the Heavenly City is the city the Bible promises. Every page shows which is which.</p></div>
   <ul class="wcards">{$cards}</ul>
 </section>
 

@@ -9,7 +9,7 @@ require __DIR__ . '/crosslinks.php';
 require __DIR__ . '/teach.php';
 
 const PUB = __DIR__ . '/../public';
-// Oldest first; the Heavenly City, imagined and inspired by the Bible, comes last.
+// Oldest first; the Heavenly City, the awaited city the Bible promises, comes last.
 const WORLD_ORDER = ['egypt', 'roman', 'medieval', 'modern', 'green', 'future', 'heaven'];
 
 // Full worlds (one page per building): content in build/worlds/{world}.php, photo credits in
@@ -272,7 +272,7 @@ page('/compare/', [
 <section class="wrap section page-head">
   <h1>Compare the worlds</h1>
   <p class="big-q">How could a city provide water, places to gather, safe travel, goods and room for nature?</p>
-  <p class="lead">Look at the same need in all seven worlds. Egypt, Rome and the Medieval Kingdom are historical; the others are imagined, so treat them as ideas to test, not facts.</p>
+  <p class="lead">Look at the same need in all seven worlds. Egypt, Rome and the Medieval Kingdom are historical, and the Heavenly City shows what the Bible promises. The other worlds are design ideas, so treat them as ideas to test, not facts.</p>
   <nav aria-label="Themes on this page"><ul class="jump">{$jump}</ul></nav>
 </section>
 <div class="wrap">{$rows}</div>
@@ -307,16 +307,16 @@ page('/about/', [
   <h1>About this project</h1>
   <p class="lead">The Atlas of Cities is a free educational and creative website. It uses illustrated cities to help visitors notice how cities work and think about what makes a good place to live.</p>
 
-  <h2>What is real and what is imagined</h2>
-  <p><strong>Ancient Egypt</strong> and <strong>ancient Rome</strong> are historical settings. Each of their building pages keeps history separate from the artist's interpretation and lists the sources it is based on. The illustrations are not exact reconstructions; photos of real sites show what survives today.</p>
+  <h2>What each world is</h2>
+  <p><strong>Ancient Egypt</strong>, <strong>ancient Rome</strong> and the <strong>Medieval Kingdom</strong> are historical settings. Each of their building pages keeps history separate from the artist's interpretation and lists the sources it is based on. The illustrations are not exact reconstructions; photos of real sites show what survives today.</p>
   <p>The <strong>modern town</strong> is imagined, but its pages explain real buildings, vehicles and systems: why towns need them, how they are built and who they serve.</p>
-  <p>The <strong>Green World</strong> and <strong>robotic future</strong> are imagined and speculative. They don't describe real places, real cultures or predictions. Each page uses labels so you always know what you are reading:</p>
+  <p>The <strong>Green World</strong> is drawn from real nature: its buildings are design ideas from forests, water and plants, each paired with real nature-based technology. The <strong>robotic future</strong> is speculative. Neither describes a real culture or a prediction. Each page uses labels so you always know what you are reading:</p>
   <ul>
     <li><span class="badge badge-fact">History</span> and <span class="badge badge-fact">Real world</span> facts about the past and about real places, technology and research, with sources.</li>
-    <li><span class="badge badge-art">Imagined</span> ideas that belong to the fantasy world.</li>
+    <li><span class="badge badge-art">Nature design</span>, <span class="badge badge-art">Imagined</span> and <span class="badge badge-art">In the painting</span> describe a building or place as the artist drew it.</li>
     <li><span class="badge badge-spec">Possible future</span> ideas being researched or proposed, which may or may not happen.</li>
   </ul>
-  <p>The <strong>Heavenly City</strong> is imagined too, inspired by the Bible's picture of the heavenly city. As you explore it, its <span class="badge badge-belief">Gospel</span> sections tell the story of Jesus in 35 parts, as the Bible tells it, with chapter and verse, and its <span class="badge badge-belief">Bible</span> sections share more words from Scripture. A few Green World pages also share Bible verses about God the Creator. Bible quotations are from the Berean Standard Bible, which is in the public domain.</p>
+  <p>The <strong>Heavenly City</strong> is the holy city the Bible promises, the new Jerusalem, that God's people await (Revelation 21:2). Its paintings are an artist's picture of it from the Bible's words. As you explore it, its <span class="badge badge-belief">Gospel</span> sections tell the story of Jesus in 35 parts, as the Bible tells it, with chapter and verse, and its <span class="badge badge-belief">Bible</span> sections share more words from Scripture. A few Green World pages also share Bible verses about God the Creator. Bible quotations are from the Berean Standard Bible, which is in the public domain.</p>
 
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>

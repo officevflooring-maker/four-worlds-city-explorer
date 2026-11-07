@@ -1,6 +1,6 @@
 <?php
-// Green World: one page per building. Every building is imagined, and each page says so.
-// Each page pairs the fantasy with REAL nature-based technology (marked "Real world") and with
+// Green World: one page per building. Every building is a design idea drawn from nature, and each page says so.
+// Each page pairs the design idea with REAL nature-based technology (marked "Real world") and with
 // ideas still being researched (marked "Possible future"). Sources are shown as plain text.
 
 $GREEN_SOURCES = [
@@ -75,7 +75,7 @@ $GREEN_SOURCES = [
 ];
 
 $GREEN_CATEGORIES = [
-  'grow'    => ['Living buildings', 'Imagined buildings grown from living trees and plants, and the real science of building with them.'],
+  'grow'    => ['Living buildings', 'Design ideas for buildings grown from living trees and plants, and the real science of building with them.'],
   'homes'   => ['Homes in the forest', 'Cozy homes that stay comfortable with the help of earth, wood, plants and air.'],
   'water'   => ['Water and energy', 'Springs, wetlands, falling water and the warmth of the earth.'],
   'wild'    => ['Wildlife and wild places', 'Making room for bees, deer, forests and night skies.'],
@@ -84,7 +84,7 @@ $GREEN_CATEGORIES = [
 ];
 
 // Common words for the kinds of section on these pages. A few pages also have a Bible section about the Creator.
-const GREEN_IMAGINE = ['tag' => 'imagined'];
+const GREEN_DESIGN = ['tag' => 'design'];
 const GREEN_REAL = ['tag' => 'real'];
 const GREEN_NEXT = ['tag' => 'speculative'];
 const GREEN_BIBLE = ['tag' => 'bible'];
@@ -94,11 +94,11 @@ $GREEN = [
 // ---------------- Living buildings ----------------
 'great-tree-hall' => [
   'name' => 'Great tree hall', 'latin' => 'grown architecture', 'cat' => 'grow', 'src' => 'art/business_3.png',
-  'summary' => 'An imagined hall grown from a living tree. In the real world, people already shape living roots and trunks into bridges and buildings.',
-  'facts' => ['Imagined as' => 'A meeting hall grown, not built', 'Real-world idea' => 'Living architecture', 'Real example' => 'Living root bridges, Meghalaya, India', 'Status' => 'Small structures exist; whole halls are imagined'],
+  'summary' => 'A nature-inspired hall grown from a living tree. In the real world, people already shape living roots and trunks into bridges and buildings.',
+  'facts' => ['Designed as' => 'A meeting hall grown, not built', 'Real-world idea' => 'Living architecture', 'Real example' => 'Living root bridges, Meghalaya, India', 'Status' => 'Small structures exist; whole halls are still a design idea'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a hall whose walls are a living trunk and whose roof is a canopy of leaves. It would grow stronger every year, repair its own bark, shade its visitors in summer and let in light in winter as leaves fall. Instead of being knocked down at the end of its life, it would simply keep living.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a hall whose walls are a living trunk and whose roof is a canopy of leaves. It would grow stronger every year, repair its own bark, shade its visitors in summer and let in light in winter as leaves fall. Instead of being knocked down at the end of its life, it would simply keep living.',
     ]],
     ['Living root bridges', GREEN_REAL, [
       'In the hills of Meghalaya in north-east India, Khasi and Jaintia communities have for generations guided the aerial roots of rubber fig trees (Ficus elastica) across streams. Over many years the roots thicken and fuse into bridges strong enough to walk on, some with two levels. These "living root bridges" can last for centuries and get stronger as they age. In 2022 they were added to UNESCO\'s tentative list for World Heritage status.',
@@ -110,7 +110,7 @@ $GREEN = [
       'Architects and scientists are exploring "Baubotanik", a German word for building with living plants. Young trees are planted in a frame and grafted together so that, as they grow, they become a living structure such as a footbridge or tower. The challenges are time (decades), predicting how trees grow, and keeping them healthy.',
     ]],
   ],
-  'art' => 'This illustration shows a hall rising out of a giant tree, with glowing windows and a stairway. It is fantasy, but the idea echoes real living architecture.',
+  'art' => 'This illustration shows a hall rising out of a giant tree, with glowing windows and a stairway. It is a design idea, and it echoes real living architecture.',
   'look' => ['Find where the building and the tree trunk become one.', 'Notice the roots spreading at the base.'],
   'questions' => ['Would you trust a bridge made of living roots? What would make you feel safe?', 'What are the advantages of a building that grows? What are the problems?', 'Why might it be worth waiting decades for a structure to grow?'],
   'words' => ['Living architecture' => 'Structures made partly from living plants.', 'Grafting' => 'Joining parts of plants so they grow together.', 'Aerial root' => 'A root that grows above the ground.'],
@@ -120,11 +120,11 @@ $GREEN = [
 
 'grand-tree-hall' => [
   'name' => 'Sunlight hall', 'latin' => 'photosynthetic building', 'cat' => 'grow', 'src' => 'art/shared_3.png',
-  'summary' => 'An imagined hall that feeds on sunlight like a leaf. Real buildings already grow algae in their walls to make heat and fuel.',
-  'facts' => ['Imagined as' => 'A building powered like a plant', 'Real-world idea' => 'Algae bioreactor facades', 'Real example' => 'BIQ House, Hamburg (2013)', 'Status' => 'Experimental'],
+  'summary' => 'A nature-inspired hall that feeds on sunlight like a leaf. Real buildings already grow algae in their walls to make heat and fuel.',
+  'facts' => ['Designed as' => 'A building powered like a plant', 'Real-world idea' => 'Algae bioreactor facades', 'Real example' => 'BIQ House, Hamburg (2013)', 'Status' => 'Experimental'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Leaves are tiny solar factories: using sunlight, they turn water and carbon dioxide from the air into sugar and oxygen. Imagine a hall whose leaf-covered walls did the same, taking carbon out of the air, making its own energy and breathing out fresh oxygen for the people inside.',
+    ['What it could do', GREEN_DESIGN, [
+      'Leaves are tiny solar factories: using sunlight, they turn water and carbon dioxide from the air into sugar and oxygen. Picture a hall whose leaf-covered walls did the same, taking carbon out of the air, making its own energy and breathing out fresh oxygen for the people inside.',
     ]],
     ['A building with algae in its walls', GREEN_REAL, [
       'In 2013, the BIQ House in Hamburg, Germany, was built with a facade of glass panels filled with water and living microalgae. The algae grow in sunlight and absorb carbon dioxide. Some algae are harvested to make biogas, and the panels also capture heat from the sun and provide shade.',
@@ -134,7 +134,7 @@ $GREEN = [
       'Plants are amazing, but they are not very efficient at turning sunlight into stored energy: most crops store only one or two percent of the sunlight that falls on them, while ordinary solar panels convert around a fifth into electricity. Scientists are studying "artificial photosynthesis", which tries to copy the way leaves split water using sunlight, to make clean fuels.',
     ]],
   ],
-  'art' => 'This illustration shows a grand hall wrapped in trees, with flowers and waterfalls. Here we imagine it running on sunlight like a leaf.',
+  'art' => 'This illustration shows a grand hall wrapped in trees, with flowers and waterfalls. Here we picture it running on sunlight like a leaf.',
   'look' => ['Find the leafy canopy over the roof.', 'Where does water flow around the building?'],
   'questions' => ['If a building could breathe like a plant, what would change about cities?', 'Why might scientists copy leaves even though solar panels are more efficient?', 'Would you want algae in the walls of your home?'],
   'words' => ['Photosynthesis' => 'How plants use sunlight to make food from water and carbon dioxide.', 'Algae' => 'Simple plant-like living things that grow in water.', 'Bioreactor' => 'A container where living things are grown to make something useful.'],
@@ -144,11 +144,11 @@ $GREEN = [
 
 'treetop-village' => [
   'name' => 'Treetop village', 'latin' => 'tree-friendly building', 'cat' => 'grow', 'src' => 'art/shared_2.png',
-  'summary' => 'An imagined village of homes and bridges among the branches, built so lightly that the trees stay healthy.',
-  'facts' => ['Imagined as' => 'Homes high in the canopy', 'Real-world idea' => 'Building that protects trees', 'Real tools' => 'Special treehouse bolts, flexible joints', 'Watch out for' => 'Tree health and access for everyone'],
+  'summary' => 'A nature-inspired village of homes and bridges among the branches, built so lightly that the trees stay healthy.',
+  'facts' => ['Designed as' => 'Homes high in the canopy', 'Real-world idea' => 'Building that protects trees', 'Real tools' => 'Special treehouse bolts, flexible joints', 'Watch out for' => 'Tree health and access for everyone'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a village where homes rest on branches, linked by rope bridges, leaving the forest floor free for plants and animals. Rainwater would be gathered from leaves, and residents would look after the trees that hold them up.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a village where homes rest on branches, linked by rope bridges, leaving the forest floor free for plants and animals. Rainwater would be gathered from leaves, and residents would look after the trees that hold them up.',
     ]],
     ['How to build in a tree without hurting it', GREEN_REAL, [
       'Trees are living things that grow and sway. Good treehouse builders work with arborists, who are tree-care experts, to choose healthy, strong trees. They use a few large, specially designed bolts instead of many nails, because each wound is a place where disease can enter. Joints are made to slide or flex so that the tree can move in the wind and keep growing without being strangled.',
@@ -167,11 +167,11 @@ $GREEN = [
 
 'tree-tower-home' => [
   'name' => 'Tree tower home', 'latin' => 'vertical forest', 'cat' => 'grow', 'src' => 'art/family_3.png',
-  'summary' => 'An imagined tower wrapped in trees. Real "vertical forests" plant hundreds of trees on the balconies of city apartment blocks.',
-  'facts' => ['Imagined as' => 'A home inside a tower of trees', 'Real-world idea' => 'Trees on tall buildings', 'Real example' => 'Bosco Verticale, Milan (2014)', 'Benefits' => 'Shade, wildlife, cleaner air nearby'],
+  'summary' => 'A nature-inspired tower wrapped in trees. Real "vertical forests" plant hundreds of trees on the balconies of city apartment blocks.',
+  'facts' => ['Designed as' => 'A home inside a tower of trees', 'Real-world idea' => 'Trees on tall buildings', 'Real example' => 'Bosco Verticale, Milan (2014)', 'Benefits' => 'Shade, wildlife, cleaner air nearby'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a tall home where every floor opens onto a balcony of trees. Leaves would shade the windows in summer and drop in winter to let the sun in. Birds and insects would live alongside the family, high above the ground.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a tall home where every floor opens onto a balcony of trees. Leaves would shade the windows in summer and drop in winter to let the sun in. Birds and insects would live alongside the family, high above the ground.',
     ]],
     ['A real vertical forest', GREEN_REAL, [
       'In 2014 two apartment towers called Bosco Verticale ("Vertical Forest") opened in Milan, Italy. Their balconies hold hundreds of trees and thousands of shrubs and plants. The plants shade the apartments, reduce noise, create homes for birds and insects, and make a gray city greener.',
@@ -196,11 +196,11 @@ $GREEN = [
 
 'living-crane' => [
   'name' => 'Living crane', 'latin' => 'bamboo building', 'cat' => 'grow', 'src' => 'build/crane.png',
-  'summary' => 'An imagined crane woven from vines. In the real world, fast-growing bamboo is strong enough to build scaffolding and houses.',
-  'facts' => ['Imagined as' => 'A crane grown from vines', 'Real-world idea' => 'Building with bamboo', 'Real example' => 'Bamboo scaffolding in Hong Kong', 'Why bamboo' => 'Strong, light and fast-growing'],
+  'summary' => 'A nature-inspired crane woven from vines. In the real world, fast-growing bamboo is strong enough to build scaffolding and houses.',
+  'facts' => ['Designed as' => 'A crane grown from vines', 'Real-world idea' => 'Building with bamboo', 'Real example' => 'Bamboo scaffolding in Hong Kong', 'Why bamboo' => 'Strong, light and fast-growing'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a crane grown from twisted vines, with a basket of woven branches to lift stone. When the building was finished, the crane could be planted again, or composted to feed the soil.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a crane grown from twisted vines, with a basket of woven branches to lift stone. When the building was finished, the crane could be planted again, or composted to feed the soil.',
     ]],
     ['The real "living" building material: bamboo', GREEN_REAL, [
       'Bamboo is a giant grass. Some species can grow tens of centimeters in a single day and reach full height in a few months, and the plant regrows from its roots after it is cut. For its weight, bamboo is remarkably strong, especially when pulled.',
@@ -222,10 +222,10 @@ $GREEN = [
 'hillside-home' => [
   'name' => 'Hillside home', 'latin' => 'earth-sheltered house', 'cat' => 'homes', 'src' => 'art/family_1.png',
   'summary' => 'A home tucked into a grassy hill. Real earth-sheltered homes use the soil around them to stay cool in summer and warm in winter.',
-  'facts' => ['Imagined as' => 'A cozy home inside a hill', 'Real-world idea' => 'Earth-sheltered design', 'Works because' => 'Soil temperature stays steady', 'Watch out for' => 'Damp and good drainage'],
+  'facts' => ['Designed as' => 'A cozy home inside a hill', 'Real-world idea' => 'Earth-sheltered design', 'Works because' => 'Soil temperature stays steady', 'Watch out for' => 'Damp and good drainage'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a round door in a grassy bank, opening into a warm home where the hill itself is the roof. Wildflowers grow overhead, rabbits graze on the roof, and the home barely shows in the landscape.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a round door in a grassy bank, opening into a warm home where the hill itself is the roof. Wildflowers grow overhead, rabbits graze on the roof, and the home barely shows in the landscape.',
     ]],
     ['Why the earth keeps homes comfortable', GREEN_REAL, [
       'A few meters below the surface, the temperature of the ground stays fairly steady all year, while the air above swings from hot to cold. Soil around a home acts like a thick, heavy blanket: it slows heat leaving in winter and entering in summer. This is called thermal mass. Earth-sheltered houses can need much less heating and cooling than ordinary houses.',
@@ -247,11 +247,11 @@ $GREEN = [
 
 'timber-house' => [
   'name' => 'Timber family house', 'latin' => 'mass timber', 'cat' => 'homes', 'src' => 'art/family_2.png',
-  'summary' => 'An imagined house carved from wood. Real engineered timber now builds homes and towers that store carbon instead of releasing it.',
-  'facts' => ['Imagined as' => 'A carved wooden family home', 'Real-world idea' => 'Engineered "mass" timber', 'Tall examples' => 'Mjøstårnet, Norway (2019); Ascent, USA (2022)', 'Big benefit' => 'Wood stores carbon'],
+  'summary' => 'A nature-inspired house carved from wood. Real engineered timber now builds homes and towers that store carbon instead of releasing it.',
+  'facts' => ['Designed as' => 'A carved wooden family home', 'Real-world idea' => 'Engineered "mass" timber', 'Tall examples' => 'Mjøstårnet, Norway (2019); Ascent, USA (2022)', 'Big benefit' => 'Wood stores carbon'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a family home where every beam is carved with leaves and every room smells of fresh wood. Its builders would take only fallen or carefully chosen trees and plant more for every one they used.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a family home where every beam is carved with leaves and every room smells of fresh wood. Its builders would take only fallen or carefully chosen trees and plant more for every one they used.',
     ]],
     ['Why build with wood?', GREEN_REAL, [
       'As trees grow, they take carbon dioxide from the air and lock carbon into their wood. If that wood becomes a building, the carbon stays stored for as long as the building lasts. Making wood products also usually needs much less energy than making steel or cement.',
@@ -271,11 +271,11 @@ $GREEN = [
 
 'spire-house' => [
   'name' => 'Breathing spire', 'latin' => 'natural ventilation', 'cat' => 'homes', 'src' => 'art/floor_l.png',
-  'summary' => 'An imagined tower that breathes like a termite mound, pulling cool air in and letting warm air out with no machines.',
-  'facts' => ['Imagined as' => 'A tower that breathes', 'Real-world idea' => 'Passive cooling and ventilation', 'Real example' => 'Eastgate Centre, Harare, Zimbabwe (1996)', 'Inspired by' => 'Termite mounds'],
+  'summary' => 'A nature-inspired tower that breathes like a termite mound, pulling cool air in and letting warm air out with no machines.',
+  'facts' => ['Designed as' => 'A tower that breathes', 'Real-world idea' => 'Passive cooling and ventilation', 'Real example' => 'Eastgate Centre, Harare, Zimbabwe (1996)', 'Inspired by' => 'Termite mounds'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a slender spire that stays fresh on the hottest day. Warm air rises up and out of its tall chimney, drawing cool air in from shaded gardens below, so the rooms breathe without fans or air conditioners.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a slender spire that stays fresh on the hottest day. Warm air rises up and out of its tall chimney, drawing cool air in from shaded gardens below, so the rooms breathe without fans or air conditioners.',
     ]],
     ['Copying termites', GREEN_REAL, [
       'Some African termites build huge mounds with networks of tunnels. In the 1990s, architect Mick Pearce studied them when designing the Eastgate Centre, an office and shopping building in Harare, Zimbabwe. It uses heavy concrete to store the night\'s coolness, fans to flush air at night, and tall chimneys that let warm air rise out. The architect\'s firm reports that it uses about a third less energy than similar buildings with full air conditioning.',
@@ -285,7 +285,7 @@ $GREEN = [
       'Warm air is lighter than cool air, so it rises. In a tall space with openings at the top and bottom, rising warm air pulls fresh air in below. This "stack effect" has been used for centuries, for example in the wind-catcher towers of the Middle East and Iran, which catch breezes and push air through buildings.',
     ]],
   ],
-  'art' => 'This illustration shows a slender stone spire with leaf-covered walls. Here we imagine it breathing like a termite mound.',
+  'art' => 'This illustration shows a slender stone spire with leaf-covered walls. Here we picture it breathing like a termite mound.',
   'look' => ['Find openings near the top where warm air could escape.', 'Notice the plants at the base. How might they cool the air?'],
   'questions' => ['How do you keep cool on a hot day without electricity?', 'Why might copying termites be useful for architects?', 'What other animals build clever homes?'],
   'words' => ['Passive cooling' => 'Keeping cool without machines.', 'Stack effect' => 'Warm air rising and drawing cool air in below.', 'Biomimicry' => 'Copying ideas from nature.'],
@@ -296,10 +296,10 @@ $GREEN = [
 'green-roof-cottage' => [
   'name' => 'Green-roof cottage', 'latin' => 'living roof', 'cat' => 'homes', 'src' => 'art/floor_m.png',
   'summary' => 'A tall cottage crowned with plants. Real green roofs soak up rain, cool buildings and feed insects.',
-  'facts' => ['Imagined as' => 'A cottage with a garden roof', 'Real-world idea' => 'Green roofs', 'Benefits' => 'Less runoff, cooler roofs, wildlife', 'Watch out for' => 'Extra weight and leaks'],
+  'facts' => ['Designed as' => 'A cottage with a garden roof', 'Real-world idea' => 'Green roofs', 'Benefits' => 'Less runoff, cooler roofs, wildlife', 'Watch out for' => 'Extra weight and leaks'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a cottage whose roof is a meadow, where bees hum among flowers and rain is drunk by plants instead of rushing down gutters. In summer the plants keep the rooms below cool; in winter the soil helps keep warmth in.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a cottage whose roof is a meadow, where bees hum among flowers and rain is drunk by plants instead of rushing down gutters. In summer the plants keep the rooms below cool; in winter the soil helps keep warmth in.',
     ]],
     ['Real green roofs', GREEN_REAL, [
       'A green roof is a roof covered with plants growing in a thin layer of special soil. Cities around the world, especially in Germany, Switzerland and Scandinavia, have encouraged them. The US Environmental Protection Agency explains that green roofs can be much cooler than ordinary dark roofs on hot days, helping fight the urban heat island effect.',
@@ -313,7 +313,7 @@ $GREEN = [
       'From the bottom up: a strong roof deck, a waterproof layer, a root barrier, a drainage layer, a filter fabric, a lightweight growing medium, then the plants. Hardy, low-growing plants such as sedums are common because they survive drought. Engineers must check that the roof can carry the extra weight of wet soil.',
     ]],
   ],
-  'art' => 'This illustration shows a tall timber cottage with a purple slate roof and plants climbing its walls. Here we imagine its roof as a living garden.',
+  'art' => 'This illustration shows a tall timber cottage with a purple slate roof and plants climbing its walls. Here we picture its roof as a living garden.',
   'look' => ['Find the plants growing on the walls and roof edge.', 'Where would rainwater go?'],
   'questions' => ['How could gardens on roofs help a city?', 'Why might a green roof be harder to build than an ordinary one?', 'Which buildings near you could have a green roof?'],
   'words' => ['Green roof' => 'A roof covered with growing plants.', 'Runoff' => 'Rainwater that flows over surfaces instead of soaking in.', 'Sedum' => 'A tough, low-growing plant often used on green roofs.'],
@@ -323,11 +323,11 @@ $GREEN = [
 
 'natural-cottage' => [
   'name' => 'Forest cottage', 'latin' => 'natural building', 'cat' => 'homes', 'src' => 'art/floor_s.png',
-  'summary' => 'An imagined cottage made of earth, straw, stone and wood. Real natural building uses these same simple materials.',
-  'facts' => ['Imagined as' => 'A cottage built from the land around it', 'Real-world idea' => 'Natural building', 'Materials' => 'Cob, straw bale, timber, stone', 'Benefit' => 'Low energy, local, non-toxic'],
+  'summary' => 'A nature-inspired cottage made of earth, straw, stone and wood. Real natural building uses these same simple materials.',
+  'facts' => ['Designed as' => 'A cottage built from the land around it', 'Real-world idea' => 'Natural building', 'Materials' => 'Cob, straw bale, timber, stone', 'Benefit' => 'Low energy, local, non-toxic'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a cottage built from what the forest floor offers: clay, straw, fallen timber and stone. When it is no longer needed, it could slowly return to the earth.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a cottage built from what the forest floor offers: clay, straw, fallen timber and stone. When it is no longer needed, it could slowly return to the earth.',
     ]],
     ['Real natural building', GREEN_REAL, [], ['list' => [
       'Cob: a mix of clay soil, sand and straw, built up in thick, sculpted walls. Some cob houses in England are hundreds of years old.',
@@ -341,7 +341,7 @@ $GREEN = [
       'Earth and straw buildings must be kept dry. Natural builders say a cottage needs "good boots", a stone or concrete base that lifts walls off damp ground, and "a good hat", a wide roof overhang that keeps rain off the walls. Breathable lime or clay plasters let any moisture escape.',
     ]],
   ],
-  'art' => 'This illustration shows a small timber-framed cottage with a teal roof and a garden. Here we imagine it built from natural materials.',
+  'art' => 'This illustration shows a small timber-framed cottage with a teal roof and a garden. Here we picture it built from natural materials.',
   'look' => ['Find the roof overhang. How does it protect the walls?', 'What could the walls be made of?'],
   'questions' => ['What materials could you find within a few kilometers of your home to build with?', 'Why might natural materials be healthier to live with?', 'What are the downsides of building with earth and straw?'],
   'words' => ['Cob' => 'A building mix of clay, sand and straw.', 'Straw bale' => 'A tight block of straw used like a giant brick.', 'Lime plaster' => 'A breathable plaster made from lime.'],
@@ -351,11 +351,11 @@ $GREEN = [
 
 'leafy-cottage' => [
   'name' => 'Leafy cottage', 'latin' => 'biophilic design', 'cat' => 'homes', 'src' => 'art/home_a.png',
-  'summary' => 'An imagined cottage wrapped in climbing plants. Real research suggests that seeing nature helps people feel and heal better.',
-  'facts' => ['Imagined as' => 'A home covered in living leaves', 'Real-world idea' => 'Biophilic design and living walls', 'Famous study' => 'Hospital window view study (1984)', 'Benefits' => 'Wellbeing, shade, cleaner local air'],
+  'summary' => 'A nature-inspired cottage wrapped in climbing plants. Real research suggests that seeing nature helps people feel and heal better.',
+  'facts' => ['Designed as' => 'A home covered in living leaves', 'Real-world idea' => 'Biophilic design and living walls', 'Famous study' => 'Hospital window view study (1984)', 'Benefits' => 'Wellbeing, shade, cleaner local air'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a cottage where leaves cover the walls and flowers frame every window. Inside, there is always a view of green, the sound of birds and the smell of plants.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a cottage where leaves cover the walls and flowers frame every window. Inside, there is always a view of green, the sound of birds and the smell of plants.',
     ]],
     ['Why nature makes us feel better', GREEN_REAL, [
       'The biologist E. O. Wilson used the word "biophilia" to describe the idea that humans have a deep connection to nature. In a famous 1984 study, researcher Roger Ulrich found that hospital patients recovering from surgery whose windows looked onto trees went home sooner and needed fewer strong painkillers than similar patients who looked at a brick wall.',
@@ -376,10 +376,10 @@ $GREEN = [
 'mushroom-cottage' => [
   'name' => 'Mushroom cottage', 'latin' => 'mycelium materials', 'cat' => 'homes', 'src' => 'art/home_b.png',
   'summary' => 'A playful toadstool home. Real scientists grow building blocks and packaging from mycelium, the root-like threads of fungi.',
-  'facts' => ['Imagined as' => 'A home shaped like a mushroom', 'Real-world idea' => 'Materials grown from fungi', 'Real example' => 'Hy-Fi tower, New York (2014)', 'Status' => 'Used for packaging; buildings experimental'],
+  'facts' => ['Designed as' => 'A home shaped like a mushroom', 'Real-world idea' => 'Materials grown from fungi', 'Real example' => 'Hy-Fi tower, New York (2014)', 'Status' => 'Used for packaging; buildings experimental'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a cottage grown, not built: a living fungus shaped into walls, then dried so that it stops growing. When the cottage was no longer needed, it could be broken up and composted into soil.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a cottage grown, not built: a living fungus shaped into walls, then dried so that it stops growing. When the cottage was no longer needed, it could be broken up and composted into soil.',
     ]],
     ['The hidden part of a mushroom', GREEN_REAL, [
       'The mushroom we see is only the fruit of a fungus. Most of the fungus is underground: a huge network of fine white threads called mycelium. Mycelium grows through soil, wood and plant waste, binding it together like a natural glue.',
@@ -400,11 +400,11 @@ $GREEN = [
 // ---------------- Water and energy ----------------
 'wetland-fountain' => [
   'name' => 'Wetland fountain', 'latin' => 'constructed wetland', 'cat' => 'water', 'src' => 'art/fountain.png',
-  'summary' => 'An imagined fountain that cleans water as it flows. Real "constructed wetlands" use plants and microbes to purify wastewater.',
-  'facts' => ['Imagined as' => 'A fountain that purifies water', 'Real-world idea' => 'Constructed wetlands', 'Real example' => 'Arcata Marsh, California', 'How it works' => 'Plants, microbes, sun and time'],
+  'summary' => 'A nature-inspired fountain that cleans water as it flows. Real "constructed wetlands" use plants and microbes to purify wastewater.',
+  'facts' => ['Designed as' => 'A fountain that purifies water', 'Real-world idea' => 'Constructed wetlands', 'Real example' => 'Arcata Marsh, California', 'How it works' => 'Plants, microbes, sun and time'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a fountain where used water from homes flows through pools of reeds and stones and comes out clean enough to return to the river, with the glittering spray showing everyone that the city\'s water is cared for.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a fountain where used water from homes flows through pools of reeds and stones and comes out clean enough to return to the river, with the glittering spray showing everyone that the city\'s water is cared for.',
     ]],
     ['How wetlands clean water', GREEN_REAL, [
       'Natural marshes are some of nature\'s best water filters. As water moves slowly through them, mud settles out, and bacteria living on plant roots and in the soil break down waste. Plants take up nutrients that would otherwise feed harmful algae in rivers. Sunlight helps kill germs.',
@@ -414,7 +414,7 @@ $GREEN = [
       'Since the 1980s, the city of Arcata in California has used a series of ponds and marshes to finish cleaning its wastewater. The marshes are also a wildlife sanctuary with walking trails, popular with birdwatchers. Constructed wetlands need more land than a treatment plant, so they suit some places better than others.',
     ]],
   ],
-  'art' => 'This illustration shows a fountain of pale stone with tiered pools, a tall blue glass centerpiece and flowers all around. Here we imagine it as a wetland that cleans water.',
+  'art' => 'This illustration shows a fountain of pale stone with tiered pools, a tall blue glass centerpiece and flowers all around. Here we picture it as a wetland that cleans water.',
   'look' => ['Follow the water from the top to the pool.', 'Where could reeds and plants grow?'],
   'questions' => ['How could a city make its water system visible, so people value it?', 'Why might a marsh be better than a concrete plant in some places?', 'What lives in a wetland?'],
   'words' => ['Wetland' => 'Land covered with shallow water, like a marsh.', 'Microbe' => 'A living thing too small to see without a microscope.', 'Wastewater' => 'Used water from homes and businesses.'],
@@ -424,11 +424,11 @@ $GREEN = [
 
 'garden-court' => [
   'name' => 'Rain garden court', 'latin' => 'rain garden', 'cat' => 'water', 'src' => 'art/growth_1.png',
-  'summary' => 'An imagined courtyard garden that drinks the rain. Real rain gardens catch storm water and stop flooding.',
-  'facts' => ['Imagined as' => 'A garden that drinks rain', 'Real-world idea' => 'Rain gardens and "sponge cities"', 'Benefits' => 'Less flooding, cleaner rivers', 'Plants' => 'Deep-rooted, flood-tolerant'],
+  'summary' => 'A nature-inspired courtyard garden that drinks the rain. Real rain gardens catch storm water and stop flooding.',
+  'facts' => ['Designed as' => 'A garden that drinks rain', 'Real-world idea' => 'Rain gardens and "sponge cities"', 'Benefits' => 'Less flooding, cleaner rivers', 'Plants' => 'Deep-rooted, flood-tolerant'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a courtyard where every drop of rain from the roofs runs into a sunken garden, sinks into the soil and slowly fills a clear pool, so the garden is green even in the dry season.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a courtyard where every drop of rain from the roofs runs into a sunken garden, sinks into the soil and slowly fills a clear pool, so the garden is green even in the dry season.',
     ]],
     ['The problem with hard cities', GREEN_REAL, [
       'In nature, most rain soaks into the ground. In cities, roofs, roads and parking lots are hard surfaces, so rain rushes into drains, picking up oil and litter. In heavy storms, drains overflow, causing floods and sometimes sending sewage into rivers.',
@@ -448,11 +448,11 @@ $GREEN = [
 
 'spring-circle' => [
   'name' => 'Spring circle', 'latin' => 'watershed protection', 'cat' => 'water', 'src' => 'art/growth_2.png',
-  'summary' => 'An imagined ring of tall stones around a clean spring. Real cities save billions by protecting the land where their water comes from.',
-  'facts' => ['Imagined as' => 'A protected spring', 'Real-world idea' => 'Protecting watersheds', 'Real example' => 'New York City\'s Catskill and Delaware watersheds', 'Big saving' => 'Avoiding a huge filtration plant'],
+  'summary' => 'A nature-inspired ring of tall stones around a clean spring. Real cities save billions by protecting the land where their water comes from.',
+  'facts' => ['Designed as' => 'A protected spring', 'Real-world idea' => 'Protecting watersheds', 'Real example' => 'New York City\'s Catskill and Delaware watersheds', 'Big saving' => 'Avoiding a huge filtration plant'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a spring marked by a ring of tall stones, where no one may cut trees or dump waste in the hills above, because everyone knows the city\'s water begins here.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a spring marked by a ring of tall stones, where no one may cut trees or dump waste in the hills above, because everyone knows the city\'s water begins here.',
     ]],
     ['What is a watershed?', GREEN_REAL, [
       'A watershed is all the land that drains into a particular river, lake or spring. Rain falling anywhere in a watershed eventually flows to the same place. What happens on that land, such as forests, farms, roads or factories, affects the quality of the water downstream.',
@@ -474,11 +474,11 @@ $GREEN = [
 
 'waterfall-tower' => [
   'name' => 'Waterfall tower', 'latin' => 'micro-hydropower', 'cat' => 'water', 'src' => 'art/growth_3.png',
-  'summary' => 'An imagined tower with a waterfall pouring down it. Real micro-hydro systems turn falling water into electricity for homes and villages.',
-  'facts' => ['Imagined as' => 'A waterfall that lights the city', 'Real-world idea' => 'Small-scale hydropower', 'Needs' => 'Steady flow and a drop in height', 'Works' => 'Day and night, unlike solar'],
+  'summary' => 'A nature-inspired tower with a waterfall pouring down it. Real micro-hydro systems turn falling water into electricity for homes and villages.',
+  'facts' => ['Designed as' => 'A waterfall that lights the city', 'Real-world idea' => 'Small-scale hydropower', 'Needs' => 'Steady flow and a drop in height', 'Works' => 'Day and night, unlike solar'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a waterfall pouring down a tall stone tower, its energy captured to light lanterns all over the green city, day and night, while the stream below stays healthy for fish.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a waterfall pouring down a tall stone tower, its energy captured to light lanterns all over the green city, day and night, while the stream below stays healthy for fish.',
     ]],
     ['How falling water makes electricity', GREEN_REAL, [
       'Water falling from a height has energy. In a hydropower system, water is channeled through a pipe to a turbine, a wheel with blades. The rushing water spins the turbine, which turns a generator to make electricity. The more water and the bigger the drop, the more power.',
@@ -488,7 +488,7 @@ $GREEN = [
       'Large dams can flood valleys and block fish from swimming upstream. Small "run-of-the-river" systems take only part of the stream\'s flow and return it downstream, with less harm. Fish ladders and screens help fish get past. Engineers must leave enough water in the stream for wildlife, especially in dry seasons.',
     ]],
   ],
-  'art' => 'This illustration shows a tall tower of pale stone and blue glass, with water pouring down into a wide pool. Here we imagine its falling water making power.',
+  'art' => 'This illustration shows a tall tower of pale stone and blue glass, with water pouring down into a wide pool. Here we picture its falling water making power.',
   'look' => ['Follow the water from the top of the tower to the pool.', 'Where could a turbine be hidden?'],
   'questions' => ['What are the good and bad sides of getting energy from rivers?', 'Why might water power work at night when solar does not?', 'How can we share a river between people and fish?'],
   'words' => ['Turbine' => 'A wheel turned by flowing water, wind or steam.', 'Generator' => 'A machine that turns motion into electricity.', 'Run-of-the-river' => 'Hydropower without a big dam.'],
@@ -498,11 +498,11 @@ $GREEN = [
 
 'gathering-circle' => [
   'name' => 'Warm gathering circle', 'latin' => 'geothermal energy', 'cat' => 'water', 'src' => 'art/shared_1.png',
-  'summary' => 'An imagined meeting place warmed by heat from the earth. Real geothermal energy heats most homes in Iceland.',
-  'facts' => ['Imagined as' => 'A circle warmed from below', 'Real-world idea' => 'Geothermal heat', 'Real example' => 'Iceland: about 9 in 10 homes', 'Also' => 'Ground-source heat pumps work almost anywhere'],
+  'summary' => 'A nature-inspired meeting place warmed by heat from the earth. Real geothermal energy heats most homes in Iceland.',
+  'facts' => ['Designed as' => 'A circle warmed from below', 'Real-world idea' => 'Geothermal heat', 'Real example' => 'Iceland: about 9 in 10 homes', 'Also' => 'Ground-source heat pumps work almost anywhere'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a ring of log seats around a warm stone hearth, heated not by burning wood but by hot water piped up from deep in the earth. On cold nights, the whole village gathers here.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a ring of log seats around a warm stone hearth, heated not by burning wood but by hot water piped up from deep in the earth. On cold nights, the whole village gathers here.',
     ]],
     ['Heat from inside the Earth', GREEN_REAL, [
       'The deep inside of the Earth is very hot, and that heat slowly flows outward. In volcanic places like Iceland, hot water and steam lie close to the surface. Iceland pipes this hot water to homes through district heating networks, and about nine in ten Icelandic homes are heated by geothermal energy. It is also used to warm sidewalks, swimming pools and greenhouses.',
@@ -523,10 +523,10 @@ $GREEN = [
 'flower-meadow' => [
   'name' => 'Pollinator meadow', 'latin' => 'wildflower meadow', 'cat' => 'wild', 'src' => 'art/nt_garden.png',
   'summary' => 'Flowers planted for bees, butterflies and other insects that pollinate the crops we eat.',
-  'facts' => ['Imagined as' => 'A flower garden for bees', 'Real-world idea' => 'Habitat for pollinators', 'Why it matters' => 'Most leading food crops benefit from pollinators', 'Easy to start' => 'Native flowers, no pesticides'],
+  'facts' => ['Designed as' => 'A flower garden for bees', 'Real-world idea' => 'Habitat for pollinators', 'Why it matters' => 'Most leading food crops benefit from pollinators', 'Easy to start' => 'Native flowers, no pesticides'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a meadow of bright flowers that blooms from spring to autumn, humming with bees, where people gather honey and seeds without ever harming the insects.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a meadow of bright flowers that blooms from spring to autumn, humming with bees, where people gather honey and seeds without ever harming the insects.',
     ]],
     ['Why pollinators matter', GREEN_REAL, [
       'Many plants need animals, mostly insects, to carry pollen from flower to flower so that they can make fruit and seeds. In 2016, a major international assessment by IPBES found that about three quarters of the world\'s leading kinds of food crops benefit at least partly from animal pollination, including apples, almonds, coffee and chocolate.',
@@ -554,10 +554,10 @@ $GREEN = [
 'wild-grove' => [
   'name' => 'Tiny forest', 'latin' => 'urban forest', 'cat' => 'wild', 'src' => 'art/trees.png',
   'summary' => 'A patch of trees left wild in the middle of the city. Real "tiny forests" plant dense native woods in spaces the size of a tennis court.',
-  'facts' => ['Imagined as' => 'A wild grove in the city', 'Real-world idea' => 'Urban forests and tiny forests', 'Method' => 'The Miyawaki method', 'Benefits' => 'Shade, wildlife, cooler air'],
+  'facts' => ['Designed as' => 'A wild grove in the city', 'Real-world idea' => 'Urban forests and tiny forests', 'Method' => 'The Miyawaki method', 'Benefits' => 'Shade, wildlife, cooler air'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a grove of ancient trees and blossoms that no one ever cuts, in the very center of the green city, where anyone can sit in the shade and listen to birds.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a grove of ancient trees and blossoms that no one ever cuts, in the very center of the green city, where anyone can sit in the shade and listen to birds.',
     ]],
     ['Trees cool the city', GREEN_REAL, [
       'Trees shade streets and buildings and release water vapor through their leaves, which cools the air. The US Environmental Protection Agency explains that trees and plants help reduce the heat island effect that makes cities hotter than the countryside. Trees also soak up rain, provide homes for wildlife and make places more pleasant.',
@@ -577,11 +577,11 @@ $GREEN = [
 
 'stag-monument' => [
   'name' => 'Stag crossing', 'latin' => 'wildlife crossing', 'cat' => 'wild', 'src' => 'art/monument.png',
-  'summary' => 'An imagined monument to the forest\'s animals. Real wildlife bridges let deer, bears and wolves cross busy roads safely.',
-  'facts' => ['Imagined as' => 'A monument marking animal paths', 'Real-world idea' => 'Wildlife crossings', 'Real example' => 'Banff National Park, Canada', 'Result there' => 'Collisions down by more than 80%'],
+  'summary' => 'A nature-inspired monument to the forest\'s animals. Real wildlife bridges let deer, bears and wolves cross busy roads safely.',
+  'facts' => ['Designed as' => 'A monument marking animal paths', 'Real-world idea' => 'Wildlife crossings', 'Real example' => 'Banff National Park, Canada', 'Result there' => 'Collisions down by more than 80%'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a great stag carved in white stone, marking the paths where animals have always walked. The city\x27s roads would bend around these paths, or pass beneath them, so that animals could always travel freely.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a great stag carved in white stone, marking the paths where animals have always walked. The city\x27s roads would bend around these paths, or pass beneath them, so that animals could always travel freely.',
     ]],
     ['Roads cut nature in two', GREEN_REAL, [
       'Roads split forests and meadows into separate pieces. Animals trying to cross are hit by vehicles, which is dangerous for drivers too. Animals that cannot cross may be cut off from food, water and mates.',
@@ -600,11 +600,11 @@ $GREEN = [
 
 'deer-statue' => [
   'name' => 'Deer statue', 'latin' => 'rewilding', 'cat' => 'wild', 'src' => 'art/nt_statue.png',
-  'summary' => 'An imagined statue of a gentle deer beside a wild meadow. In the real world, "rewilding" lets nature restore itself on land that was farmed.',
-  'facts' => ['Imagined as' => 'A statue at the edge of the wild', 'Real-world idea' => 'Rewilding', 'Real example' => 'Knepp Estate, England (since 2001)', 'Key helpers' => 'Grazing animals, beavers, time'],
+  'summary' => 'A nature-inspired statue of a gentle deer beside a wild meadow. In the real world, "rewilding" lets nature restore itself on land that was farmed.',
+  'facts' => ['Designed as' => 'A statue at the edge of the wild', 'Real-world idea' => 'Rewilding', 'Real example' => 'Knepp Estate, England (since 2001)', 'Key helpers' => 'Grazing animals, beavers, time'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a quiet statue at the edge of a wild meadow: a reminder that some land is not for people, but for deer, birds, insects and plants to shape as they please.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a quiet statue at the edge of a wild meadow: a reminder that some land is not for people, but for deer, birds, insects and plants to shape as they please.',
     ]],
     ['What is rewilding?', GREEN_REAL, [
       'Rewilding means stepping back and letting natural processes restore an area, often with a helping hand at the start, such as removing drains, letting rivers wander or bringing back missing animals. Instead of deciding exactly what should grow, rewilders let nature lead.',
@@ -627,11 +627,11 @@ $GREEN = [
 
 'domed-observatory' => [
   'name' => 'Star dome', 'latin' => 'dark-sky observatory', 'cat' => 'wild', 'src' => 'art/knowledge_3.png',
-  'summary' => 'An imagined observatory under a sky full of stars. Real dark-sky places reduce light pollution so people and wildlife can see the night.',
-  'facts' => ['Imagined as' => 'A glass dome for star-gazing', 'Real-world idea' => 'Dark-sky protection', 'First International Dark Sky City' => 'Flagstaff, Arizona (2001)', 'Helps' => 'Stars, wildlife, sleep, energy'],
+  'summary' => 'A nature-inspired observatory under a sky full of stars. Real dark-sky places reduce light pollution so people and wildlife can see the night.',
+  'facts' => ['Designed as' => 'A glass dome for star-gazing', 'Real-world idea' => 'Dark-sky protection', 'First International Dark Sky City' => 'Flagstaff, Arizona (2001)', 'Helps' => 'Stars, wildlife, sleep, energy'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a glass dome at the edge of the forest where people watch the stars, keep a calendar of the seasons and teach children the patterns of the night sky.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a glass dome at the edge of the forest where people watch the stars, keep a calendar of the seasons and teach children the patterns of the night sky.',
     ]],
     ['The heavens declare', GREEN_BIBLE, [
       '"The heavens declare the glory of God; the skies proclaim the work of His hands" (Psalm 19:1). Another psalm says that God "determines the number of the stars; He calls them each by name" (Psalm 147:4).',
@@ -658,11 +658,11 @@ $GREEN = [
 
 'firefly-tower' => [
   'name' => 'Firefly tower', 'latin' => 'bioluminescence', 'cat' => 'wild', 'src' => 'art/nt_tower.png',
-  'summary' => 'An imagined tower that glows like a firefly. Real scientists have already made living plants that glow in the dark.',
-  'facts' => ['Imagined as' => 'A tower lit by living light', 'Real-world idea' => 'Bioluminescence', 'Real example' => 'Glowing petunia approved for sale in the USA', 'Light source' => 'Genes from a glowing mushroom'],
+  'summary' => 'A nature-inspired tower that glows like a firefly. Real scientists have already made living plants that glow in the dark.',
+  'facts' => ['Designed as' => 'A tower lit by living light', 'Real-world idea' => 'Bioluminescence', 'Real example' => 'Glowing petunia approved for sale in the USA', 'Light source' => 'Genes from a glowing mushroom'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a tower lit not by electricity but by living things that glow, like fireflies and forest fungi, softly lighting the paths of the green city at night.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a tower lit not by electricity but by living things that glow, like fireflies and forest fungi, softly lighting the paths of the green city at night.',
     ]],
     ['Nature\'s own light', GREEN_REAL, [
       'Bioluminescence is light made by living things. Fireflies flash to find mates, many deep-sea creatures glow, and some fungi make forests glow faintly green at night, sometimes called "foxfire". The light comes from a chemical reaction in which a molecule called luciferin reacts with oxygen, helped by an enzyme called luciferase.',
@@ -685,11 +685,11 @@ $GREEN = [
 // ---------------- Learning and gathering ----------------
 'tree-library' => [
   'name' => 'Seed library', 'latin' => 'seed bank', 'cat' => 'learn', 'src' => 'art/knowledge_1.png',
-  'summary' => 'An imagined library inside a hollow tree, storing seeds instead of books. Real seed banks protect the world\'s plants for the future.',
-  'facts' => ['Imagined as' => 'A library of seeds in a tree', 'Real-world idea' => 'Seed banks', 'Real example' => 'Svalbard Global Seed Vault (opened 2008)', 'Also' => 'Kew\'s Millennium Seed Bank, UK'],
+  'summary' => 'A nature-inspired library inside a hollow tree, storing seeds instead of books. Real seed banks protect the world\'s plants for the future.',
+  'facts' => ['Designed as' => 'A library of seeds in a tree', 'Real-world idea' => 'Seed banks', 'Real example' => 'Svalbard Global Seed Vault (opened 2008)', 'Also' => 'Kew\'s Millennium Seed Bank, UK'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a library carved into an ancient hollow tree, where shelves hold tiny jars of seeds from every plant in the forest. Anyone could borrow seeds to grow, and return new seeds at harvest.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a library carved into an ancient hollow tree, where shelves hold tiny jars of seeds from every plant in the forest. Anyone could borrow seeds to grow, and return new seeds at harvest.',
     ]],
     ['Why store seeds?', GREEN_REAL, [
       'Thousands of crop varieties and wild plants are at risk from disease, climate change, war and habitat loss. Seeds are like tiny backups of a plant\'s whole genetic recipe. If they are dried and frozen, many kinds can survive for decades or even centuries, ready to be grown again.',
@@ -709,11 +709,11 @@ $GREEN = [
 
 'treehouse-school' => [
   'name' => 'Forest school', 'latin' => 'outdoor learning', 'cat' => 'learn', 'src' => 'art/knowledge_2.png',
-  'summary' => 'An imagined school among the trees. Real forest schools take children outdoors to learn in every season.',
-  'facts' => ['Imagined as' => 'A school built into the trees', 'Real-world idea' => 'Forest school', 'Started' => 'Scandinavia, mid-1900s', 'Learn by' => 'Exploring, building, taking safe risks'],
+  'summary' => 'A nature-inspired school among the trees. Real forest schools take children outdoors to learn in every season.',
+  'facts' => ['Designed as' => 'A school built into the trees', 'Real-world idea' => 'Forest school', 'Started' => 'Scandinavia, mid-1900s', 'Learn by' => 'Exploring, building, taking safe risks'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a school where classrooms perch in the branches, lessons happen on rope bridges and in clearings, and the forest itself is the textbook: counting leaves, tracking animals and watching the seasons change.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a school where classrooms perch in the branches, lessons happen on rope bridges and in clearings, and the forest itself is the textbook: counting leaves, tracking animals and watching the seasons change.',
     ]],
     ['Real forest schools', GREEN_REAL, [
       'Forest schools began in Scandinavia in the mid-20th century, where children spend long periods playing and learning outdoors in woods, whatever the weather. The idea has spread to many countries. Children might build dens, light small fires with adult help, use simple tools, identify plants and animals, and make art from natural materials.',
@@ -737,11 +737,11 @@ $GREEN = [
 
 'weather-tower' => [
   'name' => 'Seasons tower', 'latin' => 'phenology and weather watching', 'cat' => 'learn', 'src' => 'art/town_2.png',
-  'summary' => 'An imagined tower for watching the weather and the seasons. Real scientists track when flowers bloom to see how climate is changing.',
-  'facts' => ['Imagined as' => 'A tower for watching the seasons', 'Real-world idea' => 'Phenology', 'Long record' => 'Kyoto cherry blossom dates, centuries old', 'Anyone can help' => 'Citizen science projects'],
+  'summary' => 'A nature-inspired tower for watching the weather and the seasons. Real scientists track when flowers bloom to see how climate is changing.',
+  'facts' => ['Designed as' => 'A tower for watching the seasons', 'Real-world idea' => 'Phenology', 'Long record' => 'Kyoto cherry blossom dates, centuries old', 'Anyone can help' => 'Citizen science projects'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a tower where watchers note the first blossom of spring, the arrival of swallows and the first frost, and use these signs to know when to plant, harvest and celebrate.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a tower where watchers note the first blossom of spring, the arrival of swallows and the first frost, and use these signs to know when to plant, harvest and celebrate.',
     ]],
     ['Phenology: nature\'s calendar', GREEN_REAL, [
       'Phenology is the study of the timing of natural events: when leaves open, flowers bloom, birds migrate and insects hatch. These events are closely linked to temperature and weather, so long records show how climate is changing.',
@@ -761,11 +761,11 @@ $GREEN = [
 
 'council-terrace' => [
   'name' => 'Council terrace', 'latin' => 'governing the commons', 'cat' => 'learn', 'src' => 'art/town_1.png',
-  'summary' => 'An imagined terrace where neighbors decide together how to share the forest. Real research shows communities can manage shared resources well.',
-  'facts' => ['Imagined as' => 'An open-air council', 'Real-world idea' => 'Managing "the commons"', 'Key researcher' => 'Elinor Ostrom (Nobel Prize, 2009)', 'Examples' => 'Shared forests, fisheries, water'],
+  'summary' => 'A nature-inspired terrace where neighbors decide together how to share the forest. Real research shows communities can manage shared resources well.',
+  'facts' => ['Designed as' => 'An open-air council', 'Real-world idea' => 'Managing "the commons"', 'Key researcher' => 'Elinor Ostrom (Nobel Prize, 2009)', 'Examples' => 'Shared forests, fisheries, water'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a stone terrace in the trees where every household sends someone to talk through how much wood to cut, where to let the forest rest, and how to settle disagreements fairly.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a stone terrace in the trees where every household sends someone to talk through how much wood to cut, where to let the forest rest, and how to settle disagreements fairly.',
     ]],
     ['The tragedy of the commons?', GREEN_REAL, [
       'A "commons" is something shared by a group, such as grazing land, a fishing ground, a forest or groundwater. For a long time, many economists believed shared resources would always be overused, because each person benefits from taking more while the cost is shared by everyone.',
@@ -794,11 +794,11 @@ $GREEN = [
 
 'forest-palace' => [
   'name' => 'Palace of the long future', 'latin' => 'thinking for future generations', 'cat' => 'learn', 'src' => 'art/town_3.png',
-  'summary' => 'An imagined palace where leaders must think a hundred years ahead. Real governments have begun to create laws for future generations.',
-  'facts' => ['Imagined as' => 'A seat of long-term leadership', 'Real-world idea' => 'Laws for future generations', 'Real example' => 'Well-being of Future Generations (Wales) Act 2015', 'Big question' => 'Who speaks for people not yet born?'],
+  'summary' => 'A nature-inspired palace where leaders must think a hundred years ahead. Real governments have begun to create laws for future generations.',
+  'facts' => ['Designed as' => 'A seat of long-term leadership', 'Real-world idea' => 'Laws for future generations', 'Real example' => 'Well-being of Future Generations (Wales) Act 2015', 'Big question' => 'Who speaks for people not yet born?'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine leaders who plan for centuries. In their white stone palace, no decision could be made without asking: what will this mean for the forest, and for our great-grandchildren?',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture leaders who plan for centuries. In their white stone palace, no decision could be made without asking: what will this mean for the forest, and for our great-grandchildren?',
     ]],
     ['Short-term thinking', GREEN_REAL, [
       'Many of the biggest challenges, such as climate change, losing species, building cities and caring for forests, unfold over decades or centuries. But elections, business plans and news often focus on months or a few years. Planting a tree whose shade you will never sit in requires long-term thinking.',
@@ -818,11 +818,11 @@ $GREEN = [
 
 'forest-gym' => [
   'name' => 'Forest training grove', 'latin' => 'forest bathing', 'cat' => 'learn', 'src' => 'art/fitness_1.png',
-  'summary' => 'An imagined archery grove among the trees. Real research explores how time in forests may lower stress and lift mood.',
-  'facts' => ['Imagined as' => 'A training ground in the forest', 'Real-world idea' => 'Shinrin-yoku ("forest bathing")', 'Named in' => 'Japan, 1982', 'Also' => 'Green exercise outdoors'],
+  'summary' => 'A nature-inspired archery grove among the trees. Real research explores how time in forests may lower stress and lift mood.',
+  'facts' => ['Designed as' => 'A training ground in the forest', 'Real-world idea' => 'Shinrin-yoku ("forest bathing")', 'Named in' => 'Japan, 1982', 'Also' => 'Green exercise outdoors'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a sunny glade where people practice archery, stretch and run among the trees, then sit quietly listening to the leaves before heading home.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a sunny glade where people practice archery, stretch and run among the trees, then sit quietly listening to the leaves before heading home.',
     ]],
     ['Forest bathing', GREEN_REAL, [
       'In 1982, Japan\'s forestry agency introduced the term "shinrin-yoku", meaning "forest bathing": spending time slowly and calmly in a forest, noticing sights, sounds and smells. It is not exercise in the usual sense, but a way of relaxing in nature.',
@@ -842,11 +842,11 @@ $GREEN = [
 
 'canopy-walkway' => [
   'name' => 'Canopy climbing course', 'latin' => 'canopy research', 'cat' => 'learn', 'src' => 'art/fitness_2.png',
-  'summary' => 'An imagined climbing course in the treetops. Real scientists use walkways, ropes and cranes to study life in the forest canopy.',
-  'facts' => ['Imagined as' => 'A treetop climbing course', 'Real-world idea' => 'Forest canopy science', 'Why study it' => 'Much forest life lives high up', 'Tools' => 'Ropes, walkways, towers, cranes, drones'],
+  'summary' => 'A nature-inspired climbing course in the treetops. Real scientists use walkways, ropes and cranes to study life in the forest canopy.',
+  'facts' => ['Designed as' => 'A treetop climbing course', 'Real-world idea' => 'Forest canopy science', 'Why study it' => 'Much forest life lives high up', 'Tools' => 'Ropes, walkways, towers, cranes, drones'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine ladders, nets and rope bridges strung through the treetops, where children practice balance and climbing while learning about the creatures that live high above the forest floor.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture ladders, nets and rope bridges strung through the treetops, where children practice balance and climbing while learning about the creatures that live high above the forest floor.',
     ]],
     ['The last frontier of the forest', GREEN_REAL, [
       'In tropical rainforests, a huge share of life, including insects, birds, frogs, orchids and mosses, lives in the canopy, tens of meters above the ground. For a long time this world was very hard to study. Scientists have called the canopy one of the least explored habitats on land.',
@@ -871,11 +871,11 @@ $GREEN = [
 
 'open-air-theater' => [
   'name' => 'Open-air theater', 'latin' => 'natural amphitheater', 'cat' => 'learn', 'src' => 'art/fitness_3.png',
-  'summary' => 'An imagined theater among the trees. Real open-air theaters use the shape of hills and stone to carry sound without microphones.',
-  'facts' => ['Imagined as' => 'A stage in a forest bowl', 'Real-world idea' => 'Natural acoustics', 'Famous ancient example' => 'Theater of Epidaurus, Greece', 'Natural rock example' => 'Red Rocks Amphitheatre, Colorado'],
+  'summary' => 'A nature-inspired theater among the trees. Real open-air theaters use the shape of hills and stone to carry sound without microphones.',
+  'facts' => ['Designed as' => 'A stage in a forest bowl', 'Real-world idea' => 'Natural acoustics', 'Famous ancient example' => 'Theater of Epidaurus, Greece', 'Natural rock example' => 'Red Rocks Amphitheatre, Colorado'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a bowl of carved seats in a forest clearing where a single voice on stage can be heard in the back row, with only birdsong and wind as the background music.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a bowl of carved seats in a forest clearing where a single voice on stage can be heard in the back row, with only birdsong and wind as the background music.',
     ]],
     ['Ancient sound engineering', GREEN_REAL, [
       'The ancient Greek theater at Epidaurus, built in the 4th century BC and part of a UNESCO World Heritage Site, is famous for its acoustics; it is often said that people in the top rows can hear a coin dropped on the stage. Researchers believe the steep, curved rows of stone seats reflect speech toward the audience while scattering lower background noise.',
@@ -897,10 +897,10 @@ $GREEN = [
 'canopy-market' => [
   'name' => 'Canopy market', 'latin' => 'natural shade', 'cat' => 'make', 'src' => 'art/business_1.png',
   'summary' => 'Market stalls under giant mushroom-shaped canopies. Real shade structures, and real trees, cool hot city squares.',
-  'facts' => ['Imagined as' => 'A market under living canopies', 'Real-world idea' => 'Shade to cool cities', 'Real example' => 'Metropol Parasol, Seville (2011)', 'Best shade' => 'Trees'],
+  'facts' => ['Designed as' => 'A market under living canopies', 'Real-world idea' => 'Shade to cool cities', 'Real example' => 'Metropol Parasol, Seville (2011)', 'Best shade' => 'Trees'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine market stalls sheltered by giant living canopies that open their caps in the heat of the day and close them at night, keeping fruit fresh and shoppers cool without any machines.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture market stalls sheltered by giant living canopies that open their caps in the heat of the day and close them at night, keeping fruit fresh and shoppers cool without any machines.',
     ]],
     ['Why shade matters', GREEN_REAL, [
       'Cities get much hotter than the countryside because dark roofs and paving soak up sunlight. Heatwaves are dangerous, especially for older people, babies and outdoor workers. Shade can make a big difference: surfaces in shade can be many degrees cooler than surfaces in full sun.',
@@ -920,11 +920,11 @@ $GREEN = [
 
 'market-hall' => [
   'name' => 'Harvest market hall', 'latin' => 'local, zero-waste food', 'cat' => 'make', 'src' => 'art/business_2.png',
-  'summary' => 'An imagined market where nothing is wasted. Real towns cut waste by selling local food and composting what is left.',
-  'facts' => ['Imagined as' => 'A market that wastes nothing', 'Real-world idea' => 'Local food and composting', 'Problem' => 'A large share of food is wasted', 'Solution' => 'Refill, share, compost'],
+  'summary' => 'A nature-inspired market where nothing is wasted. Real towns cut waste by selling local food and composting what is left.',
+  'facts' => ['Designed as' => 'A market that wastes nothing', 'Real-world idea' => 'Local food and composting', 'Problem' => 'A large share of food is wasted', 'Solution' => 'Refill, share, compost'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a market hall where every fruit is sold, shared or turned into jam, every peel goes back to the gardens as compost, and goods are carried home in woven baskets instead of plastic.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a market hall where every fruit is sold, shared or turned into jam, every peel goes back to the gardens as compost, and goods are carried home in woven baskets instead of plastic.',
     ]],
     ['The problem of waste', GREEN_REAL, [
       'Around the world, a large share of the food that is grown is lost or thrown away, along with the water, land and energy used to grow it. The UN Environment Program estimated that in 2022 about a fifth of the food available to shoppers, shops and restaurants was wasted. Food rotting in landfill also releases methane, a powerful greenhouse gas.',
@@ -949,11 +949,11 @@ $GREEN = [
 
 'woodworking-workshop' => [
   'name' => 'Repair workshop', 'latin' => 'circular economy', 'cat' => 'make', 'src' => 'art/nt_workshop.png',
-  'summary' => 'An imagined workshop where nothing is thrown away. Real repair cafés and well-managed forests keep materials in use.',
-  'facts' => ['Imagined as' => 'A workshop that mends everything', 'Real-world idea' => 'Repair, reuse, responsible forestry', 'First Repair Café' => 'Amsterdam, 2009', 'Wood label' => 'Forest Stewardship Council (1993)'],
+  'summary' => 'A nature-inspired workshop where nothing is thrown away. Real repair cafés and well-managed forests keep materials in use.',
+  'facts' => ['Designed as' => 'A workshop that mends everything', 'Real-world idea' => 'Repair, reuse, responsible forestry', 'First Repair Café' => 'Amsterdam, 2009', 'Wood label' => 'Forest Stewardship Council (1993)'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine a workshop where carpenters mend broken chairs, turn fallen branches into bowls, and keep every scrap of wood in use until it finally becomes compost or warms a home.',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture a workshop where carpenters mend broken chairs, turn fallen branches into bowls, and keep every scrap of wood in use until it finally becomes compost or warms a home.',
     ]],
     ['A circular economy', GREEN_REAL, [
       'Most of what we buy follows a straight line: take materials, make a product, use it, throw it away. A "circular economy" tries to keep things in use for as long as possible by designing them to last, sharing them, repairing them and recycling the materials at the end.',
@@ -977,10 +977,10 @@ $GREEN = [
 'building-materials' => [
   'name' => 'Nature\'s materials', 'latin' => 'biomimicry', 'cat' => 'make', 'src' => 'build/materials.png',
   'summary' => 'Stone, timber and glass for the city\x27s builders, and the real inventions engineers have copied from nature.',
-  'facts' => ['Imagined as' => 'Materials gathered from the forest', 'Real-world idea' => 'Biomimicry', 'Famous copies' => 'Velcro, self-cleaning surfaces, bullet-train nose', 'Key book' => 'Janine Benyus, "Biomimicry" (1997)'],
+  'facts' => ['Designed as' => 'Materials gathered from the forest', 'Real-world idea' => 'Biomimicry', 'Famous copies' => 'Velcro, self-cleaning surfaces, bullet-train nose', 'Key book' => 'Janine Benyus, "Biomimicry" (1997)'],
   'sections' => [
-    ['What it could do', GREEN_IMAGINE, [
-      'Imagine builders who take only what the forest can spare: fallen timber, loose stone and glass melted from sand and old bottles, and who ask of every material, "how would nature do this?"',
+    ['What it could do', GREEN_DESIGN, [
+      'Picture builders who take only what the forest can spare: fallen timber, loose stone and glass melted from sand and old bottles, and who ask of every material, "how would nature do this?"',
     ]],
     ['Learning from 3.8 billion years of design', GREEN_REAL, [
       'Life on Earth has been solving problems for billions of years. Biomimicry is the practice of learning from nature\'s designs to solve human problems. The biologist Janine Benyus made the word popular in her 1997 book.',
@@ -1007,16 +1007,16 @@ $GREEN = [
 ];
 
 $WORLD_DATA['green'] = [
-  'title'    => 'Green World: imagined buildings, real nature technology',
-  'desc'     => 'Explore an imagined green city where each of 35 buildings pairs a fantasy idea with real nature-based technology, from root bridges to seed vaults.',
-  'intro'    => 'An imagined city that grows with the forest. Every building is imagined, but each page shows the real science and nature-based technology that could make parts of it possible.',
-  'note'     => 'This world is imagined and does not describe any real culture. Each page marks what is imagined, what is real today and what is still being researched. A few pages also share Bible verses about the Creator: the Bible says that all things were made through Jesus (John 1:3).',
+  'title'    => 'Green World: nature-inspired buildings, real nature technology',
+  'desc'     => 'Explore a nature-inspired city where each of 35 buildings pairs a design idea with real nature-based technology, from root bridges to seed vaults.',
+  'intro'    => 'A city that grows with the forest. Its buildings are design ideas drawn from nature, and each page shows the real science and nature-based technology that could make parts of it possible.',
+  'note'     => 'This world is drawn from real nature and does not describe any real culture. Each page marks what is a design idea, what is real today and what is still being researched. A few pages also share Bible verses about the Creator: the Bible says that all things were made through Jesus (John 1:3).',
   'aka'      => 'Real-world idea',
   'akaLang'  => '',
   'pageTitle'=> '%s: green idea, real nature technology',
   'pageTitleShort' => '%s: a green idea',
-  'aside'    => ['How to read these pages', 'Each page has three kinds of section. Imagined sections describe the fantasy building. Real world sections describe science, places and technology that exist today, with sources. Possible future sections describe ideas still being researched, which may or may not work. Bible sections share verses about the Creator of the natural world.'],
-  'pageDesc' => ' Explore the imagined idea, the real science behind it, and questions for discussion.',
+  'aside'    => ['How to read these pages', 'Each page has three kinds of section. Nature design sections describe the building as the artist drew it. Real world sections describe science, places and technology that exist today, with sources. Possible future sections describe ideas still being researched, which may or may not work. Bible sections share verses about the Creator of the natural world.'],
+  'pageDesc' => ' Explore the design idea, the real science behind it, and questions for discussion.',
   'pageDescShort' => ' Explore the idea and the real science behind it.',
   'sourcesIntro' => 'The real-world facts on this page are based on these sources:',
   'about'    => 'Ecological design, biomimicry and nature-based technology',

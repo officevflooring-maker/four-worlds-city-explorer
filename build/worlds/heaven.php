@@ -1,13 +1,13 @@
 <?php
-// The Heavenly City: an imagined city of gold and light that tells the story of Jesus, as the Bible tells it.
+// The Heavenly City: the awaited city of gold and light, painted from the Bible's words, that tells the story of Jesus, as the Bible tells it.
 // Each page (and each vehicle in build/vehicles.php) tells one part of the story, in order: 'part' => [number,
 // title]. The categories are the story's chapters. Section kinds: Gospel (the story, quoted from the Berean
-// Standard Bible with chapter and verse), Bible (other passages), Imagined (the artist's city) and Real world
+// Standard Bible with chapter and verse), Bible (other passages), In the painting (the artist's picture of the city) and Real world
 // (places, history and science today, with sources). The art is the Life RPG game's Heaven set (tools/assets.txt).
 
 const HEAVEN_GOSPEL  = ['tag' => 'gospel'];
 const HEAVEN_BIBLE   = ['tag' => 'bible'];
-const HEAVEN_IMAGINE = ['tag' => 'imagined'];
+const HEAVEN_PAINTING = ['tag' => 'painting'];
 const HEAVEN_REAL    = ['tag' => 'real'];
 
 $HEAVEN_SOURCES = [
@@ -111,7 +111,7 @@ $HEAVEN = [
       'But the first people, Adam and Eve, disobeyed God. Wrongdoing, which the Bible calls sin, came into the world, and they had to leave the garden and the tree of life behind (Genesis 3:22–24). Ever since, the Bible says, "all have sinned and fall short of the glory of God" (Romans 3:23).',
       'God did not give up on the people he loved. The rest of the Bible tells how he made a way back to him through his Son, Jesus, who was there at the very beginning: "Through Him all things were made" (John 1:3). On the Bible\'s last page the tree of life stands again, and "the leaves of the tree are for the healing of the nations" (Revelation 22:2).',
     ]],
-    ['The tree', HEAVEN_IMAGINE, [
+    ['The tree', HEAVEN_PAINTING, [
       'At the center of the city grows a tree that never stops giving: shade for everyone, fruit in every season and leaves that make sick people well.',
     ]],
     ['Trees that heal', HEAVEN_REAL, [
@@ -136,7 +136,7 @@ $HEAVEN = [
       'God made more promises. He told Abraham that "all the families of the earth will be blessed through you" (Genesis 12:3). Through his prophets, he promised to send a King who would bring peace: "For unto us a child is born, unto us a son is given… And He will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace" (Isaiah 9:6). The prophet Micah even named the little town he would come from: Bethlehem (Micah 5:2).',
       'People waited hundreds of years for these promises to come true.',
     ]],
-    ['The pavilion', HEAVEN_IMAGINE, [
+    ['The pavilion', HEAVEN_PAINTING, [
       'Under the arch of a rainbow, a white pavilion stands among flowers: a place to make promises and keep them.',
     ]],
     ['How rainbows form', HEAVEN_REAL, [
@@ -162,7 +162,7 @@ $HEAVEN = [
       'Mary asked how this could be, and the angel told her the child would come from the Holy Spirit, "for no word from God will ever fail." Mary answered: "I am the Lord\'s servant. May it happen to me according to your word" (Luke 1:34–38).',
       'An angel also spoke to Joseph in a dream: "You are to give Him the name Jesus, because He will save His people from their sins" (Matthew 1:21). He would be called Immanuel, which means "God with us" (Matthew 1:23).',
     ]],
-    ['The statue', HEAVEN_IMAGINE, [
+    ['The statue', HEAVEN_PAINTING, [
       'A shining angel stands high above the city with open wings, as if about to bring good news.',
     ]],
     ['Angels in our world', HEAVEN_REAL, [
@@ -186,7 +186,7 @@ $HEAVEN = [
       '"Now in those days a decree went out from Caesar Augustus that a census should be taken of the whole empire" (Luke 2:1). Everyone had to go to their own town to be counted. Joseph belonged to the family of King David, so he and Mary traveled from Nazareth to Bethlehem, the town of David, just as the prophet Micah had said.',
       'While they were there, Mary\'s baby was born. "She wrapped Him in swaddling cloths and laid Him in a manger, because there was no room for them in the inn" (Luke 2:7). A manger is a feeding box for animals. God\'s Son was born not in a palace, but in a place where animals were fed.',
     ]],
-    ['The hall', HEAVEN_IMAGINE, [
+    ['The hall', HEAVEN_PAINTING, [
       'In this hall, a meal, a bed and a friend are waiting for every person who arrives, whoever they are and wherever they come from. Here, no one is ever told there is no room.',
     ]],
     ['The Church of the Nativity', HEAVEN_REAL, [
@@ -210,7 +210,7 @@ $HEAVEN = [
       'That night, shepherds were watching their sheep in the fields near Bethlehem. Suddenly an angel of the Lord stood before them, and the glory of the Lord shone around them. They were terrified, but the angel said: "Do not be afraid! For behold, I bring you good news of great joy that will be for all the people: Today in the city of David a Savior has been born to you. He is Christ the Lord!" (Luke 2:10–11).',
       'Then a great crowd of angels appeared, praising God: "Glory to God in the highest, and on earth peace to men on whom His favor rests!" (Luke 2:14). The shepherds hurried to Bethlehem and found the baby lying in the manger, just as they had been told. They went home "glorifying and praising God for all they had heard and seen" (Luke 2:20).',
     ]],
-    ['The tower', HEAVEN_IMAGINE, [
+    ['The tower', HEAVEN_PAINTING, [
       'When something good happens in this city, the bells ring, and everyone stops to listen and celebrate.',
     ]],
     ['How bells sing', HEAVEN_REAL, [
@@ -237,7 +237,7 @@ $HEAVEN = [
       'Some time later, wise men called Magi came from the east to Jerusalem, asking: "Where is the One who has been born King of the Jews? We saw His star in the east and have come to worship Him" (Matthew 2:2). King Herod was troubled, and he sent them to Bethlehem, secretly planning to harm the child.',
       'The star went ahead of the Magi until it stopped over the place where Jesus was. "When they saw the star, they rejoiced with great delight" (Matthew 2:10). They bowed down and worshiped him, and gave him gifts of gold, frankincense and myrrh. Warned in a dream, they went home another way, and an angel told Joseph to take Mary and Jesus to Egypt until Herod died (Matthew 2:12–15).',
     ]],
-    ['The palace', HEAVEN_IMAGINE, [
+    ['The palace', HEAVEN_PAINTING, [
       'At the heart of the city stands a palace with a huge gold dome and a star on top. Its doors glow, and light spills out from inside, so the whole city is bright even at night.',
     ]],
     ['Herod\'s hilltop palace', HEAVEN_REAL, [
@@ -265,7 +265,7 @@ $HEAVEN = [
       'Jesus grew up in Nazareth. Every year his family went to Jerusalem for the Feast of the Passover. When he was twelve, his parents set off for home and did not notice that he had stayed behind. After three days of searching, "they found Him in the temple courts, sitting among the teachers, listening to them and asking them questions. And all who heard Him were astounded at His understanding and His answers" (Luke 2:46–47).',
       '"Did you not know that I had to be in My Father\'s house?" Jesus asked (Luke 2:49). Then he went home with them and obeyed them, "and Jesus grew in wisdom and stature, and in favor with God and man" (Luke 2:52). He learned a trade, and the people of Nazareth later called him "the carpenter" (Mark 6:3).',
     ]],
-    ['The hall', HEAVEN_IMAGINE, [
+    ['The hall', HEAVEN_PAINTING, [
       'Every question anyone has ever asked has an answer waiting somewhere on these shelves, and there is always time to read it.',
     ]],
     ['The temple and its wall', HEAVEN_REAL, [
@@ -293,7 +293,7 @@ $HEAVEN = [
       'Jesus asked John to baptize him too. "As soon as Jesus was baptized, He went up out of the water. Suddenly the heavens were opened, and He saw the Spirit of God descending like a dove and resting on Him. And a voice from heaven said, \'This is My beloved Son, in whom I am well pleased!\'" (Matthew 3:16–17).',
       'Then Jesus went into the wilderness, where he fasted for forty days and was tempted by the devil. Each time, he answered with God\'s word: "Man shall not live on bread alone, but on every word that comes from the mouth of God" (Matthew 4:4).',
     ]],
-    ['The statue', HEAVEN_IMAGINE, [
+    ['The statue', HEAVEN_PAINTING, [
       'A golden dove rises from a marble pedestal, wings open, as if setting off to carry peace across the city.',
     ]],
     ['Where Jesus was baptized', HEAVEN_REAL, [
@@ -322,7 +322,7 @@ $HEAVEN = [
       'Six large stone water jars stood nearby. "Fill the jars with water," Jesus told the servants, and they filled them to the brim. When the master of the banquet tasted it, the water had become wine, better than any served before: "You have saved the fine wine until now!" (John 2:10).',
       '"Jesus performed this, the first of His signs, at Cana in Galilee. He thus revealed His glory, and His disciples believed in Him" (John 2:11).',
     ]],
-    ['The villa', HEAVEN_IMAGINE, [
+    ['The villa', HEAVEN_PAINTING, [
       'Every room opens onto a sunny courtyard with a fountain, where the family eats, plays and celebrates, and there is always enough for every guest.',
     ]],
     ['Courtyard homes', HEAVEN_REAL, [
@@ -349,7 +349,7 @@ $HEAVEN = [
     ['A light in the dark', HEAVEN_BIBLE, [
       'Later Jesus said: "I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life" (John 8:12). A psalm says to God: "Your word is a lamp to my feet and a light to my path" (Psalm 119:105).',
     ]],
-    ['The tower', HEAVEN_IMAGINE, [
+    ['The tower', HEAVEN_PAINTING, [
       'Lamp towers stand all over the city, so that no one ever has to walk in the dark or feel lost.',
     ]],
     ['Lights that keep people safe', HEAVEN_REAL, [
@@ -377,7 +377,7 @@ $HEAVEN = [
     ['The river of life', HEAVEN_BIBLE, [
       'The last book of the Bible pictures "a river of the water of life, as clear as crystal, flowing from the throne of God and of the Lamb" through the heavenly city (Revelation 22:1).',
     ]],
-    ['The fountain', HEAVEN_IMAGINE, [
+    ['The fountain', HEAVEN_PAINTING, [
       'Clear water flows from a golden top into a wide marble basin, and anyone may drink. The water never runs out and never makes anyone sick.',
     ]],
     ['Clean water for all', HEAVEN_REAL, [
@@ -401,7 +401,7 @@ $HEAVEN = [
       'Jesus came back to Nazareth, where he had grown up. On the Sabbath he went to the synagogue, the meeting place for prayer, and stood up to read. He was handed the scroll of the prophet Isaiah. "Unrolling it, He found the place where it was written: \'The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed, to proclaim the year of the Lord\'s favor\'" (Luke 4:17–19).',
       'He rolled up the scroll and sat down, and everyone stared at him. Then he said: "Today this Scripture is fulfilled in your hearing" (Luke 4:21). Jesus was saying that he was the one Isaiah had written about.',
     ]],
-    ['The library', HEAVEN_IMAGINE, [
+    ['The library', HEAVEN_PAINTING, [
       'In this library every story, song and prayer is kept safe, and anyone may unroll a scroll and read.',
     ]],
     ['The Great Isaiah Scroll', HEAVEN_REAL, [
@@ -426,7 +426,7 @@ $HEAVEN = [
       'Crowds followed Jesus everywhere. One day "He went up on the mountain and sat down" and began to teach (Matthew 5:1). This teaching is called the Sermon on the Mount. It begins with blessings: "Blessed are the poor in spirit, for theirs is the kingdom of heaven… Blessed are the merciful, for they will be shown mercy… Blessed are the peacemakers, for they will be called sons of God" (Matthew 5:3–9).',
       'Then Jesus told his followers: "You are the light of the world. A city on a hill cannot be hidden. Neither do people light a lamp and put it under a basket… In the same way, let your light shine before men, that they may see your good deeds and glorify your Father in heaven" (Matthew 5:14–16).',
     ]],
-    ['The circle', HEAVEN_IMAGINE, [
+    ['The circle', HEAVEN_PAINTING, [
       'Every evening, people gather around the great lamp. No one sits at the head of a circle, so everyone can see and hear everyone else.',
     ]],
     ['How far a little light shines', HEAVEN_REAL, [
@@ -451,7 +451,7 @@ $HEAVEN = [
       '"Our Father in heaven, hallowed be Your name. Your kingdom come, Your will be done, on earth as it is in heaven. Give us this day our daily bread. And forgive us our debts, as we also have forgiven our debtors. And lead us not into temptation, but deliver us from the evil one" (Matthew 6:9–13).',
       'Christians all over the world still pray it, in hundreds of languages.',
     ]],
-    ['The school', HEAVEN_IMAGINE, [
+    ['The school', HEAVEN_PAINTING, [
       'No one is ever too old or too young for this school, and every student is also a teacher of something.',
     ]],
     ['Schools on Sundays', HEAVEN_REAL, [
@@ -476,7 +476,7 @@ $HEAVEN = [
       'He told his listeners not to worry about food or clothes. "Look at the birds of the air: They do not sow or reap or gather into barns, and yet your heavenly Father feeds them… Consider how the lilies of the field grow: They do not labor or spin. Yet I tell you that not even Solomon in all his glory was adorned like one of these" (Matthew 6:26–29).',
       '"But seek first the kingdom of God and His righteousness, and all these things will be added unto you" (Matthew 6:33).',
     ]],
-    ['The garden', HEAVEN_IMAGINE, [
+    ['The garden', HEAVEN_PAINTING, [
       'Flowers bloom here all year round, and no one has to worry about tomorrow.',
     ]],
     ['Flowers and pollinators', HEAVEN_REAL, [
@@ -500,7 +500,7 @@ $HEAVEN = [
       'Jesus ended the Sermon on the Mount with a story: "Everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock. The rain fell, the torrents raged, and the winds blew and beat against that house; yet it did not fall, because its foundation was on the rock" (Matthew 7:24–25).',
       'But someone who hears his words and does not act on them is "like a foolish man who built his house on sand." When the storm came, "it fell—and great was its collapse!" (Matthew 7:26–27). The crowds "were astonished at His teaching, because He taught as one who had authority" (Matthew 7:28–29).',
     ]],
-    ['The crane', HEAVEN_IMAGINE, [
+    ['The crane', HEAVEN_PAINTING, [
       'Instead of a rope, a beam of soft light holds each glowing marble block and lowers it gently into place on solid rock.',
     ]],
     ['A tower on soft ground', HEAVEN_REAL, [
@@ -554,7 +554,7 @@ $HEAVEN = [
       'Jesus had the people sit down on the grass, about five thousand men. He took the loaves and the fish, gave thanks to God and shared them out. Everyone ate as much as they wanted, and the leftovers filled twelve baskets (John 6:10–13).',
       'Later Jesus said: "I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst" (John 6:35).',
     ]],
-    ['The pavilion', HEAVEN_IMAGINE, [
+    ['The pavilion', HEAVEN_PAINTING, [
       'There are no prices here. People bring what they have grown or made and take what they need, and there are always baskets left over.',
     ]],
     ['Sharing in our world', HEAVEN_REAL, [
@@ -578,7 +578,7 @@ $HEAVEN = [
       'People were bringing little children to Jesus so that he would bless them, but the disciples scolded them. Jesus was not pleased. "Let the little children come to Me, and do not hinder them!" he said. "For the kingdom of God belongs to such as these. Truly I tell you, anyone who does not receive the kingdom of God like a little child will never enter it" (Mark 10:14–15).',
       '"And He took the children in His arms, placed His hands on them, and blessed them" (Mark 10:16). Jesus showed that children matter to God.',
     ]],
-    ['The cottage', HEAVEN_IMAGINE, [
+    ['The cottage', HEAVEN_PAINTING, [
       'A small, simple house with a garden, a vine over the door and neighbors who wave as they pass. Here, every child is welcome and safe.',
     ]],
     ['A home for thousands', HEAVEN_REAL, [
@@ -603,7 +603,7 @@ $HEAVEN = [
       'A younger son took his share of his father\'s money, went far away and wasted it all. Hungry and alone, feeding pigs, he decided to go home and say: "Father, I have sinned against heaven and against you. I am no longer worthy to be called your son" (Luke 15:18–19). "But while he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him" (Luke 15:20).',
       'The father threw a feast: "For this son of mine was dead and is alive again! He was lost and is found!" (Luke 15:24). Jesus was showing how God welcomes everyone who comes back to him.',
     ]],
-    ['The track', HEAVEN_IMAGINE, [
+    ['The track', HEAVEN_PAINTING, [
       'On this track everyone finishes, and the crowd cheers just as loudly for the last runner as for the first.',
     ]],
     ['Helped to the finish', HEAVEN_REAL, [
@@ -628,7 +628,7 @@ $HEAVEN = [
       'When Jesus reached the tree, he looked up and said: "Zacchaeus, hurry down, for I must stay at your house today" (Luke 19:5). People grumbled, but Zacchaeus welcomed him joyfully and said: "Look, Lord, half of my possessions I give to the poor, and if I have cheated anyone, I will repay it fourfold" (Luke 19:8).',
       'Jesus said: "Today salvation has come to this house… For the Son of Man came to seek and to save the lost" (Luke 19:9–10).',
     ]],
-    ['The hall', HEAVEN_IMAGINE, [
+    ['The hall', HEAVEN_PAINTING, [
       'Chests of glowing gold spill out onto the steps of this great hall, but no one guards them, because in this city no one needs to steal, and everyone is glad to give.',
     ]],
     ['Jericho', HEAVEN_REAL, [
@@ -657,7 +657,7 @@ $HEAVEN = [
       'Then "He took the bread, gave thanks and broke it, and gave it to them, saying, \'This is My body, given for you; do this in remembrance of Me.\' In the same way, after supper He took the cup, saying, \'This cup is the new covenant in My blood, which is poured out for you\'" (Luke 22:19–20).',
       'He gave them a new command: "Love one another. As I have loved you, so you also must love one another" (John 13:34). Jesus knew that one of the twelve, Judas, was about to betray him.',
     ]],
-    ['The hall', HEAVEN_IMAGINE, [
+    ['The hall', HEAVEN_PAINTING, [
       'The table is so long you cannot see the end of it, with a seat for everyone and plenty for all.',
     ]],
     ['Passover and the Lord\'s Supper', HEAVEN_REAL, [
@@ -681,7 +681,7 @@ $HEAVEN = [
       'Jesus\'s friends were troubled, because he had told them he would soon leave them. He comforted them: "Do not let your hearts be troubled. You believe in God; believe in Me as well. In My Father\'s house are many rooms… I am going there to prepare a place for you… I will come back and welcome you into My presence, so that you also may be where I am" (John 14:1–3).',
       '"Lord," said Thomas, "we do not know where You are going, so how can we know the way?" Jesus answered: "I am the way and the truth and the life. No one comes to the Father except through Me" (John 14:5–6).',
     ]],
-    ['The house', HEAVEN_IMAGINE, [
+    ['The house', HEAVEN_PAINTING, [
       'However many people arrive, there is always another room ready, with a light in the window and a bed made up.',
     ]],
     ['Homes for everyone', HEAVEN_REAL, [
@@ -705,7 +705,7 @@ $HEAVEN = [
       'After supper, Jesus and his disciples went to a garden on the Mount of Olives called Gethsemane. "Sit here while I pray," he told them (Mark 14:32). He was deeply troubled, because he knew he was about to suffer and die. He fell to the ground and prayed: "Abba, Father, all things are possible for You. Take this cup from Me. Yet not what I will, but what You will" (Mark 14:36).',
       'Three times he came back and found his friends asleep. Then Judas arrived with a crowd armed with swords and clubs. He greeted Jesus with a kiss, the signal for the men to seize him. Jesus did not fight back, and all his disciples ran away (Mark 14:43–50).',
     ]],
-    ['The chapel', HEAVEN_IMAGINE, [
+    ['The chapel', HEAVEN_PAINTING, [
       'A small round chapel with columns and a gold dome, where anyone can come in, sit quietly and pray.',
     ]],
     ['The olive trees of Gethsemane', HEAVEN_REAL, [
@@ -733,7 +733,7 @@ $HEAVEN = [
     ['A crown that lasts', HEAVEN_BIBLE, [
       'Winners at the ancient games received a crown of leaves. The apostle Paul wrote: "They do it for a crown that is perishable, but we do it for a crown that is imperishable" (1 Corinthians 9:25).',
     ]],
-    ['The arena', HEAVEN_IMAGINE, [
+    ['The arena', HEAVEN_PAINTING, [
       'In this arena the prizes never run out, and the cheers are for courage, kindness and fair play as much as for winning.',
     ]],
     ['The Pilate Stone', HEAVEN_REAL, [
@@ -762,7 +762,7 @@ $HEAVEN = [
     ['The way is open', HEAVEN_BIBLE, [
       'Jesus had said: "I am the good shepherd. The good shepherd lays down His life for the sheep" (John 10:11). Long before, Jacob dreamed of a stairway between earth and heaven (Genesis 28:12), and Jesus told his first followers that they would "see heaven open and the angels of God ascending and descending on the Son of Man" (John 1:51). Like a bridge, Jesus joins people to God.',
     ]],
-    ['The bridge', HEAVEN_IMAGINE, [
+    ['The bridge', HEAVEN_PAINTING, [
       'White marble arches carry a golden walkway between the floating islands, so no part of the city is ever cut off from another.',
     ]],
     ['The Church of the Holy Sepulchre', HEAVEN_REAL, [
@@ -787,7 +787,7 @@ $HEAVEN = [
       'At dawn on Sunday, the third day, Mary Magdalene and another Mary went to the tomb. Suddenly there was a great earthquake, and an angel of the Lord rolled away the stone and sat on it. The guards shook with fear. The angel said to the women: "Do not be afraid, for I know that you are looking for Jesus, who was crucified. He is not here; He has risen, just as He said! Come, see the place where He lay" (Matthew 28:5–6).',
       'The women ran to tell the disciples. Peter and another disciple ran to the tomb too, and found only the linen cloths lying there (John 20:3–8).',
     ]],
-    ['The materials', HEAVEN_IMAGINE, [
+    ['The materials', HEAVEN_PAINTING, [
       'White marble, shining gold and glowing pearls: everything in this city is made to last and made to be beautiful.',
     ]],
     ['Rolling-stone tombs', HEAVEN_REAL, [
@@ -815,7 +815,7 @@ $HEAVEN = [
       'Then he said to her, "Mary." She knew his voice at once and cried out, "Rabboni!", which means "Teacher." It was Jesus, alive! She went to the disciples with the news: "I have seen the Lord!" (John 20:16–18).',
       'This is the heart of the good news. As the apostle Paul later wrote: "Christ died for our sins according to the Scriptures… He was buried… He was raised on the third day according to the Scriptures" (1 Corinthians 15:3–4). Death could not hold him.',
     ]],
-    ['The garden', HEAVEN_IMAGINE, [
+    ['The garden', HEAVEN_PAINTING, [
       'Glowing white lilies line a long pool, and tall cypress trees stand along the walls. The Bible begins in a garden and ends in a garden city, and the best news of all began in a garden too.',
     ]],
     ['Easter', HEAVEN_REAL, [
@@ -843,7 +843,7 @@ $HEAVEN = [
       'For forty days after he rose, Jesus appeared to his followers and talked with them about the kingdom of God (Acts 1:3). Once he appeared to more than five hundred people at the same time (1 Corinthians 15:6). Thomas, who had doubted, saw his hands and cried, "My Lord and my God!" Jesus told him: "Blessed are those who have not seen and yet have believed" (John 20:28–29).',
       'Jesus gave his followers a great task: "Go and make disciples of all nations… And surely I am with you always, even to the end of the age" (Matthew 28:19–20). He told them to wait in Jerusalem for the Holy Spirit. "After He had said this, they watched as He was taken up, and a cloud hid Him from their sight" (Acts 1:9).',
     ]],
-    ['The island', HEAVEN_IMAGINE, [
+    ['The island', HEAVEN_PAINTING, [
       'Islands drift through the sky like boats, each with a little garden, a gazebo and a waterfall falling into the clouds below.',
     ]],
     ['Real clouds', HEAVEN_REAL, [
@@ -868,7 +868,7 @@ $HEAVEN = [
       '"About midnight Paul and Silas were praying and singing hymns to God, and the other prisoners were listening to them" (Acts 16:25). Suddenly an earthquake shook the prison, the doors flew open and everyone\'s chains came loose. The jailer thought the prisoners had escaped, but Paul called out: "Do not harm yourself! We are all here!"',
       'Trembling, the jailer asked: "Sirs, what must I do to be saved?" They answered: "Believe in the Lord Jesus and you will be saved, you and your household" (Acts 16:30–31). That same night he and his whole family were baptized, full of joy.',
     ]],
-    ['The workshop', HEAVEN_IMAGINE, [
+    ['The workshop', HEAVEN_PAINTING, [
       'Makers here build harps, trumpets and drums, and every instrument is finished by playing a song of praise.',
     ]],
     ['Philippi today', HEAVEN_REAL, [
@@ -900,7 +900,7 @@ $HEAVEN = [
     ['The pearl of great price', HEAVEN_BIBLE, [
       'Jesus once said: "The kingdom of heaven is like a merchant in search of fine pearls. When he found one very precious pearl, he went away and sold all he had and bought it" (Matthew 13:45–46).',
     ]],
-    ['The gate', HEAVEN_IMAGINE, [
+    ['The gate', HEAVEN_PAINTING, [
       'A giant shining pearl stands in a white marble wall between two golden towers. The gate is open all day and all night, and every visitor is greeted by name.',
     ]],
     ['How pearls grow', HEAVEN_REAL, [
@@ -918,14 +918,14 @@ $HEAVEN = [
 
 $WORLD_DATA['heaven'] = [
   'title'    => 'Heavenly City: the story of Jesus in 35 places',
-  'desc'     => 'Explore an imagined heavenly city of gold and light and follow the story of Jesus, as the Bible tells it, in 35 parts, with photos of the real places.',
-  'intro'    => 'An imagined city of gold and light, where the story of Jesus unfolds as you explore. Each of its 35 places tells one part of the Gospel, as the Bible tells it, from the first garden to the city of God.',
-  'note'     => 'The city and its art are imagined, inspired by the Bible\'s picture of the heavenly city in the Book of Revelation. Its story is the Gospel, the good news of Jesus, told in the Bible\'s own words with chapter and verse, so you can read it for yourself.',
+  'desc'     => 'Explore the awaited city of gold and light and follow the story of Jesus, as the Bible tells it, in 35 parts, with photos of the real places.',
+  'intro'    => 'The awaited city of gold and light, painted from the Bible\'s words, where the story of Jesus unfolds as you explore. Each of its 35 places tells one part of the Gospel, as the Bible tells it, from the first garden to the city of God.',
+  'note'     => 'The Bible promises a holy city, the new Jerusalem, that God\'s people await (Revelation 21:2). These paintings show it as an artist pictures it from the Bible\'s words. Its story is the Gospel, the good news of Jesus, told in the Bible\'s own words with chapter and verse, so you can read it for yourself.',
   'aka'      => 'Read it in the Bible',
   'akaLang'  => '',
   'pageTitle'=> '%s in the Heavenly City: the story of Jesus',
   'pageTitleShort' => '%s in the Heavenly City',
-  'aside'    => ['How to read these pages', 'Start with part 1 at the Tree of life and follow the links to each next part. Gospel sections tell the story of Jesus as the Bible tells it. Bible sections share more words from Scripture. Imagined sections describe the artist\'s city. Real world sections describe places, history and science today, with sources.'],
+  'aside'    => ['How to read these pages', 'Start with part 1 at the Tree of life and follow the links to each next part. Gospel sections tell the story of Jesus as the Bible tells it. Bible sections share more words from Scripture. In the painting sections describe the artist\'s picture of the city. Real world sections describe places, history and science today, with sources.'],
   'pageDesc' => ' Read this part of the story of Jesus, as the Bible tells it, with questions to talk about.',
   'pageDescShort' => ' A part of the story of Jesus, as the Bible tells it.',
   'sourcesIntro' => 'Bible quotations are from the Berean Standard Bible, which is in the public domain. The other facts on this page come from these sources:',
@@ -934,10 +934,10 @@ $WORLD_DATA['heaven'] = [
   'story'    => [
     'title' => 'The story of Jesus',
     'pageTitle' => 'The story of Jesus in 35 places: the Heavenly City',
-    'desc' => 'Follow the story of Jesus, as the Bible tells it, through 35 places in an imagined heavenly city: from the garden of Eden to the empty tomb and the city of God.',
+    'desc' => 'Follow the story of Jesus, as the Bible tells it, through 35 places in the awaited heavenly city: from the garden of Eden to the empty tomb and the city of God.',
     'lead' => 'Each place in this city tells one part of the story of Jesus, as the Bible tells it. Start with part 1 and follow the links from place to place.',
-    'intro' => 'The Gospel is the good news of Jesus. In this imagined city, each of the 35 places tells one part of his story, in order, in the Bible\'s own words with chapter and verse. Read one part a day, or the whole story at once.',
-    'note' => 'Bible quotations are from the Berean Standard Bible, which is in the public domain. The city and its art are imagined; the story is told as the Bible tells it.',
+    'intro' => 'The Gospel is the good news of Jesus. In the Heavenly City, each of the 35 places tells one part of his story, in order, in the Bible\'s own words with chapter and verse. Read one part a day, or the whole story at once.',
+    'note' => 'Bible quotations are from the Berean Standard Bible, which is in the public domain. The paintings are an artist\'s picture of the city the Bible promises; the story is told as the Bible tells it.',
   ],
   // Positions on the 6 x 6 map, from the back corner (0) to the front corner (35). Tall pieces stand at the back;
   // 'tree' is a decorative golden tree.

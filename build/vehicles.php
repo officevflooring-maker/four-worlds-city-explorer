@@ -284,10 +284,10 @@ $VEHICLES = [
 'green' => [
 'deer-sleigh' => [
   'name' => 'Deer sleigh', 'latin' => 'reindeer sleds', 'src' => 'vehicle/car_1.png',
-  'summary' => 'An imagined sleigh drawn by deer. In the real Arctic, reindeer have pulled sleds for centuries.',
-  'facts' => ['Imagined' => 'A flower-trimmed sleigh pulled by deer', 'Real' => 'Reindeer sleds in the Arctic', 'Why sleds' => 'Runners glide over snow', 'Reindeer' => 'The only widely domesticated deer'],
+  'summary' => 'A storybook sleigh drawn by deer. In the real Arctic, reindeer have pulled sleds for centuries.',
+  'facts' => ['In the picture' => 'A flower-trimmed sleigh pulled by deer', 'Real' => 'Reindeer sleds in the Arctic', 'Why sleds' => 'Runners glide over snow', 'Reindeer' => 'The only widely domesticated deer'],
   'sections' => [
-    ['The imagined sleigh', GREEN_IMAGINE, [
+    ['The sleigh in the picture', GREEN_DESIGN, [
       'In the Green World, deer pull a padded sleigh along forest paths, trimmed with flowers and lanterns. It needs no road, no fuel and no engine: just trained animals and a light vehicle.',
     ]],
     ['Real reindeer sleds', GREEN_REAL, [
@@ -298,7 +298,7 @@ $VEHICLES = [
       'Snowmobiles have replaced many reindeer sleds, but they are noisy and burn fuel. Some herders and tourism businesses still use reindeer, and people are testing electric snowmobiles for quieter travel in the wild.',
     ]],
   ],
-  'art' => 'This illustration shows a deer with antlers pulling a sleigh decorated with flowers. It is imagined: a sleigh in the forest would need snow.',
+  'art' => 'This illustration shows a deer with antlers pulling a sleigh decorated with flowers. It is a storybook scene: a real sleigh in the forest would need snow.',
   'look' => ['Find the lantern on the sleigh.', 'Compare the sleigh with the cart. What is different about how they touch the ground?'],
   'questions' => ['When is a sled better than a wheel?', 'What would it take to care for working animals well?', 'Which is better for a quiet forest: animals or electric vehicles?'],
   'words' => ['Runner' => 'The smooth strip a sled slides on.', 'Domesticated' => 'Tamed and bred by people over many generations.', 'Herder' => 'A person who looks after a herd of animals.'],
@@ -307,10 +307,10 @@ $VEHICLES = [
 ],
 'flower-cart' => [
   'name' => 'Flower cart', 'latin' => 'working horses', 'src' => 'vehicle/car_2.png',
-  'summary' => 'An imagined pony cart full of flowers. Real horses still work in some forests, where they do less damage than machines.',
-  'facts' => ['Imagined' => 'A pony cart carrying flowers to market', 'Real' => 'Horse logging in woodland', 'Why horses' => 'Lighter on soil than big machines', 'Clean city version' => 'Cargo bikes'],
+  'summary' => 'A storybook pony cart full of flowers. Real horses still work in some forests, where they do less damage than machines.',
+  'facts' => ['In the picture' => 'A pony cart carrying flowers to market', 'Real' => 'Horse logging in woodland', 'Why horses' => 'Lighter on soil than big machines', 'Clean city version' => 'Cargo bikes'],
   'sections' => [
-    ['The imagined cart', GREEN_IMAGINE, [
+    ['The cart in the picture', GREEN_DESIGN, [
       'A white pony pulls a cart overflowing with lavender and wildflowers to the market. The cart is light, with big wheels for soft paths.',
     ]],
     ['Real working horses', GREEN_REAL, [
@@ -329,11 +329,11 @@ $VEHICLES = [
 ],
 'mushroom-carriage' => [
   'name' => 'Mushroom carriage', 'latin' => 'vehicles made from plants', 'src' => 'vehicle/car_3.png',
-  'summary' => 'An imagined toadstool carriage. Real carmakers already use plant fibers, and in 1941 Ford showed a car with plant-based body panels.',
-  'facts' => ['Imagined' => 'A carriage shaped like a toadstool', 'Real (1941)' => 'Ford\'s "soybean car"', 'Real today' => 'Flax, hemp and kenaf in car parts', 'Being researched' => 'Mycelium materials'],
+  'summary' => 'A storybook toadstool carriage. Real carmakers already use plant fibers, and in 1941 Ford showed a car with plant-based body panels.',
+  'facts' => ['In the picture' => 'A carriage shaped like a toadstool', 'Real (1941)' => 'Ford\'s "soybean car"', 'Real today' => 'Flax, hemp and kenaf in car parts', 'Being researched' => 'Mycelium materials'],
   'sections' => [
-    ['The imagined carriage', GREEN_IMAGINE, [
-      'A small deer pulls a carriage with a red-and-white toadstool roof and glowing windows. Here we imagine growing vehicles rather than building them.',
+    ['The carriage in the picture', GREEN_DESIGN, [
+      'A small deer pulls a carriage with a red-and-white toadstool roof and glowing windows. Here we picture growing vehicles rather than building them.',
     ]],
     ['Real cars made from plants', GREEN_REAL, [
       'In 1941 Henry Ford showed a car whose body panels were made from a plastic that used soybeans and other plant fibers. It never went into production, but the idea lasted.',
@@ -548,7 +548,7 @@ $VEHICLES = [
       'They caught so many fish that their nets began to tear and two boats began to sink. "Do not be afraid," Jesus told Simon. "From now on you will catch men." So Simon, James and John "left everything and followed Him" (Luke 5:10–11).',
       'Later, on the same lake, a storm almost swamped their boat while Jesus slept. He got up and told the wind and the waves, "Be still!", and it was perfectly calm. "Who is this," they asked, "that even the wind and the sea obey Him?" (Mark 4:39–41).',
     ]],
-    ['The boat', HEAVEN_IMAGINE, [
+    ['The boat', HEAVEN_PAINTING, [
       'The swan boat glides just above the streets and gardens, and over the pools, carrying people wherever they want to go.',
     ]],
     ['A boat from Jesus\'s time', HEAVEN_REAL, [
@@ -575,7 +575,7 @@ $VEHICLES = [
       'At Passover time, Jesus came to Jerusalem riding a young donkey, just as the prophet Zechariah had written: "See, your King comes to you, gentle and riding on a donkey" (Matthew 21:5). A huge crowd spread their cloaks on the road, and others cut branches from the trees. They took palm branches and went out to meet him (John 12:13), shouting: "Hosanna to the Son of David! Blessed is He who comes in the name of the Lord! Hosanna in the highest!" (Matthew 21:9).',
       'Christians remember this day on Palm Sunday, a week before Easter.',
     ]],
-    ['The donkey', HEAVEN_IMAGINE, [
+    ['The donkey', HEAVEN_PAINTING, [
       'The donkey visits every street, and the fruit and flowers in its baskets are free for anyone who wants them.',
     ]],
     ['Donkeys in our world', HEAVEN_REAL, [
@@ -605,7 +605,7 @@ $VEHICLES = [
     ['Chariots of fire', HEAVEN_BIBLE, [
       'Long before, the prophet Elijah was taken up to heaven when "a chariot of fire with horses of fire appeared… and Elijah went up into heaven in a whirlwind" (2 Kings 2:11).',
     ]],
-    ['The chariot', HEAVEN_IMAGINE, [
+    ['The chariot', HEAVEN_PAINTING, [
       'No one in this city is ever in a hurry, so the golden chariot is for slow, happy rides, with room for a friend to sit beside you and talk.',
     ]],
     ['The kingdom of Kush', HEAVEN_REAL, [
@@ -634,7 +634,7 @@ $VEHICLES = [
     ['Clouds as chariots', HEAVEN_BIBLE, [
       'A psalm praises God for "making the clouds His chariot, walking on the wings of the wind" (Psalm 104:3).',
     ]],
-    ['The carriage', HEAVEN_IMAGINE, [
+    ['The carriage', HEAVEN_PAINTING, [
       'With no wheels, the carriage never bumps or rattles. It glides wherever its passengers want to go.',
     ]],
     ['Floating for real', HEAVEN_REAL, [

@@ -1,5 +1,5 @@
 // World sort (/play/world-sort/): pictures pop up one at a time, and the player sends each to its world (or to
-// long ago, today, a possible future or an imagined world) before the minute is up. Pictures come from the page
+// long ago, today, a possible future, the Green World or the Heavenly City) before the minute is up. Pictures come from the page
 // data in #sort-data; best scores stay in this browser only.
 (function () {
   'use strict';
@@ -12,7 +12,7 @@
   // The buttons for each game: [label, the worlds it takes, class for its color].
   var BINS = {
     world: ORDER.map(function (w) { return [data.worlds[w][0], [w], 'world-' + w]; }),
-    time: [['Long ago', ['egypt', 'roman', 'medieval'], 'bin-past'], ['Today', ['modern'], 'bin-today'], ['Possible future', ['future'], 'bin-future'], ['Imagined', ['green', 'heaven'], 'bin-imagined']]
+    time: [['Long ago', ['egypt', 'roman', 'medieval'], 'bin-past'], ['Today', ['modern'], 'bin-today'], ['Possible future', ['future'], 'bin-future'], ['Green World', ['green'], 'bin-nature'], ['Heavenly City', ['heaven'], 'bin-heaven']]
   };
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var store = {

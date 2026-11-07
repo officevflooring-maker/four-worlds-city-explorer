@@ -11,7 +11,7 @@ $cmCards = [
   'modern' => ['Modern Town', 'Modern Town: a town hall, a fountain, parks and tall buildings.'],
   'green' => ['Green World', 'Green World: a city that grows with the forest.'],
   'future' => ['Robotic Future', 'Robotic Future: glass domes, helper robots and a rocket.'],
-  'heaven' => ['Heavenly City', 'Heavenly City: an imagined city of gold and light.'],
+  'heaven' => ['Heavenly City', 'Heavenly City: the awaited city of gold and light.'],
 ];
 // A frame's size and see-through window, for the card's style.
 function cm_frame($name) {

@@ -40,11 +40,13 @@ function artwork_name($src) {
   return ['art' => '', 'build' => 'construction-', 'ground' => 'ground-', 'vehicle' => 'vehicle-'][$batch] . $stem;
 }
 
-// Badges that mark a section as real-world fact, imagined, speculative, or from the Bible. A Gospel section
+// Badges that mark a section as real-world fact, imagined, a nature design, the artist's painting, speculative, or from the Bible. A Gospel section
 // tells one part of the story of Jesus (Heavenly City), and its badge shows the part's number instead.
 const SECTION_TAGS = [
   'real'        => ['badge-fact', 'Real world'],
   'imagined'    => ['badge-art', 'Imagined'],
+  'design'      => ['badge-art', 'Nature design'],
+  'painting'    => ['badge-art', 'In the painting'],
   'speculative' => ['badge-spec', 'Possible future'],
   'history'     => ['badge-fact', 'History'],
   'gospel'      => ['badge-belief', 'Gospel'],

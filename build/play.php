@@ -122,7 +122,7 @@ foreach ([
   ['Picture-book stories', '/stories/', 'Page', 'A painted story in three chapters for every world.', 'stories picture book read aloud bedtime kids'],
   ['Teachers and families', '/teachers/', 'Page', 'Free lessons, projects and explainers for every grade.', 'teachers lessons school class'],
   ['Artwork', '/artwork/', 'Page', 'View, save and print every illustration, free under CC BY 4.0.', 'art pictures images download print free'],
-  ['About this project', '/about/', 'Page', 'What is real and what is imagined, privacy, accessibility and sources.', 'about privacy sources accessibility'],
+  ['About this project', '/about/', 'Page', 'What each world is, privacy, accessibility and sources.', 'about privacy sources accessibility'],
   ['Support this project', '/support/', 'Page', 'Help keep the site free, with no ads.', 'donate support give shop'],
   ['Shop', '/shop/', 'Page', 'Board games, posters and classroom packs for grown-ups, made from the worlds of this site.', 'shop buy store games posters packs printable'],
   ['Life RPG', '/life-rpg/', 'Shop', 'An app for grown-ups and teens: real-life goals become quests.', 'life rpg game app habits goals quests grown-ups parents teens buy'],
@@ -597,13 +597,13 @@ foreach ($quizPeople as $p) if ($p['t']) $sortItems[] = ['w' => $p['w'], 'n' => 
 $sortData = json_encode(['worlds' => $worldNames, 'items' => $sortItems], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
 $sortModes = game_modes([
   ['world', 'Which world?', 'Seven worlds, one minute. Send each picture home to its world.', [['egypt', 'pyramid'], ['future', 'hover-car']]],
-  ['time', 'Long ago, today or imagined?', 'Is it from long ago, from today, from a possible future, or from an imagined world?', [['roman', 'chariot'], ['green', 'mushroom-cottage']]],
+  ['time', 'Long ago, today or beyond?', 'Is it from long ago, from today, from a possible future, from the Green World or from the Heavenly City?', [['roman', 'chariot'], ['green', 'mushroom-cottage']]],
 ]);
-$sortExtras = game_extras('/play/world-sort/', 'A picture pops up: tap the world it belongs to, or in the second game, whether it is from long ago, today, a possible future or an imagined world. Sort as many as you can in one minute. On a keyboard, the number keys work too.',
-  'Telling history, today, the future and imagined worlds apart, by looking closely at buildings, people and vehicles.');
+$sortExtras = game_extras('/play/world-sort/', 'A picture pops up: tap the world it belongs to, or in the second game, whether it is from long ago, today, a possible future, the Green World or the Heavenly City. Sort as many as you can in one minute. On a keyboard, the number keys work too.',
+  'Telling history, today, the future, nature and heaven apart, by looking closely at buildings, people and vehicles.');
 page('/play/world-sort/', [
   'title' => 'World sort: a speed game about seven city worlds',
-  'desc' => h('A free speed game for kids: sort buildings, people and vehicles into the right world, or into long ago, today and imagined, before time runs out.'),
+  'desc' => h('A free speed game for kids: sort buildings, people and vehicles into the right world, or into long ago, today, the future, nature and heaven, before time runs out.'),
   'class' => 'play sort-page',
   'js' => ['sort'],
   'body' => <<<HTML
@@ -636,7 +636,7 @@ page('/play/world-sort/', [
 <script type="application/json" id="sort-data">{$sortData}</script>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['World sort', '/play/world-sort/']]),
-    learning('World sort', 'A speed game: sort buildings, people and vehicles into seven illustrated city worlds, or into long ago, today, a possible future and imagined worlds.', '/play/world-sort/', 'Telling history, today, the future and imagined worlds apart')],
+    learning('World sort', 'A speed game: sort buildings, people and vehicles into seven illustrated city worlds, or into long ago, today, a possible future, nature and heaven.', '/play/world-sort/', 'Telling history, today, the future, nature and heaven apart')],
 ]);
 
 // ---------- Picture puzzle: put a mixed-up picture back together (public/js/puzzle.js) ----------

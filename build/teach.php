@@ -351,7 +351,7 @@ $TEACH = [
       'Print the list of buildings from one world on this site. In groups, students sort each building into the categories above. Some fit in more than one; let them argue it out. Then ask: which category has the fewest buildings? What would happen if it disappeared?',
     ]],
     ['The same needs, every era', [
-      'Ancient Rome, a modern town, an imagined green city and a settlement on Mars all need the same basics. Only the technology changes. On Mars, even air must be made and recycled.',
+      'Ancient Rome, a modern town, a green city that grows with the forest and a settlement on Mars all need the same basics. Only the technology changes. On Mars, even air must be made and recycled.',
     ]],
   ],
   'faq' => [
@@ -657,7 +657,7 @@ $TEACH = [
       'What makes visitors gasp when they first arrive?',
     ]]],
     ['Use the Green World as a model', [
-      'Every building in this site\'s Green World answers one of these questions in a fantasy way, and each page shows the real-world idea behind it: seed vaults, living bridges, geothermal heat. Students can borrow the method: start with a real solution, then imagine how it could look in a world of their own.',
+      'Every building in this site\'s Green World answers one of these questions in a nature-inspired way, and each page shows the real-world idea behind it: seed vaults, living bridges, geothermal heat. Students can borrow the method: start with a real solution, then imagine how it could look in a world of their own.',
     ]],
     ['Avoiding stereotypes', [
       'Fantasy cultures are invented, so avoid copying real cultures as costumes or making any group simply "good" or "evil". Give every group real needs, skills and disagreements.',
@@ -999,7 +999,7 @@ $TEACH = [
   'quick' => 'The Heavenly City on this site tells the story of Jesus in 35 short parts, as the Bible tells it: from creation and God\'s promise of a Savior, through his birth, life, teaching, death and resurrection, to his promise to come again. Each part gives the Bible reference, a picture to talk about, questions and three key words.',
   'sections' => [
     ['How the story is organized', [
-      'Each of the 35 places in the imagined city tells one part of the Gospel, in order, in ten chapters: the promise, Jesus is born, growing up, Jesus begins his work, Jesus teaches, Jesus heals and welcomes, the last week, the cross and the empty tomb, the good news spreads, and everything new.',
+      'Each of the 35 places in the Heavenly City tells one part of the Gospel, in order, in ten chapters: the promise, Jesus is born, growing up, Jesus begins his work, Jesus teaches, Jesus heals and welcomes, the last week, the cross and the empty tomb, the good news spreads, and everything new.',
       'Every part quotes the Berean Standard Bible, which is in the public domain, so the verses can be printed and shared freely. Each page also has a real-world section about the places and history of the Bible, such as Bethlehem, the Sea of Galilee and Jerusalem.',
     ]],
     ['A six-week plan', [], ['list' => [
@@ -1026,7 +1026,7 @@ $TEACH = [
   ],
   'faq' => [
     ['Which Bible translation is quoted?', 'The Berean Standard Bible (BSB), which was placed in the public domain in 2023, so the quotations can be printed and shared freely.'],
-    ['Is the Heavenly City a real place?', 'No. The city and its art are imagined, inspired by the Bible\'s picture of the heavenly city in the Book of Revelation. The story itself is told as the Bible tells it, with chapter and verse.'],
+    ['Is the Heavenly City a real place?', 'The Bible teaches that it is: it promises a holy city, the new Jerusalem, that God\'s people await (Revelation 21:2). These paintings are an artist\'s picture of it from the Bible\'s words, so the look of each building is the artist\'s. The story itself is told as the Bible tells it, with chapter and verse.'],
     ['What ages is it for?', 'The parts are short and written for children from about 5 to 12. Read them aloud with younger children; older children can read the full Bible passages.'],
     ['Can families use it at home?', 'Yes. Reading one part a day takes 35 days, for example through Lent before Easter.'],
   ],
