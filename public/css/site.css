@@ -328,7 +328,23 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .print-sheet { display: none; }
 
 /* Artwork page */
-.art-world { padding-block: 1.5rem; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+.art-world { padding-block: 1.5rem; border-top: 1px solid var(--line); scroll-margin-top: calc(var(--art-top, 0px) + 4.5rem); }
+/* The world menu sticks under the header and gets smaller once you scroll into the pictures (artwork.js);
+   when stuck it is one line, which scrolls sideways on a phone. */
+.art-menu { position: sticky; top: var(--art-top, 0); z-index: 15; background: var(--bg); padding-block: .4rem .8rem; }
+.art-menu .world-links { margin: 0; }
+.art-menu .world-link { transition: padding .15s, font-size .15s; }
+.art-menu .world-link[aria-current] { background: var(--accent); color: #fff; }
+.art-menu.stuck { padding-block: .4rem; border-bottom: 1px solid var(--line); box-shadow: 0 6px 12px -8px rgb(20 32 57 / .25); }
+.art-menu.stuck .world-links { flex-wrap: nowrap; gap: .35rem; overflow-x: auto; scrollbar-width: none; }
+.art-menu.stuck .world-links::-webkit-scrollbar { display: none; }
+.art-menu.stuck .world-link { padding: .2rem .7rem; font-size: .85rem; white-space: nowrap; }
+.artwork .art-worlds .art-world:not([hidden]) { border-top: 0; }
+@media (max-width: 760px) {
+  .art-menu .world-links { flex-wrap: nowrap; gap: .4rem; overflow-x: auto; scrollbar-width: none; }
+  .art-menu .world-links::-webkit-scrollbar { display: none; }
+  .art-menu .world-link { white-space: nowrap; }
+}
 .art-world h2 .count { font: 600 .9rem var(--sans); color: var(--muted); margin-left: .4rem; }
 .art-world h3 { margin-top: 1.4rem; font-size: 1.15rem; color: var(--accent); }
 .art-grid { list-style: none; padding: 0; margin: .5rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .9rem; }

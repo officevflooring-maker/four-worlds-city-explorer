@@ -443,14 +443,15 @@ page('/artwork/', [
   'desc' => h("View, save and print all $artTotal illustrations from The Atlas of Cities: ancient, modern, green, futuristic and heavenly buildings, cranes, trees and landscapes."),
   'class' => 'artwork',
   'lightbox' => true,
+  'js' => ['artwork'],
   'body' => <<<HTML
 <section class="wrap section page-head">
   <h1>Artwork</h1>
-  <p class="lead">All {$artTotal} illustrations from the seven worlds. Select any picture to see it full size, open it full screen, save it or print it.</p>
-  <nav aria-label="Worlds"><ul class="world-links">{$artJump}</ul></nav>
+  <p class="lead">All {$artTotal} illustrations from the seven worlds. Pick a world from the menu, which stays at the top as you scroll. Select any picture to see it full size, open it full screen, save it or print it.</p>
   <p class="small">Free for everyone to use for any purpose under CC BY 4.0. Just credit "Illustration: The Atlas of Cities". <a href="/about/#artwork">More about reuse</a>. Files are full-size WebP images, which open in all modern browsers and most photo apps.</p>
 </section>
-<div class="wrap">{$artSections}</div>
+<div class="art-menu"><nav class="wrap" aria-label="Worlds"><ul class="world-links">{$artJump}</ul></nav></div>
+<div class="wrap art-worlds">{$artSections}</div>
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Artwork', '/artwork/']]),
     ['@context' => 'https://schema.org', '@type' => 'CollectionPage', 'name' => 'The Atlas of Cities artwork', 'url' => url('/artwork/'), 'inLanguage' => 'en',

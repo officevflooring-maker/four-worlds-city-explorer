@@ -658,13 +658,20 @@
       });
     });
     lb.querySelector('.lb-close').addEventListener('click', function () { lb.close(); });
-    lb.querySelector('.lb-prev').addEventListener('click', function () { show(at - 1); });
-    lb.querySelector('.lb-next').addEventListener('click', function () { show(at + 1); });
+    // Previous and next skip pictures in a hidden part of the page (the Artwork page shows one world at a time).
+    var step = function (d) {
+      for (var n = 1; n <= items.length; n++) {
+        var i = (at + d * n + items.length * n) % items.length;
+        if (!items[i].closest('[hidden]')) return show(i);
+      }
+    };
+    lb.querySelector('.lb-prev').addEventListener('click', function () { step(-1); });
+    lb.querySelector('.lb-next').addEventListener('click', function () { step(1); });
     lb.querySelector('.lb-print').addEventListener('click', function () { printImage(items[at].dataset.full, items[at].dataset.title); });
     full.addEventListener('click', function () { stage.requestFullscreen().catch(function () {}); });
     lb.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') show(at + 1);
-      if (e.key === 'ArrowLeft') show(at - 1);
+      if (e.key === 'ArrowRight') step(1);
+      if (e.key === 'ArrowLeft') step(-1);
     });
     lb.addEventListener('close', function () {
       if (document.fullscreenElement) document.exitFullscreen();
