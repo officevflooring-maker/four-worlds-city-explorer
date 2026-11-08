@@ -422,6 +422,8 @@ HTML,
     foreach ([$D['pageDesc'], $D['pageDescShort'] ?? ''] as $more) {
       if ($more !== '' && strlen($r['summary'] . $more) <= 160) { $desc = $r['summary'] . $more; break; }
     }
+    // Hand-written for pages people see in Google but don't click (build/seo.php).
+    if (isset(SEO["$w/$slug"])) [$pageTitle, $desc] = SEO["$w/$slug"];
     // On the world's map (or driving around it), so the page can point to it there.
     $onMap = in_array($slug, $D['map']) || !empty($r['vehicle']);
     $findH = $onMap ? '<a class="btn btn-quiet btn-sm" href="/worlds/' . $w . '/#find-' . $slug . '">Find it on the map</a> ' : '';

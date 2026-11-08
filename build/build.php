@@ -6,6 +6,7 @@ require __DIR__ . '/config.php';
 require __DIR__ . '/data.php';
 require __DIR__ . '/artwork.php';
 require __DIR__ . '/crosslinks.php';
+require __DIR__ . '/seo.php';         // hand-written search titles for some building pages
 require __DIR__ . '/teach.php';
 
 const PUB = __DIR__ . '/../public';
