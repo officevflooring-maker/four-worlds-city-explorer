@@ -1653,3 +1653,36 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
   .story-ch { break-inside: avoid; }
   .story-panel .lb { box-shadow: none; }
 }
+
+/* ---------- Home page rows of seven: no picture left alone on a last row ---------- */
+/* Vehicles: all seven on one road. On narrower screens the road scrolls sideways. */
+@media (min-width: 1000px) {
+  .road { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .6rem; }
+  /* era labels of one or two lines take the same room, so every vehicle stands at the same height on the road */
+  .road .era { min-height: 2.75em; display: flex; align-items: center; justify-content: center; }
+}
+@media (max-width: 999px) {
+  .band-road { background: var(--paper); }
+  .road { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(150px, 30%); overflow-x: auto;
+    scroll-snap-type: x mandatory; padding-bottom: .6rem; }
+  .road > li { scroll-snap-align: start; }
+}
+/* People: two rows of seven, each row standing on its own strip of ground. On phones the two rows scroll sideways
+   together, one world's pair of people per column. */
+.crowd { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .8rem 0; background: none; }
+.crowd > li { background: linear-gradient(180deg, transparent 70%, #e6dccb 70%); }
+.crowd > li:nth-child(7n+1) { border-radius: 14px 0 0 14px; }
+.crowd > li:nth-child(7n) { border-radius: 0 14px 14px 0; }
+@media (max-width: 760px) {
+  .crowd { grid-template-columns: none; grid-template-rows: auto auto; grid-auto-flow: column; grid-auto-columns: minmax(110px, 30%);
+    overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .4rem; }
+  .crowd > li { scroll-snap-align: start; border-radius: 0 !important; }
+}
+/* Tours: seven cards in two rows, four and three, the second row centered. */
+@media (min-width: 561px) {
+  .tour-grid:has(> li:nth-child(7):last-child) { display: flex; flex-wrap: wrap; justify-content: center; }
+  .tour-grid:has(> li:nth-child(7):last-child) > li { flex: 0 0 calc((100% - 3rem) / 4); }
+}
+@media (min-width: 561px) and (max-width: 860px) {
+  .tour-grid:has(> li:nth-child(7):last-child) > li { flex-basis: calc((100% - 1rem) / 2); }
+}

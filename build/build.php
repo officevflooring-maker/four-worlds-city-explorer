@@ -49,13 +49,17 @@ function tex($world, $name) { return "/assets/worlds/$world/$name.webp"; }
 function asset_v($file) { static $v = []; return $v[$file] ??= substr(md5_file(PUB . $file), 0, 8); }
 // Pictures can change under the same name (a new shop picture, a retaken screenshot), and browsers keep /assets/ for
 // 30 days (public/_headers). So every picture address in a page carries its file's version, as the CSS and JS do.
-// Addresses inside scripts (game data that JavaScript reads) stay as they are.
+// The games' JSON data (<script type="application/json">) and /data/search.json get versions too, since their
+// scripts use the addresses as they are; other scripts (JSON-LD, code) stay as they are.
+function version_paths($s) {
+  return preg_replace_callback('~(?<=["\s,(])/assets/[^"\s,?)]+\.(?:webp|jpe?g|png|svg|gif)(?=[\s",)])~',
+    fn($m) => is_file(PUB . $m[0]) ? $m[0] . '?v=' . asset_v($m[0]) : $m[0], $s);
+}
 function version_assets($html) {
   $parts = preg_split('~(<script\b.*?</script>)~s', $html, -1, PREG_SPLIT_DELIM_CAPTURE);
   foreach ($parts as $i => $part) {
-    if ($i % 2) continue;
-    $parts[$i] = preg_replace_callback('~(?<=["\s,(])/assets/[^"\s,?)]+\.(?:webp|jpe?g|png|svg|gif)(?=[\s",)])~',
-      fn($m) => is_file(PUB . $m[0]) ? $m[0] . '?v=' . asset_v($m[0]) : $m[0], $part);
+    if ($i % 2 && !str_starts_with($part, '<script type="application/json"')) continue;
+    $parts[$i] = version_paths($part);
   }
   return implode('', $parts);
 }

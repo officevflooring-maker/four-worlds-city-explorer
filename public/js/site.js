@@ -284,6 +284,8 @@
   }
 
   // ---------- Badges: earned by exploring and playing (passport page), with a note when one is new ----------
+  // Change THUMBS_V when a badge's thumbnail is redrawn, so browsers drop their 30-day copy.
+  var THUMBS_V = '20261107';
   var BADGES = [
     ['first', 'First stamp', 'Open any place page.', 'modern/people-3'],
     ['traveler', 'World traveler', 'Visit a place in all seven worlds.', 'roman/chariot'],
@@ -325,7 +327,7 @@
     BADGES.forEach(function (b) {
       var li = make('li', 'medal' + (got[b[0]] ? ' got' : ''));
       var art = make('span', 'medal-art'), im = make('img');
-      im.src = '/assets/thumbs/' + b[3] + '.webp'; im.alt = ''; im.loading = 'lazy';
+      im.src = '/assets/thumbs/' + b[3] + '.webp?v=' + THUMBS_V; im.alt = ''; im.loading = 'lazy';
       art.appendChild(im);
       li.append(art, make('span', 'medal-name', b[1]), make('span', 'medal-how', got[b[0]] ? 'Earned!' : b[2]));
       box.appendChild(li);
@@ -341,7 +343,7 @@
     var t = make('div', 'toast');
     t.setAttribute('role', 'status');
     var im = make('img');
-    im.src = '/assets/thumbs/' + list[0][3] + '.webp'; im.alt = '';
+    im.src = '/assets/thumbs/' + list[0][3] + '.webp?v=' + THUMBS_V; im.alt = '';
     var tx = make('p', '', list.length === 1 ? 'New badge: ' + names[0] + '!' : 'New badges: ' + names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] + '!');
     var a = make('a', '', 'See your badges');
     a.href = '/play/passport/#badges-h';

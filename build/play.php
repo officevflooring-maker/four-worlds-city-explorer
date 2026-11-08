@@ -146,7 +146,7 @@ foreach ([
 $json = [];
 foreach ($SEARCH as [$n, $u, $y, $w, $t, $d, $k]) $json[] = ['n' => $n, 'u' => $u, 'y' => $y, 'w' => $w, 't' => $t[0] ?? '', 'd' => $d, 'k' => search_words($k)];
 @mkdir(PUB . '/data', 0777, true);
-file_put_contents(PUB . '/data/search.json', json_encode(['worlds' => array_map(fn($W) => $W['name'], $WORLDS), 'items' => $json], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+file_put_contents(PUB . '/data/search.json', version_paths(json_encode(['worlds' => array_map(fn($W) => $W['name'], $WORLDS), 'items' => $json], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)));
 echo "wrote /data/search.json (" . count($json) . " entries)\n";
 
 // ---------- Search page: everything A to Z, filtered as you type ----------
