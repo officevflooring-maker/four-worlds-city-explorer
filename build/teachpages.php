@@ -125,12 +125,24 @@ foreach (HOMESCHOOL_SUBJECTS as [$label, $slugs]) {
   }
   $subjectBlocks .= '<section class="cat" aria-label="' . h($label) . '"><h3>' . h($label) . '</h3><ul class="guide-grid">' . $cards . '</ul></section>';
 }
+// More Bible lessons on our sister site, Every Stone Speaks (only pages that are live there).
+$sisterCards = '';
+foreach ([
+  ['leaders/', 'Lesson plans · Ages 5 to 12', 'Seven Sunday school lessons', '40-minute lesson plans, each with a memory verse, a picture walk, an activity and a prayer. They work at the kitchen table too.'],
+  ['jesus/', 'Bible story · All ages', 'The life of Jesus', 'From the manger to the empty tomb, told with pictures of Roman buildings like the ones of His time.'],
+  ['i-am/', 'Bible lesson · Ages 5 to 12', 'The seven "I am" sayings of Jesus', 'The bread of life, the light of the world, the good shepherd and more, each with a picture, a verse and a question.'],
+  ['stories/', 'Picture stories · All ages', 'Where is Jesus in this story?', 'Seven stories told in three paintings each, with a Bible verse, a question and a prayer.'],
+  ['god-with-us/', 'Bible lesson · Ages 5 to 12', 'Where God lives with His people', 'The garden, the tent, the temple, Jesus, the church and the new city, with a guide for the parent or leader.'],
+  ['memory-verses/', 'Printable · Free', 'Bible memory verse cards', '12 verses from the Berean Standard Bible, each with a picture. Print, cut apart and learn one a week.'],
+  ['advent/', 'Advent · Families', 'Advent calendar for kids', '25 days of God\'s promises, from the first garden to the manger, each with a reading, a question and a prayer.'],
+] as [$path, $tag, $title, $text]) $sisterCards .= '<li class="guide-card"><a href="' . SISTER_URL . $path . '"><span class="tag">' . h($tag) . '</span><span class="guide-title">' . h($title) . '</span><span class="what">' . h($text) . '</span></a></li>';
+$sisterHome = SISTER_URL;
 $hsFaq = [
   ['Is it free for homeschool families?', 'Yes. Every page, lesson guide, worksheet, tour and game is free, with no account. The shop sells optional printable games and packs, and everything else stays free.'],
   ['What ages is it for?', 'Most of it suits ages 8 to 14 (grades 3 to 8). Each lesson guide lists its grades: the Bible lesson starts at kindergarten, and a few guides go up to grade 12.'],
   ['Does my child need an account or an email?', 'No. Nothing asks for a name or an email. Passport stamps, game scores and the city your child builds stay in your own browser.'],
   ['Can we use it in a co-op?', 'Yes. The lesson guides and worksheets are free to print and share for teaching, for one family or a whole group. Please credit The Atlas of Cities.'],
-  ['Is there Bible teaching?', 'Yes. The Heavenly City tells the story of Jesus as the Bible tells it, in 35 parts from place to place, with verses from the Berean Standard Bible. The Bible lesson guide turns it into a six-week plan.'],
+  ['Is there Bible teaching?', 'Yes. The Heavenly City tells the story of Jesus as the Bible tells it, in 35 parts from place to place, with verses from the Berean Standard Bible. The Bible lesson guide turns it into a six-week plan. Our sister site, Every Stone Speaks, has more free Bible lessons for kids 5 to 12, built from the same pictures.'],
   ['Does it work on a tablet or a Chromebook?', 'Yes. It runs in any web browser, on phones, tablets, Chromebooks and computers, with nothing to install.'],
 ];
 $faqHtml = implode('', array_map(fn($f) => '<div class="faq-item"><h3>' . h($f[0]) . '</h3><p>' . h($f[1]) . '</p></div>', $hsFaq));
@@ -161,6 +173,11 @@ page('/teachers/homeschool/', [
 <section class="wrap section" aria-labelledby="subj-h">
   <h2 id="subj-h">Lessons by subject</h2>
   {$subjectBlocks}
+</section>
+<section class="wrap section" aria-labelledby="hs-sister-h">
+  <h2 id="hs-sister-h">More Bible lessons</h2>
+  <p>Our sister site, <a href="{$sisterHome}">Every Stone Speaks</a>, uses pictures from all seven worlds for free Bible lessons for kids 5 to 12, where every building points to Jesus. No sign-up there either.</p>
+  <ul class="guide-grid">{$sisterCards}</ul>
 </section>
 <section class="wrap tools" aria-labelledby="hs-tools-h">
   <h2 id="hs-tools-h">Printables and games</h2>
