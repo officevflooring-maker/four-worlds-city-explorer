@@ -66,6 +66,13 @@ function story_pager($w, $slug, $pages) {
     . '<a href="/worlds/' . $w . '/story/" class="pager-all">The whole story</a>' . $link($slugs[$k + 1] ?? null, 'next') . '</nav>';
 }
 
+// A box linking to our sister site, Every Stone Speaks (SISTER_URL), from a world's 'sister' entry: [heading, text, link text].
+function sister_box($D) {
+  if (empty($D['sister'])) return '';
+  [$head, $text, $label] = $D['sister'];
+  return '<aside class="panel aside-note" aria-labelledby="sister-h"><h3 id="sister-h">' . h($head) . '</h3><p>' . h($text) . ' <a href="' . SISTER_URL . '">' . h($label) . '</a></p></aside>';
+}
+
 // The story's contents page, /worlds/{world}/story/: every part in order, chapter by chapter.
 function story_page($w, $pages) {
   global $WORLDS, $WORLD_DATA;
@@ -90,6 +97,7 @@ function story_page($w, $pages) {
   $titleH = h($S['title']);
   $introH = h($S['intro']);
   $noteH = h($S['note']);
+  $sister = sister_box($D);
   $count = count($pages);
   page("/worlds/$w/story/", [
     'title' => $S['pageTitle'],
@@ -107,6 +115,7 @@ function story_page($w, $pages) {
   <p><a class="btn" href="/worlds/{$w}/{$first}/">Start with part 1</a> <a class="btn btn-quiet" href="/worlds/{$w}/">See the city map</a></p>
   {$chapters}
   <p class="setting-note">{$noteH}</p>
+  {$sister}
 </section>
 HTML,
     'ld' => [crumbs([['Home', '/'], [$label, "/worlds/$w/"], [$S['title'], "/worlds/$w/story/"]]),
@@ -240,6 +249,7 @@ function full_world($w) {
   $roadTex = tex($w, 'ground-crossroads');
   $introH = h($D['intro']);
   $noteH = h($D['note']);
+  $sister = sister_box($D);
   $aside = empty($D['aside']) ? '' : '<aside class="panel aside-note" aria-labelledby="aside-h"><h3 id="aside-h">' . h($D['aside'][0]) . '</h3><p>' . h($D['aside'][1]) . '</p></aside>';
   $itemList = [];
   foreach (array_keys($pages) as $k => $slug) $itemList[] = ['@type' => 'ListItem', 'position' => $k + 1, 'name' => $pages[$slug]['name'], 'url' => url("/worlds/$w/$slug/")];
@@ -289,7 +299,7 @@ function full_world($w) {
   </div>
   <div class="wrap">
     <p class="setting-note">{$noteH}</p>
-    {$aside}
+    {$aside}{$sister}
   </div>
 </section>
 

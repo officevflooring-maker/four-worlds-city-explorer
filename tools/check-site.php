@@ -1,8 +1,8 @@
 <?php
 // Checks every generated page in public/: internal links and images resolve to real files,
 // images have alt text, each page has one h1, a title and a description, and no page except
-// /credits/ and /support/ links to other websites (the shop's Buy links to the store's checkout and
-// Life RPG's own address are fine). The same checks as the first version of check-site.sh, in one
+// /credits/ and /support/ links to other websites (the shop's Buy links to the store's checkout, Life RPG's own
+// address and our sister site, SISTER_URL, are fine). The same checks as the first version of check-site.sh, in one
 // PHP process, so it runs in seconds. Usage: php tools/check-site.php
 $pub = realpath(__DIR__ . '/../public');
 $config = file_get_contents(__DIR__ . '/../build/config.php');
@@ -11,6 +11,7 @@ $site = $m[1];
 preg_match("~const STORE_URL *= *'([^']+)~", $config, $m);
 $linksOut = [$site, $m[1] . '/checkout/buy/', 'creativecommons.org/licenses/by/4.0'];
 if (preg_match("~'open' *=> *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
+if (preg_match("~const SISTER_URL *= *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
 $fail = 0; $n = 0; $pages = 0;
 $exists = [];
 $ok = function ($r) use ($pub, &$exists) {

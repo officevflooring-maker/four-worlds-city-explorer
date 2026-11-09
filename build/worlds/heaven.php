@@ -926,6 +926,8 @@ $WORLD_DATA['heaven'] = [
   'pageTitle'=> '%s in the Heavenly City: the story of Jesus',
   'pageTitleShort' => '%s in the Heavenly City',
   'aside'    => ['How to read these pages', 'Start with part 1 at the Tree of life and follow the links to each next part. Gospel sections tell the story of Jesus as the Bible tells it. Bible sections share more words from Scripture. In the painting sections describe the artist\'s picture of the city. Real world sections describe places, history and science today, with sources.'],
+  // A box on the world page and the story page that links to our sister site (SISTER_URL): [heading, text, link text].
+  'sister'   => ['More Bible lessons for kids', 'Our sister site, Every Stone Speaks, uses pictures from all seven worlds for free Bible lessons for kids 5 to 12, their families and Sunday school teachers, where every building points to Jesus. It also has an Advent walk for December.', 'Visit Every Stone Speaks'],
   'pageDesc' => ' Read this part of the story of Jesus, as the Bible tells it, with questions to talk about.',
   'pageDescShort' => ' A part of the story of Jesus, as the Bible tells it.',
   'sourcesIntro' => 'Bible quotations are from the Berean Standard Bible, which is in the public domain. The other facts on this page come from these sources:',

@@ -5,6 +5,9 @@ const SITE_URL  = 'https://atlasofcities.org';   // the site's domain, served by
 const SITE_NAME = 'The Atlas of Cities';
 const SITE_TAGLINE = 'Past, Present and Imagined';
 const SITE_DESC = 'Explore seven illustrated cities, from ancient Egypt, Rome and a medieval town to a modern town, a green forest city, Mars and a heavenly city, and learn how a city works.';
+// Our sister site: Bible lessons for kids that use these pictures (its own repo, every-stone-speaks). The footer,
+// the About page, the Heavenly City pages and the Bible lesson guide link to it.
+const SISTER_URL = 'https://everystonespeaks.com/';
 // Our store (Lemon Squeezy). Every 'buy' link below must be a checkout link from it: in the store, open the product,
 // click Share and copy the link. The build stops on any other link.
 const STORE_URL = 'https://theatlasofcities.lemonsqueezy.com';

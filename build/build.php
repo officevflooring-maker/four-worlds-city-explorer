@@ -127,6 +127,7 @@ function page($path, $o) {
     if ($wc) $nav .= $li; else $navMore .= $li;
   }
   $year = substr(LASTMOD, 0, 4);
+  $sister = SISTER_URL;
   // Shared full-screen viewer for any page with .lb image buttons (Roman pages, Artwork).
   $lightbox = empty($o['lightbox']) ? '' : <<<HTML
 <dialog class="lightbox" aria-labelledby="lb-title">
@@ -197,7 +198,7 @@ HTML;
     <img class="footer-logo" src="/assets/brand/atlas-emblem-200.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w" sizes="110px" width="200" height="192" alt="" loading="lazy" decoding="async">
     <div>
       <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work, for classrooms and <a href="/teachers/homeschool/">homeschool families</a>.</p>
-      <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/shop/">Shop</a></p>
+      <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/shop/">Shop</a> · Sister site: <a href="{$sister}">Every Stone Speaks</a>, Bible lessons for kids</p>
       <p class="small">Illustrations &copy; {$year} The Atlas of Cities, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
     </div>
   </div>
@@ -302,6 +303,7 @@ foreach ($WORLD_DATA as $w => $D) {
   foreach ($D['sources'] as $s) $srcList .= '<li>' . h($s) . '</li>';
   $srcList .= '</ul>';
 }
+$sister = SISTER_URL;
 page('/about/', [
   'title' => 'About, privacy and artwork',
   'desc' => h('About The Atlas of Cities: a free educational website with no accounts, ads or tracking. Privacy, accessibility, artwork reuse and sources.'),
@@ -322,6 +324,7 @@ page('/about/', [
     <li><span class="badge badge-spec">Possible future</span> ideas being researched or proposed, which may or may not happen.</li>
   </ul>
   <p>The <strong>Heavenly City</strong> is the holy city the Bible promises, the new Jerusalem, that God's people await (Revelation 21:2). Its paintings are an artist's picture of it from the Bible's words. As you explore it, its <span class="badge badge-belief">Gospel</span> sections tell the story of Jesus in 35 parts, as the Bible tells it, with chapter and verse, and its <span class="badge badge-belief">Bible</span> sections share more words from Scripture. A few Green World pages also share Bible verses about God the Creator. Bible quotations are from the Berean Standard Bible, which is in the public domain.</p>
+  <p id="sister">Our sister site, <a href="{$sister}">Every Stone Speaks</a>, uses pictures from all seven worlds for free Bible lessons for kids, families and Sunday schools: a walk through seven cities, from the first garden to the city God is preparing, where every building points to Jesus.</p>
 
   <h2 id="privacy">Privacy</h2>
   <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>

@@ -1030,6 +1030,8 @@ $TEACH = [
     ['What ages is it for?', 'The parts are short and written for children from about 5 to 12. Read them aloud with younger children; older children can read the full Bible passages.'],
     ['Can families use it at home?', 'Yes. Reading one part a day takes 35 days, for example through Lent before Easter.'],
   ],
+  // A line under the quick answer that links to our sister site (SISTER_URL).
+  'sister' => 'seven more Bible lessons for kids, where every building points to Jesus, and a 25-day Advent walk for December.',
   'links' => ['heaven/tree-of-life', 'heaven/welcome-hall', 'heaven/dove-statue', 'heaven/sharing-pavilion', 'heaven/sky-bridge', 'heaven/garden-of-light'],
   'sources' => ['bsb'],
 ],

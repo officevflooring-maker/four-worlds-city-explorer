@@ -251,6 +251,7 @@ foreach ($slugsT as $k => $slug) {
   $time = h($t['time']);
   $subjects = h($t['subjects']);
   $try = isset(TEACH_PLAY[$slug]) ? '<p class="try-it"><span class="badge badge-art">Try it online</span> <a href="' . TEACH_PLAY[$slug][0] . '">' . h(TEACH_PLAY[$slug][1]) . '</a>. ' . h(TEACH_PLAY[$slug][2]) . '</p>' : '';
+  if (!empty($t['sister'])) $try .= '<p class="try-it"><span class="badge badge-belief">More Bible lessons</span> <a href="' . SISTER_URL . '">Every Stone Speaks</a>, our sister site: ' . h($t['sister']) . '</p>';
   page("/teachers/$slug/", [
     'title' => $t['title'],
     'desc' => h($t['desc']),
