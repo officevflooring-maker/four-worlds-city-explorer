@@ -128,13 +128,15 @@ foreach (HOMESCHOOL_SUBJECTS as [$label, $slugs]) {
 // More Bible lessons on our sister site, Every Stone Speaks (only pages that are live there).
 $sisterCards = '';
 foreach ([
-  ['leaders/', 'Lesson plans · Ages 5 to 12', 'Seven Sunday school lessons', '40-minute lesson plans, each with a memory verse, a picture walk, an activity and a prayer. They work at the kitchen table too.'],
+  ['lessons/', 'All lessons · Ages 5 to 12', 'Bible lessons in order', 'From creation to the new city: the walk in seven chapters, then where God lives, the "I am" sayings and Advent.'],
+  ['leaders/','Lesson plans · Ages 5 to 12', 'Seven Sunday school lessons', '40-minute lesson plans, each with a memory verse, a picture walk, an activity and a prayer. They work at the kitchen table too.'],
   ['jesus/', 'Bible story · All ages', 'The life of Jesus', 'From the manger to the empty tomb, told with pictures of Roman buildings like the ones of His time.'],
   ['i-am/', 'Bible lesson · Ages 5 to 12', 'The seven "I am" sayings of Jesus', 'The bread of life, the light of the world, the good shepherd and more, each with a picture, a verse and a question.'],
   ['stories/', 'Picture stories · All ages', 'Where is Jesus in this story?', 'Seven stories told in three paintings each, with a Bible verse, a question and a prayer.'],
   ['god-with-us/', 'Bible lesson · Ages 5 to 12', 'Where God lives with His people', 'The garden, the tent, the temple, Jesus, the church and the new city, with a guide for the parent or leader.'],
   ['memory-verses/', 'Printable · Free', 'Bible memory verse cards', '12 verses from the Berean Standard Bible, each with a picture. Print, cut apart and learn one a week.'],
   ['advent/', 'Advent · Families', 'Advent calendar for kids', '25 days of God\'s promises, from the first garden to the manger, each with a reading, a question and a prayer.'],
+  ['printables/', 'Printables', 'Printable Bible activities', 'Free memory verse cards, plus printable packs with lessons, games, puzzles and stories for home, co-op or Sunday school.'],
 ] as [$path, $tag, $title, $text]) $sisterCards .= '<li class="guide-card"><a href="' . SISTER_URL . $path . '"><span class="tag">' . h($tag) . '</span><span class="guide-title">' . h($title) . '</span><span class="what">' . h($text) . '</span></a></li>';
 $sisterHome = SISTER_URL;
 $hsFaq = [
