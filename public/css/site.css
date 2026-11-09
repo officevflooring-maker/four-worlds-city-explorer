@@ -414,7 +414,9 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 }
 
 /* Teachers & Schools */
-.guide-grid { list-style: none; padding: 0; margin: 1rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+/* Cards grow to fill their row, so a short last row (or a group of two) leaves no empty slots. */
+.guide-grid { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 1rem; }
+.guide-grid > li { flex: 1 1 240px; }
 .guide-card a { display: flex; flex-direction: column; gap: .35rem; height: 100%; background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--brand); border-radius: var(--radius); padding: 1rem 1.1rem; color: var(--ink); text-decoration: none; }
 .guide-card a:hover { box-shadow: 0 8px 22px rgb(0 0 0 / .1); }
 .guide-card .tag { --accent: var(--brand); margin: 0; }
@@ -450,15 +452,18 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .band { background: var(--paper); border-block: 1px solid var(--line); padding-block: clamp(2rem, 1.2rem + 3vw, 3.5rem); }
 
 
-.band-road { background: linear-gradient(180deg, var(--paper) 0 60%, #d9cdb6 60% 62%, #8f8a84 62% 78%, #d9cdb6 78% 80%, var(--paper) 80%); }
-.road { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; }
-.road a { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: var(--ink); }
-.road img { width: 88%; transition: transform .3s; filter: drop-shadow(0 10px 8px rgb(0 0 0 / .25)); }
+/* Vehicles stand on one road drawn under their wheels; names and worlds sit below the road, all on one line. */
+.road { --road-gap: 1rem; list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 var(--road-gap); }
+.road a { display: flex; flex-direction: column; align-items: center; height: 100%; text-align: center; text-decoration: none; color: var(--ink); }
+.road img { position: relative; z-index: 1; width: 88%; margin-top: .3rem; transition: transform .3s; filter: drop-shadow(0 10px 8px rgb(0 0 0 / .25)); }
 .road a:hover img { transform: translateX(6%); }
 .era { font: 700 .78rem/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--accent); padding: .4rem .7rem; border-radius: 999px; }
+.road .era { height: 2.6rem; display: flex; align-items: center; justify-content: center; }
 .veh-name, .p-name { font: 700 1.05rem/1.2 var(--serif); color: var(--accent); margin-top: .2rem; }
-.road .veh-name { background: var(--paper); padding: .1rem .5rem; border-radius: 6px; }
-.road .what { background: var(--paper); padding: 0 .5rem; border-radius: 6px; font-size: .88rem; }
+.road .veh-name { align-self: stretch; margin: -30px calc(var(--road-gap) / -2) 0; padding-top: 42px;
+  background: linear-gradient(#d9cdb6 0 4px, #8f8a84 4px 26px, #d9cdb6 26px 30px, transparent 30px); }
+.road .what { font-size: .88rem; color: var(--muted); }
+.road-more { text-align: center; margin: 0; }
 
 .crowd { list-style: none; padding: 0; margin: 0 0 1.2rem; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .6rem;
   background: linear-gradient(180deg, transparent 70%, #e6dccb 70%); border-radius: 14px; }
@@ -518,7 +523,6 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 @media (max-width: 860px) {
   .hero3-inner, .split, .tour-head { grid-template-columns: minmax(0, 1fr); }
   .road { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .band-road { background: var(--paper); }
   .stops::before { display: none; }
   .stop { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
   .stop-art { max-width: 260px; margin-inline: auto; }
@@ -1305,7 +1309,10 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .shop-faq p { margin: .5rem 0 0; color: #2f3a48; }
 .shop-again { background: var(--cream); text-align: center; }
 .shop-again h2 { margin: 0 0 .4rem; }
-.shop-cards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 1.2rem; }
+/* Cards grow to fill their row, so a short last row leaves no empty slots; a shelf of up to five is one row on wide screens. */
+.shop-cards { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.shop-cards > li { flex: 1 1 min(260px, 100%); }
+@media (min-width: 1000px) { .shop-cards[style] { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); } }
 .shop-card a { display: flex; flex-direction: column; height: 100%; background: var(--paper); color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .shop-card a:hover .shop-name { text-decoration: underline; }
 .shop-card-pic { aspect-ratio: 16 / 9; background: var(--cream); display: grid; place-items: center; overflow: hidden; }
@@ -1657,12 +1664,10 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 /* ---------- Home page rows of seven: no picture left alone on a last row ---------- */
 /* Vehicles: all seven on one road. On narrower screens the road scrolls sideways. */
 @media (min-width: 1000px) {
-  .road { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .6rem; }
-  /* era labels of one or two lines take the same room, so every vehicle stands at the same height on the road */
-  .road .era { min-height: 2.75em; display: flex; align-items: center; justify-content: center; }
+  /* era labels of one or two lines all take 2.6rem (set above), so every vehicle stands at the same height on the road */
+  .road { grid-template-columns: repeat(7, minmax(0, 1fr)); --road-gap: .6rem; }
 }
 @media (max-width: 999px) {
-  .band-road { background: var(--paper); }
   .road { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(150px, 30%); overflow-x: auto;
     scroll-snap-type: x mandatory; padding-bottom: .6rem; }
   .road > li { scroll-snap-align: start; }
@@ -1685,4 +1690,17 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 }
 @media (min-width: 561px) and (max-width: 860px) {
   .tour-grid:has(> li:nth-child(7):last-child) > li { flex-basis: calc((100% - 1rem) / 2); }
+}
+
+/* ---------- Home world cards: the seventh card, alone on its row, lies across the whole row ---------- */
+/* Picture on the left, as wide as one card above it; words on the right. */
+@media (min-width: 1061px) {
+  .wcards > .wcard:last-child:nth-child(3n+1) { grid-column: 1 / -1; flex-direction: row; }
+  .wcards > .wcard:last-child:nth-child(3n+1) .wcard-top { flex: 0 0 calc((100% - 2.4rem) / 3); }
+  .wcards > .wcard:last-child:nth-child(3n+1) .wcard-text { border-top: 0; border-left: 5px solid var(--accent); justify-content: center; padding: 1.4rem 1.8rem; }
+}
+@media (min-width: 561px) and (max-width: 1060px) {
+  .wcards > .wcard:last-child:nth-child(2n+1) { grid-column: 1 / -1; flex-direction: row; }
+  .wcards > .wcard:last-child:nth-child(2n+1) .wcard-top { flex: 0 0 calc((100% - 1.2rem) / 2); }
+  .wcards > .wcard:last-child:nth-child(2n+1) .wcard-text { border-top: 0; border-left: 5px solid var(--accent); justify-content: center; padding: 1.4rem 1.8rem; }
 }

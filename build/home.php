@@ -187,7 +187,7 @@ page('/', [
   <div class="wrap">
     <div class="sec-head"><h2 id="road-h">Getting around, through time</h2><p>Every city needs to move people and goods. Follow the road from Roman chariots to floating cars.</p></div>
     <ol class="road">{$road}</ol>
-    <p><a class="btn btn-quiet" href="/compare/#goods">Compare how goods are moved</a></p>
+    <p class="road-more"><a class="btn" href="/compare/#goods">Compare how goods are moved <span aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>
 

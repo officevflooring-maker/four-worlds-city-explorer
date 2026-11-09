@@ -49,7 +49,10 @@ function shop_card($slug) {
 function shop_cards($except = '', $only = null) {
   global $SHOP_INFO;
   $slugs = $only ?? array_keys($SHOP_INFO);
-  return '<ul class="shop-cards">' . implode('', array_map('shop_card', array_filter($slugs, fn($s) => $s !== $except))) . '</ul>';
+  $slugs = array_filter($slugs, fn($s) => $s !== $except);
+  // a shelf of up to five stands in one row on wide screens (--n columns), so no card is left alone
+  $n = count($slugs) <= 5 ? ' style="--n:' . count($slugs) . '"' : '';
+  return '<ul class="shop-cards"' . $n . '>' . implode('', array_map('shop_card', $slugs)) . '</ul>';
 }
 
 function shop_steps($steps) {
