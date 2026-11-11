@@ -44,8 +44,8 @@ const SHOP = [
   'dominoes'       => ['price' => '$3.99', 'etsy' => '4615196434', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/4e6e72b2-052e-4a82-bb3d-ccbf658613f2'],
   'storybook'      => ['price' => '$4.99', 'etsy' => '4615198120', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/445f06f5-4b06-407c-95fb-b2ee94158a49'],
   // the two packs (owner, Nov 11, 2026: $34.99 and $14.99); on Etsy since then; their store links come when the store is approved
-  'bundle'         => ['price' => '$34.99', 'etsy' => '4615185881', 'buy' => ''],
-  'holiday-pack'   => ['price' => '$14.99', 'etsy' => '4615186407', 'buy' => ''],
+  'bundle'         => ['price' => '$34.99', 'etsy' => '4615185881', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/e0c04e1e-693d-4cd3-a0c7-9e3d3085c56c'],
+  'holiday-pack'   => ['price' => '$14.99', 'etsy' => '4615186407', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/463538ca-3c7d-4fca-8adf-081809589f69'],
   'story-starters' => ['price' => '$3.99', 'etsy' => '4615183909', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/05794f13-c398-469a-a81d-f0e71ec6b51a'],
 ];
 // Google Search Console verification code (meta tag on the home page). Empty: the domain is verified as a Domain
