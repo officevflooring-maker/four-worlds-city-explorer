@@ -682,4 +682,26 @@
     });
   }
 
+
+  // ---------- Counting, without knowing who ----------
+  // Tells our own server (src/worker.js) that this page was opened, and when a Buy or download button is clicked,
+  // so we can see which pages are useful. It sends the page address and the website the visit came from. No cookie,
+  // no name, nothing about you or your device is sent or kept (see About > Privacy).
+  var tell = function (kind, data) {
+    try {
+      var body = JSON.stringify(data);
+      if (navigator.sendBeacon) navigator.sendBeacon("/c/" + kind, body);
+      else fetch("/c/" + kind, { method: "POST", body: body, keepalive: true }).catch(function () {});
+    } catch (e) {}
+  };
+  if (location.protocol === "https:" && !navigator.webdriver) {
+    var from = "";
+    try { from = document.referrer ? new URL(document.referrer).hostname : ""; } catch (e) {}
+    tell("v", { p: location.pathname, r: from });
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a[data-buy]") : null;
+      if (a) tell("e", { n: (a.dataset.buy.indexOf("free-") === 0 ? "" : "buy-") + a.dataset.buy });
+    });
+  }
+
 })();

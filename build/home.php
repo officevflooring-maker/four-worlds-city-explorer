@@ -39,7 +39,7 @@ foreach ($blocks as $w => [$io, $jo, $slugs, $tj]) {
     if (!isset($WORLD_DATA[$w]['pages'][$s])) { fwrite(STDERR, "home hero: unknown page $w/$s\n"); continue; }
     $name = $WORLD_DATA[$w]['pages'][$s]['name'];
     $heroTiles .= '<li class="tile" style="--i:' . $i . ';--j:' . $j . '"><a class="tile-btn" href="/worlds/' . $w . '/' . $s . '/">'
-      . img($w, $s, '', '(min-width: 900px) 120px, 15vw', ($w === 'egypt' && $k === 0 ? 'fetchpriority="high" ' : '') . 'draggable="false"')
+      . img($w, $s, art_alt($w, $s), '(min-width: 900px) 120px, 15vw', ($w === 'egypt' && $k === 0 ? 'fetchpriority="high" ' : '') . 'draggable="false"')
       . '<span class="tile-label">' . h($name . ' · ' . $WORLDS[$w]['short']) . '</span></a></li>';
   }
   // the world's own trees
@@ -56,7 +56,7 @@ foreach ([
 ] as [$w, $f, $link, $u, $v]) {
   $car = !str_starts_with($f, 'people');
   $heroTiles .= '<li class="tile decor ' . ($car ? 'decor-car' : 'decor-person') . '" style="--u:' . $u . ';--v:' . $v . ';--z:20' . ($car ? vehicle_fit($w, $link, str_starts_with($f, 'rear-')) : person_fit($w)) . '"><a class="tile-btn" href="/worlds/' . $w . '/' . $link . ($car ? '/' : '') . '" aria-label="' . h($WORLDS[$w]['name'] . ($car ? ' vehicle' : ' person')) . '">'
-    . img($w, $f, '', $car ? '72px' : '48px', 'draggable="false"') . '</a></li>';
+    . img($w, $f, art_alt($w, $f), $car ? '72px' : '48px', 'draggable="false" loading="lazy"') . '</a></li>';
 }
 $peopleLinks = '';
 foreach (WORLD_ORDER as $w) if (!empty($PEOPLE[$w])) $peopleLinks .= '<li><a class="world-link world-' . $w . '" href="/worlds/' . $w . '/people/">' . h($WORLDS[$w]['short']) . ' people</a></li>';
@@ -92,8 +92,8 @@ foreach (WORLD_ORDER as $w) {
   $count = count($WORLD_DATA[$w]['pages']);
   $cards .= '<li class="wcard world-' . $w . '" data-world="' . $w . '">'
     . '<a class="wcard-top" href="/worlds/' . $w . '/" tabindex="-1" aria-hidden="true"><span class="wcard-ground"><span class="wcard-floor" style="--tex:url(' . tex($w, $W['ground']) . ')"></span></span><span class="wcard-sky">' . img($w, 'horizon', '', '(min-width: 900px) 300px, 90vw', 'loading="lazy"') . '</span>'
-    . '<span class="wcard-art">' . img($w, $W['card'], '', '(min-width: 900px) 240px, 70vw', 'loading="lazy"') . '</span>'
-    . '<span class="wcard-person">' . img($w, $W['face'] ?? 'people-1', '', '80px', 'loading="lazy"') . '</span></a>'
+    . '<span class="wcard-art">' . img($w, $W['card'], art_alt($w, $W['card']), '(min-width: 900px) 240px, 70vw', 'loading="lazy"') . '</span>'
+    . '<span class="wcard-person">' . img($w, $W['face'] ?? 'people-1', art_alt($w, $W['face'] ?? 'people-1'), '80px', 'loading="lazy"') . '</span></a>'
     . '<div class="wcard-text"><p class="tag">' . h($W['type']) . '</p><h3><a href="/worlds/' . $w . '/">' . h($W['name']) . '</a></h3>'
     . '<p class="what">' . h($oneLine[$w]) . '</p><ul class="wcard-links">' . $links . '</ul>'
     . '<p class="wcard-go"><a href="/worlds/' . $w . '/">Explore all ' . $count . ' pages <span aria-hidden="true">&rarr;</span></a></p></div></li>';
@@ -103,13 +103,13 @@ foreach (WORLD_ORDER as $w) {
 $road = '';
 foreach ($parade as [$w, $v, $era]) {
   $road .= '<li class="world-' . $w . '"><a href="/worlds/' . $w . '/' . $v . '/"><span class="era">' . h($era) . '</span>'
-    . img($w, $v, '', '(min-width: 900px) 240px, 40vw', 'loading="lazy"') . '<span class="veh-name">' . h($WORLD_DATA[$w]['pages'][$v]['name']) . '</span><span class="what">' . h($WORLDS[$w]['name']) . '</span></a></li>';
+    . img($w, $v, art_alt($w, $v), '(min-width: 900px) 240px, 40vw', 'loading="lazy"') . '<span class="veh-name">' . h($WORLD_DATA[$w]['pages'][$v]['name']) . '</span><span class="what">' . h($WORLDS[$w]['name']) . '</span></a></li>';
 }
 
 // People strip: two from each world.
 $crowd = '';
 foreach ([['egypt', 'people-2'], ['egypt', 'people-6'], ['roman', 'people-1'], ['roman', 'people-6'], ['medieval', 'people-2'], ['medieval', 'worker-1'], ['modern', 'people-5'], ['modern', 'worker-1'], ['green', 'people-3'], ['green', 'worker-2'], ['future', 'people-5'], ['future', 'people-6'], ['heaven', 'people-2'], ['heaven', 'people-3']] as [$w, $f]) {
-  $crowd .= '<li class="world-' . $w . '"><a href="/worlds/' . $w . '/people/#' . $f . '">' . img($w, $f, '', '(min-width: 900px) 140px, 22vw', 'loading="lazy"')
+  $crowd .= '<li class="world-' . $w . '"><a href="/worlds/' . $w . '/people/#' . $f . '">' . img($w, $f, art_alt($w, $f), '(min-width: 900px) 140px, 22vw', 'loading="lazy"')
     . '<span class="p-name">' . h($PEOPLE[$w][$f][0]) . '</span><span class="what">' . h($WORLDS[$w]['short']) . '</span></a></li>';
 }
 
@@ -117,7 +117,7 @@ foreach ([['egypt', 'people-2'], ['egypt', 'people-6'], ['roman', 'people-1'], [
 $water = '';
 foreach (WORLD_ORDER as $w) {
   [$imgName, $name] = $COMPARE[0][3][$w];
-  $water .= '<li class="world-' . $w . '"><span class="cmp-mini">' . img($w, $imgName, '', '(min-width: 900px) 200px, 40vw', 'loading="lazy"') . '</span><span class="p-name">' . h($name) . '</span><span class="what">' . h($WORLDS[$w]['short']) . '</span></li>';
+  $water .= '<li class="world-' . $w . '"><span class="cmp-mini">' . img($w, $imgName, "$name in the {$WORLDS[$w]['name']} city", '(min-width: 900px) 200px, 40vw', 'loading="lazy"') . '</span><span class="p-name">' . h($name) . '</span><span class="what">' . h($WORLDS[$w]['short']) . '</span></li>';
 }
 
 $tourCards = '';
@@ -136,8 +136,8 @@ foreach ([['egypt', 'town-3'], ['roman', 'fitness-3'], ['green', 'shared-2'], ['
 
 // The shop's products, for grown-ups (build/shop.php)
 // four to show here; the shop has the rest
-$shopCards = shop_cards('', ['journey', 'activity', 'playset', 'classroom-pack']);
-$shopCount = count($SHOP_INFO);
+$shopCards = shop_cards('', array_slice(array_values(array_filter(['bundle', 'journey', 'activity', 'playset', 'classroom-pack'], 'shop_open')), 0, 4));
+$shopCount = count($SHOP_INFO) - count(SHOP_PACKS);
 
 page('/', [
   'title' => SITE_NAME . ': how cities work, past, present and imagined',
@@ -149,9 +149,9 @@ page('/', [
     <div class="hero3-text">
       <div class="hero-brand">
         <img class="hero-logo" src="/assets/brand/atlas-emblem-400.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w, /assets/brand/atlas-emblem-800.webp 800w" sizes="(min-width: 900px) 170px, 120px" width="400" height="382" alt="" fetchpriority="high">
-        <h1 class="hero-title">Past, Present and Imagined</h1>
+        <p class="hero-title">Past, Present and Imagined</p>
       </div>
-      <h2 class="hero-q">How does a city <span>work?</span></h2>
+      <h1 class="hero-q">How does a city <span>work?</span></h1>
       <p class="lead">Explore seven illustrated cities, from ancient Egypt and a medieval castle town to a settlement on Mars. Open any building, meet the people and compare how each world solves the same problems.</p>
       <p class="hero-actions"><a class="btn" href="#worlds">Choose a world</a> <a class="btn btn-quiet" href="/tours/">Take a guided tour</a></p>
       <p class="hero-free">Free for everyone. No sign-up, ads or tracking.</p>

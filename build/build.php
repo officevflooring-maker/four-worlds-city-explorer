@@ -39,11 +39,25 @@ function img($world, $name, $alt, $sizes, $attrs = '') {
   ksort($set);
   $srcset = [];
   foreach ($set as $w => [$file]) $srcset[] = "/assets/worlds/$world/$file {$w}w";
+  // The picture a browser falls back to, and the size the page is laid out for, is the first one at least 300 px
+  // wide: the 240 px size (tools/make-small.sh) is only one more choice in the list.
   $first = array_key_first($set);
+  foreach (array_keys($set) as $wpx) if ($wpx >= 300) { $first = $wpx; break; }
   $last = array_key_last($set);
   $ratioH = round($set[$last][1] * $first / $last);
   return sprintf('<img src="/assets/worlds/%s/%s" srcset="%s" sizes="%s" width="%d" height="%d" alt="%s" decoding="async"%s>',
     $world, $set[$first][0], implode(', ', $srcset), $sizes, $first, $ratioH, h($alt), $attrs ? " $attrs" : '');
+}
+// What a picture of a place, a vehicle or a person shows, for picture searches and screen readers:
+// "Illustration of the aqueduct (Ancient Rome)". Trees, horizons and ground stay empty: they are decoration.
+function art_alt($w, $name) {
+  global $WORLD_DATA, $WORLDS, $PEOPLE;
+  $back = str_starts_with($name, 'rear-') ? ', seen from behind' : '';
+  $name = preg_replace('~^rear-~', '', $name);
+  $world = $WORLDS[$w]['name'];
+  if (isset($WORLD_DATA[$w]['pages'][$name])) return 'Illustration of the ' . strtolower($WORLD_DATA[$w]['pages'][$name]['name']) . $back . " ($world)";
+  if (isset($PEOPLE[$w][$name])) return 'Illustration: ' . $PEOPLE[$w][$name][0] . " ($world)";
+  return '';
 }
 function tex($world, $name) { return "/assets/worlds/$world/$name.webp"; }
 function asset_v($file) { static $v = []; return $v[$file] ??= substr(md5_file(PUB . $file), 0, 8); }
@@ -66,8 +80,16 @@ function version_assets($html) {
 
 function world_label($w) { global $WORLDS; return $WORLDS[$w]['name']; }
 
+// Search results show about 155 characters of a description: a longer one ends at its last whole sentence that fits.
+function short_desc($d) {
+  $plain = html_entity_decode($d, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+  if (strlen($plain) <= 160) return $d;
+  return preg_match('~^(.{80,159}[.!?])\s~s', $plain, $m) ? h($m[1]) : $d;
+}
+
 function page($path, $o) {
   global $WORLDS;
+  $o['desc'] = short_desc($o['desc']);
   $canonical = url($path);
   $title = h($o['title']);
   // Search results show about 60 characters of a title, so the site's name goes on the end only where it fits.
@@ -127,7 +149,10 @@ function page($path, $o) {
     if ($wc) $nav .= $li; else $navMore .= $li;
   }
   $year = substr(LASTMOD, 0, 4);
+  // free pages end with one or two things from the shop that fit them (build/shop.php)
+  if (function_exists('shop_promo_for')) $o['body'] .= shop_promo_for($path);
   $sister = SISTER_URL;
+  $pinterest = PINTEREST_URL;
   // Shared full-screen viewer for any page with .lb image buttons (Roman pages, Artwork).
   $lightbox = empty($o['lightbox']) ? '' : <<<HTML
 <dialog class="lightbox" aria-labelledby="lb-title">
@@ -198,7 +223,7 @@ HTML;
     <img class="footer-logo" src="/assets/brand/atlas-emblem-200.webp" srcset="/assets/brand/atlas-emblem-200.webp 200w, /assets/brand/atlas-emblem-400.webp 400w" sizes="110px" width="200" height="192" alt="" loading="lazy" decoding="async">
     <div>
       <p><strong>The Atlas of Cities: Past, Present and Imagined</strong> - a free educational project about how cities work, for classrooms and <a href="/teachers/homeschool/">homeschool families</a>.</p>
-      <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/shop/">Shop</a> · Sister site: <a href="{$sister}">Every Stone Speaks</a>, Bible lessons for kids</p>
+      <p>No accounts, no ads, no tracking. <a href="/about/">About</a> · <a href="/support/">Support this project</a> · <a href="/about/#privacy">Privacy</a> · <a href="/search/">Find a page</a> · <a href="/about/#sources">Sources</a> · <a href="/credits/">Photo credits</a> · <a href="/shop/">Shop</a> · <a href="/free/">Free sampler</a> · <a href="{$pinterest}" rel="noopener">Pinterest</a> · Sister site: <a href="{$sister}">Every Stone Speaks</a>, Bible lessons for kids</p>
       <p class="small">Illustrations &copy; {$year} The Atlas of Cities, free to use under CC BY 4.0 with credit. Photos of real places are by the photographers credited with each one.</p>
     </div>
   </div>
@@ -208,6 +233,8 @@ HTML;
 </html>
 
 HTML;
+  // the page's fingerprint, for its date in the sitemap: its own words, not the header, footer or picture versions
+  $GLOBALS['pageMarks'][$path] = md5($o['title'] . $o['desc'] . preg_replace('~\?v=\w+~', '', $o['body']));
   $file = PUB . ($path === '/' ? '/index.html' : (str_ends_with($path, '.html') ? $path : $path . 'index.html'));
   @mkdir(dirname($file), 0777, true);
   file_put_contents($file, version_assets($html));
@@ -304,6 +331,7 @@ foreach ($WORLD_DATA as $w => $D) {
   $srcList .= '</ul>';
 }
 $sister = SISTER_URL;
+$aboutPay = shop_etsy() ? "on Etsy, under Etsy's own privacy policy" : "on our store's website, under that store's own privacy policy";
 page('/about/', [
   'title' => 'About, privacy and artwork',
   'desc' => h('About The Atlas of Cities: a free educational website with no accounts, ads or tracking. Privacy, accessibility, artwork reuse and sources.'),
@@ -327,9 +355,10 @@ page('/about/', [
   <p id="sister">Our sister site, <a href="{$sister}">Every Stone Speaks</a>, uses pictures from all seven worlds for free Bible lessons for kids, families and Sunday schools: a walk through seven cities, from the first garden to the city God is preparing, where every building points to Jesus.</p>
 
   <h2 id="privacy">Privacy</h2>
-  <p>This site has no accounts, forms, comments, chat, ads, analytics or tracking. It sets no cookies and loads nothing from other websites. Your web host may keep standard server logs.</p>
+  <p>This site has no accounts, forms, comments, chat or ads, and it does not track you. It sets no cookies and loads nothing from other websites. Our web host may keep standard server logs.</p>
+  <p id="counting">We do count how often each page is opened, which website a visit came from, and how often a Buy or download button is clicked, so we know what is useful. The count is a plain number kept on our own server. It stores no cookie, no IP address and nothing about you or your device, and it is not shared with anyone.</p>
   <p>Passport stamps, quiz scores and the city you build are saved only in your own browser and never sent anywhere. You can clear them on the <a href="/play/passport/">passport page</a>.</p>
-  <p>Things in <a href="/shop/">the shop</a> are paid for on our store's website, under that store's own privacy policy. This site never sees payment or personal details.</p>
+  <p>Things in <a href="/shop/">the shop</a> are paid for {$aboutPay}. This site never sees payment or personal details.</p>
 
   <h2 id="accessibility">Accessibility</h2>
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
@@ -353,6 +382,7 @@ HTML,
 $shopNote = array_filter(array_keys(SHOP), 'shop_open')
   ? 'Printable board games, an activity book, classroom packs, posters and the Life RPG game.'
   : 'Coming soon: printable board games, an activity book, classroom packs, posters and the Life RPG game.';
+$supportPay = shop_etsy() ? 'Etsy' : 'our store';
 page('/support/', [
   'title' => 'Support this free project',
   'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. Buying from the shop helps add new worlds and fact-checking.'),
@@ -374,7 +404,7 @@ page('/support/', [
   <h2>Before you buy</h2>
   <ul class="plain-points">
     <li>Buying is optional. Everything on the site stays free either way.</li>
-    <li>Payments and personal details are handled by our store, under its own privacy policy. This site never sees them.</li>
+    <li>Payments and personal details are handled by {$supportPay}, under its own privacy policy. This site never sees them.</li>
     <li>Under 18? Please ask a parent or guardian first.</li>
   </ul>
   <h2>Free ways to help</h2>
@@ -549,9 +579,18 @@ $urls['/life-rpg/'] = '0.5';
 $urls['/city-builders/'] = '0.5';
 $urls['/classroom-pack/'] = '0.5';
 $urls['/posters/'] = '0.5';
-foreach (['/journey/', '/bingo/', '/planners/', '/trivia/', '/wordwall/', '/calendar/', '/playset/', '/activity/', '/memory/', '/dominoes/', '/storybook/', '/story-starters/'] as $u) $urls[$u] = '0.5';
+foreach (['/bundle/', '/holiday-pack/', '/free/', '/journey/', '/bingo/', '/planners/', '/trivia/', '/wordwall/', '/calendar/', '/playset/', '/activity/', '/memory/', '/dominoes/', '/storybook/', '/story-starters/'] as $u) $urls[$u] = '0.5';
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . LASTMOD . "</lastmod><priority>$pr</priority></url>\n";
+// Each page's date is the day its content last changed: build/lastmod.json remembers a fingerprint of every page
+// (page() takes it) and the day it changed, so search engines are told about pages that really are new.
+$lastFile = __DIR__ . '/lastmod.json';
+$last = is_file($lastFile) ? json_decode(file_get_contents($lastFile), true) : [];
+$todayIs = date('Y-m-d');
+foreach ($GLOBALS['pageMarks'] as $u => $mark) if (($last[$u][0] ?? '') !== $mark) $last[$u] = [$mark, $todayIs];
+$last = array_intersect_key($last, $GLOBALS['pageMarks']);
+ksort($last);
+file_put_contents($lastFile, json_encode($last, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
+foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . ($last[$u][1] ?? LASTMOD) . "</lastmod><priority>$pr</priority></url>\n";
 $xml .= "</urlset>\n";
 file_put_contents(PUB . '/sitemap.xml', $xml);
 file_put_contents(PUB . '/robots.txt', "User-agent: *\nAllow: /\n\nSitemap: " . url('/sitemap.xml') . "\n");

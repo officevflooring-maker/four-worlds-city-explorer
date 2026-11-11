@@ -12,6 +12,9 @@ preg_match("~const STORE_URL *= *'([^']+)~", $config, $m);
 $linksOut = [$site, $m[1] . '/checkout/buy/', 'creativecommons.org/licenses/by/4.0'];
 if (preg_match("~'open' *=> *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
 if (preg_match("~const SISTER_URL *= *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
+// our Etsy shop's listings (the Buy buttons while SHOP_VIA is 'etsy') and our Pinterest page
+$linksOut[] = 'https://www.etsy.com/listing/';
+if (preg_match("~const PINTEREST_URL *= *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
 $fail = 0; $n = 0; $pages = 0;
 $exists = [];
 $ok = function ($r) use ($pub, &$exists) {

@@ -4,11 +4,20 @@
 {
   "name": "atlasofcities",
   "compatibility_date": "2026-10-01",
+  // The site is plain files in public/. src/worker.js runs only for the three kinds of address in run_worker_first:
+  // counting (/c/), the owner's numbers page (/stats/) and pack downloads (/dl/). Every other address is served
+  // straight from public/, with the headers and redirects in public/_headers and public/_redirects.
+  "main": "src/worker.js",
   "assets": {
     "directory": "./public",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/c/*", "/stats/*", "/dl/*"]
   },
+  // The counts and the list of packs (src/schema.sql), and the packs' files.
+  "d1_databases": [{ "binding": "DB", "database_name": "atlasofcities", "database_id": "8013c5f6-0ec3-4dfc-8b73-2b1d87eaa375" }],
+  "kv_namespaces": [{ "binding": "FILES", "id": "13637a9b9e704842b8d452de56ea69bd" }],
   // The site's own domain (registered with Cloudflare): each deploy keeps both names attached to this Worker,
   // with their DNS records and certificates. The temporary atlasofcities.koaa01.workers.dev address is turned off.
   "routes": [

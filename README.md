@@ -4,7 +4,7 @@
 
 A free educational website: explore seven illustrated isometric cities (Ancient Egypt, Ancient Rome, a Medieval Kingdom, a Modern Town, a Green World, a Robotic Future and an imagined Heavenly City), learn what each building does, and compare how each world provides water, places to gather, safe travel and room for nature.
 
-No accounts, forms, cookies, ads, analytics or third-party requests. Passport stamps, quiz scores and saved cities stay in the visitor's own browser (localStorage) and are never sent anywhere.
+No accounts, forms, cookies, ads or third-party requests. Passport stamps, quiz scores and saved cities stay in the visitor's own browser (localStorage) and are never sent anywhere. The site counts page views and Buy-button clicks itself, as plain numbers with nothing about the visitor (see "Counting and pack downloads" below).
 
 ## How it's built
 
@@ -68,6 +68,9 @@ The site is live at https://atlasofcities.org. After each change:
 | `/teachers/glossary/` | Every key word from the building pages, A to Z, filtered as you type |
 | `/teachers/question-bank/` | Every "Think about it" question by world and group, with a question of the day |
 | `/shop/` and each product's page | The shop: printables and Life RPG (`build/shop.php`, `build/printables.php`, `build/games.php`) |
+| `/bundle/`, `/holiday-pack/` | The two packs: the Everything Bundle (all 15 printables) and the Family Holiday Pack (`build/packs.php`; what is in each is `SHOP_PACKS` in `build/shop.php`) |
+| `/free/` | The free sampler: one page from ten printables, as a PDF in `public/assets/free/` (made by atlas-products `packs.sh`) |
+| `/dl/TOKEN/`, `/stats/KEY/` | Not files: a pack buyer's private download page and the owner's visitor numbers, both made by `src/worker.js` |
 | `/support/` | How to support the site: by buying from the shop |
 | `/search/` | Every page from A to Z, filtered as you type (the header search box uses `/data/search.json`) |
 | `/about/` | About, privacy, accessibility, artwork reuse, sources |
@@ -96,6 +99,25 @@ Every building picture in these batches is used. Not used yet: some of the groun
 ## Cloudflare
 
 A Cloudflare Worker serves the site: `wrangler.jsonc` serves the files in `public/` as static assets and attaches atlasofcities.org and www.atlasofcities.org as custom domains. Its workers.dev address and preview addresses are off. `public/_headers` and `public/_redirects` give Cloudflare the same security headers, caching and redirects as `public/.htaccess` gives Apache.
+
+## Where the Buy buttons go
+
+`SHOP_VIA` in `build/config.php` decides it. Since Nov 11, 2026 it is `'etsy'`: the Lemon Squeezy store is still waiting for approval, so every Buy button opens the product's listing in our Etsy shop (each product's `'etsy'` listing number in `SHOP`). A product with no Etsy listing says "Coming soon"; Life RPG is one, because it needs the store's license keys. The Poster Set has a fixed price on Etsy (`'etsy_price'`). When the store is approved: put its live checkout links in each product's `'buy'`, set `SHOP_VIA` to `'store'`, rebuild and push. The pages' words about paying, refunds and receipts follow the setting by themselves.
+
+Every free page ends with one or two matching products (`shop_promo_for()` in `build/shop.php`), and product pages show the packs they are part of, a 30-day refund line and, where the free sampler has a page of theirs, a link to it.
+
+## Counting and pack downloads (src/worker.js)
+
+The Worker's script runs only for `/c/`, `/stats/` and `/dl/` (`run_worker_first` in `wrangler.jsonc`); every other address is a plain file. It uses a D1 database, `atlasofcities` (tables in `src/schema.sql`), and a KV namespace, `atlasofcities-files`. Both are on Cloudflare's free plan.
+
+- **Counting.** `public/js/site.js` tells `/c/v` that a page was opened (its address and the website the visit came from) and `/c/e` that a Buy or sampler button was clicked (`data-buy`). The database keeps a number per day. No cookie, no IP address, nothing about the visitor; search robots are left out. The About page's Privacy section says so.
+- **The owner's numbers** are at `/stats/KEY/`. The key is in the database (`settings`, `stats_key`) and in atlas-products `packs/secrets.json`. Keep the address private.
+- **Pack downloads.** A pack is too big to attach to an order, so its buyer gets a one-page PDF whose link opens `/dl/TOKEN/`: a page listing every file in US Letter and A4. The packs and their files are rows in the database (`packs`); the PDFs are in the KV namespace. atlas-products makes all of it: `bash packs.sh <this folder>` builds the PDFs, pictures and `out/packs/packs.sql`, and `bash packs.sh <this folder> --upload` sends the files. To replace a leaked link, change the pack's token in `packs/secrets.json`, run `packs.sh` again, run the new `packs.sql` on the database and delete the old row, then replace the PDF in the stores.
+- **Trying it at home:** `npx wrangler dev` serves the site with the script, using a local copy of the database (`npx wrangler d1 execute atlasofcities --local --file=src/schema.sql` makes its tables).
+
+Small pictures: `bash tools/make-small.sh` makes a 240 px size of every world picture, which `img()` offers to browsers for the places that show pictures small. Run it after adding or retaking pictures.
+
+The sitemap gives each page the day its content last changed (`build/lastmod.json`, kept by the build).
 
 ## Hostinger
 

@@ -29,7 +29,7 @@ function building_card($w, $slug, $sizes = '(min-width: 1100px) 220px, (min-widt
   global $WORLD_DATA;
   $r = $WORLD_DATA[$w]['pages'][$slug];
   return '<li class="place place-link world-' . $w . '" data-pp="' . "$w/$slug" . '"><a href="/worlds/' . $w . '/' . $slug . '/">'
-    . '<span class="place-art">' . img($w, $slug, '', $sizes, 'loading="lazy"') . '</span>'
+    . '<span class="place-art">' . img($w, $slug, art_alt($w, $slug), $sizes, 'loading="lazy"') . '</span>'
     . '<span class="place-name">' . h($r['name']) . '</span><span class="what">' . h($r['summary']) . '</span></a></li>';
 }
 
@@ -88,7 +88,7 @@ function story_page($w, $pages) {
       [$n, $title] = $r['part'];
       $list[] = ['@type' => 'ListItem', 'position' => $n, 'name' => "Part $n: $title", 'url' => url("/worlds/$w/$slug/")];
       $cards .= '<li class="place place-link world-' . $w . '" data-pp="' . "$w/$slug" . '"><a href="/worlds/' . $w . '/' . $slug . '/">'
-        . '<span class="place-art">' . img($w, $slug, '', '96px', 'loading="lazy"') . '</span>'
+        . '<span class="place-art">' . img($w, $slug, art_alt($w, $slug), '96px', 'loading="lazy"') . '</span>'
         . '<span class="tag">Part ' . $n . ' · ' . h($r['name']) . '</span><span class="place-name">' . h($title) . '</span><span class="what">Read it: ' . h($r['latin']) . '</span></a></li>';
     }
     if ($cards !== '') $chapters .= '<section class="cat" aria-labelledby="ch-' . $cat . '"><h2 id="ch-' . $cat . '">' . h($clabel) . '</h2><p class="what">' . h($blurb) . '</p><ol class="places places-3">' . $cards . '</ol></section>';
@@ -188,7 +188,7 @@ function full_world($w) {
       continue;
     }
     $map .= '<li class="tile" style="--i:' . $i . ';--j:' . $j . '"' . $tileData($slug) . '><a class="tile-btn" href="/worlds/' . $w . '/' . $slug . '/">'
-      . img($w, $slug, '', $tileSizes, 'draggable="false"')
+      . img($w, $slug, art_alt($w, $slug), $tileSizes, 'draggable="false"')
       . '<span class="tile-label">' . h($pages[$slug]['name']) . '</span></a></li>';
   }
   // Street life on the two front edges, where no building hides it. Points are grid units (u along i, v along j);
@@ -200,7 +200,7 @@ function full_world($w) {
   foreach (array_keys($VEHICLES[$w] ?? []) as $k => $vslug) {
     [$u, $v, $side] = $carSpots[$k];
     $decor .= '<li class="tile decor decor-car" style="' . decor_at($u, $v) . vehicle_fit($w, $vslug, $side) . '"' . $tileData($vslug) . '><a class="tile-btn" href="/worlds/' . $w . '/' . $vslug . '/">'
-      . img($w, $side . $vslug, '', '90px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pages[$vslug]['name']) . '</span></a></li>';
+      . img($w, $side . $vslug, art_alt($w, $side . $vslug), '90px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pages[$vslug]['name']) . '</span></a></li>';
   }
   // People: three on the sidewalk between the vehicles, the rest along the right front street.
   $personSpots = [[.45, 6.2], [1.95, 6.2], [3.4, 6.2], [6.2, 5.55], [6.2, 4.45], [6.2, 3.35], [6.2, 2.2], [6.2, 1.05]];
@@ -208,7 +208,7 @@ function full_world($w) {
     [$u, $v] = $personSpots[$k];
     [$pname, $prole] = $PEOPLE[$w][$file];
     $decor .= '<li class="tile decor decor-person" style="' . decor_at($u, $v) . person_fit($w) . '" data-cat="people" data-name="' . h($pname) . '" data-catname="People" data-sum="' . h($prole) . '"><a class="tile-btn" href="/worlds/' . $w . '/people/#' . $file . '">'
-      . img($w, $file, '', '64px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pname) . '</span></a></li>';
+      . img($w, $file, art_alt($w, $file), '64px', 'draggable="false" loading="lazy"') . '<span class="tile-label">' . h($pname) . '</span></a></li>';
   }
   $map .= $decor;
   // Filter buttons: one per building group shown on the map, plus people and vehicles.

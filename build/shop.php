@@ -11,6 +11,21 @@ $SHOP_INFO = [
   'city-builders' => ['City Builders', '/city-builders/', 'A card game to print at home', 'Collect buildings from every world and build a city that has everything its people need.', '/assets/shop/city-builders-fan.webp', 1100, 513],
   'classroom-pack' => ['Classroom Pack', '/classroom-pack/', 'A teaching pack to print', 'Fact cards, worksheets with answer keys and discussion cards, in one file.', '/assets/shop/classroom-pack-pages.webp', 1100, 697],
   'posters' => ['Poster Set', '/posters/', 'Posters to print', 'Every world, its places and the ten things every city needs, for your wall.', '/assets/shop/posters-fan.webp', 1100, 697],
+  // the two packs (build/packs.php): several printables in one purchase
+  'bundle' => ['Everything Bundle', '/bundle/', 'All 15 printables in one pack', 'Every game, book, classroom pack, poster and calendar in the shop, in one purchase.', '/assets/shop/bundle-fan.webp', 1100, 697],
+  'holiday-pack' => ['Family Holiday Pack', '/holiday-pack/', 'Five games, a storybook and a calendar', 'A gift to print: five family games, the Storybook and the 2027 Calendar in one pack.', '/assets/shop/holiday-pack-fan.webp', 1100, 697],
+];
+
+// Packs: what is in each (the order they are listed in on the pack's page).
+const SHOP_PACKS = [
+  'bundle' => ['city-builders', 'journey', 'trivia', 'bingo', 'planners', 'memory', 'dominoes', 'playset', 'activity', 'storybook', 'story-starters', 'classroom-pack', 'wordwall', 'posters', 'calendar'],
+  'holiday-pack' => ['city-builders', 'journey', 'trivia', 'memory', 'dominoes', 'storybook', 'calendar'],
+];
+// The free sampler (/free/, made by atlas-products packs.sh): one page from each of these, and what that page is.
+const SHOP_SAMPLER = [
+  'posters' => 'The Seven Worlds poster', 'calendar' => 'the January 2027 page', 'activity' => 'a maze', 'city-builders' => 'nine building cards',
+  'trivia' => 'nine question cards', 'story-starters' => 'ten writing prompts', 'wordwall' => 'four word cards', 'classroom-pack' => 'six fact cards',
+  'memory' => 'twelve picture cards', 'dominoes' => 'ten dominoes',
 ];
 
 // A checkout link has to come from the store's Share button. Anything else stops the build, including the
@@ -22,27 +37,107 @@ foreach (SHOP as $slug => $p) {
   }
 }
 
-function shop_price($slug) { return h(SHOP[$slug]['price']); }
-function shop_open($slug) { return SHOP[$slug]['buy'] !== ''; }
-function shop_from($slug) { return !empty(SHOP[$slug]['from']); }
-function shop_terms($slug) { return shop_from($slug) ? 'pay what you want, from ' . shop_price($slug) : shop_price($slug) . ', one time'; }
+foreach (SHOP as $slug => $p) {
+  if (isset($p['etsy']) && !preg_match('~^\d{6,}$~', $p['etsy'])) {
+    fwrite(STDERR, "config.php: the 'etsy' value for $slug isn't a listing number (the digits in the listing's address).\n");
+    exit(1);
+  }
+}
 
-// The buy button, or "Coming soon" until the store's link is set.
+// Where a product is sold right now (SHOP_VIA in config.php): its Etsy listing, or the store's checkout.
+// An empty link means "Coming soon".
+function shop_etsy() { return SHOP_VIA === 'etsy'; }
+function shop_link($slug) {
+  if (shop_etsy()) return empty(SHOP[$slug]['etsy']) ? '' : 'https://www.etsy.com/listing/' . SHOP[$slug]['etsy'];
+  return SHOP[$slug]['buy'];
+}
+function shop_price($slug) { return h(shop_etsy() ? (SHOP[$slug]['etsy_price'] ?? SHOP[$slug]['price']) : SHOP[$slug]['price']); }
+function shop_open($slug) { return shop_link($slug) !== ''; }
+// pay what you want works only in our own store: on Etsy the price is fixed
+function shop_from($slug) { return !shop_etsy() && !empty(SHOP[$slug]['from']); }
+function shop_terms($slug) { return shop_from($slug) ? 'pay what you want, from ' . shop_price($slug) : shop_price($slug) . ', one time'; }
+// The words for where buying happens, used wherever a page talks about paying.
+function shop_where() { return shop_etsy() ? 'on Etsy, in our shop ' . ETSY_NAME : "on our store's checkout"; }
+
+// The buy button, or "Coming soon" until the product has its link. data-buy lets the site count clicks on it
+// (public/js/site.js sends the product's name to our own server; nothing about the visitor is kept).
 function shop_buy($slug) {
   global $SHOP_INFO;
   if (!shop_open($slug)) return '<p class="shop-soon">Coming soon · ' . shop_terms($slug) . '</p>';
   $name = h($SHOP_INFO[$slug][0]);
   $price = (shop_from($slug) ? 'from ' : '') . shop_price($slug);
   $more = $slug === 'life-rpg' && !empty(SHOP[$slug]['open']) ? ' Already bought it? <a href="' . h(SHOP[$slug]['open']) . '">Open Life RPG</a>' : '';
-  return '<p><a class="btn btn-big shop-buy" href="' . h(SHOP[$slug]['buy']) . "\" rel=\"noopener\">Buy $name · $price</a></p>"
-    . "<p class=\"small shop-note\">Opens our store, a separate website.$more</p>";
+  $note = shop_etsy() ? 'Opens our Etsy shop, ' . ETSY_NAME . '.' : 'Opens our store, a separate website.';
+  return '<p><a class="btn btn-big shop-buy" href="' . h(shop_link($slug)) . "\" rel=\"noopener\" data-buy=\"$slug\">Buy $name · $price</a></p>"
+    . "<p class=\"small shop-note\">$note$more</p>";
+}
+// A product with a page in the free sampler says so under its Buy button.
+function shop_sample($slug) {
+  return isset(SHOP_SAMPLER[$slug]) ? '<p class="small shop-sample"><a href="/free/">Try a page first</a>: the free sampler has ' . h(SHOP_SAMPLER[$slug]) . ' from it.</p>' : '';
+}
+// What a list of products costs when bought one by one, as a number.
+function shop_total($slugs) { return array_sum(array_map(fn($s) => (float) ltrim(html_entity_decode(shop_price($s)), '$'), $slugs)); }
+// The packs a product is part of (only the ones on sale).
+function shop_packs_in($slug) { return array_values(array_filter(array_keys(SHOP_PACKS), fn($p) => in_array($slug, SHOP_PACKS[$p], true) && shop_open($p))); }
+function shop_packs_for($slug) {
+  global $SHOP_INFO;
+  $in = shop_packs_in($slug);
+  if (!$in) return '';
+  return '<section class="wrap section shop-packs" aria-labelledby="packs-h"><div class="sec-head"><h2 id="packs-h">Save with a pack</h2><p>' . h($SHOP_INFO[$slug][0])
+    . ' also comes in ' . (count($in) > 1 ? 'these packs' : 'this pack') . ', for less than buying each thing one by one.</p></div>' . shop_cards('', $in) . '</section>';
+}
+// A small "from the shop" band at the end of the free pages (build.php's page() adds it): one or two things to print
+// that fit the page. It shows only products that are on sale, so it never points at "Coming soon".
+function shop_promo_for($path) {
+  global $SHOP_INFO;
+  $pick = null;
+  if (preg_match('~^/worlds/[a-z]+/$~', $path)) $pick = ['posters', 'playset', 'city-builders'];
+  elseif (preg_match('~^/worlds/[a-z]+/people/$~', $path)) $pick = ['playset', 'storybook', 'memory'];
+  elseif (preg_match('~^/worlds/[a-z]+/story/$~', $path)) $pick = ['storybook', 'posters'];
+  elseif (preg_match('~^/worlds/[a-z]+/[a-z0-9-]+/$~', $path)) {
+    // every place has a fact card, and most have a game card: four pairs take turns, so neighboring pages differ
+    $pairs = [['city-builders', 'classroom-pack'], ['memory', 'posters'], ['trivia', 'playset'], ['bingo', 'wordwall']];
+    $pick = $pairs[crc32($path) % count($pairs)];
+  }
+  elseif (preg_match('~^/stories/~', $path)) $pick = ['storybook', 'story-starters'];
+  elseif (preg_match('~^/tours/~', $path)) $pick = ['journey', 'trivia'];
+  elseif ($path === '/teachers/' || $path === '/teachers/homeschool/') $pick = ['bundle', 'classroom-pack', 'wordwall'];
+  elseif ($path === '/teachers/worksheets/') $pick = ['classroom-pack', 'activity'];
+  elseif (preg_match('~^/teachers/worksheets/~', $path)) $pick = null;   // a worksheet prints its whole page
+  elseif ($path === '/teachers/glossary/') $pick = ['wordwall', 'classroom-pack'];
+  elseif ($path === '/teachers/question-bank/') $pick = ['classroom-pack', 'story-starters'];
+  elseif (preg_match('~^/teachers/([a-z0-9-]+)/$~', $path, $m)) $pick = SHOP_FOR_GUIDE[$m[1]] ?? ['classroom-pack', 'wordwall'];
+  elseif ($path === '/compare/') $pick = ['classroom-pack', 'posters'];
+  elseif ($path === '/artwork/') $pick = ['posters', 'calendar'];
+  if (!$pick) return '';
+  $pick = array_slice(array_values(array_filter($pick, fn($s) => isset($SHOP_INFO[$s]) && shop_open($s))), 0, 2);
+  if (!$pick) return '';
+  return '<section class="band shop-promo" aria-labelledby="shop-promo-h"><div class="wrap"><div class="sec-head"><p class="tag">For grown-ups · From the shop</p>'
+    . '<h2 id="shop-promo-h">Print it, play it, teach with it</h2><p>Made from these worlds, to print at home. Buying one helps keep this site free. <a href="/free/">Try the free sampler first</a>.</p></div>'
+    . shop_cards('', $pick) . '</div></section>';
+}
+// Which printables fit which teacher guide (the rest get the Classroom Pack and the Word Wall).
+const SHOP_FOR_GUIDE = [
+  'design-a-city-project' => ['planners', 'city-builders'], 'what-does-a-city-need' => ['city-builders', 'classroom-pack'],
+  'urban-planning-for-students' => ['planners', 'city-builders'], 'sustainable-city-project-ideas' => ['planners', 'classroom-pack'],
+  'fantasy-city-worldbuilding' => ['story-starters', 'planners'], 'discussion-questions-what-makes-a-good-city' => ['classroom-pack', 'story-starters'],
+  'free-images-for-classroom' => ['posters', 'wordwall'], 'explore-your-town-scavenger-hunt' => ['bingo', 'activity'],
+  'story-of-jesus-bible-lesson' => ['storybook', 'posters'],
+  'daily-life-in-ancient-rome' => ['classroom-pack', 'trivia'], 'daily-life-in-ancient-egypt' => ['classroom-pack', 'trivia'],
+  'daily-life-in-a-medieval-town' => ['classroom-pack', 'trivia'], 'medieval-market-day-lesson' => ['classroom-pack', 'bingo'],
+  'ancient-rome-vs-modern-cities' => ['classroom-pack', 'posters'],
+];
+// The refund promise, on every product page (the shop page has the full list, #refunds).
+function shop_refund() {
+  $how = shop_etsy() ? 'Send us a message on Etsy.' : 'Write to us from your receipt email.';
+  return '<p class="small shop-refund">If something doesn\'t work, you get a full refund within 30 days. ' . $how . '</p>';
 }
 
 function shop_card($slug) {
   global $SHOP_INFO;
   [$name, $url, $kind, $line, $img, $w, $hh] = $SHOP_INFO[$slug];
   $state = shop_open($slug) ? ucfirst(shop_terms($slug)) : 'Coming soon';
-  return "<li class=\"shop-card shop-card-$slug\"><a href=\"$url\"><span class=\"shop-card-pic\"><img src=\"$img\" width=\"$w\" height=\"$hh\" alt=\"\" loading=\"lazy\" decoding=\"async\"></span>"
+  return "<li class=\"shop-card shop-card-$slug\"><a href=\"$url\"><span class=\"shop-card-pic\"><img src=\"$img\" width=\"$w\" height=\"$hh\" alt=\"" . h("$name: " . lcfirst($kind)) . "\" loading=\"lazy\" decoding=\"async\"></span>"
     . '<span class="shop-card-text"><span class="shop-kind">' . h($kind) . '</span><span class="shop-name">' . h($name) . '</span>'
     . '<span class="shop-line">' . h($line) . "</span><span class=\"shop-state\">$state</span></span></a></li>";
 }
@@ -79,7 +174,7 @@ function shop_pages($rows, $total) {
 function shop_trust($slug) {
   $points = $slug === 'life-rpg'
     ? ['One payment, no subscription', 'Works offline', 'Up to 10 devices']
-    : ['Instant download', 'US Letter and A4', 'Print as often as you need', 'One payment'];
+    : ['Instant download', 'US Letter and A4', 'Print as often as you need', '30-day refund'];
   return '<ul class="shop-trust">' . implode('', array_map(fn($p) => '<li>' . h($p) . '</li>', $points)) . '</ul>';
 }
 // Structured data for search engines: the product, with its price once it is on sale.
@@ -91,7 +186,7 @@ function shop_ld($slug, $desc) {
     'image' => url('/assets/og/' . $slug . '.jpg'), 'brand' => ['@type' => 'Brand', 'name' => SITE_NAME]];
   $days = fn($n) => ['@type' => 'QuantitativeValue', 'minValue' => $n, 'maxValue' => $n, 'unitCode' => 'DAY'];
   if (shop_open($slug)) $ld['offers'] = ['@type' => 'Offer', 'price' => ltrim(SHOP[$slug]['price'], '$'), 'priceCurrency' => 'USD',
-    'availability' => 'https://schema.org/InStock', 'url' => SHOP[$slug]['buy'],
+    'availability' => 'https://schema.org/InStock', 'url' => shop_link($slug),
     'shippingDetails' => ['@type' => 'OfferShippingDetails',
       'shippingRate' => ['@type' => 'MonetaryAmount', 'value' => 0, 'currency' => 'USD'],
       'shippingDestination' => ['@type' => 'DefinedRegion', 'addressCountry' => 'US'],
@@ -114,10 +209,13 @@ function shop_page($slug, $o) {
   [$name, $url] = $SHOP_INFO[$slug];
   $facts = implode('', array_map(fn($f) => '<li>' . h($f) . '</li>', $o['facts']));
   $buy = shop_buy($slug);
+  $refund = shop_open($slug) ? shop_refund() : '';
+  $sample = shop_sample($slug);
+  $packs = shop_packs_for($slug);
   $trust = shop_trust($slug);
   $perfect = empty($o['perfect']) ? '' : '<p class="shop-perfect">Perfect for ' . h(implode(', ', array_slice($o['perfect'], 0, -1)) . ' and ' . end($o['perfect'])) . '</p>';
   $top = $o['dark'] ?? false ? 'band band-dark shop-top shop-top-dark' : 'band shop-top';
-  $more = shop_cards($slug);
+  $more = shop_cards($slug, array_diff(array_keys($SHOP_INFO), shop_packs_in($slug)));
   page($url, [
     'title' => $o['title'],
     'desc' => h($o['desc']),
@@ -131,7 +229,7 @@ function shop_page($slug, $o) {
       <h1>{$name}</h1>
       <p class="lead">{$o['lead']}</p>
       {$buy}
-      {$trust}
+      {$trust}{$sample}
       <ul class="shop-facts">{$facts}</ul>{$perfect}
     </div>
     <div class="shop-top-pic">{$o['pic']}</div>
@@ -142,8 +240,10 @@ function shop_page($slug, $o) {
   <div class="wrap shop-again-inner">
     <h2 id="again-h">{$o['again']}</h2>
     {$buy}
+    {$refund}
   </div>
 </section>
+{$packs}
 <section class="wrap section" aria-labelledby="more-h">
   <div class="sec-head"><h2 id="more-h">More from the shop</h2></div>
   {$more}
@@ -351,19 +451,18 @@ shop_page('classroom-pack', [
 /* ---------- Poster Set (pay what you want: also the Support page's button) ---------- */
 shop_page('posters', [
   'title' => 'Poster Set: every world for your wall',
-  'desc' => 'Nine posters to print from The Atlas of Cities: all seven worlds together, twelve places from each, and the ten things every city needs. Pay what you want, from ' . SHOP['posters']['price'] . '.',
+  'desc' => 'Nine posters to print from The Atlas of Cities: all seven worlds together, twelve places from each, and the ten things every city needs.' . (shop_from('posters') ? ' Pay what you want, from ' . shop_price('posters') . '.' : ''),
   'tag' => 'Print at home · Supports this site',
-  'lead' => 'Nine posters for a classroom or bedroom wall. You choose the price, and it helps keep The Atlas of Cities free.',
+  'lead' => shop_from('posters') ? 'Nine posters for a classroom or bedroom wall. You choose the price, and it helps keep The Atlas of Cities free.' : 'Nine posters for a classroom or bedroom wall. Buying them helps keep The Atlas of Cities free.',
   'facts' => ['9 posters', 'PDF in Letter and A4'],
   'perfect' => ['classroom walls', 'bedrooms', 'supporting this site'],
   'pic' => '<img src="/assets/shop/posters-fan.webp" width="1100" height="697" alt="Three posters: Ancient Egypt, the seven worlds and the Heavenly City.">',
   'again' => shop_open('posters') ? 'Put every world on your wall' : 'The Poster Set is coming soon',
   'body' => '<section class="wrap section" aria-labelledby="how-h"><div class="sec-head"><h2 id="how-h">How it works</h2></div>'
-    . shop_steps([
-      ['Choose your price.', 'Pay ' . shop_price('posters') . ' or more. Anything above that helps the site grow.'],
+    . shop_steps(array_merge(shop_from('posters') ? [['Choose your price.', 'Pay ' . shop_price('posters') . ' or more. Anything above that helps the site grow.']] : [], [
       ['Download.', 'You get the PDF right after paying, in US Letter and A4 sizes.'],
       ['Print and hang.', 'Any printer works. Matte photo paper or card stock looks best.'],
-    ]) . '</section>'
+    ], shop_from('posters') ? [] : [['Enjoy.', 'Nine posters for a wall, a hallway or a unit on cities.']])) . '</section>'
     . '<section class="wrap section" aria-label="Posters in the set">'
     . shop_gallery([
       ['/assets/shop/posters-p2.webp', 520, 673, 'A poster of twelve places in Ancient Egypt, from the pyramid to a Nile sailing boat, above a desert landscape.', 'Twelve places from each world'],
@@ -395,9 +494,12 @@ shop_page('posters', [
     ]) . '</section>',
 ]);
 
+require __DIR__ . '/packs.php';      // the two packs and the free sampler
+
 /* ---------- the shop page: products on shelves by who they are for ---------- */
 // [heading, line, products]; a product not on a shelf is left off the shop page, so add new ones here
 $SHOP_SHELVES = [
+  ['Packs', 'Several printables in one purchase, for less than buying each one.', ['bundle', 'holiday-pack']],
   ['Games to print', 'Board, card and party games for families and classrooms. Print them tonight, play them tomorrow.', ['journey', 'city-builders', 'trivia', 'bingo', 'planners']],
   ['For young builders', 'For ages 3 to 10: build a city on the table, match pictures, read a story or puzzle through seven worlds.', ['playset', 'activity', 'storybook', 'memory', 'dominoes']],
   ['For the classroom', 'Everything for a unit on how cities work, ready to print and copy.', ['classroom-pack', 'wordwall', 'story-starters']],
@@ -412,7 +514,11 @@ foreach ($SHOP_SHELVES as $i => [$head, $line, $slugs]) {
   $jump .= '<li><a href="#' . $id . '">' . h($head) . '</a></li>';
   $shelves .= '<section class="wrap section shop-shelf" aria-labelledby="' . $id . '"><div class="sec-head"><h2 id="' . $id . '">' . h($head) . '</h2><p>' . h($line) . '</p></div>' . shop_cards('', $slugs) . '</section>';
 }
-$nProducts = count($SHOP_INFO);
+$nProducts = count($SHOP_INFO) - count(SHOP_PACKS);   // the packs hold the same things again
+$payWhere = shop_etsy() ? 'On Etsy, where our shop is called ' . ETSY_NAME . '.' : "On our store's checkout. No account.";
+$payPolicy = shop_etsy() ? "Payment happens on Etsy, under Etsy's own privacy policy." : "Payment happens on our store's website, under its own privacy policy.";
+$payFiles = shop_etsy() ? 'Etsy emails you a download link, and your files stay on your Etsy Purchases page, so you can download again later.' : 'Your receipt email has your download links, so you can download again later.';
+$payRefund = shop_etsy() ? 'Send us a message on Etsy.' : 'Write to us from your receipt email.';
 page('/shop/', [
   'title' => 'Shop: board games, activity books, classroom packs and posters',
   'desc' => h('Printable games, a storybook, an activity book, a play set, classroom packs, posters and a calendar from seven worlds, and Life RPG. The rest of the site stays free.'),
@@ -421,7 +527,7 @@ page('/shop/', [
 <section class="wrap section page-head">
   <p class="tag">Shop · For grown-ups</p>
   <h1>Games, activities and classroom packs</h1>
-  <p class="lead">{$nProducts} things to print and play, all made from the worlds of this site. You get your files right after paying, and the rest of The Atlas of Cities stays free.</p>
+  <p class="lead">{$nProducts} things to print and play, all made from the worlds of this site, and two packs that cost less than buying one by one. You get your files right after paying, and the rest of The Atlas of Cities stays free.</p>
   <ul class="shop-jump">{$jump}</ul>
 </section>
 {$shelves}
@@ -430,7 +536,7 @@ page('/shop/', [
     <div class="sec-head"><h2 id="how-buy-h">How it works</h2></div>
     <ol class="shop-steps">
       <li><span class="shop-step-n" aria-hidden="true">1</span><b>Choose.</b> Every page shows exactly what is inside, page by page.</li>
-      <li><span class="shop-step-n" aria-hidden="true">2</span><b>Pay once.</b> On our store's checkout. No account, no subscription.</li>
+      <li><span class="shop-step-n" aria-hidden="true">2</span><b>Pay once.</b> {$payWhere} No subscription.</li>
       <li><span class="shop-step-n" aria-hidden="true">3</span><b>Download and print.</b> PDFs in US Letter and A4, to print at home as often as you need.</li>
     </ol>
   </div>
@@ -439,9 +545,9 @@ page('/shop/', [
   <h2 id="know-h">Good to know</h2>
   <ul class="plain-points">
     <li>Everything is a single payment. No subscriptions and no ads.</li>
-    <li>Payment happens on our store's website, under its own privacy policy. This site never sees payment details.</li>
-    <li>Your receipt email has your download links, so you can download again later.</li>
-    <li id="refunds">If something doesn't work, you get a full refund within 30 days. Write to us from your receipt email.</li>
+    <li>{$payPolicy} This site never sees payment details.</li>
+    <li>{$payFiles}</li>
+    <li id="refunds">If something doesn't work, you get a full refund within 30 days. {$payRefund}</li>
     <li>A grown-up buys. Under 18? Ask a parent first.</li>
   </ul>
 </section>

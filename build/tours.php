@@ -237,7 +237,7 @@ foreach ($TOURS as $slug => $t) {
     if (!$r) { fwrite(STDERR, "unknown tour stop $slug: $key\n"); continue; }
     $num = $n + 1;
     $stops .= '<li class="stop" id="stop-' . $num . '"><div class="stop-art"><a href="/worlds/' . $sw . '/' . $ss . '/" tabindex="-1" aria-hidden="true">'
-      . img($sw, $ss, '', '(min-width: 900px) 280px, 70vw', 'loading="lazy"') . '</a></div>'
+      . img($sw, $ss, art_alt($sw, $ss), '(min-width: 900px) 280px, 70vw', 'loading="lazy"') . '</a></div>'
       . '<div class="stop-text"><p class="stop-num">Stop ' . $num . '</p><h2>' . h($r['name']) . '</h2>'
       . '<p class="stop-say">' . h($say) . '</p><p class="ask">' . h($ask) . '</p>'
       . '<p><a href="/worlds/' . $sw . '/' . $ss . '/">Read the full page about the ' . h(preg_replace('/^the /', '', strtolower($r['name']))) . '</a>'
