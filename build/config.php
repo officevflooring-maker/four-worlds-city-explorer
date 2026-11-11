@@ -40,13 +40,13 @@ const SHOP = [
   'calendar'       => ['price' => '$3.99', 'etsy' => '4607218166', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/7e61126e-bcca-4f40-a315-effb6013edd0'],
   'playset'        => ['price' => '$5.99', 'etsy' => '4607222898', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/e84a6209-0062-4379-8f0b-48d7bc851a48'],
   'activity'       => ['price' => '$4.99', 'etsy' => '4607219226', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/2b5e09fe-7a69-496c-bcf3-67c6f5b64d5f'],
-  'memory'         => ['price' => '$3.99', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/782040fa-ceee-418f-90a8-277c4a4fd19e'],
-  'dominoes'       => ['price' => '$3.99', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/4e6e72b2-052e-4a82-bb3d-ccbf658613f2'],
-  'storybook'      => ['price' => '$4.99', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/445f06f5-4b06-407c-95fb-b2ee94158a49'],
-  // the two packs (owner, Nov 11, 2026: $34.99 and $14.99); their Etsy listings and store links come once they exist
-  'bundle'         => ['price' => '$34.99', 'buy' => ''],
-  'holiday-pack'   => ['price' => '$14.99', 'buy' => ''],
-  'story-starters' => ['price' => '$3.99', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/05794f13-c398-469a-a81d-f0e71ec6b51a'],
+  'memory'         => ['price' => '$3.99', 'etsy' => '4615195472', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/782040fa-ceee-418f-90a8-277c4a4fd19e'],
+  'dominoes'       => ['price' => '$3.99', 'etsy' => '4615196434', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/4e6e72b2-052e-4a82-bb3d-ccbf658613f2'],
+  'storybook'      => ['price' => '$4.99', 'etsy' => '4615198120', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/445f06f5-4b06-407c-95fb-b2ee94158a49'],
+  // the two packs (owner, Nov 11, 2026: $34.99 and $14.99); on Etsy since then; their store links come when the store is approved
+  'bundle'         => ['price' => '$34.99', 'etsy' => '4615185881', 'buy' => ''],
+  'holiday-pack'   => ['price' => '$14.99', 'etsy' => '4615186407', 'buy' => ''],
+  'story-starters' => ['price' => '$3.99', 'etsy' => '4615183909', 'buy' => 'https://theatlasofcities.lemonsqueezy.com/checkout/buy/05794f13-c398-469a-a81d-f0e71ec6b51a'],
 ];
 // Google Search Console verification code (meta tag on the home page). Empty: the domain is verified as a Domain
 // property by a TXT record in Cloudflare's DNS, which needs no tag.

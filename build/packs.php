@@ -56,7 +56,7 @@ function pack_page($pack, $o) {
       . shop_faq(array_merge([
         ['What do I get?', "A one-page PDF with the link to your download page. There you download all $n printables as PDFs, each in US Letter and A4: $pages pages in all."],
         ['Why a link, and not the files themselves?', 'Together the files are too big to attach to one order. Your download page has them all in one place, and you can come back to it whenever you like.'],
-        ['Are these the same files as the single products?', 'Yes, exactly the same PDFs. The pack only costs less.'],
+        ['Are these the same printables as the single products?', 'Yes, the very same ones, each as one PDF for US Letter and one for A4. The pack only costs less.'],
         ['Can I print more copies?', 'Yes, for your own home or one classroom. Please don\'t share the files or your download link online.'],
       ], $o['faq'])) . '</section>',
   ]);
