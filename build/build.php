@@ -331,7 +331,8 @@ foreach ($WORLD_DATA as $w => $D) {
   $srcList .= '</ul>';
 }
 $sister = SISTER_URL;
-$aboutPay = shop_etsy() ? "on Etsy, under Etsy's own privacy policy" : "on our store's website, under that store's own privacy policy";
+$aboutPay = shop_etsy() ? "on Etsy, under Etsy's own privacy policy. This site never sees payment or personal details."
+  : "on Stripe's secure checkout, under Stripe's own privacy policy. This site never sees card details, names or email addresses. To give each buyer their download page, our server keeps a note of the order: what was bought, the price and the date, and nothing about the buyer.";
 page('/about/', [
   'title' => 'About, privacy and artwork',
   'desc' => h('About The Atlas of Cities: a free educational website with no accounts, ads or tracking. Privacy, accessibility, artwork reuse and sources.'),
@@ -358,7 +359,7 @@ page('/about/', [
   <p>This site has no accounts, forms, comments, chat or ads, and it does not track you. It sets no cookies and loads nothing from other websites. Our web host may keep standard server logs.</p>
   <p id="counting">We do count how often each page is opened, which website a visit came from, and how often a Buy or download button is clicked, so we know what is useful. The count is a plain number kept on our own server. It stores no cookie, no IP address and nothing about you or your device, and it is not shared with anyone.</p>
   <p>Passport stamps, quiz scores and the city you build are saved only in your own browser and never sent anywhere. You can clear them on the <a href="/play/passport/">passport page</a>.</p>
-  <p>Things in <a href="/shop/">the shop</a> are paid for {$aboutPay}. This site never sees payment or personal details.</p>
+  <p>Things in <a href="/shop/">the shop</a> are paid for {$aboutPay}</p>
 
   <h2 id="accessibility">Accessibility</h2>
   <p>Every building is listed in text as well as on the map. The site works with a keyboard and screen readers, respects reduced-motion settings, and has no autoplay or flashing effects.</p>
@@ -382,7 +383,7 @@ HTML,
 $shopNote = array_filter(array_keys(SHOP), 'shop_open')
   ? 'Printable board games, an activity book, classroom packs, posters and the Life RPG game.'
   : 'Coming soon: printable board games, an activity book, classroom packs, posters and the Life RPG game.';
-$supportPay = shop_etsy() ? 'Etsy' : 'our store';
+$supportPay = shop_etsy() ? 'Etsy' : 'Stripe, our payment service';
 page('/support/', [
   'title' => 'Support this free project',
   'desc' => h('The Atlas of Cities is free for everyone, with no ads, accounts or tracking. Buying from the shop helps add new worlds and fact-checking.'),
@@ -542,6 +543,27 @@ page('/404.html', [
 HTML,
 ]);
 
+// ---------- The Stripe store's list of products (src/catalog.json, read by src/store.js) ----------
+// Names, prices in cents, Stripe tax categories, pictures and pages, from SHOP and STORE_ALSO in config.php.
+// Written on every build, so a price changed in config.php reaches the checkout with the next deploy.
+$cents = fn($p) => (int) round(100 * (float) ltrim($p, '$'));
+$catalog = [];
+foreach (SHOP as $slug => $p) {
+  [$name, $path, , $line] = $SHOP_INFO[$slug];
+  $catalog[$slug] = ['name' => $name, 'line' => $line, 'price' => $cents($p['price']), 'tax' => $p['tax'] ?? STORE_TAX,
+    'kind' => $slug === 'life-rpg' ? 'key' : 'pdf', 'site' => 'atlas', 'page' => url($path), 'image' => url("/assets/og/$slug.jpg")]
+    + (empty($p['from']) ? [] : ['from' => true, 'preset' => $cents($p['etsy_price'] ?? $p['price'])])
+    + (empty($p['etsy']) ? [] : ['etsy' => $p['etsy']])
+    + (empty($p['open']) ? [] : ['open' => $p['open']]);
+  if (!is_file(PUB . "/assets/og/$slug.jpg")) { fwrite(STDERR, "no share picture public/assets/og/$slug.jpg for the checkout\n"); exit(1); }
+}
+foreach (STORE_ALSO as $slug => $p) {
+  $catalog[$slug] = ['name' => $p['name'], 'line' => $p['line'], 'price' => $cents($p['price']), 'tax' => $p['tax'] ?? STORE_TAX,
+    'kind' => 'pdf', 'site' => 'esp', 'page' => rtrim(SISTER_URL, '/') . $p['page'], 'image' => rtrim(SISTER_URL, '/') . "/assets/products/$slug.jpg", 'etsy' => $p['etsy']];
+}
+file_put_contents(__DIR__ . '/../src/catalog.json', json_encode($catalog, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n");
+echo 'wrote src/catalog.json (' . count($catalog) . " products)\n";
+
 // ---------- Sitemap, robots ----------
 $urls = ['/' => '1.0'];
 foreach (WORLD_ORDER as $w) {
@@ -593,5 +615,6 @@ file_put_contents($lastFile, json_encode($last, JSON_PRETTY_PRINT | JSON_UNESCAP
 foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . ($last[$u][1] ?? LASTMOD) . "</lastmod><priority>$pr</priority></url>\n";
 $xml .= "</urlset>\n";
 file_put_contents(PUB . '/sitemap.xml', $xml);
-file_put_contents(PUB . '/robots.txt', "User-agent: *\nAllow: /\n\nSitemap: " . url('/sitemap.xml') . "\n");
+// the store's addresses (src/store.js) are for buyers, not search engines
+file_put_contents(PUB . '/robots.txt', "User-agent: *\nAllow: /\nDisallow: /buy/\nDisallow: /thanks/\nDisallow: /dl/\n\nSitemap: " . url('/sitemap.xml') . "\n");
 echo "wrote sitemap.xml, robots.txt\n";

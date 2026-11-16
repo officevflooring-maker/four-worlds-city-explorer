@@ -5,11 +5,15 @@
 //               We keep a number per day and page, and the website a visit came from. No cookies, no IP addresses,
 //               nothing about the visitor or their device.
 //   /stats/KEY/ the owner's private page with those numbers. KEY is in the database (settings: stats_key).
-//   /dl/TOKEN/  a pack buyer's download page, and /dl/TOKEN/file.pdf the files. The "Your downloads" PDF that a pack
-//               delivers holds this link. Packs and their files are listed in the database (packs); the files are
-//               in the FILES store. atlas-products packs.sh uploads them with PUT /dl/_put/file.pdf and the admin key.
+//   /dl/TOKEN/  a buyer's download page, and /dl/TOKEN/file.pdf the files. TOKEN is a pack's (the "Your downloads"
+//               PDF that a pack sold on Etsy delivers holds this link; packs table) or an order's from our Stripe
+//               store (orders table, made by src/store.js). The files are in the FILES store; atlas-products
+//               packs.sh uploads them with PUT /dl/_put/file.pdf and the admin key.
+//   /buy/SLUG/, /thanks/, /stripe-webhook   the Stripe store: see src/store.js.
 //
 // Storage: DB is a D1 database (schema.sql), FILES a KV namespace. Both are free at this size.
+
+import { buy, thanks, webhook, order } from './store.js';
 
 const DAY = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' });
 const today = () => DAY.format(new Date());
@@ -62,19 +66,26 @@ async function stats(env, key) {
   if (!real || key !== real) return text('Not found', 404);
   const since = DAY.format(new Date(Date.now() - 29 * 86400000));
   const week = DAY.format(new Date(Date.now() - 6 * 86400000));
-  const [days, pages, refs, events, totals] = (await env.DB.batch([
+  const [days, pages, refs, events, totals, orders] = (await env.DB.batch([
     env.DB.prepare('SELECT day, SUM(n) AS n FROM hits WHERE day >= ? GROUP BY day ORDER BY day DESC').bind(since),
     env.DB.prepare('SELECT path, SUM(n) AS n FROM hits WHERE day >= ? GROUP BY path ORDER BY n DESC LIMIT 40').bind(since),
     env.DB.prepare('SELECT host, SUM(n) AS n FROM refs WHERE day >= ? GROUP BY host ORDER BY n DESC LIMIT 25').bind(since),
     env.DB.prepare('SELECT name, SUM(n) AS n FROM events WHERE day >= ? GROUP BY name ORDER BY n DESC LIMIT 60').bind(since),
     env.DB.prepare('SELECT SUM(CASE WHEN day = ?1 THEN n ELSE 0 END) AS d1, SUM(CASE WHEN day >= ?2 THEN n ELSE 0 END) AS d7, SUM(CASE WHEN day >= ?3 THEN n ELSE 0 END) AS d30, SUM(n) AS allTime FROM hits').bind(today(), week, since),
+    // the store's orders (src/store.js): no names or emails are kept, so a buyer who lost their link is found by date and price
+    env.DB.prepare('SELECT created, slug, amount, currency, live, token FROM orders ORDER BY created DESC LIMIT 100'),
   ])).map((r) => r.results);
   const max = Math.max(1, ...days.map((d) => d.n));
   const t = totals[0] || {};
   const table = (rows, a, b, head) => rows.length
     ? `<table><tr><th>${head}</th><th class="n">Count</th></tr>${rows.map((r) => `<tr><td>${esc(r[a])}</td><td class="n">${r[b]}</td></tr>`).join('')}</table>`
     : '<p class="none">Nothing yet.</p>';
-  const nice = (name) => name.replace(/^buy-/, 'Buy button: ').replace(/^dl-/, 'Pack download: ').replace(/^free-sampler-/, 'Free sampler download: ');
+  const nice = (name) => name.replace(/^buy-/, 'Buy button: ').replace(/^dl-/, 'Pack download: ').replace(/^order-dl-/, 'Order download: ').replace(/^free-sampler-/, 'Free sampler download: ');
+  const money = (o) => (o.currency || 'usd').toUpperCase() === 'USD' ? '$' + (o.amount / 100).toFixed(2) : (o.amount / 100).toFixed(2) + ' ' + esc(o.currency.toUpperCase());
+  const liveOrders = orders.filter((o) => o.live);
+  const orderRows = orders.length
+    ? `<table><tr><th>When (UTC)</th><th>Product</th><th class="n">Paid</th><th>Download page</th></tr>${orders.map((o) => `<tr><td>${esc(o.created.slice(0, 16).replace('T', ' '))}</td><td>${esc(o.slug)}${o.live ? '' : ' <b>(test)</b>'}</td><td class="n">${money(o)}</td><td><a href="/dl/${esc(o.token)}/">open</a></td></tr>`).join('')}</table>`
+    : '<p class="none">No orders yet.</p>';
   return html(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
 <title>Atlas of Cities: visitor numbers</title><style>
 body { font: 16px/1.5 system-ui, sans-serif; color: #1d2433; background: #f7f5f0; margin: 0; padding: 1.2rem; }
@@ -91,6 +102,9 @@ th, td { text-align: left; padding: .4rem .8rem; border-top: 1px solid #eee8dc; 
 <div class="tiles"><div><b>${t.d1 || 0}</b>page views today</div><div><b>${t.d7 || 0}</b>last 7 days</div><div><b>${t.d30 || 0}</b>last 30 days</div><div><b>${t.allTime || 0}</b>since counting began</div></div>
 <h2>Page views by day (last 30 days)</h2>
 ${days.length ? `<table><tr><th>Day</th><th class="n">Views</th><th></th></tr>${days.map((d) => `<tr><td>${esc(d.day)}</td><td class="n">${d.n}</td><td><span class="bar" style="width:${Math.round(240 * d.n / max)}px"></span></td></tr>`).join('')}</table>` : '<p class="none">Nothing yet.</p>'}
+<h2>Store orders (newest 100)</h2>
+<p class="note">${liveOrders.length} real ${liveOrders.length === 1 ? 'order' : 'orders'} in this list. Paid with Stripe; the amount is before Stripe's fees and any sales tax. A buyer who lost their download page: find the order by time and price (Stripe's email to you shows both) and send them its link.</p>
+${orderRows}
 <h2>Buy buttons, downloads and other clicks (last 30 days)</h2>
 ${table(events.map((e) => ({ name: nice(e.name), n: e.n })), 'name', 'n', 'What')}
 <h2>Where visits came from (last 30 days)</h2>
@@ -101,21 +115,50 @@ ${table(pages, 'path', 'n', 'Page')}
 </main></body></html>`);
 }
 
-/* ---------- pack downloads ---------- */
+/* ---------- downloads: a pack's page (sold on Etsy) or an order's page (our Stripe store) ---------- */
 const mb = (bytes) => (bytes / 1048576).toFixed(1) + ' MB';
+const SITES = {
+  atlas: { name: 'The Atlas of Cities', home: 'https://atlasofcities.org/', line: 'seven illustrated cities, free games and lessons.' },
+  esp: { name: 'Every Stone Speaks', home: 'https://everystonespeaks.com/', line: 'free Bible lessons for kids, in pictures.' },
+};
 async function pack(env, token) {
   if (!/^[A-Za-z0-9]{20,64}$/.test(token)) return null;
   const row = await env.DB.prepare('SELECT slug, title, files FROM packs WHERE token = ?').bind(token).first();
-  if (!row) return null;
+  if (!row) {
+    const o = await order(env, token);
+    if (o) o.order = true;
+    return o;
+  }
   try { row.files = JSON.parse(row.files); } catch { return null; }
+  row.site = 'atlas';
   return row;
 }
 // files: [{name: "City Builders", note: "A card game", letter: ["city-builders-letter.pdf", bytes], a4: [...]}]
-function packPage(p) {
+function packPage(p, isNew) {
+  const site = SITES[p.site] || SITES.atlas;
   const link = (f, label) => f ? `<a class="dl" href="${esc(f[0])}" download>${label} <span>${mb(f[1])}</span></a>` : '';
   const rows = p.files.map((f) => `<li><div><b>${esc(f.name)}</b><span class="what">${esc(f.note || '')}</span></div><div class="links">${link(f.letter, 'US Letter')}${link(f.a4, 'A4')}</div></li>`).join('');
+  const help = p.order
+    ? 'Something not working, or lost this page? Write to the support address on your payment receipt, and we will put it right.'
+    : 'Something not working? Send us a message through the shop you bought from, and we will put it right.';
+  const testNote = p.test ? '<p class="test">This was a TEST purchase (Stripe test mode). No money changed hands.</p>' : '';
+  const hello = isNew ? '<p class="new"><b>Thank you for your order!</b> Your payment went through. Bookmark this page now: it is your own link to your downloads.</p>' : '';
+  let main;
+  if (p.license) {
+    const open = `${p.open || 'https://life-rpg.atlasofcities.org/'}unlock/?key=${encodeURIComponent(p.license)}`;
+    main = `<p>Thank you for buying Life RPG! Here is your key. Open the game with the button on each phone, tablet or computer you play on (up to 10 devices), or type the key on the game's unlock page.</p>
+<p class="key">${esc(p.license)}</p>
+<p><a class="dl" href="${esc(open)}">Open Life RPG</a></p>
+<p class="tips">Keep this page (bookmark it) or write the key down: you need it to unlock a new device. Please don't share it.</p>`;
+  } else if (!p.files.length) {
+    main = '<p>Your files are being prepared. Please reload this page in a little while.</p>';
+  } else {
+    main = `<p>${p.order ? 'Your printables are here' : 'Thank you for buying! Every printable is here'} in two paper sizes. Choose <b>US Letter</b> in the United States and Canada, and <b>A4</b> almost everywhere else. Bookmark this page: you can come back and download again whenever you like.</p>
+<ul>${rows}</ul>
+<p class="tips">Print at 100% or "actual size". The files are for your own home or one classroom, so please don't share them or this page's address.</p>`;
+  }
   return html(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
-<title>${esc(p.title)}: your downloads | The Atlas of Cities</title><style>
+<title>${esc(p.title)}: your downloads | ${esc(site.name)}</title><style>
 body { font: 17px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; color: #1d2433; background: #f7f5f0; margin: 0; }
 header { background: #142039; color: #fff; padding: 1.4rem 1.2rem; } header p { margin: 0; color: #f0c674; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .8rem; }
 h1 { font: 700 1.7rem/1.2 Georgia, "Times New Roman", serif; margin: .2rem 0 0; }
@@ -126,13 +169,15 @@ li b { display: block; font-size: 1.05rem; } .what { color: #5c6577; font-size: 
 .dl { display: inline-block; background: #23396b; color: #fff; text-decoration: none; font-weight: 700; padding: .65rem 1rem; border-radius: 999px; min-height: 24px; }
 .dl span { font-weight: 400; opacity: .85; font-size: .88rem; } .dl:hover, .dl:focus { background: #142039; }
 .tips { color: #3a4353; font-size: .95rem; } a { color: #23396b; }
+.new { background: #e9f3e6; border: 1px solid #b9d7b0; border-radius: 12px; padding: .8rem 1rem; }
+.test { background: #fff3cd; border: 1px solid #e6cf7a; border-radius: 12px; padding: .8rem 1rem; font-weight: 700; }
+.key { font: 700 1.5rem/1.3 ui-monospace, Menlo, Consolas, monospace; background: #fff; border: 2px dashed #23396b; border-radius: 12px; padding: .8rem 1rem; text-align: center; letter-spacing: .04em; word-break: break-all; }
 </style></head><body>
-<header><div><p>The Atlas of Cities · Your downloads</p><h1>${esc(p.title)}</h1></div></header>
+<header><div><p>${esc(site.name)} · Your downloads</p><h1>${esc(p.title)}</h1></div></header>
 <main>
-<p>Thank you for buying! Every printable is here in two paper sizes. Choose <b>US Letter</b> in the United States and Canada, and <b>A4</b> almost everywhere else. Bookmark this page: you can come back and download again whenever you like.</p>
-<ul>${rows}</ul>
-<p class="tips">Print at 100% or "actual size". The files are for your own home or one classroom, so please don't share them or this page's address. Something not working? Send us a message through the shop you bought from, and we will put it right.</p>
-<p class="tips"><a href="/">atlasofcities.org</a>: seven illustrated cities, free games and lessons.</p>
+${testNote}${hello}${main}
+<p class="tips">${help}</p>
+<p class="tips"><a href="${site.home}">${esc(site.home.replace(/^https:\/\/|\/$/g, ''))}</a>: ${site.line}</p>
 </main></body></html>`);
 }
 async function downloads(request, env, ctx, parts) {
@@ -148,17 +193,17 @@ async function downloads(request, env, ctx, parts) {
   }
   if (request.method !== 'GET' && request.method !== 'HEAD') return text('', 405);
   const p = await pack(env, parts[0] || '');
-  if (!p) return html('<!doctype html><meta charset="utf-8"><title>Not found</title><body style="font:17px system-ui;padding:2rem"><h1>Download page not found</h1><p>Please open the link in your "Your downloads" PDF again, or copy the whole address. If it still does not work, send us a message through the shop you bought from.</p>', 404);
+  if (!p) return html('<!doctype html><meta charset="utf-8"><title>Not found</title><body style="font:17px system-ui;padding:2rem"><h1>Download page not found</h1><p>Please open your download link again, or copy the whole address. If it still does not work, write to us: through the shop you bought from, or to the support address on your payment receipt.</p>', 404);
   if (parts.length === 1) return Response.redirect(new URL(`/dl/${parts[0]}/`, request.url).toString(), 301);
   const file = parts[1];
-  if (file === '') return packPage(p);
+  if (file === '') return packPage(p, new URL(request.url).searchParams.has('new'));
   const entry = p.files.flatMap((f) => [f.letter, f.a4]).find((f) => f && f[0] === file);
   if (!entry) return text('Not found', 404);
   const headers = { 'Content-Type': 'application/pdf', 'Content-Disposition': `attachment; filename="${file}"`, 'Content-Length': String(entry[1]), ...PRIVATE };
   if (request.method === 'HEAD') return new Response(null, { headers });
   const body = await env.FILES.get('f:' + file, { type: 'stream' });
   if (!body) return text('This file is not ready yet. Please try again in a little while.', 503);
-  ctx.waitUntil(env.DB.batch([bump(env, 'events', 'name', 'dl-' + p.slug)]).catch(() => {}));
+  ctx.waitUntil(env.DB.batch([bump(env, 'events', 'name', (p.order ? 'order-dl-' : 'dl-') + p.slug)]).catch(() => {}));
   return new Response(body, { headers });
 }
 
@@ -170,6 +215,12 @@ export default {
       if (parts[0] === 'c' && (parts[1] === 'v' || parts[1] === 'e')) return await count(request, env, ctx, parts[1]);
       if (parts[0] === 'stats' && parts[1]) return await stats(env, parts[1]);
       if (parts[0] === 'dl' && parts[1]) return await downloads(request, env, ctx, parts.slice(1));
+      if (parts[0] === 'buy' && parts[1]) {
+        if (parts.length === 2) return Response.redirect(new URL(`/buy/${parts[1]}/${url.search}`, request.url).toString(), 301);
+        return await buy(request, env, parts[1]);
+      }
+      if (parts[0] === 'thanks') return await thanks(request, env);
+      if (parts[0] === 'stripe-webhook') return await webhook(request, env);
     } catch (e) {
       console.error(e);
       return text('Something went wrong. Please try again in a minute.', 500);

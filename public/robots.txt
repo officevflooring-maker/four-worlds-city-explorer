@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /buy/
+Disallow: /thanks/
+Disallow: /dl/
 
 Sitemap: https://atlasofcities.org/sitemap.xml

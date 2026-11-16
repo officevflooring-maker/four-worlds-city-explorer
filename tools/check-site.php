@@ -1,15 +1,14 @@
 <?php
 // Checks every generated page in public/: internal links and images resolve to real files,
 // images have alt text, each page has one h1, a title and a description, and no page except
-// /credits/ and /support/ links to other websites (the shop's Buy links to the store's checkout, Life RPG's own
-// address and our sister site, SISTER_URL, are fine). The same checks as the first version of check-site.sh, in one
+// /credits/ and /support/ links to other websites (Life RPG's own address, our Etsy listings and our sister site,
+// SISTER_URL, are fine; the shop's own checkout, /buy/, is on this site). The same checks as the first version of check-site.sh, in one
 // PHP process, so it runs in seconds. Usage: php tools/check-site.php
 $pub = realpath(__DIR__ . '/../public');
 $config = file_get_contents(__DIR__ . '/../build/config.php');
 preg_match("~const SITE_URL *= *'([^']+)~", $config, $m);
 $site = $m[1];
-preg_match("~const STORE_URL *= *'([^']+)~", $config, $m);
-$linksOut = [$site, $m[1] . '/checkout/buy/', 'creativecommons.org/licenses/by/4.0'];
+$linksOut = [$site, 'creativecommons.org/licenses/by/4.0'];
 if (preg_match("~'open' *=> *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
 if (preg_match("~const SISTER_URL *= *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
 // our Etsy shop's listings (the Buy buttons while SHOP_VIA is 'etsy') and our Pinterest page
@@ -17,7 +16,10 @@ $linksOut[] = 'https://www.etsy.com/listing/';
 if (preg_match("~const PINTEREST_URL *= *'([^']+)~", $config, $m)) $linksOut[] = $m[1];
 $fail = 0; $n = 0; $pages = 0;
 $exists = [];
-$ok = function ($r) use ($pub, &$exists) {
+// /buy/SLUG/ is the Stripe store's checkout (src/store.js), served by the Worker, not a file: fine for any product it sells
+$catalog = json_decode(file_get_contents(__DIR__ . '/../src/catalog.json'), true);
+$ok = function ($r) use ($pub, &$exists, $catalog) {
+  if (preg_match('~^/buy/([a-z0-9-]+)/$~', $r, $m)) return isset($catalog[$m[1]]);
   if (!isset($exists[$r])) $exists[$r] = is_file($pub . $r) || is_file($pub . $r . 'index.html');
   return $exists[$r];
 };

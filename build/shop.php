@@ -2,9 +2,10 @@
 // ---------- The shop: things for grown-ups to buy, made from the worlds of this site ----------
 // /shop/ lists them; each has its own page: /life-rpg/ (an app, unlocked with a key), /city-builders/ (a print-and-play
 // card game), /classroom-pack/ (a print-ready teaching pack) and /posters/ (posters to print, pay what you want, which
-// is also how the Support page takes support). The store delivers the file or the key by itself, so this site still
-// has no accounts, payments or cookies. Prices and checkout links are in config.php (SHOP); while a link is empty the
-// product says "Coming soon". The pictures come from the products themselves (see the README).
+// is also how the Support page takes support). Prices are in config.php (SHOP); SHOP_VIA says whether the Buy
+// buttons open Etsy or our own Stripe checkout (/buy/SLUG/, src/store.js), which hands the buyer a download page on
+// this site. Either way this site has no accounts or cookies and never sees payment details. A product that can't
+// be bought right now says "Coming soon". The pictures come from the products themselves (see the README).
 
 $SHOP_INFO = [
   'life-rpg' => ['Life RPG', '/life-rpg/', 'An app for real-life goals', 'Turn real-life goals into quests, earn XP and grow your own city.', '/assets/life-rpg/phones-card.webp', 960, 540],
@@ -28,28 +29,25 @@ const SHOP_SAMPLER = [
   'memory' => 'twelve picture cards', 'dominoes' => 'ten dominoes',
 ];
 
-// A checkout link has to come from the store's Share button. Anything else stops the build, including the
-// ".../checkout/?cart=..." address a browser shows once a checkout is open, which works only once.
-foreach (SHOP as $slug => $p) {
-  if ($p['buy'] !== '' && !preg_match('~^' . preg_quote(STORE_URL, '~') . '/(checkout/)?buy/[\w-]+(\?[^\s"<>]*)?$~', $p['buy'])) {
-    fwrite(STDERR, "config.php: the 'buy' link for $slug isn't a checkout link from " . STORE_URL . ". In the store, open the product, click Share and copy the link.\n");
-    exit(1);
-  }
-}
-
-foreach (SHOP as $slug => $p) {
+// A typo in config.php stops the build rather than a checkout.
+if (!in_array(SHOP_VIA, ['etsy', 'stripe'], true)) { fwrite(STDERR, "config.php: SHOP_VIA must be 'etsy' or 'stripe'.\n"); exit(1); }
+foreach (SHOP + STORE_ALSO as $slug => $p) {
   if (isset($p['etsy']) && !preg_match('~^\d{6,}$~', $p['etsy'])) {
     fwrite(STDERR, "config.php: the 'etsy' value for $slug isn't a listing number (the digits in the listing's address).\n");
     exit(1);
   }
+  if (!preg_match('~^\$\d+(\.\d\d)?$~', $p['price']) || (isset($p['tax']) && !preg_match('~^txcd_\d{8}$~', $p['tax']))) {
+    fwrite(STDERR, "config.php: $slug needs a 'price' like \$3.99, and a 'tax' like txcd_10503000 if it has one.\n");
+    exit(1);
+  }
 }
 
-// Where a product is sold right now (SHOP_VIA in config.php): its Etsy listing, or the store's checkout.
+// Where a product is sold right now (SHOP_VIA in config.php): its Etsy listing, or our Stripe checkout.
 // An empty link means "Coming soon".
 function shop_etsy() { return SHOP_VIA === 'etsy'; }
 function shop_link($slug) {
   if (shop_etsy()) return empty(SHOP[$slug]['etsy']) ? '' : 'https://www.etsy.com/listing/' . SHOP[$slug]['etsy'];
-  return SHOP[$slug]['buy'];
+  return "/buy/$slug/";
 }
 function shop_price($slug) { return h(shop_etsy() ? (SHOP[$slug]['etsy_price'] ?? SHOP[$slug]['price']) : SHOP[$slug]['price']); }
 function shop_open($slug) { return shop_link($slug) !== ''; }
@@ -57,7 +55,7 @@ function shop_open($slug) { return shop_link($slug) !== ''; }
 function shop_from($slug) { return !shop_etsy() && !empty(SHOP[$slug]['from']); }
 function shop_terms($slug) { return shop_from($slug) ? 'pay what you want, from ' . shop_price($slug) : shop_price($slug) . ', one time'; }
 // The words for where buying happens, used wherever a page talks about paying.
-function shop_where() { return shop_etsy() ? 'on Etsy, in our shop ' . ETSY_NAME : "on our store's checkout"; }
+function shop_where() { return shop_etsy() ? 'on Etsy, in our shop ' . ETSY_NAME : "on our secure checkout, run by Stripe"; }
 
 // The buy button, or "Coming soon" until the product has its link. data-buy lets the site count clicks on it
 // (public/js/site.js sends the product's name to our own server; nothing about the visitor is kept).
@@ -67,8 +65,9 @@ function shop_buy($slug) {
   $name = h($SHOP_INFO[$slug][0]);
   $price = (shop_from($slug) ? 'from ' : '') . shop_price($slug);
   $more = $slug === 'life-rpg' && !empty(SHOP[$slug]['open']) ? ' Already bought it? <a href="' . h(SHOP[$slug]['open']) . '">Open Life RPG</a>' : '';
-  $note = shop_etsy() ? 'Opens our Etsy shop, ' . ETSY_NAME . '.' : 'Opens our store, a separate website.';
-  return '<p><a class="btn btn-big shop-buy" href="' . h(shop_link($slug)) . "\" rel=\"noopener\" data-buy=\"$slug\">Buy $name · $price</a></p>"
+  $note = shop_etsy() ? 'Opens our Etsy shop, ' . ETSY_NAME . '.' : 'Opens our secure checkout, run by Stripe.';
+  $rel = shop_etsy() ? 'noopener' : 'nofollow';   // /buy/ starts a checkout: search engines shouldn't follow it
+  return '<p><a class="btn btn-big shop-buy" href="' . h(shop_link($slug)) . "\" rel=\"$rel\" data-buy=\"$slug\">Buy $name · $price</a></p>"
     . "<p class=\"small shop-note\">$note$more</p>";
 }
 // A product with a page in the free sampler says so under its Buy button.
@@ -129,7 +128,7 @@ const SHOP_FOR_GUIDE = [
 ];
 // The refund promise, on every product page (the shop page has the full list, #refunds).
 function shop_refund() {
-  $how = shop_etsy() ? 'Send us a message on Etsy.' : 'Write to us from your receipt email.';
+  $how = shop_etsy() ? 'Send us a message on Etsy.' : 'Write to the support address on your payment receipt.';
   return '<p class="small shop-refund">If something doesn\'t work, you get a full refund within 30 days. ' . $how . '</p>';
 }
 
@@ -186,7 +185,7 @@ function shop_ld($slug, $desc) {
     'image' => url('/assets/og/' . $slug . '.jpg'), 'brand' => ['@type' => 'Brand', 'name' => SITE_NAME]];
   $days = fn($n) => ['@type' => 'QuantitativeValue', 'minValue' => $n, 'maxValue' => $n, 'unitCode' => 'DAY'];
   if (shop_open($slug)) $ld['offers'] = ['@type' => 'Offer', 'price' => ltrim(SHOP[$slug]['price'], '$'), 'priceCurrency' => 'USD',
-    'availability' => 'https://schema.org/InStock', 'url' => shop_link($slug),
+    'availability' => 'https://schema.org/InStock', 'url' => shop_etsy() ? shop_link($slug) : url($url),
     'shippingDetails' => ['@type' => 'OfferShippingDetails',
       'shippingRate' => ['@type' => 'MonetaryAmount', 'value' => 0, 'currency' => 'USD'],
       'shippingDestination' => ['@type' => 'DefinedRegion', 'addressCountry' => 'US'],
@@ -348,7 +347,7 @@ shop_page('life-rpg', [
     . shop_faq([
       ['Is it a subscription?', 'No. You pay ' . shop_price('life-rpg') . ' once, and it\'s yours. There are no ads and nothing else to buy.'],
       ['What do I need?', 'A phone, tablet or computer with an up-to-date web browser. You can add Life RPG to your home screen, where it opens like an app.'],
-      ['Do I need an account?', 'No. Your receipt email has a key. Type it in once on each device you play on, up to 10 devices.'],
+      ['Do I need an account?', 'No. ' . (shop_etsy() ? 'Your receipt email has a key.' : 'Right after paying, your download page shows your key.') . ' Type it in once on each device you play on, up to 10 devices.'],
       ['Where is my progress saved?', 'On your device, not on a server, so it stays private. Save a backup file now and then, and open it on another device to carry on there.'],
       ['Does it work without the internet?', 'Yes, once it has opened. Only unlocking a new device needs a connection.'],
       ['Can I change the quests?', 'Yes. Every quest, reward and stat can be changed. The starter quests cover work, family, health, money, learning and faith; remove any you don\'t want. There is a teen starter pack with school, chores and sports.'],
@@ -515,10 +514,10 @@ foreach ($SHOP_SHELVES as $i => [$head, $line, $slugs]) {
   $shelves .= '<section class="wrap section shop-shelf" aria-labelledby="' . $id . '"><div class="sec-head"><h2 id="' . $id . '">' . h($head) . '</h2><p>' . h($line) . '</p></div>' . shop_cards('', $slugs) . '</section>';
 }
 $nProducts = count($SHOP_INFO) - count(SHOP_PACKS);   // the packs hold the same things again
-$payWhere = shop_etsy() ? 'On Etsy, where our shop is called ' . ETSY_NAME . '.' : "On our store's checkout. No account.";
-$payPolicy = shop_etsy() ? "Payment happens on Etsy, under Etsy's own privacy policy." : "Payment happens on our store's website, under its own privacy policy.";
-$payFiles = shop_etsy() ? 'Etsy emails you a download link, and your files stay on your Etsy Purchases page, so you can download again later.' : 'Your receipt email has your download links, so you can download again later.';
-$payRefund = shop_etsy() ? 'Send us a message on Etsy.' : 'Write to us from your receipt email.';
+$payWhere = shop_etsy() ? 'On Etsy, where our shop is called ' . ETSY_NAME . '.' : 'On our secure checkout, run by Stripe. No account needed.';
+$payPolicy = shop_etsy() ? "Payment happens on Etsy, under Etsy's own privacy policy." : "Payment happens on Stripe's checkout page, under Stripe's own privacy policy.";
+$payFiles = shop_etsy() ? 'Etsy emails you a download link, and your files stay on your Etsy Purchases page, so you can download again later.' : 'Right after paying you land on your own download page. Bookmark it to download again later. Lost it? Write to the support address on your payment receipt and we will send it again.';
+$payRefund = shop_etsy() ? 'Send us a message on Etsy.' : 'Write to the support address on your payment receipt.';
 page('/shop/', [
   'title' => 'Shop: board games, activity books, classroom packs and posters',
   'desc' => h('Printable games, a storybook, an activity book, a play set, classroom packs, posters and a calendar from seven worlds, and Life RPG. The rest of the site stays free.'),

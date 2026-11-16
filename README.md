@@ -70,7 +70,8 @@ The site is live at https://atlasofcities.org. After each change:
 | `/shop/` and each product's page | The shop: printables and Life RPG (`build/shop.php`, `build/printables.php`, `build/games.php`) |
 | `/bundle/`, `/holiday-pack/` | The two packs: the Everything Bundle (all 15 printables) and the Family Holiday Pack (`build/packs.php`; what is in each is `SHOP_PACKS` in `build/shop.php`) |
 | `/free/` | The free sampler: one page from ten printables, as a PDF in `public/assets/free/` (made by atlas-products `packs.sh`) |
-| `/dl/TOKEN/`, `/stats/KEY/` | Not files: a pack buyer's private download page and the owner's visitor numbers, both made by `src/worker.js` |
+| `/dl/TOKEN/`, `/stats/KEY/` | Not files: a buyer's private download page and the owner's visitor numbers and orders, made by `src/worker.js` |
+| `/buy/SLUG/`, `/thanks/` | Not files: the Stripe store's checkout and thank-you step (`src/store.js`, `STRIPE-STORE.md`) |
 | `/support/` | How to support the site: by buying from the shop |
 | `/search/` | Every page from A to Z, filtered as you type (the header search box uses `/data/search.json`) |
 | `/about/` | About, privacy, accessibility, artwork reuse, sources |
@@ -102,16 +103,35 @@ A Cloudflare Worker serves the site: `wrangler.jsonc` serves the files in `publi
 
 ## Where the Buy buttons go
 
-`SHOP_VIA` in `build/config.php` decides it. Since Nov 11, 2026 it is `'etsy'`: the Lemon Squeezy store is still waiting for approval, so every Buy button opens the product's listing in our Etsy shop (each product's `'etsy'` listing number in `SHOP`). A product with no Etsy listing says "Coming soon"; Life RPG is one, because it needs the store's license keys. The Poster Set has a fixed price on Etsy (`'etsy_price'`). When the store is approved: put its live checkout links in each product's `'buy'`, set `SHOP_VIA` to `'store'`, rebuild and push. The pages' words about paying, refunds and receipts follow the setting by themselves.
+`SHOP_VIA` in `build/config.php` decides it:
+
+- `'etsy'` (since Nov 11, 2026): every Buy button opens the product's listing in our Etsy shop (each product's `'etsy'`
+  listing number in `SHOP`). A product with no Etsy listing says "Coming soon"; Life RPG is one, because it needs a
+  key. The Poster Set has a fixed price on Etsy (`'etsy_price'`).
+- `'stripe'`: every Buy button opens `/buy/SLUG/`, our own Stripe checkout, and the buyer gets a download page on
+  this site. Lemon Squeezy turned the store down on Nov 16, 2026, so the shop moved to Stripe: see `STRIPE-STORE.md`
+  for how it works and the owner's setup steps. Switch to `'stripe'` once Stripe is set up and a test purchase worked.
+
+The pages' words about paying, refunds and receipts follow the setting by themselves.
 
 Every free page ends with one or two matching products (`shop_promo_for()` in `build/shop.php`), and product pages show the packs they are part of, a 30-day refund line and, where the free sampler has a page of theirs, a link to it.
 
+## The Stripe store (src/store.js)
+
+`/buy/SLUG/` makes a Stripe Checkout Session (Stripe Managed Payments: Stripe is the seller of record and handles sales
+tax), `/thanks/` checks the payment and opens the buyer's download page `/dl/TOKEN/`, and `/stripe-webhook` records
+the order when Stripe reports the payment. What is sold comes from `src/catalog.json`, which `php build/build.php`
+writes from `SHOP` and `STORE_ALSO` (Every Stone Speaks' packs) in `build/config.php`; the files each order delivers are
+the `items` table. An order keeps no name, email or card details. The keys are Cloudflare secrets (`STRIPE_KEY`,
+`STRIPE_WEBHOOK_SECRET` and their test-mode twins). Tests: `node tools/store-test.mjs`. Life RPG's Worker
+(life-rpg-sell) checks the Life RPG keys in the same database.
+
 ## Counting and pack downloads (src/worker.js)
 
-The Worker's script runs only for `/c/`, `/stats/` and `/dl/` (`run_worker_first` in `wrangler.jsonc`); every other address is a plain file. It uses a D1 database, `atlasofcities` (tables in `src/schema.sql`), and a KV namespace, `atlasofcities-files`. Both are on Cloudflare's free plan.
+The Worker's script runs only for `/c/`, `/stats/`, `/dl/` and the store's `/buy/`, `/thanks/` and `/stripe-webhook` (`run_worker_first` in `wrangler.jsonc`); every other address is a plain file. It uses a D1 database, `atlasofcities` (tables in `src/schema.sql`), and a KV namespace, `atlasofcities-files`. Both are on Cloudflare's free plan.
 
 - **Counting.** `public/js/site.js` tells `/c/v` that a page was opened (its address and the website the visit came from) and `/c/e` that a Buy or sampler button was clicked (`data-buy`). The database keeps a number per day. No cookie, no IP address, nothing about the visitor; search robots are left out. The About page's Privacy section says so.
-- **The owner's numbers** are at `/stats/KEY/`. The key is in the database (`settings`, `stats_key`) and in atlas-products `packs/secrets.json`. Keep the address private.
+- **The owner's numbers** are at `/stats/KEY/`, with the store's orders and their download pages. The key is in the database (`settings`, `stats_key`) and in atlas-products `packs/secrets.json`. Keep the address private. The same key opens test purchases (`/buy/SLUG/?test=KEY`).
 - **Pack downloads.** A pack is too big to attach to an order, so its buyer gets a one-page PDF whose link opens `/dl/TOKEN/`: a page listing every file in US Letter and A4. The packs and their files are rows in the database (`packs`); the PDFs are in the KV namespace. atlas-products makes all of it: `bash packs.sh <this folder>` builds the PDFs, pictures and `out/packs/packs.sql`, and `bash packs.sh <this folder> --upload` sends the files. To replace a leaked link, change the pack's token in `packs/secrets.json`, run `packs.sh` again, run the new `packs.sql` on the database and delete the old row, then replace the PDF in the stores.
 - **Trying it at home:** `npx wrangler dev` serves the site with the script, using a local copy of the database (`npx wrangler d1 execute atlasofcities --local --file=src/schema.sql` makes its tables).
 

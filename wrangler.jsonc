@@ -4,18 +4,23 @@
 {
   "name": "atlasofcities",
   "compatibility_date": "2026-10-01",
-  // The site is plain files in public/. src/worker.js runs only for the three kinds of address in run_worker_first:
-  // counting (/c/), the owner's numbers page (/stats/) and pack downloads (/dl/). Every other address is served
-  // straight from public/, with the headers and redirects in public/_headers and public/_redirects.
+  // The site is plain files in public/. src/worker.js runs only for the addresses in run_worker_first:
+  // counting (/c/), the owner's numbers page (/stats/), downloads (/dl/) and the Stripe store (/buy/, /thanks/,
+  // /stripe-webhook; src/store.js). Every other address is served straight from public/, with the headers and
+  // redirects in public/_headers and public/_redirects.
   "main": "src/worker.js",
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
-    "run_worker_first": ["/c/*", "/stats/*", "/dl/*"]
+    "run_worker_first": ["/c/*", "/stats/*", "/dl/*", "/buy/*", "/thanks", "/thanks/*", "/stripe-webhook"]
   },
-  // The counts and the list of packs (src/schema.sql), and the packs' files.
+  // The Stripe store's plain settings (src/store.js). The keys are secrets, set in the Cloudflare dashboard, never here.
+  // STRIPE_MANAGED "on": Stripe Managed Payments (Stripe is the seller of record and handles sales tax).
+  // STRIPE_TAX "on": Stripe Tax, only when Managed Payments is off.
+  "vars": { "STRIPE_MANAGED": "on", "STRIPE_TAX": "off" },
+  // The counts, the packs, the store's items and orders (src/schema.sql), and the PDFs.
   "d1_databases": [{ "binding": "DB", "database_name": "atlasofcities", "database_id": "8013c5f6-0ec3-4dfc-8b73-2b1d87eaa375" }],
   "kv_namespaces": [{ "binding": "FILES", "id": "13637a9b9e704842b8d452de56ea69bd" }],
   // The site's own domain (registered with Cloudflare): each deploy keeps both names attached to this Worker,
