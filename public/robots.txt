@@ -3,5 +3,6 @@ Allow: /
 Disallow: /buy/
 Disallow: /thanks/
 Disallow: /dl/
+Disallow: /signup/
 
 Sitemap: https://atlasofcities.org/sitemap.xml

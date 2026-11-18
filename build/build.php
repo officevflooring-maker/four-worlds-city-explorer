@@ -356,7 +356,8 @@ page('/about/', [
   <p id="sister">Our sister site, <a href="{$sister}">Every Stone Speaks</a>, uses pictures from all seven worlds for free Bible lessons for kids, families and Sunday schools: a walk through seven cities, from the first garden to the city God is preparing, where every building points to Jesus.</p>
 
   <h2 id="privacy">Privacy</h2>
-  <p>This site has no accounts, forms, comments, chat or ads, and it does not track you. It sets no cookies and loads nothing from other websites. Our web host may keep standard server logs.</p>
+  <p>This site has no accounts, comments, chat or ads, and it does not track you. It sets no cookies and loads nothing from other websites. Our web host may keep standard server logs.</p>
+  <p id="email-list">The one form is the email list on the <a href="/free/">free sampler</a> page, for parents, teachers and other grown-ups. Joining is optional: the sampler downloads without it. If you join, we keep your email address, the day you joined and the page you joined on, and nothing else. We use it only to write a few times a year with new free pages, new packs and shop news, and we never share or sell it. When we choose an email service to send these emails, we will name it here. You can <a href="/free/remove/">leave the list</a> at any time, and your address is deleted; that page also removes an address a child entered by mistake. To stop robots filling the list, Cloudflare, our web host, briefly limits how many tries one connection can make. We don't store IP addresses.</p>
   <p id="counting">We do count how often each page is opened, which website a visit came from, and how often a Buy or download button is clicked, so we know what is useful. The count is a plain number kept on our own server. It stores no cookie, no IP address and nothing about you or your device, and it is not shared with anyone.</p>
   <p>Passport stamps, quiz scores and the city you build are saved only in your own browser and never sent anywhere. You can clear them on the <a href="/play/passport/">passport page</a>.</p>
   <p>Things in <a href="/shop/">the shop</a> are paid for {$aboutPay}</p>
@@ -616,5 +617,5 @@ foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>
 $xml .= "</urlset>\n";
 file_put_contents(PUB . '/sitemap.xml', $xml);
 // the store's addresses (src/store.js) are for buyers, not search engines
-file_put_contents(PUB . '/robots.txt', "User-agent: *\nAllow: /\nDisallow: /buy/\nDisallow: /thanks/\nDisallow: /dl/\n\nSitemap: " . url('/sitemap.xml') . "\n");
+file_put_contents(PUB . '/robots.txt', "User-agent: *\nAllow: /\nDisallow: /buy/\nDisallow: /thanks/\nDisallow: /dl/\nDisallow: /signup/\n\nSitemap: " . url('/sitemap.xml') . "\n");
 echo "wrote sitemap.xml, robots.txt\n";

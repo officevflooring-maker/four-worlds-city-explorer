@@ -10,10 +10,13 @@
 //               store (orders table, made by src/store.js). The files are in the FILES store; atlas-products
 //               packs.sh uploads them with PUT /dl/_put/file.pdf and the admin key.
 //   /buy/SLUG/, /thanks/, /stripe-webhook   the Stripe store: see src/store.js.
+//   /signup/, /signup/remove/   the free sampler's email list: see src/signup.js. The owner downloads the list
+//               from /stats/KEY/signups.csv.
 //
 // Storage: DB is a D1 database (schema.sql), FILES a KV namespace. Both are free at this size.
 
 import { buy, thanks, webhook, order } from './store.js';
+import { signup, listCounts, listCsv } from './signup.js';
 
 const DAY = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' });
 const today = () => DAY.format(new Date());
@@ -61,9 +64,13 @@ async function count(request, env, ctx, kind) {
 }
 
 /* ---------- the owner's numbers ---------- */
-async function stats(env, key) {
+async function stats(env, key, file) {
   const real = await setting(env, 'stats_key');
   if (!real || key !== real) return text('Not found', 404);
+  // the email list as a spreadsheet file (src/signup.js)
+  if (file === 'signups.csv') {
+    return new Response(await listCsv(env), { headers: { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': `attachment; filename="atlas-email-list-${today()}.csv"`, ...PRIVATE } });
+  }
   const since = DAY.format(new Date(Date.now() - 29 * 86400000));
   const week = DAY.format(new Date(Date.now() - 6 * 86400000));
   const [days, pages, refs, events, totals, orders] = (await env.DB.batch([
@@ -75,6 +82,7 @@ async function stats(env, key) {
     // the store's orders (src/store.js): no names or emails are kept, so a buyer who lost their link is found by date and price
     env.DB.prepare('SELECT created, slug, amount, currency, live, token FROM orders ORDER BY created DESC LIMIT 100'),
   ])).map((r) => r.results);
+  const list = await listCounts(env, new Date(Date.now() - 29 * 86400000).toISOString().slice(0, 10));
   const max = Math.max(1, ...days.map((d) => d.n));
   const t = totals[0] || {};
   const table = (rows, a, b, head) => rows.length
@@ -102,6 +110,8 @@ th, td { text-align: left; padding: .4rem .8rem; border-top: 1px solid #eee8dc; 
 <div class="tiles"><div><b>${t.d1 || 0}</b>page views today</div><div><b>${t.d7 || 0}</b>last 7 days</div><div><b>${t.d30 || 0}</b>last 30 days</div><div><b>${t.allTime || 0}</b>since counting began</div></div>
 <h2>Page views by day (last 30 days)</h2>
 ${days.length ? `<table><tr><th>Day</th><th class="n">Views</th><th></th></tr>${days.map((d) => `<tr><td>${esc(d.day)}</td><td class="n">${d.n}</td><td><span class="bar" style="width:${Math.round(240 * d.n / max)}px"></span></td></tr>`).join('')}</table>` : '<p class="none">Nothing yet.</p>'}
+<h2>Email list (free sampler page)</h2>
+<p class="note">Grown-ups who joined the list on the free sampler page: ${list.all} in all, ${list.d30} in the last 30 days. Each one ticked "I'm 18 or older" and was promised a few emails a year (new free pages, new packs and shop news). <a href="/stats/${esc(key)}/signups.csv">Download the list</a> (a spreadsheet file: address, date joined, page). It holds email addresses: keep the file private and delete old copies.</p>
 <h2>Store orders (newest 100)</h2>
 <p class="note">${liveOrders.length} real ${liveOrders.length === 1 ? 'order' : 'orders'} in this list. Paid with Stripe; the amount is before Stripe's fees and any sales tax. A buyer who lost their download page: find the order by time and price (Stripe's email to you shows both) and send them its link.</p>
 ${orderRows}
@@ -213,7 +223,8 @@ export default {
     const parts = url.pathname.split('/').slice(1);   // "/dl/abc/" -> ["dl", "abc", ""]
     try {
       if (parts[0] === 'c' && (parts[1] === 'v' || parts[1] === 'e')) return await count(request, env, ctx, parts[1]);
-      if (parts[0] === 'stats' && parts[1]) return await stats(env, parts[1]);
+      if (parts[0] === 'stats' && parts[1]) return await stats(env, parts[1], parts[2] || '');
+      if (parts[0] === 'signup') return await signup(request, env, parts[1] || '');
       if (parts[0] === 'dl' && parts[1]) return await downloads(request, env, ctx, parts.slice(1));
       if (parts[0] === 'buy' && parts[1]) {
         if (parts.length === 2) return Response.redirect(new URL(`/buy/${parts[1]}/${url.search}`, request.url).toString(), 301);

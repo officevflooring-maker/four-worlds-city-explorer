@@ -5,8 +5,8 @@
   "name": "atlasofcities",
   "compatibility_date": "2026-10-01",
   // The site is plain files in public/. src/worker.js runs only for the addresses in run_worker_first:
-  // counting (/c/), the owner's numbers page (/stats/), downloads (/dl/) and the Stripe store (/buy/, /thanks/,
-  // /stripe-webhook; src/store.js). Every other address is served straight from public/, with the headers and
+  // counting (/c/), the owner's numbers page (/stats/), downloads (/dl/), the Stripe store (/buy/, /thanks/,
+  // /stripe-webhook; src/store.js) and the free sampler's email list (/signup/; src/signup.js). Every other address is served straight from public/, with the headers and
   // redirects in public/_headers and public/_redirects.
   "main": "src/worker.js",
   "assets": {
@@ -14,7 +14,7 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
-    "run_worker_first": ["/c/*", "/stats/*", "/dl/*", "/buy/*", "/thanks", "/thanks/*", "/stripe-webhook"]
+    "run_worker_first": ["/c/*", "/stats/*", "/dl/*", "/buy/*", "/thanks", "/thanks/*", "/stripe-webhook", "/signup", "/signup/*"]
   },
   // The Stripe store's plain settings (src/store.js). The keys are secrets, set in the Cloudflare dashboard, never here.
   // STRIPE_MANAGED "on": Stripe Managed Payments (Stripe is the seller of record and handles sales tax).
@@ -23,6 +23,9 @@
   // The counts, the packs, the store's items and orders (src/schema.sql), and the PDFs.
   "d1_databases": [{ "binding": "DB", "database_name": "atlasofcities", "database_id": "8013c5f6-0ec3-4dfc-8b73-2b1d87eaa375" }],
   "kv_namespaces": [{ "binding": "FILES", "id": "13637a9b9e704842b8d452de56ea69bd" }],
+  // The email list's guard against robots (src/signup.js): a few sign-ups a minute from one connection. Cloudflare
+  // keeps this count in memory only; nothing about the visitor is stored. namespace_id is any number unique on the account.
+  "ratelimits": [{ "name": "SIGNUP_LIMIT", "namespace_id": "1101", "simple": { "limit": 5, "period": 60 } }],
   // The site's own domain (registered with Cloudflare): each deploy keeps both names attached to this Worker,
   // with their DNS records and certificates. The temporary atlasofcities.koaa01.workers.dev address is turned off.
   "routes": [

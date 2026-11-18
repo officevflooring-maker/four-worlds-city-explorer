@@ -4,7 +4,7 @@
 
 A free educational website: explore seven illustrated isometric cities (Ancient Egypt, Ancient Rome, a Medieval Kingdom, a Modern Town, a Green World, a Robotic Future and an imagined Heavenly City), learn what each building does, and compare how each world provides water, places to gather, safe travel and room for nature.
 
-No accounts, forms, cookies, ads or third-party requests. Passport stamps, quiz scores and saved cities stay in the visitor's own browser (localStorage) and are never sent anywhere. The site counts page views and Buy-button clicks itself, as plain numbers with nothing about the visitor (see "Counting and pack downloads" below).
+No accounts, cookies, ads or third-party requests. The one form is the free sampler's optional email list (see "Email list" below). Passport stamps, quiz scores and saved cities stay in the visitor's own browser (localStorage) and are never sent anywhere. The site counts page views and Buy-button clicks itself, as plain numbers with nothing about the visitor (see "Counting and pack downloads" below).
 
 ## How it's built
 
@@ -128,11 +128,12 @@ the `items` table. An order keeps no name, email or card details. The keys are C
 
 ## Counting and pack downloads (src/worker.js)
 
-The Worker's script runs only for `/c/`, `/stats/`, `/dl/` and the store's `/buy/`, `/thanks/` and `/stripe-webhook` (`run_worker_first` in `wrangler.jsonc`); every other address is a plain file. It uses a D1 database, `atlasofcities` (tables in `src/schema.sql`), and a KV namespace, `atlasofcities-files`. Both are on Cloudflare's free plan.
+The Worker's script runs only for `/c/`, `/stats/`, `/dl/`, the store's `/buy/`, `/thanks/` and `/stripe-webhook`, and the email list's `/signup/` (`run_worker_first` in `wrangler.jsonc`); every other address is a plain file. It uses a D1 database, `atlasofcities` (tables in `src/schema.sql`), and a KV namespace, `atlasofcities-files`. Both are on Cloudflare's free plan.
 
 - **Counting.** `public/js/site.js` tells `/c/v` that a page was opened (its address and the website the visit came from) and `/c/e` that a Buy or sampler button was clicked (`data-buy`). The database keeps a number per day. No cookie, no IP address, nothing about the visitor; search robots are left out. The About page's Privacy section says so.
 - **The owner's numbers** are at `/stats/KEY/`, with the store's orders and their download pages. The key is in the database (`settings`, `stats_key`) and in atlas-products `packs/secrets.json`. Keep the address private. The same key opens test purchases (`/buy/SLUG/?test=KEY`).
 - **Pack downloads.** A pack is too big to attach to an order, so its buyer gets a one-page PDF whose link opens `/dl/TOKEN/`: a page listing every file in US Letter and A4. The packs and their files are rows in the database (`packs`); the PDFs are in the KV namespace. atlas-products makes all of it: `bash packs.sh <this folder>` builds the PDFs, pictures and `out/packs/packs.sql`, and `bash packs.sh <this folder> --upload` sends the files. To replace a leaked link, change the pack's token in `packs/secrets.json`, run `packs.sh` again, run the new `packs.sql` on the database and delete the old row, then replace the PDF in the stores.
+- **Email list** (`src/signup.js`, since Nov 18, 2026). The box on `/free/` (`build/packs.php`) posts to `/signup/`: an email address, the "I'm 18 or older" tick and a hidden field only robots fill in. The `subscribers` table keeps the address, when it joined, the page and the promise it was given (`PROMISE` in signup.js: "a few emails a year: new free pages, new packs and shop news"). Nothing else. `/free/remove/` deletes an address. The sampler still downloads without joining. The owner downloads the list at `/stats/KEY/signups.csv`. Robots are held back by the hidden field, the browser's Origin header, Cloudflare's rate limiter (`SIGNUP_LIMIT` in `wrangler.jsonc`, nothing stored) and a cap of 300 new addresses a day. No email is sent yet: the owner picks an email service before the first one, and then the About page's privacy section names it. Tests: `node tools/signup-test.mjs`.
 - **Trying it at home:** `npx wrangler dev` serves the site with the script, using a local copy of the database (`npx wrangler d1 execute atlasofcities --local --file=src/schema.sql` makes its tables).
 
 Small pictures: `bash tools/make-small.sh` makes a 240 px size of every world picture, which `img()` offers to browsers for the places that show pictures small. Run it after adding or retaking pictures.

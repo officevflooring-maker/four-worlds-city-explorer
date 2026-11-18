@@ -99,6 +99,24 @@ $sampleN = count(SHOP_SAMPLER);
 $sampleSize = fn($f) => is_file(PUB . $f) ? ' (' . number_format(filesize(PUB . $f) / 1048576, 1) . ' MB)' : '';
 $sampleLetter = '/assets/free/atlas-of-cities-free-sampler-letter.pdf';
 $sampleA4 = '/assets/free/atlas-of-cities-free-sampler-a4.pdf';
+// the email list's box (src/signup.js): optional, for grown-ups, the promise is signup.js PROMISE
+$joinBox = <<<HTML
+<section class="wrap section narrow" id="join" aria-labelledby="join-h">
+  <div class="join-box">
+    <h2 id="join-h">New free pages by email</h2>
+    <p>For parents, teachers and other grown-ups. Join our email list and we'll write a few times a year: new free pages, new packs and shop news. That's all, and you can leave at any time.</p>
+    <form class="join-form" method="post" action="/signup/">
+      <label for="join-email">Your email address</label>
+      <input id="join-email" name="email" type="email" required maxlength="254" autocomplete="email" spellcheck="false" autocapitalize="off">
+      <label class="join-tick" for="join-adult"><input id="join-adult" type="checkbox" name="adult" value="yes" required> <span>I'm 18 or older.</span></label>
+      <input type="hidden" name="from" value="free">
+      <div class="hp" aria-hidden="true"><label for="join-website">Leave this empty</label><input id="join-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <button class="btn" type="submit">Join the list</button>
+    </form>
+    <p class="join-small">We keep only your email address and the day you joined, and we never share or sell it. <a href="/about/#email-list">Privacy</a> · <a href="/free/remove/">Leave the list</a></p>
+  </div>
+</section>
+HTML;
 foreach ([$sampleLetter, $sampleA4] as $f) if (!is_file(PUB . $f)) fwrite(STDERR, "free sampler missing: $f (atlas-products: bash packs.sh)\n");
 page('/free/', [
   'title' => 'Free Sampler: ' . $sampleN . ' pages to print from our games and packs',
@@ -115,6 +133,7 @@ page('/free/', [
       <p><a class="btn btn-big" href="{$sampleLetter}" download data-buy="free-sampler-letter">Download · US Letter{$sampleSize($sampleLetter)}</a></p>
       <p><a class="btn btn-quiet" href="{$sampleA4}" download data-buy="free-sampler-a4">Download · A4{$sampleSize($sampleA4)}</a></p>
       <ul class="shop-trust"><li>Free</li><li>No sign-up</li><li>Print as often as you need</li></ul>
+      <p class="join-hint"><a href="#join">New free pages by email?</a> Join the list (optional).</p>
     </div>
     <div class="shop-top-pic"><img src="/assets/shop/free-fan.webp" width="1100" height="697" alt="Three pages of the free sampler: the Seven Worlds poster between a page of game cards and a maze."></div>
   </div>
@@ -125,6 +144,82 @@ page('/free/', [
   <ul class="plain-points">{$sampleList}</ul>
   <p>Print it for your own home or classroom as often as you like. If your family or class enjoys it, the full printables are in <a href="/shop/">the shop</a>, and buying one helps keep this site free.</p>
 </section>
+{$joinBox}
 HTML,
   'ld' => [crumbs([['Home', '/'], ['Shop', '/shop/'], ['Free Sampler', '/free/']])],
+]);
+
+/* ---------- the email list (src/signup.js; owner's choices, Nov 18, 2026) ----------
+   Optional: the sampler downloads without it. For grown-ups only (the 18+ tick). The list stays in the site's own
+   database until an email service is picked; the About page's privacy section names that service when it is.
+   The promise in these words is signup.js PROMISE: give that a new name if the promise changes. */
+$sampleButtons = <<<HTML
+<p><a class="btn btn-big" href="{$sampleLetter}" download data-buy="free-sampler-letter">Download · US Letter{$sampleSize($sampleLetter)}</a></p>
+  <p><a class="btn btn-quiet" href="{$sampleA4}" download data-buy="free-sampler-a4">Download · A4{$sampleSize($sampleA4)}</a></p>
+HTML;
+page('/free/joined/', [
+  'title' => "You're on the email list",
+  'desc' => h('Thank you for joining the email list of The Atlas of Cities. Your free sampler of pages to print is here.'),
+  'class' => 'shop-free join-page',
+  'noindex' => true,
+  'body' => <<<HTML
+<section class="wrap section page-head narrow">
+  <p class="tag">Free sampler · Email list</p>
+  <h1>You're on the list</h1>
+  <p class="lead">Thank you for joining! We'll write a few times a year with new free pages, new packs and shop news. There is nothing to confirm: the first email comes when we have something new to share.</p>
+  <h2>Your free sampler</h2>
+  <p>If you haven't downloaded it yet, here it is:</p>
+  {$sampleButtons}
+  <p>Changed your mind? You can <a href="/free/remove/">leave the list</a> at any time.</p>
+  <p><a href="/shop/">See the shop</a> · <a href="/">Explore the seven worlds</a></p>
+</section>
+HTML,
+]);
+page('/free/not-added/', [
+  'title' => 'Email not added: please check it',
+  'desc' => h('Your email address was not added to the list of The Atlas of Cities. Please check it and try again.'),
+  'class' => 'join-page',
+  'noindex' => true,
+  'body' => <<<HTML
+<section class="wrap section page-head narrow">
+  <p class="tag">Free sampler · Email list</p>
+  <h1>We couldn't add that address</h1>
+  <p class="lead">Please check that the email address is complete (like name@example.com) and that you ticked "I'm 18 or older". If you tried several times in a row, wait a minute and try again.</p>
+  <p><a class="btn" href="/free/#join">Try again</a></p>
+  <p>The <a href="/free/">free sampler</a> downloads without joining the list.</p>
+</section>
+HTML,
+]);
+page('/free/remove/', [
+  'title' => 'Leave the email list',
+  'desc' => h('Take your email address off the list of The Atlas of Cities. It is deleted, and we will not write to it again.'),
+  'class' => 'join-page',
+  'noindex' => true,
+  'body' => <<<HTML
+<section class="wrap section page-head narrow">
+  <p class="tag">Email list</p>
+  <h1>Leave the email list</h1>
+  <p class="lead">Type the email address you joined with. We delete it from the list, and we won't write to it again.</p>
+  <form class="join-form join-box" method="post" action="/signup/remove/">
+    <label for="leave-email">Email address</label>
+    <input id="leave-email" name="email" type="email" required maxlength="254" autocomplete="email" spellcheck="false" autocapitalize="off">
+    <button class="btn" type="submit">Remove my address</button>
+  </form>
+  <p class="join-small">The list is for grown-ups. If a child joined by mistake, remove the address here too.</p>
+</section>
+HTML,
+]);
+page('/free/removed/', [
+  'title' => "You've left the email list",
+  'desc' => h('Your email address is off the list of The Atlas of Cities. The free sampler and the whole site stay free to use.'),
+  'class' => 'join-page',
+  'noindex' => true,
+  'body' => <<<HTML
+<section class="wrap section page-head narrow">
+  <p class="tag">Email list</p>
+  <h1>You've left the list</h1>
+  <p class="lead">If that address was on our list, it is deleted now, and we won't write to it. The <a href="/free/">free sampler</a> and the rest of the site stay free to use.</p>
+  <p><a href="/">Explore the seven worlds</a></p>
+</section>
+HTML,
 ]);

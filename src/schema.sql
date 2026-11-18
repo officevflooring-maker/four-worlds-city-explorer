@@ -20,3 +20,9 @@ CREATE TABLE IF NOT EXISTS orders (session TEXT PRIMARY KEY, token TEXT NOT NULL
   amount INTEGER NOT NULL, currency TEXT NOT NULL, live INTEGER NOT NULL, created TEXT NOT NULL);
 -- The devices a Life RPG key has unlocked (the Life RPG Worker, life-rpg-sell, writes these; 10 per key).
 CREATE TABLE IF NOT EXISTS activations (license TEXT NOT NULL, instance TEXT NOT NULL, created TEXT NOT NULL, PRIMARY KEY (license, instance));
+
+-- ---------- The free sampler's email list (src/signup.js), since Nov 18, 2026 ----------
+-- One row per address that joined on /free/: the address (lower case), when it joined (UTC), the page it joined on
+-- and the promise it was given (signup.js PROMISE). Nothing else. Leaving the list (/free/remove/) deletes the row.
+-- src/signup.js also makes this table itself if it is missing.
+CREATE TABLE IF NOT EXISTS subscribers (email TEXT PRIMARY KEY, created TEXT NOT NULL, source TEXT NOT NULL, promise TEXT NOT NULL);

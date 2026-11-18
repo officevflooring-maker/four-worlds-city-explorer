@@ -1720,6 +1720,20 @@ button.lb { cursor: zoom-in; background: none; border: 0; padding: 0; display: b
 .pack-text p { margin: .15rem 0 0; font-size: .92rem; }
 .pack-text .pack-meta { color: var(--muted); font-weight: 600; }
 .shop-free .btn-quiet { background: var(--paper); }
+/* the free sampler's email list (/free/#join and /free/remove/; src/signup.js) */
+.join-hint { margin: .9rem 0 0; font-size: .95rem; color: var(--muted); }
+.join-hint a { font-weight: 600; }
+.join-box { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.2rem 1.3rem 1.3rem; }
+.join-box h2 { margin-top: 0; }
+.join-form { margin: 1rem 0 0; }
+.join-form > label { display: block; font-weight: 600; }
+.join-form input[type="email"] { display: block; width: 100%; max-width: 26rem; margin: .35rem 0 .9rem; padding: .7rem .85rem; font: inherit; color: var(--ink); background: #fff; border: 1.5px solid #a9a295; border-radius: 10px; }
+.join-form input[type="email"]:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }
+.join-tick { display: flex; gap: .6rem; align-items: flex-start; margin: 0 0 1rem; cursor: pointer; }
+.join-tick input { flex: 0 0 auto; width: 1.3rem; height: 1.3rem; margin: .15rem 0 0; accent-color: var(--brand); }
+.join-small { margin: .9rem 0 0; font-size: .9rem; color: var(--muted); }
+.join-page .join-box { margin: 1.2rem 0 0; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 @media print { .shop-promo { display: none !important; } }
 /* the home page's tagline is a paragraph (the question under it is the page's heading), so it keeps the heading look */
 .hero-title { font-family: var(--serif); font-weight: 700; letter-spacing: -.01em; }
