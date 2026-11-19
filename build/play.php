@@ -4,9 +4,7 @@
 // tour pages, because it uses their data, and before home.php. Everything runs in the browser, and
 // anything a visitor makes or collects is kept only in their own browser.
 
-const WORLD_LETTER = ['medieval' => 'k', 'roman' => 'r', 'modern' => 'm', 'green' => 'e', 'future' => 'f', 'egypt' => 'g', 'heaven' => 'h'];
-// Pages whose picture is a ground texture, not a building, so they are not builder or quiz pieces.
-const NOT_PIECES = ['modern/water-system', 'modern/streets-crosswalks'];
+// WORLD_LETTER and NOT_PIECES (the builder's piece codes) are in data.php, because building pages link to the builder too.
 
 // What every city needs, for the city builder checklist and the quiz. Each need lists the cross-link
 // groups that meet it (build/crosslinks.php) and single pages that also meet it.
@@ -174,6 +172,7 @@ page('/search/', [
   'title' => 'Find a page: every building, vehicle, person and tour, A to Z',
   'desc' => h("Search all $searchCount pages of The Atlas of Cities: buildings and vehicles in seven worlds, their people, guided tours, teacher guides and games."),
   'class' => 'search-page',
+  'noindex' => true, // a list of links: keep it out of search results, but let Google follow its links
   'body' => <<<HTML
 <section class="wrap section page-head">
   <h1>Find a page</h1>
@@ -335,6 +334,17 @@ $modernTex = tex('modern', 'ground-grass');
 $modernRoad = tex('modern', 'ground-crossroads');
 $cbExtras = game_extras('/play/city-builder/', 'Pick a building from any world, then tap a square on the map to build it. The list shows which needs your city meets. Try a challenge, then save a picture of your city or copy its link to share.',
   'What every city needs, from water and homes to safety and nature, and how different places meet those needs.', 'How it works', 'What you learn');
+// Questions people ask before they start (shown on the page and as FAQPage data).
+$cbFaq = [
+  ['Is the city builder free?', 'Yes. It is free to play, with no ads.'],
+  ['Do students need an account?', 'No. There is no sign-up and nothing to install. It runs in the web browser.'],
+  ['How do I save my city?', 'Your city is kept in this browser, so it is still there next time. You can also copy its link to share it or open it on another device, save a picture of it, or print it.'],
+  ['What does a city need in the game?', "The checklist has $needCount needs: " . strtolower(implode(', ', array_map(fn($n) => $n[0], $NEEDS))) . '. Each building shows which needs it meets.'],
+  ['Can I use it in class?', "Yes. Students can build a city that meets every need, then try the $chalCount challenges, such as a Roman town or a base on Mars. The guide What does a city need? goes with it."],
+];
+$cbFaqH = '';
+foreach ($cbFaq as [$q, $a]) $cbFaqH .= '<div class="faq-item"><h3>' . h($q) . '</h3><p>' . h($a) . '</p></div>';
+$cbFaqLd = ['@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => array_map(fn($f) => ['@type' => 'Question', 'name' => $f[0], 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $f[1]]], $cbFaq)];
 page('/play/city-builder/', [
   'title' => 'Build your own city: a free city builder for students',
   'desc' => h("A free online city builder for kids: place buildings from seven illustrated worlds, from ancient Egypt to Mars, and give your city all $needCount things it needs."),
@@ -377,7 +387,7 @@ page('/play/city-builder/', [
     <p class="b-score"><strong>0</strong> of {$needCount} needs met</p>
     <ul class="needs">{$needsH}</ul>
     <p class="b-done" hidden>Your city has everything it needs. What would make it a great place to live?</p>
-    <p class="small"><a href="/teachers/what-does-a-city-need/">What does a city need to work?</a></p>
+    <p class="small"><a href="/teachers/what-does-a-city-need/">What does a city need? The 10 things</a></p>
   </section>
   <section class="b-chal" aria-labelledby="chal-h">
     <h2 id="chal-h">Challenges</h2>
@@ -401,9 +411,14 @@ page('/play/city-builder/', [
     <li>Your city is saved in this browser and in the page address, so you can share the link.</li>
   </ul>
 </section>
+<section class="wrap section" aria-labelledby="cbfaq-h">
+  <h2 id="cbfaq-h">Questions about the city builder</h2>
+  {$cbFaqH}
+  <p><a href="/teachers/what-does-a-city-need/">What does a city need? 10 things every city needs</a>, a guide for class.</p>
+</section>
 {$cbExtras}
 HTML,
-  'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['City builder', '/play/city-builder/']]),
+  'ld' => [crumbs([['Home', '/'], ['Play and create', '/play/'], ['City builder', '/play/city-builder/']]), $cbFaqLd,
     learning('Build your own city', 'An online city builder: place buildings from seven illustrated worlds and check that the city meets every need.', '/play/city-builder/', 'City planning and what a city needs')],
 ]);
 

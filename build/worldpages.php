@@ -437,6 +437,8 @@ HTML,
     // On the world's map (or driving around it), so the page can point to it there.
     $onMap = in_array($slug, $D['map']) || !empty($r['vehicle']);
     $findH = $onMap ? '<a class="btn btn-quiet btn-sm" href="/worlds/' . $w . '/#find-' . $slug . '">Find it on the map</a> ' : '';
+    // Every building is a city builder piece: open the builder with this one picked.
+    if (empty($r['vehicle']) && !in_array("$w/$slug", NOT_PIECES)) $findH = '<a class="btn btn-sm" href="/play/city-builder/#pick=' . WORLD_LETTER[$w] . $slug . '">Build it in your city</a> ' . $findH;
     page("/worlds/$w/$slug/", [
       'title' => $pageTitle,
       'desc' => h($desc),

@@ -108,8 +108,8 @@
         "2026-11-11"
     ],
     "/play/city-builder/": [
-        "a263eeff55a5d860823c6d24cb2fa7f8",
-        "2026-11-11"
+        "5bbdf5a3c4900e6f76e7c94cca598499",
+        "2026-11-19"
     ],
     "/play/hero-cards/": [
         "e2d1a3458b2b414a3b464b9952f60422",
@@ -164,8 +164,8 @@
         "2026-11-11"
     ],
     "/search/": [
-        "5afc6f1c2c3b58bd9e0cf16acdec1543",
-        "2026-11-11"
+        "797dc155daba3d80ac102ddeb3c1e5a9",
+        "2026-11-19"
     ],
     "/shop/": [
         "290e47d520981dbad9336f2ef077b3f8",
@@ -216,8 +216,8 @@
         "2026-11-11"
     ],
     "/teachers/": [
-        "f312bfb9f4ba8ac8669b916e8269de2e",
-        "2026-11-11"
+        "20f2db9bc7462244f739d0addc0a3ead",
+        "2026-11-19"
     ],
     "/teachers/ancient-rome-vs-modern-cities/": [
         "db17cfc7ed67cb061e720fa1118f5e09",
@@ -256,8 +256,8 @@
         "2026-11-11"
     ],
     "/teachers/explore-your-town-scavenger-hunt/": [
-        "652673e034c94d1c705790b33101b370",
-        "2026-11-11"
+        "2f729b4b2006838fc3f54a726e9b5b08",
+        "2026-11-19"
     ],
     "/teachers/fantasy-city-worldbuilding/": [
         "4acf98af48c334211a08dfcf64cb8c21",
@@ -272,8 +272,8 @@
         "2026-11-11"
     ],
     "/teachers/homeschool/": [
-        "f3e44cdd8a9dc0ceda2c130e5076c9c1",
-        "2026-11-11"
+        "5cf6e5840ed65737aa5cf94e527c129e",
+        "2026-11-19"
     ],
     "/teachers/how-could-humans-live-on-mars/": [
         "c665bd1d12dceddc07e611608da5f5c0",
@@ -288,8 +288,8 @@
         "2026-11-11"
     ],
     "/teachers/how-do-cities-get-clean-water/": [
-        "f0c63318ebdf373a1802373ba3cbaf8c",
-        "2026-11-11"
+        "f2225aaa7efa61038cceee8784f43b51",
+        "2026-11-19"
     ],
     "/teachers/how-local-government-works/": [
         "504dcd682c45f4bd2fbdf93f2515eab3",
@@ -328,12 +328,12 @@
         "2026-11-11"
     ],
     "/teachers/urban-planning-for-students/": [
-        "0182ea45182dcee9050b4717c310b8e3",
-        "2026-11-11"
+        "2170e293b3f53da2b4c6dc7fc6cd7141",
+        "2026-11-19"
     ],
     "/teachers/what-does-a-city-need/": [
-        "265988a7aa37a0badb53f06516509eb2",
-        "2026-11-11"
+        "a0012dffaca759d815f5018635235b35",
+        "2026-11-19"
     ],
     "/teachers/worksheets/": [
         "b9de5252d6f190231eae5f224dc84705",
@@ -424,12 +424,12 @@
         "2026-11-11"
     ],
     "/tours/life-on-the-nile/": [
-        "5389cb59f1ba16c38e198e4b536402ca",
-        "2026-11-11"
+        "933d80c9cbc211b86cc960ed142a3d27",
+        "2026-11-19"
     ],
     "/tours/medieval-market-town/": [
-        "29204f66438699113563b649538c7e59",
-        "2026-11-11"
+        "7b0cf82f53a9b0a4c3600b939834269e",
+        "2026-11-19"
     ],
     "/tours/modern-neighborhoods/": [
         "a1033c61522a13387771f4437952209c",
@@ -456,624 +456,624 @@
         "2026-11-11"
     ],
     "/worlds/egypt/archery-range/": [
-        "29296ab493d4b61338c0b27111fe9e2c",
-        "2026-11-11"
+        "39ea70718f005d251ac9ae66be376aaa",
+        "2026-11-19"
     ],
     "/worlds/egypt/boat-workshop/": [
-        "5adad9f4a0d8bbfd21f230bcb793515b",
-        "2026-11-11"
+        "7272622896ea079a77c3f15b3ffcdce1",
+        "2026-11-19"
     ],
     "/worlds/egypt/building-materials/": [
-        "00c4051e9e0e7b450f3d1e48398a969f",
-        "2026-11-11"
+        "96141029621cf93fde7922410ccddb5a",
+        "2026-11-19"
     ],
     "/worlds/egypt/camel/": [
         "5524ebee92e184cb7c5fd8e48f01bce3",
         "2026-11-11"
     ],
     "/worlds/egypt/caravan-camp/": [
-        "ecc46930a1941e2561cf4a9640cb70e5",
-        "2026-11-11"
+        "efe12b728f583e6ad4ca3e2be4532b68",
+        "2026-11-19"
     ],
     "/worlds/egypt/cat-statue/": [
-        "2ec27d9430acd872f34a3c1a6238b6f3",
-        "2026-11-11"
+        "7eada91ee3a363550b0d8ded1d814b73",
+        "2026-11-19"
     ],
     "/worlds/egypt/chariot-arena/": [
-        "137db5cc8a7b79f27bca1bdd996021a8",
-        "2026-11-11"
+        "4ac298caec38b287cb7ee52cf73f59d0",
+        "2026-11-19"
     ],
     "/worlds/egypt/chariot/": [
         "6e540e7726bea0d8bbac133b0fddec5a",
         "2026-11-11"
     ],
     "/worlds/egypt/courtyard-villa/": [
-        "433353df94437133c6c7207536a0c6b2",
-        "2026-11-11"
+        "ab6541b369edc48816397904abc30c45",
+        "2026-11-19"
     ],
     "/worlds/egypt/family-house/": [
-        "8347040a77ac0a9852b1ccae4fb60f31",
-        "2026-11-11"
+        "80a23a65d4a15fa7a3b389b5a4dc92f7",
+        "2026-11-19"
     ],
     "/worlds/egypt/feast-hall/": [
-        "bdec3de67748693ad3b33daf442ed894",
-        "2026-11-11"
+        "eaa0f8f16b6f850e60b01bfa252787fd",
+        "2026-11-19"
     ],
     "/worlds/egypt/garden-villa/": [
-        "5fa8e140fd279382b8f9a3fad7082536",
-        "2026-11-11"
+        "9a60703efeab8b2661195c90bedb8530",
+        "2026-11-19"
     ],
     "/worlds/egypt/granary/": [
-        "a0bef31912afe9845aa0dfcbe4d1d403",
-        "2026-11-11"
+        "c99f4bb30ccd3c1160d4362fe533bc59",
+        "2026-11-19"
     ],
     "/worlds/egypt/great-library/": [
-        "5988191b5acdaab0aaf2867eaee2dc43",
-        "2026-11-11"
+        "5c7354707b7a46932d4f8697d9e1e1cf",
+        "2026-11-19"
     ],
     "/worlds/egypt/hall-of-columns/": [
-        "fe0a8f6dbb9a7ee75afcf3f2bea012aa",
-        "2026-11-11"
+        "b6a770b0c6e61880fef721c56c6d06bd",
+        "2026-11-19"
     ],
     "/worlds/egypt/house-of-life/": [
-        "35ccf55e8ad092d1b659de0de80c6d1d",
-        "2026-11-11"
+        "5b1453e42e388c3fb96552c2c36d56cf",
+        "2026-11-19"
     ],
     "/worlds/egypt/lifting-lever/": [
-        "85aa31bc00f4fac58526f98b340a3a8d",
-        "2026-11-11"
+        "25bfe15e982fac66d12e144166536f0f",
+        "2026-11-19"
     ],
     "/worlds/egypt/lotus-garden/": [
-        "828cc8e401432908557fa389d78e9188",
-        "2026-11-11"
+        "20f7d1297c2cbdfae70d6e4b2eb6468a",
+        "2026-11-19"
     ],
     "/worlds/egypt/lotus-pavilion/": [
-        "6b448c3b7a75e330a4b1026e1140cb1b",
-        "2026-11-11"
+        "d1d34ad689144046070e0b834b3cfebd",
+        "2026-11-19"
     ],
     "/worlds/egypt/lotus-pool/": [
-        "414f4c4e9ccab7bba3fddfc2ed80c77b",
-        "2026-11-11"
+        "392a2254538db02af38a6620e4e87e75",
+        "2026-11-19"
     ],
     "/worlds/egypt/market/": [
-        "9f85e433748ff671baa8fc7670ced4b9",
-        "2026-11-11"
+        "9fe7b1138e03964bde99cbac986918d6",
+        "2026-11-19"
     ],
     "/worlds/egypt/mud-brick-house/": [
-        "5ee3a18dd15c175973616d0bc4e7c3da",
-        "2026-11-11"
+        "54bca0c47ee59f4273ac7c6a92b3ae44",
+        "2026-11-19"
     ],
     "/worlds/egypt/obelisk/": [
-        "dd0e2f4a1941f4faa2786b6cf3112095",
-        "2026-11-11"
+        "f581da709a6330a4571e1c13b00019c2",
+        "2026-11-19"
     ],
     "/worlds/egypt/ox-cart/": [
         "1ed1929147601b6aeb8077337bdd62d7",
         "2026-11-11"
     ],
     "/worlds/egypt/palm-grove/": [
-        "d1e0eed81cf55af2b75d87c1d13a3ecb",
-        "2026-11-11"
+        "824549892486e820adb3b44ce1de2b29",
+        "2026-11-19"
     ],
     "/worlds/egypt/papyrus-boat/": [
-        "05228808645a027d697b0c884e99b817",
-        "2026-11-11"
+        "0a723f332dd39454868b65b357212e1e",
+        "2026-11-19"
     ],
     "/worlds/egypt/people/": [
         "93062a96cbbdba82f03c8ddf01fd2947",
         "2026-11-11"
     ],
     "/worlds/egypt/pharaohs-palace/": [
-        "20e73c25caf1a21e90566fbf68fdc836",
-        "2026-11-11"
+        "e24aa26659811f87e1ac2a4e12b0984e",
+        "2026-11-19"
     ],
     "/worlds/egypt/porch-house/": [
-        "5a6e2d1d5ef101fa4ffa8155843848f6",
-        "2026-11-11"
+        "ac89763f884f3b5fce5ac1266add1be8",
+        "2026-11-19"
     ],
     "/worlds/egypt/pyramid/": [
-        "19956dc67776b9f04403f8b6361216b2",
-        "2026-11-11"
+        "5495a2baf6f4dd728ea2c0053bf07f79",
+        "2026-11-19"
     ],
     "/worlds/egypt/rooftop-house/": [
-        "610ebe5da6fc1c0f13a6ece7c1d392d7",
-        "2026-11-11"
+        "2ed897b9017f14f7be53f51c688a3fa8",
+        "2026-11-19"
     ],
     "/worlds/egypt/rowing-pool/": [
-        "35306b3d86a0c9ed5145f89180318009",
-        "2026-11-11"
+        "d5fc34721ff60224d4b5b9a3a4e59289",
+        "2026-11-19"
     ],
     "/worlds/egypt/royal-treasury/": [
-        "85134db273d29ef4498771a8148bbf25",
-        "2026-11-11"
+        "c20e956a5619dbc70b4463764d3fcdc6",
+        "2026-11-19"
     ],
     "/worlds/egypt/sailing-boat/": [
-        "d4477cffd5cb89890ab1f2b8713b082f",
-        "2026-11-11"
+        "faa6d008f93f4d4cfa7a25bf9b98a823",
+        "2026-11-19"
     ],
     "/worlds/egypt/scribe-school/": [
-        "468c6eaf1b10bec050608d192057ee69",
-        "2026-11-11"
+        "e6fa46a82a676860b68ad46cf864095f",
+        "2026-11-19"
     ],
     "/worlds/egypt/sphinx/": [
-        "453523d4fba6aadd537eb16980bd935b",
-        "2026-11-11"
+        "1bd2a7fc0963480b984f235be57ebada",
+        "2026-11-19"
     ],
     "/worlds/egypt/stone-sledge/": [
         "a019ba4111e71cf20b1f7e0bee3aef67",
         "2026-11-11"
     ],
     "/worlds/egypt/temple-gateway/": [
-        "de4d1045ea0856ff8ead7474ef76e5a5",
-        "2026-11-11"
+        "735676894e7fd6492ea5fe7386c62a1b",
+        "2026-11-19"
     ],
     "/worlds/egypt/town-house/": [
-        "1dc2f6489359b09d913240c8b8780976",
-        "2026-11-11"
+        "f0b76c17f3188a96b76f9d11a7aa2503",
+        "2026-11-19"
     ],
     "/worlds/egypt/twin-colossi/": [
-        "d6607f1ba7cbd6becacd454099af26a8",
-        "2026-11-11"
+        "a5a8e1d1a605b4690cf9c0d6f5006c32",
+        "2026-11-19"
     ],
     "/worlds/egypt/village-house/": [
-        "b6d113ed7e161c24b827016e3a9eff79",
-        "2026-11-11"
+        "e2edea1ea1c18564ef23654e186b2f21",
+        "2026-11-19"
     ],
     "/worlds/egypt/watchtower/": [
-        "8ca724322b1dda7d028141746c46adbd",
-        "2026-11-11"
+        "1cbb5a9ccfab8dbc04d08650a52a53c6",
+        "2026-11-19"
     ],
     "/worlds/future/": [
         "e650fb9c50c6665e12f0abc7ac49d1ac",
         "2026-11-11"
     ],
     "/worlds/future/airlock-hangar/": [
-        "7e6da658877ce4444c6367fd21a45620",
-        "2026-11-11"
+        "cc07ef148307ee09d511ffbd9dcb6de0",
+        "2026-11-19"
     ],
     "/worlds/future/building-materials/": [
-        "ec8ffead594cb7bff0992de63f49551c",
-        "2026-11-11"
+        "b6dd37dfb5a11f2097967162f37c3b8b",
+        "2026-11-19"
     ],
     "/worlds/future/cargo-pod/": [
         "fb411a34d80c84f1427f9682e8469770",
         "2026-11-11"
     ],
     "/worlds/future/centrifuge-arena/": [
-        "c0445ed45fb8c3f318c69f70035785cc",
-        "2026-11-11"
+        "41718f860dc1174150789bfe0b7f4b04",
+        "2026-11-19"
     ],
     "/worlds/future/civic-dome/": [
-        "e623a4a5b69945451f1fdbe2d17cefee",
-        "2026-11-11"
+        "863451a669024cc456a2c7b50874c9c2",
+        "2026-11-19"
     ],
     "/worlds/future/comms-relay/": [
-        "208b2ce93a7b915998fec8dffbff1d60",
-        "2026-11-11"
+        "e7b43abb1d73a2bc60c1cb19a561b6cb",
+        "2026-11-19"
     ],
     "/worlds/future/drone-taxi/": [
         "840a0847ffa2acf4abc9229b460d5338",
         "2026-11-11"
     ],
     "/worlds/future/fab-shop/": [
-        "42aa024f50cb1487688ac2c55d4715d9",
-        "2026-11-11"
+        "2c7338e0ecdeaed62dbe0fcafd1c9654",
+        "2026-11-19"
     ],
     "/worlds/future/gravity-gym/": [
-        "aa7379557107bfd250e52beed3c60c30",
-        "2026-11-11"
+        "76fc96656e997fd4291a2af8e417be9d",
+        "2026-11-19"
     ],
     "/worlds/future/greenhouse-dome/": [
-        "4f8af22cdca6627073db7190c9b481be",
-        "2026-11-11"
+        "c698d8373bbc86b9045b45c0b67ddf44",
+        "2026-11-19"
     ],
     "/worlds/future/habitat-cluster/": [
-        "0335b54efe28fa2199e8f104e0938299",
-        "2026-11-11"
+        "7f263d7a961718a97be8cf12f56d1a9a",
+        "2026-11-19"
     ],
     "/worlds/future/hover-car/": [
         "cb935c70bc4ef4be9289129f34ff938c",
         "2026-11-11"
     ],
     "/worlds/future/ice-mine/": [
-        "d0f6fed254ed4c1e8b5e22e425a6ef1a",
-        "2026-11-11"
+        "cae187e23ade2f5b633abb9ced18bb33",
+        "2026-11-19"
     ],
     "/worlds/future/indoor-farm/": [
-        "5d8d47ccd0bbd809fc266ca0bb862621",
-        "2026-11-11"
+        "49fc34e4b38898f4dc0597b4569f949c",
+        "2026-11-19"
     ],
     "/worlds/future/inflatable-habitat/": [
-        "4cb7654ce03c15fa461b2b963cedcb2d",
-        "2026-11-11"
+        "0e252a9131b511d8d71cee9319c4a745",
+        "2026-11-19"
     ],
     "/worlds/future/launch-pad/": [
-        "ab459e49ba2c4529d1d39a4744c18526",
-        "2026-11-11"
+        "0781cf6d18aee9e4a18861302ddff998",
+        "2026-11-19"
     ],
     "/worlds/future/lunar-base/": [
-        "649144d7418d35d15494a2fb94e79eed",
-        "2026-11-11"
+        "2754f87d0dc3533ee7668665ef38cd38",
+        "2026-11-19"
     ],
     "/worlds/future/medical-bay/": [
-        "ec34de368f1ac8ca84fbd3cd9aab2ca0",
-        "2026-11-11"
+        "84e691ae1e60429c2228921bb2694fa4",
+        "2026-11-19"
     ],
     "/worlds/future/mission-control/": [
-        "ab5dcd7a3610f7b70eb7ae84f3b8b0a1",
-        "2026-11-11"
+        "37627d181e24473d439ef327f70c9263",
+        "2026-11-19"
     ],
     "/worlds/future/operations-center/": [
-        "5eadd96bfc435fe268bd17f0f3d338b3",
-        "2026-11-11"
+        "502ba1341d41021c86f34264d7e11dc8",
+        "2026-11-19"
     ],
     "/worlds/future/oxygen-factory/": [
-        "b00212a7134f9bc18f63436563492ac2",
-        "2026-11-11"
+        "9c32d2e261520c2075931cd23a86f298",
+        "2026-11-19"
     ],
     "/worlds/future/people/": [
         "9437ad0c39f4edb4823ba2df74efcd94",
         "2026-11-11"
     ],
     "/worlds/future/power-tower/": [
-        "7f3beef7343dcfbedf1fc50542e11330",
-        "2026-11-11"
+        "44245970fc9f1882f2140cfedee59c41",
+        "2026-11-19"
     ],
     "/worlds/future/pressurized-rover/": [
         "f8983b2e8fe222e0540c5a057b09badc",
         "2026-11-11"
     ],
     "/worlds/future/printed-habitat/": [
-        "7e9dad6312f53776df41ed65b4412b7a",
-        "2026-11-11"
+        "dad008257bcd447b4fd2e73047e86d5f",
+        "2026-11-19"
     ],
     "/worlds/future/public-plaza/": [
-        "e14d0ff70c69e9d97d63fb2a819c1608",
-        "2026-11-11"
+        "41d32c449671f6ea1ae7dcd10fcf7f78",
+        "2026-11-19"
     ],
     "/worlds/future/radio-telescope/": [
-        "adf008b5bfafc10ddbd1e65f8263c652",
-        "2026-11-11"
+        "1334bccb11e01cd5470d9daf85c59eab",
+        "2026-11-19"
     ],
     "/worlds/future/robot-helpers/": [
-        "109a0763f4e2530d1c3a6a142382d98c",
-        "2026-11-11"
+        "e7bec8890377836c456f16664c03678b",
+        "2026-11-19"
     ],
     "/worlds/future/robotic-crane/": [
-        "f49cbf72f3d4ac91d6d35f5da827ca40",
-        "2026-11-11"
+        "bf232550f17514c992e93978ebcf84c0",
+        "2026-11-19"
     ],
     "/worlds/future/robotics-factory/": [
-        "2416d880a322c4095875ad6772c9722c",
-        "2026-11-11"
+        "4e23739ed4c85615af5eb6bcac731463",
+        "2026-11-19"
     ],
     "/worlds/future/rover-track/": [
-        "b34896ab7d037347df1a4c3a0ddc7f9a",
-        "2026-11-11"
+        "d8b409c92cbba02c447206acb3789f85",
+        "2026-11-19"
     ],
     "/worlds/future/science-lab/": [
-        "57b0c9ede3d622129a00f651fbeba7fe",
-        "2026-11-11"
+        "2ff78309514d02aa734df4a19dd1f6df",
+        "2026-11-19"
     ],
     "/worlds/future/space-elevator/": [
-        "467a98ee0fc2b1514e8443e1fac8da1c",
-        "2026-11-11"
+        "dd7f7ec8584e290a9c51f9e83ae51445",
+        "2026-11-19"
     ],
     "/worlds/future/space-weather-station/": [
-        "85ca5418a4b7308bbb69273de0bf57e2",
-        "2026-11-11"
+        "ef5437210e056a8788cdbcdea4c24da3",
+        "2026-11-19"
     ],
     "/worlds/future/spaceport/": [
-        "cc2503faf8f740fa9894922215c2592a",
-        "2026-11-11"
+        "011b70349c96ca4545ebf9ccb57066ad",
+        "2026-11-19"
     ],
     "/worlds/future/storm-shelter/": [
-        "8c6ab4788c8aec47b5d27e0a4c0004f7",
-        "2026-11-11"
+        "83467bc1112c1ab810df5e9bfbd1d4a1",
+        "2026-11-19"
     ],
     "/worlds/future/telepresence/": [
-        "8ca40271f4f498ba6c21b056f0cb0d49",
-        "2026-11-11"
+        "b7ee3b3876acca91818a77569185587f",
+        "2026-11-19"
     ],
     "/worlds/future/tree-pod-habitat/": [
-        "0a51e5fe0e6010c042833d8f577fec7f",
-        "2026-11-11"
+        "dcb96ecd0208ec35d6597b0f487c0989",
+        "2026-11-19"
     ],
     "/worlds/future/water-recycler/": [
-        "5e226d3abc7fe41207a68d4e2c0d4d61",
-        "2026-11-11"
+        "b45d61adf379ea510701bf49d564f33f",
+        "2026-11-19"
     ],
     "/worlds/green/": [
         "8323e2bb9a0caa46b51abcb5505da40a",
         "2026-11-11"
     ],
     "/worlds/green/building-materials/": [
-        "dbe1775580fab4ff2106e97f7d60f932",
-        "2026-11-11"
+        "c8cb22362fa29f018d0d1e0603b1936c",
+        "2026-11-19"
     ],
     "/worlds/green/canopy-market/": [
-        "70bde4d53162dab47141fd8ef89c0e5e",
-        "2026-11-11"
+        "c816e2a8a8282941b1348188161e0fd7",
+        "2026-11-19"
     ],
     "/worlds/green/canopy-walkway/": [
-        "83c1813bc16b2c1e57f149a9a7926ea7",
-        "2026-11-11"
+        "c4a3f2895880e60b6838cd8af62d9363",
+        "2026-11-19"
     ],
     "/worlds/green/council-terrace/": [
-        "f4740effd44e403052a9d13e34036499",
-        "2026-11-11"
+        "cc43dbc0c6022926282200b24f0c7771",
+        "2026-11-19"
     ],
     "/worlds/green/deer-sleigh/": [
         "ff099abca8d9f79a3a175237956bf899",
         "2026-11-11"
     ],
     "/worlds/green/deer-statue/": [
-        "1ecbc34843be241a0b935e3c7d901e40",
-        "2026-11-11"
+        "5677c60460baa656499d3de80d00636a",
+        "2026-11-19"
     ],
     "/worlds/green/domed-observatory/": [
-        "9f70c05da0571e8bc73ff03f362f4a64",
-        "2026-11-11"
+        "22cc174c4e08eb3afcce478d59039dbe",
+        "2026-11-19"
     ],
     "/worlds/green/firefly-tower/": [
-        "6acf30d5322256bf9c21e8588d2b72cc",
-        "2026-11-11"
+        "84fc7d5b79eb5b3d2998010244b64f7a",
+        "2026-11-19"
     ],
     "/worlds/green/flower-cart/": [
         "e6d4675e2caf45fee9292cfd54beabb3",
         "2026-11-11"
     ],
     "/worlds/green/flower-meadow/": [
-        "a9603009e728500b44a280f50ed5ecda",
-        "2026-11-11"
+        "590d6d54e99860c79675c4646fa222cf",
+        "2026-11-19"
     ],
     "/worlds/green/forest-gym/": [
-        "34e206869afc1d0fb8ecbd4f72d6e144",
-        "2026-11-11"
+        "ad638fc4407e032d2cc1cd4234e35928",
+        "2026-11-19"
     ],
     "/worlds/green/forest-palace/": [
-        "37d717ec425841224c283b2823e1816a",
-        "2026-11-11"
+        "bfeaafe6ef23d3c4b0bdb7b25a788beb",
+        "2026-11-19"
     ],
     "/worlds/green/garden-court/": [
-        "b354cf8966b4ea1783a6cd4f54313dd1",
-        "2026-11-11"
+        "7b2fa5a18e581f0d8a0ba496f8b3ecc5",
+        "2026-11-19"
     ],
     "/worlds/green/gathering-circle/": [
-        "64976b4e61acc158e25d1dc512f7a33a",
-        "2026-11-11"
+        "a0538a46ca650fafec897773641d255f",
+        "2026-11-19"
     ],
     "/worlds/green/grand-tree-hall/": [
-        "cb83b948937e8769c2f36c57bec10043",
-        "2026-11-11"
+        "ead54319331ef2fdd828f88f6adbe59e",
+        "2026-11-19"
     ],
     "/worlds/green/great-tree-hall/": [
-        "afce4f0dabade64144d79e5720306a03",
-        "2026-11-11"
+        "fd43e1cdd1c6988cc684073302364438",
+        "2026-11-19"
     ],
     "/worlds/green/green-roof-cottage/": [
-        "358601e9323805250e0aeb228de2d3fd",
-        "2026-11-11"
+        "ebc0e6803739abe33e010451a419b174",
+        "2026-11-19"
     ],
     "/worlds/green/hillside-home/": [
-        "b43d9b7383a383264a71a67775a12c85",
-        "2026-11-11"
+        "d7efed7f2bb34983f03505fe4919207e",
+        "2026-11-19"
     ],
     "/worlds/green/leafy-cottage/": [
-        "904ff796abb47371b8a7ff17535a76e9",
-        "2026-11-11"
+        "d345248e38da7a9def7ed616072283c3",
+        "2026-11-19"
     ],
     "/worlds/green/living-crane/": [
-        "d59be8a2357a272e85b7ca7b1a9f0fd6",
-        "2026-11-11"
+        "abdabecf9050a32e25ebade42aa64549",
+        "2026-11-19"
     ],
     "/worlds/green/market-hall/": [
-        "af1eb578f2d37b278333c4e6088405c1",
-        "2026-11-11"
+        "6e734ff10258f30e2c3af81626cf884c",
+        "2026-11-19"
     ],
     "/worlds/green/mushroom-carriage/": [
         "93413629b813a4e5df2b41f5fd725734",
         "2026-11-11"
     ],
     "/worlds/green/mushroom-cottage/": [
-        "58dad1e4e34f0b0b47b75c1212616469",
-        "2026-11-11"
+        "65e7fd44a3cbe9c5ef5dfdddf9976dbc",
+        "2026-11-19"
     ],
     "/worlds/green/natural-cottage/": [
-        "fb200e0247cac448cb38f0fe69f54a80",
-        "2026-11-11"
+        "d6151f758febfb477a253bdb1336551d",
+        "2026-11-19"
     ],
     "/worlds/green/open-air-theater/": [
-        "929a9b5e9ed366305730d02f3aae5990",
-        "2026-11-11"
+        "c86d369e2aedc2e966a0a8f0be55d558",
+        "2026-11-19"
     ],
     "/worlds/green/people/": [
         "56f3c4bdcb51b808da037afd247d89e2",
         "2026-11-11"
     ],
     "/worlds/green/spire-house/": [
-        "e2cf4ca5c491c04e5b3a8569071be059",
-        "2026-11-11"
+        "ea223d28f603b173e3d3bc755728c14f",
+        "2026-11-19"
     ],
     "/worlds/green/spring-circle/": [
-        "7976cd8130203595e5e14be0426e14b7",
-        "2026-11-11"
+        "4649ed34c88f915866ade6b4651e16f0",
+        "2026-11-19"
     ],
     "/worlds/green/stag-monument/": [
-        "14d8a0f81c2bfdff221815115c26c369",
-        "2026-11-11"
+        "550f880d8583e7f414b9b1e0c47ace35",
+        "2026-11-19"
     ],
     "/worlds/green/timber-house/": [
-        "e5907a64c5820e4e33ba356cdd9e79f6",
-        "2026-11-11"
+        "7e57c4cd7f6cde3cead00d2264285cb6",
+        "2026-11-19"
     ],
     "/worlds/green/tree-library/": [
-        "88c3b8a1710d06f67dc0034dc328a547",
-        "2026-11-11"
+        "12ac92327ae25efac65b1c359a88edb4",
+        "2026-11-19"
     ],
     "/worlds/green/tree-tower-home/": [
-        "ff2c38e421cee7daf4c370b29859cf78",
-        "2026-11-11"
+        "0d92ae2e3dc3029ed800efdd70c903df",
+        "2026-11-19"
     ],
     "/worlds/green/treehouse-school/": [
-        "df69fff82ceabbec21a17f77a851aa29",
-        "2026-11-11"
+        "70ca917bc19c206fd50bef6a7d4e6d8c",
+        "2026-11-19"
     ],
     "/worlds/green/treetop-village/": [
-        "8839182fafbad1bbc9dc1325b1be91ee",
-        "2026-11-11"
+        "be1a24cd4bf48833b370225d874fe5cd",
+        "2026-11-19"
     ],
     "/worlds/green/waterfall-tower/": [
-        "517734855150a7c356e2bd878f047597",
-        "2026-11-11"
+        "d7a253cb91245a67bb909f8a77de51df",
+        "2026-11-19"
     ],
     "/worlds/green/weather-tower/": [
-        "5075d59a7c597f10e8041052fb0edc33",
-        "2026-11-11"
+        "a35154149fc9150778a3c09f0bdd5e31",
+        "2026-11-19"
     ],
     "/worlds/green/wetland-fountain/": [
-        "13f81006f834fa119fc2ac41093e3d3c",
-        "2026-11-11"
+        "f9b0b7a988a38a9a4b80157169543e4c",
+        "2026-11-19"
     ],
     "/worlds/green/wild-grove/": [
-        "653ab3b36b3f70bb1d2fa1891fb7a95d",
-        "2026-11-11"
+        "6563f1b54985822520f7258bce8c4630",
+        "2026-11-19"
     ],
     "/worlds/green/woodworking-workshop/": [
-        "d05166f469071a513587358a8f3c3be1",
-        "2026-11-11"
+        "f09e8342cb8c667f45737c407582fb89",
+        "2026-11-19"
     ],
     "/worlds/heaven/": [
         "f8a40cfa27ba5b521eea414e8fc2802b",
         "2026-11-11"
     ],
     "/worlds/heaven/angel-statue/": [
-        "d221732912ed8ae02265ae98300c06b9",
-        "2026-11-11"
+        "f52c7231663c0ff0fd7772a043e7ab55",
+        "2026-11-19"
     ],
     "/worlds/heaven/banquet-hall/": [
-        "5b7761ce1980c4a5bbb81d4a89eb617c",
-        "2026-11-11"
+        "a00b867dd7a753c172852c9179a583b3",
+        "2026-11-19"
     ],
     "/worlds/heaven/bell-tower/": [
-        "5511a651618bb0e2248a523e9b38f63c",
-        "2026-11-11"
+        "6491acaaa8479f371a634a6a488a4e92",
+        "2026-11-19"
     ],
     "/worlds/heaven/building-materials/": [
-        "406e485ea8db04a1507af1ee9827644f",
-        "2026-11-11"
+        "e28a9b1577a545990de50ae9077596b8",
+        "2026-11-19"
     ],
     "/worlds/heaven/cloud-carriage/": [
         "2c99490d2ab6487582f8348087b9978d",
         "2026-11-11"
     ],
     "/worlds/heaven/cloud-island/": [
-        "27271338a4aab28d75fcdf015660f091",
-        "2026-11-11"
+        "15b25c6bf8998d57af8ebd4255e0e39e",
+        "2026-11-19"
     ],
     "/worlds/heaven/dove-statue/": [
-        "a3c7c0d4f5f34f973bfe999113a5d1d7",
-        "2026-11-11"
+        "f6b7158313d439aa425e377d19657fd0",
+        "2026-11-19"
     ],
     "/worlds/heaven/fountain-of-life/": [
-        "ed4e8200acf28809bc7574ed093b66f3",
-        "2026-11-11"
+        "6d1d7a805ea06b127de4c8f212a10a12",
+        "2026-11-19"
     ],
     "/worlds/heaven/fruit-donkey/": [
         "6aa178c408558eda5f592b8fb8ae33a7",
         "2026-11-11"
     ],
     "/worlds/heaven/garden-of-light/": [
-        "76093db4f239da0fd02ba239c2172135",
-        "2026-11-11"
+        "4aecfa828b17ee9c1000372426025228",
+        "2026-11-19"
     ],
     "/worlds/heaven/garden-villa/": [
-        "6d7443fedbd081f517c1b53752b9c9fa",
-        "2026-11-11"
+        "e01bc913d08fa03b5e8a77730ee30162",
+        "2026-11-19"
     ],
     "/worlds/heaven/golden-chariot/": [
         "8a41dc69242e1fd5434e3eee9e294ed3",
         "2026-11-11"
     ],
     "/worlds/heaven/golden-track/": [
-        "f34925903bd4e097bb71909a32e86289",
-        "2026-11-11"
+        "0128f578f67de1af5f9a6f0eb7f3f9d9",
+        "2026-11-19"
     ],
     "/worlds/heaven/hall-of-treasures/": [
-        "13db93859094660dbdbd7c4a303ceb02",
-        "2026-11-11"
+        "34e5a2a2f8789e1b9dbdb53e65ef2b92",
+        "2026-11-19"
     ],
     "/worlds/heaven/hall-of-wisdom/": [
-        "97acd53605899a48f1033bf0719c1c5a",
-        "2026-11-11"
+        "714220580c9074e62a15ab8a3afa1c0b",
+        "2026-11-19"
     ],
     "/worlds/heaven/harp-workshop/": [
-        "2fabd83834b38f5565449ace3084cbdd",
-        "2026-11-11"
+        "81e62065da77042ed9164810ebc37f1f",
+        "2026-11-19"
     ],
     "/worlds/heaven/house-of-many-rooms/": [
-        "7e99837b70dc96097a392659dc258d3d",
-        "2026-11-11"
+        "7fb59a6daaa592556c035321680b73a1",
+        "2026-11-19"
     ],
     "/worlds/heaven/lamp-tower/": [
-        "28f2cb337b433f947586f686054c84cc",
-        "2026-11-11"
+        "bf5e7e62363839741375b1c308497512",
+        "2026-11-19"
     ],
     "/worlds/heaven/lantern-circle/": [
-        "725d8a6dbbe90cb4d5f9cc445ddcc2e8",
-        "2026-11-11"
+        "fb09e3e0787ef34ca372f4196479f53c",
+        "2026-11-19"
     ],
     "/worlds/heaven/light-crane/": [
-        "39bdba8c8621b7d975488806ce1cafed",
-        "2026-11-11"
+        "0be86fb99bbb5c04a7ab9a53816abdb9",
+        "2026-11-19"
     ],
     "/worlds/heaven/lily-garden/": [
-        "f6d9ddb3d527ffed90c1a84003c3cb1d",
-        "2026-11-11"
+        "9039d5783257f01eb54929cec32866cb",
+        "2026-11-19"
     ],
     "/worlds/heaven/marble-cottage/": [
-        "b1869019fa0590feb44ff464eb77e44c",
-        "2026-11-11"
+        "bda2b8b66de9bc17b1d2569c8b3ca656",
+        "2026-11-19"
     ],
     "/worlds/heaven/palace-of-light/": [
-        "60a6f7b0ef10ce6c7521c70db2e9a632",
-        "2026-11-11"
+        "366205fb3d6b4b86c97ec9b01fe83d7d",
+        "2026-11-19"
     ],
     "/worlds/heaven/pearl-gate/": [
-        "d3c02c8034aba6a049ab65f10fa7eb5e",
-        "2026-11-11"
+        "411bcfecc93b5342ad7851e6c56209ae",
+        "2026-11-19"
     ],
     "/worlds/heaven/people/": [
         "f6183cfa769a665c9ee3e4256e23548d",
         "2026-11-11"
     ],
     "/worlds/heaven/prayer-chapel/": [
-        "18d8dd5ddd587d1b1c98cdbde85da569",
-        "2026-11-11"
+        "5381b8efafe016611c1f9ff938b4ef3b",
+        "2026-11-19"
     ],
     "/worlds/heaven/rainbow-pavilion/": [
-        "8652a30f86cb985ef2b4dd975406266f",
-        "2026-11-11"
+        "8bcfe67598576725ea6693fc0f9a954f",
+        "2026-11-19"
     ],
     "/worlds/heaven/school-of-wisdom/": [
-        "eb46af70f4c9cc0a0bb05fa70b5d673e",
-        "2026-11-11"
+        "5c909cdd035e982d9e9e78f17c6e527b",
+        "2026-11-19"
     ],
     "/worlds/heaven/scroll-library/": [
-        "f73bacebaff660cefc868257d5af7f45",
-        "2026-11-11"
+        "581c2d353abf38855e15dc82b79d51a1",
+        "2026-11-19"
     ],
     "/worlds/heaven/sharing-pavilion/": [
-        "75eeca5df805b8ec030a78b704538637",
-        "2026-11-11"
+        "aeb3ed235f5b6339ce6239b29ce0aa79",
+        "2026-11-19"
     ],
     "/worlds/heaven/sky-bridge/": [
-        "91b4855db8d356ff8965580f09fa57e6",
-        "2026-11-11"
+        "3b97da5eddcf2514ea35124a496aafb6",
+        "2026-11-19"
     ],
     "/worlds/heaven/spring-pool/": [
-        "5bace30429c076371fd153647b5c5d63",
-        "2026-11-11"
+        "e6ae877cf8258c5030d577d2bd6282f0",
+        "2026-11-19"
     ],
     "/worlds/heaven/story/": [
         "e913f3a618cf886a6f72a44dcd8cd03a",
@@ -1084,212 +1084,212 @@
         "2026-11-11"
     ],
     "/worlds/heaven/tree-of-life/": [
-        "f3d3151c646437f39a8dd992529ee45d",
-        "2026-11-11"
+        "7ecfee6236ca9e630bec66f935133fad",
+        "2026-11-19"
     ],
     "/worlds/heaven/victors-arena/": [
-        "4e2074b4a8b0622945f6934e99e8fa8c",
-        "2026-11-11"
+        "d39e97d58dde105dd961002ab9f54043",
+        "2026-11-19"
     ],
     "/worlds/heaven/welcome-hall/": [
-        "6ec689cc9989d40894ef789c69a25c3b",
-        "2026-11-11"
+        "99e63ac837c64b97fb550090be0eebfd",
+        "2026-11-19"
     ],
     "/worlds/medieval/": [
         "204eacc28ee5500522bd1ea5e7f9513b",
         "2026-11-11"
     ],
     "/worlds/medieval/abbey/": [
-        "89d1e662955b0f75eb7a67bc2055342c",
-        "2026-11-11"
+        "aeba52cbc318ae80317ec4077d15b5f8",
+        "2026-11-19"
     ],
     "/worlds/medieval/archery-butts/": [
-        "3772a3f7b00e00f5607811a27e918dc1",
-        "2026-11-11"
+        "551e641feafa0e3ffa99f54ece8e6909",
+        "2026-11-19"
     ],
     "/worlds/medieval/bakery/": [
-        "11ee1180a35d22a3d911c2ba8a941b4f",
-        "2026-11-11"
+        "ac9a78b98935763797de4a5a6e92e1ab",
+        "2026-11-19"
     ],
     "/worlds/medieval/bell-tower/": [
-        "e83362c92ac1407e4320ef5aefab8f8c",
-        "2026-11-11"
+        "1227f7aab8b34fe77054a6b21be90681",
+        "2026-11-19"
     ],
     "/worlds/medieval/blacksmith/": [
-        "a580619692f30328267db154146eba9a",
-        "2026-11-11"
+        "d3d3dae69f12a21ab591213e02bbe6ae",
+        "2026-11-19"
     ],
     "/worlds/medieval/building-materials/": [
-        "4215873ecfc1b88d434e7a8c285fdd0f",
-        "2026-11-11"
+        "28adc1bcb09979d5e7c857e5b725e4c2",
+        "2026-11-19"
     ],
     "/worlds/medieval/chapel/": [
-        "ecb3f683b4d69cbb207584a61c247bcb",
-        "2026-11-11"
+        "064fda7bf84eae76dbcb7a0f1c0e6336",
+        "2026-11-19"
     ],
     "/worlds/medieval/covered-wagon/": [
         "31bcf71be7d7f84f23586a72785f5c33",
         "2026-11-11"
     ],
     "/worlds/medieval/crane/": [
-        "760cb0c45938988a10b1de7631602f0b",
-        "2026-11-11"
+        "dbf2b2925a446badb1efdb0df9d42597",
+        "2026-11-19"
     ],
     "/worlds/medieval/donkey-cart/": [
         "36e0fa701436965a71818ca0b70394ba",
         "2026-11-11"
     ],
     "/worlds/medieval/farmstead/": [
-        "93bd0b92659cb5f3b5cbdcf97773586a",
-        "2026-11-11"
+        "5d2c7578ea6121113285596b3c60a434",
+        "2026-11-19"
     ],
     "/worlds/medieval/feast-hall/": [
-        "2b3567ad861431667770becc59ecdbdc",
-        "2026-11-11"
+        "500bc76132a16a503cf462fe721f3555",
+        "2026-11-19"
     ],
     "/worlds/medieval/gatehouse/": [
-        "406aafccf1432993e7366baeed6d19a0",
-        "2026-11-11"
+        "6426933313785c75914162b7efbd0f03",
+        "2026-11-19"
     ],
     "/worlds/medieval/great-hall/": [
-        "74ea88406d5c7bafe5b841ebe569e544",
-        "2026-11-11"
+        "30ab66c4764eff446d570e0f37d64174",
+        "2026-11-19"
     ],
     "/worlds/medieval/guild-hall/": [
-        "5c2a1ae4eb58f677cf1dedf6d8e44b47",
-        "2026-11-11"
+        "2955e5d84ac9a26e6f466a1f6033f306",
+        "2026-11-19"
     ],
     "/worlds/medieval/hay-cart/": [
         "308535e133f906130042869c73828618",
         "2026-11-11"
     ],
     "/worlds/medieval/herb-garden/": [
-        "a2b795041d56cdb7e294c6ceba445038",
-        "2026-11-11"
+        "128f174a5fa2fbd03475029d8df8719c",
+        "2026-11-19"
     ],
     "/worlds/medieval/horse-and-rider/": [
         "57c1637db021f079f2c621464f9f3168",
         "2026-11-11"
     ],
     "/worlds/medieval/kitchen/": [
-        "efd691ef84fa8b0484d51b5f7111fcb4",
-        "2026-11-11"
+        "e461e01a27e55707ba952bc66d9441b9",
+        "2026-11-19"
     ],
     "/worlds/medieval/knight-statue/": [
-        "f69f5fedbfaa8fb816b43eddba946dc1",
-        "2026-11-11"
+        "b4078b39bb856d3cea779210b767f631",
+        "2026-11-19"
     ],
     "/worlds/medieval/manor-house/": [
-        "c964a1ef1e0b3f832c30752469092e48",
-        "2026-11-11"
+        "f189fc63ea4d505e4514a858bd3fff39",
+        "2026-11-19"
     ],
     "/worlds/medieval/market-cross/": [
-        "f819ee6407d1a8c0b5516eabb27ca0e3",
-        "2026-11-11"
+        "e2db88b1a6edc20307e8909bb48c3c32",
+        "2026-11-19"
     ],
     "/worlds/medieval/market-hall/": [
-        "37a522cf29cb6aff625e6282f3bc5f9a",
-        "2026-11-11"
+        "8312c82d20e41953f19814adfdae6400",
+        "2026-11-19"
     ],
     "/worlds/medieval/merchants-house/": [
-        "f582a6fdd66da85b4a92634ad0463570",
-        "2026-11-11"
+        "f343224d62b5aba1e88414b01fe5e5f4",
+        "2026-11-19"
     ],
     "/worlds/medieval/orchard/": [
-        "70d28bf8de3a3dbcc48ab1beec2bbb6c",
-        "2026-11-11"
+        "fd121f8405581e9f531d3b7d8d2d47b9",
+        "2026-11-19"
     ],
     "/worlds/medieval/peasant-cottage/": [
-        "21bf3cd55672e39c8391e04fda50b060",
-        "2026-11-11"
+        "e307d437ca3175d132c505a572c96849",
+        "2026-11-19"
     ],
     "/worlds/medieval/people/": [
         "bc4f036c0012f779c2edb29f0706dcca",
         "2026-11-11"
     ],
     "/worlds/medieval/royal-castle/": [
-        "5fea51bc514cd3a9a4152e72c3763f49",
-        "2026-11-11"
+        "c5fab5927ee743d2c522eca1458567ad",
+        "2026-11-19"
     ],
     "/worlds/medieval/scriptorium/": [
-        "e13a7e85828b33a90f170ecafbd78fd5",
-        "2026-11-11"
+        "b09f3af9c29a4613ffa0e35f6b2b720a",
+        "2026-11-19"
     ],
     "/worlds/medieval/shepherds-cottage/": [
-        "d82698f395ea0133d7cd44e2caec6e18",
-        "2026-11-11"
+        "d0d7db005a3cb134cdc4eac052662c2b",
+        "2026-11-19"
     ],
     "/worlds/medieval/tournament-field/": [
-        "ed254617ed56048d691a475f86ca3d09",
-        "2026-11-11"
+        "ef54b57f21596feb59181c5ed5ea0f0b",
+        "2026-11-19"
     ],
     "/worlds/medieval/tower-house/": [
-        "f2195a74f9b47564ed97b321028ef587",
-        "2026-11-11"
+        "0c85829ced6bbb62823236088b805e8c",
+        "2026-11-19"
     ],
     "/worlds/medieval/town-house/": [
-        "996a188de33500d43875a0f9e8463a3d",
-        "2026-11-11"
+        "0f174c5cb321eb1f66ebefe365cf4a20",
+        "2026-11-19"
     ],
     "/worlds/medieval/training-yard/": [
-        "35afef940f5fc59cf0713a9c08256cb5",
-        "2026-11-11"
+        "9aa07c67da5e24d7aae36902bca26a9d",
+        "2026-11-19"
     ],
     "/worlds/medieval/university/": [
-        "f30d43167da5f0a193a07a7e98b485f1",
-        "2026-11-11"
+        "b6053c519b1b31b64b8dfcd1bd798e13",
+        "2026-11-19"
     ],
     "/worlds/medieval/village-school/": [
-        "59e54cbedffe3153270ac542fb24c4ef",
-        "2026-11-11"
+        "67c7cfab2e3e3d09ad61da934324de9f",
+        "2026-11-19"
     ],
     "/worlds/medieval/village-well/": [
-        "f5a57eec599e6654d05fcd5a8f0e8603",
-        "2026-11-11"
+        "2cdb68ef3e31b3483c69e333e8372c72",
+        "2026-11-19"
     ],
     "/worlds/medieval/watchtower/": [
-        "7c45e960d7b2dc5cc8d9445584a0a557",
-        "2026-11-11"
+        "8dc83bc115301df51f7ac1f4f87da764",
+        "2026-11-19"
     ],
     "/worlds/medieval/windmill/": [
-        "eb0d289b9a2dc6812c21b80e5b60f6ff",
-        "2026-11-11"
+        "275c091815b7fa556828b7dbf5e3195b",
+        "2026-11-19"
     ],
     "/worlds/modern/": [
         "81bbae4b0df7387a52720254cc56eef6",
         "2026-11-11"
     ],
     "/worlds/modern/apartment-building/": [
-        "87078c0b249b6419ac3652d49de7e66a",
-        "2026-11-11"
+        "e064ced77f6d250a4986ac0bb1e91cdd",
+        "2026-11-19"
     ],
     "/worlds/modern/building-materials/": [
-        "d401d13473c259b3fd201e1b612c5e93",
-        "2026-11-11"
+        "f50896f512da5d2d2002f74ee094c2ca",
+        "2026-11-19"
     ],
     "/worlds/modern/capitol/": [
-        "db00aed5e30806ad8becb3c63cdd7618",
-        "2026-11-11"
+        "957420c7e9dfb21eaeb03e46e74e9dc4",
+        "2026-11-19"
     ],
     "/worlds/modern/clock-tower/": [
-        "cf165e62483b331d31097d877cd39bd1",
-        "2026-11-11"
+        "31cc086eee5357f427d8886a6bd0b31e",
+        "2026-11-19"
     ],
     "/worlds/modern/community-center/": [
-        "9ee0766129607072f5da3f8ee266827f",
-        "2026-11-11"
+        "2d5f8209690075b5e7299c1a6262c9aa",
+        "2026-11-19"
     ],
     "/worlds/modern/community-garden/": [
-        "ee7ee81bc5239866398671e6fc9db75a",
-        "2026-11-11"
+        "3fdfa3fe948e2ce3bb9182fb6a4ee106",
+        "2026-11-19"
     ],
     "/worlds/modern/corner-store/": [
-        "528d2a8ca57d8d14376f31136081ce58",
-        "2026-11-11"
+        "d8f1a01053eeb6e224d5ae05ff8d3348",
+        "2026-11-19"
     ],
     "/worlds/modern/cultural-center/": [
-        "a477c6b05906d48a3524959e220a77b0",
-        "2026-11-11"
+        "2b8e952b8c89bb367f1834a46de51f20",
+        "2026-11-19"
     ],
     "/worlds/modern/delivery-van/": [
         "f656b6f9b028ab23792483d0e3371b22",
@@ -1300,40 +1300,40 @@
         "2026-11-11"
     ],
     "/worlds/modern/fire-lookout/": [
-        "20c0437def3667408ae6476b0451417f",
-        "2026-11-11"
+        "7eb1da70ce311d0144f99c819c01ba34",
+        "2026-11-19"
     ],
     "/worlds/modern/gathering-circle/": [
-        "6cda69f241e80af40577e10267fcb070",
-        "2026-11-11"
+        "dbdea615fb3064c6469013234cedd6c6",
+        "2026-11-19"
     ],
     "/worlds/modern/health-clinic/": [
-        "d20be1ea83138f79e1b486ccda495550",
-        "2026-11-11"
+        "e98cb15bdd8ebedab6346308b2b70d81",
+        "2026-11-19"
     ],
     "/worlds/modern/lighthouse/": [
-        "9588347834b8d8ba2ae09aadf49ef42f",
-        "2026-11-11"
+        "765a21081af30e4e8c0bb892295a53f1",
+        "2026-11-19"
     ],
     "/worlds/modern/memorial/": [
-        "fd9e70bca098c2099e2f679be24a2ec4",
-        "2026-11-11"
+        "3e431ff191862c2cc6e9e7b6c8955aee",
+        "2026-11-19"
     ],
     "/worlds/modern/mixed-use-building/": [
-        "20caacd80b383ec20eeb0aeeb1e9cd17",
-        "2026-11-11"
+        "57bd977ed477d77a0f67d5f8d86d892d",
+        "2026-11-19"
     ],
     "/worlds/modern/office-building/": [
-        "0c8d774dff15aaa180f9d211083436dc",
-        "2026-11-11"
+        "ebbc15af9adc52a3f52b34b4af330159",
+        "2026-11-19"
     ],
     "/worlds/modern/older-home/": [
-        "776e757c932269ef6da0e03fb5ef31c5",
-        "2026-11-11"
+        "7a93c483f8cf0870d1cce9fb8c993ec5",
+        "2026-11-19"
     ],
     "/worlds/modern/park-pond/": [
-        "7cbdd74c4d1f0ff21abc55fd5a451edf",
-        "2026-11-11"
+        "67b4eea5e5af8e9bd01c4f46133634d0",
+        "2026-11-19"
     ],
     "/worlds/modern/people/": [
         "3bf0b898bcc6c1ca908e54a3dab4bbf1",
@@ -1344,247 +1344,247 @@
         "2026-11-11"
     ],
     "/worlds/modern/place-of-worship/": [
-        "6cf0670b70a90a165f1ce601bb71f99c",
-        "2026-11-11"
+        "07edca3849e5254e1c107ea666ec8139",
+        "2026-11-19"
     ],
     "/worlds/modern/playground/": [
-        "22c31e118bd9ce5d2e01964c58c516c6",
-        "2026-11-11"
+        "a51ee86d3b236fab6abb8cfb409548fa",
+        "2026-11-19"
     ],
     "/worlds/modern/plaza-fountain/": [
-        "db43be4973d54a295f9c633881774f46",
-        "2026-11-11"
+        "06b0014ad0ff4c35fb6e934da3495b16",
+        "2026-11-19"
     ],
     "/worlds/modern/public-art/": [
-        "503990016570f52971eb1f3ec8453906",
-        "2026-11-11"
+        "856e017bcc47576b0619341ff24368d4",
+        "2026-11-19"
     ],
     "/worlds/modern/public-library/": [
-        "78612d4565ceac5921cb1659be8997b3",
-        "2026-11-11"
+        "345dc948b9a1b579766c93b9efee9e11",
+        "2026-11-19"
     ],
     "/worlds/modern/recreation-center/": [
-        "bbccdbc1fe77b488fccc3e3d7224c18e",
-        "2026-11-11"
+        "911da0f8d0581090f8559b88504ec948",
+        "2026-11-19"
     ],
     "/worlds/modern/residential-tower/": [
-        "3687c8a747a9ec84c0d374d1043b67db",
-        "2026-11-11"
+        "b9337ac3274eb790289a9b81b48fa9f4",
+        "2026-11-19"
     ],
     "/worlds/modern/school/": [
-        "982a10088127906e669caf42f82268e4",
-        "2026-11-11"
+        "8619671c0d2afbffcb7266f73645787b",
+        "2026-11-19"
     ],
     "/worlds/modern/science-center/": [
-        "a78de5c19dd6f0cd9b66fef2717504dd",
-        "2026-11-11"
+        "242c8082d32a2f1f3fb254a0699ee21c",
+        "2026-11-19"
     ],
     "/worlds/modern/single-family-house/": [
-        "19193f0e16b73b8d85eff7ae79cedf32",
-        "2026-11-11"
+        "77f84c93f65a1d32587c22a88bf6fba4",
+        "2026-11-19"
     ],
     "/worlds/modern/skyscraper/": [
-        "3891e9e16f943a527ece4212e2af8320",
-        "2026-11-11"
+        "191a71c1a249e4abadf0487ea2f21861",
+        "2026-11-19"
     ],
     "/worlds/modern/sports-field/": [
-        "52dd31a61ec3c7697d1f95a022fde37f",
-        "2026-11-11"
+        "10c0807e0a93bc0f5e45fbb095589a85",
+        "2026-11-19"
     ],
     "/worlds/modern/stadium/": [
-        "c1bdd9a89074fb8ea2a566e8131dd0e1",
-        "2026-11-11"
+        "a022c7eaea3f573814f4cac72e5dba67",
+        "2026-11-19"
     ],
     "/worlds/modern/streets-crosswalks/": [
-        "44399ff278c161515064e9e3121f1f92",
-        "2026-11-11"
+        "8b58f9a469bd94bcc75a42def9725fed",
+        "2026-11-19"
     ],
     "/worlds/modern/suburban-house/": [
-        "8c95bf56a9cd1ad43c604e418c3c11a4",
-        "2026-11-11"
+        "f0bde90130bfcca492777bdfc345551a",
+        "2026-11-19"
     ],
     "/worlds/modern/taxi/": [
         "c92549ba2c0562095e437f618cdf36f6",
         "2026-11-11"
     ],
     "/worlds/modern/tower-crane/": [
-        "9c40494f7aae498e1a190ec32cbcf7ac",
-        "2026-11-11"
+        "1d3ec91b6304b4c25ff2cafd5ca2092f",
+        "2026-11-19"
     ],
     "/worlds/modern/town-hall/": [
-        "c09de9b1cfd5b690208ace0ac0d3b10c",
-        "2026-11-11"
+        "5da90351c11159ffa3102f27f50022cb",
+        "2026-11-19"
     ],
     "/worlds/modern/warehouse/": [
-        "77f2373ac84012fa27870e65aec425fd",
-        "2026-11-11"
+        "6f6a92e1b723c94e59d10011aa3e1428",
+        "2026-11-19"
     ],
     "/worlds/modern/water-system/": [
-        "e19786f9d0013ff7196ac24a6b1eaed4",
-        "2026-11-11"
+        "323dfe07a3a8f2451706d1ca2f4b9b40",
+        "2026-11-19"
     ],
     "/worlds/roman/": [
         "25b30156d09af194b9d0d0d20e1c790d",
         "2026-11-11"
     ],
     "/worlds/roman/amphitheater/": [
-        "69f9856de9455c53dd6b7054ee650c74",
-        "2026-11-11"
+        "761f349f3275d9d4ff3ed9ff17dae5dd",
+        "2026-11-19"
     ],
     "/worlds/roman/apartment-block/": [
-        "ea7a925b8ba6f5874c4418d14db531eb",
-        "2026-11-11"
+        "7b47d5a9729e3b2e7ba1a4d04c002795",
+        "2026-11-19"
     ],
     "/worlds/roman/aqueduct/": [
-        "37bb0fa2d460630e329ee3943a8ecf22",
-        "2026-11-11"
+        "5cde256ad166d429be2179fe6f5cd389",
+        "2026-11-19"
     ],
     "/worlds/roman/basilica/": [
-        "d85af9e95d96421e6d8050b623e5a03a",
-        "2026-11-11"
+        "379e3065329f797628e605b804bde815",
+        "2026-11-19"
     ],
     "/worlds/roman/building-materials/": [
-        "96eb7dd9d430fc83b3bd4450ba3ff98a",
-        "2026-11-11"
+        "4a910bd41292f9958534d03959bd161c",
+        "2026-11-19"
     ],
     "/worlds/roman/chariot/": [
         "9a9fd74a9ac41b2a1ba216c2ac84eac6",
         "2026-11-11"
     ],
     "/worlds/roman/circus/": [
-        "f43be9fb0caa761f74fd4708bf87efa3",
-        "2026-11-11"
+        "5a3cef1890b3b675718478e3da67265c",
+        "2026-11-19"
     ],
     "/worlds/roman/city-walls/": [
-        "e73dddeeee93813c7f3a1bd70489c74f",
-        "2026-11-11"
+        "f22f71738e5ad9b10fdc406cba1bdb91",
+        "2026-11-19"
     ],
     "/worlds/roman/crane/": [
-        "4dc4789a15823e579003c16031db090e",
-        "2026-11-11"
+        "5afc64bf256d32b45e7057b2afd2cd60",
+        "2026-11-19"
     ],
     "/worlds/roman/curia/": [
-        "a2c0770380741cba16be78b7395d0b80",
-        "2026-11-11"
+        "7972c26283c7c74ae2af439c6a3d03b1",
+        "2026-11-19"
     ],
     "/worlds/roman/domus/": [
-        "c6509d47342b53912a5288ec70f33a09",
-        "2026-11-11"
+        "7bc473cf0f204554cdbeb83d64fb6faa",
+        "2026-11-19"
     ],
     "/worlds/roman/donkey-cart/": [
         "5097fb6b87399b2a979eda572e0e6030",
         "2026-11-11"
     ],
     "/worlds/roman/farmhouse/": [
-        "2109128286a8d2fc2d6bee790c134db9",
-        "2026-11-11"
+        "e7699ffb98a53ae8605c90d3b56cff34",
+        "2026-11-19"
     ],
     "/worlds/roman/forum/": [
-        "c8b2124261bd3de1f72208d71009a5ff",
-        "2026-11-11"
+        "c9493f6c2fa3198db9ad829ab7409ae5",
+        "2026-11-19"
     ],
     "/worlds/roman/garden/": [
-        "ab3d2e28d28097a7f6d376461ef08ca2",
-        "2026-11-11"
+        "a70baf1e971988c844f8f02201cfb3c0",
+        "2026-11-19"
     ],
     "/worlds/roman/gladiator-school/": [
-        "b23c0e5caefd87e089f95528d21aae1b",
-        "2026-11-11"
+        "13cbecca3dd48ad3dd40c35c5f5ced4f",
+        "2026-11-19"
     ],
     "/worlds/roman/imperial-palace/": [
-        "eccdd349862c05117d83a4f72484fd23",
-        "2026-11-11"
+        "29716d5d428c0cfca04a7c03afe1f895",
+        "2026-11-19"
     ],
     "/worlds/roman/imperial-statue/": [
-        "b6329ba7fd792642e22bfe6802b96d30",
-        "2026-11-11"
+        "e641a720fe9b07eb011819663f20ff0a",
+        "2026-11-19"
     ],
     "/worlds/roman/inn/": [
-        "2400b56c35220f4f014203098f5134ba",
-        "2026-11-11"
+        "9118a36df1604320286771c09600ec65",
+        "2026-11-19"
     ],
     "/worlds/roman/library/": [
-        "95c78c3a3eb7ec583246156b08ba80f2",
-        "2026-11-11"
+        "7ef1a7a0cdc4ed1adbef798764c25b01",
+        "2026-11-19"
     ],
     "/worlds/roman/lighthouse/": [
-        "81b3347bf0e373a09cc261b9de470628",
-        "2026-11-11"
+        "1b677f51ba9503226b66aafa135fe570",
+        "2026-11-19"
     ],
     "/worlds/roman/litter/": [
         "f9fff019fce811f038a63420c549e137",
         "2026-11-11"
     ],
     "/worlds/roman/mausoleum/": [
-        "2257f3e203578faa920efc7a37b1df74",
-        "2026-11-11"
+        "63f6250ba95d9300f99b5a1754ab851e",
+        "2026-11-19"
     ],
     "/worlds/roman/olive-grove/": [
-        "5d28de4de7dbd56a2fd42d5bfca29e16",
-        "2026-11-11"
+        "310f4a4902926fa5b151ef6b93e1fcaf",
+        "2026-11-19"
     ],
     "/worlds/roman/ox-cart/": [
         "a544bdbff6a4e1910f3efef910317306",
         "2026-11-11"
     ],
     "/worlds/roman/pantheon/": [
-        "c18a30be8ebe27aaff0db62ab9a3058c",
-        "2026-11-11"
+        "e5c1bb3d90997a90390395ea1e247c2a",
+        "2026-11-19"
     ],
     "/worlds/roman/people/": [
         "ba5995508250eddfcdc9964f3ae41e40",
         "2026-11-11"
     ],
     "/worlds/roman/public-baths/": [
-        "5284247af34de93641e661688817cb7a",
-        "2026-11-11"
+        "5ee7dfb312279f1dde17ad4e84dc95d5",
+        "2026-11-19"
     ],
     "/worlds/roman/public-fountain/": [
-        "c39223f0173ccb58994bf3e5619fbd80",
-        "2026-11-11"
+        "d6e67ec99e9ccc77e0363628625c98c9",
+        "2026-11-19"
     ],
     "/worlds/roman/records-office/": [
-        "12c2f1031f88ab11576cef4da95001cc",
-        "2026-11-11"
+        "232447f79bf6ba9ef72431eab2e58d3b",
+        "2026-11-19"
     ],
     "/worlds/roman/school/": [
-        "18a6713f48033a700076a08051b7d571",
-        "2026-11-11"
+        "acddfca8c5ae9f4486c6d292f31eeeb9",
+        "2026-11-19"
     ],
     "/worlds/roman/shop/": [
-        "183a66ff8aa6061ac2a55b79febbcc57",
-        "2026-11-11"
+        "59ef08d4bb5e3ffa9b9d167e2d2e187f",
+        "2026-11-19"
     ],
     "/worlds/roman/street-food/": [
-        "db27759cfb6691280814a9a4cee789cd",
-        "2026-11-11"
+        "456b22c84ba533a86d7e0917d3656e0f",
+        "2026-11-19"
     ],
     "/worlds/roman/temple-of-vesta/": [
-        "564b2d2efd82f4a293cf1ab657ff30fc",
-        "2026-11-11"
+        "406e6161599d8f92762fb4eeb248b9ac",
+        "2026-11-19"
     ],
     "/worlds/roman/temple/": [
-        "ab402423a7f90a9177569c13b07026b7",
-        "2026-11-11"
+        "45f0c98c88f194be109ffc5f20d4f2d8",
+        "2026-11-19"
     ],
     "/worlds/roman/treasury/": [
-        "19f9d6cd1e875d9478528b1a6a100d83",
-        "2026-11-11"
+        "4c4ffb01d70257a4366bbbd47956220e",
+        "2026-11-19"
     ],
     "/worlds/roman/triumphal-arch/": [
-        "b286fc6e7a749b740697fb0c38522b8d",
-        "2026-11-11"
+        "cf04cce1e27e0d19e94a73915250ebc7",
+        "2026-11-19"
     ],
     "/worlds/roman/victory-column/": [
-        "de1be0b93dbdbb8ecfc0a73d8031beac",
-        "2026-11-11"
+        "5191632dbd8fa705674b21ecd8477c6b",
+        "2026-11-19"
     ],
     "/worlds/roman/villa/": [
-        "524a0fdc8c5b2285e2c0fc2418c65723",
-        "2026-11-11"
+        "a6a3acc7624b0e586f1b373f17dc1fe9",
+        "2026-11-19"
     ],
     "/worlds/roman/warehouse/": [
-        "b3a4c55e8fdeab75de09bf1c96ce3b89",
-        "2026-11-11"
+        "a7c91220d1c05bccbd9d440c528e6143",
+        "2026-11-19"
     ]
 }

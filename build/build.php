@@ -593,7 +593,7 @@ $urls['/teachers/worksheets/'] = '0.9';
 foreach ($SHEETS as [$slug]) $urls["/teachers/worksheets/$slug/"] = '0.8';
 $urls['/teachers/glossary/'] = '0.8';
 $urls['/teachers/question-bank/'] = '0.8';
-$urls['/search/'] = '0.4';
+// /search/ is noindex (a list of links, not a page to land on), so it is left out of the sitemap
 $urls['/artwork/'] = '0.7';
 $urls['/about/'] = '0.5';
 $urls['/support/'] = '0.4';

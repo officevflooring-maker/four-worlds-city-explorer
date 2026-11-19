@@ -230,9 +230,10 @@ foreach ($slugsT as $k => $slug) {
     $body .= '<section class="read" aria-labelledby="' . $id . '"><h2 id="' . $id . '">' . h($sec[0]) . '</h2>';
     foreach (array_slice($sec, 1) as $part) {
       if (isset($part['list'])) {
-        $body .= '<ul class="read-list">';
+        $tag = empty($part['ordered']) ? 'ul' : 'ol';
+        $body .= '<' . $tag . ' class="read-list">';
         foreach ($part['list'] as $li) $body .= '<li>' . h($li) . '</li>';
-        $body .= '</ul>';
+        $body .= '</' . $tag . '>';
       } else {
         foreach ($part as $para) $body .= '<p>' . h($para) . '</p>';
       }

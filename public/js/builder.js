@@ -542,5 +542,14 @@
     if (!state.cells.every(isEmpty)) say(linked && linked !== saved ? 'Here is a shared city. Change anything you like.' : 'Welcome back. Your city is just as you left it.');
   };
   load();
-  window.addEventListener('hashchange', function () { var linked = fromLink(); if (linked && linked !== encode()) { past = []; load(); } });
+  // From a building page (#pick=CODE): show that building's world and pick it, ready to place.
+  var pickFromLink = function () {
+    var m = /#pick=([a-z0-9~-]+)/.exec(location.hash), p = m && pieces[m[1]];
+    if (!p) return;
+    var tab = document.getElementById('pal-tab-' + p.world);
+    if (tab) selectTab(tab);
+    setTool(p.code);
+  };
+  pickFromLink();
+  window.addEventListener('hashchange', function () { var linked = fromLink(); if (linked && linked !== encode()) { past = []; load(); } pickFromLink(); });
 })();

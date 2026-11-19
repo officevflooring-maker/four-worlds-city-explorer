@@ -91,3 +91,9 @@ $COMPARE = [
     'future' => ['tree-pod-habitat', 'Tree pod habitat', 'Homes are built around the tree. Is that sharing space, or taking it over?'],
   ]],
 ];
+
+// City builder piece codes: a world letter + the page slug (e.g. "rcrane"). Building pages link to
+// /play/city-builder/#pick=CODE so the builder opens with that building picked (public/js/builder.js).
+const WORLD_LETTER = ['medieval' => 'k', 'roman' => 'r', 'modern' => 'm', 'green' => 'e', 'future' => 'f', 'egypt' => 'g', 'heaven' => 'h'];
+// Pages whose picture is a ground texture, not a building, so they are not builder or quiz pieces.
+const NOT_PIECES = ['modern/water-system', 'modern/streets-crosswalks'];

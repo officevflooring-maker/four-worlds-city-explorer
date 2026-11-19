@@ -330,23 +330,27 @@ $TEACH = [
 ],
 
 'what-does-a-city-need' => [
-  'title' => 'What Does a City Need? Infrastructure Explained for Students',
-  'h1' => 'What does a city need to work?',
-  'desc' => 'The essential systems every city needs, explained simply: water, energy, transport, housing, food, health, schools, government and public space.',
+  'title' => 'What Does a City Need? 10 Things Every City Needs',
+  'h1' => 'What does a city need? 10 things every city needs',
+  'desc' => 'The 10 things every city needs, explained for students: water, energy, transport, homes, food, health care, safety, schools, leaders and public space.',
   'kind' => 'Explainer', 'grades' => '3-9', 'time' => '1 class period', 'subjects' => 'Social studies, science',
-  'quick' => 'Every city needs clean water and sewers, energy, ways to move people and goods, homes, food, health care, schools, safety services, a way to make decisions, and public spaces. Most of these systems, called infrastructure, are hidden until they stop working.',
+  'quick' => 'Every city needs 10 things: clean water and sewers, energy, ways to move people and goods, homes, food, health care, schools, safety services, a way to make decisions, and public spaces. Most of these systems, called infrastructure, are hidden until they stop working.',
   'sections' => [
-    ['The essentials', [], ['list' => [
+    ['The 10 things every city needs', [], ['ordered' => true, 'list' => [
       'Water in, waste out: treatment plants, pipes and sewers.',
       'Energy: electricity and heat for homes, schools and hospitals.',
       'Transportation: streets, sidewalks, bike lanes, buses and trains.',
       'Homes: for people of every income and household size.',
       'Food: shops, markets and the trucks and warehouses that supply them.',
-      'Health and safety: clinics, hospitals, fire and police services.',
+      'Health care: clinics and hospitals.',
+      'Safety: fire and police services.',
       'Learning: schools and libraries.',
       'Decisions: local government, laws and a way for residents to be heard.',
       'Public space: parks and squares where people meet.',
     ]]],
+    ['Try it: build a city that has all 10', [
+      'In the free online city builder, students place buildings from seven worlds on a small city map, and a checklist shows which needs the city meets: water, homes, food, health, learning, leaders, places to meet, work and shops, safety and nature. It is a kid-sized version of the list above, so it works as a warm-up or an exit task.',
+    ]],
     ['Sorting activity', [
       'Print the list of buildings from one world on this site. In groups, students sort each building into the categories above. Some fit in more than one; let them argue it out. Then ask: which category has the fewest buildings? What would happen if it disappeared?',
     ]],
@@ -356,6 +360,7 @@ $TEACH = [
   ],
   'faq' => [
     ['What is infrastructure?', 'The basic systems a community needs to function, such as roads, water pipes, power lines and communication networks.'],
+    ['What are 10 things every city needs?', 'Clean water and sewers, energy, transportation, homes, food, health care, safety services, schools, a way to make decisions (local government) and public spaces such as parks.'],
     ['What is the most important thing a city needs?', 'Clean water is often called the most essential, because without it disease spreads quickly. But a city needs all its systems working together.'],
   ],
   'links' => ['modern/water-system', 'modern/streets-crosswalks', 'modern/health-clinic', 'modern/town-hall', 'future/habitat-cluster', 'roman/forum'],
