@@ -4,6 +4,12 @@
 // listed here gets its world's title pattern and its summary. Keep titles to about 60 characters and
 // descriptions to about 155.
 const SEO = [
+  // Added 2026-11-19 (Search Console: about 35 views at #6-10 for "fortified home of a king", and 70 views at #5 for
+  // medieval orchards, with no clicks).
+  'medieval/royal-castle' => ['Medieval castle: how a king\'s fortified home worked',
+    'Keep, bailey, curtain wall and moat: see how each ring kept a king or lord safe, why towers were round, and real castles you can still visit today.'],
+  'medieval/orchard' => ['Medieval orchards: how people kept fruit all winter',
+    'Apples, pears, quinces and medlars: how medieval people dried, stored and pressed fruit, why orchards grew inside castle walls, and the art of grafting.'],
   'roman/crane' => ['Treadwheel crane: how Romans lifted stone by walking',
     'Workers walked inside a giant wooden wheel to wind the rope, and pulleys helped them lift heavy stone blocks. Illustrated, with a real Roman carving.'],
   'egypt/mud-brick-house' => ['Mud-brick houses of ancient Egypt: who lived in them?',

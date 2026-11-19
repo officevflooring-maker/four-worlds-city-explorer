@@ -287,6 +287,12 @@ details summary { cursor: pointer; font-weight: 700; color: var(--accent); paddi
 .read h3 { margin-top: 1.2rem; font-size: 1.1rem; }
 .read p, .read li { font-size: 1.08rem; }
 .read-list li { margin-bottom: .35rem; }
+.read-table-wrap { overflow-x: auto; margin: 0 0 1rem; }
+.read-table { width: 100%; border-collapse: collapse; background: var(--paper); font-size: 1rem; }
+.read-table th, .read-table td { border: 1px solid var(--line); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.read-table thead th { background: var(--cream); }
+.read-table tbody th { font-weight: 700; }
+@media (max-width: 600px) { .read-table { font-size: .92rem; } .read-table th, .read-table td { padding: .4rem; } }
 .photo { margin: 0 0 2rem; }
 .photo .lb { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 12px; overflow: hidden; }
 .photo img { width: 100%; height: auto; border-radius: 12px; }

@@ -229,7 +229,14 @@ foreach ($slugsT as $k => $slug) {
     $toc .= '<li><a href="#' . $id . '">' . h($sec[0]) . '</a></li>';
     $body .= '<section class="read" aria-labelledby="' . $id . '"><h2 id="' . $id . '">' . h($sec[0]) . '</h2>';
     foreach (array_slice($sec, 1) as $part) {
-      if (isset($part['list'])) {
+      if (isset($part['table'])) {
+        // ['table' => [[head cells], [row cells], ...]]: the first row is the header, the first cell of a row its name.
+        $rows = $part['table'];
+        $head = array_shift($rows);
+        $body .= '<div class="read-table-wrap"><table class="read-table"><thead><tr>' . implode('', array_map(fn($c) => '<th scope="col">' . h($c) . '</th>', $head)) . '</tr></thead><tbody>';
+        foreach ($rows as $row) $body .= '<tr><th scope="row">' . h($row[0]) . '</th>' . implode('', array_map(fn($c) => '<td>' . h($c) . '</td>', array_slice($row, 1))) . '</tr>';
+        $body .= '</tbody></table></div>';
+      } elseif (isset($part['list'])) {
         $tag = empty($part['ordered']) ? 'ul' : 'ol';
         $body .= '<' . $tag . ' class="read-list">';
         foreach ($part['list'] as $li) $body .= '<li>' . h($li) . '</li>';
