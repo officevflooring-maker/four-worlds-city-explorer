@@ -603,7 +603,14 @@ $urls['/city-builders/'] = '0.5';
 $urls['/classroom-pack/'] = '0.5';
 $urls['/posters/'] = '0.5';
 foreach (['/bundle/', '/holiday-pack/', '/free/', '/journey/', '/bingo/', '/planners/', '/trivia/', '/wordwall/', '/calendar/', '/playset/', '/activity/', '/memory/', '/dominoes/', '/storybook/', '/story-starters/'] as $u) $urls[$u] = '0.5';
-$xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+// Each building page lists its illustration (and a vehicle its back view too), so Google Images can find the
+// full-size pictures: they are free to reuse under CC BY 4.0.
+$pageImages = [];
+foreach ($WORLD_DATA as $w => $D) foreach ($D['pages'] as $slug => $r) {
+  $stem = "/assets/artwork/$w/" . artwork_name($r['src']);
+  foreach (empty($r['vehicle']) ? [''] : ['', '-back'] as $end) if (is_file(PUB . "$stem$end.webp")) $pageImages["/worlds/$w/$slug/"][] = url("$stem$end.webp");
+}
+$xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
 // Each page's date is the day its content last changed: build/lastmod.json remembers a fingerprint of every page
 // (page() takes it) and the day it changed, so search engines are told about pages that really are new.
 $lastFile = __DIR__ . '/lastmod.json';
@@ -613,7 +620,11 @@ foreach ($GLOBALS['pageMarks'] as $u => $mark) if (($last[$u][0] ?? '') !== $mar
 $last = array_intersect_key($last, $GLOBALS['pageMarks']);
 ksort($last);
 file_put_contents($lastFile, json_encode($last, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
-foreach ($urls as $u => $pr) $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . ($last[$u][1] ?? LASTMOD) . "</lastmod><priority>$pr</priority></url>\n";
+foreach ($urls as $u => $pr) {
+  $imgs = '';
+  foreach ($pageImages[$u] ?? [] as $src) $imgs .= '<image:image><image:loc>' . htmlspecialchars($src, ENT_XML1) . '</image:loc></image:image>';
+  $xml .= "  <url><loc>" . url($u) . "</loc><lastmod>" . ($last[$u][1] ?? LASTMOD) . "</lastmod><priority>$pr</priority>$imgs</url>\n";
+}
 $xml .= "</urlset>\n";
 file_put_contents(PUB . '/sitemap.xml', $xml);
 // the store's addresses (src/store.js) are for buyers, not search engines

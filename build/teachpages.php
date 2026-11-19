@@ -278,6 +278,8 @@ foreach ($slugsT as $k => $slug) {
   $time = h($t['time']);
   $subjects = h($t['subjects']);
   $try = isset(TEACH_PLAY[$slug]) ? '<p class="try-it"><span class="badge badge-art">Try it online</span> <a href="' . TEACH_PLAY[$slug][0] . '">' . h(TEACH_PLAY[$slug][1]) . '</a>. ' . h(TEACH_PLAY[$slug][2]) . '</p>' : '';
+  // A guide that pairs with another guide: 'next' => [link, badge, link text, rest of the line].
+  if (!empty($t['next'])) $try .= '<p class="try-it"><span class="badge badge-art">' . h($t['next'][1]) . '</span> <a href="' . $t['next'][0] . '">' . h($t['next'][2]) . '</a> ' . h($t['next'][3]) . '</p>';
   if (!empty($t['sister'])) $try .= '<p class="try-it"><span class="badge badge-belief">More Bible lessons</span> <a href="' . SISTER_URL . '">Every Stone Speaks</a>, our sister site: ' . h($t['sister']) . '</p>';
   page("/teachers/$slug/", [
     'title' => $t['title'],

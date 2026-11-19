@@ -119,9 +119,10 @@ $TEACH = [
 ],
 
 'build-a-roman-aqueduct' => [
-  'title' => 'Build a Model Roman Aqueduct: STEM Activity for Students',
-  'h1' => 'Build a model Roman aqueduct: a hands-on STEM activity',
-  'desc' => 'How to build a working model Roman aqueduct in class with simple materials: the challenge, materials, steps, the science of slope and gravity, and questions.',
+  'title' => 'Roman Aqueduct Model for Kids: Build One That Really Works',
+  'h1' => 'Build a Roman aqueduct model: a STEM project for kids',
+  'desc' => 'How kids can build a Roman aqueduct model that really carries water, with cardboard, tape and books: the challenge, materials, steps and the science.',
+  'next' => ['/teachers/how-did-roman-aqueducts-work/', 'Read first', 'How did Roman aqueducts work?', 'The real thing, explained for kids, before you build.'],
   'kind' => 'Project', 'grades' => '4-8', 'time' => '2 to 3 class periods', 'subjects' => 'Science, engineering, history, math',
   'quick' => 'Teams build a channel from cardboard, tape and plastic that carries water from a high "spring" to a cup in the "city" using only gravity. The challenge is to keep a gentle, steady slope across a gap, just as Roman engineers did.',
   'sections' => [
@@ -157,6 +158,7 @@ $TEACH = [
   'faq' => [
     ['How did Roman aqueducts move water without pumps?', 'They used gravity. The channel sloped very gently downhill all the way from the source to the city, so water flowed on its own.'],
     ['What materials do you need to build a model aqueduct?', 'Cardboard or card, plastic wrap or foil to waterproof it, tape, cups, books or boxes for supports, and water. A tray underneath keeps the classroom dry.'],
+    ['How do you make a Roman aqueduct model for kids?', 'Fold card into a U-shaped channel, line it with plastic wrap, and rest it on stacks of books that get a little lower at each step. Pour a cup of water in at the high end and measure how much reaches the cup at the low end.'],
     ['What is a good gradient for a model aqueduct?', 'Start with a drop of about 1 centimeter for every 30 centimeters of channel and adjust. Students will discover that a gentle slope gives a steadier flow than a steep one.'],
     ['Which real aqueduct can students study?', 'The Pont du Gard in France and the aqueduct of Segovia in Spain are famous survivors. See the Aqueduct page on this site for photos.'],
   ],
@@ -235,12 +237,26 @@ $TEACH = [
 ],
 
 'how-did-roman-aqueducts-work' => [
-  'title' => 'How Did Roman Aqueducts Work? Explained for Students',
+  'title' => 'How Did Roman Aqueducts Work? Explained for Kids',
   'h1' => 'How did Roman aqueducts work?',
-  'desc' => 'How Roman aqueducts carried water for kilometers using only gravity: the gentle slope, underground channels, arches, settling tanks and city pipes.',
+  'desc' => 'How Roman aqueducts worked, explained for kids and students: a very gentle slope, gravity, hidden channels, bridges of arches and pipes in the city.',
   'kind' => 'Explainer', 'grades' => '4-12', 'time' => '10-minute read', 'subjects' => 'History, science',
   'quick' => 'Roman aqueducts used gravity. Engineers built a channel that sloped very gently downhill from a spring or river in the hills to the city. Most of it ran underground; arches carried it across valleys. In the city, the water was split into pipes for fountains, baths and some homes.',
+  'next' => ['/teachers/build-a-roman-aqueduct/', 'Make one', 'Build a Roman aqueduct model', 'that really carries water, with cardboard, tape and books.'],
   'sections' => [
+    ['Explained for kids', [
+      'Think of an aqueduct as a very long, very gentle water slide. Water always runs downhill, so the Romans found a spring high in the hills and built a channel that sloped down, a tiny bit at a time, all the way to the city.',
+      'The channel was covered, like a long stone pipe, and most of it was hidden underground. Where it met a valley, the Romans built a bridge of arches to carry it across without losing its slope. Where it met a hill, they dug a tunnel through it.',
+      'In the city, the water filled a tank and was shared out into pipes: for the public fountains, where everyone collected water, for the baths, and for the homes of people who paid for it.',
+    ]],
+    ['The parts of an aqueduct', [], ['list' => [
+      'Source: a spring, river or lake higher than the city.',
+      'Channel: the covered stone waterway, lined with waterproof mortar.',
+      'Arches: a bridge that carries the channel across a valley.',
+      'Tunnel: the way through a hill.',
+      'Settling tank: a pool where mud sinks to the bottom.',
+      'Castellum: the building in the city that splits the water into pipes.',
+    ]]],
     ['Step by step', [], ['list' => [
       'Find a source: a spring, river or lake higher than the city.',
       'Survey the route so that it slopes downhill all the way, following the land\'s contours.',
@@ -257,6 +273,7 @@ $TEACH = [
     ]],
   ],
   'faq' => [
+    ['How do Roman aqueducts work, in simple words for kids?', 'Water runs downhill. The Romans built a long covered channel from a spring in the hills that sloped down a tiny bit all the way to the city, so the water flowed there on its own.'],
     ['Did Roman aqueducts use pumps?', 'No. They relied on gravity and a carefully planned downhill slope.'],
     ['Why were most aqueducts underground?', 'An underground channel kept the water clean and cool, protected it from enemies and was cheaper than building arches.'],
     ['Are any Roman aqueducts still standing?', 'Yes. The Pont du Gard in France and the aqueduct of Segovia in Spain are among the best preserved, and parts of Rome\'s aqueducts survive in the Park of the Aqueducts.'],
@@ -830,12 +847,16 @@ $TEACH = [
 
 // ===================== Ancient Egypt =====================
 'how-were-the-pyramids-built' => [
-  'title' => 'How Were the Pyramids Built? An Explainer for Students',
+  'title' => 'How Were the Pyramids Built? Explained for Kids',
   'h1' => 'How were the pyramids built?',
-  'desc' => 'How the Egyptians built the pyramids without machines: who the workers were, how giant stones were cut and moved on sledges, boats and ramps, and what is still unknown.',
+  'desc' => 'How the pyramids were built, explained for kids: who the workers were, and how giant stones were cut and moved on sledges, boats and ramps.',
   'kind' => 'Explainer', 'grades' => '3-8', 'time' => '20-minute read', 'subjects' => 'History, science, engineering',
   'quick' => 'Teams of paid workers, not slaves, built the pyramids about 4,500 years ago. They cut limestone and granite with copper tools and stone hammers, moved the blocks on wooden sledges, on boats along the Nile and canals, and up ramps of mud brick and rubble. How exactly the top layers were raised is still argued about.',
   'sections' => [
+    ['Explained for kids', [
+      'Imagine building a mountain out of about 2.3 million stone blocks, many as heavy as a car, with no trucks, no cranes and no iron tools. That is what the Egyptians did at Giza about 4,500 years ago.',
+      'Teams of Egyptian workers did the job. They cut the stone with copper chisels and stone hammers, floated blocks on boats along the Nile, dragged them on wooden sledges (wetting the sand made pulling easier) and pushed them up long ramps. The Great Pyramid took about 20 years.',
+    ]],
     ['The Great Pyramid', [
       'The Great Pyramid at Giza was built for King Khufu around 2560 BC. It was about 146 meters tall, the tallest building in the world for almost 4,000 years, and it is made of roughly 2.3 million stone blocks. Most of them are local limestone; the finest white limestone for its smooth outer casing came by boat from quarries across the Nile.',
     ]],
@@ -855,6 +876,7 @@ $TEACH = [
     ]]],
   ],
   'faq' => [
+    ['How were the pyramids built, in simple words for kids?', 'Teams of Egyptian workers cut big stone blocks with copper and stone tools, moved them on boats and wooden sledges, and pulled them up ramps, layer by layer, for about 20 years.'],
     ['Did slaves build the pyramids?', 'The evidence says no. Archaeologists have found the builders\' town and tombs near the pyramids, which show that paid and well-fed teams of Egyptian workers built them.'],
     ['How long did it take to build the Great Pyramid?', 'About 20 years is the usual estimate, during the reign of King Khufu, around 2560 BC.'],
     ['How did the Egyptians lift the stones so high?', 'Mostly with ramps, sledges and levers. Exactly how the highest blocks were raised is still debated.'],
