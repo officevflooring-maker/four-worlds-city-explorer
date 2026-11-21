@@ -630,3 +630,52 @@ file_put_contents(PUB . '/sitemap.xml', $xml);
 // the store's addresses (src/store.js) are for buyers, not search engines
 file_put_contents(PUB . '/robots.txt', "User-agent: *\nAllow: /\nDisallow: /buy/\nDisallow: /thanks/\nDisallow: /dl/\nDisallow: /signup/\n\nSitemap: " . url('/sitemap.xml') . "\n");
 echo "wrote sitemap.xml, robots.txt\n";
+file_put_contents(PUB . '/' . INDEXNOW_KEY . '.txt', INDEXNOW_KEY);
+
+// /llms.txt: a plain map of the site for AI assistants and AI search (llmstxt.org), built from the same data as the
+// pages, so it never says anything the pages don't.
+$llm = '# ' . SITE_NAME . "\n\n> " . SITE_DESC . "\n\n"
+  . "Free for students, teachers and homeschool families, with no sign-up, ads or tracking. Every illustration is free to reuse under CC BY 4.0 (credit: " . SITE_NAME . ").\n\n## The seven worlds\n\n";
+foreach (WORLD_ORDER as $w) $llm .= '- [' . $WORLDS[$w]['name'] . '](' . url("/worlds/$w/") . '): ' . $WORLDS[$w]['lead'] . "\n";
+$llm .= "\nEach world has one page per building, with an illustration, how it worked, key words, discussion questions and sources. Every building is listed in the sitemap: " . url('/sitemap.xml') . "\n\n## Lessons for teachers and homeschool\n\n";
+foreach (TEACH_GROUPS as [$label, $slugs]) foreach ($slugs as $s) $llm .= '- [' . $TEACH[$s]['h1'] . '](' . url("/teachers/$s/") . '): ' . $TEACH[$s]['desc'] . "\n";
+$llm .= "\n## Guided tours\n\n";
+foreach ($TOURS as $slug => $t) $llm .= '- [' . $t['h1'] . '](' . url("/tours/$slug/") . '): ' . $t['desc'] . "\n";
+$llm .= "\n## Classroom tools and games\n\n"
+  . '- [Printable worksheets](' . url('/teachers/worksheets/') . "): vocabulary, word searches, a compare chart and a city planner, with answer keys.\n"
+  . '- [Glossary](' . url('/teachers/glossary/') . "): every key word from the building pages, with a simple meaning.\n"
+  . '- [Question bank](' . url('/teachers/question-bank/') . "): questions for warm-ups, discussions and writing.\n"
+  . '- [Compare the worlds](' . url('/compare/') . "): how each city meets the same needs.\n"
+  . '- [City builder](' . url('/play/city-builder/') . "): build a city from the buildings of all seven worlds.\n"
+  . '- [Games](' . url('/play/') . "): quizzes, map hunts, memory match, word search and more.\n"
+  . '- [Free illustrations](' . url('/artwork/') . "): every picture, free to reuse under CC BY 4.0.\n";
+file_put_contents(PUB . '/llms.txt', $llm);
+echo "wrote llms.txt, IndexNow key\n";
+
+// What each Pinterest pin says (tools/make-pins.php draws the pictures and writes the upload files from it):
+// lessons first, then the worlds and tours, then every building, taking turns between the worlds.
+$pinBoard = fn($w) => $WORLDS[$w]['name'] . ' for Kids';
+$pins = [];
+foreach (TEACH_GROUPS as [, $slugs]) foreach ($slugs as $s) {
+  $t = $TEACH[$s];
+  // the guide's first building, passing over flat tiles (a crossing, a pile of materials) that make a weak picture
+  $first = array_values(array_filter($t['links'], fn($l) => !preg_match('~/(streets-crosswalks|building-materials)$~', $l)))[0] ?? $t['links'][0];
+  [$pw, $ps] = explode('/', $first);
+  $pins[] = ['file' => "lesson-$s", 'big' => $t['h1'], 'small' => 'Free ' . strtolower($t['kind']) . ' · Grades ' . $t['grades'], 'world' => $pw, 'pic' => $ps,
+    'title' => $t['title'], 'desc' => $t['desc'] . ' Free to print and share, with no sign-up.', 'link' => url("/teachers/$s/"), 'board' => 'Free Lessons for Teachers and Homeschool'];
+}
+foreach (WORLD_ORDER as $w) $pins[] = ['file' => "world-$w", 'big' => $WORLDS[$w]['name'], 'small' => 'A free illustrated city to explore', 'world' => $w, 'pic' => $WORLDS[$w]['card'],
+  'title' => $WORLDS[$w]['name'] . ': an illustrated city for kids', 'desc' => $WORLDS[$w]['lead'] . ' Free, with no sign-up or ads.', 'link' => url("/worlds/$w/"), 'board' => $pinBoard($w)];
+foreach ($TOURS as $slug => $t) $pins[] = ['file' => "tour-$slug", 'big' => $t['h1'], 'small' => 'A free guided tour', 'world' => $t['world'], 'pic' => $WORLDS[$t['world']]['card'],
+  'title' => $t['title'], 'desc' => $t['desc'], 'link' => url("/tours/$slug/"), 'board' => $pinBoard($t['world'])];
+$byWorld = [];
+foreach (WORLD_ORDER as $w) foreach ($WORLD_DATA[$w]['pages'] as $slug => $r) {
+  $D = $WORLD_DATA[$w];
+  $title = sprintf($D['pageTitle'], $r['name']);
+  if (strlen($title) > 60 && !empty($D['pageTitleShort'])) $title = sprintf($D['pageTitleShort'], $r['name']);
+  if (isset(SEO["$w/$slug"])) $title = SEO["$w/$slug"][0];
+  $byWorld[$w][] = ['file' => "$w-$slug", 'big' => $r['name'], 'small' => $WORLDS[$w]['name'] . ' · ' . $D['cats'][$r['cat']][0], 'world' => $w, 'pic' => $slug,
+    'title' => $title, 'desc' => $r['summary'] . ' A free illustrated page for kids and teachers, with key words and questions to discuss.', 'link' => url("/worlds/$w/$slug/"), 'board' => $pinBoard($w)];
+}
+for ($i = 0; $byWorld; $i++) foreach ($byWorld as $w => $list) { if (!isset($list[$i])) { unset($byWorld[$w]); continue; } $pins[] = $list[$i]; }
+file_put_contents(__DIR__ . '/../pinterest/pins.json', json_encode($pins, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n");

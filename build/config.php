@@ -69,6 +69,9 @@ const GOOGLE_VERIFY = '';
 // Pinterest's code for claiming the site (a meta tag on the home page), from the Pinterest business account's
 // Settings > Link to Pinterest > Websites. Claiming credits the site's pins to that account and turns on its analytics.
 const PINTEREST_VERIFY = '9b19873d3a12602c933062df973abefb';
+// IndexNow (Nov 20, 2026): tells Bing and the other IndexNow engines about new or changed pages
+// (tools/indexnow.php). The build serves it as /<key>.txt, which IndexNow reads to check the key. Never remove it.
+const INDEXNOW_KEY = '50f700b5729e2bd2316af3033d4e9606';
 const LASTMOD   = '2026-10-29';
 
 // The Life RPG game's six pets (tools/copy-pets.sh), in its order: the passport pet (/play/passport/) and the

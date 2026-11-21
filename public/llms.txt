@@ -1,0 +1,66 @@
+# The Atlas of Cities
+
+> Explore seven illustrated cities, from ancient Egypt and Rome to a medieval town, a forest city, Mars and a heavenly city, and learn how a city works.
+
+Free for students, teachers and homeschool families, with no sign-up, ads or tracking. Every illustration is free to reuse under CC BY 4.0 (credit: The Atlas of Cities).
+
+## The seven worlds
+
+- [Ancient Egypt](https://atlasofcities.org/worlds/egypt/): A real civilization on the Nile. Open any of 37 places to learn how it worked, with photos of real Egyptian sites.
+- [Ancient Rome](https://atlasofcities.org/worlds/roman/): A real city. Open any of 35 buildings to learn how it worked, with photos of real Roman sites.
+- [Medieval Kingdom](https://atlasofcities.org/worlds/medieval/): A market town of medieval Europe. Open any of 38 places, from the castle to the windmill, with photos of real medieval sites.
+- [Modern Town](https://atlasofcities.org/worlds/modern/): An imagined town of real buildings. Open any of 36 to learn why towns need it, how it is built and who it serves.
+- [Green World](https://atlasofcities.org/worlds/green/): A city that grows with the forest. Each of 35 buildings is paired with real nature-based technology.
+- [Robotic Future](https://atlasofcities.org/worlds/future/): One possible future on the Moon and Mars. Each of 34 buildings explains the real space technology behind it.
+- [Heavenly City](https://atlasofcities.org/worlds/heaven/): The awaited city of gold and light, painted from the Bible's words. Explore its 35 places to follow the story of Jesus, as the Bible tells it, with photos of the real places.
+
+Each world has one page per building, with an illustration, how it worked, key words, discussion questions and sources. Every building is listed in the sitemap: https://atlasofcities.org/sitemap.xml
+
+## Lessons for teachers and homeschool
+
+- [Design a city: a project-based unit for grades 5 to 9](https://atlasofcities.org/teachers/design-a-city-project/): A free, step-by-step design a city project for middle school: students plan a city that meets real needs, with roles, a timeline and a rubric.
+- [Build a Roman aqueduct model: a STEM project for kids](https://atlasofcities.org/teachers/build-a-roman-aqueduct/): How kids can build a Roman aqueduct model that really carries water, with cardboard, tape and books: the challenge, materials, steps and the science.
+- [Design a Mars colony: a student project](https://atlasofcities.org/teachers/design-a-mars-colony-project/): A complete design a Mars colony project for students: mission brief, team roles, the needs to solve, steps, a rubric and real NASA technology to research.
+- [Roman engineering: arches, concrete, roads and domes](https://atlasofcities.org/teachers/roman-engineering-lesson/): A ready-to-teach lesson on Roman engineering: how arches, concrete, roads, domes and cranes worked, with activities and discussion questions.
+- [Ancient Rome vs modern cities: compare and contrast](https://atlasofcities.org/teachers/ancient-rome-vs-modern-cities/): A compare and contrast lesson on ancient Rome and modern cities: water, homes, transport, government and fun, with a comparison chart and questions.
+- [Medieval market day: a lesson on guilds and trade](https://atlasofcities.org/teachers/medieval-market-day-lesson/): A role-play lesson for grades 3 to 7: students form guilds, agree on rules for quality and fair prices, pay a toll at the town gate and trade at a medieval market.
+- [How does local government work?](https://atlasofcities.org/teachers/how-local-government-works/): A civics lesson on how local government works: mayors, councils and city managers, what they decide, and how students can take part.
+- [How were the pyramids built?](https://atlasofcities.org/teachers/how-were-the-pyramids-built/): How the pyramids were built, explained for kids: who the workers were, and how giant stones were cut and moved on sledges, boats and ramps.
+- [What was daily life like in ancient Egypt?](https://atlasofcities.org/teachers/daily-life-in-ancient-egypt/): Daily life for ordinary people in ancient Egypt: mud-brick homes, bread and beer, farming by the Nile flood, clothes, school for scribes and games, with classroom questions.
+- [What was daily life like in ancient Rome?](https://atlasofcities.org/teachers/daily-life-in-ancient-rome/): Daily life for ordinary people in ancient Rome: apartment homes, street food, water from fountains, public toilets and baths, with classroom questions.
+- [How did Roman aqueducts work?](https://atlasofcities.org/teachers/how-did-roman-aqueducts-work/): How Roman aqueducts worked, explained for kids and students: a very gentle slope, gravity, hidden channels, bridges of arches and pipes in the city.
+- [How did medieval castles work?](https://atlasofcities.org/teachers/how-did-castles-work/): How medieval castles worked: earth mounds and stone keeps, moats, curtain walls, gatehouses and portcullises, who lived inside, and why castles stopped being built, with questions.
+- [What was daily life like in the Middle Ages?](https://atlasofcities.org/teachers/daily-life-in-a-medieval-town/): Daily life for ordinary people in the Middle Ages: village farms and town trades, timber and thatch homes, bread and pottage, guilds and apprentices, school and play, with questions.
+- [How do cities get clean water?](https://atlasofcities.org/teachers/how-do-cities-get-clean-water/): How a city turns river or groundwater into safe tap water: coagulation, settling, filtration and disinfection, then water towers, pipes and drains.
+- [What does a city need? 10 things every city needs](https://atlasofcities.org/teachers/what-does-a-city-need/): The 10 things every city needs, explained for students: water, energy, transport, homes, food, health care, safety, schools, leaders and public space.
+- [Urban planning for students](https://atlasofcities.org/teachers/urban-planning-for-students/): What urban planning is, what city planners do, the big ideas behind good neighborhoods, and planning as a career, with free classroom resources.
+- [Explore your town: a neighborhood walk and scavenger hunt](https://atlasofcities.org/teachers/explore-your-town-scavenger-hunt/): A printable neighborhood walk and scavenger hunt for classes and families: spot infrastructure, public spaces and nature, then talk about your town.
+- [Sustainable city project ideas for students](https://atlasofcities.org/teachers/sustainable-city-project-ideas/): 12 sustainable city project ideas for students, from rain gardens and green roofs to heat maps and tiny forests, with the real science behind each.
+- [20 biomimicry examples for students](https://atlasofcities.org/teachers/biomimicry-examples-for-students/): 20 biomimicry examples for students in one table: the plant or animal, what it does and the invention it inspired, from Velcro to the bullet train.
+- [What is solarpunk?](https://atlasofcities.org/teachers/solarpunk-explained/): Solarpunk explained: the hopeful movement that imagines green, fair future cities, with the real technologies behind it and creative prompts.
+- [How could humans live on Mars?](https://atlasofcities.org/teachers/how-could-humans-live-on-mars/): How humans could survive on Mars: making oxygen, finding water ice, growing food, shielding from radiation and building homes, with real NASA technology.
+- [How do astronauts live on the International Space Station?](https://atlasofcities.org/teachers/life-on-the-space-station/): How astronauts breathe, drink, eat, sleep, exercise and stay healthy on the International Space Station, explained simply with real NASA facts.
+- [The story of Jesus for kids: a Bible lesson guide](https://atlasofcities.org/teachers/story-of-jesus-bible-lesson/): Teach the story of Jesus in 35 short parts, as the Bible tells it, using the illustrated Heavenly City: Bible references, a six-week plan, questions and activities.
+- [How to design a fantasy city: a worldbuilding guide](https://atlasofcities.org/teachers/fantasy-city-worldbuilding/): A worldbuilding guide for a believable fantasy city: geography, water, food, government, buildings and culture, with prompts for writing, art and games.
+- [What makes a good place to live? Discussion questions](https://atlasofcities.org/teachers/discussion-questions-what-makes-a-good-city/): 30 discussion questions about cities and communities: fairness, nature, technology, history and the future, for seminars, journals and debates.
+- [Free images for the classroom: how to use and credit them](https://atlasofcities.org/teachers/free-images-for-classroom/): How to use free, openly licensed images in slides, worksheets and projects, how to credit them (TASL), and 453 free city illustrations.
+
+## Guided tours
+
+- [Life on the Nile](https://atlasofcities.org/tours/life-on-the-nile/): A guided walk through an Egyptian city with a scribe: the river and granaries, markets without money, a scribe school, temples and the pyramids.
+- [Roman engineering](https://atlasofcities.org/tours/roman-engineering/): A guided tour of how Roman engineers built aqueducts, roads, baths, cranes and the Pantheon's concrete dome, with questions at every stop.
+- [Modern neighborhoods](https://atlasofcities.org/tours/modern-neighborhoods/): A guided walk through a modern town: streets, cars, deliveries, libraries, parks and access for everyone, with questions at every stop.
+- [Ecological design](https://atlasofcities.org/tours/ecological-design/): A guided tour of the Green World, a city that grows with the forest, and the real nature-based ideas behind it: clean water, wetlands, green roofs, meadows, compost and the commons.
+- [Human choices in robotic cities](https://atlasofcities.org/tours/robotic-cities/): A guided tour of an imagined Moon and Mars settlement: power, robots, self-driving vehicles, recycling and who makes the decisions.
+- [The story of Jesus](https://atlasofcities.org/tours/city-of-goodness/): A guided walk through the Heavenly City, the awaited city of gold and light, with a young guide, telling the story of Jesus as the Bible tells it, from the first garden to the empty tomb.
+- [A medieval market town](https://atlasofcities.org/tours/medieval-market-town/): A guided walk through a medieval town with a young mapmaker: the town gate, market day, guilds and crafts, the windmill, the abbey and the castle.
+
+## Classroom tools and games
+
+- [Printable worksheets](https://atlasofcities.org/teachers/worksheets/): vocabulary, word searches, a compare chart and a city planner, with answer keys.
+- [Glossary](https://atlasofcities.org/teachers/glossary/): every key word from the building pages, with a simple meaning.
+- [Question bank](https://atlasofcities.org/teachers/question-bank/): questions for warm-ups, discussions and writing.
+- [Compare the worlds](https://atlasofcities.org/compare/): how each city meets the same needs.
+- [City builder](https://atlasofcities.org/play/city-builder/): build a city from the buildings of all seven worlds.
+- [Games](https://atlasofcities.org/play/): quizzes, map hunts, memory match, word search and more.
+- [Free illustrations](https://atlasofcities.org/artwork/): every picture, free to reuse under CC BY 4.0.
