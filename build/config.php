@@ -62,6 +62,7 @@ const STORE_ALSO = [
   'esp-bingo'   => ['name' => 'Bible Picture Bingo', 'line' => 'Picture bingo for classes, clubs and family night, ready to print.', 'price' => '$3.99', 'etsy' => '4613075839', 'page' => '/printables/#esp-bingo'],
   'esp-verses'  => ['name' => 'Memory Verse Pack', 'line' => 'Twelve memory verses as posters and cards, ready to print.', 'price' => '$3.99', 'etsy' => '4613076255', 'page' => '/printables/#esp-verses'],
   'esp-advent'  => ['name' => 'The Advent Walk', 'line' => 'All 25 Advent days as cards to print, with an Advent chart.', 'price' => '$3.99', 'etsy' => '4613093078', 'page' => '/advent/'],
+  'esp-easter'  => ['name' => 'The Easter Walk', 'line' => 'All 8 days of Holy Week as cards to print, with a Holy Week chart.', 'price' => '$3.99', 'etsy' => '4620503453', 'page' => '/easter/'],
 ];
 // Google Search Console verification code (meta tag on the home page). Empty: the domain is verified as a Domain
 // property by a TXT record in Cloudflare's DNS, which needs no tag.

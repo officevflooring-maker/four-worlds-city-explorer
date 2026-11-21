@@ -264,5 +264,16 @@
         "page": "https://everystonespeaks.com/advent/",
         "image": "https://everystonespeaks.com/assets/products/esp-advent.jpg",
         "etsy": "4613093078"
+    },
+    "esp-easter": {
+        "name": "The Easter Walk",
+        "line": "All 8 days of Holy Week as cards to print, with a Holy Week chart.",
+        "price": 399,
+        "tax": "txcd_10503000",
+        "kind": "pdf",
+        "site": "esp",
+        "page": "https://everystonespeaks.com/easter/",
+        "image": "https://everystonespeaks.com/assets/products/esp-easter.jpg",
+        "etsy": "4620503453"
     }
 }
