@@ -25,3 +25,7 @@ with dates (`2026-11-24T09:00:00`) before uploading.
 The pin words come from the site's own data: `php build/build.php` writes `pins.json`, then
 `php tools/make-pins.php` draws the missing pictures and rewrites the weekly files (`--redo` redraws them all).
 Don't upload a week twice.
+
+## Uploaded
+
+- week-01: Nov 20, 2026 (Settings > Bulk create Pins, "Upload .csv file"; Pinterest says pins appear within about 2 hours)
