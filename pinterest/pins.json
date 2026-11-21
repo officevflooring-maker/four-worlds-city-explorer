@@ -327,7 +327,7 @@
         "title": "Modern Town: an illustrated city for kids",
         "desc": "An imagined town of real buildings. Open any of 36 to learn why towns need it, how it is built and who it serves. Free, with no sign-up or ads.",
         "link": "https://atlasofcities.org/worlds/modern/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "world-green",
@@ -338,7 +338,7 @@
         "title": "Green World: an illustrated city for kids",
         "desc": "A city that grows with the forest. Each of 35 buildings is paired with real nature-based technology. Free, with no sign-up or ads.",
         "link": "https://atlasofcities.org/worlds/green/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "world-future",
@@ -349,7 +349,7 @@
         "title": "Robotic Future: an illustrated city for kids",
         "desc": "One possible future on the Moon and Mars. Each of 34 buildings explains the real space technology behind it. Free, with no sign-up or ads.",
         "link": "https://atlasofcities.org/worlds/future/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "world-heaven",
@@ -393,7 +393,7 @@
         "title": "Modern neighborhood tour: getting around and public spaces",
         "desc": "A guided walk through a modern town: streets, cars, deliveries, libraries, parks and access for everyone, with questions at every stop.",
         "link": "https://atlasofcities.org/tours/modern-neighborhoods/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "tour-ecological-design",
@@ -404,7 +404,7 @@
         "title": "Ecological design tour: water, plants and shared land",
         "desc": "A guided tour of the Green World, a city that grows with the forest, and the real nature-based ideas behind it: clean water, wetlands, green roofs, meadows, compost and the commons.",
         "link": "https://atlasofcities.org/tours/ecological-design/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "tour-robotic-cities",
@@ -415,7 +415,7 @@
         "title": "Robotic future tour: technology, energy and who decides",
         "desc": "A guided tour of an imagined Moon and Mars settlement: power, robots, self-driving vehicles, recycling and who makes the decisions.",
         "link": "https://atlasofcities.org/tours/robotic-cities/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "tour-city-of-goodness",
@@ -481,7 +481,7 @@
         "title": "Family house: why towns need it and how it works",
         "desc": "A detached house with a porch and garden, built for one household. It is the most common home in many countries. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/single-family-house/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-great-tree-hall",
@@ -492,7 +492,7 @@
         "title": "Great tree hall: green idea, real nature technology",
         "desc": "A nature-inspired hall grown from a living tree. In the real world, people already shape living roots and trunks into bridges and buildings. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/great-tree-hall/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-inflatable-habitat",
@@ -503,7 +503,7 @@
         "title": "Pod home: how it could work on the Moon and Mars",
         "desc": "A compact home that could be launched folded up and inflated on arrival, giving astronauts much more space for its weight. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/inflatable-habitat/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-tree-of-life",
@@ -558,7 +558,7 @@
         "title": "Suburban house: why towns need it and how it works",
         "desc": "A house with a driveway and garage on the edge of a city, designed around travel by car. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/suburban-house/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-grand-tree-hall",
@@ -569,7 +569,7 @@
         "title": "Sunlight hall: green idea, real nature technology",
         "desc": "A nature-inspired hall that feeds on sunlight like a leaf. Real buildings already grow algae in their walls to make heat and fuel. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/grand-tree-hall/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-lunar-base",
@@ -580,7 +580,7 @@
         "title": "Moon base home: how it could work on the Moon and Mars",
         "desc": "Linked domes where a crew could live on the Moon, shielded from radiation and connected by pressurized tunnels. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/lunar-base/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-rainbow-pavilion",
@@ -635,7 +635,7 @@
         "title": "Older brick house: why towns need it and how it works",
         "desc": "An older home that can be repaired and upgraded to use far less energy, instead of being knocked down. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/older-home/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-treetop-village",
@@ -646,7 +646,7 @@
         "title": "Treetop village: green idea, real nature technology",
         "desc": "A nature-inspired village of homes and bridges among the branches, built so lightly that the trees stay healthy. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/treetop-village/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-habitat-cluster",
@@ -657,7 +657,7 @@
         "title": "Life support dome: how it could work on the Moon and Mars",
         "desc": "The machinery that keeps air breathable, removes carbon dioxide and controls temperature: the beating heart of any space home. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/habitat-cluster/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-angel-statue",
@@ -712,7 +712,7 @@
         "title": "Apartment building: why towns need it and how it works",
         "desc": "A building of several floors with many homes stacked together, sharing walls, stairs and services. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/apartment-building/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-tree-tower-home",
@@ -723,7 +723,7 @@
         "title": "Tree tower home: green idea, real nature technology",
         "desc": "A nature-inspired tower wrapped in trees. Real \"vertical forests\" plant hundreds of trees on the balconies of city apartment blocks. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/tree-tower-home/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-printed-habitat",
@@ -734,7 +734,7 @@
         "title": "Printed shelter: how it could work on the Moon and Mars",
         "desc": "A dome-shaped home built by robots that 3D print walls from local soil, so heavy materials do not have to be launched from Earth. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/printed-habitat/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-welcome-hall",
@@ -789,7 +789,7 @@
         "title": "Residential tower: why towns need it and how it works",
         "desc": "A tall glass tower of apartments that fits hundreds of homes onto a small plot of land. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/residential-tower/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-living-crane",
@@ -800,7 +800,7 @@
         "title": "Living crane: green idea, real nature technology",
         "desc": "A nature-inspired crane woven from vines. In the real world, fast-growing bamboo is strong enough to build scaffolding and houses. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/living-crane/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-storm-shelter",
@@ -811,7 +811,7 @@
         "title": "Radiation storm shelter on the Moon and Mars",
         "desc": "A heavily shielded bunker where everyone could shelter for hours or days during a dangerous burst of radiation from the Sun. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/storm-shelter/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-bell-tower",
@@ -866,7 +866,7 @@
         "title": "Shops with homes above: why towns need it and how it works",
         "desc": "A building with shops on the street and homes upstairs, keeping streets lively day and night. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/mixed-use-building/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-hillside-home",
@@ -877,7 +877,7 @@
         "title": "Hillside home: green idea, real nature technology",
         "desc": "A home tucked into a grassy hill. Real earth-sheltered homes use the soil around them to stay cool in summer and warm in winter. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/hillside-home/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-airlock-hangar",
@@ -888,7 +888,7 @@
         "title": "Airlock and suit hangar on the Moon and Mars",
         "desc": "The doorway between the habitat and the outside, where spacesuits are stored and the clingy, sharp dust is kept out. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/airlock-hangar/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-palace-of-light",
@@ -943,7 +943,7 @@
         "title": "Town hall: why towns need it and how it works",
         "desc": "The home of local government, where elected leaders meet and residents get public services. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/town-hall/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-timber-house",
@@ -954,7 +954,7 @@
         "title": "Timber family house: green idea, real nature technology",
         "desc": "A nature-inspired house carved from wood. Real engineered timber now builds homes and towers that store carbon instead of releasing it. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/timber-house/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-water-recycler",
@@ -965,7 +965,7 @@
         "title": "Water recycler: how it could work on the Moon and Mars",
         "desc": "A system that cleans and reuses almost every drop of water, including sweat and urine, because water is too precious to waste. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/water-recycler/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-hall-of-wisdom",
@@ -1020,7 +1020,7 @@
         "title": "Capitol building: why towns need it and how it works",
         "desc": "A domed building where elected lawmakers for a state or country meet to debate and pass laws. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/capitol/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-spire-house",
@@ -1031,7 +1031,7 @@
         "title": "Breathing spire: green idea, real nature technology",
         "desc": "A nature-inspired tower that breathes like a termite mound, pulling cool air in and letting warm air out with no machines. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/spire-house/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-greenhouse-dome",
@@ -1042,7 +1042,7 @@
         "title": "Greenhouse dome: how it could work on the Moon and Mars",
         "desc": "A sealed dome where plants grow food, recycle water and turn carbon dioxide back into oxygen, like a small piece of Earth. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/greenhouse-dome/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-dove-statue",
@@ -1097,7 +1097,7 @@
         "title": "Health clinic: why towns need it and how it works",
         "desc": "A neighborhood clinic where people see a doctor or nurse, get vaccines and stay healthy before small problems grow. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/health-clinic/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-green-roof-cottage",
@@ -1108,7 +1108,7 @@
         "title": "Green-roof cottage: green idea, real nature technology",
         "desc": "A tall cottage crowned with plants. Real green roofs soak up rain, cool buildings and feed insects. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/green-roof-cottage/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-indoor-farm",
@@ -1119,7 +1119,7 @@
         "title": "Indoor farm: how it could work on the Moon and Mars",
         "desc": "Rows of plants grown under lights in water instead of soil, producing fresh food year-round in a small space. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/indoor-farm/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-garden-villa",
@@ -1174,7 +1174,7 @@
         "title": "Clock tower: why towns need it and how it works",
         "desc": "A tall tower with a clock that everyone could see, from the days before every person carried the time. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/clock-tower/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-natural-cottage",
@@ -1185,7 +1185,7 @@
         "title": "Forest cottage: green idea, real nature technology",
         "desc": "A nature-inspired cottage made of earth, straw, stone and wood. Real natural building uses these same simple materials. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/natural-cottage/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-tree-pod-habitat",
@@ -1196,7 +1196,7 @@
         "title": "Tree pod habitat: how it could work on the Moon and Mars",
         "desc": "Living pods around a real tree, bringing the calm of nature to people living far from Earth. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/tree-pod-habitat/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-lamp-tower",
@@ -1251,7 +1251,7 @@
         "title": "Streets and crosswalks: why towns need it and how it works",
         "desc": "Streets are a town's largest public space. Their design decides whether walking, cycling and crossing feel safe. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/streets-crosswalks/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-leafy-cottage",
@@ -1262,7 +1262,7 @@
         "title": "Leafy cottage: green idea, real nature technology",
         "desc": "A nature-inspired cottage wrapped in climbing plants. Real research suggests that seeing nature helps people feel and heal better. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/leafy-cottage/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-ice-mine",
@@ -1273,7 +1273,7 @@
         "title": "Ice mine and water works on the Moon and Mars",
         "desc": "A plant that would dig up frozen water from shadowed craters and turn it into drinking water, oxygen and rocket fuel. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/ice-mine/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-fountain-of-life",
@@ -1328,7 +1328,7 @@
         "title": "Water system: why towns need it and how it works",
         "desc": "Hidden pipes, pumps and treatment plants bring clean water to every tap and carry dirty water safely away. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/water-system/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-mushroom-cottage",
@@ -1339,7 +1339,7 @@
         "title": "Mushroom cottage: green idea, real nature technology",
         "desc": "A playful toadstool home. Real scientists grow building blocks and packaging from mycelium, the root-like threads of fungi. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/mushroom-cottage/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-oxygen-factory",
@@ -1350,7 +1350,7 @@
         "title": "Oxygen factory: how it could work on the Moon and Mars",
         "desc": "A factory that would pull oxygen out of the Martian air or Moon rock, so settlers can breathe and rockets can fly home. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/oxygen-factory/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-scroll-library",
@@ -1405,7 +1405,7 @@
         "title": "Lighthouse: why towns need it and how it works",
         "desc": "A tower with a powerful light that warns ships of rocks and guides them safely into harbor. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/lighthouse/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-wetland-fountain",
@@ -1416,7 +1416,7 @@
         "title": "Wetland fountain: green idea, real nature technology",
         "desc": "A nature-inspired fountain that cleans water as it flows. Real \"constructed wetlands\" use plants and microbes to purify wastewater. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/wetland-fountain/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-power-tower",
@@ -1427,7 +1427,7 @@
         "title": "Power tower: how it could work on the Moon and Mars",
         "desc": "A compact nuclear reactor and power station that could provide steady electricity through the long lunar night or a Martian dust storm. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/power-tower/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-lantern-circle",
@@ -1482,7 +1482,7 @@
         "title": "Fire lookout tower: why towns need it and how it works",
         "desc": "A tall tower in a forest or on a hill where a watcher scans the land for smoke from wildfires. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/fire-lookout/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-garden-court",
@@ -1493,7 +1493,7 @@
         "title": "Rain garden court: green idea, real nature technology",
         "desc": "A nature-inspired courtyard garden that drinks the rain. Real rain gardens catch storm water and stop flooding. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/garden-court/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-robotics-factory",
@@ -1504,7 +1504,7 @@
         "title": "Robotics factory: how it could work on the Moon and Mars",
         "desc": "A factory where robots build, repair and maintain the settlement, working in conditions too dangerous or tiring for people. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/robotics-factory/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-school-of-wisdom",
@@ -1559,7 +1559,7 @@
         "title": "Public library: why towns need it and how it works",
         "desc": "Free books, internet, study space and help for everyone, with no one asked to pay at the door. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/public-library/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-spring-circle",
@@ -1570,7 +1570,7 @@
         "title": "Spring circle: green idea, real nature technology",
         "desc": "A nature-inspired garden around a clean spring. Real cities save billions by protecting the land where their water comes from. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/spring-circle/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-fab-shop",
@@ -1581,7 +1581,7 @@
         "title": "Fabrication shop: how it could work on the Moon and Mars",
         "desc": "A workshop where residents 3D print tools and spare parts on demand, and recycle broken items into new ones. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/fab-shop/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-lily-garden",
@@ -1636,7 +1636,7 @@
         "title": "School: why towns need it and how it works",
         "desc": "A building where children learn, make friends and get support, and often a hub for the whole community. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/school/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-waterfall-tower",
@@ -1647,7 +1647,7 @@
         "title": "Waterfall tower: green idea, real nature technology",
         "desc": "A nature-inspired tower beside a waterfall. Real micro-hydro systems turn falling water into electricity for homes and villages. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/waterfall-tower/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-robotic-crane",
@@ -1658,7 +1658,7 @@
         "title": "Robotic crane: how it could work on the Moon and Mars",
         "desc": "A self-guided crane that lifts modules and soil on the Moon, where things weigh less but are just as hard to stop. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/robotic-crane/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-light-crane",
@@ -1713,7 +1713,7 @@
         "title": "Science center and observatory in a modern town",
         "desc": "A museum where visitors learn by doing experiments, with a telescope dome for looking at the night sky. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/science-center/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-gathering-circle",
@@ -1724,7 +1724,7 @@
         "title": "Warm gathering circle: green idea, real nature technology",
         "desc": "A nature-inspired meeting place warmed by heat from the earth. Real geothermal energy heats most homes in Iceland. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/gathering-circle/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-building-materials",
@@ -1735,7 +1735,7 @@
         "title": "Space building materials on the Moon and Mars",
         "desc": "Modules from Earth, soil from the Moon and Mars, and recycled packaging: the materials of a future settlement. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/building-materials/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-spring-pool",
@@ -1790,7 +1790,7 @@
         "title": "Cultural center: why towns need it and how it works",
         "desc": "A place where a community shares its traditions, art, food, language and history with neighbors and visitors. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/cultural-center/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-flower-meadow",
@@ -1801,7 +1801,7 @@
         "title": "Pollinator meadow: green idea, real nature technology",
         "desc": "Flowers planted for bees, butterflies and other insects that pollinate the crops we eat. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/flower-meadow/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-gravity-gym",
@@ -1812,7 +1812,7 @@
         "title": "Low-gravity gym: how it could work on the Moon and Mars",
         "desc": "A gym where residents exercise every day to stop their bones and muscles from weakening in low gravity. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/gravity-gym/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-sharing-pavilion",
@@ -1867,7 +1867,7 @@
         "title": "Corner store: why towns need it and how it works",
         "desc": "A small shop within walking distance selling food and everyday items, a lifeline for many neighborhoods. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/corner-store/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-wild-grove",
@@ -1878,7 +1878,7 @@
         "title": "Tiny forest: green idea, real nature technology",
         "desc": "A patch of trees left wild in the middle of the city. Real \"tiny forests\" plant dense native woods in spaces the size of a tennis court. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/wild-grove/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-centrifuge-arena",
@@ -1889,7 +1889,7 @@
         "title": "Spinning gravity arena on the Moon and Mars",
         "desc": "A huge spinning ring where the push of rotation could feel like gravity, letting people walk normally in space. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/centrifuge-arena/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-marble-cottage",
@@ -1944,7 +1944,7 @@
         "title": "Office building: why towns need it and how it works",
         "desc": "A building of desks, meeting rooms and computers where many people do their jobs. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/office-building/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-stag-monument",
@@ -1955,7 +1955,7 @@
         "title": "Stag crossing: green idea, real nature technology",
         "desc": "A nature-inspired monument to the forest's animals. Real wildlife bridges let deer, bears and wolves cross busy roads safely. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/stag-monument/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-medical-bay",
@@ -1966,7 +1966,7 @@
         "title": "Medical bay: how it could work on the Moon and Mars",
         "desc": "A small hospital where crew members trained in medicine could treat illnesses and injuries with help from doctors on Earth. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/medical-bay/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-golden-track",
@@ -2021,7 +2021,7 @@
         "title": "Skyscraper: why towns need it and how it works",
         "desc": "A very tall building made possible by steel frames and safe elevators, and a symbol of the modern city. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/skyscraper/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-deer-statue",
@@ -2032,7 +2032,7 @@
         "title": "Deer statue: green idea, real nature technology",
         "desc": "A nature-inspired statue of a gentle deer beside a wild meadow. In the real world, \"rewilding\" lets nature restore itself on land that was farmed. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/deer-statue/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-public-plaza",
@@ -2043,7 +2043,7 @@
         "title": "Community plaza: how it could work on the Moon and Mars",
         "desc": "A shared square where residents meet, eat and celebrate, because getting along matters as much as any machine. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/public-plaza/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-hall-of-treasures",
@@ -2098,7 +2098,7 @@
         "title": "Warehouse: why towns need it and how it works",
         "desc": "A large shed where goods are stored, sorted and sent out, the hidden link between factories and shops. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/warehouse/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-domed-observatory",
@@ -2109,7 +2109,7 @@
         "title": "Star dome: green idea, real nature technology",
         "desc": "A nature-inspired observatory under a sky full of stars. Real dark-sky places reduce light pollution so people and wildlife can see the night. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/domed-observatory/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-civic-dome",
@@ -2120,7 +2120,7 @@
         "title": "Civic dome: how it could work on the Moon and Mars",
         "desc": "A domed hall where residents decide the rules of their settlement, under international agreements about space. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/civic-dome/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-banquet-hall",
@@ -2175,7 +2175,7 @@
         "title": "Community center: why towns need it and how it works",
         "desc": "A shared building for classes, clubs, meetings, celebrations and support, open to the whole neighborhood. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/community-center/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-firefly-tower",
@@ -2186,7 +2186,7 @@
         "title": "Firefly tower: green idea, real nature technology",
         "desc": "A nature-inspired tower named for the firefly. Real scientists have already made living plants that glow in the dark. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/firefly-tower/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-science-lab",
@@ -2197,7 +2197,7 @@
         "title": "Science lab: how it could work on the Moon and Mars",
         "desc": "A laboratory to study rocks, ice and possible signs of life, while making sure Earth germs do not contaminate other worlds. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/science-lab/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-house-of-many-rooms",
@@ -2252,7 +2252,7 @@
         "title": "Public square and fountain in a modern town",
         "desc": "An open square with a fountain, seating and flowers where people meet, rest and celebrate. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/plaza-fountain/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-tree-library",
@@ -2263,7 +2263,7 @@
         "title": "Seed library: green idea, real nature technology",
         "desc": "A nature-inspired library inside a hollow tree, storing seeds instead of books. Real seed banks protect the world's plants for the future. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/tree-library/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-radio-telescope",
@@ -2274,7 +2274,7 @@
         "title": "Far-side radio telescope on the Moon and Mars",
         "desc": "A giant dish for listening to the universe, perhaps on the far side of the Moon, the quietest place for radio in our solar system. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/radio-telescope/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-prayer-chapel",
@@ -2329,7 +2329,7 @@
         "title": "Church: why towns need it and how it works",
         "desc": "A church with a tall spire, where Christians gather to worship God, and which often serves the whole town too. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/place-of-worship/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-treehouse-school",
@@ -2340,7 +2340,7 @@
         "title": "Forest school: green idea, real nature technology",
         "desc": "A nature-inspired school among the trees. Real forest schools take children outdoors to learn in every season. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/treehouse-school/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-comms-relay",
@@ -2351,7 +2351,7 @@
         "title": "Communications relay: how it could work on the Moon and Mars",
         "desc": "A tower of antennas that would keep the settlement connected to orbiting satellites, other bases and Earth. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/comms-relay/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-victors-arena",
@@ -2406,7 +2406,7 @@
         "title": "Outdoor gathering circle: why towns need it and how it works",
         "desc": "A ring of benches around a fire pit in a park, a simple place for stories, music and outdoor lessons. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/gathering-circle/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-weather-tower",
@@ -2417,7 +2417,7 @@
         "title": "Seasons tower: green idea, real nature technology",
         "desc": "A nature-inspired tower for watching the weather and the seasons. Real scientists track when flowers bloom to see how climate is changing. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/weather-tower/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-space-weather-station",
@@ -2428,7 +2428,7 @@
         "title": "Space weather station on the Moon and Mars",
         "desc": "A tower of sensors that would watch the Sun and warn the settlement of dangerous solar storms. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/space-weather-station/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-sky-bridge",
@@ -2483,7 +2483,7 @@
         "title": "Memorial: why towns need it and how it works",
         "desc": "A monument that helps a community remember people and events from its past. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/memorial/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-council-terrace",
@@ -2494,7 +2494,7 @@
         "title": "Council terrace: green idea, real nature technology",
         "desc": "A nature-inspired terrace where neighbors decide together how to share the forest. Real research shows communities can manage shared resources well. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/council-terrace/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-telepresence",
@@ -2505,7 +2505,7 @@
         "title": "Hologram hall: how it could work on the Moon and Mars",
         "desc": "A place where people far apart could see each other as life-size images, and where operators could control distant robots. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/telepresence/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-building-materials",
@@ -2560,7 +2560,7 @@
         "title": "Public art: why towns need it and how it works",
         "desc": "Statues, sculptures and murals in public places that anyone can enjoy, free of charge. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/public-art/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-forest-palace",
@@ -2571,7 +2571,7 @@
         "title": "Palace of the long future: a green idea",
         "desc": "A nature-inspired palace where leaders must think a hundred years ahead. Real governments have begun to create laws for future generations. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/forest-palace/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-robot-helpers",
@@ -2582,7 +2582,7 @@
         "title": "Robot monument: how it could work on the Moon and Mars",
         "desc": "A monument to the robots that went first: rovers, arms and helicopters that explore and work where people cannot yet go. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/robot-helpers/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-garden-of-light",
@@ -2637,7 +2637,7 @@
         "title": "City park: why towns need it and how it works",
         "desc": "Trees, grass, paths and water in the middle of town: free space to play, relax and cool down. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/park-pond/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-forest-gym",
@@ -2648,7 +2648,7 @@
         "title": "Forest training grove: green idea, real nature technology",
         "desc": "A nature-inspired archery grove among the trees. Real research explores how time in forests may lower stress and lift mood. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/forest-gym/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-launch-pad",
@@ -2659,7 +2659,7 @@
         "title": "Launch pad: how it could work on the Moon and Mars",
         "desc": "A tower and pad where rockets are prepared and launched, built to survive enormous heat, noise and force. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/launch-pad/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-cloud-island",
@@ -2714,7 +2714,7 @@
         "title": "Treehouse playground: why towns need it and how it works",
         "desc": "A play space with climbing, hiding and building, where children take healthy risks and use their imagination. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/playground/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-canopy-walkway",
@@ -2725,7 +2725,7 @@
         "title": "Canopy climbing course: green idea, real nature technology",
         "desc": "A nature-inspired climbing course in the treetops. Real scientists use walkways, ropes and cranes to study life in the forest canopy. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/canopy-walkway/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-spaceport",
@@ -2736,7 +2736,7 @@
         "title": "Spaceport: how it could work on the Moon and Mars",
         "desc": "A busy hub where reusable rockets land, are refueled and fly again, making travel to space cheaper and more regular. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/spaceport/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-harp-workshop",
@@ -2791,7 +2791,7 @@
         "title": "Sports field: why towns need it and how it works",
         "desc": "An open field with goals and lights where people play soccer and other team sports. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/sports-field/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-open-air-theater",
@@ -2802,7 +2802,7 @@
         "title": "Open-air theater: green idea, real nature technology",
         "desc": "A nature-inspired theater among the trees. Real open-air theaters use the shape of hills and stone to carry sound without microphones. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/open-air-theater/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-space-elevator",
@@ -2813,7 +2813,7 @@
         "title": "Space elevator anchor on the Moon and Mars",
         "desc": "The base of an imagined cable stretching into space, which climbers could ride up instead of using rockets. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/space-elevator/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-pearl-gate",
@@ -2868,7 +2868,7 @@
         "title": "Stadium: why towns need it and how it works",
         "desc": "A huge venue where tens of thousands of fans watch sport and concerts together. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/stadium/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-canopy-market",
@@ -2879,7 +2879,7 @@
         "title": "Canopy market: green idea, real nature technology",
         "desc": "Market stalls under giant mushroom-shaped canopies. Real shade structures, and real trees, cool hot city squares. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/canopy-market/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-rover-track",
@@ -2890,7 +2890,7 @@
         "title": "Rover test track: how it could work on the Moon and Mars",
         "desc": "A track where crews test and train with rovers, the cars and trucks of the Moon and Mars. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/rover-track/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-swan-boat",
@@ -2945,7 +2945,7 @@
         "title": "Recreation center: why towns need it and how it works",
         "desc": "A building with gym equipment and classes where people of every age can exercise, whatever the weather. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/recreation-center/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-market-hall",
@@ -2956,7 +2956,7 @@
         "title": "Harvest market hall: green idea, real nature technology",
         "desc": "A nature-inspired market where nothing is wasted. Real towns cut waste by selling local food and composting what is left. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/market-hall/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-mission-control",
@@ -2967,7 +2967,7 @@
         "title": "Mission control: how it could work on the Moon and Mars",
         "desc": "The control center where teams of experts watch over every spacecraft, ready to help the crew around the clock. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/mission-control/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-fruit-donkey",
@@ -3022,7 +3022,7 @@
         "title": "Community garden: why towns need it and how it works",
         "desc": "Shared land where neighbors grow vegetables, fruit and flowers together. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/community-garden/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-woodworking-workshop",
@@ -3033,7 +3033,7 @@
         "title": "Repair workshop: green idea, real nature technology",
         "desc": "A nature-inspired workshop where nothing is thrown away. Real repair cafés and well-managed forests keep materials in use. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/woodworking-workshop/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-operations-center",
@@ -3044,7 +3044,7 @@
         "title": "Settlement operations center on the Moon and Mars",
         "desc": "The local control room that runs the settlement's power, air, water and traffic, and takes charge in emergencies. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/operations-center/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-golden-chariot",
@@ -3099,7 +3099,7 @@
         "title": "Tower crane: why towns need it and how it works",
         "desc": "A tall crane that lifts steel, concrete and glass to the upper floors of new buildings. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/tower-crane/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-building-materials",
@@ -3110,7 +3110,7 @@
         "title": "Nature's materials: green idea, real nature technology",
         "desc": "Stone, timber and glass for the city\\x27s builders, and the real inventions engineers have copied from nature. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/building-materials/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-hover-car",
@@ -3121,7 +3121,7 @@
         "title": "Hover car: how it could work on the Moon and Mars",
         "desc": "A car that floats above the road. Real maglev trains already float on magnets at over 400 km/h. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/hover-car/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "heaven-cloud-carriage",
@@ -3176,7 +3176,7 @@
         "title": "Building materials: why towns need it and how it works",
         "desc": "Bricks, timber, concrete and steel each have strengths, costs and effects on the planet. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/building-materials/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-deer-sleigh",
@@ -3187,7 +3187,7 @@
         "title": "Deer sleigh: green idea, real nature technology",
         "desc": "A storybook sleigh drawn by deer. In the real Arctic, reindeer have pulled sleds for centuries. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/deer-sleigh/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-pressurized-rover",
@@ -3198,7 +3198,7 @@
         "title": "Pressurized rover: how it could work on the Moon and Mars",
         "desc": "A rugged rover with air inside, so astronauts can drive for days across the Moon without wearing spacesuits. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/pressurized-rover/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "egypt-building-materials",
@@ -3242,7 +3242,7 @@
         "title": "Family car: why towns need it and how it works",
         "desc": "The everyday car changed how towns are built: wide roads, parking lots, drive-throughs and suburbs. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/family-car/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-flower-cart",
@@ -3253,7 +3253,7 @@
         "title": "Flower cart: green idea, real nature technology",
         "desc": "A storybook pony cart full of flowers. Real horses still work in some forests, where they do less damage than machines. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/flower-cart/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-cargo-pod",
@@ -3264,7 +3264,7 @@
         "title": "Cargo pod: how it could work on the Moon and Mars",
         "desc": "A self-driving cargo carrier. On Earth, giant trucks in some mines already drive themselves. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/cargo-pod/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "egypt-chariot",
@@ -3308,7 +3308,7 @@
         "title": "Taxi: why towns need it and how it works",
         "desc": "A car you hire for one trip. Taxis help people who don't own a car, and many cities paint them yellow. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/taxi/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "green-mushroom-carriage",
@@ -3319,7 +3319,7 @@
         "title": "Mushroom carriage: green idea, real nature technology",
         "desc": "A storybook toadstool carriage. Real carmakers already use plant fibers, and in 1941 Ford showed a car with plant-based body panels. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/green/mushroom-carriage/",
-        "board": "Green World for Kids"
+        "board": "Imagined Cities: Nature and Hope"
     },
     {
         "file": "future-drone-taxi",
@@ -3330,7 +3330,7 @@
         "title": "Drone taxi: how it could work on the Moon and Mars",
         "desc": "A flying vehicle with four rotors. A small helicopter has already flown on Mars, and a drone will fly on Saturn's moon Titan. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/future/drone-taxi/",
-        "board": "Robotic Future for Kids"
+        "board": "Space for Kids: Moon and Mars"
     },
     {
         "file": "egypt-camel",
@@ -3363,7 +3363,7 @@
         "title": "Pickup truck: why towns need it and how it works",
         "desc": "A truck with an open cargo bed, used by builders, farmers and tradespeople to carry tools and materials. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/pickup-truck/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "egypt-ox-cart",
@@ -3385,7 +3385,7 @@
         "title": "Delivery van: why towns need it and how it works",
         "desc": "A van that brings parcels to the door. As online shopping grows, delivery vans fill more and more streets. A free illustrated page for kids and teachers, with key words and questions to discuss.",
         "link": "https://atlasofcities.org/worlds/modern/delivery-van/",
-        "board": "Modern Town for Kids"
+        "board": "How a Town Works"
     },
     {
         "file": "egypt-stone-sledge",

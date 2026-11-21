@@ -5,18 +5,14 @@ Pictures: `public/assets/pins/` (served at atlasofcities.org/assets/pins/, so Pi
 Upload files: `week-01.csv` ... `week-09.csv`, 35 pins each (about 5 a day). Lessons, worlds and tours come first,
 then the buildings, taking turns between the worlds.
 
-## Once: make the boards
+## The boards (all made, Nov 20, 2026)
 
-The upload puts each pin on a board by name, so these boards must exist on the account first, spelled exactly:
+The upload puts each pin on a board by name (PIN_BOARDS in build/build.php), spelled exactly as on the account:
 
-- Free Lessons for Teachers and Homeschool
-- Ancient Egypt for Kids
-- Ancient Rome for Kids
-- Medieval Kingdom for Kids
-- Modern Town for Kids
-- Green World for Kids
-- Robotic Future for Kids
-- Heavenly City for Kids
+- Free Lessons for Teachers and Homeschool (lessons)
+- Ancient Egypt for Kids, Ancient Rome for Kids, Medieval Kingdom for Kids, Heavenly City for Kids
+- How a Town Works (Modern Town), Imagined Cities: Nature and Hope (Green World),
+  Space for Kids: Moon and Mars (Robotic Future): older boards, kept rather than doubled
 
 ## Each week
 

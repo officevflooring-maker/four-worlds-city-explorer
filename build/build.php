@@ -654,7 +654,11 @@ echo "wrote llms.txt, IndexNow key\n";
 
 // What each Pinterest pin says (tools/make-pins.php draws the pictures and writes the upload files from it):
 // lessons first, then the worlds and tours, then every building, taking turns between the worlds.
-$pinBoard = fn($w) => $WORLDS[$w]['name'] . ' for Kids';
+// Board names exactly as on the Pinterest account (three older boards kept their names, Nov 20, 2026).
+const PIN_BOARDS = ['egypt' => 'Ancient Egypt for Kids', 'roman' => 'Ancient Rome for Kids', 'medieval' => 'Medieval Kingdom for Kids',
+  'modern' => 'How a Town Works', 'green' => 'Imagined Cities: Nature and Hope', 'future' => 'Space for Kids: Moon and Mars',
+  'heaven' => 'Heavenly City for Kids'];
+$pinBoard = fn($w) => PIN_BOARDS[$w];
 $pins = [];
 foreach (TEACH_GROUPS as [, $slugs]) foreach ($slugs as $s) {
   $t = $TEACH[$s];
